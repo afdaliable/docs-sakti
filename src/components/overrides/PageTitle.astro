@@ -29,6 +29,7 @@ const jalur = jalurHalaman({
 });
 const namaPeran = new Map(konfigurasi.peran.map((p) => [p.slug, p.nama]));
 const tampilJalur = jalur.length > 0 && jenis !== undefined;
+const adalahArtikel = typeof data.modul === 'string' && jenis !== 'indeks';
 ---
 
 {
@@ -51,9 +52,9 @@ const tampilJalur = jalur.length > 0 && jenis !== undefined;
 }
 <h1 id="_top" data-pagefind-weight="10">{data.title}</h1>
 {
-	(jenis && jenis !== 'indeks') || peran.length > 0 || status === 'review' ? (
+	adalahArtikel ? (
 		<p class="badge-artikel">
-			{jenis && jenis !== 'indeks' && <Badge text={labelJenis(jenis)} variant="note" />}
+			{jenis && <Badge text={labelJenis(jenis)} variant="note" />}
 			{peran.map((slug) => (
 				<a class="badge-peran" href={`${base}peran/${slug}/`}>
 					<Badge text={namaPeran.get(slug) ?? slug} variant="tip" />

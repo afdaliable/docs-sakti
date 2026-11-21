@@ -5,7 +5,7 @@ import { formatTanggal } from '~/lib/tanggal.ts';
 
 const { entry } = Astro.locals.starlightRoute;
 const data = entry.data;
-const adalahIndeks = data.jenis === 'indeks';
+const adalahIndeks = typeof data.modul !== 'string' || data.jenis === 'indeks';
 const verifikasi =
 	data.terakhir_diverifikasi instanceof Date ? data.terakhir_diverifikasi : undefined;
 const url = Astro.url.pathname;
