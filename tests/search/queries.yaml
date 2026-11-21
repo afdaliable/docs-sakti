@@ -1,0 +1,18 @@
+- q: "gak bisa login sakti"
+  harap: ["/mulai/akses-aplikasi/login-sakti/"]
+- q: "lupa password sakti"
+  harap: ["/mulai/akses-aplikasi/ubah-kata-sandi/"]
+- q: "cara daftar user baru sakti"
+  harap: ["/mulai/pendaftaran-user/syarat-dan-alur/", "/mulai/pendaftaran-user/satker-kl/"]
+- q: "aktivasi otp kpa"
+  harap: ["/mulai/pendaftaran-user/aktivasi-otp/"]
+- q: "scan barcode mfa"
+  harap: ["/mulai/mfa/"]
+- q: "bikin email sakti"
+  harap: ["/mulai/email-sakti/"]
+- q: "nik tidak cocok dengan nama"
+  harap: ["/mulai/akses-aplikasi/konfirmasi-nama-nik/"]
+- q: "peran user untuk auditor bpk"
+  harap: ["/mulai/pendaftaran-user/bpk/"]
+- q: "form pendaftaran pengguna kanwil djpb"
+  harap: ["/mulai/pendaftaran-user/kanwil-djpb-bun/"]

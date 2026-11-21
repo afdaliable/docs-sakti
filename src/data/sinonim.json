@@ -1,14 +1,210 @@
 [
-  { "istilah": "SPM", "panjang": "Surat Perintah Membayar", "sinonim": ["surat perintah membayar"] },
-  { "istilah": "SP2D", "panjang": "Surat Perintah Pencairan Dana", "sinonim": ["pencairan dana"] },
-  { "istilah": "BAST", "panjang": "Berita Acara Serah Terima", "sinonim": ["serah terima"] },
-  { "istilah": "BMN", "panjang": "Barang Milik Negara", "sinonim": ["aset", "barang milik negara"] },
-  { "istilah": "KDP", "panjang": "Konstruksi Dalam Pengerjaan", "sinonim": ["konstruksi dalam pengerjaan"] },
-  { "istilah": "RUH", "panjang": "Rekam, Ubah, Hapus", "sinonim": ["rekam data", "input"] },
-  { "istilah": "ADK", "panjang": "Arsip Data Komputer", "sinonim": ["file adk", "upload adk"] },
-  { "istilah": "MFA", "panjang": "Multi-Factor Authentication", "sinonim": ["otp", "kode verifikasi", "authenticator", "tidak bisa login"] },
-  { "istilah": "GLP", "panjang": "General Ledger dan Pelaporan", "sinonim": ["akuntansi", "pelaporan", "jurnal"] },
-  { "istilah": "GPP", "panjang": "Gaji Pokok PNS", "sinonim": ["gaji", "belanja pegawai"], "perlu_verifikasi": true },
-  { "istilah": "PKIPA", "panjang": "", "sinonim": [], "perlu_verifikasi": true },
-  { "istilah": "DS", "panjang": "Digital Signature / Tanda Tangan Elektronik", "sinonim": ["tte", "sertifikat elektronik", "tanda tangan digital"] }
+  {
+    "istilah": "SPM",
+    "panjang": "Surat Perintah Membayar",
+    "sinonim": [
+      "surat perintah membayar"
+    ]
+  },
+  {
+    "istilah": "SP2D",
+    "panjang": "Surat Perintah Pencairan Dana",
+    "sinonim": [
+      "pencairan dana"
+    ]
+  },
+  {
+    "istilah": "BAST",
+    "panjang": "Berita Acara Serah Terima",
+    "sinonim": [
+      "serah terima"
+    ]
+  },
+  {
+    "istilah": "BMN",
+    "panjang": "Barang Milik Negara",
+    "sinonim": [
+      "aset",
+      "barang milik negara"
+    ]
+  },
+  {
+    "istilah": "KDP",
+    "panjang": "Konstruksi Dalam Pengerjaan",
+    "sinonim": [
+      "konstruksi dalam pengerjaan"
+    ]
+  },
+  {
+    "istilah": "RUH",
+    "panjang": "Rekam, Ubah, Hapus",
+    "sinonim": [
+      "rekam data",
+      "input"
+    ]
+  },
+  {
+    "istilah": "ADK",
+    "panjang": "Arsip Data Komputer",
+    "sinonim": [
+      "file adk",
+      "upload adk"
+    ]
+  },
+  {
+    "istilah": "MFA",
+    "panjang": "Multi-Factor Authentication",
+    "sinonim": [
+      "otp",
+      "kode verifikasi",
+      "authenticator",
+      "tidak bisa login"
+    ]
+  },
+  {
+    "istilah": "GLP",
+    "panjang": "General Ledger dan Pelaporan",
+    "sinonim": [
+      "akuntansi",
+      "pelaporan",
+      "jurnal"
+    ]
+  },
+  {
+    "istilah": "GPP",
+    "panjang": "Gaji Pokok PNS",
+    "sinonim": [
+      "gaji",
+      "belanja pegawai"
+    ],
+    "perlu_verifikasi": true
+  },
+  {
+    "istilah": "PKIPA",
+    "panjang": "",
+    "sinonim": [],
+    "perlu_verifikasi": true
+  },
+  {
+    "istilah": "DS",
+    "panjang": "Digital Signature / Tanda Tangan Elektronik",
+    "sinonim": [
+      "tte",
+      "sertifikat elektronik",
+      "tanda tangan digital"
+    ]
+  },
+  {
+    "istilah": "OTP",
+    "panjang": "One Time Password",
+    "sinonim": [
+      "kode otp",
+      "kode sekali pakai",
+      "aktivasi otp",
+      "request otp"
+    ]
+  },
+  {
+    "istilah": "TOTP",
+    "panjang": "Time-based one-time password",
+    "sinonim": [
+      "passcode authenticator",
+      "kode authenticator"
+    ]
+  },
+  {
+    "istilah": "KPA",
+    "panjang": "Kuasa Pengguna Anggaran",
+    "sinonim": [
+      "kepala satker"
+    ]
+  },
+  {
+    "istilah": "PPK",
+    "panjang": "",
+    "sinonim": [
+      "pejabat pembuat komitmen"
+    ],
+    "perlu_verifikasi": true
+  },
+  {
+    "istilah": "PPSPM",
+    "panjang": "",
+    "sinonim": [
+      "pejabat penanda tangan spm"
+    ],
+    "perlu_verifikasi": true
+  },
+  {
+    "istilah": "KPPN",
+    "panjang": "",
+    "sinonim": [
+      "kantor pelayanan perbendaharaan"
+    ],
+    "perlu_verifikasi": true
+  },
+  {
+    "istilah": "BUN",
+    "panjang": "",
+    "sinonim": [
+      "bendahara umum negara",
+      "kuasa bun"
+    ],
+    "perlu_verifikasi": true
+  },
+  {
+    "istilah": "monSAKTI",
+    "panjang": "",
+    "sinonim": [
+      "monsakti",
+      "monitoring sakti"
+    ],
+    "perlu_verifikasi": true
+  },
+  {
+    "istilah": "Pandu SAKTI",
+    "panjang": "",
+    "sinonim": [
+      "pandu-sakti",
+      "user pelatihan",
+      "sakti trainer"
+    ],
+    "perlu_verifikasi": true
+  },
+  {
+    "istilah": "SAKTI Mail",
+    "panjang": "",
+    "sinonim": [
+      "email sakti",
+      "sakti.mail.go.id",
+      "email kedinasan"
+    ],
+    "perlu_verifikasi": true
+  },
+  {
+    "istilah": "Dukcapil",
+    "panjang": "",
+    "sinonim": [
+      "data kependudukan",
+      "halo dukcapil"
+    ],
+    "perlu_verifikasi": true
+  },
+  {
+    "istilah": "SIMASPATEN",
+    "panjang": "",
+    "sinonim": [
+      "status sertifikat pejabat"
+    ],
+    "perlu_verifikasi": true
+  },
+  {
+    "istilah": "APIP",
+    "panjang": "",
+    "sinonim": [
+      "aparat pengawasan intern pemerintah",
+      "auditor kementerian"
+    ],
+    "perlu_verifikasi": true
+  }
 ]

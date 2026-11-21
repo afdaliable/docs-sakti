@@ -4,18 +4,49 @@ description: Akses aplikasi, pendaftaran user, MFA, dan email SAKTI.
 modul: mulai
 jenis: indeks
 status: terbit
+sumber:
+  - judul: "SAKTI Admin Knowledge Base"
+    url: "https://sites.google.com/view/saktiadm/beranda"
+    jenis: google-sites
+    diambil: 2026-11-21
+    id_manifest: A-beranda
 sidebar:
   label: Ringkasan
   order: 0
 ---
 
-Akses aplikasi, pendaftaran user, MFA, dan email SAKTI.
+import { CardGrid, LinkCard } from '@astrojs/starlight/components';
+import SumberAsli from '~/components/SumberAsli.astro';
 
-Panduan modul ini sedang dimigrasikan dari sumber aslinya.
+Selamat datang di Knowledge Base SAKTI. SAKTI tidak hanya dapat digunakan oleh
+kantor/instansi tipe satker — aplikasi ini telah berkembang menjadi *super-app*
+yang dapat digunakan oleh beberapa tipe kantor, dan pendaftaran user terbagi ke
+dalam beberapa tipe dan tingkatan. Mulailah dari topik di bawah sesuai
+kebutuhan Anda.
 
-## Sub-menu
+<CardGrid>
+	<LinkCard
+		title="Akses Aplikasi"
+		description="Login ke SAKTI, mengubah kata sandi, konfirmasi data NIK, dan user pelatihan."
+		href="/mulai/akses-aplikasi/"
+	/>
+	<LinkCard
+		title="Pendaftaran User"
+		description="Syarat, alur, dan formulir pendaftaran pengguna untuk setiap tipe kantor."
+		href="/mulai/pendaftaran-user/"
+	/>
+	<LinkCard
+		title="MFA"
+		description="Mendaftarkan Multi-Factor Authentication dan login dengan authenticator."
+		href="/mulai/mfa/"
+	/>
+	<LinkCard
+		title="Email SAKTI"
+		description="Mendaftarkan email @sakti.mail.go.id lewat KPPN dan mengaktifkannya."
+		href="/mulai/email-sakti/"
+	/>
+</CardGrid>
 
-- [Akses Aplikasi](/mulai/akses-aplikasi/)
-- [Pendaftaran User](/mulai/pendaftaran-user/)
-- [MFA](/mulai/mfa/)
-- [Email SAKTI](/mulai/email-sakti/)
+## Sumber
+
+<SumberAsli />
