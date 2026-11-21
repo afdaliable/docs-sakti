@@ -30,6 +30,7 @@ export interface ItemManifest {
 	ukuran: number | null;
 	jumlah_kata: number | null;
 	jumlah_gambar: number | null;
+	jumlah_halaman: number | null;
 	target_modul: string | null;
 	target_path: string | null;
 	target_peran: string[];
@@ -63,6 +64,7 @@ export function itemBaru(parsial: Partial<ItemManifest> & Pick<ItemManifest, 'id
 		ukuran: null,
 		jumlah_kata: null,
 		jumlah_gambar: null,
+		jumlah_halaman: null,
 		target_modul: null,
 		target_path: null,
 		target_peran: [],

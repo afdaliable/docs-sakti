@@ -128,6 +128,7 @@ async function main() {
 			const { jalur, penanda } = jalurMenuDariPath(situs, pathSetelahBase, hasilCrawl.navMap);
 			item.jalur_menu = jalur;
 			if (penanda) item.penanda_sumber = penanda;
+			if (item.catatan === 'belum dipetakan' && item.target_modul) item.catatan = '';
 		}
 	}
 

@@ -4,6 +4,7 @@ import { chromium, type Page } from 'playwright';
 import { acakJeda } from './http.ts';
 import { buangGoogleRedirect } from './resolver.ts';
 import { petakanTarget } from './pemetaan.ts';
+import { halamanRusak } from './aturan.ts';
 import { itemBaru, type ItemManifest, type Sumber } from './tipe.ts';
 
 export interface Situs {
@@ -90,6 +91,7 @@ export function jalurMenuDariPath(
 		jalur.push(nav?.label ?? humanize(segmen[i]));
 		if (i === segmen.length - 1) penanda = nav?.penanda ?? null;
 	}
+	if (jalur.length === 0 || jalur.every((j) => j === '')) return { jalur: ['Beranda'], penanda };
 	return { jalur, penanda };
 }
 
@@ -323,6 +325,7 @@ export async function crawlSitus(
 		};
 		halaman.set(url, hasilHalaman);
 
+		const rusak = halamanRusak(judul, jumlahKata);
 		await padaItem(
 			itemBaru({
 				id,
@@ -339,7 +342,8 @@ export async function crawlSitus(
 				target_modul: target.target_modul,
 				target_path: target.target_path,
 				target_peran: target.target_peran,
-				catatan: target.catatan ?? '',
+				status: rusak?.status ?? 'terinventaris',
+				catatan: rusak?.catatan ?? target.catatan ?? '',
 			}),
 			hasilHalaman,
 		);
