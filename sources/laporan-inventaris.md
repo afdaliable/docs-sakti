@@ -1,6 +1,6 @@
 # Laporan Inventaris Konten SAKTI
 
-Dibuat: 2026-11-21T14:54:33.831Z
+Dibuat: 2026-11-21T15:42:08.792Z
 
 ## Item per sumber dan jenis
 
@@ -41,14 +41,9 @@ Dibuat: 2026-11-21T14:54:33.831Z
 
 ## Item per status
 
-- diekstrak: 667
-- ditolak: 1
+- diekstrak: 595
+- ditolak: 73
 - gagal: 9
-
-## Penanda sumber
-
-- ✅: 31
-- 🟡: 5
 
 ## Halaman kosong
 
@@ -184,11 +179,11 @@ Dibuat: 2026-11-21T14:54:33.831Z
 ## Gagal
 
 - A-download — https://sites.google.com/view/saktiadm/download — halaman 404 di sumber (tautan Unduh Form rusak)
-- C-dok-079 — https://drive.google.com/file/d/1fHAL9HQEthex16guGU7QzuHaI_f4gtYU/view — butuh login
-- C-dok-081 — https://drive.google.com/file/d/18cP_BLDyS7KhTXw7Ckg3l2dZ4lMRZChD/view — butuh login
-- C-dok-120 — https://drive.google.com/file/d/17Z3z_9NPjxnbhDBwOSE1HoawcO-4H7yN/view — butuh login
-- C-dok-122 — https://drive.google.com/file/d/1VeqNLPJpNZ4kcvhQfNByZcHnPZvsEBOR/view — butuh login
-- C-dok-124 — https://drive.google.com/file/d/13Ze2AJjl_Go-TT849E4UCSLJpQG9Az-x/view — butuh login
+- C-dok-079 — https://drive.google.com/file/d/1fHAL9HQEthex16guGU7QzuHaI_f4gtYU/view — butuh login; dilewati sesuai keputusan pemilik, menunggu berkas manual di sources/raw/manual/
+- C-dok-081 — https://drive.google.com/file/d/18cP_BLDyS7KhTXw7Ckg3l2dZ4lMRZChD/view — butuh login; dilewati sesuai keputusan pemilik, menunggu berkas manual di sources/raw/manual/
+- C-dok-120 — https://drive.google.com/file/d/17Z3z_9NPjxnbhDBwOSE1HoawcO-4H7yN/view — butuh login; dilewati sesuai keputusan pemilik, menunggu berkas manual di sources/raw/manual/
+- C-dok-122 — https://drive.google.com/file/d/1VeqNLPJpNZ4kcvhQfNByZcHnPZvsEBOR/view — butuh login; dilewati sesuai keputusan pemilik, menunggu berkas manual di sources/raw/manual/
+- C-dok-124 — https://drive.google.com/file/d/13Ze2AJjl_Go-TT849E4UCSLJpQG9Az-x/view — butuh login; dilewati sesuai keputusan pemilik, menunggu berkas manual di sources/raw/manual/
 - C-dok-146 — https://drive.google.com/file/d/1BEpjfG_LTx2Ql2Cxdyzlwwnu-EaiC8K4/view — HTTP 404
 - C-dok-169 — https://drive.google.com/drive/folders/1jeMTgTG6HFRj6ZX1uGRVsqSed21X48j4 — HTTP 404
 - C-dok-175 — https://drive.google.com/file/d/1eDd_o6NArpLsiXnl9vpS7p95bUgHlEjZ/view — HTTP 404
@@ -196,6 +191,78 @@ Dibuat: 2026-11-21T14:54:33.831Z
 ## Ditolak
 
 - A-dok-006 — Kewenangan (Kelompok Pengguna) SAKTI — K6 (default): data kelompok pengguna rollout tidak dipublikasikan, hanya ditautkan
+- A-dok-059 — Template Surat Permohonan Interkoneksi Data Monsakti.docx — K6: ditunda; dokumentasi API MonSAKTI/MinSAKTI tidak dimigrasikan
+- A-dok-060 — DOKUMENTASI API TEMPLATE MONSAKTI v1.4.docx — K6: ditunda; dokumentasi API MonSAKTI/MinSAKTI tidak dimigrasikan
+- A-layanan — Layanan — K6: ditunda; dokumentasi API MonSAKTI/MinSAKTI tidak dimigrasikan
+- B-folder-ben — Modul Bendahara — peta konten: wadah folder; isi sudah dipetakan per berkas (bukan konten)
+- B-folder-bun — Modul KPPN BUN — peta konten: wadah folder; isi sudah dipetakan per berkas (bukan konten)
+- B-folder-kom — Modul Komitmen — peta konten: wadah folder; isi sudah dipetakan per berkas (bukan konten)
+- B-folder-pem — Modul Pembayaran — peta konten: wadah folder; isi sudah dipetakan per berkas (bukan konten)
+- C-aset-tetap-cetak — Cetak — peta konten: hanya deskripsi singkat menu (19 kata); K22: simpul menu tanpa isi, dilewati (eks aset-tetap/cetak)
+- C-aset-tetap-persetujuan — Persetujuan — peta konten: hanya struktur menu, tanpa isi; K22: simpul menu tanpa isi, dilewati (eks aset-tetap/persetujuan)
+- C-aset-tetap-persetujuan-persetujuan-transaksi-approver — Persetujuan Transaksi - APPROVER — peta konten: halaman sumber kosong (4 kata, tanpa dokumen)
+- C-aset-tetap-persetujuan-validasi-validator — Validasi - VALIDATOR — peta konten: halaman sumber kosong (3 kata, tanpa dokumen)
+- C-aset-tetap-ruh-transaksi-bmn-perolehan-bmn-batal-transfer-keluar-online — Batal Transfer Keluar Online — peta konten: halaman sumber kosong (9 kata, tanpa dokumen)
+- C-aset-tetap-ruh-transaksi-bmn-perubahan-bmn-koreksi-rincian-aset — Koreksi Rincian Aset — peta konten: halaman sumber kosong (7 kata, tanpa dokumen)
+- C-aset-tetap-ruh-transaksi-bmn-perubahan-bmn-koreksi-rincian-aset-per-transaksi — Koreksi Rincian Aset Per Transaksi — peta konten: halaman sumber kosong (11 kata, tanpa dokumen)
+- C-aset-tetap-ruh-transaksi-bmn-perubahan-bmn-koreksi-susulan — Koreksi Susulan — peta konten: halaman sumber kosong (2 kata, tanpa dokumen)
+- C-aset-tetap-ruh-transaksi-bmn-perubahan-bmn-perubahan-satker-tujuan-tk — Perubahan Satker Tujuan TK — peta konten: halaman sumber kosong (9 kata, tanpa dokumen)
+- C-aset-tetap-ruh-transaksi-kdp-koreksi-pencatatan-kdp — Koreksi Pencatatan KDP — peta konten: halaman sumber kosong (3 kata, tanpa dokumen)
+- C-aset-tetap-usul-hapus-penghapusan-masal — Usul Hapus & Penghapusan Masal — peta konten: hanya struktur menu, tanpa isi; K22: simpul menu tanpa isi, dilewati (eks aset-tetap/penghapusan-masal)
+- C-home — SAKTI PELAPORAN — peta konten: beranda situs lama (pengantar saja)
+- C-persediaan-migrasi-data — Migrasi Data — peta konten: hanya deskripsi singkat menu (18 kata); K22: simpul menu tanpa isi, dilewati (eks persediaan/migrasi-data)
+- C-persediaan-monitoring — Monitoring Pembelian Persediaan — peta konten: hanya deskripsi singkat menu (19 kata); K22: simpul menu tanpa isi, dilewati (eks persediaan/monitoring)
+- C-persediaan-referensi-mengelola-barang-persediaan — Mengelola Barang Persediaan — peta konten: halaman sumber kosong (7 kata, tanpa dokumen)
+- C-persediaan-upload-data-blu — Upload Data BLU — peta konten: hanya struktur menu, tanpa isi; K22: simpul menu tanpa isi, dilewati (eks persediaan/upload-data-blu)
+- C-piutang-pengelolaan-piutang-tutup-periode — Tutup Periode — peta konten: hanya deskripsi singkat menu (24 kata); K1: dipindahkan dari piutang/tutup-periode; K22: simpul menu tanpa isi, dilewati (eks piutang/pengelolaan-piutang/tutup-periode)
+- C-sakti-pelaksanaan-komitmen-adk-adk-data-pegawai — ADK Data Pegawai — peta konten: halaman sumber kosong (3 kata, tanpa dokumen); tidak ada padanan persis di menu.json untuk "ADK Data Pegawai" (label sumber); menu_sakti memakai simpul induk
+- C-sakti-pelaksanaan-komitmen-cetak — Cetak — peta konten: hanya struktur menu, tanpa isi; K22: simpul menu tanpa isi, dilewati (eks komitmen/cetak)
+- C-sakti-pelaksanaan-komitmen-cetak-cetak-resume-bast-barangjasa — Cetak Resume BAST Barang/Jasa — peta konten: halaman sumber kosong (4 kata, tanpa dokumen)
+- C-sakti-pelaksanaan-komitmen-cetak-cetak-resume-bast-non-kontrak — Cetak Resume BAST Non Kontrak — peta konten: halaman sumber kosong (5 kata, tanpa dokumen)
+- C-sakti-pelaksanaan-komitmen-cetak-cetak-resume-kontrak — Cetak Resume Kontrak — peta konten: halaman sumber kosong (3 kata, tanpa dokumen)
+- C-sakti-pelaksanaan-komitmen-cetak-cetak-resume-suplier — Cetak Resume Suplier — peta konten: halaman sumber kosong (3 kata, tanpa dokumen)
+- C-sakti-pelaksanaan-komitmen-cetak-laporan-fa-detail-16-segmen — Laporan FA Detail 16 Segmen — peta konten: halaman sumber kosong (5 kata, tanpa dokumen)
+- C-sakti-pelaksanaan-komitmen-cetak-laporan-tkdnpdn — Laporan TKDN/PDN — peta konten: hanya struktur menu, tanpa isi; menu_sakti disamakan ke menu.json dari label sumber "Laporan TKDN/PDN" berdasarkan kemiripan label; pastikan saat migrasi; K22: simpul menu tanpa isi, dilewati (eks komitmen/cetak/laporan-tkdn-pdn)
+- C-sakti-pelaksanaan-komitmen-cetak-laporan-tkdnpdn-tkdn-per-kategori-jenis-belanja — TKDN Per Kategori & Jenis Belanja — peta konten: halaman sumber kosong (6 kata, tanpa dokumen); menu_sakti disamakan ke menu.json dari label sumber "TKDN Per Kategori & Jenis Belanja" berdasarkan kemiripan label; pastikan saat migrasi
+- C-sakti-pelaksanaan-komitmen-cetak-laporan-tkdnpdn-tkdn-per-pagu-anggaran — TKDN Per Pagu Anggaran — peta konten: halaman sumber kosong (4 kata, tanpa dokumen); menu_sakti disamakan ke menu.json dari label sumber "TKDN Per Pagu Anggaran" berdasarkan kemiripan label; pastikan saat migrasi
+- C-sakti-pelaksanaan-komitmen-jurnal — Jurnal — peta konten: hanya struktur menu, tanpa isi; tidak ada padanan persis di menu.json untuk "Jurnal" (label sumber); menu_sakti memakai simpul induk; K22: simpul menu tanpa isi, dilewati (eks komitmen/jurnal)
+- C-sakti-pelaksanaan-komitmen-monitoring — Monitoring — peta konten: hanya struktur menu, tanpa isi; K22: simpul menu tanpa isi, dilewati (eks komitmen/monitoring)
+- C-sakti-pelaksanaan-komitmen-monitoring-karwas-kontrak — Karwas Kontrak — peta konten: halaman sumber kosong (2 kata, tanpa dokumen)
+- C-sakti-pelaksanaan-komitmen-monitoring-monitoring-adk-gpp — Monitoring ADK GPP — peta konten: halaman sumber kosong (3 kata, tanpa dokumen)
+- C-sakti-pelaksanaan-komitmen-monitoring-monitoring-adk-kontrak-dan-supplier — Monitoring ADK Kontrak dan Suplier — peta konten: halaman sumber kosong (5 kata, tanpa dokumen); tidak ada padanan persis di menu.json untuk "Monitoring ADK Kontrak dan Supplier" (label sumber); menu_sakti memakai simpul induk
+- C-sakti-pelaksanaan-komitmen-proses-escrow — Proses Escrow — peta konten: hanya struktur menu, tanpa isi; K22: simpul menu tanpa isi, dilewati (eks komitmen/escrow)
+- C-sakti-pelaksanaan-komitmen-proses-escrow-registrasi-escrow — Registrasi Escrow — peta konten: halaman sumber kosong (2 kata, tanpa dokumen)
+- C-sakti-pelaksanaan-komitmen-ruh-interkoneksi-bast-non-kontraktual — Interkoneksi BAST Non Kontraktual — peta konten: halaman sumber kosong (4 kata, tanpa dokumen)
+- C-sakti-pelaksanaan-komitmen-ruh-migrasi-kontrak-escrow — Migrasi Kontrak Escrow — peta konten: halaman sumber kosong (3 kata, tanpa dokumen); tidak ada padanan persis di menu.json untuk "Migrasi Kontrak Escrow" (label sumber); menu_sakti memakai simpul induk
+- C-sakti-pelaksanaan-komitmen-ruh-pencatatan-bast-hibah-bjs — Pencatatan BAST Hibah B/J/S — peta konten: halaman sumber kosong (4 kata, tanpa dokumen); tidak ada padanan persis di menu.json untuk "Pencatatan BAST Hibah B/J/S" (label sumber); menu_sakti memakai simpul induk
+- C-sakti-pelaksanaan-komitmen-ruh-pencatatan-penerimaan-barangjasa-hibah — Pencatatan Penerimaan Barang/Jasa Hibah — peta konten: halaman sumber kosong (4 kata, tanpa dokumen); tidak ada padanan persis di menu.json untuk "Pencatatan Penerimaan Barang/Jasa Hibah" (label sumber); menu_sakti memakai simpul induk
+- C-sakti-pelaksanaan-komitmen-ruh-pencatatan-penerimaan-barangjasa-kkp — Pencatatan Penerimaan Barang/Jasa KKP — peta konten: halaman sumber kosong (4 kata, tanpa dokumen); menu_sakti disamakan ke menu.json dari label sumber "Pencatatan Penerimaan Barang/Jasa KKP" berdasarkan kemiripan label; pastikan saat migrasi
+- C-sakti-pelaksanaan-komitmen-ruh-pencatatan-penerimaan-barangjasa-up-tunaibank — Pencatatan Penerimaan Barang/Jasa UP Tunai/Bank — peta konten: halaman sumber kosong (5 kata, tanpa dokumen); menu_sakti disamakan ke menu.json dari label sumber "Pencatatan Penerimaan Barang/Jasa UP Tunai/Bank" berdasarkan kemiripan label; pastikan saat migrasi
+- C-sakti-pelaksanaan-komitmen-ruh-pencatatan-penerimaan-barangjasa-valas — Pencatatan Penerimaan Barang/Jasa Valas — peta konten: halaman sumber kosong (4 kata, tanpa dokumen); menu_sakti disamakan ke menu.json dari label sumber "Pencatatan Penerimaan Barang/Jasa Valas" berdasarkan kemiripan label; pastikan saat migrasi
+- C-sakti-pelaksanaan-komitmen-upload-rekam-upload-rekam-adk-can — Upload / Rekam ADK CAN — peta konten: halaman sumber kosong (5 kata, tanpa dokumen); tidak ada padanan persis di menu.json untuk "Upload / Rekam ADK CAN" (label sumber); menu_sakti memakai simpul induk
+- C-sakti-pelaksanaan-komitmen-upload-rekam-upload-rekam-adk-nrs — Upload / Rekam ADK NRS — peta konten: halaman sumber kosong (5 kata, tanpa dokumen); tidak ada padanan persis di menu.json untuk "Upload / Rekam ADK NRS" (label sumber); menu_sakti memakai simpul induk
+- C-sakti-pelaksanaan-pembayaran-adk — ADK — peta konten: hanya struktur menu, tanpa isi; K22: simpul menu tanpa isi, dilewati (eks pembayaran/adk)
+- C-sakti-pelaksanaan-pembayaran-catatupload-adk-rekening-penyalur — ADK Rekening Penyalur — peta konten: halaman sumber kosong (3 kata, tanpa dokumen)
+- C-sakti-pelaksanaan-pembayaran-catatupload-mencatat-nomor-persetujuan-mphl-bjs — Mencatat Nomor Persetujuan MPHL-BJS — peta konten: halaman sumber kosong (4 kata, tanpa dokumen)
+- C-sakti-pelaksanaan-pembayaran-catatupload-mencatat-persetujuan-sp2d-koreksi — Mencatat Persetujuan SP2D Koreksi — peta konten: halaman sumber kosong (4 kata, tanpa dokumen)
+- C-sakti-pelaksanaan-pembayaran-catatupload-mencatat-sp3-lc — Mencatat SP3 LC — peta konten: halaman sumber kosong (3 kata, tanpa dokumen)
+- C-sakti-pelaksanaan-pembayaran-catatupload-mencatatupload-nomor-tagihan-adk — Mencatat/Upload Dokumen ADK — peta konten: halaman sumber kosong (3 kata, tanpa dokumen)
+- C-sakti-pelaksanaan-pembayaran-catatupload-mencatatupload-sp2d — Mencatat/Upload SP2D — peta konten: halaman sumber kosong (2 kata, tanpa dokumen)
+- C-sakti-pelaksanaan-pembayaran-catatupload-mencatatupload-sp3 — Mencatat/Upload SP3 — peta konten: halaman sumber kosong (2 kata, tanpa dokumen)
+- C-sakti-pelaksanaan-pembayaran-catatupload-upload-dokumen-pendukung — Upload Dokumen Pendukung — peta konten: halaman sumber kosong (3 kata, tanpa dokumen)
+- C-sakti-pelaksanaan-pembayaran-cetak — Cetak — peta konten: hanya struktur menu, tanpa isi; K22: simpul menu tanpa isi, dilewati (eks pembayaran/cetak)
+- C-sakti-pelaksanaan-pembayaran-cetak-cetak-arsip-spm — Cetak Arsip SPM — peta konten: halaman sumber kosong (3 kata, tanpa dokumen)
+- C-sakti-pelaksanaan-pembayaran-cetak-cetak-arsip-spp — Cetak Arsip SPP — peta konten: halaman sumber kosong (3 kata, tanpa dokumen)
+- C-sakti-pelaksanaan-pembayaran-cetak-laporan-fa-detail-12-segmen — Laporan FA Detail (12 Segmen) — peta konten: halaman sumber kosong (5 kata, tanpa dokumen); tidak ada padanan persis di menu.json untuk "Laporan FA Detail (12 Segmen)" (label sumber); menu_sakti memakai simpul induk
+- C-sakti-pelaksanaan-pembayaran-cetak-mencetak-spm — Mencetak SPM — peta konten: halaman sumber kosong (2 kata, tanpa dokumen)
+- C-sakti-pelaksanaan-pembayaran-cetak-mencetak-spp — Mencetak SPP — peta konten: halaman sumber kosong (2 kata, tanpa dokumen)
+- C-sakti-pelaksanaan-pembayaran-monitoring — Monitoring — peta konten: hanya struktur menu, tanpa isi; K22: simpul menu tanpa isi, dilewati (eks pembayaran/monitoring)
+- C-sakti-pelaksanaan-pembayaran-monitoring-monitoring-adk — Monitoring ADK — peta konten: halaman sumber kosong (2 kata, tanpa dokumen)
+- C-sakti-pelaksanaan-pembayaran-monitoring-monitoring-belanja-operasional-ppp — Monitoring Belanja Operasional (PPP) — peta konten: halaman sumber kosong (4 kata, tanpa dokumen)
+- C-sakti-pelaksanaan-pembayaran-monitoring-monitoring-dok-pendukung — Monitoring Dok. Pendukung — peta konten: halaman sumber kosong (3 kata, tanpa dokumen)
+- C-sakti-pelaksanaan-pembayaran-monitoring-monitoring-perintah-bayar — Monitoring Perintah Bayar — peta konten: halaman sumber kosong (3 kata, tanpa dokumen)
+- C-sakti-pelaksanaan-pembayaran-monitoring-monitoring-spp — Monitoring SPP — peta konten: halaman sumber kosong (2 kata, tanpa dokumen)
+- C-sakti-pelaksanaan-pembayaran-referensi — Referensi — peta konten: hanya struktur menu, tanpa isi; K22: simpul menu tanpa isi, dilewati (eks pembayaran/referensi)
 
 ## Link rusak
 
@@ -526,53 +593,63 @@ Dibuat: 2026-11-21T14:54:33.831Z
 ## Ringkasan peta konten
 
 Baris per jenis:
-- ditolak: 50
+- ditolak: 67
 - faq: 1
-- indeks: 66
+- indeks: 50
 - juknis: 295
 - konsep: 1
 - peraturan: 1
-- referensi: 2
+- referensi: 1
 
 Artikel target per modul:
-- admin: 14
+- admin: 12
 - akuntansi-pelaporan: 23
-- aset-tetap: 129
-- bantuan: 2
+- aset-tetap: 126
+- bantuan: 1
 - bendahara: 18
 - faq: 1
-- komitmen: 63
+- komitmen: 59
 - kppn-bun: 4
 - mulai: 21
-- pembayaran: 69
+- pembayaran: 64
 - peraturan: 1
-- persediaan: 48
-- piutang: 22
+- persediaan: 45
+- piutang: 21
+- referensi: 2
 
 ### Usulan ditolak
 
-- ADK Data Pegawai — C-sakti-pelaksanaan-komitmen-adk-adk-data-pegawai — halaman sumber kosong (3 kata, tanpa dokumen)
+- Cetak — C-sakti-pelaksanaan-komitmen-cetak — hanya struktur menu, tanpa isi; K22: simpul menu tanpa isi, dilewati (eks komitmen/cetak)
+- Laporan TKDN/PDN — C-sakti-pelaksanaan-komitmen-cetak-laporan-tkdnpdn — hanya struktur menu, tanpa isi; menu_sakti disamakan ke menu.json dari label sumber "Laporan TKDN/PDN" berdasarkan kemiripan label; pastikan saat migrasi; K22: simpul menu tanpa isi, dilewati (eks komitmen/cetak/laporan-tkdn-pdn)
+- Proses Escrow — C-sakti-pelaksanaan-komitmen-proses-escrow — hanya struktur menu, tanpa isi; K22: simpul menu tanpa isi, dilewati (eks komitmen/escrow)
+- Jurnal — C-sakti-pelaksanaan-komitmen-jurnal — hanya struktur menu, tanpa isi; tidak ada padanan persis di menu.json untuk "Jurnal" (label sumber); menu_sakti memakai simpul induk; K22: simpul menu tanpa isi, dilewati (eks komitmen/jurnal)
+- Monitoring — C-sakti-pelaksanaan-komitmen-monitoring — hanya struktur menu, tanpa isi; K22: simpul menu tanpa isi, dilewati (eks komitmen/monitoring)
+- ADK Data Pegawai — C-sakti-pelaksanaan-komitmen-adk-adk-data-pegawai — halaman sumber kosong (3 kata, tanpa dokumen); tidak ada padanan persis di menu.json untuk "ADK Data Pegawai" (label sumber); menu_sakti memakai simpul induk
 - Cetak Resume BAST Barang/Jasa — C-sakti-pelaksanaan-komitmen-cetak-cetak-resume-bast-barangjasa — halaman sumber kosong (4 kata, tanpa dokumen)
 - Cetak Resume BAST Non Kontrak — C-sakti-pelaksanaan-komitmen-cetak-cetak-resume-bast-non-kontrak — halaman sumber kosong (5 kata, tanpa dokumen)
 - Cetak Resume Kontrak — C-sakti-pelaksanaan-komitmen-cetak-cetak-resume-kontrak — halaman sumber kosong (3 kata, tanpa dokumen)
 - Cetak Resume Suplier — C-sakti-pelaksanaan-komitmen-cetak-cetak-resume-suplier — halaman sumber kosong (3 kata, tanpa dokumen)
 - Laporan FA Detail (16 Segmen) — C-sakti-pelaksanaan-komitmen-cetak-laporan-fa-detail-16-segmen — halaman sumber kosong (5 kata, tanpa dokumen)
-- TKDN Per Kategori & Jenis Belanja — C-sakti-pelaksanaan-komitmen-cetak-laporan-tkdnpdn-tkdn-per-kategori-jenis-belanja — halaman sumber kosong (6 kata, tanpa dokumen)
-- TKDN Per Pagu Anggaran — C-sakti-pelaksanaan-komitmen-cetak-laporan-tkdnpdn-tkdn-per-pagu-anggaran — halaman sumber kosong (4 kata, tanpa dokumen)
+- TKDN Per Kategori & Jenis Belanja — C-sakti-pelaksanaan-komitmen-cetak-laporan-tkdnpdn-tkdn-per-kategori-jenis-belanja — halaman sumber kosong (6 kata, tanpa dokumen); menu_sakti disamakan ke menu.json dari label sumber "TKDN Per Kategori & Jenis Belanja" berdasarkan kemiripan label; pastikan saat migrasi
+- TKDN Per Pagu Anggaran — C-sakti-pelaksanaan-komitmen-cetak-laporan-tkdnpdn-tkdn-per-pagu-anggaran — halaman sumber kosong (4 kata, tanpa dokumen); menu_sakti disamakan ke menu.json dari label sumber "TKDN Per Pagu Anggaran" berdasarkan kemiripan label; pastikan saat migrasi
 - Registrasi Escrow — C-sakti-pelaksanaan-komitmen-proses-escrow-registrasi-escrow — halaman sumber kosong (2 kata, tanpa dokumen)
 - Karwas Kontrak — C-sakti-pelaksanaan-komitmen-monitoring-karwas-kontrak — halaman sumber kosong (2 kata, tanpa dokumen)
 - Monitoring ADK GPP — C-sakti-pelaksanaan-komitmen-monitoring-monitoring-adk-gpp — halaman sumber kosong (3 kata, tanpa dokumen)
-- Monitoring ADK Kontrak dan Supplier — C-sakti-pelaksanaan-komitmen-monitoring-monitoring-adk-kontrak-dan-supplier — halaman sumber kosong (5 kata, tanpa dokumen)
+- Monitoring ADK Kontrak dan Supplier — C-sakti-pelaksanaan-komitmen-monitoring-monitoring-adk-kontrak-dan-supplier — halaman sumber kosong (5 kata, tanpa dokumen); tidak ada padanan persis di menu.json untuk "Monitoring ADK Kontrak dan Supplier" (label sumber); menu_sakti memakai simpul induk
 - Interkoneksi BAST Non Kontraktual — C-sakti-pelaksanaan-komitmen-ruh-interkoneksi-bast-non-kontraktual — halaman sumber kosong (4 kata, tanpa dokumen)
-- Migrasi Kontrak Escrow — C-sakti-pelaksanaan-komitmen-ruh-migrasi-kontrak-escrow — halaman sumber kosong (3 kata, tanpa dokumen)
-- Pencatatan BAST Hibah B/J/S — C-sakti-pelaksanaan-komitmen-ruh-pencatatan-bast-hibah-bjs — halaman sumber kosong (4 kata, tanpa dokumen)
-- Pencatatan Penerimaan Barang/Jasa Hibah — C-sakti-pelaksanaan-komitmen-ruh-pencatatan-penerimaan-barangjasa-hibah — halaman sumber kosong (4 kata, tanpa dokumen)
-- Pencatatan Penerimaan Barang/Jasa KKP — C-sakti-pelaksanaan-komitmen-ruh-pencatatan-penerimaan-barangjasa-kkp — halaman sumber kosong (4 kata, tanpa dokumen)
-- Pencatatan Penerimaan Barang/Jasa UP Tunai/Bank — C-sakti-pelaksanaan-komitmen-ruh-pencatatan-penerimaan-barangjasa-up-tunaibank — halaman sumber kosong (5 kata, tanpa dokumen)
-- Pencatatan Penerimaan Barang/Jasa Valas — C-sakti-pelaksanaan-komitmen-ruh-pencatatan-penerimaan-barangjasa-valas — halaman sumber kosong (4 kata, tanpa dokumen)
-- Upload / Rekam ADK CAN — C-sakti-pelaksanaan-komitmen-upload-rekam-upload-rekam-adk-can — halaman sumber kosong (5 kata, tanpa dokumen)
-- Upload / Rekam ADK NRS — C-sakti-pelaksanaan-komitmen-upload-rekam-upload-rekam-adk-nrs — halaman sumber kosong (5 kata, tanpa dokumen)
+- Migrasi Kontrak Escrow — C-sakti-pelaksanaan-komitmen-ruh-migrasi-kontrak-escrow — halaman sumber kosong (3 kata, tanpa dokumen); tidak ada padanan persis di menu.json untuk "Migrasi Kontrak Escrow" (label sumber); menu_sakti memakai simpul induk
+- Pencatatan BAST Hibah B/J/S — C-sakti-pelaksanaan-komitmen-ruh-pencatatan-bast-hibah-bjs — halaman sumber kosong (4 kata, tanpa dokumen); tidak ada padanan persis di menu.json untuk "Pencatatan BAST Hibah B/J/S" (label sumber); menu_sakti memakai simpul induk
+- Pencatatan Penerimaan Barang/Jasa Hibah — C-sakti-pelaksanaan-komitmen-ruh-pencatatan-penerimaan-barangjasa-hibah — halaman sumber kosong (4 kata, tanpa dokumen); tidak ada padanan persis di menu.json untuk "Pencatatan Penerimaan Barang/Jasa Hibah" (label sumber); menu_sakti memakai simpul induk
+- Pencatatan Penerimaan Barang/Jasa KKP — C-sakti-pelaksanaan-komitmen-ruh-pencatatan-penerimaan-barangjasa-kkp — halaman sumber kosong (4 kata, tanpa dokumen); menu_sakti disamakan ke menu.json dari label sumber "Pencatatan Penerimaan Barang/Jasa KKP" berdasarkan kemiripan label; pastikan saat migrasi
+- Pencatatan Penerimaan Barang/Jasa UP Tunai/Bank — C-sakti-pelaksanaan-komitmen-ruh-pencatatan-penerimaan-barangjasa-up-tunaibank — halaman sumber kosong (5 kata, tanpa dokumen); menu_sakti disamakan ke menu.json dari label sumber "Pencatatan Penerimaan Barang/Jasa UP Tunai/Bank" berdasarkan kemiripan label; pastikan saat migrasi
+- Pencatatan Penerimaan Barang/Jasa Valas — C-sakti-pelaksanaan-komitmen-ruh-pencatatan-penerimaan-barangjasa-valas — halaman sumber kosong (4 kata, tanpa dokumen); menu_sakti disamakan ke menu.json dari label sumber "Pencatatan Penerimaan Barang/Jasa Valas" berdasarkan kemiripan label; pastikan saat migrasi
+- Upload / Rekam ADK CAN — C-sakti-pelaksanaan-komitmen-upload-rekam-upload-rekam-adk-can — halaman sumber kosong (5 kata, tanpa dokumen); tidak ada padanan persis di menu.json untuk "Upload / Rekam ADK CAN" (label sumber); menu_sakti memakai simpul induk
+- Upload / Rekam ADK NRS — C-sakti-pelaksanaan-komitmen-upload-rekam-upload-rekam-adk-nrs — halaman sumber kosong (5 kata, tanpa dokumen); tidak ada padanan persis di menu.json untuk "Upload / Rekam ADK NRS" (label sumber); menu_sakti memakai simpul induk
 - Folder Drive Juknis Pelaksanaan — B-folder-ben;B-folder-kom;B-folder-pem;B-folder-bun — wadah folder; isi sudah dipetakan per berkas (bukan konten)
+- ADK — C-sakti-pelaksanaan-pembayaran-adk — hanya struktur menu, tanpa isi; K22: simpul menu tanpa isi, dilewati (eks pembayaran/adk)
+- Cetak — C-sakti-pelaksanaan-pembayaran-cetak — hanya struktur menu, tanpa isi; K22: simpul menu tanpa isi, dilewati (eks pembayaran/cetak)
+- Monitoring — C-sakti-pelaksanaan-pembayaran-monitoring — hanya struktur menu, tanpa isi; K22: simpul menu tanpa isi, dilewati (eks pembayaran/monitoring)
+- Referensi — C-sakti-pelaksanaan-pembayaran-referensi — hanya struktur menu, tanpa isi; K22: simpul menu tanpa isi, dilewati (eks pembayaran/referensi)
 - ADK Rekening Penyalur — C-sakti-pelaksanaan-pembayaran-catatupload-adk-rekening-penyalur — halaman sumber kosong (3 kata, tanpa dokumen)
 - Mencatat Nomor Persetujuan MPHL-BJS — C-sakti-pelaksanaan-pembayaran-catatupload-mencatat-nomor-persetujuan-mphl-bjs — halaman sumber kosong (4 kata, tanpa dokumen)
 - Mencatat Persetujuan SP2D Koreksi — C-sakti-pelaksanaan-pembayaran-catatupload-mencatat-persetujuan-sp2d-koreksi — halaman sumber kosong (4 kata, tanpa dokumen)
@@ -583,7 +660,7 @@ Artikel target per modul:
 - Upload Dokumen Pendukung — C-sakti-pelaksanaan-pembayaran-catatupload-upload-dokumen-pendukung — halaman sumber kosong (3 kata, tanpa dokumen)
 - Cetak Arsip SPM — C-sakti-pelaksanaan-pembayaran-cetak-cetak-arsip-spm — halaman sumber kosong (3 kata, tanpa dokumen)
 - Cetak Arsip SPP — C-sakti-pelaksanaan-pembayaran-cetak-cetak-arsip-spp — halaman sumber kosong (3 kata, tanpa dokumen)
-- Laporan FA Detail (12 Segmen) — C-sakti-pelaksanaan-pembayaran-cetak-laporan-fa-detail-12-segmen — halaman sumber kosong (5 kata, tanpa dokumen)
+- Laporan FA Detail (12 Segmen) — C-sakti-pelaksanaan-pembayaran-cetak-laporan-fa-detail-12-segmen — halaman sumber kosong (5 kata, tanpa dokumen); tidak ada padanan persis di menu.json untuk "Laporan FA Detail (12 Segmen)" (label sumber); menu_sakti memakai simpul induk
 - Mencetak SPM — C-sakti-pelaksanaan-pembayaran-cetak-mencetak-spm — halaman sumber kosong (2 kata, tanpa dokumen)
 - Mencetak SPP — C-sakti-pelaksanaan-pembayaran-cetak-mencetak-spp — halaman sumber kosong (2 kata, tanpa dokumen)
 - Monitoring ADK — C-sakti-pelaksanaan-pembayaran-monitoring-monitoring-adk — halaman sumber kosong (2 kata, tanpa dokumen)
@@ -591,7 +668,13 @@ Artikel target per modul:
 - Monitoring Dok. Pendukung — C-sakti-pelaksanaan-pembayaran-monitoring-monitoring-dok-pendukung — halaman sumber kosong (3 kata, tanpa dokumen)
 - Monitoring Perintah Bayar — C-sakti-pelaksanaan-pembayaran-monitoring-monitoring-perintah-bayar — halaman sumber kosong (3 kata, tanpa dokumen)
 - Monitoring SPP — C-sakti-pelaksanaan-pembayaran-monitoring-monitoring-spp — halaman sumber kosong (2 kata, tanpa dokumen)
+- Migrasi Data — C-persediaan-migrasi-data — hanya deskripsi singkat menu (18 kata); K22: simpul menu tanpa isi, dilewati (eks persediaan/migrasi-data)
+- Monitoring — C-persediaan-monitoring — hanya deskripsi singkat menu (19 kata); K22: simpul menu tanpa isi, dilewati (eks persediaan/monitoring)
+- Upload Data BLU — C-persediaan-upload-data-blu — hanya struktur menu, tanpa isi; K22: simpul menu tanpa isi, dilewati (eks persediaan/upload-data-blu)
 - Mengelola Barang Persediaan — C-persediaan-referensi-mengelola-barang-persediaan — halaman sumber kosong (7 kata, tanpa dokumen)
+- Cetak — C-aset-tetap-cetak — hanya deskripsi singkat menu (19 kata); K22: simpul menu tanpa isi, dilewati (eks aset-tetap/cetak)
+- Usul Hapus & Penghapusan Masal — C-aset-tetap-usul-hapus-penghapusan-masal — hanya struktur menu, tanpa isi; K22: simpul menu tanpa isi, dilewati (eks aset-tetap/penghapusan-masal)
+- Persetujuan — C-aset-tetap-persetujuan — hanya struktur menu, tanpa isi; K22: simpul menu tanpa isi, dilewati (eks aset-tetap/persetujuan)
 - Persetujuan Transaksi - APPROVER — C-aset-tetap-persetujuan-persetujuan-transaksi-approver — halaman sumber kosong (4 kata, tanpa dokumen)
 - Validasi - VALIDATOR — C-aset-tetap-persetujuan-validasi-validator — halaman sumber kosong (3 kata, tanpa dokumen)
 - Batal Transfer Keluar Online — C-aset-tetap-ruh-transaksi-bmn-perolehan-bmn-batal-transfer-keluar-online — halaman sumber kosong (9 kata, tanpa dokumen)
@@ -600,6 +683,8 @@ Artikel target per modul:
 - Koreksi Susulan — C-aset-tetap-ruh-transaksi-bmn-perubahan-bmn-koreksi-susulan — halaman sumber kosong (2 kata, tanpa dokumen)
 - Perubahan Satker Tujuan TK — C-aset-tetap-ruh-transaksi-bmn-perubahan-bmn-perubahan-satker-tujuan-tk — halaman sumber kosong (9 kata, tanpa dokumen)
 - Koreksi Pencatatan KDP — C-aset-tetap-ruh-transaksi-kdp-koreksi-pencatatan-kdp — halaman sumber kosong (3 kata, tanpa dokumen)
+- Tutup Periode — C-piutang-pengelolaan-piutang-tutup-periode — hanya deskripsi singkat menu (24 kata); K1: dipindahkan dari piutang/tutup-periode; K22: simpul menu tanpa isi, dilewati (eks piutang/pengelolaan-piutang/tutup-periode)
+- Mengajukan Interkoneksi Data MonSAKTI — A-layanan;A-dok-059;A-dok-060 — K6: ditunda; dokumentasi API MonSAKTI/MinSAKTI tidak dimigrasikan (eks bantuan/layanan-interkoneksi-monsakti)
 - Beranda — C-home — beranda situs lama (pengantar saja)
 
 ## Perlu diunduh manual
@@ -607,18 +692,18 @@ Artikel target per modul:
 Simpan berkas ke `sources/raw/manual/<id>.<ekstensi>`, lalu jalankan `pnpm migrate:extract --id <id>`.
 
 - A-download — 404 — https://sites.google.com/view/saktiadm/download — halaman 404 di sumber (tautan Unduh Form rusak) — ditautkan dari: -
-- C-dok-079 — Download Juknis Video — https://drive.google.com/file/d/1fHAL9HQEthex16guGU7QzuHaI_f4gtYU/view — butuh login — ditautkan dari: C-aset-tetap-ruh-transaksi-bmn-usulan-penghapusan-bmn-pencatatan-barang-yang-akan-dihapuskan
-- C-dok-081 — Download Juknis Video — https://drive.google.com/file/d/18cP_BLDyS7KhTXw7Ckg3l2dZ4lMRZChD/view — butuh login — ditautkan dari: C-aset-tetap-ruh-transaksi-bmn-usulan-penghapusan-bmn-pencatatan-pembatalan-barang-yang-akan-dihapuskan
-- C-dok-120 — Download Juknis Video — https://drive.google.com/file/d/17Z3z_9NPjxnbhDBwOSE1HoawcO-4H7yN/view — butuh login — ditautkan dari: C-aset-tetap-ruh-transaksi-bmn-bersejarah-saldo-awal
-- C-dok-122 — Download Juknis Video — https://drive.google.com/file/d/1VeqNLPJpNZ4kcvhQfNByZcHnPZvsEBOR/view — butuh login — ditautkan dari: C-aset-tetap-ruh-transaksi-bmn-bersejarah-perolehan
-- C-dok-124 — Download Juknis Video — https://drive.google.com/file/d/13Ze2AJjl_Go-TT849E4UCSLJpQG9Az-x/view — butuh login — ditautkan dari: C-aset-tetap-ruh-transaksi-bmn-bersejarah-penghapusan, C-aset-tetap-ruh-transaksi-bmn-bersejarah-transfer-masuk, C-aset-tetap-ruh-transaksi-bmn-bersejarah-transfer-keluar
+- C-dok-079 — Download Juknis Video — https://drive.google.com/file/d/1fHAL9HQEthex16guGU7QzuHaI_f4gtYU/view — butuh login; dilewati sesuai keputusan pemilik, menunggu berkas manual di sources/raw/manual/ — ditautkan dari: C-aset-tetap-ruh-transaksi-bmn-usulan-penghapusan-bmn-pencatatan-barang-yang-akan-dihapuskan
+- C-dok-081 — Download Juknis Video — https://drive.google.com/file/d/18cP_BLDyS7KhTXw7Ckg3l2dZ4lMRZChD/view — butuh login; dilewati sesuai keputusan pemilik, menunggu berkas manual di sources/raw/manual/ — ditautkan dari: C-aset-tetap-ruh-transaksi-bmn-usulan-penghapusan-bmn-pencatatan-pembatalan-barang-yang-akan-dihapuskan
+- C-dok-120 — Download Juknis Video — https://drive.google.com/file/d/17Z3z_9NPjxnbhDBwOSE1HoawcO-4H7yN/view — butuh login; dilewati sesuai keputusan pemilik, menunggu berkas manual di sources/raw/manual/ — ditautkan dari: C-aset-tetap-ruh-transaksi-bmn-bersejarah-saldo-awal
+- C-dok-122 — Download Juknis Video — https://drive.google.com/file/d/1VeqNLPJpNZ4kcvhQfNByZcHnPZvsEBOR/view — butuh login; dilewati sesuai keputusan pemilik, menunggu berkas manual di sources/raw/manual/ — ditautkan dari: C-aset-tetap-ruh-transaksi-bmn-bersejarah-perolehan
+- C-dok-124 — Download Juknis Video — https://drive.google.com/file/d/13Ze2AJjl_Go-TT849E4UCSLJpQG9Az-x/view — butuh login; dilewati sesuai keputusan pemilik, menunggu berkas manual di sources/raw/manual/ — ditautkan dari: C-aset-tetap-ruh-transaksi-bmn-bersejarah-penghapusan, C-aset-tetap-ruh-transaksi-bmn-bersejarah-transfer-masuk, C-aset-tetap-ruh-transaksi-bmn-bersejarah-transfer-keluar
 - C-dok-146 — Download Juknis Video — https://drive.google.com/file/d/1BEpjfG_LTx2Ql2Cxdyzlwwnu-EaiC8K4/view — HTTP 404 — ditautkan dari: C-piutang-pengelolaan-piutang-transaksi-pelimpahan-piutang-ke-djkn-pupn
 - C-dok-169 — Download Juknis Video — https://drive.google.com/drive/folders/1jeMTgTG6HFRj6ZX1uGRVsqSed21X48j4 — HTTP 404 — ditautkan dari: C-akuntansi-dan-pelaporan-proses-jurnal-penyesuaian-khusus-jurnal-balik
 - C-dok-175 — Download Juknis Video — https://drive.google.com/file/d/1eDd_o6NArpLsiXnl9vpS7p95bUgHlEjZ/view — HTTP 404 — ditautkan dari: C-akuntansi-dan-pelaporan-transaksi-resiprokal
 
 ## Hasil ekstraksi
 
-- diekstrak: 667
+- diekstrak: 595
 - diunduh: 0
 - belum diproses: 0
 - gagal: 9

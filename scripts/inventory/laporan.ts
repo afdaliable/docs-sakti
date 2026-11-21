@@ -92,14 +92,6 @@ export function buatLaporan(manifest: Manifest, tanggal: string): string {
 	for (const [k, n] of Object.entries(perStatus).sort()) baris.push(`- ${k}: ${n}`);
 	baris.push('');
 
-	const penanda = hitungPer(
-		item.filter((i) => i.penanda_sumber),
-		(i) => i.penanda_sumber!,
-	);
-	baris.push('## Penanda sumber', '');
-	for (const [k, n] of Object.entries(penanda)) baris.push(`- ${k}: ${n}`);
-	baris.push('');
-
 	const kosong = item.filter(
 		(i) => i.jenis === 'google-sites' && (i.jumlah_kata ?? 0) < 30 && i.embed.length === 0,
 	);
