@@ -1,0 +1,130 @@
+---
+title: Mengaktifkan OTP Pejabat Perbendaharaan
+description: Alur aktivasi OTP SAKTI bagi pejabat KPA, PPK, dan PPSPM dari perekaman hingga persetujuan KPPN.
+modul: mulai
+peran: [satker]
+jenis: juknis
+kata_kunci: [aktivasi otp, otp kpa, otp ppk, otp ppspm, request otp, pejabat perbendaharaan, aktivasi pejabat]
+status: review
+perlu_review: true
+sumber:
+  - judul: "Juknis Aktivasi OTP Bagi Satuan Kerja (tanpa pemutakhiran)"
+    url: "https://drive.google.com/file/d/1NWZ0yK5QO1BVBChMSKHTUlHNNfyFi_BN/view"
+    jenis: pdf
+    diambil: 2026-11-21
+    id_manifest: A-dok-019
+  - judul: "1. Juknis SAKTI Admin Updated 2024"
+    url: "https://docs.google.com/presentation/d/1dbhAhtZ-uotv_CxZ5GefYlmeF11DCnZNaswn0Oym6PE/"
+    jenis: google-slides
+    diambil: 2026-11-21
+    id_manifest: A-dok-005
+  - judul: "Juknis Admin SAKTI Tipe Satker"
+    url: "https://docs.google.com/presentation/d/10egiSsDGl4zU5e5Ok3jtZAVOmWyTeVRAtSYuMnjyh78/"
+    jenis: google-slides
+    diambil: 2026-11-21
+    id_manifest: A-dok-018
+sidebar:
+  order: 14
+---
+
+import { Steps, Aside } from '@astrojs/starlight/components';
+import SumberAsli from '~/components/SumberAsli.astro';
+
+OTP SAKTI adalah pengamanan transaksi secara elektronik berupa password yang
+hanya berlaku untuk sesi login tunggal, transaksi tunggal, dan waktu terbatas.
+Pejabat perbendaharaan satuan kerja (KPA, PPK, dan PPSPM) pengguna SAKTI wajib
+melakukan aktivasi OTP setelah mendapatkan hak akses (user dan password).
+
+## Tahapan satuan kerja
+
+<Steps>
+
+1. **Perekaman pejabat.** Login user admin, lalu buka menu **administrasi >
+   Umum > Jabatan > Pejabat**, klik tombol **rekam**, pilih data pejabat yang
+   akan ditambahkan, dan simpan.
+
+2. **Pencetakan formulir.** Pada menu yang sama, pilih data pejabat, pilih
+   **Formulir Aktivasi OTP**, lalu klik **Unduh** untuk mencetak Formulir
+   Pengaktifan Pengguna dan OTP SAKTI yang akan ditandatangani
+   pejabat-pejabat terkait.
+
+3. **Pengiriman dokumen ke KPPN.** Satuan kerja menyiapkan dokumen
+   permohonan pengaktifan OTP:
+   - Formulir Pengaktifan Pengguna dan OTP SAKTI untuk KPA, PPK, dan PPSPM
+     dari aplikasi SAKTI yang telah ditandatangani masing-masing pejabat
+     (2 rangkap);
+   - Surat Keputusan sebagai KPA satker;
+   - Surat Keputusan mengenai Penetapan Pengguna SAKTI;
+   - Salinan Kartu Tanda Penduduk (KTP) KPA, PPK, dan PPSPM;
+   - Asli Spesimen Tanda Tangan KPA, PPK, PPSPM, dan Stempel Satker.
+
+</Steps>
+
+## Aktivasi OTP KPA di KPPN
+
+<Steps>
+
+1. KPA login aplikasi SAKTI **di KPPN** dan membuka menu **Administrasi >
+   Umum > Jabatan > Pejabat**.
+
+2. Klik nama pejabat atas nama KPA sendiri, lalu klik **Request OTP** dua
+   kali pada form yang muncul.
+
+3. KPA menerima kode OTP pada nomor HP yang telah didaftarkan, lalu
+   menginput OTP pada komputer KPPN untuk aktivasi.
+
+4. Setelah aktif, KPA mendapat SMS notifikasi bahwa status OTP telah aktif.
+
+</Steps>
+
+Di sisi KPPN, Staff CSO (login admuser) membuka menu monitoring pejabat
+terkait OTP dan melakukan persetujuan, lalu Kasi PDMS/MSKI menyetujui atau
+menolak aktivasi OTP.
+
+## Aktivasi OTP PPK/PPSPM
+
+Aktivasi PPK/PPSPM hanya dapat dilakukan apabila OTP KPA telah aktif.
+
+<Steps>
+
+1. PPK/PPSPM login dengan user masing-masing, masuk ke menu **Administrasi >
+   Umum > Jabatan > Pejabat**, pilih nama pejabat, lalu klik **Verifikasi
+   No. HP** dan **Request OTP**. Masukkan kode OTP yang diterima dan klik
+   proses; status pejabat menjadi **Verifikasi Pejabat**.
+
+2. KPA login dan masuk ke menu **Administrasi > Umum > Jabatan > Pejabat**,
+   pilih data PPK/PPSPM yang akan diaktivasi, lalu klik **kirim**. KPA wajib
+   melakukan input OTP: klik **Request OTP**, masukkan kode yang diterima
+   via SMS, lalu klik proses.
+
+3. PPK/PPSPM menerima SMS notifikasi bahwa datanya telah diusulkan sebagai
+   pengguna OTP, lalu mengunjungi KPPN untuk aktivasi dengan cara yang sama
+   seperti KPA (login di KPPN, klik nama sendiri, **Request OTP**, input OTP
+   pada komputer KPPN). Setelah aktif, PPK/PPSPM mendapat SMS notifikasi.
+
+</Steps>
+
+## Arti status OTP pada referensi pejabat
+
+| Status | Artinya |
+|---|---|
+| Baru | Muncul setelah referensi pejabat direkam. |
+| Kirim | Muncul setelah data referensi pejabat dikirim ke KPPN oleh user KPA. |
+| Setuju CSO | Pelaksana PDMS/MSKI menyetujui aktivasi OTP tingkat pelaksana (admuser). |
+| Aktif | Kasi PDMS/MSKI menyetujui aktivasi OTP tingkat kepala seksi (apruser). |
+| Blokir | Kewenangan OTP diblokir. |
+
+<Aside type="caution" title="Perlu verifikasi">
+Juknis menuliskan jalur menu referensi pejabat sebagai **Administrasi > Umum >
+Jabatan > Pejabat**. Artikel ini menuliskan jalur persis seperti sumber karena
+belum dipastikan padanannya pada menu aplikasi saat ini.
+</Aside>
+
+## Terkait
+
+- [Mendaftarkan Pengguna Tipe Satker K/L](/mulai/pendaftaran-user/satker-kl/)
+- [Memahami Syarat dan Alur Pendaftaran Pengguna](/mulai/pendaftaran-user/syarat-dan-alur/)
+
+## Sumber
+
+<SumberAsli />

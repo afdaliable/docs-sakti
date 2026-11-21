@@ -1,0 +1,136 @@
+---
+title: Mendaftarkan Pengguna Tipe KPPN (Kuasa BUN)
+description: Alur, syarat, dan kelompok pengguna pendaftaran user SAKTI KPPN selaku Kuasa BUN.
+modul: mulai
+peran: [kppn-kanwil]
+jenis: juknis
+kata_kunci: [user kppn, kuasa bun, admuser, apruser, admkppn, pendaftaran kppn]
+status: review
+perlu_review: false
+sumber:
+  - judul: "Download Form untuk Kantor Vertikal DJPb (BUN)"
+    url: "https://sites.google.com/view/saktiadm/kppn-bun-dan-kanwil-djpb"
+    jenis: google-sites
+    diambil: 2026-11-21
+    id_manifest: A-kppn-bun-dan-kanwil-djpb
+  - judul: "Sosialisasi Pendaftaran User SAKTI Kuasa BUN.pptx"
+    url: "https://docs.google.com/presentation/d/1FjwZaD-hz8ieom8b6IhZlSnlDPVRRFMK/"
+    jenis: google-slides
+    diambil: 2026-11-21
+    id_manifest: A-dok-031
+  - judul: "[ Admin ] Sosialisasi Pendaftaran User SAKTI Kuasa BUN (versi lama, digantikan)"
+    url: "https://docs.google.com/presentation/d/1YdQGJaawc-a_mT49frmBOj0Os06Q8Tnb1nfiiQEijhw/"
+    jenis: google-slides
+    diambil: 2026-11-21
+    id_manifest: A-dok-010
+  - judul: "Format SK User KPPN BUN.docx"
+    url: "https://docs.google.com/document/d/1ZiWW_Ia-TC_rlTnCBKytXuLdFqI-Bxub/"
+    jenis: lainnya
+    diambil: 2026-11-21
+    id_manifest: A-dok-027
+  - judul: "Form Pendaftaran Pengguna SAKTI BUN KPPN ABCD.xlsx"
+    url: "https://docs.google.com/spreadsheets/d/1RFfkbT1xNqEkvHQcfSOW_k-prhG2bczT/"
+    jenis: sheets
+    diambil: 2026-11-21
+    id_manifest: A-dok-028
+sidebar:
+  order: 4
+---
+
+import { Steps } from '@astrojs/starlight/components';
+import SumberAsli from '~/components/SumberAsli.astro';
+
+User SAKTI level KPPN selaku **Kuasa BUN** mengakomodasi fitur KPPN termasuk
+fitur Portal SAKTI, dengan role admin, operator, validator, dan approver.
+Pendaftarannya dilakukan melalui Administrator Pusat (SITP).
+
+## Kelompok pengguna
+
+User SAKTI KPPN selaku Kuasa BUN terdiri atas kelompok berikut:
+
+1. **Terkait Manajemen User**
+   - Admin (`admuser`/`admkppn`) — Staf Seksi PDMS/MSKI/CSO; menguji dan
+     mengelola pendaftaran user satker dan OTP.
+   - Approver (`apruser`/`aprkppn`) — Kepala Seksi PDMS/MSKI; menyetujui
+     pendaftaran user satker dan OTP.
+2. **Terkait Pemrosesan UP/TUP**
+   - Operator (`oprkppn`) — Staf Seksi PDMS/MSKI/CSO; menerima dan memeriksa
+     permohonan UP/TUP.
+   - Validator (`valkppn`) — Kepala Seksi PDMS/MSKI; memvalidasi permohonan
+     UP/TUP.
+   - Approver (`aprkppn`) — Kepala KPPN; menyetujui permohonan UP/TUP.
+3. **Terkait proses SPM** — KPPN perlu mendaftarkan tiga tambahan kewenangan:
+   - Operator (`oprkppn`) — Staf Seksi PD/PDMS; menerima, memeriksa, dan
+     mengunggah SPM.
+   - Validator (`valkppn`) — Staf Seksi PD/PDMS; memeriksa dan melanjutkan
+     proses SPM.
+   - Approver (`aprkppn`) — Kepala Seksi PD/PDMS; memeriksa dan menyetujui SPM.
+4. **Terkait proses MPHL-BJS** — Operator Seksi Vera (`oprkppn`), peran
+   `KPPN_OPERATOR_VERA`, untuk pembuatan Hibang Langsung BJS.
+
+Penamaan User ID mengikuti peran: `admkppn_kodesatker_nip`,
+`oprkppn_kodesatker_nip`, `valkppn_kodesatker_nip`, dan
+`aprkppn_kodesatker_nip`. User `admuser`/`admkppn` dan `apruser`/`aprkppn`
+memiliki fungsionalitas yang sama.
+
+## Alur pendaftaran
+
+<Steps>
+
+1. KPPN (Kuasa BUN) membuat dan menyampaikan persyaratan pendaftaran (SK dan
+   Form) user melalui tiket ke HAI-Kemenkeu.
+
+2. Administrator Pusat (SITP) melakukan pengecekan dan proses pendaftaran.
+
+3. Seluruh pengguna yang didaftarkan mendapat SMS berisi user ID dan kode
+   akses SAKTI.
+
+</Steps>
+
+## Persyaratan
+
+- Formulir Pendaftaran Pengguna SAKTI (Excel dan PDF).
+- Surat Keputusan Penetapan Pengguna SAKTI (PDF).
+
+Keduanya ditandatangani oleh **Kepala KPPN**. Kepala KPPN menerbitkan surat
+keputusan penetapan pengguna SAKTI KPPN selaku Kuasa BUN, paling kurang
+memuat nama pengguna, nomor identitas, peran, dan jabatan pada aplikasi SAKTI.
+Apabila pejabat/pegawai KPPN sudah pernah terdaftar dan ingin menambah user,
+syaratnya sama.
+
+Hal yang perlu diperhatikan saat mengisi formulir:
+
+- No. HP harus valid dan aktif, diawali `0` atau `+` kode negara.
+- Jumlah digit NPWP: **15**; jumlah digit NIK: **16**.
+- Apabila terdapat lebih dari 1 user untuk pengguna yang sama, isian data
+  harus sama.
+- Admin user dan Approver user yang sudah ada tidak perlu didaftarkan kembali.
+- Contoh skenario pengisian peran dapat dilihat pada `bit.ly/rolesakti`; form
+  diunduh melalui `bit.ly/USERKPPNBUN`.
+
+Matriks peran untuk pendaftaran user KPPN selaku Kuasa BUN:
+
+| Fitur SAKTI Kuasa BUN | Isian Peran di Excel | Level Pengguna | ID User |
+|---|---|---|---|
+| Manajemen User | `KPPN_ADMIN_USER` | CSO atau Staf MSKI/PDMS | `admkppn_kodesatker_nip` |
+| Manajemen User | `KPPN_APPROVER_USER` | Kasi MSKI/PDMS | `aprkppn_kodesatker_nip` |
+| Manajemen Satker | `KPPN_OPERATOR_MS` | CSO atau Staf MSKI/PDMS | `oprkppn_kodesatker_nip` |
+| Manajemen Satker | `KPPN_VALIDATOR_MS` | Kasi MSKI/PDMS | `valkppn_kodesatker_nip` |
+| Manajemen Satker | `KPPN_APPROVER` | Kepala KPPN | `aprkppn_kodesatker_nip` |
+| Pencairan Dana | `KPPN_OPERATOR_PD` | Staf PD/PDMS — FO | `oprkppn_kodesatker_nip` |
+| Pencairan Dana | `KPPN_VALIDATOR_PD` | Staf PD/PDMS — MO | `valkppn_kodesatker_nip` |
+| Pencairan Dana | `KPPN_APPROVER_PD` | Kasi PD/PDMS | `aprkppn_kodesatker_nip` |
+
+## Formulir
+
+- [SK Penetapan Pengguna SAKTI KPPN - BUN](https://docs.google.com/document/d/1ZiWW_Ia-TC_rlTnCBKytXuLdFqI-Bxub/)
+- [Form Pendaftaran Pengguna SAKTI KPPN - BUN](https://docs.google.com/spreadsheets/d/1RFfkbT1xNqEkvHQcfSOW_k-prhG2bczT/)
+
+## Terkait
+
+- [Memahami Syarat dan Alur Pendaftaran Pengguna](/mulai/pendaftaran-user/syarat-dan-alur/)
+- [Mendaftarkan Pengguna Tipe Kanwil DJPb (BUN)](/mulai/pendaftaran-user/kanwil-djpb-bun/)
+
+## Sumber
+
+<SumberAsli />

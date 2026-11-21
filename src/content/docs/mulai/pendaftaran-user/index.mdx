@@ -1,6 +1,6 @@
 ---
 title: Pendaftaran User
-description: Panduan menu Pendaftaran User pada modul Mulai Menggunakan SAKTI.
+description: Syarat, alur, dan formulir pendaftaran pengguna SAKTI untuk setiap tipe kantor, serta perubahan dan aktivasi OTP.
 modul: mulai
 jenis: indeks
 status: terbit
@@ -9,4 +9,80 @@ sidebar:
   order: 0
 ---
 
-Panduan untuk menu **Pendaftaran User** sedang disiapkan.
+import { CardGrid, LinkCard } from '@astrojs/starlight/components';
+
+Sub-menu ini berisi panduan pendaftaran pengguna SAKTI. Pendaftaran tipe Satker
+dilakukan di KPPN, sedangkan tipe selain Satker melalui HAI DJPb.
+
+<CardGrid>
+	<LinkCard
+		title="Memahami Syarat dan Alur Pendaftaran Pengguna"
+		description="Persyaratan umum dan alur pendaftaran untuk semua tipe pengguna."
+		href="/mulai/pendaftaran-user/syarat-dan-alur/"
+	/>
+	<LinkCard
+		title="Mendaftarkan Pengguna Tipe Satker K/L"
+		description="Pendaftaran pengguna satuan kerja melalui KPPN mitra kerja."
+		href="/mulai/pendaftaran-user/satker-kl/"
+	/>
+	<LinkCard
+		title="Mendaftarkan Pengguna Tipe Kanwil K/L, Unit Eselon I, dan Kementerian"
+		description="Formulir dan ketentuan untuk level wilayah, unit, dan kementerian."
+		href="/mulai/pendaftaran-user/kanwil-unit-kementerian/"
+	/>
+	<LinkCard
+		title="Mendaftarkan Pengguna Tipe KPPN (Kuasa BUN)"
+		description="Pendaftaran pengguna KPPN selaku Kuasa BUN melalui HAI Kemenkeu."
+		href="/mulai/pendaftaran-user/kppn-kuasa-bun/"
+	/>
+	<LinkCard
+		title="Mendaftarkan Pengguna Tipe Kanwil DJPb (BUN)"
+		description="Pendaftaran pengguna Kanwil DJPb tipe Kanwil BUN."
+		href="/mulai/pendaftaran-user/kanwil-djpb-bun/"
+	/>
+	<LinkCard
+		title="Mendaftarkan Pengguna Tipe Direktorat Kantor Pusat DJPb"
+		description="Pendaftaran pengguna level direktorat pada Kantor Pusat DJPb."
+		href="/mulai/pendaftaran-user/direktorat-djpb/"
+	/>
+	<LinkCard
+		title="Mendaftarkan Pengguna Tipe DJA (Penelaah)"
+		description="Formulir pendaftaran pengguna tipe DJA pusat non-satker."
+		href="/mulai/pendaftaran-user/dja/"
+	/>
+	<LinkCard
+		title="Mendaftarkan Pengguna Lingkup DJKN (Pembina)"
+		description="Formulir pendaftaran untuk DJKN pusat, KPKNL, dan Kanwil DJKN."
+		href="/mulai/pendaftaran-user/djkn/"
+	/>
+	<LinkCard
+		title="Mendaftarkan Pengguna Tipe Bappenas (Penelaah)"
+		description="Syarat dan formulir pendaftaran pengguna tipe Bappenas."
+		href="/mulai/pendaftaran-user/bappenas/"
+	/>
+	<LinkCard
+		title="Mendaftarkan Pengguna APIP"
+		description="Pendaftaran user SAKTI APIP untuk akses monSAKTI."
+		href="/mulai/pendaftaran-user/apip/"
+	/>
+	<LinkCard
+		title="Mendaftarkan Pengguna BPK (Auditor) di MonSAKTI"
+		description="Pendaftaran auditor BPK oleh Direktorat APK di monSAKTI."
+		href="/mulai/pendaftaran-user/bpk/"
+	/>
+	<LinkCard
+		title="Mendaftarkan Trainer SAKTI Widyaiswara Kemenkeu"
+		description="Syarat pendaftaran user SAKTI Trainer bagi widyaiswara."
+		href="/mulai/pendaftaran-user/widyaiswara/"
+	/>
+	<LinkCard
+		title="Mengajukan Perubahan Pengguna"
+		description="Perubahan user, kewenangan, data, dan penonaktifan pengguna."
+		href="/mulai/pendaftaran-user/perubahan-pengguna/"
+	/>
+	<LinkCard
+		title="Mengaktifkan OTP Pejabat Perbendaharaan"
+		description="Aktivasi OTP bagi KPA, PPK, dan PPSPM melalui KPPN."
+		href="/mulai/pendaftaran-user/aktivasi-otp/"
+	/>
+</CardGrid>

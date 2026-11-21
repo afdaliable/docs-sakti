@@ -1,0 +1,128 @@
+---
+title: Mendaftarkan Pengguna Tipe Direktorat Kantor Pusat DJPb
+description: Alur, syarat, dan formulir pendaftaran user SAKTI level direktorat pada Kantor Pusat DJPb.
+modul: mulai
+peran: [djpb-pusat]
+jenis: juknis
+kata_kunci: [user direktorat, kantor pusat djpb, dit pa, approver direktorat, pendaftaran direktorat]
+status: review
+perlu_review: false
+sumber:
+  - judul: "Download Form untuk Unit Pada Kantor Pusat DJPb"
+    url: "https://sites.google.com/view/saktiadm/djpb-kantor-pusat"
+    jenis: google-sites
+    diambil: 2026-11-21
+    id_manifest: A-djpb-kantor-pusat
+  - judul: "[ Admin ] Juknis Pendaftaran User SAKTI Level Direktorat PA"
+    url: "https://docs.google.com/presentation/d/1uhQx7GCvFYp-o-ofriZX-ByE4xADKAJiwD_Uk23yLUQ/"
+    jenis: google-slides
+    diambil: 2026-11-21
+    id_manifest: A-dok-008
+  - judul: "Form SK Penetapan Pengguna (User) Tipe Direktorat.docx"
+    url: "https://docs.google.com/document/d/1I4afAxOl-ROqJuGpWCeqTBOYJT0_PJmz/"
+    jenis: lainnya
+    diambil: 2026-11-21
+    id_manifest: A-dok-034
+  - judul: "Form-Pendaftaran-User-SAKTI-Level-Direktorat PA.xlsx"
+    url: "https://docs.google.com/spreadsheets/d/1NmVSO5J8aXNvww7iVWLPSA5GhnbZ9ycU/"
+    jenis: sheets
+    diambil: 2026-11-21
+    id_manifest: A-dok-035
+  - judul: "Form-Pendaftaran-User-SAKTI-Level-Dit PPK BLU.xlsx"
+    url: "https://docs.google.com/spreadsheets/d/1zcQ48MJfAOKYorABIEJiAvWgW--kEYmZ/"
+    jenis: sheets
+    diambil: 2026-11-21
+    id_manifest: A-dok-036
+  - judul: "Form-Pendaftaran-User-SAKTI-Level-Direktorat APK.xlsx"
+    url: "https://docs.google.com/spreadsheets/d/1Euy5SS0pFrCEfzSiiz2NW0Otx-_TDYQz/"
+    jenis: sheets
+    diambil: 2026-11-21
+    id_manifest: A-dok-037
+  - judul: "[DitPKN] Form-Pendaftaran-User-SAKTI-Level-Dit PKN.xlsx"
+    url: "https://docs.google.com/spreadsheets/d/1MZobvkFvlt291Gc02aq118yRFPu03wN-/"
+    jenis: sheets
+    diambil: 2026-11-21
+    id_manifest: A-dok-038
+  - judul: "[DSP] Form SK Penetapan Pengguna (User) Tipe DSP PPP.docx"
+    url: "https://docs.google.com/document/d/1G40vC20R2fO_Q2PHwFi2N_g-9xedlLZ7/"
+    jenis: lainnya
+    diambil: 2026-11-21
+    id_manifest: A-dok-039
+  - judul: "[DSP] Form-Pendaftaran-User-SAKTI-Level-Direktorat SP.xlsx"
+    url: "https://docs.google.com/spreadsheets/d/1ESnP51Zt62aOBeL1Ui6eNoO0ofEKUbpq/"
+    jenis: sheets
+    diambil: 2026-11-21
+    id_manifest: A-dok-040
+  - judul: "[Setditjen] Form SK Penetapan Pengguna (User) Tipe Setditjen.docx"
+    url: "https://docs.google.com/document/d/1iL10XW1xNopDQNP5Jn5xPD4bfqp9FIqt/"
+    jenis: lainnya
+    diambil: 2026-11-21
+    id_manifest: A-dok-041
+  - judul: "[Setditjen] Form-Pendaftaran-User-SAKTI-Level-Direktorat PA.xlsx"
+    url: "https://docs.google.com/spreadsheets/d/1h7XUyULGBSAJaHUhNI6EuzyirX-xCxdT/"
+    jenis: sheets
+    diambil: 2026-11-21
+    id_manifest: A-dok-042
+sidebar:
+  order: 6
+---
+
+import { Steps } from '@astrojs/starlight/components';
+import SumberAsli from '~/components/SumberAsli.astro';
+
+Pendaftaran user SAKTI level **Direktorat** pada Kantor Pusat DJPb mencakup
+tipe Direktorat PA, Direktorat PPK BLU, Direktorat APK, Direktorat PKN,
+Direktorat Sistem Perbendaharaan (SP), dan Setditjen. Saat ini level
+Direktorat dan level pusat hanya memiliki peran **Approver** untuk
+persetujuan, dengan user ID `aprpa_kodesatker_nip`.
+
+## Alur pendaftaran
+
+<Steps>
+
+1. Direktorat membuat dan menyampaikan persyaratan pendaftaran (SK dan Form)
+   user melalui tiket ke HAI-Kemenkeu.
+
+2. Administrator Pusat (SITP) melakukan pengecekan dan proses pendaftaran.
+
+3. Seluruh pengguna yang didaftarkan mendapat SMS berisi user ID dan kode
+   akses SAKTI.
+
+</Steps>
+
+## Persyaratan
+
+- Formulir Pendaftaran Pengguna SAKTI (Excel dan PDF).
+- Surat Keputusan Penetapan Pengguna SAKTI (PDF).
+
+Keduanya ditandatangani oleh **Kepala Kantor atau Direktur**. Direktur
+menerbitkan surat keputusan penetapan pengguna SAKTI, paling kurang memuat
+nama pengguna, nomor identitas, peran, dan jabatan pada aplikasi SAKTI.
+
+Hal yang perlu diperhatikan saat mengisi formulir:
+
+- No. HP harus valid dan aktif, diawali `0` atau `+` kode negara.
+- Jumlah digit NPWP: **15**; jumlah digit NIK: **16**.
+- Kode satker dapat diisi menggunakan kode satker Kantor Pusat.
+- Untuk Direktorat PA, isian peran di Excel adalah `DITPA_APPROVER_ANGGARAN`
+  dengan ID User `aprditpa_kodesatker_nip`.
+
+## Formulir per tipe
+
+| Tipe | SK Penetapan | Form Pendaftaran |
+|---|---|---|
+| Direktorat PA | [SK Pengguna SAKTI - Dit PA](https://docs.google.com/document/d/1I4afAxOl-ROqJuGpWCeqTBOYJT0_PJmz/) | [Form - Dit. PA](https://docs.google.com/spreadsheets/d/1NmVSO5J8aXNvww7iVWLPSA5GhnbZ9ycU/) |
+| Direktorat PPK BLU | [SK Pengguna SAKTI - Dit PPK BLU](https://docs.google.com/document/d/1I4afAxOl-ROqJuGpWCeqTBOYJT0_PJmz/) | [Form - Dit PPK BLU](https://docs.google.com/spreadsheets/d/1zcQ48MJfAOKYorABIEJiAvWgW--kEYmZ/) |
+| Direktorat APK | [SK Pengguna SAKTI - Dit APK](https://docs.google.com/document/d/1I4afAxOl-ROqJuGpWCeqTBOYJT0_PJmz/) | [Form - Dit APK](https://docs.google.com/spreadsheets/d/1Euy5SS0pFrCEfzSiiz2NW0Otx-_TDYQz/) |
+| Direktorat PKN (Operator SPD dan Escrow) | [SK Pengguna SAKTI - Dit PKN](https://docs.google.com/document/d/1I4afAxOl-ROqJuGpWCeqTBOYJT0_PJmz/) | [Form - Dit. PKN](https://docs.google.com/spreadsheets/d/1MZobvkFvlt291Gc02aq118yRFPu03wN-/) |
+| Direktorat SP (Platform Pembayaran Pemerintah) | [SK Pengguna SAKTI - Dit SP](https://docs.google.com/document/d/1G40vC20R2fO_Q2PHwFi2N_g-9xedlLZ7/) | [Form - Dit. SP](https://docs.google.com/spreadsheets/d/1ESnP51Zt62aOBeL1Ui6eNoO0ofEKUbpq/) |
+| Setditjen (Manajemen Waktu Layanan KPPN oleh Admin OTL) | [SK Pengguna SAKTI - Setditjen](https://docs.google.com/document/d/1iL10XW1xNopDQNP5Jn5xPD4bfqp9FIqt/) | [Form - Setditjen](https://docs.google.com/spreadsheets/d/1h7XUyULGBSAJaHUhNI6EuzyirX-xCxdT/) |
+
+## Terkait
+
+- [Memahami Syarat dan Alur Pendaftaran Pengguna](/mulai/pendaftaran-user/syarat-dan-alur/)
+- [Mendaftarkan Pengguna BPK (Auditor) di MonSAKTI](/mulai/pendaftaran-user/bpk/)
+
+## Sumber
+
+<SumberAsli />

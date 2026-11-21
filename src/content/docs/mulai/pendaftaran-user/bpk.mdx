@@ -1,0 +1,77 @@
+---
+title: Mendaftarkan Pengguna BPK (Auditor) di MonSAKTI
+description: Pendaftaran user auditor BPK di monSAKTI yang dikelola oleh Direktorat APK DJPb.
+modul: mulai
+peran: [bpk, djpb-pusat]
+jenis: juknis
+kata_kunci: [user bpk, auditor bpk, monsakti, pendaftaran bpk, dit apk]
+status: review
+perlu_review: false
+sumber:
+  - judul: "Petunjuk Pendaftaran BPK (Auditor) di MonSAKTI"
+    url: "https://sites.google.com/view/saktiadm/bpk-auditor"
+    jenis: google-sites
+    diambil: 2026-11-21
+    id_manifest: A-bpk-auditor
+  - judul: "Manajemen User BPK oleh Dit APK"
+    url: "https://docs.google.com/presentation/d/1-Lu1NrI0vNuy31y0TNtN1oQxRaDnt8FMb2JSM94NbzI/"
+    jenis: google-slides
+    diambil: 2026-11-21
+    id_manifest: A-dok-033
+sidebar:
+  order: 11
+---
+
+import { Steps } from '@astrojs/starlight/components';
+import SumberAsli from '~/components/SumberAsli.astro';
+
+Pengguna monSAKTI tipe **Auditor BPK** didaftarkan oleh Direktorat APK DJPb
+berdasarkan Surat Tugas BPK. Pendaftaran dilakukan di **monSAKTI** dengan
+login menggunakan user SAKTI tipe Direktorat APK.
+
+## Alur pendaftaran
+
+<Steps>
+
+1. BPK menyampaikan **Surat Tugas** masing-masing ke Direktorat APK, DJPb.
+
+2. Dit APK login ke monSAKTI menggunakan user SAKTI (*Single Sign-On*)
+   dengan peran Admin.
+
+3. Buka menu **Admin - Manajemen User** pada monSAKTI.
+
+4. Klik tombol **Tambah**, lalu lengkapi data pendaftaran:
+   - Peran User: **Audit** = BPK.
+   - Tanggal aktif akun maksimal **6 bulan**.
+   - Opsi pilih K/L hanya muncul setelah peran audit dipilih.
+
+5. Auditor BPK didaftarkan dan di-assign oleh pengguna SAKTI tipe Direktorat
+   APK di monSAKTI.
+
+</Steps>
+
+Pada menu Manajemen User, Dit APK juga dapat:
+
+- **Melihat daftar K/L** yang telah di-assign/mapping pada user.
+- **Reset password** pengguna.
+- **Menghapus** akses pengguna.
+
+## Ketentuan pengguna BPK
+
+- UserID untuk login BPK di monSAKTI adalah **NIK**.
+- Password otomatis dikirimkan melalui email kepada email yang didaftarkan
+  pada user BPK.
+- Setelah login pertama kali menggunakan password default, user otomatis
+  diarahkan untuk mengganti password awal; menu tidak dapat diakses sebelum
+  password diganti. Setelah itu user login kembali dengan password baru.
+- User BPK otomatis berstatus **nonaktif** apabila sudah berada di luar
+  tanggal penugasan.
+
+## Terkait
+
+- [Memahami Syarat dan Alur Pendaftaran Pengguna](/mulai/pendaftaran-user/syarat-dan-alur/)
+- [Mendaftarkan Pengguna Tipe Direktorat Kantor Pusat DJPb](/mulai/pendaftaran-user/direktorat-djpb/)
+
+## Sumber
+
+<SumberAsli />

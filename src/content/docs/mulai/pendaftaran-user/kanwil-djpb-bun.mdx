@@ -1,0 +1,121 @@
+---
+title: Mendaftarkan Pengguna Tipe Kanwil DJPb (BUN)
+description: Alur, syarat, dan matriks peran pendaftaran user SAKTI Kanwil DJPb tipe Kanwil BUN.
+modul: mulai
+peran: [kppn-kanwil]
+jenis: juknis
+kata_kunci: [user kanwil djpb, kanwil bun, revisi anggaran kanwil, pendaftaran kanwil djpb]
+status: review
+perlu_review: false
+sumber:
+  - judul: "Download Form untuk Kantor Vertikal DJPb (BUN)"
+    url: "https://sites.google.com/view/saktiadm/kppn-bun-dan-kanwil-djpb"
+    jenis: google-sites
+    diambil: 2026-11-21
+    id_manifest: A-kppn-bun-dan-kanwil-djpb
+  - judul: "[ Admin ] Juknis Pendaftaran User SAKTI Level Kanwil DJPb BUN"
+    url: "https://docs.google.com/presentation/d/1VQvascq_77ChU9kZEWL6JVwpw-aOT7CO1_HehP35nxY/"
+    jenis: google-slides
+    diambil: 2026-11-21
+    id_manifest: A-dok-009
+  - judul: "6. Form SK Penetapan Pengguna (User) Tipe Kanwil BUN.docx"
+    url: "https://docs.google.com/document/d/160N5ZJQBlmQszmwdcO2ouuWabS1Wwb6Y/"
+    jenis: lainnya
+    diambil: 2026-11-21
+    id_manifest: A-dok-029
+  - judul: "Form-Pendaftaran-User-SAKTI-Kanwil BUN.xlsx"
+    url: "https://docs.google.com/spreadsheets/d/1mc32TYY-RJ2ZIu5Vqv6GjFQRfy3t6Aj1/"
+    jenis: sheets
+    diambil: 2026-11-21
+    id_manifest: A-dok-030
+sidebar:
+  order: 5
+---
+
+import { Steps, Aside } from '@astrojs/starlight/components';
+import SumberAsli from '~/components/SumberAsli.astro';
+
+User SAKTI di Kanwil DJPb terdiri atas dua tipe: **tipe Satker** (modul
+transaksional; role admin, operator, validator, approver) dan **tipe Kanwil
+BUN** (fitur BUN, mengakomodasi validasi dan persetujuan revisi anggaran;
+role validator dan approver). Artikel ini membahas pendaftaran tipe Kanwil
+BUN.
+
+## Kelompok pengguna
+
+- Peran **Validator** selaku front office: `valkanwil_kodesatker_nip`.
+- Peran **Approver** selaku back office: `aprkanwil_kodesatker_nip`.
+- Peran **Admin** untuk pendaftaran user Kanwil K/L dan pengawasan revisi,
+  yaitu pegawai Bidang SKKI: `admkanwil_kodesatker_nip`.
+- Untuk akses monSAKTI pelaporan, pengguna Bidang PAPK mendaftarkan validator
+  dan mendapatkan user `valkanwil_kodesatker_nip`.
+
+## Alur pendaftaran
+
+<Steps>
+
+1. Kanwil DJPb selaku BUN membuat dan menyampaikan persyaratan pendaftaran
+   (SK dan Form) user melalui tiket ke HAI-Kemenkeu.
+
+2. Administrator Pusat (SITP) melakukan pengecekan dan proses pendaftaran.
+
+3. Seluruh pengguna yang didaftarkan mendapat SMS berisi user ID dan kode
+   akses SAKTI.
+
+</Steps>
+
+## Persyaratan
+
+- Formulir Pendaftaran Pengguna SAKTI (Excel dan PDF).
+- Surat Keputusan Penetapan Pengguna SAKTI (PDF).
+
+Keduanya ditandatangani oleh **Kepala Kanwil DJPb**, yang menerbitkan surat
+keputusan penetapan pengguna SAKTI paling kurang memuat nama pengguna, nomor
+identitas, peran, dan jabatan pada aplikasi SAKTI.
+
+Hal yang perlu diperhatikan saat mengisi formulir:
+
+- No. HP harus valid dan aktif, diawali `0` atau `+` kode negara.
+- Jumlah digit NPWP: **15**; jumlah digit NIK: **16**.
+- Format semua kolom: *text*.
+- Validator dan Approver boleh lebih dari satu.
+
+Matriks peran untuk pendaftaran baru user SAKTI Kanwil DJPb (bukan selaku
+satker):
+
+| Fitur SAKTI Kanwil DJPb | Isian Peran di Excel | Level Pengguna | ID User |
+|---|---|---|---|
+| Modul anggaran | `KANWILBUN_VALIDATOR_ANGGARAN` | Front Office | `valkanwil_kodesatker_nip` |
+| Modul anggaran | `KANWILBUN_APPROVER_ANGGARAN` | Middle Office | `aprkanwil_kodesatker_nip` |
+| Pendaftaran user Kanwil K/L | `KANWILBUN_ADMIN_SKKI` | Seksi STA/UKI | `admkanwil_kodesatker_nip` |
+| monSAKTI pelaporan | `KANWILBUN_VALIDATOR_PAPK` | Pengguna monSAKTI Pelaporan | `valkanwil_kodesatker_nip` |
+| Login monSAKTI | `KANWILBUN_MONITORING` | Pegawai Kanwil DJPb yang membutuhkan akses monSAKTI di luar peran sebelumnya | `oprkanwil_kodesatker_nip` |
+
+Keterangan:
+
+- Seluruh user dengan kewenangan Kanwil (`admkanwil`, `oprkanwil`,
+  `valkanwil`, `aprkanwil`) otomatis dapat mengakses monSAKTI dengan user
+  SAKTI-nya.
+- Pegawai yang sudah memiliki user SAKTI tipe Kanwil tidak perlu mendaftarkan
+  kembali kewenangan `KANWILBUN_MONITORING`.
+- `KANWILBUN_MONITORING` disediakan bagi pegawai Kanwil DJPb yang belum
+  memiliki user Kanwil tetapi membutuhkan akses monSAKTI.
+
+<Aside type="caution" title="Perlu verifikasi">
+Juknis menyebut detail pendaftaran user Kanwil K/L di Kanwil DJPb masih dalam
+proses pengembangan dan pembahasan.
+</Aside>
+
+## Formulir
+
+- [SK Penetapan User SAKTI Kanwil BUN](https://docs.google.com/document/d/160N5ZJQBlmQszmwdcO2ouuWabS1Wwb6Y/)
+- [Form Pendaftaran User SAKTI Kanwil BUN](https://docs.google.com/spreadsheets/d/1mc32TYY-RJ2ZIu5Vqv6GjFQRfy3t6Aj1/)
+
+## Terkait
+
+- [Memahami Syarat dan Alur Pendaftaran Pengguna](/mulai/pendaftaran-user/syarat-dan-alur/)
+- [Mendaftarkan Pengguna Tipe KPPN (Kuasa BUN)](/mulai/pendaftaran-user/kppn-kuasa-bun/)
+
+## Sumber
+
+<SumberAsli />

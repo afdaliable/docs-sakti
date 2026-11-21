@@ -1,0 +1,136 @@
+---
+title: Mendaftarkan Pengguna Tipe Kanwil K/L, Unit Eselon I, dan Kementerian
+description: Formulir dan ketentuan pendaftaran pengguna SAKTI level Kanwil K/L, Unit Eselon I, dan Kementerian (BA).
+modul: mulai
+peran: [satker]
+jenis: juknis
+kata_kunci: [user kanwil, user eselon 1, user kementerian, konsolidator laporan, konsolidator aset, pendaftaran unit]
+status: review
+perlu_review: false
+sumber:
+  - judul: "Download Form untuk Kementerian/Lembaga"
+    url: "https://sites.google.com/view/saktiadm/satker-kl"
+    jenis: google-sites
+    diambil: 2026-11-21
+    id_manifest: A-satker-kl
+  - judul: "SAKTI Admin Knowledge Base"
+    url: "https://sites.google.com/view/saktiadm/beranda"
+    jenis: google-sites
+    diambil: 2026-11-21
+    id_manifest: A-beranda
+  - judul: "2. Format SK Penetapan User SAKTI - Kanwil KL.docx"
+    url: "https://docs.google.com/document/d/1NhWdgGzXMXSkrHNqB3bm2McbdDUxQRkj/"
+    jenis: lainnya
+    diambil: 2026-11-21
+    id_manifest: A-dok-021
+  - judul: "Form-Pendaftaran-User-SAKTI-Kanwil KL.xlsx"
+    url: "https://docs.google.com/spreadsheets/d/1ycWRDk4nhvMDM2vfVqrg4yRzGYGZ4qDE/"
+    jenis: sheets
+    diambil: 2026-11-21
+    id_manifest: A-dok-022
+  - judul: "3. Format SK Penetapan User SAKTI - Unit.docx"
+    url: "https://docs.google.com/document/d/1EdUCB9PepcWVYnCZoQWRGpoVm7hDlfQj/"
+    jenis: lainnya
+    diambil: 2026-11-21
+    id_manifest: A-dok-023
+  - judul: "Form-Pendaftaran-User-SAKTI-Level-Unit Es 1.xlsx"
+    url: "https://docs.google.com/spreadsheets/d/1JPcHt6nYbc0MV-ruZgog1gZEpbFmF4-I/"
+    jenis: sheets
+    diambil: 2026-11-21
+    id_manifest: A-dok-024
+  - judul: "4. Format SK Penetapan User SAKTI - BA.docx"
+    url: "https://docs.google.com/document/d/1sa5J1j3IAzIVa50e9KIATug45QPfuSM_/"
+    jenis: lainnya
+    diambil: 2026-11-21
+    id_manifest: A-dok-025
+  - judul: "Form-Pendaftaran-User-SAKTI-Tipe-Kementerian.xlsx"
+    url: "https://docs.google.com/spreadsheets/d/1zeeJiBGU_dWnn530MoUjssGuAV9SHMlZ/"
+    jenis: sheets
+    diambil: 2026-11-21
+    id_manifest: A-dok-026
+sidebar:
+  order: 3
+---
+
+import { Steps } from '@astrojs/starlight/components';
+import SumberAsli from '~/components/SumberAsli.astro';
+
+Kementerian/Lembaga dapat mendaftarkan user level **Kanwil K/L**, **Unit
+Eselon I**, dan **Kementerian (BA)**, antara lain untuk kebutuhan konsolidator
+aset dan pelaporan. Persyaratan disampaikan melalui
+[alur pendaftaran tipe selain Satker](/mulai/pendaftaran-user/syarat-dan-alur/)
+ke HAI DJPb menggunakan email kedinasan (`@sakti.mail.go.id`/`@go.id`).
+
+## Tipe Kanwil K/L
+
+Untuk keperluan pendaftaran user konsolidator aset dan pelaporan di tingkat
+wilayah, atau revisi anggaran melalui kantor wilayah — khusus **MA, Polri,
+Kemenag, dan ATR/BPN** — gunakan formulir berikut:
+
+- [Form SK Penetapan User SAKTI tipe Kanwil K/L](https://docs.google.com/document/d/1NhWdgGzXMXSkrHNqB3bm2McbdDUxQRkj/)
+- [Form Pendaftaran User SAKTI tipe Kanwil K/L](https://docs.google.com/spreadsheets/d/1ycWRDk4nhvMDM2vfVqrg4yRzGYGZ4qDE/)
+
+## Tipe Unit (Eselon I)
+
+Untuk pendaftaran user level UNIT atau Eselon I (Apru/Orpu), baik bagi anggaran
+maupun konsolidator aset dan pelaporan:
+
+- [Form SK Penetapan User SAKTI tipe Unit/Eselon I](https://docs.google.com/document/d/1EdUCB9PepcWVYnCZoQWRGpoVm7hDlfQj/)
+- [Form Pendaftaran User SAKTI tipe Unit/Eselon I](https://docs.google.com/spreadsheets/d/1JPcHt6nYbc0MV-ruZgog1gZEpbFmF4-I/)
+
+## Tipe Kementerian (BA)
+
+Untuk pendaftaran user tipe Kementerian (Badan Anggaran tingkat kementerian):
+
+- [Form SK Penetapan User Tipe Kementerian](https://docs.google.com/document/d/1sa5J1j3IAzIVa50e9KIATug45QPfuSM_/)
+- [Form Pendaftaran User SAKTI Tipe Kementerian](https://docs.google.com/spreadsheets/d/1zeeJiBGU_dWnn530MoUjssGuAV9SHMlZ/)
+
+Tipe Kementerian saat ini mengakomodasi kewenangan modul:
+
+1. Anggaran (untuk yang membutuhkan tipe Kementerian).
+2. Aset (untuk konsolidasi laporan BMN tingkat Kementerian).
+3. Pelaporan (untuk konsolidasi laporan Keuangan tingkat Kementerian).
+4. APIP Anggaran.
+5. APIP Pelaporan.
+
+Ajukan sesuai kebutuhan kantor Anda; apabila tidak ada/tidak membutuhkan,
+tidak perlu didaftarkan.
+
+## User konsolidator aset/pelaporan level Unit dan Kementerian
+
+Bagi K/L yang ingin membuat user level konsolidator Unit/Kementerian terkait
+pelaporan laporan keuangan, sampaikan dokumen kelengkapan ke
+**hai.kemenkeu.go.id** dengan lampiran:
+
+1. SK Penetapan User SAKTI Level Kementerian (PDF).
+2. Form Pendaftaran Pengguna Aplikasi SAKTI (PDF dan Excel).
+
+Contoh SK dan form dapat diunduh pada halaman
+[formulir tipe Satker K/L](/mulai/pendaftaran-user/satker-kl/); ganti
+terminologi tingkat "Satker" menjadi "Unit" atau "Kementerian".
+
+Hal yang perlu diperhatikan:
+
+- Penandatangan SK dan Form Pendaftaran minimal adalah Pejabat Eselon III.
+- Kode Satker adalah kode satker yang ditunjuk sebagai konsolidator, misalnya
+  kode satker sekretariat/biro keuangan (disesuaikan pada masing-masing K/L).
+- Peran untuk level Unit/Kementerian:
+  - `UNIT_OPERATOR_PELAPORAN` — konsolidator pelaporan level Unit
+  - `UNIT_OPERATOR_ASET` — konsolidator aset level Unit
+  - `UNIT_OPERATOR_ANGGARAN`
+  - `UNIT_APPROVER_ANGGARAN`
+  - `ADMIN_UNIT`
+  - `KEMENTERIAN_OPERATOR_PELAPORAN` — konsolidator pelaporan level Kementerian
+  - `KEMENTERIAN_OPERATOR_ASET` — konsolidator aset level Kementerian
+- Pastikan email yang digunakan adalah SAKTI Mail; apabila belum memiliki,
+  buat user SAKTI Mail di KPPN terlebih dahulu.
+
+## Terkait
+
+- [Memahami Syarat dan Alur Pendaftaran Pengguna](/mulai/pendaftaran-user/syarat-dan-alur/)
+- [Mendaftarkan Pengguna Tipe Satker K/L](/mulai/pendaftaran-user/satker-kl/)
+- [Mendaftarkan dan Mengaktifkan Email SAKTI](/mulai/email-sakti/)
+
+## Sumber
+
+<SumberAsli />

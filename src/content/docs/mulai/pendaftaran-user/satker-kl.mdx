@@ -1,0 +1,168 @@
+---
+title: Mendaftarkan Pengguna Tipe Satker K/L
+description: Alur, persyaratan, dan formulir pendaftaran pengguna SAKTI tipe Satuan Kerja melalui KPPN.
+modul: mulai
+peran: [satker]
+jenis: juknis
+kata_kunci: [daftar user satker, pendaftaran pengguna satker, sk penetapan, form pendaftaran satker, user baru sakti]
+status: review
+perlu_review: false
+sumber:
+  - judul: "Download Form untuk Kementerian/Lembaga"
+    url: "https://sites.google.com/view/saktiadm/satker-kl"
+    jenis: google-sites
+    diambil: 2026-11-21
+    id_manifest: A-satker-kl
+  - judul: "1. Juknis SAKTI Admin Updated 2024"
+    url: "https://docs.google.com/presentation/d/1dbhAhtZ-uotv_CxZ5GefYlmeF11DCnZNaswn0Oym6PE/"
+    jenis: google-slides
+    diambil: 2026-11-21
+    id_manifest: A-dok-005
+  - judul: "Juknis Admin SAKTI Tipe Satker"
+    url: "https://docs.google.com/presentation/d/10egiSsDGl4zU5e5Ok3jtZAVOmWyTeVRAtSYuMnjyh78/"
+    jenis: google-slides
+    diambil: 2026-11-21
+    id_manifest: A-dok-018
+  - judul: "1. Format SK Penetapan User SAKTI - Satker.docx"
+    url: "https://docs.google.com/document/d/10TIC1KwKcAufdgVyzy00VOYMADoDMp9W/"
+    jenis: lainnya
+    diambil: 2026-11-21
+    id_manifest: A-dok-011
+  - judul: "Contoh Form-Pendaftaran-User-SAKTI-Web-SATKER.xlsx"
+    url: "https://docs.google.com/spreadsheets/d/1ULbVmwkZIXPMhEFIJB9dHL0pEgvce8Ni/"
+    jenis: sheets
+    diambil: 2026-11-21
+    id_manifest: A-dok-012
+  - judul: "Contoh Baru Form-Perubahan-User-SAKTI-Web.xlsx"
+    url: "https://docs.google.com/spreadsheets/d/1mN0DbnY5wAcPZYCyU-28iHv3wH4N9lB4/"
+    jenis: sheets
+    diambil: 2026-11-21
+    id_manifest: A-dok-013
+  - judul: "Form_SAKTI_Mail.xlsx"
+    url: "https://docs.google.com/spreadsheets/d/1EorQlrHPEscyoBSe5lu4zMhi9QODsACq/"
+    jenis: sheets
+    diambil: 2026-11-21
+    id_manifest: A-dok-014
+  - judul: "Form-Referensi-Konfigurasi-Satker-contoh.xlsx"
+    url: "https://docs.google.com/spreadsheets/d/173AMUBASh4w_c4Vp-LMusgHQmxLJsmBd/"
+    jenis: sheets
+    diambil: 2026-11-21
+    id_manifest: A-dok-015
+  - judul: "Contoh Form Pemutakhiran Kewenangan.xlsx"
+    url: "https://docs.google.com/spreadsheets/d/1TDLN6snEeyI97ly-I4P6b1Ol4EVFH-Dl/"
+    jenis: sheets
+    diambil: 2026-11-21
+    id_manifest: A-dok-016
+  - judul: "Form Pemutakhiran Data Pengguna Aplikasi SAKTI.xlsx"
+    url: "https://docs.google.com/spreadsheets/d/1BSJsD51wKnPgqRTdG0mThgWSS4IKuKW1/"
+    jenis: sheets
+    diambil: 2026-11-21
+    id_manifest: A-dok-017
+sidebar:
+  order: 2
+---
+
+import { Steps } from '@astrojs/starlight/components';
+import SumberAsli from '~/components/SumberAsli.astro';
+
+Pendaftaran pengguna tipe **Satker** dilakukan oleh KPPN. Artikel ini merangkum
+alur, syarat, dan formulir pendaftaran pengguna satuan kerja; untuk proses
+lainnya seperti perubahan user, penghapusan user, pemutakhiran data, pembuatan
+email SAKTI, reset password, dan pendaftaran OTP — yang juga dilakukan melalui
+KPPN — lihat artikel terkait di bawah. Apabila terdapat kendala, hubungi
+hai.kemenkeu.go.id.
+
+## Alur pendaftaran
+
+<Steps>
+
+1. Satker membuat dan menyampaikan persyaratan pendaftaran user ke KPPN.
+
+2. KPPN (admkppn) melakukan pengecekan dan pengunggahan.
+
+3. KPPN (aprkppn) melakukan pengecekan, penolakan, atau persetujuan.
+
+4. User mendapatkan SMS berisi **username dan password** untuk kode akses
+   SAKTI. Untuk pengguna yang telah memiliki user sebelumnya, login dapat
+   menggunakan password eksisting.
+
+5. Admin satker melakukan perekaman referensi pejabat, dan KPA melanjutkan
+   [proses aktivasi OTP](/mulai/pendaftaran-user/aktivasi-otp/) agar dapat
+   melakukan persetujuan hak akses pengguna operasional modul di satkernya.
+
+</Steps>
+
+Setelah dokumen dari satuan kerja diteliti, KPPN mengunggah Excel form
+pendaftaran awal pengguna. Status pendaftaran menjadi *menunggu persetujuan
+KPPN*, lalu menjadi *disetujui/aktif* setelah apruser menyetujui, dan user
+menerima SMS hak akses. Hak akses pengguna SAKTI dilarang diberikan kepada
+orang lain.
+
+## Persyaratan
+
+Bagi satker dan pengguna yang belum terdaftar pada SAKTI:
+
+- Formulir Referensi Satker, dan Formulir Pendaftaran Awal Pengguna SAKTI
+  (file PDF dan Excel).
+- Surat Keputusan (SK) Penunjukan sebagai KPA.
+- Surat Keputusan (SK) Penetapan Pengguna SAKTI.
+- Salinan Kartu Tanda Penduduk (KTP) KPA dan Administrator Lokal.
+- Asli Spesimen Tanda Tangan KPA dan Stempel Satker.
+
+Bagi satker yang sudah terdaftar dan hanya ingin menambah user:
+
+- Formulir Pendaftaran Awal Pengguna SAKTI (PDF yang sudah ditandatangani KPA
+  dan Excel).
+- Surat Keputusan Penetapan Pengguna SAKTI (PDF yang sudah ditandatangani KPA).
+
+Persyaratan dapat diakses melalui `s.id/pendaftaranSAKTI` atau `bit.ly/saktiadm`.
+
+### SK Penetapan Pengguna SAKTI
+
+Sesuai PER-16/PB/2020 Pasal 5 ayat 1, KPA menerbitkan surat keputusan
+penetapan pengguna SAKTI pada lingkup satker, paling kurang memuat: nama
+pengguna, nomor identitas, kewenangan pengguna, dan jabatan
+perbendaharaan/kewenangan dalam SAKTI.
+
+### Formulir Referensi Satker (khusus satker baru)
+
+Satuan kerja baru mengisi Form Referensi SATKER dengan memperhatikan:
+
+- **Kode UAKPB** tergenerate apabila kode satker, kode lokasi, kode wilayah,
+  dan kewenangan terisi.
+- **Kewenangan** dan **Level Konsolidasi** dipilih dari menu drop-down.
+- **Satker konsolidasi** adalah satuan kerja yang menjadi konsolidasian
+  laporan (kanwil/eselon I-nya).
+- Data harus sesuai dengan aplikasi eksisting.
+
+### Formulir Pendaftaran Awal Pengguna SAKTI
+
+- Isian dimulai dari **baris 8**.
+- Peran diisi sesuai petunjuk pada `bit.ly/rolesakti`; untuk pendaftaran KPA
+  dan admin, peran diisi **KPA** / **ADMIN** (huruf kapital).
+- No. HP harus valid dan aktif, diawali `0` atau `+` kode negara.
+- Jumlah digit NIK: **16**; jumlah digit NPWP: **15**; jumlah digit nomor SK:
+  **8**.
+- Apabila terdapat lebih dari 1 user untuk pengguna yang sama, isian data
+  harus sama.
+
+## Formulir
+
+- [a. Form SK Penetapan Pengguna SAKTI](https://docs.google.com/document/d/10TIC1KwKcAufdgVyzy00VOYMADoDMp9W/) — penetapan dari KPA atas siapa saja yang berhak menjadi pengguna SAKTI.
+- [b. Form Pendaftaran Pengguna SAKTI](https://docs.google.com/spreadsheets/d/1ULbVmwkZIXPMhEFIJB9dHL0pEgvce8Ni/) — data user (NIK, NIP, NPWP, email, No HP) yang akan didaftarkan.
+- [c. Form Perubahan Pengguna SAKTI](https://docs.google.com/spreadsheets/d/1mN0DbnY5wAcPZYCyU-28iHv3wH4N9lB4/) — pendetailan user yang berganti, dari data user awal menjadi user baru.
+- [d. Form Pendaftaran SAKTI Mail](https://docs.google.com/spreadsheets/d/1EorQlrHPEscyoBSe5lu4zMhi9QODsACq/) — pendaftaran email SAKTI ke KPPN.
+- [e. Form Konfigurasi Referensi Satker](https://docs.google.com/spreadsheets/d/173AMUBASh4w_c4Vp-LMusgHQmxLJsmBd/) — untuk satker yang baru pertama kali mendaftar di SAKTI.
+- [f. Form Pemutakhiran Kewenangan](https://docs.google.com/spreadsheets/d/1TDLN6snEeyI97ly-I4P6b1Ol4EVFH-Dl/) — perubahan kewenangan user, misalnya penambahan role modul.
+- [g. Form Pemutakhiran Identitas Data Pribadi](https://docs.google.com/spreadsheets/d/1BSJsD51wKnPgqRTdG0mThgWSS4IKuKW1/) — koreksi nomor HP, NIK, email, dan data pendaftaran.
+
+## Terkait
+
+- [Memahami Syarat dan Alur Pendaftaran Pengguna](/mulai/pendaftaran-user/syarat-dan-alur/)
+- [Mendaftarkan dan Mengaktifkan Email SAKTI](/mulai/email-sakti/)
+- [Mengajukan Perubahan Pengguna](/mulai/pendaftaran-user/perubahan-pengguna/)
+- [Mengaktifkan OTP Pejabat Perbendaharaan](/mulai/pendaftaran-user/aktivasi-otp/)
+
+## Sumber
+
+<SumberAsli />

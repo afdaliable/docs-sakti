@@ -1,0 +1,95 @@
+---
+title: Mendaftarkan Pengguna APIP
+description: Pendaftaran user SAKTI khusus APIP untuk mendapatkan akses monitoring laporan di monSAKTI.
+modul: mulai
+peran: [apip]
+jenis: juknis
+kata_kunci: [user apip, monsakti apip, monitoring laporan apip, pendaftaran apip, auditor kementerian]
+status: review
+perlu_review: false
+sumber:
+  - judul: "Download Form Pengguna SAKTI - APIP"
+    url: "https://sites.google.com/view/saktiadm/apip"
+    jenis: google-sites
+    diambil: 2026-11-21
+    id_manifest: A-apip
+  - judul: "[ Admin ] Sosialisasi Pendaftaran User SAKTI APIP"
+    url: "https://docs.google.com/presentation/d/1ixS_U0HdDLhDZ2ZazRH1q1W0goHYH-1Ac51Fkw97yNM/"
+    jenis: google-slides
+    diambil: 2026-11-21
+    id_manifest: A-dok-051
+  - judul: "[APIP] Form SK Penetapan Pengguna (User) APIP.docx"
+    url: "https://docs.google.com/document/d/1R463MUCNj-c2UECNq3N0IQT-KDqh_yzh/"
+    jenis: lainnya
+    diambil: 2026-11-21
+    id_manifest: A-dok-052
+  - judul: "[APIP] Form-Pendaftaran-User-SAKTI.xlsx"
+    url: "https://docs.google.com/spreadsheets/d/1saY61orNyOmnd_DOYsv_udZuEN3qOxgv/"
+    jenis: sheets
+    diambil: 2026-11-21
+    id_manifest: A-dok-053
+  - judul: "Form_SAKTI_Mail.xlsx"
+    url: "https://docs.google.com/spreadsheets/d/1vE3VHuiN8tNs8PR07Dq6FOYrSxj122on/"
+    jenis: sheets
+    diambil: 2026-11-21
+    id_manifest: A-dok-054
+sidebar:
+  order: 10
+---
+
+import { Steps } from '@astrojs/starlight/components';
+import SumberAsli from '~/components/SumberAsli.astro';
+
+Bagi APIP yang membutuhkan penelaahan pelaporan satuan kerja lingkup
+Kementerian/Lembaga-nya, SAKTI menyediakan fasilitas monitoring laporan
+keuangan pada aplikasi **monSAKTI** (monsakti.kemenkeu.go.id). Untuk
+mendapatkan akses monSAKTI, APIP mendaftarkan user SAKTI terlebih dahulu.
+
+## Kelompok pengguna APIP
+
+User level Kementerian (APIP) berisi modul non-transaksional (monitoring)
+yang diakses melalui monSAKTI, dengan role Validator dan Approver:
+
+- **APIP Modul Penganggaran** — peran Approver (`aprba_kodesatker_nip`):
+  monitoring perencanaan anggaran seluruh satuan kerja lingkup K/L-nya
+  melalui aplikasi SAKTI.
+- **APIP Modul Pelaporan** — peran Validator (`valba_kodesatker_nip`):
+  monitoring transaksi seluruh satuan kerja lingkup K/L-nya melalui monSAKTI.
+
+Kode satker yang digunakan adalah kode satker 6 digit satuan kerja yang
+merupakan konsolidator tingkat Kementerian.
+
+## Alur pendaftaran
+
+<Steps>
+
+1. Kementerian (APIP) membuat dan menyampaikan persyaratan pendaftaran (SK
+   dan Form) user melalui tiket ke HAI-Kemenkeu.
+
+2. Administrator Pusat (SITP) melakukan pengecekan dan proses pendaftaran.
+
+3. Seluruh pengguna yang didaftarkan mendapat SMS berisi user ID dan kode
+   akses SAKTI.
+
+</Steps>
+
+## Persyaratan
+
+- [Surat Keputusan Pengguna SAKTI Tipe Kementerian Khusus APIP (PDF)](https://docs.google.com/document/d/1R463MUCNj-c2UECNq3N0IQT-KDqh_yzh/).
+- [Form Pendaftaran Pengguna SAKTI APIP (PDF dan Excel)](https://docs.google.com/spreadsheets/d/1saY61orNyOmnd_DOYsv_udZuEN3qOxgv/).
+
+Keduanya ditandatangani oleh Pejabat minimal Eselon III. Persyaratan
+dikirimkan ke **hai.kemenkeu.go.id** atau email **hai.djpb@kemenkeu.go.id**
+menggunakan email resmi kedinasan (`@sakti.mail.go.id`/`@go.id` lainnya).
+Form SAKTI Mail untuk pendaftaran SAKTI Mail ke KPPN dapat diunduh
+[di sini](https://docs.google.com/spreadsheets/d/1vE3VHuiN8tNs8PR07Dq6FOYrSxj122on/).
+
+## Terkait
+
+- [Memahami Syarat dan Alur Pendaftaran Pengguna](/mulai/pendaftaran-user/syarat-dan-alur/)
+- [Mendaftarkan Pengguna BPK (Auditor) di MonSAKTI](/mulai/pendaftaran-user/bpk/)
+- [Mendaftarkan dan Mengaktifkan Email SAKTI](/mulai/email-sakti/)
+
+## Sumber
+
+<SumberAsli />

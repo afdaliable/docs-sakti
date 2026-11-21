@@ -1,0 +1,74 @@
+---
+title: Mengajukan Perubahan Pengguna
+description: Kondisi, syarat, dan formulir perubahan user SAKTI, kewenangan, data, dan penonaktifan pengguna.
+modul: mulai
+peran: [satker, kppn-kanwil, djpb-pusat, dja, djkn, bappenas, bpk, apip, widyaiswara]
+jenis: juknis
+kata_kunci: [perubahan user, ganti pengguna, ubah kewenangan, nonaktif user, hapus user, mutasi pegawai]
+status: review
+perlu_review: false
+sumber:
+  - judul: "[Admin] Juknis Pendaftaran User 2022"
+    url: "https://docs.google.com/presentation/d/1C9gJgpqXILQQKPmW1gnSfnaPErf-odt4b6buJams854/"
+    jenis: google-slides
+    diambil: 2026-11-21
+    id_manifest: A-dok-001
+  - judul: "1. Juknis SAKTI Admin Updated 2024"
+    url: "https://docs.google.com/presentation/d/1dbhAhtZ-uotv_CxZ5GefYlmeF11DCnZNaswn0Oym6PE/"
+    jenis: google-slides
+    diambil: 2026-11-21
+    id_manifest: A-dok-005
+sidebar:
+  order: 13
+---
+
+import { Aside } from '@astrojs/starlight/components';
+import SumberAsli from '~/components/SumberAsli.astro';
+
+Perubahan User SAKTI meliputi perubahan user, perubahan kewenangan user,
+nonaktif pengguna, dan perubahan data user. Perubahan dapat dilakukan pada
+kondisi berikut:
+
+- Terdapat penggantian pengguna (cuti, dinas luar, mutasi).
+- Terdapat kesalahan isian pada data user yang telah didaftarkan (NIK, NIP,
+  NPWP, email, No HP).
+- Terdapat penambahan dan/atau perubahan kewenangan kelompok pengguna.
+- Terdapat permohonan penonaktifan atau penghapusan user (pensiun).
+
+## Syarat permohonan perubahan
+
+1. SK Penetapan Pengguna SAKTI (PDF bertanda tangan).
+2. Form Perubahan Pengguna SAKTI (PDF bertanda tangan).
+3. Form Perubahan Pendaftaran Pengguna SAKTI (Excel).
+
+Format dokumen dapat diakses melalui `bit.ly/saktiadm`.
+
+## Pemutakhiran kewenangan khusus operator
+
+Permohonan pemutakhiran kewenangan khusus operator menggunakan form yang sama
+dengan ketentuan: kolom peran diisikan dengan **peran terbaru** yang
+dibutuhkan (contoh pengisian nama peran seperti
+`SATKER_OPERATOR_KOMITMEN` atau `SATKER_OPERATOR_PEMBAYARAN` sesuai petunjuk
+pada `bit.ly/rolesakti`).
+
+## Hal yang perlu diperhatikan
+
+- Untuk perubahan user **Pejabat Perbendaharaan**, admin satker terlebih
+  dahulu melakukan penghapusan Pejabat Perbendaharaan di referensi pejabat.
+- Pastikan Pejabat Perbendaharaan tidak memiliki transaksi yang menggantung.
+- Satker dan/atau KPPN dapat melakukan pengecekan transaksi pejabat melalui
+  monSAKTI (menu admin – transaksiPejabat).
+
+<Aside type="caution" title="Perlu verifikasi">
+Juknis menyebut jalur menu pada monSAKTI sebagai "admin – transaksiPejabat";
+pastikan label menu pada aplikasi saat digunakan.
+</Aside>
+
+## Terkait
+
+- [Memahami Syarat dan Alur Pendaftaran Pengguna](/mulai/pendaftaran-user/syarat-dan-alur/)
+- [Mendaftarkan Pengguna Tipe Satker K/L](/mulai/pendaftaran-user/satker-kl/)
+
+## Sumber
+
+<SumberAsli />
