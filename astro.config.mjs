@@ -3,6 +3,7 @@ import { defineConfig } from 'astro/config';
 import starlight from '@astrojs/starlight';
 import starlightLinksValidator from 'starlight-links-validator';
 import { bangunSidebar } from './scripts/build-sidebar.ts';
+import { REPO_URL } from './src/lib/situs.ts';
 
 // https://astro.build/config
 export default defineConfig({
@@ -23,7 +24,7 @@ export default defineConfig({
 			},
 			lastUpdated: true,
 			editLink: {
-				baseUrl: 'https://github.com/afdaliable/docs-sakti/edit/main/',
+				baseUrl: `${REPO_URL}/edit/main/`,
 			},
 			plugins: [starlightLinksValidator({ exclude: ['/peran/**'] })],
 			sidebar: bangunSidebar(),
