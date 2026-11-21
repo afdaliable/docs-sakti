@@ -1,0 +1,52 @@
+---
+import BigSearch from '~/components/BigSearch.astro';
+import PopularLinks from '~/components/PopularLinks.astro';
+
+const { data } = Astro.locals.starlightRoute.entry;
+const { title = data.title, tagline } = data.hero || {};
+---
+
+<div class="hero">
+	<div class="salinan">
+		<h1 id="_top" data-page-title set:html={title} />
+		{tagline && <p class="tagline" set:html={tagline} />}
+	</div>
+	<div class="hero-cari">
+		<BigSearch />
+	</div>
+	<PopularLinks />
+</div>
+
+<style>
+	@layer starlight.core {
+		.hero {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			gap: 1.25rem;
+			padding-block: 3rem 2.5rem;
+			text-align: center;
+		}
+		.salinan {
+			display: flex;
+			flex-direction: column;
+			gap: 0.75rem;
+		}
+		h1 {
+			font-size: var(--sl-text-4xl);
+			line-height: var(--sl-line-height-headings);
+			font-weight: 700;
+			color: var(--sl-color-white);
+			text-wrap: balance;
+		}
+		.tagline {
+			font-size: var(--sl-text-lg);
+			color: var(--sl-color-gray-2);
+			margin: 0;
+		}
+		.hero-cari {
+			width: min(100%, 40rem);
+			text-align: start;
+		}
+	}
+</style>

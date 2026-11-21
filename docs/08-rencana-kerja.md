@@ -52,7 +52,7 @@ Kerjakan berurutan. Centang `[x]` saat selesai. Setiap fase diakhiri **gerbang**
 
 - [x] 3.1 `BigSearch` (Level 1 Pagefind dulu) sesuai `04-tampilan-ux.md`, termasuk aksesibilitas keyboard/ARIA.
 - [x] 3.2 `ModuleGrid`, `RoleChips`, `RecentlyUpdated`, `HelpBox`, `PopularLinks`.
-- [ ] 3.3 Landing page `template: splash`.
+- [x] 3.3 Landing page `template: splash`.
 - [ ] 3.4 Halaman `/cari/` dengan filter modul/peran/jenis.
 - [ ] 3.5 Override komponen artikel: breadcrumb `menu_sakti`, badge, kotak "Menu di SAKTI", footer sumber + feedback.
 - [ ] 3.6 Komponen MDX: `MenuSakti`, `SumberAsli`.

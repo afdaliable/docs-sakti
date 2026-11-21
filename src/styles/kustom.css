@@ -22,3 +22,22 @@
 	outline: 2px solid var(--sl-color-accent);
 	outline-offset: 2px;
 }
+
+/* Landing page */
+.dua-kolom {
+	display: grid;
+	grid-template-columns: 1fr;
+	gap: 2.5rem;
+	margin-top: 3rem;
+}
+@media (min-width: 50rem) {
+	.dua-kolom {
+		grid-template-columns: 1fr 1fr;
+	}
+}
+.baris-kecil {
+	margin-top: 3rem;
+	font-size: var(--sl-text-xs);
+	color: var(--sl-color-gray-3);
+	text-align: center;
+}

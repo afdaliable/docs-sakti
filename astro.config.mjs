@@ -12,8 +12,10 @@ export default defineConfig({
 			title: 'SAKTI Knowledge Base',
 			customCss: ['./src/styles/kustom.css'],
 			components: {
+				Hero: './src/components/overrides/Hero.astro',
 				PageTitle: './src/components/overrides/PageTitle.astro',
 				Search: './src/components/overrides/Search.astro',
+				SocialIcons: './src/components/overrides/SocialIcons.astro',
 			},
 			defaultLocale: 'root',
 			locales: {

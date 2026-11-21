@@ -1,12 +1,33 @@
 ---
 title: SAKTI Knowledge Base
-description: Panduan penggunaan aplikasi SAKTI per modul.
+description: Panduan penggunaan aplikasi SAKTI per modul, sub-menu, dan peran.
 status: terbit
 jenis: indeks
+template: splash
+hero:
+  title: Ada yang bisa kami bantu?
+  tagline: Panduan penggunaan aplikasi SAKTI per modul, sub-menu, dan peran.
 ---
 
-import BigSearch from '~/components/BigSearch.astro';
+import ModuleGrid from '~/components/ModuleGrid.astro';
+import RoleChips from '~/components/RoleChips.astro';
+import RecentlyUpdated from '~/components/RecentlyUpdated.astro';
+import HelpBox from '~/components/HelpBox.astro';
 
-Knowledge base ini sedang disiapkan.
+<section id="modul">
 
-<BigSearch />
+<ModuleGrid />
+
+</section>
+
+<RoleChips />
+
+<div class="dua-kolom">
+
+<RecentlyUpdated />
+
+<HelpBox />
+
+</div>
+
+<p class="baris-kecil">Knowledge base ini masih dalam pengembangan dan bukan situs resmi Kementerian Keuangan.</p>
