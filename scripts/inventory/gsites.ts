@@ -95,8 +95,9 @@ export function jalurMenuDariPath(
 
 async function ekstrakHalaman(page: Page) {
 	return page.evaluate(() => {
-		const diLuar = (el: Element) => !el.closest('header') && !el.closest('nav') && !el.closest('footer');
-		let sections = [...document.querySelectorAll('section')].filter(diLuar);
+		const sections = [...document.querySelectorAll('section')].filter(
+			(el) => !el.closest('header') && !el.closest('nav') && !el.closest('footer'),
+		);
 		let utama: Element | HTMLElement;
 		if (sections.length > 0) {
 			utama = document.createElement('div');
