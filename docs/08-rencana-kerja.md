@@ -41,8 +41,8 @@ Kerjakan berurutan. Centang `[x]` saat selesai. Setiap fase diakhiri **gerbang**
 - [x] 2.5 `scripts/extract/*` untuk HTML, PPTX, PDF (+OCR), DOCX, Sheets.
 - [x] 2.6 Jalankan ekstraksi untuk semua item; item gagal dicatat.
 - [x] 2.7 Buat `sources/peta-konten.csv` (pemetaan ke artikel target + dedup).
-- [ ] 2.8 **Berhenti dan minta review** pemilik proyek atas `laporan-inventaris.md` dan `peta-konten.csv` (keputusan K1, K2, K6).
-  - Status 21 Nov 2026: review sudah diminta; menunggu jawaban pemilik atas K1, K2, K6, K21–K24 dan komentar di `sources/peta-konten.csv`.
+- [x] 2.8 **Berhenti dan minta review** pemilik proyek atas `laporan-inventaris.md` dan `peta-konten.csv` (keputusan K1, K2, K6).
+  - 21 Nov 2026: review selesai. Jawaban K1, K2, K6, K21–K24 dicatat di `09-keputusan-terbuka.md`; `config/modul.yaml`, sidebar, dan `menu_sakti` di peta konten diselaraskan dengan `sources/menu.json` (default tambahan: K25–K31).
 
 **Gerbang 2:** setiap item manifest berstatus `diekstrak`, `ditolak`, atau `gagal` (dengan catatan); peta konten disetujui.
 
@@ -64,7 +64,7 @@ Kerjakan berurutan. Centang `[x]` saat selesai. Setiap fase diakhiri **gerbang**
 
 ## Fase 4 — Migrasi konten per modul
 
-Urutan (yang sumbernya paling lengkap dulu): `mulai` → `admin` → `komitmen` → `pembayaran` → `bendahara` → `persediaan` → `aset-tetap` → `piutang` → `akuntansi-pelaporan` → `kppn-bun` → `peran/*` → `peraturan` → `faq`.
+Urutan (yang sumbernya paling lengkap dulu): `mulai` → `admin` → `referensi` → `komitmen` → `pembayaran` → `bendahara` → `persediaan` → `aset-tetap` → `piutang` → `akuntansi-pelaporan` → `kppn-bun` → `peran/*` → `peraturan` → `faq`.
 
 Untuk **setiap** modul (pakai perintah `/migrasi-modul <slug>`):
 - [ ] Draft MDX semua baris peta konten modul tersebut (`templates/`).
@@ -75,7 +75,7 @@ Untuk **setiap** modul (pakai perintah `/migrasi-modul <slug>`):
 - [ ] PR `content(<slug>): migrasi awal` → review pemilik modul.
 
 Checklist modul:
-- [ ] mulai  - [ ] admin  - [ ] komitmen  - [ ] pembayaran  - [ ] bendahara
+- [ ] mulai  - [ ] admin  - [ ] referensi  - [ ] komitmen  - [ ] pembayaran  - [ ] bendahara
 - [ ] persediaan  - [ ] aset-tetap  - [ ] piutang  - [ ] akuntansi-pelaporan  - [ ] kppn-bun
 - [ ] peran  - [ ] peraturan  - [ ] faq
 
