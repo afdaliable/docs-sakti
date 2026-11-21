@@ -112,6 +112,9 @@ export function periksaBerkas({
 		if (!Array.isArray(data.kata_kunci) || (data.kata_kunci as unknown[]).length === 0) {
 			temuan.push({ berkas: relatif, baris: 1, tingkat: 'peringatan', kode: 'tanpa-kata-kunci', pesan: 'Artikel tidak mengisi `kata_kunci`.' });
 		}
+		if (data.jenis !== 'indeks' && !badan.includes('<SumberAsli')) {
+			temuan.push({ berkas: relatif, baris: 1, tingkat: 'peringatan', kode: 'tanpa-komponen-sumber', pesan: 'Artikel modul sebaiknya menutup dengan `<SumberAsli />`.' });
+		}
 	}
 	if (slugFolderModul !== undefined) {
 		if (data.modul !== undefined && data.modul !== slugFolderModul) {

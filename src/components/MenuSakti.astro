@@ -1,0 +1,51 @@
+---
+interface Props {
+	jalur?: string;
+}
+
+const { jalur } = Astro.props;
+const menuSakti =
+	jalur ?? (Astro.locals.starlightRoute?.entry.data.menu_sakti as string | undefined);
+const segmen =
+	typeof menuSakti === 'string' && menuSakti.trim() !== ''
+		? menuSakti.split(' > ').filter((s) => s.trim() !== '')
+		: [];
+---
+
+{
+	segmen.length > 0 && (
+		<aside class="kotak-menu-sakti" aria-label="Menu di SAKTI">
+			<p class="judul-menu-sakti">Menu di SAKTI</p>
+			<p class="jalur-menu-sakti">
+				{segmen.map((s, i) => (
+					<>
+						{i > 0 && <span class="pemisah" aria-hidden="true"> &gt; </span>}
+						<strong>{s}</strong>
+					</>
+				))}
+			</p>
+		</aside>
+	)
+}
+
+<style>
+	.kotak-menu-sakti {
+		border: 1px solid var(--sl-color-gray-5);
+		border-radius: 0.5rem;
+		background-color: var(--sl-color-bg-accent);
+		padding: 0.875rem 1rem;
+		margin-block: 1rem;
+	}
+	.judul-menu-sakti {
+		margin: 0 0 0.375rem;
+		font-size: var(--sl-text-xs);
+		font-weight: 600;
+		color: var(--sl-color-gray-3);
+	}
+	.jalur-menu-sakti {
+		margin: 0;
+	}
+	.pemisah {
+		color: var(--sl-color-gray-3);
+	}
+</style>

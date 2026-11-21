@@ -1,0 +1,44 @@
+---
+import { formatTanggal } from '~/lib/tanggal.ts';
+
+interface Sumber {
+	judul: string;
+	url: string;
+	jenis: string;
+	diambil: Date;
+}
+
+const sumber = (Astro.locals.starlightRoute?.entry.data.sumber ?? []) as Sumber[];
+---
+
+{
+	sumber.length > 0 && (
+		<>
+			<p>Unduh juknis asli dari tautan berikut:</p>
+			<ul class="daftar-sumber">
+				{sumber.map((s) => (
+					<li>
+						<a href={s.url} target="_blank" rel="noopener noreferrer">
+							{s.judul}
+						</a>
+						<span class="meta-sumber">
+							{' '}
+							({s.jenis}, diambil{' '}
+							<time datetime={s.diambil.toISOString()}>{formatTanggal(s.diambil)}</time>)
+						</span>
+					</li>
+				))}
+			</ul>
+		</>
+	)
+}
+
+<style>
+	.daftar-sumber {
+		padding-inline-start: 1.25rem;
+	}
+	.meta-sumber {
+		color: var(--sl-color-gray-3);
+		font-size: var(--sl-text-sm);
+	}
+</style>

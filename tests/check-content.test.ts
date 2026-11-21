@@ -107,6 +107,15 @@ test('menu_sakti harus jalur baku di pohon menu SAKTI', () => {
 	assert.ok(!kode(periksa('komitmen/x.md', '---\ntitle: X\nmodul: komitmen\nsumber: [{judul: a, url: "https://a.b/c", jenis: lainnya, diambil: 2026-01-01}]\n---\n')).some((k) => k.startsWith('menu-sakti')));
 });
 
+test('artikel modul tanpa SumberAsli diperingatkan', () => {
+	const dasar = '---\ntitle: X\nmodul: komitmen\nkata_kunci: [a]\nsumber: [{judul: a, url: "https://a.b/c", jenis: lainnya, diambil: 2026-01-01}]\n---\n\n';
+	const tanpa = periksa('komitmen/x.md', dasar + 'Isi artikel.');
+	assert.ok(kode(tanpa).includes('tanpa-komponen-sumber'));
+	assert.equal(tanpa.find((t) => t.kode === 'tanpa-komponen-sumber')!.tingkat, 'peringatan');
+	assert.ok(!kode(periksa('komitmen/x.md', dasar + 'Isi.\n\n<SumberAsli />')).includes('tanpa-komponen-sumber'));
+	assert.ok(!kode(periksa('komitmen/x.md', '---\ntitle: X\nmodul: komitmen\njenis: indeks\nsumber: [{judul: a, url: "https://a.b/c", jenis: lainnya, diambil: 2026-01-01}]\n---\n')).includes('tanpa-komponen-sumber'));
+});
+
 test('tautan peran tidak dikenal', () => {
 	const dasar = '---\ntitle: X\nmodul: komitmen\nsumber: [{judul: a, url: "https://a.b/c", jenis: lainnya, diambil: 2026-01-01}]\n---\n\n';
 	assert.ok(kode(periksa('komitmen/x.md', dasar + '[lihat](/peran/tidak-ada/)')).includes('peran-tidak-dikenal'));

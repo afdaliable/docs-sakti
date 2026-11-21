@@ -55,7 +55,7 @@ Kerjakan berurutan. Centang `[x]` saat selesai. Setiap fase diakhiri **gerbang**
 - [x] 3.3 Landing page `template: splash`.
 - [x] 3.4 Halaman `/cari/` dengan filter modul/peran/jenis.
 - [x] 3.5 Override komponen artikel: breadcrumb `menu_sakti`, badge, kotak "Menu di SAKTI", footer sumber + feedback.
-- [ ] 3.6 Komponen MDX: `MenuSakti`, `SumberAsli`.
+- [x] 3.6 Komponen MDX: `MenuSakti`, `SumberAsli`.
 - [ ] 3.7 Cek tampilan mobile (360px) dan dark mode; Lighthouse ≥ 90/95.
 
 **Gerbang 3:** landing page sesuai wireframe; BigSearch menampilkan hasil inline untuk halaman indeks yang ada.
