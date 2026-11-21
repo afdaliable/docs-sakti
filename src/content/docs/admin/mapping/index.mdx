@@ -1,6 +1,6 @@
 ---
 title: Mapping
-description: Panduan menu Mapping pada modul Administrasi.
+description: Panduan pemetaan operator dengan PPK pada modul Administrasi.
 modul: admin
 jenis: indeks
 status: terbit
@@ -9,4 +9,15 @@ sidebar:
   order: 0
 ---
 
-Panduan untuk menu **Mapping** sedang disiapkan.
+import { CardGrid, LinkCard } from '@astrojs/starlight/components';
+
+Sub-menu ini berisi panduan pemetaan operator pelaksanaan dan operator
+anggaran dengan PPK-nya pada aplikasi SAKTI.
+
+<CardGrid>
+	<LinkCard
+		title="Memetakan Operator dengan PPK"
+		description="Menghubungkan operator pelaksanaan dan operator anggaran dengan PPK-nya."
+		href="/admin/mapping/mapping-operator-ppk/"
+	/>
+</CardGrid>

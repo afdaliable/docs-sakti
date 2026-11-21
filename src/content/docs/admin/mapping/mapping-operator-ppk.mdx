@@ -1,0 +1,75 @@
+---
+title: Memetakan Operator dengan PPK
+description: Menghubungkan operator pelaksanaan dan operator anggaran dengan PPK-nya agar operator dapat mengakses pagu dan membuat SPM.
+modul: admin
+menu_sakti: "Administrasi > Mapping > Mapping Opr. Pelaksanaan dan PPK"
+peran: [satker]
+jenis: juknis
+kata_kunci: [mapping operator ppk, mapping operator pelaksanaan, mapping operator anggaran, operator tidak bisa buat spm, pembagian pagu per operator]
+status: review
+perlu_review: true
+sumber:
+  - judul: "1. Juknis SAKTI Admin Updated 2024"
+    url: "https://docs.google.com/presentation/d/1dbhAhtZ-uotv_CxZ5GefYlmeF11DCnZNaswn0Oym6PE/"
+    jenis: google-slides
+    diambil: 2026-11-21
+    id_manifest: A-dok-005
+  - judul: "Juknis Admin SAKTI Tipe Satker (versi lama, digantikan)"
+    url: "https://docs.google.com/presentation/d/10egiSsDGl4zU5e5Ok3jtZAVOmWyTeVRAtSYuMnjyh78/"
+    jenis: google-slides
+    diambil: 2026-11-21
+    id_manifest: A-dok-018
+  - judul: "Juknis Pemutakhiran Data Pengguna SAKTI"
+    url: "https://drive.google.com/file/d/15tKi3Bxci67B7YwVL7uKhVvA2sTOHYwk/view"
+    jenis: pdf
+    diambil: 2026-11-21
+    id_manifest: A-dok-032
+sidebar:
+  order: 1
+---
+
+import { Aside } from '@astrojs/starlight/components';
+import MenuSakti from '~/components/MenuSakti.astro';
+import SumberAsli from '~/components/SumberAsli.astro';
+
+Mapping Operator Pelaksanaan – PPK digunakan untuk menghubungkan antara
+operator Pembayaran dan Komitmen dengan PPK-nya.
+
+<MenuSakti />
+
+- Staff operator pembayaran hanya dapat mengakses pagu dari PPK yang
+  dihubungkan.
+- Apabila Mapping Operator-PPK tidak dilakukan, user operator pembayaran
+  tidak dapat membuat SPM.
+- Penghapusan pejabat turut menghapus mapping Operator – PPK, sehingga
+  mapping perlu direkam ulang setelah proses pemutakhiran user dan OTP
+  selesai (lihat [Memutakhirkan Data
+  Pengguna](/admin/pengguna/pemutakhiran-data-pengguna/)).
+
+Pada menu tersedia tombol mapping. Tab Operator – PPK hanya merupakan
+perbedaan perspektif tampilan saja.
+
+## Mapping Operator Anggaran
+
+Mapping Operator Anggaran – PPK digunakan untuk menghubungkan antara
+operator Anggaran dengan PPK-nya. Mapping Operator Anggaran dilakukan
+pada dua menu berikut:
+
+1. **Administrasi > Mapping > Mapping Opr. Anggaran-PPK**
+2. **Penganggaran > RUH > Pembagian Pagu per Operator**
+
+<Aside type="caution" title="Perlu verifikasi">
+Juknis 2024 menulis label **Mapping Operator Pelaksanaan dan PPK** /
+**Mapping Operator Anggaran dan PPK** dan **Anggaran > RUH > Pembagian
+Pagu Per Operator**; menu aplikasi memakai label singkat seperti pada
+artikel ini. Juknis tidak merinci langkah klik demi klik.
+</Aside>
+
+## Terkait
+
+- [Melengkapi Data Pejabat Perbendaharaan](/admin/pengguna/pejabat-perbendaharaan/)
+- [Mengelola Data Pengguna sebagai Admin Satker](/admin/pengguna/pengelolaan-pengguna/)
+
+## Sumber
+
+<SumberAsli />
