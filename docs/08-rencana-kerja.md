@@ -20,7 +20,7 @@ Kerjakan berurutan. Centang `[x]` saat selesai. Setiap fase diakhiri **gerbang**
 
 ## Fase 1 — Kerangka informasi
 
-- [ ] 1.1 Loader `config/modul.yaml` (`src/lib/modul.ts`) dengan tipe TS.
+- [x] 1.1 Loader `config/modul.yaml` (`src/lib/modul.ts`) dengan tipe TS.
 - [ ] 1.2 Sidebar dibangkitkan dari YAML (`02-arsitektur-informasi.md`).
 - [ ] 1.3 Skema frontmatter diperluas di `src/content.config.ts`.
 - [ ] 1.4 Buat `index.mdx` untuk setiap modul, setiap `sub`, dan bagian lintas (peran, peraturan, faq, glosarium, bantuan, kontribusi) — isi placeholder ringkas, `status: terbit` khusus halaman indeks.

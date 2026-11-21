@@ -17,14 +17,17 @@
     "search:eval": "node scripts/belum-tersedia.mjs search:eval 5",
     "migrate:inventory": "node scripts/belum-tersedia.mjs migrate:inventory 2",
     "migrate:extract": "node scripts/belum-tersedia.mjs migrate:extract 2",
-    "migrate:draft": "node scripts/belum-tersedia.mjs migrate:draft 4"
+    "migrate:draft": "node scripts/belum-tersedia.mjs migrate:draft 4",
+    "test": "tsx --test tests/*.test.ts"
   },
   "dependencies": {
     "@astrojs/starlight": "0.43.1",
     "astro": "7.4.12",
-    "sharp": "0.35.5"
+    "sharp": "0.35.5",
+    "yaml": "2.9.1"
   },
   "devDependencies": {
-    "starlight-links-validator": "0.27.0"
+    "starlight-links-validator": "0.27.0",
+    "tsx": "4.23.15"
   }
 }

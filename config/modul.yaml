@@ -12,6 +12,9 @@
 #   ringkasan   : 1 kalimat untuk kartu
 #   sumber      : sumber utama (A/B/C, lihat docs/01-sumber-konten.md)
 #   sub         : sub-menu tingkat 1 (urutan sidebar). Tingkat berikutnya dibentuk dari folder.
+#                 Entri berupa slug, atau { slug, nama } jika nama menu SAKTI berbeda
+#                 dari label yang dibentuk otomatis dari slug.
+
 
 kelompok:
   - id: umum
@@ -30,7 +33,7 @@ modul:
     ikon: rocket
     ringkasan: Akses aplikasi, pendaftaran user, MFA, dan email SAKTI.
     sumber: [A]
-    sub: [akses-aplikasi, pendaftaran-user, mfa, email-sakti]
+    sub: [akses-aplikasi, pendaftaran-user, { slug: mfa, nama: MFA }, { slug: email-sakti, nama: Email SAKTI }]
 
   - slug: admin
     nama: Administrasi (Admin)
@@ -38,7 +41,7 @@ modul:
     ikon: setting
     ringkasan: Pengelolaan user, role, PKIPA, dan monitoring status DS.
     sumber: [A]
-    sub: [role, manajemen-user, pkipa, monitoring-ds, formulir]
+    sub: [role, manajemen-user, { slug: pkipa, nama: PKIPA }, { slug: monitoring-ds, nama: Monitoring Status DS }, formulir]
 
   - slug: referensi
     nama: Referensi
@@ -62,7 +65,7 @@ modul:
     ikon: pencil
     ringkasan: Supplier, kontrak, BAST, escrow, dan ADK GPP.
     sumber: [B, C]
-    sub: [ruh, escrow, cetak, adk, upload, monitoring, jurnal]
+    sub: [{ slug: ruh, nama: RUH }, { slug: escrow, nama: Proses Escrow }, cetak, { slug: adk, nama: ADK }, { slug: upload, nama: Upload/Rekam }, monitoring, jurnal]
 
   - slug: pembayaran
     nama: Pembayaran
@@ -70,7 +73,7 @@ modul:
     ikon: approve-check
     ringkasan: SPP, SPM, catat/upload, dan monitoring pembayaran.
     sumber: [B, C]
-    sub: [ruh, cetak, adk, catat-upload, monitoring, referensi]
+    sub: [{ slug: ruh, nama: RUH Pembayaran }, cetak, { slug: adk, nama: ADK }, { slug: catat-upload, nama: Catat/Upload }, monitoring, referensi]
 
   - slug: bendahara
     nama: Bendahara
@@ -86,7 +89,7 @@ modul:
     ikon: puzzle
     ringkasan: Transaksi masuk/keluar, koreksi, opname, dan tutup buku persediaan.
     sumber: [C]
-    sub: [transaksi-masuk, transaksi-keluar, koreksi, opname-fisik, tutup-buku, referensi, persediaan-dalam-proses, pelaporan, migrasi-data, monitoring, persediaan-tak-dikuasai, likuidasi, upload-data-blu]
+    sub: [transaksi-masuk, transaksi-keluar, koreksi, opname-fisik, tutup-buku, referensi, persediaan-dalam-proses, pelaporan, migrasi-data, monitoring, persediaan-tak-dikuasai, likuidasi, { slug: upload-data-blu, nama: Upload Data BLU }]
 
   - slug: aset-tetap
     nama: Aset Tetap
@@ -94,7 +97,7 @@ modul:
     ikon: laptop
     ringkasan: Transaksi BMN, KDP, persetujuan, normalisasi, dan konsesi jasa.
     sumber: [C]
-    sub: [ruh, persetujuan, monitoring, cetak, penutupan-periode, adk, likuidasi, normalisasi, konsesi-jasa-mitra, penghapusan-masal, referensi]
+    sub: [{ slug: ruh, nama: RUH }, persetujuan, monitoring, cetak, penutupan-periode, { slug: adk, nama: ADK }, likuidasi, normalisasi, konsesi-jasa-mitra, { slug: penghapusan-masal, nama: Usul Hapus & Penghapusan Masal }, referensi]
 
   - slug: piutang
     nama: Piutang
@@ -110,7 +113,7 @@ modul:
     ikon: seti:config
     ringkasan: Jurnal, posting, tutup buku, resiprokal, dan laporan keuangan.
     sumber: [C]
-    sub: [proses, tutup-buku, transaksi-resiprokal, laporan, mphl-bjs, likuidasi-satker, koreksi-spm-jurnal-manual]
+    sub: [proses, tutup-buku, transaksi-resiprokal, laporan, { slug: mphl-bjs, nama: Juknis MPHL-BJS SAKTI }, likuidasi-satker, { slug: koreksi-spm-jurnal-manual, nama: Koreksi SPM yang Memerlukan Jurnal Manual }]
 
   - slug: kppn-bun
     nama: KPPN (BUN)
