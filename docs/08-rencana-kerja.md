@@ -82,6 +82,7 @@ Checklist modul:
 Status per modul:
 - `mulai` (21 Nov 2026): 20 artikel + 3 halaman indeks didraf di branch lokal `konten/migrasi-mulai`; 5 artikel `perlu_review`; 2 gambar; 9 query uji; build, `check:content`, `check:links`, tes lolos. Di-merge fast-forward ke `main` dan di-push (7f450bb); 22 Nov 2026 pemilik menyatakan tidak ada koreksi gaya, modul dicentang (K35).
 - `admin` (22 Nov 2026): 12 baris peta konten didraf di branch lokal `konten/migrasi-admin` — 9 artikel + 3 halaman berisi di indeks sub-menu (`pkipa`, `role`, `formulir`) + 5 halaman indeks; 9 `perlu_review`; 2 gambar (diagram alur, tanpa tangkapan layar aplikasi); 8 query uji; build, `check:content` (0 galat), `check:links`, tes lolos. Di-merge fast-forward ke `main` (K35). Belum dicentang: menunggu review pemilik modul.
+- `referensi` (22 Nov 2026): 2 baris peta konten didraf di branch lokal `konten/migrasi-referensi` menjadi 3 artikel (baris Ruangan/Bendaharawan dipecah, K37) + 4 halaman indeks; 3 `perlu_review`; 1 gambar (diagram contoh kasus konsolidator); 5 query uji; build, `check:content` (0 galat), `check:links`, tes lolos. Di-merge fast-forward ke `main` (K35). Belum dicentang: menunggu review pemilik modul.
 
 **Gerbang 4:** semua item manifest `dimigrasi` atau `ditolak`; ≥ 40 query uji; tidak ada artikel `draft` yang tersisa tanpa issue.
 
