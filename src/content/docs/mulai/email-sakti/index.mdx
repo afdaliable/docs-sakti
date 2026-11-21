@@ -1,12 +1,135 @@
 ---
-title: Email SAKTI
-description: Panduan menu Email SAKTI pada modul Mulai Menggunakan SAKTI.
+title: Mendaftarkan dan Mengaktifkan Email SAKTI
+description: Cara mendaftarkan email SAKTI (@sakti.mail.go.id) lewat KPPN dan mengaktifkannya lewat registrasi mandiri.
 modul: mulai
-jenis: indeks
-status: terbit
+peran: [satker]
+jenis: juknis
+kata_kunci: [email sakti, sakti mail, sakti.mail.go.id, email kedinasan, daftar email, registrasi email]
+status: review
+perlu_review: true
+sumber:
+  - judul: "1. Juknis SAKTI Admin Updated 2024"
+    url: "https://docs.google.com/presentation/d/1dbhAhtZ-uotv_CxZ5GefYlmeF11DCnZNaswn0Oym6PE/"
+    jenis: google-slides
+    diambil: 2026-11-21
+    id_manifest: A-dok-005
+  - judul: "Juknis Admin SAKTI Tipe Satker"
+    url: "https://docs.google.com/presentation/d/10egiSsDGl4zU5e5Ok3jtZAVOmWyTeVRAtSYuMnjyh78/"
+    jenis: google-slides
+    diambil: 2026-11-21
+    id_manifest: A-dok-018
+  - judul: "Juknis SAKTI Mail (versi lama, digantikan)"
+    url: "https://docs.google.com/presentation/d/1k0KWXFd6InJNTdR_UOd8V4nii5BPn0zdfq5XnFgBLz0/"
+    jenis: google-slides
+    diambil: 2026-11-21
+    id_manifest: A-dok-007
+  - judul: "Form_SAKTI_Mail.xlsx"
+    url: "https://docs.google.com/spreadsheets/d/1EorQlrHPEscyoBSe5lu4zMhi9QODsACq/"
+    jenis: sheets
+    diambil: 2026-11-21
+    id_manifest: A-dok-014
 sidebar:
   label: Ringkasan
   order: 0
 ---
 
-Panduan untuk menu **Email SAKTI** sedang disiapkan.
+import { Steps, Aside } from '@astrojs/starlight/components';
+import SumberAsli from '~/components/SumberAsli.astro';
+
+**SAKTI Mail** adalah layanan surat elektronik (e-mail) yang disediakan oleh
+Kementerian Komunikasi dan Informatika (Kominfo) yang difasilitasi bagi
+seluruh pengguna aplikasi SAKTI. SAKTI mewajibkan user SAKTI untuk membuat
+`@sakti.mail.go.id`.
+
+Kegunaan SAKTI Mail:
+
+- Syarat pendaftaran user SAKTI (menggunakan email kedinasan).
+- Berkonsultasi dengan layanan pengguna SAKTI, seperti HAI Kemenkeu.
+- Menerima broadcast berita terkini SAKTI.
+- Menerima reset password SAKTI.
+- Sarana alternatif menerima kode OTP bagi pejabat yang terdaftar OTP.
+
+## Ketentuan
+
+- Pendaftaran pengguna SAKTI saat ini juga dapat menggunakan email resmi
+  kedinasan masing-masing Kementerian/Lembaga dengan domain `@go.id`/`@id`
+  selain SAKTI Mail; pastikan email tersebut valid karena kesalahan email
+  menyebabkan notifikasi dan OTP via email tidak sampai.
+- Satu email hanya dapat digunakan oleh satu pengguna dan merupakan email
+  kedinasan individu (bukan instansi) serta tidak digunakan bersama-sama.
+- Setiap pegawai hanya memiliki satu email SAKTI walaupun memiliki banyak
+  user SAKTI (mengikat pada personal). Pengguna yang telah terdaftar dengan
+  SAKTI Mail tetap dapat menggunakannya tanpa perlu pindah ke email kedinasan.
+- Kendala operasional SAKTI Mail dikoordinasikan dengan Kementerian Komunikasi
+  dan Informatika.
+
+## Alur pendaftaran
+
+<Steps>
+
+1. Satker menyampaikan **Form Pendaftaran User SAKTI Mail** ke KPPN.
+
+2. Admin SAKTI Mail KPPN mengecek dan mengupload form pendaftaran user SAKTI
+   Mail.
+
+3. User SAKTI Mail melakukan registrasi untuk mengaktivasi email dan membuat
+   password.
+
+4. User SAKTI Mail dapat login menggunakan emailnya.
+
+</Steps>
+
+## Mengisi form pendaftaran
+
+- Pastikan jenis *field* adalah **Text** (default).
+- Pastikan akhiran NIP atau NIK **bukan `000`**.
+- Pastikan kembali kode KPPN (**3 digit**).
+- Email akan terbentuk **empat digit karakter dan empat digit angka**
+  berakhiran `@sakti.mail.go.id`.
+
+Formulir: [Form Pendaftaran SAKTI Mail](https://docs.google.com/spreadsheets/d/1EorQlrHPEscyoBSe5lu4zMhi9QODsACq/).
+
+## Registrasi dan aktivasi mandiri
+
+Email yang diupload KPPN belum memiliki password dan belum dapat digunakan;
+setiap user wajib melakukan registrasi agar email aktif.
+
+<Steps>
+
+1. Lakukan registrasi di alamat **sakti.mail.go.id/mail/registrasi**.
+
+2. Input password baru sesuai pribadi masing-masing — proses registrasi
+   dilakukan pribadi sehingga password hanya diketahui user SAKTI Mail itu
+   sendiri.
+
+3. Setelah password diinput, akun SAKTI Mail siap digunakan; login di
+   **sakti.mail.go.id**.
+
+</Steps>
+
+<Aside type="caution" title="Perlu verifikasi">
+Sumber lama menyebut alamat registrasi sebagai `sakti.mail.go.id/registrasi`
+dan `dashboard.mail.go.id/sakti/registrasi`; juknis terbaru memakai
+`sakti.mail.go.id/mail/registrasi`.
+</Aside>
+
+## Masalah umum
+
+<details>
+<summary>Belum bisa login email SAKTI setelah didaftarkan KPPN</summary>
+
+SAKTI Mail yang belum diregistrasi belum bisa dipakai login di
+sakti.mail.go.id, sehingga user tidak menerima informasi yang masuk pada
+SAKTI Mail. Lakukan registrasi mandiri terlebih dahulu; registrasi juga
+dipakai untuk memastikan kebenaran data yang sebelumnya didaftarkan ke KPPN.
+
+</details>
+
+## Terkait
+
+- [Mendaftarkan Pengguna Tipe Satker K/L](/mulai/pendaftaran-user/satker-kl/)
+- [Memahami Syarat dan Alur Pendaftaran Pengguna](/mulai/pendaftaran-user/syarat-dan-alur/)
+
+## Sumber
+
+<SumberAsli />
