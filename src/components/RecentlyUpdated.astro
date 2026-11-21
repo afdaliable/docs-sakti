@@ -15,7 +15,7 @@ const terbaru = (await artikelTampil())
 ---
 
 <section class="baru-diperbarui">
-	<h3>Baru diperbarui</h3>
+	<h2>Baru diperbarui</h2>
 	{
 		terbaru.length === 0 ? (
 			<p class="kosong">Belum ada artikel. Panduan sedang dimigrasikan.</p>
@@ -37,7 +37,7 @@ const terbaru = (await artikelTampil())
 </section>
 
 <style>
-	.baru-diperbarui h3 {
+	.baru-diperbarui h2 {
 		margin: 0 0 1rem;
 		font-size: var(--sl-text-xl);
 	}

@@ -9,7 +9,7 @@
 
 :root[data-theme='dark'] {
 	--sl-color-accent-low: hsl(222 52% 26%);
-	--sl-color-accent: hsl(222 74% 60%);
+	--sl-color-accent: hsl(222 74% 62%);
 	--sl-color-accent-high: hsl(222 85% 80%);
 	--sl-color-text-accent: var(--sl-color-accent-high);
 }

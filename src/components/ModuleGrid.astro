@@ -11,7 +11,7 @@ const base = import.meta.env.BASE_URL;
 {
 	konfigurasi.kelompok.map((kelompok) => (
 		<section class="kelompok-modul">
-			<h3>{kelompok.nama}</h3>
+			<h2>{kelompok.nama}</h2>
 			<div class="petak-modul">
 				{konfigurasi.modul
 					.filter((m) => m.kelompok === kelompok.id)
@@ -39,7 +39,7 @@ const base = import.meta.env.BASE_URL;
 	.kelompok-modul {
 		margin-top: 2rem;
 	}
-	.kelompok-modul h3 {
+	.kelompok-modul h2 {
 		margin: 0 0 1rem;
 		font-size: var(--sl-text-xl);
 	}
@@ -60,7 +60,7 @@ const base = import.meta.env.BASE_URL;
 		padding: 1rem;
 		border: 1px solid var(--sl-color-gray-5);
 		border-radius: 0.5rem;
-		background-color: var(--sl-color-bg-accent);
+		background-color: color-mix(in srgb, var(--sl-color-accent-low) 25%, transparent);
 		color: var(--sl-color-white);
 		text-decoration: none;
 	}
