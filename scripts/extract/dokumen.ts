@@ -1,6 +1,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import type { ItemManifest } from '../inventory/tipe.ts';
+import { metaBerkas } from '../inventory/gdrive.ts';
 import { htmlKeMarkdown } from './html.ts';
 import { GalatUnduh, unduhFile, unduhTeks, urlUnduhDrive } from './unduh.ts';
 import { csvKeMarkdown, dirEkstrak, jalankan, perluOcr, PROFIL_LO, PYTHON } from './util.ts';
@@ -178,9 +179,10 @@ function mdDariCsv(csv: string, dir: string): { md: string; peringatan: string[]
 	if (!ringkas) return { md: markdown, peringatan: [] };
 	fs.mkdirSync(dir, { recursive: true });
 	fs.writeFileSync(path.join(dir, 'data.csv'), csv);
-	const header = csv.split(/\r?\n/)[0] ?? '';
+	const header = (csv.replace(/^﻿/, '').split(/\r?\n/)[0] ?? '');
+	const sep = [',', ';', '|', '\t'].reduce((a, b) => (header.split(b).length > header.split(a).length ? b : a), ',');
 	return {
-		md: `Data CSV (${jumlahBaris} baris) disimpan di \`data.csv\`.\n\nKolom: \`${header.split(',').map((k) => k.trim()).join('`, `')}\``,
+		md: `Data CSV (${jumlahBaris} baris) disimpan di \`data.csv\`.\n\nKolom: \`${header.split(sep).map((k) => k.trim()).join('`, `')}\``,
 		peringatan: [],
 	};
 }
@@ -212,7 +214,12 @@ export async function ekstrakXlsx(item: ItemManifest): Promise<HasilEkstrak> {
 export async function ekstrakLainnya(item: ItemManifest): Promise<HasilEkstrak> {
 	const hasil = kosong();
 	const dir = dirEkstrak(item.id);
-	const ext = /\.([a-z0-9]{1,5})$/i.exec(item.judul)?.[1]?.toLowerCase() ?? 'bin';
+	let ext = /\.([a-z0-9]{1,5})$/i.exec(item.judul)?.[1]?.toLowerCase();
+	if (!ext && item.drive_id) {
+		const meta = await metaBerkas(item.drive_id);
+		ext = /\.([a-z0-9]{1,5})$/i.exec(meta.nama ?? '')?.[1]?.toLowerCase();
+	}
+	ext ??= 'bin';
 	if (ext === 'csv') {
 		const jalur = await unduhFile(item, urlUnduhDrive(item.drive_id!), 'csv');
 		const { md } = mdDariCsv(fs.readFileSync(jalur, 'utf8'), dir);

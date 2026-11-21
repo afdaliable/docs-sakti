@@ -1,3 +1,5 @@
+import fs from 'node:fs';
+import path from 'node:path';
 import type { ItemManifest, Manifest } from './tipe.ts';
 
 function hitungPer<T extends string>(items: ItemManifest[], fn: (i: ItemManifest) => T): Record<T, number> {
@@ -125,5 +127,28 @@ export function buatLaporan(manifest: Manifest, tanggal: string): string {
 		baris.push(`- ${i.id} — ${i.url}`);
 	}
 	baris.push('');
+
+	const dirEkstrak = path.resolve(process.cwd(), 'sources/extracted');
+	if (fs.existsSync(dirEkstrak)) {
+		baris.push('## Hasil ekstraksi', '');
+		const ocr: string[] = [];
+		for (const d of fs.readdirSync(dirEkstrak).sort()) {
+			const jalurMeta = path.join(dirEkstrak, d, 'meta.json');
+			if (!fs.existsSync(jalurMeta)) continue;
+			try {
+				const meta = JSON.parse(fs.readFileSync(jalurMeta, 'utf8')) as { halaman_ocr?: number[] };
+				if (meta.halaman_ocr?.length) ocr.push(`${d} (halaman ${meta.halaman_ocr.join(', ')})`);
+			} catch {}
+		}
+		const perStatusEkstrak = hitungPer(item, (i) => i.status);
+		baris.push(`- diekstrak: ${perStatusEkstrak['diekstrak'] ?? 0}`);
+		baris.push(`- diunduh: ${perStatusEkstrak['diunduh'] ?? 0}`);
+		baris.push(`- belum diproses: ${perStatusEkstrak['terinventaris'] ?? 0}`);
+		baris.push(`- gagal: ${perStatusEkstrak['gagal'] ?? 0}`);
+		baris.push('');
+		baris.push(`Dokumen dengan halaman OCR (${ocr.length}):`);
+		for (const o of ocr) baris.push(`- ${o}`);
+		baris.push('');
+	}
 	return baris.join('\n');
 }

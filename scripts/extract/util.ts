@@ -63,11 +63,25 @@ export function jalankan(cmd: string, args: string[], timeout = 120000): Promise
 	});
 }
 
+function deteksiPemisah(header: string): string {
+	let terbaik = ',';
+	let maks = 0;
+	for (const k of [',', ';', '|', '\t']) {
+		const n = header.split(k).length - 1;
+		if (n > maks) {
+			maks = n;
+			terbaik = k;
+		}
+	}
+	return terbaik;
+}
+
 export function csvKeMarkdown(csv: string, maksBaris = 50): { markdown: string; jumlahBaris: number; ringkas: boolean } {
-	const baris = csv.split(/\r?\n/).filter((b) => b.trim() !== '');
+	const baris = csv.replace(/^﻿/, '').split(/\r?\n/).filter((b) => b.trim() !== '');
+	const sep = deteksiPemisah(baris[0] ?? '');
 	if (baris.length <= maksBaris) {
-		const sel = baris.map((b) => `| ${b.split(',').map((c) => c.replace(/^\s*"|"\s*$/g, '').replace(/\|/g, '\\|').trim()).join(' | ')} |`);
-		sel.splice(1, 0, `| ${baris[0].split(',').map(() => '---').join(' | ')} |`);
+		const sel = baris.map((b) => `| ${b.split(sep).map((c) => c.replace(/^\s*"|"\s*$/g, '').replace(/\|/g, '\\|').trim()).join(' | ')} |`);
+		sel.splice(1, 0, `| ${baris[0].split(sep).map(() => '---').join(' | ')} |`);
 		return { markdown: sel.join('\n'), jumlahBaris: baris.length - 1, ringkas: false };
 	}
 	return { markdown: '', jumlahBaris: baris.length - 1, ringkas: true };
