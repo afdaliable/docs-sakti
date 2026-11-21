@@ -19,6 +19,7 @@ export interface ItemManifest {
 	jenis: JenisItem;
 	url: string;
 	judul: string;
+	teks_tautan: string | null;
 	jalur_menu: string[];
 	penanda_sumber: '✅' | '🟡' | null;
 	modified: string | null;
@@ -51,6 +52,7 @@ export interface Manifest {
 export function itemBaru(parsial: Partial<ItemManifest> & Pick<ItemManifest, 'id' | 'sumber' | 'jenis' | 'url'>): ItemManifest {
 	return {
 		judul: '',
+		teks_tautan: null,
 		jalur_menu: [],
 		penanda_sumber: null,
 		modified: null,

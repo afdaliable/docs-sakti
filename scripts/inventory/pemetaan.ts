@@ -18,9 +18,9 @@ function petakanSegmen(segmen: string[]): string[] {
 	return segmen.map((s) => PETA_SEGMEN_C[s] ?? s);
 }
 
-function hasil(path: string | null, peran: string[] = [], catatan?: string): Target {
+function hasil(path: string | null, peran: string[] = [], catatan?: string, modul?: string | null): Target {
 	return {
-		target_modul: path ? path.split('/')[0] : null,
+		target_modul: modul !== undefined ? modul : path ? path.split('/')[0] : null,
 		target_path: path,
 		target_peran: peran,
 		catatan,
@@ -81,23 +81,23 @@ export function petakanTarget(sumber: Sumber, pathSetelahBase: string): Target {
 			case 'beranda':
 				return hasil('mulai');
 			case 'satker-kl':
-				return hasil('admin', ['satker']);
+				return hasil(null, ['satker'], undefined, 'admin');
 			case 'kppn-bun-dan-kanwil-djpb':
-				return hasil('kppn-bun', ['kppn-kanwil']);
+				return hasil(null, ['kppn-kanwil'], undefined, 'kppn-bun');
 			case 'djpb-kantor-pusat':
-				return hasil('admin', ['djpb-pusat']);
+				return hasil(null, ['djpb-pusat'], undefined, 'admin');
 			case 'dja-penelaah':
-				return hasil('admin', ['dja']);
+				return hasil(null, ['dja'], undefined, 'admin');
 			case 'djkn-pembina':
-				return hasil('admin', ['djkn']);
+				return hasil(null, ['djkn'], undefined, 'admin');
 			case 'bappenas-penelaah':
-				return hasil('admin', ['bappenas']);
+				return hasil(null, ['bappenas'], undefined, 'admin');
 			case 'bpk-auditor':
-				return hasil('admin', ['bpk']);
+				return hasil(null, ['bpk'], undefined, 'admin');
 			case 'apip':
-				return hasil('admin', ['apip']);
+				return hasil(null, ['apip'], undefined, 'admin');
 			case 'widyaiswara-kemenkeu':
-				return hasil('admin', ['widyaiswara']);
+				return hasil(null, ['widyaiswara'], undefined, 'admin');
 			case 'peraturan':
 				return hasil('peraturan');
 			case 'hubungi-kami':

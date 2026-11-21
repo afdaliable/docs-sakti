@@ -1,6 +1,6 @@
 import fs from 'node:fs';
 import path from 'node:path';
-import { crawlSitus, SITUS } from './gsites.ts';
+import { crawlSitus, SITUS, jalurMenuDariPath } from './gsites.ts';
 import { ambilLinktree } from './linktree.ts';
 import { daftarFolder, metaBerkas, jenisDari } from './gdrive.ts';
 import { resolusiTautan } from './resolver-net.ts';
@@ -59,7 +59,7 @@ async function main() {
 	const sumberDicrawl = new Set<Sumber>();
 
 	async function resolusiDanGabung(
-		daftarTautan: { url: string; teks: string }[],
+		daftarTautan: { url: string; teks: string; aria?: string | null }[],
 		dariItem: ItemManifest,
 		target: { target_modul: string | null; target_path: string | null; target_peran: string[] },
 	) {
@@ -68,6 +68,7 @@ async function main() {
 			const hasil = await resolusiTautan({
 				urlMentah: t.url,
 				teks: t.teks,
+				aria: t.aria,
 				dariId: dariItem.id,
 				sumber: dariItem.sumber,
 				dariTarget: target,
@@ -90,7 +91,7 @@ async function main() {
 		if (!sumber.has(situs.sumber)) continue;
 		sumberDicrawl.add(situs.sumber);
 		console.log(`[${new Date().toISOString()}] crawl situs ${situs.sumber} (${situs.base})`);
-		await crawlSitus(situs, { batas, tanpaScreenshot }, async (item, hasil) => {
+		const hasilCrawl = await crawlSitus(situs, { batas, tanpaScreenshot }, async (item, hasil) => {
 			const digabung = gabungItem(manifest, item);
 			idTerlihat.add(digabung.id);
 			if (!hasil.url) return;
@@ -101,16 +102,33 @@ async function main() {
 			};
 			const tautanEmbed = hasil.embed
 				.map((e) => {
-					if (e.openUrl) return { url: e.openUrl, teks: e.aria ?? '' };
-					if (e.url) return { url: e.url, teks: e.aria ?? '' };
-					if (e.docId) return { url: `https://drive.google.com/file/d/${e.docId}/view`, teks: e.aria ?? '' };
+					if (e.openUrl) return { url: e.openUrl, teks: '', aria: e.aria };
+					if (e.url) return { url: e.url, teks: '', aria: e.aria };
+					if (e.docId) return { url: `https://drive.google.com/file/d/${e.docId}/view`, teks: '', aria: e.aria };
 					return null;
 				})
-				.filter((x): x is { url: string; teks: string } => x !== null);
+				.filter((x): x is { url: string; teks: string; aria: string | null } => x !== null);
 			await resolusiDanGabung(tautanEmbed, digabung, target);
 			await resolusiDanGabung(hasil.tautanKeluar, digabung, target);
 			console.log(`  ${digabung.id} — ${digabung.judul}`);
 		});
+
+		// Hapus halaman duplikat (base URL yang merender konten halaman bernama).
+		for (const id of hasilCrawl.idDihapus) {
+			const idx = manifest.item.findIndex((i) => i.id === id);
+			if (idx >= 0) {
+				manifest.item.splice(idx, 1);
+				console.log(`  duplikat dihapus: ${id}`);
+			}
+		}
+		// Perbaiki jalur_menu dan penanda dengan navMap lengkap.
+		for (const item of manifest.item) {
+			if (item.sumber !== situs.sumber || item.jenis !== 'google-sites') continue;
+			const pathSetelahBase = item.url.slice(situs.base.length).replace(/^\//, '');
+			const { jalur, penanda } = jalurMenuDariPath(situs, pathSetelahBase, hasilCrawl.navMap);
+			item.jalur_menu = jalur;
+			if (penanda) item.penanda_sumber = penanda;
+		}
 	}
 
 	if (sumber.has('B')) {
@@ -193,16 +211,16 @@ async function daftarBerkasFolder(
 			itemBaru({
 				id: pemberiId.idBerkasB(kode, e.id),
 				sumber: 'B',
-				jenis: jenisDari(nama, e.mime),
+				jenis: jenisDari(nama, meta.tipe ?? e.mime),
 				url: `https://drive.google.com/file/d/${e.id}/view`,
-				judul: nama,
+				judul: nama.replace(/\.[a-z0-9]{1,5}$/i, ''),
 				jalur_menu: [...jalur, nama],
 				drive_id: e.id,
 				ukuran: meta.ukuran,
 				modified: meta.modified ?? e.modified,
 				target_modul: modul,
 				status: ditolak ? 'ditolak' : meta.ok ? 'terinventaris' : 'gagal',
-				catatan: ditolak ?? (meta.ok ? '' : 'metadata file tidak bisa diambil'),
+				catatan: ditolak ?? (meta.ok ? '' : meta.status === 404 ? 'HTTP 404' : 'metadata file tidak bisa diambil'),
 			}),
 		);
 		berkas.sumber = 'B';

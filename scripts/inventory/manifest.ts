@@ -14,8 +14,22 @@ export function bacaManifest(): Manifest {
 
 export function tulisManifest(manifest: Manifest) {
 	manifest.item.sort((a, b) => (a.sumber + a.id).localeCompare(b.sumber + b.id));
+	const json = JSON.stringify(manifest, null, 2) + '\n';
+	// Lone surrogate (UTF-16 unpaired) tidak boleh lolos ke manifest.
+	for (let i = 0; i < json.length; i++) {
+		const c = json.charCodeAt(i);
+		if (c >= 0xd800 && c <= 0xdbff) {
+			const d = json.charCodeAt(i + 1);
+			if (!(d >= 0xdc00 && d <= 0xdfff)) {
+				throw new Error(`lone surrogate pada manifest (posisi ${i})`);
+			}
+			i++;
+		} else if (c >= 0xdc00 && c <= 0xdfff) {
+			throw new Error(`lone surrogate pada manifest (posisi ${i})`);
+		}
+	}
 	fs.mkdirSync(path.dirname(JALUR_MANIFEST), { recursive: true });
-	fs.writeFileSync(JALUR_MANIFEST, JSON.stringify(manifest, null, 2) + '\n');
+	fs.writeFileSync(JALUR_MANIFEST, json);
 }
 
 const STATUS_FINAL = ['dimigrasi', 'didraft', 'diekstrak', 'diunduh', 'ditolak', 'gagal'];
@@ -33,9 +47,11 @@ export function gabungItem(manifest: Manifest, itemBaru_: ItemManifest): ItemMan
 		target_peran: lama.target_peran,
 	};
 	const statusLama = lama.status;
+	const ditautkanLama = lama.ditautkan_dari ?? [];
+	const embedLama = lama.embed ?? [];
 	Object.assign(lama, itemBaru_);
-	lama.ditautkan_dari = [...new Set([...itemBaru_.ditautkan_dari, ...(lama.ditautkan_dari ?? [])])];
-	lama.embed = [...new Set([...itemBaru_.embed, ...(lama.embed ?? [])])];
+	lama.ditautkan_dari = [...new Set([...ditautkanLama, ...itemBaru_.ditautkan_dari])];
+	lama.embed = [...new Set([...embedLama, ...itemBaru_.embed])];
 	if (catatanLama) lama.catatan = catatanLama;
 	if (targetLama.target_modul || targetLama.target_path || targetLama.target_peran?.length) {
 		lama.target_modul = targetLama.target_modul;

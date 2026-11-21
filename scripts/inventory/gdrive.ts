@@ -56,6 +56,8 @@ export interface MetaBerkas {
 	nama: string | null;
 	ukuran: number | null;
 	modified: string | null;
+	tipe: string | null;
+	status: number | null;
 	ok: boolean;
 }
 
@@ -69,14 +71,23 @@ export async function metaBerkas(fileId: string): Promise<MetaBerkas> {
 		const nama = decodeURIComponent(cd.match(/filename\*?=(?:UTF-8'')?"?([^";]+)/)?.[1] ?? '') || null;
 		const ukuran = Number(res.headers.get('content-length')) || null;
 		const modified = res.headers.get('last-modified');
-		return { nama, ukuran, modified: modified ? new Date(modified).toISOString() : null, ok: res.status < 400 };
+		const tipe = res.headers.get('content-type');
+		return {
+			nama,
+			ukuran,
+			modified: modified ? new Date(modified).toISOString() : null,
+			tipe,
+			status: res.status,
+			ok: res.status < 400,
+		};
 	} catch {
-		return { nama: null, ukuran: null, modified: null, ok: false };
+		return { nama: null, ukuran: null, modified: null, tipe: null, status: null, ok: false };
 	}
 }
 
 export function jenisDari(nama: string, mime: string): 'pdf' | 'pptx' | 'docx' | 'xlsx' | 'video' | 'google-slides' | 'google-docs' | 'sheets' | 'lainnya' {
 	const n = nama.toLowerCase();
+	if (mime.startsWith('video/')) return 'video';
 	if (mime === 'application/pdf' || n.endsWith('.pdf')) return 'pdf';
 	if (mime.includes('presentationml') || n.endsWith('.pptx')) return 'pptx';
 	if (mime.includes('wordprocessingml') || n.endsWith('.docx')) return 'docx';
@@ -84,7 +95,7 @@ export function jenisDari(nama: string, mime: string): 'pdf' | 'pptx' | 'docx' |
 	if (mime === 'application/vnd.google-apps.presentation') return 'google-slides';
 	if (mime === 'application/vnd.google-apps.document') return 'google-docs';
 	if (mime === 'application/vnd.google-apps.spreadsheet') return 'sheets';
-	if (mime.startsWith('video/')) return 'video';
+	if (n.endsWith('.mp4') || n.endsWith('.mov') || n.endsWith('.webm') || n.endsWith('.avi')) return 'video';
 	return 'lainnya';
 }
 

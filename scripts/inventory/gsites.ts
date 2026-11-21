@@ -17,18 +17,29 @@ export const SITUS: Situs[] = [
 	{ sumber: 'C', nama: 'saktipelaporan', base: 'https://sites.google.com/view/saktipelaporan' },
 ];
 
+export interface EntriNav {
+	url: string;
+	label: string;
+	penanda: '✅' | '🟡' | null;
+}
+
 export interface HasilHalaman {
 	url: string;
 	pathSetelahBase: string;
 	judul: string;
-	judulNav: string;
 	jumlah_kata: number;
 	jumlah_gambar: number;
 	modified: string | null;
+	teksHash: string;
 	tautanInternal: string[];
 	tautanKeluar: { url: string; teks: string }[];
 	embed: { url: string | null; docId: string | null; openUrl: string | null; aria: string | null }[];
-	htmlUtama: string;
+}
+
+export interface HasilCrawl {
+	halaman: Map<string, HasilHalaman>;
+	navMap: Map<string, EntriNav>;
+	idDihapus: string[];
 }
 
 function normalisasiInternal(url: string, situs: Situs): string | null {
@@ -52,22 +63,57 @@ export function idHalaman(sumber: 'A' | 'C', pathSetelahBase: string): string {
 	return `${sumber}-${bersih}`;
 }
 
-function stripPenanda(teks: string): { label: string; penanda: '✅' | '🟡' | null } {
-	const m = teks.trim().match(/^([✅🟡])\s*(.*)$/);
+export function stripPenanda(teks: string): { label: string; penanda: '✅' | '🟡' | null } {
+	const m = teks.trim().match(/^([✅🟡])\s*(.*)$/u);
 	if (m) return { label: m[2].trim(), penanda: m[1] as '✅' | '🟡' };
 	return { label: teks.trim(), penanda: null };
 }
 
-async function ekstrakHalaman(page: Page, situs: Situs, tanpaScreenshot: boolean, dirRaw: string) {
-	await page.waitForSelector('[role="main"]', { timeout: 20000 }).catch(() => {});
+function humanize(slug: string): string {
+	return slug
+		.split('-')
+		.map((k) => k.charAt(0).toUpperCase() + k.slice(1))
+		.join(' ');
+}
 
-	const data = await page.evaluate(() => {
-		const utama = document.querySelector('[role="main"]') ?? document.body;
-		const h1 = utama.querySelector('h1')?.textContent?.trim() ?? '';
-		const judulDok = document.title ?? '';
-		const teks = (utama as HTMLElement).innerText ?? '';
+export function jalurMenuDariPath(
+	situs: Situs,
+	pathSetelahBase: string,
+	navMap: Map<string, EntriNav>,
+): { jalur: string[]; penanda: '✅' | '🟡' | null } {
+	const segmen = pathSetelahBase.split('/').filter(Boolean);
+	const jalur: string[] = [];
+	let penanda: '✅' | '🟡' | null = null;
+	for (let i = 0; i < segmen.length; i++) {
+		const prefiks = segmen.slice(0, i + 1).join('/');
+		const nav = navMap.get(`${situs.base}/${prefiks}`);
+		jalur.push(nav?.label ?? humanize(segmen[i]));
+		if (i === segmen.length - 1) penanda = nav?.penanda ?? null;
+	}
+	return { jalur, penanda };
+}
+
+async function ekstrakHalaman(page: Page) {
+	return page.evaluate(() => {
+		const diLuar = (el: Element) => !el.closest('header') && !el.closest('nav') && !el.closest('footer');
+		let sections = [...document.querySelectorAll('section')].filter(diLuar);
+		let utama: Element | HTMLElement;
+		if (sections.length > 0) {
+			utama = document.createElement('div');
+			for (const s of sections) utama.appendChild(s.cloneNode(true));
+		} else {
+			utama = (document.querySelector('[role="main"]') ?? document.body) as HTMLElement;
+		}
+		const htmlUtama = sections.length > 0
+			? sections.map((s) => s.outerHTML).join('\n')
+			: (utama as HTMLElement).innerHTML;
+		const h1 =
+			utama.querySelector('h1')?.textContent?.trim() ??
+			document.querySelector('h1')?.textContent?.trim() ??
+			'';
+		const teks = ((utama as HTMLElement).innerText ?? '').replace(/\s+\n/g, '\n');
 		const gambar = [...utama.querySelectorAll('img')].map((img) => ({
-			src: img.src,
+			src: (img as HTMLImageElement).src,
 			alt: img.getAttribute('alt') ?? '',
 		}));
 		const tautan = [...document.querySelectorAll('a[href]')].map((a) => ({
@@ -89,9 +135,10 @@ async function ekstrakHalaman(page: Page, situs: Situs, tanpaScreenshot: boolean
 			document.querySelector('[data-last-updated-at-time]')?.getAttribute('data-last-updated-at-time') ?? null;
 		return {
 			h1,
-			judulDok,
+			judulDok: document.title ?? '',
 			teks,
-			htmlUtama: utama.innerHTML,
+			htmlUtama,
+			fullHtml: document.documentElement.outerHTML,
 			gambar,
 			tautan,
 			iframe,
@@ -99,33 +146,27 @@ async function ekstrakHalaman(page: Page, situs: Situs, tanpaScreenshot: boolean
 			modified,
 		};
 	});
+}
 
-	// URL iframe yang dimuat lazy juga terlihat di page.frames().
-	for (const frame of page.frames()) {
-		if (frame === page.mainFrame()) continue;
-		const url = frame.url();
-		if (url && !data.iframe.some((f) => f.src === url || f.dataSrc === url)) {
-			data.iframe.push({ src: url, dataSrc: null, aria: null });
-		}
+function hashTeks(teks: string): string {
+	let h = 0;
+	const t = teks.replace(/\s+/g, ' ').trim();
+	for (let i = 0; i < t.length; i++) {
+		h = (Math.imul(h, 31) + t.charCodeAt(i)) >>> 0;
 	}
-
-	const urlPage = page.url().split(/[?#]/)[0].replace(/\/$/, '');
-	const pathSetelahBase = urlPage.slice(situs.base.length).replace(/^\//, '');
-
-	return { data, urlPage, pathSetelahBase };
+	return `${t.length}:${h.toString(16)}`;
 }
 
 export interface OpsiCrawl {
 	batas?: number;
 	tanpaScreenshot?: boolean;
-	hanyaUrl?: Set<string>;
 }
 
 export async function crawlSitus(
 	situs: Situs,
 	opsi: OpsiCrawl,
 	padaItem: (item: ItemManifest, hasil: HasilHalaman) => void | Promise<void>,
-): Promise<Map<string, HasilHalaman>> {
+): Promise<HasilCrawl> {
 	const dirRaw = path.resolve(process.cwd(), 'sources/raw/gsites', situs.nama);
 	fs.mkdirSync(dirRaw, { recursive: true });
 
@@ -136,17 +177,17 @@ export async function crawlSitus(
 	});
 	const page = await konteks.newPage();
 
-	const hasil = new Map<string, HasilHalaman>();
+	const halaman = new Map<string, HasilHalaman>();
+	const navMap = new Map<string, EntriNav>();
+	const hashKeId = new Map<string, string>();
+	const idDihapus: string[] = [];
 	const antrean: string[] = [situs.base];
 	const terlihat = new Set<string>();
-	const penandaPerUrl = new Map<string, '✅' | '🟡' | null>();
-	const jalurPerUrl = new Map<string, string[]>();
 
-	while (antrean.length > 0 && hasil.size < (opsi.batas ?? 1000)) {
+	while (antrean.length > 0 && halaman.size < (opsi.batas ?? 1000)) {
 		const url = antrean.shift()!;
-		const kunci = url.replace(/\/$/, '');
-		if (terlihat.has(kunci)) continue;
-		terlihat.add(kunci);
+		if (terlihat.has(url)) continue;
+		terlihat.add(url);
 
 		await acakJeda();
 		try {
@@ -170,8 +211,30 @@ export async function crawlSitus(
 			continue;
 		}
 
-		const { data, urlPage, pathSetelahBase } = await ekstrakHalaman(page, situs, !!opsi.tanpaScreenshot, dirRaw);
+		const data = await ekstrakHalaman(page);
+
+		for (const frame of page.frames()) {
+			if (frame === page.mainFrame()) continue;
+			const furl = frame.url();
+			if (furl && !data.iframe.some((f) => f.src === furl || f.dataSrc === furl)) {
+				data.iframe.push({ src: furl, dataSrc: null, aria: null });
+			}
+		}
+
+		const urlPage = page.url().split(/[?#]/)[0].replace(/\/$/, '');
+		const pathSetelahBase = urlPage.slice(situs.base.length).replace(/^\//, '');
 		const id = idHalaman(situs.sumber, pathSetelahBase);
+
+		for (const t of data.tautan) {
+			if (!t.diNav) continue;
+			const internal = normalisasiInternal(t.href, situs);
+			if (!internal) continue;
+			const { label, penanda } = stripPenanda(t.teks);
+			const lama = navMap.get(internal);
+			if (!lama || (!lama.penanda && penanda)) {
+				navMap.set(internal, { url: internal, label, penanda });
+			}
+		}
 
 		const tautanInternal = new Set<string>();
 		const tautanKeluar: { url: string; teks: string }[] = [];
@@ -179,50 +242,49 @@ export async function crawlSitus(
 			const internal = normalisasiInternal(t.href, situs);
 			if (internal) {
 				tautanInternal.add(internal);
-				const pathBaru = internal.slice(situs.base.length).replace(/^\//, '');
-				if (!terlihat.has(internal.replace(/\/$/, '')) && !antrean.includes(internal)) {
+				if (!terlihat.has(internal) && !antrean.includes(internal)) {
 					antrean.push(internal);
-				}
-				if (t.diNav && t.teks) {
-					const { label, penanda } = stripPenanda(t.teks);
-					if (penanda && !penandaPerUrl.has(internal)) penandaPerUrl.set(internal, penanda);
-					if (label && !jalurPerUrl.has(internal)) {
-						const jalurInduk = jalurPerUrl.get(urlPage) ?? [];
-						if (!jalurInduk.includes(label)) {
-							jalurPerUrl.set(internal, [...jalurInduk, label]);
-						}
-					}
 				}
 			} else {
 				tautanKeluar.push({ url: buangGoogleRedirect(t.href), teks: t.teks });
 			}
 		}
 
-		const judulNav = (() => {
-			const j = jalurPerUrl.get(urlPage);
-			return j?.[j.length - 1] ?? '';
-		})();
-		let judul = data.h1 || data.judulDok.replace(new RegExp(`^${situs.nama}\\s*[-–—:]?\\s*`, 'i'), '').trim() || judulNav;
-		const { label: judulBersih, penanda } = stripPenanda(judul);
-		judul = judulBersih;
+		let judul =
+			data.h1 ||
+			data.judulDok.replace(new RegExp(`\\s*[-–—:]?\\s*${situs.nama}\\s*$`, 'i'), '').trim();
+		judul = stripPenanda(judul).label;
 
-		const jalurMenu = jalurPerUrl.get(urlPage) ?? (judul ? [judul] : []);
+		const teksHash = hashTeks(data.teks);
+		if (hashKeId.has(teksHash)) {
+			const lainnya = hashKeId.get(teksHash)!;
+			if (pathSetelahBase === '' || pathSetelahBase === 'beranda') {
+				idDihapus.push(id);
+			} else if (lainnya.endsWith('-beranda')) {
+				idDihapus.push(lainnya);
+			}
+		} else {
+			hashKeId.set(teksHash, id);
+		}
+
+		const { jalur, penanda } = jalurMenuDariPath(situs, pathSetelahBase, navMap);
 		const jumlahKata = data.teks.split(/\s+/).filter(Boolean).length;
 
 		const namaBerkas = pathSetelahBase.replace(/\//g, '_') || 'beranda';
 		const jalurHtml = path.join(dirRaw, `${namaBerkas}.html`);
 		fs.writeFileSync(jalurHtml, data.htmlUtama);
-		const jalurJson = path.join(dirRaw, `${namaBerkas}.json`);
+		fs.writeFileSync(path.join(dirRaw, `${namaBerkas}.full.html`), data.fullHtml);
 		fs.writeFileSync(
-			jalurJson,
+			path.join(dirRaw, `${namaBerkas}.json`),
 			JSON.stringify(
 				{ url: urlPage, teks: data.teks, gambar: data.gambar, tautan: data.tautan, embed: data.embed, iframe: data.iframe },
 				null,
 				1,
 			),
 		);
-		if (!opsi.tanpaScreenshot) {
-			await page.screenshot({ path: path.join(dirRaw, `${namaBerkas}.png`), fullPage: true }).catch(() => {});
+		const jalurPng = path.join(dirRaw, `${namaBerkas}.png`);
+		if (!opsi.tanpaScreenshot && !fs.existsSync(jalurPng)) {
+			await page.screenshot({ path: jalurPng, fullPage: true }).catch(() => {});
 		}
 
 		const target = petakanTarget(situs.sumber, pathSetelahBase);
@@ -234,16 +296,15 @@ export async function crawlSitus(
 			url: urlPage,
 			pathSetelahBase,
 			judul,
-			judulNav,
 			jumlah_kata: jumlahKata,
 			jumlah_gambar: data.gambar.length,
 			modified: data.modified ? new Date(Number(data.modified)).toISOString() : null,
+			teksHash,
 			tautanInternal: [...tautanInternal],
 			tautanKeluar,
 			embed,
-			htmlUtama: data.htmlUtama,
 		};
-		hasil.set(kunci, hasilHalaman);
+		halaman.set(url, hasilHalaman);
 
 		await padaItem(
 			itemBaru({
@@ -252,8 +313,8 @@ export async function crawlSitus(
 				jenis: 'google-sites',
 				url: urlPage,
 				judul,
-				jalur_menu: jalurMenu,
-				penanda_sumber: penandaPerUrl.get(urlPage) ?? penanda,
+				jalur_menu: jalur,
+				penanda_sumber: penanda,
 				modified: hasilHalaman.modified,
 				file_lokal: path.relative(process.cwd(), jalurHtml),
 				jumlah_kata: jumlahKata,
@@ -268,5 +329,5 @@ export async function crawlSitus(
 	}
 
 	await browser.close();
-	return hasil;
+	return { halaman, navMap, idDihapus };
 }

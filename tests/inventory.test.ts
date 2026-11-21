@@ -77,7 +77,7 @@ test('pemetaan sumber A', () => {
 	assert.equal(petakanTarget('A', 'beranda').target_path, 'mulai');
 	const satker = petakanTarget('A', 'satker-kl');
 	assert.equal(satker.target_modul, 'admin');
-	assert.equal(satker.target_path, 'admin');
+	assert.equal(satker.target_path, null);
 	assert.deepEqual(satker.target_peran, ['satker']);
 	assert.deepEqual(petakanTarget('A', 'kppn-bun-dan-kanwil-djpb').target_peran, ['kppn-kanwil']);
 	assert.equal(petakanTarget('A', 'djpb-kantor-pusat').target_modul, 'admin');
@@ -134,4 +134,33 @@ test('penomoran id stabil saat merge', () => {
 	);
 	assert.equal(gabungan.status, 'diekstrak');
 	assert.equal(gabungan.catatan, 'sudah');
+});
+
+test('merge: target halaman penaut pertama menang, ditautkan_dari terakumulasi', () => {
+	const manifest: Manifest = { dibuat: '', item: [], link_rusak: [] };
+	gabungItem(
+		manifest,
+		itemBaru({
+			id: 'A-dok-001',
+			sumber: 'A',
+			jenis: 'sheets',
+			url: 'u',
+			ditautkan_dari: ['A-peraturan'],
+			target_modul: 'peraturan',
+			target_path: 'peraturan',
+		}),
+	);
+	const gabungan = gabungItem(
+		manifest,
+		itemBaru({
+			id: 'A-dok-001',
+			sumber: 'A',
+			jenis: 'sheets',
+			url: 'u',
+			ditautkan_dari: ['A-apip'],
+			target_modul: 'admin',
+		}),
+	);
+	assert.equal(gabungan.target_modul, 'peraturan');
+	assert.deepEqual(gabungan.ditautkan_dari, ['A-peraturan', 'A-apip']);
 });
