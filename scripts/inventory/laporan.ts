@@ -31,6 +31,42 @@ function jaccard(a: Set<string>, b: Set<string>): number {
 	return irisan / (a.size + b.size - irisan);
 }
 
+function parseCsv(csv: string): string[][] {
+	const baris: string[][] = [];
+	let sel = '';
+	let kolom: string[] = [];
+	let dalamKutip = false;
+	for (let i = 0; i < csv.length; i++) {
+		const c = csv[i];
+		if (dalamKutip) {
+			if (c === '"' && csv[i + 1] === '"') {
+				sel += '"';
+				i++;
+			} else if (c === '"') {
+				dalamKutip = false;
+			} else {
+				sel += c;
+			}
+		} else if (c === '"') {
+			dalamKutip = true;
+		} else if (c === ',') {
+			kolom.push(sel);
+			sel = '';
+		} else if (c === '\n' || c === '\r') {
+			if (c === '\r' && csv[i + 1] === '\n') i++;
+			kolom.push(sel);
+			sel = '';
+			if (kolom.length > 1 || kolom[0] !== '') baris.push(kolom);
+			kolom = [];
+		} else {
+			sel += c;
+		}
+	}
+	kolom.push(sel);
+	if (kolom.length > 1 || kolom[0] !== '') baris.push(kolom);
+	return baris;
+}
+
 export function buatLaporan(manifest: Manifest, tanggal: string): string {
 	const item = manifest.item;
 	const baris: string[] = [];
@@ -125,6 +161,38 @@ export function buatLaporan(manifest: Manifest, tanggal: string): string {
 	baris.push('## Item tanpa target modul', '');
 	for (const i of item.filter((i) => !i.target_modul && i.jenis === 'google-sites')) {
 		baris.push(`- ${i.id} — ${i.url}`);
+	}
+	baris.push('');
+
+	const jalurPeta = path.resolve(process.cwd(), 'sources/peta-konten.csv');
+	if (fs.existsSync(jalurPeta)) {
+		baris.push('## Ringkasan peta konten', '');
+		const barisCsv = parseCsv(fs.readFileSync(jalurPeta, 'utf8'));
+		const perJenis = new Map<string, number>();
+		const perModulPeta = new Map<string, number>();
+		const ditolak: string[][] = [];
+		for (const r of barisCsv.slice(1)) {
+			const [targetPath, judul, modul, , , jenis, idSumber, catatan] = r;
+			if (!jenis) continue;
+			perJenis.set(jenis, (perJenis.get(jenis) ?? 0) + 1);
+			if (modul) perModulPeta.set(modul, (perModulPeta.get(modul) ?? 0) + 1);
+			if (jenis === 'ditolak') ditolak.push([judul, idSumber, catatan]);
+		}
+		baris.push('Baris per jenis:');
+		for (const [k, n] of [...perJenis.entries()].sort()) baris.push(`- ${k}: ${n}`);
+		baris.push('');
+		baris.push('Artikel target per modul:');
+		for (const [k, n] of [...perModulPeta.entries()].sort()) baris.push(`- ${k}: ${n}`);
+		baris.push('');
+		baris.push('### Usulan ditolak', '');
+		for (const [judul, idSumber, catatan] of ditolak) baris.push(`- ${judul} — ${idSumber} — ${catatan}`);
+		baris.push('');
+	}
+
+	baris.push('## Perlu diunduh manual', '');
+	baris.push('Simpan berkas ke `sources/raw/manual/<id>.<ekstensi>`, lalu jalankan `pnpm migrate:extract --id <id>`.', '');
+	for (const i of item.filter((i) => i.status === 'gagal')) {
+		baris.push(`- ${i.id} — ${i.judul} — ${i.url} — ${i.catatan} — ditautkan dari: ${i.ditautkan_dari.join(', ') || '-'}`);
 	}
 	baris.push('');
 
