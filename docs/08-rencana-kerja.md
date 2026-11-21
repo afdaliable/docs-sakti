@@ -24,7 +24,7 @@ Kerjakan berurutan. Centang `[x]` saat selesai. Setiap fase diakhiri **gerbang**
 - [x] 1.2 Sidebar dibangkitkan dari YAML (`02-arsitektur-informasi.md`).
 - [x] 1.3 Skema frontmatter diperluas di `src/content.config.ts`.
 - [x] 1.4 Buat `index.mdx` untuk setiap modul, setiap `sub`, dan bagian lintas (peran, peraturan, faq, glosarium, bantuan, kontribusi) — isi placeholder ringkas, `status: terbit` khusus halaman indeks.
-- [ ] 1.5 Route `/peran/[slug]` dan `/glosarium/` dari `src/data/sinonim.json`.
+- [x] 1.5 Route `/peran/[slug]` dan `/glosarium/` dari `src/data/sinonim.json`.
 - [ ] 1.6 `scripts/check-content.ts` sesuai `03-migrasi-konten.md`, termasuk deteksi data pribadi.
 - [ ] 1.7 Filter `status: draft` dari build produksi; banner untuk `status: review`.
 

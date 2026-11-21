@@ -1,0 +1,14 @@
+[
+  { "istilah": "SPM", "panjang": "Surat Perintah Membayar", "sinonim": ["surat perintah membayar"] },
+  { "istilah": "SP2D", "panjang": "Surat Perintah Pencairan Dana", "sinonim": ["pencairan dana"] },
+  { "istilah": "BAST", "panjang": "Berita Acara Serah Terima", "sinonim": ["serah terima"] },
+  { "istilah": "BMN", "panjang": "Barang Milik Negara", "sinonim": ["aset", "barang milik negara"] },
+  { "istilah": "KDP", "panjang": "Konstruksi Dalam Pengerjaan", "sinonim": ["konstruksi dalam pengerjaan"] },
+  { "istilah": "RUH", "panjang": "Rekam, Ubah, Hapus", "sinonim": ["rekam data", "input"] },
+  { "istilah": "ADK", "panjang": "Arsip Data Komputer", "sinonim": ["file adk", "upload adk"] },
+  { "istilah": "MFA", "panjang": "Multi-Factor Authentication", "sinonim": ["otp", "kode verifikasi", "authenticator", "tidak bisa login"] },
+  { "istilah": "GLP", "panjang": "General Ledger dan Pelaporan", "sinonim": ["akuntansi", "pelaporan", "jurnal"] },
+  { "istilah": "GPP", "panjang": "Gaji Pokok PNS", "sinonim": ["gaji", "belanja pegawai"], "perlu_verifikasi": true },
+  { "istilah": "PKIPA", "panjang": "", "sinonim": [], "perlu_verifikasi": true },
+  { "istilah": "DS", "panjang": "Digital Signature / Tanda Tangan Elektronik", "sinonim": ["tte", "sertifikat elektronik", "tanda tangan digital"] }
+]

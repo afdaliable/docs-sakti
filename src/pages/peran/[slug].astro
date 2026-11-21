@@ -1,0 +1,55 @@
+---
+import StarlightPage from '@astrojs/starlight/components/StarlightPage.astro';
+import { getCollection } from 'astro:content';
+import { muatKonfigurasi } from '~/lib/modul.ts';
+
+export function getStaticPaths() {
+	return muatKonfigurasi().peran.map((peran) => ({
+		params: { slug: peran.slug },
+		props: { peran },
+	}));
+}
+
+const { peran } = Astro.props;
+const konfigurasi = muatKonfigurasi();
+
+const semuaDok = await getCollection('docs');
+const dokPeran = semuaDok.filter(
+	(doc) =>
+		doc.data.peran.includes(peran.slug) &&
+		(!import.meta.env.PROD || !doc.data.draft),
+);
+
+const perModul = konfigurasi.modul
+	.map((modul) => ({
+		modul,
+		dok: dokPeran
+			.filter((doc) => doc.data.modul === modul.slug)
+			.sort((a, b) => a.data.title.localeCompare(b.data.title)),
+	}))
+	.filter((grup) => grup.dok.length > 0);
+---
+
+<StarlightPage
+	frontmatter={{ title: `Panduan untuk ${peran.nama}` }}
+>
+	{
+		perModul.length === 0 ? (
+			<p>Belum ada artikel untuk peran ini.</p>
+		) : (
+			perModul.map((grup) => (
+				<section>
+					<h2 id={grup.modul.slug}>{grup.modul.nama}</h2>
+					<ul>
+						{grup.dok.map((doc) => (
+							<li>
+								<a href={`/${doc.id}/`}>{doc.data.title}</a>
+								{doc.data.description && <> — {doc.data.description}</>}
+							</li>
+						))}
+					</ul>
+				</section>
+			))
+		)
+	}
+</StarlightPage>

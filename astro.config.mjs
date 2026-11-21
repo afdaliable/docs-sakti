@@ -18,7 +18,7 @@ export default defineConfig({
 			editLink: {
 				baseUrl: 'https://github.com/afdaliable/docs-sakti/edit/main/',
 			},
-			plugins: [starlightLinksValidator()],
+			plugins: [starlightLinksValidator({ exclude: ['/peran/**'] })],
 			sidebar: bangunSidebar(),
 		}),
 	],
