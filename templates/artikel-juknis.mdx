@@ -1,0 +1,76 @@
+---
+title: Mencatat Kontrak
+description: Langkah mencatat data kontrak pada modul Komitmen SAKTI agar dapat digunakan untuk BAST dan pembayaran.
+modul: komitmen
+menu_sakti: "Komitmen > RUH > Pencatatan Kontrak"
+peran: [satker]
+jenis: juknis
+kata_kunci: [input kontrak, rekam kontrak, data kontrak, kontrak baru]
+status: review
+perlu_review: false
+terakhir_diverifikasi: 2026-11-22
+pemilik: github-username
+sumber:
+  - judul: "Juknis Modul Komitmen — Pencatatan Kontrak"
+    url: "https://drive.google.com/file/d/XXXX/view"
+    jenis: pdf
+    diambil: 2026-11-22
+    id_manifest: B-kom-012
+sidebar:
+  order: 2
+---
+
+import { Steps, Aside } from '@astrojs/starlight/components';
+import MenuSakti from '~/components/MenuSakti.astro';
+import SumberAsli from '~/components/SumberAsli.astro';
+
+Ringkasan 1–2 kalimat: **apa** yang dicapai dan **kapan** tugas ini dilakukan.
+
+<MenuSakti />
+
+## Prasyarat
+
+- Role yang dibutuhkan: **Operator Komitmen** (sesuaikan dengan sumber).
+- Data yang harus sudah ada: data supplier sudah tercatat ([Mencatat Supplier](/komitmen/ruh/pencatatan-suplier/)).
+
+## Langkah
+
+<Steps>
+
+1. Buka menu **Komitmen > RUH > Pencatatan Kontrak**.
+
+2. Klik **Tambah**. Isi kolom berikut:
+
+   | Kolom | Keterangan |
+   |---|---|
+   | **Nomor Kontrak** | Sesuai dokumen kontrak |
+   | **Tanggal Kontrak** | ... |
+
+3. Klik **Simpan**. Status kontrak menjadi **Draft**.
+
+   ![Form pencatatan kontrak dengan kolom nomor dan tanggal kontrak](../../../../assets/komitmen/pencatatan-kontrak/01-form.webp)
+
+</Steps>
+
+## Hasil yang diharapkan
+
+Kontrak tampil di daftar dengan status **...**, dan dapat dipilih saat ...
+
+## Masalah umum
+
+<details>
+<summary>Supplier tidak muncul di pilihan</summary>
+
+Penyebab dan solusinya, sesuai sumber.
+
+</details>
+
+<Aside type="caution" title="Perlu verifikasi">
+Hapus kotak ini jika semua langkah sudah sesuai sumber. Jika ada yang ragu, tulis di sini dan set `perlu_review: true`.
+</Aside>
+
+## Terkait
+
+- [Mencatat BAST](/komitmen/ruh/pencatatan-bast/)
+
+<SumberAsli />

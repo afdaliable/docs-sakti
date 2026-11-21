@@ -1,0 +1,109 @@
+# 08 — Rencana Kerja
+
+Kerjakan berurutan. Centang `[x]` saat selesai. Setiap fase diakhiri **gerbang** (kriteria selesai) — jangan lanjut sebelum gerbang lolos.
+
+---
+
+## Fase 0 — Persiapan repo
+
+- [ ] 0.1 Inisialisasi Astro + Starlight dengan pnpm (`pnpm create astro@latest -- --template starlight`), TypeScript strict.
+- [ ] 0.2 Pindahkan isi paket kickoff (CLAUDE.md, docs/, config/, templates/, .claude/) ke root repo.
+- [ ] 0.3 `.gitignore`: `sources/raw/`, `sources/extracted/`, `.env`, `dist/`, `.astro/`.
+- [ ] 0.4 `.env.example` sesuai `07-deploy-ops.md`.
+- [ ] 0.5 Konfigurasi dasar Starlight: `title: 'SAKTI Knowledge Base'`, `defaultLocale: 'root'` dengan `locales.root = { label: 'Bahasa Indonesia', lang: 'id' }`, `lastUpdated: true`, `editLink`.
+- [ ] 0.6 Tambah script `package.json` sesuai `CLAUDE.md` §4 (boleh berupa placeholder yang di-isi di fase berikutnya).
+- [ ] 0.7 Commit awal.
+
+**Gerbang 0:** `pnpm dev` jalan, halaman default tampil dalam bahasa Indonesia.
+
+---
+
+## Fase 1 — Kerangka informasi
+
+- [ ] 1.1 Loader `config/modul.yaml` (`src/lib/modul.ts`) dengan tipe TS.
+- [ ] 1.2 Sidebar dibangkitkan dari YAML (`02-arsitektur-informasi.md`).
+- [ ] 1.3 Skema frontmatter diperluas di `src/content.config.ts`.
+- [ ] 1.4 Buat `index.mdx` untuk setiap modul, setiap `sub`, dan bagian lintas (peran, peraturan, faq, glosarium, bantuan, kontribusi) — isi placeholder ringkas, `status: terbit` khusus halaman indeks.
+- [ ] 1.5 Route `/peran/[slug]` dan `/glosarium/` dari `src/data/sinonim.json`.
+- [ ] 1.6 `scripts/check-content.ts` sesuai `03-migrasi-konten.md`, termasuk deteksi data pribadi.
+- [ ] 1.7 Filter `status: draft` dari build produksi; banner untuk `status: review`.
+
+**Gerbang 1:** `pnpm build && pnpm check:content` lolos; sidebar menampilkan semua modul dalam urutan YAML.
+
+---
+
+## Fase 2 — Inventaris & ekstraksi sumber
+
+- [ ] 2.1 `scripts/inventory/gsites.ts` (Playwright) untuk Sumber A dan C.
+- [ ] 2.2 `scripts/inventory/linktree.ts` + `scripts/inventory/gdrive.ts` untuk Sumber B (rekursif).
+- [ ] 2.3 Resolver link Slides/Docs/Sheets/short-link yang ditemukan di halaman.
+- [ ] 2.4 Tulis `sources/manifest.json` + `sources/laporan-inventaris.md`.
+- [ ] 2.5 `scripts/extract/*` untuk HTML, PPTX, PDF (+OCR), DOCX, Sheets.
+- [ ] 2.6 Jalankan ekstraksi untuk semua item; item gagal dicatat.
+- [ ] 2.7 Buat `sources/peta-konten.csv` (pemetaan ke artikel target + dedup).
+- [ ] 2.8 **Berhenti dan minta review** pemilik proyek atas `laporan-inventaris.md` dan `peta-konten.csv` (keputusan K1, K2, K6).
+
+**Gerbang 2:** setiap item manifest berstatus `diekstrak`, `ditolak`, atau `gagal` (dengan catatan); peta konten disetujui.
+
+---
+
+## Fase 3 — Tampilan help center
+
+- [ ] 3.1 `BigSearch` (Level 1 Pagefind dulu) sesuai `04-tampilan-ux.md`, termasuk aksesibilitas keyboard/ARIA.
+- [ ] 3.2 `ModuleGrid`, `RoleChips`, `RecentlyUpdated`, `HelpBox`, `PopularLinks`.
+- [ ] 3.3 Landing page `template: splash`.
+- [ ] 3.4 Halaman `/cari/` dengan filter modul/peran/jenis.
+- [ ] 3.5 Override komponen artikel: breadcrumb `menu_sakti`, badge, kotak "Menu di SAKTI", footer sumber + feedback.
+- [ ] 3.6 Komponen MDX: `MenuSakti`, `SumberAsli`.
+- [ ] 3.7 Cek tampilan mobile (360px) dan dark mode; Lighthouse ≥ 90/95.
+
+**Gerbang 3:** landing page sesuai wireframe; BigSearch menampilkan hasil inline untuk halaman indeks yang ada.
+
+---
+
+## Fase 4 — Migrasi konten per modul
+
+Urutan (yang sumbernya paling lengkap dulu): `mulai` → `admin` → `komitmen` → `pembayaran` → `bendahara` → `persediaan` → `aset-tetap` → `piutang` → `akuntansi-pelaporan` → `kppn-bun` → `peran/*` → `peraturan` → `faq`.
+
+Untuk **setiap** modul (pakai perintah `/migrasi-modul <slug>`):
+- [ ] Draft MDX semua baris peta konten modul tersebut (`templates/`).
+- [ ] Gambar: pilih, crop, WebP, blur data pribadi.
+- [ ] Lengkapi `kata_kunci` dan glosarium.
+- [ ] Tambah ≥ 4 query uji modul ke `tests/search/queries.yaml`.
+- [ ] `pnpm build && pnpm check:content && pnpm check:links` lolos.
+- [ ] PR `content(<slug>): migrasi awal` → review pemilik modul.
+
+Checklist modul:
+- [ ] mulai  - [ ] admin  - [ ] komitmen  - [ ] pembayaran  - [ ] bendahara
+- [ ] persediaan  - [ ] aset-tetap  - [ ] piutang  - [ ] akuntansi-pelaporan  - [ ] kppn-bun
+- [ ] peran  - [ ] peraturan  - [ ] faq
+
+**Gerbang 4:** semua item manifest `dimigrasi` atau `ditolak`; ≥ 40 query uji; tidak ada artikel `draft` yang tersisa tanpa issue.
+
+---
+
+## Fase 5 — Pencarian pintar & kontribusi
+
+- [ ] 5.1 Ekspansi sinonim + fuzzy fallback (Level 1 lengkap).
+- [ ] 5.2 `scripts/search/build-embeddings.ts` + `/api/search` (Opsi sesuai K7) + fusion RRF di BigSearch + fallback.
+- [ ] 5.3 `pnpm search:eval` untuk Level 1 dan hybrid; hit@3 hybrid ≥ 0,80.
+- [ ] 5.4 Keystatic GitHub mode di `/keystatic` (`06-kontributor-admin.md`).
+- [ ] 5.5 CODEOWNERS, template PR/issue, label, branch protection (dokumentasikan langkah manual yang harus dilakukan pemilik repo di `docs/setup-github.md`).
+- [ ] 5.6 Halaman `/kontribusi/*`.
+- [ ] 5.7 (Opsional, jika K8 = ya) Tanya AI `/api/tanya` + UI.
+
+**Gerbang 5:** search eval lolos ambang; editor uji bisa membuat PR lewat Keystatic dari awal sampai merge.
+
+---
+
+## Fase 6 — Rilis & pemeliharaan
+
+- [ ] 6.1 CI lengkap (`07-deploy-ops.md`), preview per PR.
+- [ ] 6.2 Deploy produksi + domain (K3).
+- [ ] 6.3 Analitik + widget feedback + logging query tanpa hasil.
+- [ ] 6.4 Workflow mingguan `cek-sumber.yml` dan laporan bulanan.
+- [ ] 6.5 `public/_headers`, Dependabot.
+- [ ] 6.6 README untuk maintainer: cara menjalankan, menambah modul, menambah artikel, rotasi secret.
+- [ ] 6.7 Rencana komunikasi: daftar URL lama → URL baru (`sources/peta-url-lama.csv`) agar pengelola Google Sites bisa memasang banner/tautan ke KB baru.
+
+**Gerbang 6:** situs produksi hidup, semua metrik di `00-prd.md` terpantau.

@@ -1,0 +1,147 @@
+# Daftar modul SAKTI = sumber kebenaran untuk sidebar, halaman modul, kartu landing page,
+# taksonomi frontmatter (field `modul`), dan CODEOWNERS.
+#
+# ⚠️ KONFIRMASI KE PEMILIK PROYEK: urutan dan nama harus sama persis dengan menu SAKTI
+# yang berlaku. Lihat docs/09-keputusan-terbuka.md (K1).
+#
+# Field:
+#   slug        : folder di src/content/docs/<slug>/ dan segmen URL
+#   nama        : label sesuai menu SAKTI
+#   kelompok    : pengelompokan di landing page
+#   ikon        : nama ikon Starlight (https://starlight.astro.build/reference/icons/)
+#   ringkasan   : 1 kalimat untuk kartu
+#   sumber      : sumber utama (A/B/C, lihat docs/01-sumber-konten.md)
+#   sub         : sub-menu tingkat 1 (urutan sidebar). Tingkat berikutnya dibentuk dari folder.
+
+kelompok:
+  - id: umum
+    nama: Mulai & Administrasi
+  - id: pelaksanaan
+    nama: Pelaksanaan Anggaran
+  - id: pelaporan
+    nama: Akuntansi & Pelaporan
+  - id: bun
+    nama: BUN (KPPN & Kanwil)
+
+modul:
+  - slug: mulai
+    nama: Mulai Menggunakan SAKTI
+    kelompok: umum
+    ikon: rocket
+    ringkasan: Akses aplikasi, pendaftaran user, MFA, dan email SAKTI.
+    sumber: [A]
+    sub: [akses-aplikasi, pendaftaran-user, mfa, email-sakti]
+
+  - slug: admin
+    nama: Administrasi (Admin)
+    kelompok: umum
+    ikon: setting
+    ringkasan: Pengelolaan user, role, PKIPA, dan monitoring status DS.
+    sumber: [A]
+    sub: [role, manajemen-user, pkipa, monitoring-ds, formulir]
+
+  - slug: referensi
+    nama: Referensi
+    kelompok: umum
+    ikon: open-book
+    ringkasan: Data referensi satker, akun, dan tabel pendukung.
+    sumber: []        # belum ada sumber; buat halaman indeks saja
+    sub: []
+
+  - slug: penganggaran
+    nama: Penganggaran
+    kelompok: pelaksanaan
+    ikon: document
+    ringkasan: Penyusunan, revisi, dan pengelolaan DIPA.
+    sumber: []        # belum ada sumber; tanyakan (K1)
+    sub: []
+
+  - slug: komitmen
+    nama: Komitmen
+    kelompok: pelaksanaan
+    ikon: pencil
+    ringkasan: Supplier, kontrak, BAST, escrow, dan ADK GPP.
+    sumber: [B, C]
+    sub: [ruh, escrow, cetak, adk, upload, monitoring, jurnal]
+
+  - slug: pembayaran
+    nama: Pembayaran
+    kelompok: pelaksanaan
+    ikon: approve-check
+    ringkasan: SPP, SPM, catat/upload, dan monitoring pembayaran.
+    sumber: [B, C]
+    sub: [ruh, cetak, adk, catat-upload, monitoring, referensi]
+
+  - slug: bendahara
+    nama: Bendahara
+    kelompok: pelaksanaan
+    ikon: list-format
+    ringkasan: BKU, pajak, LPJ, dan transaksi bendahara.
+    sumber: [B, C]
+    sub: []
+
+  - slug: persediaan
+    nama: Persediaan
+    kelompok: pelaporan
+    ikon: puzzle
+    ringkasan: Transaksi masuk/keluar, koreksi, opname, dan tutup buku persediaan.
+    sumber: [C]
+    sub: [transaksi-masuk, transaksi-keluar, koreksi, opname-fisik, tutup-buku, referensi, persediaan-dalam-proses, pelaporan, migrasi-data, monitoring, persediaan-tak-dikuasai, likuidasi, upload-data-blu]
+
+  - slug: aset-tetap
+    nama: Aset Tetap
+    kelompok: pelaporan
+    ikon: laptop
+    ringkasan: Transaksi BMN, KDP, persetujuan, normalisasi, dan konsesi jasa.
+    sumber: [C]
+    sub: [ruh, persetujuan, monitoring, cetak, penutupan-periode, adk, likuidasi, normalisasi, konsesi-jasa-mitra, penghapusan-masal, referensi]
+
+  - slug: piutang
+    nama: Piutang
+    kelompok: pelaporan
+    ikon: information
+    ringkasan: Debitur, pencatatan, settlement, penyisihan, dan pelimpahan piutang.
+    sumber: [C]
+    sub: [referensi, pencatatan, transaksi, koreksi, transfer, laporan, tutup-periode, upload, piutang-jangka-panjang, likuidasi]
+
+  - slug: akuntansi-pelaporan
+    nama: Akuntansi dan Pelaporan (GLP)
+    kelompok: pelaporan
+    ikon: seti:config
+    ringkasan: Jurnal, posting, tutup buku, resiprokal, dan laporan keuangan.
+    sumber: [C]
+    sub: [proses, tutup-buku, transaksi-resiprokal, laporan, mphl-bjs, likuidasi-satker, koreksi-spm-jurnal-manual]
+
+  - slug: kppn-bun
+    nama: KPPN (BUN)
+    kelompok: bun
+    ikon: star
+    ringkasan: Fungsi Kuasa BUN di SAKTI untuk KPPN dan Kanwil DJPb.
+    sumber: [A, B]
+    sub: []
+
+# Bagian lintas modul (bukan modul SAKTI, tetapi ada di sidebar)
+lintas:
+  - slug: peran         # halaman "menurut peran pengguna", diisi otomatis dari tag `peran`
+    nama: Menurut Peran Pengguna
+  - slug: peraturan
+    nama: Peraturan
+  - slug: faq
+    nama: FAQ Umum
+  - slug: glosarium
+    nama: Glosarium
+  - slug: bantuan
+    nama: Bantuan & Kontak
+  - slug: kontribusi
+    nama: Cara Berkontribusi
+
+peran:
+  - { slug: satker, nama: Satker K/L }
+  - { slug: kppn-kanwil, nama: KPPN & Kanwil DJPb }
+  - { slug: djpb-pusat, nama: DJPb Kantor Pusat }
+  - { slug: dja, nama: DJA (Penelaah) }
+  - { slug: djkn, nama: DJKN (Pembina) }
+  - { slug: bappenas, nama: Bappenas (Penelaah) }
+  - { slug: bpk, nama: BPK (Auditor) }
+  - { slug: apip, nama: APIP }
+  - { slug: widyaiswara, nama: Widyaiswara Kemenkeu }
