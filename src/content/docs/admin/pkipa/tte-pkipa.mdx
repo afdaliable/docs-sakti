@@ -1,0 +1,105 @@
+---
+title: Menandatangani PKIPA secara Elektronik
+description: Tata cara TTE dokumen PKIPA oleh pejabat perbendaharaan dan KPA, serta monitoring oleh Admin KPPN.
+modul: admin
+menu_sakti: "Administrasi > Pernyataan Komitmen Integritas"
+peran: [satker]
+jenis: juknis
+kata_kunci: [tte pkipa, tanda tangan pkipa, sign dokumen, verifikasi dokumen, tte sekaligus, passphrase pkipa]
+status: review
+perlu_review: true
+sumber:
+  - judul: "1. Juknis PKIPA 2025"
+    url: "https://docs.google.com/presentation/d/1je1dkw9lOiKs8gKzIOz0kl-g6XgJ9ibXQxWu2NXKtuk/"
+    jenis: google-slides
+    diambil: 2026-11-21
+    id_manifest: A-dok-003
+sidebar:
+  order: 2
+---
+
+import { Steps, Aside } from '@astrojs/starlight/components';
+import MenuSakti from '~/components/MenuSakti.astro';
+import SumberAsli from '~/components/SumberAsli.astro';
+
+PKIPA ditandatangani secara elektronik (TTE) terlebih dahulu oleh pejabat
+perbendaharaan, kemudian dilanjutkan oleh KPA.
+
+<MenuSakti />
+
+## Pejabat Perbendaharaan (PPSPM/PPK/Bendahara)
+
+<Steps>
+
+1. Login menggunakan user Pejabat Perbendaharaan. Pejabat hanya dapat
+   melihat PKIPA yang bersangkutan.
+2. Pada dokumen PKIPA tersedia tombol:
+   - **Verifikasi Dokumen** — untuk melihat status TTE dokumen PKIPA
+   - **Sign Dokumen** — untuk menandatangani dokumen PKIPA
+   - **Download** — untuk mengunduh dokumen PKIPA
+3. Input passphrase, lalu klik **Proses**.
+4. Dokumen berhasil di-TTE, muncul barcode, dan terdapat keterangan
+   "Dokumen ini memiliki tanda tangan digital".
+5. Setelah kembali ke halaman PKIPA, kolom TTE Pejabat berubah menjadi
+   "Sudah TTE" dan KPA mendapatkan notifikasi SMS bahwa pejabat
+   perbendaharaan telah TTE PKIPA.
+
+</Steps>
+
+Catatan:
+
+- Apabila dokumen PKIPA belum di-TTE sampai KPA, dilakukan lock transaksi
+  pada setiap menu sesuai kewenangan masing-masing pejabat
+  perbendaharaan di aplikasi SAKTI:
+  - PPK → blok transaksi saat akses menu pembayaran dan komitmen
+  - PPSPM → blok transaksi saat akses menu pembayaran
+  - Bendahara → blok transaksi saat akses menu bendahara
+- Barcode bukan tanda dokumen telah ditandatangani pejabat secara
+  elektronik; silakan lakukan pengecekan di verifikasi dokumen.
+
+## KPA
+
+<Steps>
+
+1. Login menggunakan user KPA. Tombol **Lihat** hanya muncul bagi pejabat
+   perbendaharaan yang telah TTE.
+2. Terdapat dua cara KPA menandatangani PKIPA: satu per satu atau **TTE
+   Sekaligus**.
+3. Untuk TTE Sekaligus, klik tombol **TTE Sekaligus**; akan muncul popup
+   daftar PKIPA pejabat yang harus ditandatangani.
+4. Input passphrase.
+5. Kolom TTE KPA berubah menjadi "Sudah TTE" untuk seluruh pejabat yang
+   ditandatangani, dan pejabat perbendaharaan dapat mengakses menu di
+   SAKTI dengan normal kembali.
+
+</Steps>
+
+Catatan:
+
+- KPA menandatangani PKIPA KPA terlebih dahulu sebelum menandatangani
+  PKIPA pejabat perbendaharaan.
+- Apabila terdapat perubahan pejabat perbendaharaan di tengah periode,
+  pejabat baru tetap harus menandatangani PKIPA dalam periode tersebut
+  agar dapat mengakses aplikasi SAKTI (PKIPA Perubahan).
+- Apabila terdapat perubahan KPA di tengah periode, PKIPA yang sudah
+  ditandatangani sebelumnya tetap berlaku di periode berkenaan.
+
+## Monitoring oleh Admin KPPN
+
+Menu PKIPA pada Admin KPPN digunakan untuk monitoring dan mengunduh PKIPA
+lingkup wilayah kerjanya.
+
+<Aside type="caution" title="Perlu verifikasi">
+Juknis menulis menu **Administrasi > Admin > Pernyataan Komitmen
+Integritas**; di menu aplikasi form ini berada langsung di bawah
+**Administrasi**.
+</Aside>
+
+## Terkait
+
+- [PKIPA](/admin/pkipa/)
+- [Mengelola Referensi Pejabat PKIPA](/admin/pkipa/referensi-pejabat-pkipa/)
+
+## Sumber
+
+<SumberAsli />

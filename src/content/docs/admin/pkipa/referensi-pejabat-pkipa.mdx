@@ -1,0 +1,68 @@
+---
+title: Mengelola Referensi Pejabat PKIPA
+description: Penambahan, perubahan, dan penghapusan daftar pejabat pada menu PKIPA melalui Tabel Pejabat.
+modul: admin
+menu_sakti: "Administrasi > Pernyataan Komitmen Integritas"
+peran: [satker]
+jenis: juknis
+kata_kunci: [pejabat pkipa, referensi pejabat pkipa, hapus pejabat pkipa, tambah pejabat pkipa]
+status: review
+perlu_review: true
+sumber:
+  - judul: "1. Juknis PKIPA 2025"
+    url: "https://docs.google.com/presentation/d/1je1dkw9lOiKs8gKzIOz0kl-g6XgJ9ibXQxWu2NXKtuk/"
+    jenis: google-slides
+    diambil: 2026-11-21
+    id_manifest: A-dok-003
+sidebar:
+  order: 1
+---
+
+import { Aside } from '@astrojs/starlight/components';
+import MenuSakti from '~/components/MenuSakti.astro';
+import SumberAsli from '~/components/SumberAsli.astro';
+
+Daftar pejabat pada menu **PKIPA** diambil dari referensi pejabat di
+Tabel Pejabat. Pengelolaan daftarnya dilakukan oleh Admin Satker.
+
+<MenuSakti />
+
+## Penambahan dan perubahan pejabat PKIPA
+
+Penambahan dan perubahan pejabat di menu PKIPA dilakukan di Tabel
+Pejabat — lihat [Melengkapi Data Pejabat
+Perbendaharaan](/admin/pengguna/pejabat-perbendaharaan/). Setelah
+ditambahkan, nama pejabat akan muncul otomatis di menu PKIPA.
+
+## Penghapusan pejabat PKIPA
+
+Penghapusan dilakukan dua tahap:
+
+1. Hapus pejabat di Tabel Pejabat.
+2. Klik tombol **Hapus** di menu PKIPA.
+
+## Hal yang perlu diperhatikan
+
+- Apabila belum melakukan penghapusan pejabat di Tabel Pejabat dan
+  melakukan Hapus Pejabat di PKIPA, pejabat tersebut akan muncul kembali
+  (ter-generate ulang).
+- Apabila melakukan hapus pejabat PKIPA yang telah di-TTE pejabat, status
+  TTE akan tereset dan perlu melakukan TTE pejabat ulang.
+- Tidak dapat dilakukan penghapusan apabila PKIPA telah ditandatangani
+  sampai KPA.
+
+<Aside type="caution" title="Perlu verifikasi">
+Juknis menulis menu **Administrasi > Admin > Pernyataan Komitmen
+Integritas**; di menu aplikasi form ini berada langsung di bawah
+**Administrasi**.
+</Aside>
+
+## Terkait
+
+- [PKIPA](/admin/pkipa/)
+- [Menandatangani PKIPA secara Elektronik](/admin/pkipa/tte-pkipa/)
+- [Melengkapi Data Pejabat Perbendaharaan](/admin/pengguna/pejabat-perbendaharaan/)
+
+## Sumber
+
+<SumberAsli />
