@@ -77,3 +77,27 @@ test('perlu_review hanya peringatan', () => {
 	assert.ok(kode(t).includes('perlu-review'));
 	assert.equal(t.filter((x) => x.tingkat === 'galat').length, 0);
 });
+
+test('daftar nomor akun tidak dianggap NIK/NIP', () => {
+	const dasar = '---\ntitle: X\nmodul: komitmen\nsumber: [{judul: a, url: "https://a.b/c", jenis: lainnya, diambil: 2026-01-01}]\n---\n\n';
+	const pii = (t: { kode: string }[]) => t.filter((x) => x.kode.startsWith('data-pribadi'));
+	assert.equal(pii(periksa('komitmen/x.md', dasar + 'Akun 117911 117912 117913')).length, 0);
+	assert.equal(pii(periksa('komitmen/x.md', dasar + 'Nilai 100 200 300 400 500 600')).length, 0);
+	assert.equal(pii(periksa('komitmen/x.md', dasar + 'tahun 2008 1234 5678')).filter((x) => x.kode === 'data-pribadi-hp').length, 0);
+});
+
+test('indeks sub-menu dengan modul salah', () => {
+	const t = periksa('komitmen/ruh/index.mdx', '---\ntitle: X\nmodul: pembayaran\n---\n');
+	assert.ok(kode(t).includes('modul-tidak-cocok'));
+});
+
+test('email domain co.id terdeteksi', () => {
+	const dasar = '---\ntitle: X\nmodul: komitmen\nsumber: [{judul: a, url: "https://a.b/c", jenis: lainnya, diambil: 2026-01-01}]\n---\n\n';
+	assert.ok(kode(periksa('komitmen/x.md', dasar + 'Email seseorang@yahoo.co.id.')).includes('data-pribadi-email'));
+});
+
+test('tautan peran tidak dikenal', () => {
+	const dasar = '---\ntitle: X\nmodul: komitmen\nsumber: [{judul: a, url: "https://a.b/c", jenis: lainnya, diambil: 2026-01-01}]\n---\n\n';
+	assert.ok(kode(periksa('komitmen/x.md', dasar + '[lihat](/peran/tidak-ada/)')).includes('peran-tidak-dikenal'));
+	assert.ok(!kode(periksa('komitmen/x.md', dasar + '[lihat](/peran/satker/)')).includes('peran-tidak-dikenal'));
+});

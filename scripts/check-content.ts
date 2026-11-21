@@ -41,29 +41,13 @@ function hapusUrlDanTarget(teks: string): string {
 		.replace(/https?:\/\/\S+/g, '');
 }
 
-function normalisasiDigit(teks: string): string {
-	let hasil = '';
-	for (let i = 0; i < teks.length; i++) {
-		const c = teks[i];
-		if (/\d/.test(c) || (c === '+' && hasil === '')) {
-			hasil += c;
-			continue;
-		}
-		if (/[\s.\-]/.test(c)) {
-			let j = i + 1;
-			while (j < teks.length && /[\s.\-]/.test(teks[j])) j++;
-			if (j < teks.length && /\d/.test(teks[j]) && /\d|\+/.test(teks[i - 1] ?? '')) continue;
-		}
-		hasil += c;
-	}
-	return hasil;
-}
-
 const RE_NIK = /\b\d{16}\b/;
 const RE_NIP = /\b\d{18}\b/;
-const RE_HP = /(?:\+62|08)\d{8,12}\b/g;
-const RE_HP_KANDIDAT = /(?:\+62|08)[\d\s.\-]{8,20}/g;
-const RE_EMAIL = /\b[\w.+-]+@(gmail|yahoo|ymail|hotmail|outlook|live|icloud)\.com\b/gi;
+const RE_HP_KANDIDAT = /(?<!\d)(?:\+62|08)\d{1,4}(?:[\s.\-]?\d{2,5}){1,4}/g;
+const RE_HP_VALID = /^(?:\+62|08)\d{8,12}$/;
+const RE_EMAIL = /\b[\w.+-]+@(gmail|yahoo|ymail|hotmail|outlook|live|icloud|rocketmail)\.(?:com|co\.id|co\.uk)\b/gi;
+const RE_TAUTAN_PERAN = /\]\((?:https?:\/\/[^)\s]+)?\/peran\/([a-z0-9-]+)\/?\)/g;
+const RE_HREF_PERAN = /href=["'](?:https?:\/\/[^"'\s]+)?\/peran\/([a-z0-9-]+)\/?["']/g;
 const RE_SITUS_LAMA = /sites\.google\.com\/view\/(?:saktiadm|saktipelaporan)/;
 
 function temuanPii(
@@ -72,16 +56,18 @@ function temuanPii(
 	kontak: KontakResmi,
 ): Omit<Temuan, 'berkas'>[] {
 	const temuan: Omit<Temuan, 'berkas'>[] = [];
-	const bersih = normalisasiDigit(hapusUrlDanTarget(teks));
+	const bersih = hapusUrlDanTarget(teks);
 	if (RE_NIP.test(bersih)) {
 		temuan.push({ baris, tingkat: 'galat', kode: 'data-pribadi-nip', pesan: 'Nomor 18 digit terdeteksi (kemungkinan NIP).' });
 	} else if (RE_NIK.test(bersih)) {
 		temuan.push({ baris, tingkat: 'galat', kode: 'data-pribadi-nik', pesan: 'Nomor 16 digit terdeteksi (kemungkinan NIK).' });
 	}
-	for (const cocok of bersih.matchAll(RE_HP)) {
-		const nomor = cocok[0].replace(/^\+62/, '0');
-		if (kontak.nomor_diizinkan.includes(cocok[0]) || kontak.nomor_diizinkan.includes(nomor)) continue;
-		temuan.push({ baris, tingkat: 'galat', kode: 'data-pribadi-hp', pesan: `Nomor HP terdeteksi: ${cocok[0]}` });
+	for (const cocok of bersih.matchAll(RE_HP_KANDIDAT)) {
+		const nomor = cocok[0].replace(/[\s.\-]/g, '');
+		if (!RE_HP_VALID.test(nomor)) continue;
+		const nomorLokal = nomor.replace(/^\+62/, '0');
+		if (kontak.nomor_diizinkan.includes(nomor) || kontak.nomor_diizinkan.includes(nomorLokal)) continue;
+		temuan.push({ baris, tingkat: 'galat', kode: 'data-pribadi-hp', pesan: `Nomor HP terdeteksi: ${cocok[0].trim()}` });
 	}
 	for (const cocok of bersih.matchAll(RE_EMAIL)) {
 		if (kontak.email_diizinkan.includes(cocok[0].toLowerCase())) continue;
@@ -109,6 +95,7 @@ export function periksaBerkas({
 	const adalahArtikelModul = slugFolderModul !== undefined && !adalahIndeks;
 
 	const { data, barisSelesai } = pisahFrontmatter(isi);
+	const peranDikenal = new Set(konfigurasi.peran.map((p) => p.slug));
 	const badan = isi.split('\n').slice(barisSelesai).join('\n');
 
 	// Pemeriksaan frontmatter.
@@ -125,10 +112,10 @@ export function periksaBerkas({
 		}
 	}
 	if (slugFolderModul !== undefined) {
-		if (adalahIndeks && segmen.length === 2 && data.modul !== slugFolderModul) {
-			temuan.push({ berkas: relatif, baris: 1, tingkat: 'galat', kode: 'modul-tidak-cocok', pesan: `Halaman indeks modul harus memakai modul: ${slugFolderModul}.` });
-		} else if (!adalahIndeks && data.modul !== undefined && data.modul !== slugFolderModul) {
+		if (data.modul !== undefined && data.modul !== slugFolderModul) {
 			temuan.push({ berkas: relatif, baris: 1, tingkat: 'galat', kode: 'modul-tidak-cocok', pesan: `Nilai modul "${String(data.modul)}" tidak cocok dengan folder "${slugFolderModul}".` });
+		} else if (adalahIndeks && data.modul === undefined) {
+			temuan.push({ berkas: relatif, baris: 1, tingkat: 'galat', kode: 'modul-tidak-cocok', pesan: `Halaman indeks di dalam folder modul harus memakai modul: ${slugFolderModul}.` });
 		}
 	}
 	if (data.perlu_review === true) {
@@ -190,6 +177,24 @@ export function periksaBerkas({
 		}
 		if (!diBagianUnduh && RE_SITUS_LAMA.test(baris)) {
 			temuan.push({ berkas: relatif, baris: nomorBaris, tingkat: 'galat', kode: 'tautan-situs-lama', pesan: 'Tautan ke situs lama hanya boleh di `sumber` atau bagian "Unduh juknis asli".' });
+		}
+	});
+
+	// Tautan ke /peran/<slug>/ yang tidak ada di YAML.
+	badan.split('\n').forEach((baris, i) => {
+		const nomorBaris = barisSelesai + i + 1;
+		for (const re of [RE_TAUTAN_PERAN, RE_HREF_PERAN]) {
+			for (const cocok of baris.matchAll(new RegExp(re.source, 'g'))) {
+				if (!peranDikenal.has(cocok[1])) {
+					temuan.push({
+						berkas: relatif,
+						baris: nomorBaris,
+						tingkat: 'galat',
+						kode: 'peran-tidak-dikenal',
+						pesan: `Tautan ke /peran/${cocok[1]}/ tetapi slug itu tidak ada di config/modul.yaml.`,
+					});
+				}
+			}
 		}
 	});
 
