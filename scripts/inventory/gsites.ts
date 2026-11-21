@@ -64,10 +64,19 @@ export function idHalaman(sumber: 'A' | 'C', pathSetelahBase: string): string {
 	return `${sumber}-${bersih}`;
 }
 
+const RE_MARKER = /[✅🟡️\uFE0F]/gu;
+
+export function bersihkanMarker(teks: string): string {
+	return teks.replace(RE_MARKER, '').replace(/\s+/g, ' ').trim();
+}
+
 export function stripPenanda(teks: string): { label: string; penanda: '✅' | '🟡' | null } {
-	const m = teks.trim().match(/^([✅🟡])\s*(.*)$/u);
-	if (m) return { label: m[2].trim(), penanda: m[1] as '✅' | '🟡' };
-	return { label: teks.trim(), penanda: null };
+	const m = teks.trim().match(/^((?:[✅🟡]\uFE0F?\s*)+)(.*)$/u);
+	if (m) {
+		const penanda = [...m[1]].filter((c) => c === '✅' || c === '🟡').pop() as '✅' | '🟡';
+		return { label: bersihkanMarker(m[2]), penanda };
+	}
+	return { label: bersihkanMarker(teks), penanda: null };
 }
 
 function humanize(slug: string): string {
@@ -88,7 +97,7 @@ export function jalurMenuDariPath(
 	for (let i = 0; i < segmen.length; i++) {
 		const prefiks = segmen.slice(0, i + 1).join('/');
 		const nav = navMap.get(`${situs.base}/${prefiks}`);
-		jalur.push(nav?.label ?? humanize(segmen[i]));
+		jalur.push(bersihkanMarker(nav?.label ?? humanize(segmen[i])));
 		if (i === segmen.length - 1) penanda = nav?.penanda ?? null;
 	}
 	if (jalur.length === 0 || jalur.every((j) => j === '')) return { jalur: ['Beranda'], penanda };

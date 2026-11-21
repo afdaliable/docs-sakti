@@ -164,3 +164,12 @@ test('merge: target halaman penaut pertama menang, ditautkan_dari terakumulasi',
 	assert.equal(gabungan.target_modul, 'peraturan');
 	assert.deepEqual(gabungan.ditautkan_dari, ['A-peraturan', 'A-apip']);
 });
+
+test('stripPenanda menghapus semua penanda beruntun dan memakai penanda terakhir', async () => {
+	const { stripPenanda, bersihkanMarker } = await import('../scripts/inventory/gsites.ts');
+	assert.deepEqual(stripPenanda('✅🟡 RUH'), { label: 'RUH', penanda: '🟡' });
+	assert.deepEqual(stripPenanda('🟡 RUH'), { label: 'RUH', penanda: '🟡' });
+	assert.deepEqual(stripPenanda('✅ Persediaan'), { label: 'Persediaan', penanda: '✅' });
+	assert.deepEqual(stripPenanda('RUH'), { label: 'RUH', penanda: null });
+	assert.equal(bersihkanMarker('Aset ✅ Tetap 🟡 RUH'), 'Aset Tetap RUH');
+});
