@@ -1,0 +1,193 @@
+---
+title: Mengelola Data Pengguna sebagai Admin Satker
+description: Lingkup tugas Admin Satker dalam mengelola data pengguna SAKTI beserta pengecekannya terhadap SK Penetapan Pengguna.
+modul: admin
+menu_sakti: "Administrasi > Pengguna"
+peran: [satker]
+jenis: juknis
+kata_kunci: [pengelolaan pengguna, manajemen pengguna, data pengguna, admin satker, rekam ubah hapus user, cek data pengguna, kewenangan user]
+status: review
+perlu_review: true
+sumber:
+  - judul: "Juknis Admin SAKTI Tipe Satker"
+    url: "https://docs.google.com/presentation/d/10egiSsDGl4zU5e5Ok3jtZAVOmWyTeVRAtSYuMnjyh78/"
+    jenis: google-slides
+    diambil: 2026-11-21
+    id_manifest: A-dok-018
+  - judul: "1. Juknis SAKTI Admin Updated 2024"
+    url: "https://docs.google.com/presentation/d/1dbhAhtZ-uotv_CxZ5GefYlmeF11DCnZNaswn0Oym6PE/"
+    jenis: google-slides
+    diambil: 2026-11-21
+    id_manifest: A-dok-005
+sidebar:
+  order: 1
+---
+
+import { Steps, Aside } from '@astrojs/starlight/components';
+import MenuSakti from '~/components/MenuSakti.astro';
+import SumberAsli from '~/components/SumberAsli.astro';
+
+Admin Satker mengelola data pengguna SAKTI di lingkup satkernya: merekam,
+mengubah, dan menghapus data pengguna serta memastikan isiannya sesuai
+dengan SK Penetapan Pengguna SAKTI yang ditandatangani KPA.
+
+<MenuSakti />
+
+## Lingkup tugas Admin Satker
+
+Lingkup tugas Admin Satker menurut juknis 2024:
+
+- **Pengelolaan Pengguna**
+  - Pengelolaan Data Pengguna SAKTI
+  - Pengelolaan DS (Digital Signature)
+  - Monitoring Login Pengguna
+- **Referensi Umum**
+  - Pengelolaan Referensi Data Pejabat
+  - Pengelolaan Referensi Penandatangan Aset
+  - Pengelolaan Referensi Penandatangan Non Aset
+  - Mapping Operator Pelaksanaan – PPK
+- **Referensi Modul Aset Tetap**
+  - Pengelolaan Daftar Ruangan
+  - Pengelolaan UAPKPB / Anak Satker
+- **Referensi Modul Pembayaran dan Komitmen**
+  - Mapping Operator Anggaran – PPK
+- **Referensi Modul Bendaharawan**
+  - Pengelolaan Referensi Bendaharawan
+  - Pengelolaan Unit Teknis
+
+## Rekomendasi alur tugas awal admin
+
+Juknis Admin Satker (2022) merekomendasikan alur tugas awal admin lokal
+berikut; alur ini bersifat opsional.
+
+<Steps>
+
+1. Login ke aplikasi SAKTI.
+2. Rekam user non-KPA.
+3. Cek data pengguna SAKTI.
+4. Rekam data Pejabat dan penandatangan.
+5. Lakukan mapping PPK dan operatornya.
+6. Rekam bendaharawan, DBR, dan unit teknis BPP.
+
+</Steps>
+
+## Form pengelolaan pengguna
+
+Form pengelolaan pengguna memuat dua kelompok data:
+
+- Data terkait pengguna
+- Data terkait peran pengguna pada satker
+
+Pada form tersedia tombol rekam, ubah, dan hapus (R/U/H).
+
+## Mengecek data pengguna
+
+Pengelolaan pengguna juga digunakan untuk mengecek kesesuaian data
+pengguna pada SAKTI dengan SK Penetapan Pengguna SAKTI yang telah
+ditandatangani KPA Satker. Isian yang harus diperhatikan:
+
+- NIP
+- NIK
+- NPWP
+- Email
+- Nomor Telepon
+- Peran
+- Kelompok Pengguna
+
+## Pilihan kewenangan per jabatan
+
+Tabel berikut menyalin daftar kewenangan pada SAKTI per jabatan sebagaimana
+tercantum pada juknis Admin Satker:
+
+| Jabatan | Pilihan kewenangan pada SAKTI |
+|---|---|
+| Admin | ADMIN_SATKER |
+| KPA | ANGGARAN_APPROVER, GLP_KPA, SPM_APPROVAL |
+| PPSPM | SPM_APPROVAL |
+| PPK | KOMITMEN_APPROVER, SPM_VALIDATOR |
+| PPK DAK Fisik dan Dana Desa | KOMITMEN_APPROVER_DAKDD, SPM_VALIDATOR |
+| Bendahara Pengeluaran | INPUT SALDO AWAL KAS BENDAHARA PENGELUARAN, BEN_PENG |
+| Bendahara Penerimaan | INPUT SALDO AWAL KAS BENDAHARA PENERIMAAN, BEN_PEN |
+| Bendahara Pengeluaran Pembantu | BEN_BENDAHARA PENGELUARAN PEMBANTU |
+| Operator GLP | GLP OPERATOR SATKER |
+| Operator Komitmen | KOMITMEN OPERATOR |
+| Operator Pembayaran | SPM_OPERATOR |
+| Operator Anggaran | ANGGARAN_OPERATOR |
+| Operator Persediaan | PERSEDIAAN-OPERATOR LEVEL SATKER |
+| Operator Aset | ASET SATKER OPERATOR |
+| Operator Piutang | PIUTANG_PENGELUARAN |
+| Validator Aset | ASET-SATKER-VALIDATOR |
+| Approver Aset | ASET-SATKER-APPROVER |
+| Approver Persediaan | PERSEDIAAN-APPROVER LEVEL SATKER |
+
+## Alur pendaftaran/perubahan user PPK dan/atau PPSPM
+
+<Steps>
+
+1. Pendaftaran user dikirimkan ke KPPN.
+2. Administrator KPPN mengecek SK yang dilampirkan dengan data yang
+   direkam; apabila sesuai, KPPN menyetujui permohonan user.
+3. Setelah disetujui KPPN, user PPK dan/atau PPSPM mendapatkan SMS berisi
+   kode akses SAKTI.
+4. Admin Satker melakukan perekaman referensi data pejabat perbendaharaan
+   pada menu pejabat.
+5. User PPK dan/atau PPSPM melakukan verifikasi nomor dan permohonan OTP.
+6. KPA melakukan pengecekan dan persetujuan permohonan OTP PPK/PPSPM.
+7. Administrator KPPN mengecek persyaratan OTP PPK/PPSPM.
+8. User PPK dan/atau PPSPM melakukan aktivasi OTP.
+
+</Steps>
+
+## Alur pendaftaran/perubahan user operator, validator, dan approver modul
+
+<Steps>
+
+1. Satuan kerja menyampaikan persyaratan permohonan pendaftaran/perubahan
+   user.
+2. Administrator KPPN mengecek SK yang dilampirkan dengan data yang
+   direkam; apabila sesuai, KPPN menyetujui permohonan user.
+3. Setelah disetujui KPPN, user operator, validator, dan approver modul
+   yang didaftarkan mendapatkan SMS berisi kode akses SAKTI.
+
+</Steps>
+
+## Proses yang saat ini dilakukan di KPPN
+
+Untuk tipe Satker, proses berikut saat ini seluruhnya dilakukan di KPPN:
+
+- Pendaftaran User
+- Perubahan User
+- Penghapusan User
+- Update Data User
+- Update Kewenangan User (Operator)
+- Pembuatan Email SAKTI (@sakti.mail.go.id)
+- Reset Password SAKTI
+- Pendaftaran OTP
+
+Apabila terdapat kendala, silakan hubungi hai.kemenkeu.go.id. Untuk tipe
+selain Satker, pendaftaran dilakukan melalui HAI DJPb.
+
+Untuk perubahan user Pejabat Perbendaharaan, admin satker terlebih dahulu
+melakukan penghapusan Pejabat Perbendaharaan di referensi pejabat.
+Pastikan Pejabat Perbendaharaan tidak memiliki transaksi yang menggantung;
+Satker dan/atau KPPN dapat melakukan pengecekan transaksi pejabat melalui
+MonSAKTI (admin – transaksi pejabat).
+
+<Aside type="caution" title="Perlu verifikasi">
+Juknis 2022 menyebut menu **Admin > Pengelolaan Pengguna dan Kontrol
+Akses > Pengelolaan Pengguna (SATKER)**; di menu aplikasi saat ini tidak
+ada label itu — menu **Administrasi > Pengguna** memuat **Manajemen
+Pengguna**. Padanan perlu dipastikan. Deck juknis 2024 tidak lagi memuat
+tampilan menu ini.
+</Aside>
+
+## Terkait
+
+- [Melengkapi Data Pejabat Perbendaharaan](/admin/pengguna/pejabat-perbendaharaan/)
+- [Memahami Peran dan Kewenangan Pengguna SAKTI](/admin/role/)
+- [Mendaftarkan Pengguna Tipe Satker K/L](/mulai/pendaftaran-user/satker-kl/)
+- [Mengajukan Perubahan Pengguna](/mulai/pendaftaran-user/perubahan-pengguna/)
+
+## Sumber
+
+<SumberAsli />

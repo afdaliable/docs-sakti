@@ -1,6 +1,6 @@
 ---
 title: Pengguna
-description: Panduan menu Pengguna pada modul Administrasi.
+description: Pengelolaan data pengguna, pejabat perbendaharaan, dan pemutakhiran data pengguna SAKTI.
 modul: admin
 jenis: indeks
 status: terbit
@@ -9,4 +9,26 @@ sidebar:
   order: 0
 ---
 
-Panduan untuk menu **Pengguna** sedang disiapkan.
+import { CardGrid, LinkCard } from '@astrojs/starlight/components';
+
+Sub-menu ini berisi panduan pengelolaan data pengguna oleh Admin Satker:
+pengelolaan pengguna, referensi pejabat perbendaharaan, dan pemutakhiran
+data pengguna (NIK, NPWP, nomor HP) oleh KPPN.
+
+<CardGrid>
+	<LinkCard
+		title="Mengelola Data Pengguna sebagai Admin Satker"
+		description="Lingkup tugas Admin Satker dan pengelolaan data pengguna pada menu Administrasi > Pengguna."
+		href="/admin/pengguna/pengelolaan-pengguna/"
+	/>
+	<LinkCard
+		title="Melengkapi Data Pejabat Perbendaharaan"
+		description="Merekam data pejabat perbendaharaan untuk pendaftaran OTP modul Pelaksanaan."
+		href="/admin/pengguna/pejabat-perbendaharaan/"
+	/>
+	<LinkCard
+		title="Memutakhirkan Data Pengguna (NIK, NPWP, Nomor HP)"
+		description="Prosedur pemutakhiran data pengguna satker yang dilakukan oleh KPPN."
+		href="/admin/pengguna/pemutakhiran-data-pengguna/"
+	/>
+</CardGrid>

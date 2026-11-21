@@ -1,0 +1,222 @@
+---
+title: "Memutakhirkan Data Pengguna (NIK, NPWP, Nomor HP)"
+description: Prosedur pemutakhiran data pengguna SAKTI oleh KPPN, baik massal (upload) maupun individual (tombol "+").
+modul: admin
+menu_sakti: "Administrasi > Pengguna"
+peran: [satker, kppn-kanwil]
+jenis: juknis
+kata_kunci: [pemutakhiran data pengguna, update nik, update npwp, ganti nomor hp, pemutakhiran massal, pemutakhiran individual]
+status: review
+perlu_review: true
+sumber:
+  - judul: "Juknis Pemutakhiran Data Pengguna SAKTI"
+    url: "https://drive.google.com/file/d/15tKi3Bxci67B7YwVL7uKhVvA2sTOHYwk/view"
+    jenis: pdf
+    diambil: 2026-11-21
+    id_manifest: A-dok-032
+  - judul: "Form Pemutakhiran Data Pengguna Aplikasi SAKTI.xlsx"
+    url: "https://docs.google.com/spreadsheets/d/1BSJsD51wKnPgqRTdG0mThgWSS4IKuKW1/"
+    jenis: sheets
+    diambil: 2026-11-21
+    id_manifest: A-dok-017
+sidebar:
+  order: 3
+---
+
+import { Steps, Aside } from '@astrojs/starlight/components';
+import MenuSakti from '~/components/MenuSakti.astro';
+import SumberAsli from '~/components/SumberAsli.astro';
+
+Pemutakhiran data pengguna adalah proses untuk memutakhirkan data
+pengguna SAKTI. Satker menyampaikan formulir dan lampirannya, lalu KPPN
+memproses pemutakhiran di aplikasi.
+
+| | |
+|---|---|
+| Modul | ADM |
+| Role user | Satker (ADM), KPPN (ADM USER) |
+| Input | Data Pejabat, Data Pengguna |
+| Output | Pemutakhiran Data |
+| Validasi | Persetujuan ADM USER |
+
+Dasar proses ini adalah PER-16/PB/2020 tentang Hak Akses Pengguna dan
+Pengamanan Secara Elektronik dalam Piloting SAKTI serta KEP-264/PB/2020
+tentang Pelaksanaan Penggunaan One Time Password dalam Piloting SAKTI.
+Penggunaan OTP untuk satker Piloting SAKTI Tahap I s.d. V perlu didahului
+pemutakhiran data pengguna satker yang dilakukan oleh KPPN.
+
+<MenuSakti />
+
+## Yang disiapkan satker
+
+1. Satker menyampaikan Formulir Pemutakhiran Data Pengguna SAKTI ke KPPN
+   dalam bentuk file Excel dan PDF data pengguna yang telah dimutakhirkan,
+   dilampiri:
+
+   - Formulir Pengaktifan Pengguna dan One Time Password (OTP) SAKTI untuk
+     KPA, PPK, dan PPSPM dari aplikasi SAKTI yang telah ditandatangani
+     masing-masing pejabat (2 rangkap)
+   - Surat Keputusan sebagai KPA Satker
+   - Surat Keputusan mengenai Penetapan Pengguna SAKTI
+   - Salinan Kartu Tanda Penduduk (KTP) KPA, PPK, dan PPSPM
+   - Asli Spesimen Tanda Tangan KPA, PPK, PPSPM, dan Stempel Satker
+
+2. Satker melakukan hapus referensi pejabat (KPA/PPK/PPSPM) melalui user
+   admin lokal satker **sebelum** proses pemutakhiran data pejabat,
+   agar tidak terdapat perbedaan antara data pejabat yang sudah direkam
+   dengan data pemutakhiran yang akan diproses KPPN. Referensi pejabat
+   direkam kembali setelah pemutakhiran data user selesai.
+
+## Langkah di KPPN
+
+Pemutakhiran data user dilakukan oleh Pelaksana MSKI/PDMS pada user Admin
+User KPPN.
+
+<Steps>
+
+1. Pelaksana Seksi MSKI/PDMS menerima Formulir Pemutakhiran Data Pengguna
+   SAKTI beserta lampirannya (seperti daftar di atas).
+
+2. Pelaksana seksi MSKI/PDMS login sebagai Admin User KPPN.
+
+3. Pelaksana seksi MSKI/PDMS mengecek kelengkapan data/dokumen dan
+   mencocokkan data user pada aplikasi SAKTI di menu **Administrasi >
+   Pengelolaan Pengguna dan Kontrol Akses > Pengelolaan Pengguna ALL**
+   (jalur menurut juknis) dengan Formulir Pengaktifan Pengguna dan OTP
+   SAKTI beserta lampirannya.
+
+4. Apabila persyaratan tidak lengkap dan/atau pencocokan tidak sesuai,
+   formulir beserta lampirannya dikembalikan kepada satker.
+
+5. Apabila persyaratan lengkap dan pencocokan sesuai, pelaksana seksi
+   MSKI/PDMS memproses pemutakhiran data pengguna pada menu yang sama
+   (jalur menurut juknis), dengan salah satu dari dua alternatif cara di
+   bawah.
+
+</Steps>
+
+### Pemutakhiran massal (upload)
+
+<Steps>
+
+1. Klik tombol **Pemutakhiran** pada kolom Tombol Manajemen Pendaftaran
+   User.
+2. Pilih file Excel pemutakhiran yang akan di-upload, lalu klik
+   **Upload**.
+3. Apabila data pada Excel tidak terdapat kesalahan, data yang akan
+   dimutakhirkan muncul. Klik tombol **Validasi**; sistem menampilkan dan
+   memvalidasi seluruh data pengguna tersebut.
+4. Apabila terdapat perbedaan antara nomor HP dan email pada data
+   pengguna dengan data pejabat, muncul peringatan. Data yang berbeda
+   tidak dapat dimutakhirkan dan harus diperbaiki terlebih dahulu.
+5. Apabila data sesuai dan tidak ada perbedaan, klik **Ok**.
+6. Pada tampilan konfirmasi user yang akan di-update, klik **Ya**.
+7. Muncul notifikasi user mana saja yang berhasil dan yang gagal
+   dimutakhirkan.
+
+</Steps>
+
+Mekanisme upload memutakhirkan data NIK, NPWP, email, nomor HP, serta
+nomor dan tanggal SK pada seluruh pengguna yang memiliki NIP dan nama
+yang sama.
+
+### Pemutakhiran individual (tombol "+")
+
+<Steps>
+
+1. Pilih user yang akan dimutakhirkan pada tabel, lalu klik tombol
+   **"+"**.
+2. Apabila terdapat perbedaan antara nomor HP dan email pada data
+   pengguna dengan data pejabat, muncul peringatan.
+3. Lakukan update data NPWP, NIK, No. HP, dan email, lalu klik
+   **Simpan**.
+
+</Steps>
+
+Mekanisme tombol "+" memutakhirkan data NIK, NPWP, email, dan nomor HP
+seluruh pengguna yang memiliki NIP dan nama yang sama. Sementara nomor
+dan tanggal SK yang dimutakhirkan lewat tombol "+" hanya berlaku pada
+user yang dipilih.
+
+## Setelah pemutakhiran
+
+- Admin satker merekam ulang referensi pejabat melalui menu **Administrasi
+  > Umum > Jabatan > Pejabat** (jalur menurut juknis) — lihat
+  [Melengkapi Data Pejabat Perbendaharaan](/admin/pengguna/pejabat-perbendaharaan/).
+- Penghapusan pejabat turut menghapus mapping Operator – PPK, sehingga
+  admin satker perlu merekam ulang [mapping Operator –
+  PPK](/admin/mapping/mapping-operator-ppk/) setelah proses pemutakhiran
+  user dan OTP selesai.
+
+## Masalah umum
+
+<details>
+<summary>Ingin mengubah user, bukan sekadar melengkapi data</summary>
+
+Pemutakhiran data pengguna dilakukan untuk melengkapi data user yang sudah
+ada. Untuk perubahan user, lakukan perubahan user melalui HAI terlebih
+dahulu dengan mekanisme form perubahan user yang juga mencantumkan nomor
+dan tanggal SK.
+
+</details>
+
+<details>
+<summary>Error validasi saat pemutakhiran oleh admin user KPPN</summary>
+
+Error terjadi karena data pada pejabat tidak sama dengan data mutakhir
+yang sedang diproses. KPPN menginformasikan admin lokal satker untuk
+menghapus data pejabat di menu **Administrasi > Umum > Jabatan > Pejabat**
+(jalur menurut juknis), lalu melanjutkan prosedur pemutakhiran data
+pengguna.
+
+</details>
+
+<details>
+<summary>Data mana saja yang ikut ter-update</summary>
+
+Prosedur pemutakhiran data pengguna meng-update NIK, NPWP, No HP, email,
+nomor SK, dan tanggal SK untuk seluruh pengguna yang memiliki NIP yang
+sama.
+
+</details>
+
+<details>
+<summary>Mapping Operator – PPK hilang setelah penghapusan pejabat</summary>
+
+Penghapusan pejabat turut menghapus mapping Operator – PPK. Setelah proses
+pemutakhiran user dan OTP selesai, admin satker merekam ulang mapping
+Operator – PPK.
+
+</details>
+
+<details>
+<summary>Perubahan user setelah OTP KPA aktif</summary>
+
+Setelah OTP KPA aktif, perubahan user selanjutnya dilakukan oleh admin
+lokal satker dengan persetujuan KPA tanpa melalui HAI. Perubahan user ini
+meliputi user operator dan user pejabat.
+
+</details>
+
+## Formulir
+
+- [Form Pemutakhiran Data Pengguna Aplikasi SAKTI.xlsx](https://docs.google.com/spreadsheets/d/1BSJsD51wKnPgqRTdG0mThgWSS4IKuKW1/)
+
+<Aside type="caution" title="Perlu verifikasi">
+Juknis ini terbit 2022 dalam konteks Piloting SAKTI. Juknis menyebut
+menu **Administrasi > Pengelolaan Pengguna dan Kontrol Akses >
+Pengelolaan Pengguna ALL** — di menu aplikasi saat ini kemungkinan
+padanannya adalah **Administrasi > Pengguna > Manajemen Pengguna (ALL)** —
+serta **Administrasi > Umum > Jabatan > Pejabat** (kini **Administrasi >
+Pengguna > Pejabat Perbendaharaan**).
+</Aside>
+
+## Terkait
+
+- [Melengkapi Data Pejabat Perbendaharaan](/admin/pengguna/pejabat-perbendaharaan/)
+- [Memetakan Operator dengan PPK](/admin/mapping/mapping-operator-ppk/)
+- [Mengajukan Perubahan Pengguna](/mulai/pendaftaran-user/perubahan-pengguna/)
+
+## Sumber
+
+<SumberAsli />

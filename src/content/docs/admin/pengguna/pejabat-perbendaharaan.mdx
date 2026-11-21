@@ -1,0 +1,89 @@
+---
+title: Melengkapi Data Pejabat Perbendaharaan
+description: Merekam data pejabat perbendaharaan di menu Pejabat Perbendaharaan untuk pendaftaran OTP modul Pelaksanaan.
+modul: admin
+menu_sakti: "Administrasi > Pengguna > Pejabat Perbendaharaan"
+peran: [satker]
+jenis: juknis
+kata_kunci: [pejabat perbendaharaan, data pejabat, rekam pejabat, kpa ppspm ppk bendahara, ppk umum, otp pejabat]
+status: review
+perlu_review: false
+sumber:
+  - judul: "1. Juknis SAKTI Admin Updated 2024"
+    url: "https://docs.google.com/presentation/d/1dbhAhtZ-uotv_CxZ5GefYlmeF11DCnZNaswn0Oym6PE/"
+    jenis: google-slides
+    diambil: 2026-11-21
+    id_manifest: A-dok-005
+  - judul: "Juknis Admin SAKTI Tipe Satker (versi lama, digantikan)"
+    url: "https://docs.google.com/presentation/d/10egiSsDGl4zU5e5Ok3jtZAVOmWyTeVRAtSYuMnjyh78/"
+    jenis: google-slides
+    diambil: 2026-11-21
+    id_manifest: A-dok-018
+sidebar:
+  order: 2
+---
+
+import MenuSakti from '~/components/MenuSakti.astro';
+import SumberAsli from '~/components/SumberAsli.astro';
+
+Menu **Pejabat Perbendaharaan** digunakan untuk merekam data pejabat
+perbendaharaan satker dan untuk mendaftarkan One Time Password (OTP)
+SAKTI bagi modul Pelaksanaan.
+
+<MenuSakti />
+
+## Pejabat yang direkam
+
+Menu pejabat digunakan untuk merekam Pejabat Perbendaharaan, di antaranya:
+
+- Kuasa Pengguna Anggaran (KPA)
+- PPSPM
+- PPK
+- Bendahara
+- Kepala Kantor (apabila berbeda dengan KPA)
+- Operator (untuk TTE Dokumen Pendukung)
+
+Beberapa data pejabat terisi secara otomatis berdasarkan data pengguna,
+di antaranya NIP, NIK, NPWP, Nomor HP, dan Email.
+
+## Aturan checkbox PPK Umum
+
+- Untuk satker yang hanya memiliki 1 PPK, checkbox **PPK Umum** di menu
+  pejabat wajib dicentang.
+- Apabila terdapat lebih dari 1 PPK, harus ada 1 PPK yang bertindak sebagai
+  PPK umum. PPK lain (PPK khusus) dibagi pagu pada menu pembagian pagu per
+  PPK (modul anggaran).
+
+## Hal yang perlu diperhatikan
+
+- Isian data pada Pejabat dan Data Penandatangan harus sama.
+- Untuk perubahan user Pejabat Perbendaharaan, admin satker terlebih
+  dahulu menghapus Pejabat Perbendaharaan di referensi pejabat. Pastikan
+  pejabat tersebut tidak memiliki transaksi yang menggantung.
+
+## Status pejabat
+
+Status pada referensi pejabat memiliki arti sebagai berikut:
+
+| Status | Arti |
+|---|---|
+| Baru | Muncul setelah referensi pejabat direkam. |
+| Kirim | Muncul setelah data pada referensi pejabat dikirim ke KPPN oleh user KPA. |
+| Setuju CSO | Muncul setelah Pelaksana PDMS/MSKI melakukan persetujuan aktivasi OTP tingkat pelaksana (admuser). |
+| Aktif | Muncul setelah Kasi PDMS/MSKI melakukan persetujuan aktivasi OTP tingkat kepala seksi (apruser). |
+| Blokir | Muncul apabila kewenangan OTP diblokir. |
+
+Pada juknis versi 2022, menu ini berada di jalur **Administrasi > Umum >
+Jabatan > Pejabat**; pada aplikasi saat ini menu tersebut berada di
+**Administrasi > Pengguna > Pejabat Perbendaharaan**.
+
+## Terkait
+
+- [Mengaktifkan OTP Pejabat Perbendaharaan](/mulai/pendaftaran-user/aktivasi-otp/)
+- [Mengelola Referensi Penandatangan](/admin/penandatangan/penandatangan/)
+- [Memetakan Operator dengan PPK](/admin/mapping/mapping-operator-ppk/)
+- [PKIPA](/admin/pkipa/)
+
+## Sumber
+
+<SumberAsli />
