@@ -1,12 +1,157 @@
 ---
-title: Role
-description: Panduan menu Role pada modul Administrasi.
+title: Memahami Peran dan Kewenangan Pengguna SAKTI
+description: Jenis peran (Admin, Operator, Validator, Approver) dan kewenangan (kelompok pengguna) pada aplikasi SAKTI.
 modul: admin
-jenis: indeks
-status: terbit
+peran: [satker, kppn-kanwil, djpb-pusat, dja, djkn, bappenas, bpk, apip, widyaiswara]
+jenis: konsep
+kata_kunci: [role sakti, peran pengguna, kewenangan user, kelompok pengguna, admin operator validator approver, maker checker signer]
+status: review
+perlu_review: true
+sumber:
+  - judul: "1. Juknis SAKTI Admin Updated 2024"
+    url: "https://docs.google.com/presentation/d/1dbhAhtZ-uotv_CxZ5GefYlmeF11DCnZNaswn0Oym6PE/"
+    jenis: google-slides
+    diambil: 2026-11-21
+    id_manifest: A-dok-005
+  - judul: "Juknis Admin SAKTI Tipe Satker"
+    url: "https://docs.google.com/presentation/d/10egiSsDGl4zU5e5Ok3jtZAVOmWyTeVRAtSYuMnjyh78/"
+    jenis: google-slides
+    diambil: 2026-11-21
+    id_manifest: A-dok-018
+  - judul: "[Admin] Juknis Pendaftaran User 2022"
+    url: "https://docs.google.com/presentation/d/1C9gJgpqXILQQKPmW1gnSfnaPErf-odt4b6buJams854/"
+    jenis: google-slides
+    diambil: 2026-11-21
+    id_manifest: A-dok-001
+  - judul: "SAKTI Admin Knowledge Base"
+    url: "https://sites.google.com/view/saktiadm/beranda"
+    jenis: google-sites
+    diambil: 2026-11-21
+    id_manifest: A-beranda
 sidebar:
   label: Ringkasan
   order: 0
 ---
 
-Panduan untuk menu **Role** sedang disiapkan.
+import { Aside } from '@astrojs/starlight/components';
+import SumberAsli from '~/components/SumberAsli.astro';
+
+Secara garis besar, pengguna SAKTI terdiri dari dua jenis: **Admin** dan
+**Operasional Modul**.
+
+- **Admin** — menurut juknis 2024 mencakup dua fungsi: *Admin*, yang
+  mengelola manajemen user/pengguna pada aplikasi SAKTI sesuai tipe dan
+  kewenangannya, dan *Referensi*, yang mengelola referensi aplikasi SAKTI
+  sesuai tipe dan kewenangannya. Pada juknis versi 2022, administrator
+  diartikan sebagai pegawai yang diberi kewenangan oleh PA/KPA/Pejabat
+  yang ditunjuk untuk melaksanakan fungsi teknis administrasi SAKTI.
+- **Operasional Modul** — pengguna operasional modul yang konsepnya
+  didasarkan pada prinsip maker (merekam), checker (menguji), dan signer
+  (menyetujui). Tidak boleh terdapat rangkap jabatan antara pengguna
+  operasional dalam satu modul.
+
+## Empat peran utama
+
+Secara umum dikenal empat peran utama: **Admin**, **Operator**,
+**Validator**, dan **Approver**. Peran ini memiliki turunan berupa
+kewenangan (kelompok pengguna) masing-masing. Selain itu, terdapat juga
+pengelompokan kewenangan yang wajib dimiliki pada pejabat
+perbendaharaan.
+
+## Jenis kewenangan (kelompok pengguna) per peran
+
+Menurut juknis 2022, kelompok pengguna per peran adalah:
+
+- **Admin:** Admin Lokal
+- **Approver:** Approver Anggaran; Approver Aset; Approver GLP (General
+  Ledger Pelaporan/GLP_KPA); Approver Komitmen; Approver Komitmen DAKDD
+  (khusus KPPN penyalur DAK Fisik dan Dana Desa); Approver Persediaan;
+  Approver SPM
+- **Validator:** Validator Aset; Validator SPM
+- **Operator:** Operator Anggaran; Operator Aset; Operator Aset Pembantu;
+  Operator GLP (General Ledger/Pelaporan); Operator Komitmen; Operator
+  Persediaan; Operator Persediaan Pembantu; Operator Piutang Pengeluaran;
+  Operator SPM/SPP; Bendahara Pengeluaran (dan Input Saldo Awal
+  Pengeluaran); Bendahara Pengeluaran Pembantu; Bendahara Penerimaan
+  (dan Input Saldo Awal Penerimaan); Bendahara Penerimaan Pembantu
+
+Untuk pemetaan jabatan ke pilihan kewenangan di aplikasi, lihat [tabel
+pilihan kewenangan per jabatan](/admin/pengguna/pengelolaan-pengguna/).
+
+## Kelompok pengguna pada pejabat perbendaharaan
+
+- **KPA:** Approver Anggaran; Approver General Ledger/Pelaporan
+  (GLP_KPA); Approver SPM Khusus (SPM KPA)
+- **PPK:** Approver Komitmen; Validator SPM
+- **PPSPM:** Approver SPM
+- **Bendahara:** Bendahara Pengeluaran/Penerimaan; Input Saldo Awal
+  Bendahara Pengeluaran/Penerimaan
+
+## Padanan user aplikasi terdahulu ke SAKTI
+
+| Aplikasi terdahulu | SAKTI |
+|---|---|
+| Admin pada masing-masing aplikasi | Admin Satker |
+| Operator SAS | Operator Komitmen, Operator Pembayaran (SPM), Operator Pembayaran (SPP) |
+| Operator SAIBA | Operator GLP |
+| Operator SILABI | Bendahara Pengeluaran, Bendahara Penerimaan, BPP |
+| Operator SIMAK | Operator Aset, Operator Aset Pembantu |
+| Operator Persediaan | Operator Persediaan, Operator Persediaan Pembantu |
+| Operator RKAKL | Operator Anggaran |
+
+Terdapat penyesuaian kewenangan dari aplikasi eksisting ke aplikasi
+SAKTI:
+
+- User admin menjadi pengelola seluruh user pada aplikasi SAKTI.
+- User admin dan operator boleh merangkap.
+- Sesama operator dapat merangkap. Contoh: Operator SPM dapat merangkap
+  sebagai Operator Komitmen, Bendahara Pengeluaran, GLP, Aset, dan
+  Persediaan.
+- Tidak diperbolehkan ada rangkap jabatan dalam satu modul. Contoh: PPK
+  (validator SPM) tidak boleh dirangkap oleh Operator SPM.
+
+## Pola User ID per peran
+
+Menurut juknis 2022, nama pengguna mengikuti jenis peran yang diberikan:
+
+- Peran Admin memiliki userid `adm_kodesatker_nip`
+- Peran Operator memiliki userid `opr_kodesatker_nip`
+- Peran Validator memiliki userid `val_kodesatker_nip`
+- Peran Approver memiliki userid `apr_kodesatker_nip`
+
+## Peran level Unit/Kementerian
+
+Situs SAKTI Admin mencantumkan peran/role untuk level Unit/Kementerian
+berikut:
+
+- `UNIT_OPERATOR_PELAPORAN` untuk Konsolidator Pelaporan level Unit
+- `UNIT_OPERATOR_ASET` untuk Konsolidator Aset level Unit
+- `UNIT_OPERATOR_ANGGARAN`
+- `UNIT_APPROVER_ANGGARAN`
+- `ADMIN_UNIT`
+- `KEMENTERIAN_OPERATOR_PELAPORAN` untuk Konsolidator Pelaporan level
+  Kementerian
+- `KEMENTERIAN_OPERATOR_ASET` untuk Konsolidator Aset level Kementerian
+
+Peran user Operator Anggaran dan Approver Anggaran level Kanwil K/L
+(Wilayah) hanya diperuntukkan bagi Kementerian/Lembaga: Mahkamah Agung,
+POLRI, Kemenag, dan ATR/BPN.
+
+Untuk menentukan pembagian role/kewenangan user SAKTI, tersedia petunjuk
+pembagian role pada `bit.ly/rolesakti` sebagaimana dirujuk sumber.
+
+<Aside type="caution" title="Perlu verifikasi">
+Pola User ID (`adm_…`, `opr_…`, `val_…`, `apr_…`) berasal dari juknis
+2022, sedangkan juknis 2024 menyatakan login SAKTI memakai username NIK.
+Daftar kelompok pengguna pada artikel ini juga bersumber dari juknis
+2022.
+</Aside>
+
+## Terkait
+
+- [Mengelola Data Pengguna sebagai Admin Satker](/admin/pengguna/pengelolaan-pengguna/)
+- [Pendaftaran User](/mulai/pendaftaran-user/)
+
+## Sumber
+
+<SumberAsli />
