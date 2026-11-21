@@ -1,0 +1,54 @@
+---
+import { muatKonfigurasi } from '~/lib/modul.ts';
+
+const konfigurasi = muatKonfigurasi();
+const base = import.meta.env.BASE_URL;
+---
+
+<section class="peran">
+	<h3>Cari berdasarkan peran</h3>
+	<ul class="pil-peran">
+		{
+			konfigurasi.peran.map((peran) => (
+				<li>
+					<a class="pil" href={`${base}peran/${peran.slug}/`}>
+						{peran.nama}
+					</a>
+				</li>
+			))
+		}
+	</ul>
+</section>
+
+<style>
+	.peran {
+		margin-top: 2.5rem;
+	}
+	.peran h3 {
+		margin: 0 0 1rem;
+		font-size: var(--sl-text-xl);
+	}
+	.pil-peran {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 0.5rem;
+		list-style: none;
+		margin: 0;
+		padding: 0;
+	}
+	.pil {
+		display: inline-block;
+		padding: 0.375rem 0.875rem;
+		border: 1px solid var(--sl-color-gray-5);
+		border-radius: 999px;
+		background-color: var(--sl-color-bg-accent);
+		color: var(--sl-color-white);
+		font-size: var(--sl-text-sm);
+		text-decoration: none;
+	}
+	.pil:hover,
+	.pil:focus-visible {
+		border-color: var(--sl-color-accent);
+		color: var(--sl-color-text-accent);
+	}
+</style>

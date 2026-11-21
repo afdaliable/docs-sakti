@@ -1,0 +1,6 @@
+[
+	{ "label": "Pendaftaran user", "href": "/mulai/pendaftaran-user/" },
+	{ "label": "MFA", "href": "/mulai/mfa/" },
+	{ "label": "Tutup buku", "href": "/akuntansi-pelaporan/tutup-buku/" },
+	{ "label": "Kontrak", "href": "/komitmen/ruh/" }
+]

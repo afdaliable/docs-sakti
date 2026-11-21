@@ -51,7 +51,7 @@ Kerjakan berurutan. Centang `[x]` saat selesai. Setiap fase diakhiri **gerbang**
 ## Fase 3 — Tampilan help center
 
 - [x] 3.1 `BigSearch` (Level 1 Pagefind dulu) sesuai `04-tampilan-ux.md`, termasuk aksesibilitas keyboard/ARIA.
-- [ ] 3.2 `ModuleGrid`, `RoleChips`, `RecentlyUpdated`, `HelpBox`, `PopularLinks`.
+- [x] 3.2 `ModuleGrid`, `RoleChips`, `RecentlyUpdated`, `HelpBox`, `PopularLinks`.
 - [ ] 3.3 Landing page `template: splash`.
 - [ ] 3.4 Halaman `/cari/` dengan filter modul/peran/jenis.
 - [ ] 3.5 Override komponen artikel: breadcrumb `menu_sakti`, badge, kotak "Menu di SAKTI", footer sumber + feedback.
