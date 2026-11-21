@@ -7,7 +7,7 @@ import { MODUL_SLUGS, PERAN_SLUGS } from './lib/modul.ts';
 export const collections = {
 	docs: defineCollection({
 		loader: docsLoader(),
-		schema: docsSchema({
+		schema: (context) => docsSchema({
 			extend: z.object({
 				modul: z.enum(MODUL_SLUGS).optional(),
 				menu_sakti: z.string().optional(),
@@ -49,6 +49,13 @@ export const collections = {
 					)
 					.default([]),
 			}),
+		})(context).transform((data) => {
+			const draft = data.draft || data.status === 'draft';
+			const banner =
+				data.status === 'review' && data.banner === undefined
+					? { content: 'Artikel ini sedang ditinjau. Isi dapat berubah setelah verifikasi.' }
+					: data.banner;
+			return { ...data, draft, banner };
 		}),
 	}),
 };

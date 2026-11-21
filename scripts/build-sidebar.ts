@@ -26,7 +26,7 @@ function itemSub(slugModul: string, sub: { slug: string; nama: string }) {
 	return {
 		label: sub.nama,
 		collapsed: true,
-		autogenerate: { directory: `${slugModul}/${sub.slug}` },
+		items: [{ autogenerate: { directory: `${slugModul}/${sub.slug}` } }],
 	};
 }
 
@@ -37,7 +37,11 @@ function itemModul(modul: { slug: string; nama: string; sub: { slug: string; nam
 		return { label: modul.nama, slug: modul.slug };
 	}
 	if (modul.sub.length === 0) {
-		return { label: modul.nama, collapsed: true, autogenerate: { directory: modul.slug } };
+		return {
+			label: modul.nama,
+			collapsed: true,
+			items: [{ autogenerate: { directory: modul.slug } }],
+		};
 	}
 	const itemSubMenu = modul.sub
 		.map((sub) => itemSub(modul.slug, sub))
