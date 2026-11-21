@@ -168,7 +168,7 @@ async function main() {
 		}
 	}
 
-	tandaiHilangTerbatas(manifest, idTerlihat, sumberDicrawl, tanggal);
+	if (!halaman.size) tandaiHilangTerbatas(manifest, idTerlihat, sumberDicrawl, tanggal);
 	tulisManifest(manifest);
 	const laporan = buatLaporan(manifest, tanggal);
 	fs.writeFileSync(path.resolve(process.cwd(), 'sources/laporan-inventaris.md'), laporan);
