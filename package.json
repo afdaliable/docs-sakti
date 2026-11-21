@@ -12,7 +12,7 @@
     "build": "astro build",
     "preview": "astro preview",
     "astro": "astro",
-    "check:content": "node scripts/belum-tersedia.mjs check:content 1",
+    "check:content": "tsx scripts/check-content.ts",
     "check:links": "astro build",
     "search:eval": "node scripts/belum-tersedia.mjs search:eval 5",
     "migrate:inventory": "node scripts/belum-tersedia.mjs migrate:inventory 2",

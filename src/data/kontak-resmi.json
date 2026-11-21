@@ -1,0 +1,9 @@
+{
+  "kontak": [
+    { "nama": "HAI Kemenkeu", "jenis": "situs", "nilai": "https://hai.kemenkeu.go.id/" },
+    { "nama": "HAI DJPb", "jenis": "email", "nilai": "hai.djpb@kemenkeu.go.id" },
+    { "nama": "Halo Dukcapil", "jenis": "telepon", "nilai": "1500537" }
+  ],
+  "nomor_diizinkan": ["1500537"],
+  "email_diizinkan": ["hai.djpb@kemenkeu.go.id"]
+}
