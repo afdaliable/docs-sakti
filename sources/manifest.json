@@ -26,7 +26,7 @@
       "target_peran": [
         "apip"
       ],
-      "status": "diekstrak",
+      "status": "didraft",
       "catatan": "",
       "id": "A-apip",
       "sumber": "A",
@@ -57,7 +57,7 @@
       "target_peran": [
         "bappenas"
       ],
-      "status": "diekstrak",
+      "status": "didraft",
       "catatan": "",
       "id": "A-bappenas-penelaah",
       "sumber": "A",
@@ -124,7 +124,7 @@
       "target_peran": [
         "bpk"
       ],
-      "status": "diekstrak",
+      "status": "didraft",
       "catatan": "",
       "id": "A-bpk-auditor",
       "sumber": "A",
@@ -155,7 +155,7 @@
       "target_peran": [
         "dja"
       ],
-      "status": "diekstrak",
+      "status": "didraft",
       "catatan": "",
       "id": "A-dja-penelaah",
       "sumber": "A",
@@ -189,7 +189,7 @@
       "target_peran": [
         "djkn"
       ],
-      "status": "diekstrak",
+      "status": "didraft",
       "catatan": "",
       "id": "A-djkn-pembina",
       "sumber": "A",
@@ -229,7 +229,7 @@
       "target_peran": [
         "djpb-pusat"
       ],
-      "status": "diekstrak",
+      "status": "didraft",
       "catatan": "",
       "id": "A-djpb-kantor-pusat",
       "sumber": "A",
@@ -281,7 +281,7 @@
       "target_modul": "mulai",
       "target_path": "mulai",
       "target_peran": [],
-      "status": "diekstrak",
+      "status": "didraft",
       "catatan": "",
       "id": "A-dok-002",
       "sumber": "A",
@@ -412,7 +412,7 @@
       "target_modul": "mulai",
       "target_path": "mulai",
       "target_peran": [],
-      "status": "diekstrak",
+      "status": "didraft",
       "catatan": "",
       "id": "A-dok-007",
       "sumber": "A",
@@ -438,7 +438,7 @@
       "target_modul": "mulai",
       "target_path": "mulai",
       "target_peran": [],
-      "status": "diekstrak",
+      "status": "didraft",
       "catatan": "",
       "id": "A-dok-008",
       "sumber": "A",
@@ -466,7 +466,7 @@
       "target_modul": "mulai",
       "target_path": "mulai",
       "target_peran": [],
-      "status": "diekstrak",
+      "status": "didraft",
       "catatan": "",
       "id": "A-dok-009",
       "sumber": "A",
@@ -492,7 +492,7 @@
       "target_modul": "mulai",
       "target_path": "mulai",
       "target_peran": [],
-      "status": "diekstrak",
+      "status": "didraft",
       "catatan": "",
       "id": "A-dok-010",
       "sumber": "A",
@@ -744,7 +744,7 @@
       "target_peran": [
         "satker"
       ],
-      "status": "diekstrak",
+      "status": "didraft",
       "catatan": "",
       "id": "A-dok-019",
       "sumber": "A",
@@ -1080,7 +1080,7 @@
       "target_peran": [
         "kppn-kanwil"
       ],
-      "status": "diekstrak",
+      "status": "didraft",
       "catatan": "",
       "id": "A-dok-031",
       "sumber": "A",
@@ -1137,7 +1137,7 @@
       "target_peran": [
         "djpb-pusat"
       ],
-      "status": "diekstrak",
+      "status": "didraft",
       "catatan": "",
       "id": "A-dok-033",
       "sumber": "A",
@@ -1642,7 +1642,7 @@
       "target_peran": [
         "apip"
       ],
-      "status": "diekstrak",
+      "status": "didraft",
       "catatan": "",
       "id": "A-dok-051",
       "sumber": "A",
@@ -1983,7 +1983,7 @@
       "target_peran": [
         "kppn-kanwil"
       ],
-      "status": "diekstrak",
+      "status": "didraft",
       "catatan": "",
       "id": "A-kppn-bun-dan-kanwil-djpb",
       "sumber": "A",
@@ -2088,7 +2088,7 @@
       "target_peran": [
         "satker"
       ],
-      "status": "diekstrak",
+      "status": "didraft",
       "catatan": "",
       "id": "A-satker-kl",
       "sumber": "A",
@@ -2121,7 +2121,7 @@
       "target_peran": [
         "widyaiswara"
       ],
-      "status": "diekstrak",
+      "status": "didraft",
       "catatan": "",
       "id": "A-widyaiswara-kemenkeu",
       "sumber": "A",

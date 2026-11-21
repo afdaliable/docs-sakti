@@ -79,6 +79,9 @@ Checklist modul:
 - [ ] persediaan  - [ ] aset-tetap  - [ ] piutang  - [ ] akuntansi-pelaporan  - [ ] kppn-bun
 - [ ] peran  - [ ] peraturan  - [ ] faq
 
+Status per modul:
+- `mulai` (21 Nov 2026): 20 artikel + 3 halaman indeks didraf di branch lokal `konten/migrasi-mulai`; 5 artikel `perlu_review`; 2 gambar; 9 query uji; build, `check:content`, `check:links`, tes lolos. Belum dicentang: PR `content(mulai): migrasi awal` dan review pemilik modul belum dilakukan (izin push hanya untuk `main`).
+
 **Gerbang 4:** semua item manifest `dimigrasi` atau `ditolak`; ≥ 40 query uji; tidak ada artikel `draft` yang tersisa tanpa issue.
 
 ---
