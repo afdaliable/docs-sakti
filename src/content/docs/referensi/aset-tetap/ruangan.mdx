@@ -1,0 +1,63 @@
+---
+title: Mengelola Referensi Ruangan
+description: Pengelolaan daftar ruangan oleh Admin Satker pada menu Referensi Aset Tetap.
+modul: referensi
+menu_sakti: "Referensi > Aset Tetap > Ruangan"
+peran: [satker]
+jenis: juknis
+kata_kunci: [ruangan, referensi ruangan, daftar ruangan, aset tetap, rekam ruangan]
+status: review
+perlu_review: true
+sumber:
+  - judul: "Juknis Admin SAKTI Tipe Satker"
+    url: "https://docs.google.com/presentation/d/10egiSsDGl4zU5e5Ok3jtZAVOmWyTeVRAtSYuMnjyh78/"
+    jenis: google-slides
+    diambil: 2026-11-21
+    id_manifest: A-dok-018
+  - judul: "1. Juknis SAKTI Admin Updated 2024"
+    url: "https://docs.google.com/presentation/d/1dbhAhtZ-uotv_CxZ5GefYlmeF11DCnZNaswn0Oym6PE/"
+    jenis: google-slides
+    diambil: 2026-11-21
+    id_manifest: A-dok-005
+sidebar:
+  order: 1
+---
+
+import { Aside } from '@astrojs/starlight/components';
+import MenuSakti from '~/components/MenuSakti.astro';
+import SumberAsli from '~/components/SumberAsli.astro';
+
+Pengelolaan daftar ruangan termasuk lingkup tugas Admin Satker pada
+Referensi Modul Aset Tetap. Tugas admin atas data referensi meliputi
+rekam, ubah, dan hapus.
+
+<MenuSakti />
+
+## Isian form Referensi Ruangan
+
+- Modul
+- Kode Posisi Satker (UAKPA/B)
+- Kode Ruangan
+- Nama Ruangan
+- Nama PJ Ruangan
+- NIP/NRP PJ Ruangan
+
+Ruangan yang sudah direkam tampil pada **Tabel Ruangan**. Tombol yang
+tersedia: **Rekam**, **Simpan**, **Ubah**, **Batal**, **Hapus**, dan
+**Unduh**.
+
+<Aside type="caution" title="Perlu verifikasi">
+Juknis 2022 hanya memuat judul dan satu tangkapan layar menu ini, tanpa
+uraian langkah; nama isian dan tombol dibaca dari tangkapan layar
+tersebut. Juknis menulis jalur **Administrasi > Aset Tetap > Ruangan**,
+sedangkan di menu aplikasi saat ini form berada di **Referensi > Aset
+Tetap > Ruangan**.
+</Aside>
+
+## Terkait
+
+- [Mengelola Data Pengguna sebagai Admin Satker](/admin/pengguna/pengelolaan-pengguna/)
+
+## Sumber
+
+<SumberAsli />
