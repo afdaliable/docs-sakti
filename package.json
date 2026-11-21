@@ -18,7 +18,8 @@
     "migrate:inventory": "node scripts/belum-tersedia.mjs migrate:inventory 2",
     "migrate:extract": "node scripts/belum-tersedia.mjs migrate:extract 2",
     "migrate:draft": "node scripts/belum-tersedia.mjs migrate:draft 4",
-    "test": "tsx --test tests/*.test.ts"
+    "test": "tsx --test tests/*.test.ts",
+    "scaffold:indeks": "tsx scripts/scaffold-indeks.ts"
   },
   "dependencies": {
     "@astrojs/starlight": "0.43.1",
