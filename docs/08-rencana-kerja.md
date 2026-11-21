@@ -6,7 +6,7 @@ Kerjakan berurutan. Centang `[x]` saat selesai. Setiap fase diakhiri **gerbang**
 
 ## Fase 0 — Persiapan repo
 
-- [ ] 0.1 Inisialisasi Astro + Starlight dengan pnpm (`pnpm create astro@latest -- --template starlight`), TypeScript strict.
+- [x] 0.1 Inisialisasi Astro + Starlight dengan pnpm (`pnpm create astro@latest -- --template starlight`), TypeScript strict.
 - [ ] 0.2 Pindahkan isi paket kickoff (CLAUDE.md, docs/, config/, templates/, .claude/) ke root repo.
 - [ ] 0.3 `.gitignore`: `sources/raw/`, `sources/extracted/`, `.env`, `dist/`, `.astro/`.
 - [ ] 0.4 `.env.example` sesuai `07-deploy-ops.md`.

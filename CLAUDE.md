@@ -41,6 +41,8 @@ Kerjakan tugas **berurutan sesuai `docs/08-rencana-kerja.md`**. Centang `[x]` se
 
 ## 4. Perintah
 
+Butuh Node ≥ 22.23.4 (lihat `.nvmrc`) dan pnpm versi `packageManager` di `package.json`.
+
 ```bash
 pnpm install
 pnpm dev                 # server lokal
