@@ -11,11 +11,13 @@ export interface Kelompok {
 export interface SubMenu {
 	slug: string;
 	nama: string;
+	kode?: string;
 }
 
 export interface Modul {
 	slug: string;
 	nama: string;
+	kode?: string;
 	kelompok: string;
 	ikon: string;
 	ringkasan: string;
@@ -48,11 +50,14 @@ export function labelDariSlug(slug: string): string {
 }
 
 const subSchema = z
-	.union([z.string(), z.object({ slug: z.string(), nama: z.string().optional() })])
+	.union([
+		z.string(),
+		z.object({ slug: z.string(), nama: z.string().optional(), kode: z.string().optional() }),
+	])
 	.transform((sub): SubMenu =>
 		typeof sub === 'string'
 			? { slug: sub, nama: labelDariSlug(sub) }
-			: { slug: sub.slug, nama: sub.nama ?? labelDariSlug(sub.slug) },
+			: { slug: sub.slug, nama: sub.nama ?? labelDariSlug(sub.slug), kode: sub.kode },
 	);
 
 const konfigurasiSchema = z
@@ -62,6 +67,7 @@ const konfigurasiSchema = z
 			z.object({
 				slug: z.string(),
 				nama: z.string(),
+				kode: z.string().optional(),
 				kelompok: z.string(),
 				ikon: z.string(),
 				ringkasan: z.string(),

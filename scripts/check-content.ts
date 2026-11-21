@@ -2,6 +2,8 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { parse } from 'yaml';
 import { muatKonfigurasi } from '../src/lib/modul.ts';
+import { cariJalurMenu, jalurMenuBaku } from '../src/lib/menu.ts';
+import { bacaPetaKonten } from '../src/lib/peta.ts';
 
 export interface Temuan {
 	berkas: string;
@@ -118,6 +120,16 @@ export function periksaBerkas({
 			temuan.push({ berkas: relatif, baris: 1, tingkat: 'galat', kode: 'modul-tidak-cocok', pesan: `Halaman indeks di dalam folder modul harus memakai modul: ${slugFolderModul}.` });
 		}
 	}
+	if (typeof data.menu_sakti === 'string' && data.menu_sakti.trim() !== '') {
+		if (cariJalurMenu(data.menu_sakti) === null) {
+			temuan.push({ berkas: relatif, baris: 1, tingkat: 'galat', kode: 'menu-sakti-tidak-dikenal', pesan: `menu_sakti "${data.menu_sakti}" tidak cocok dengan pohon menu SAKTI.` });
+		} else {
+			const baku = jalurMenuBaku(data.menu_sakti)!;
+			if (baku !== data.menu_sakti) {
+				temuan.push({ berkas: relatif, baris: 1, tingkat: 'galat', kode: 'menu-sakti-tidak-baku', pesan: `menu_sakti tidak memakai label baku. Gunakan: "${baku}".` });
+			}
+		}
+	}
 	if (data.perlu_review === true) {
 		temuan.push({ berkas: relatif, baris: 1, tingkat: 'peringatan', kode: 'perlu-review', pesan: 'Artikel ditandai `perlu_review: true`.' });
 	}
@@ -204,6 +216,11 @@ export function periksaBerkas({
 export function periksaIndeksHilang(konfigurasi: ReturnType<typeof muatKonfigurasi>): Temuan[] {
 	const temuan: Temuan[] = [];
 	const docs = path.resolve(process.cwd(), 'src/content/docs');
+	const peta = bacaPetaKonten().filter((b) => b.jenis !== 'ditolak' && b.target_path !== '');
+	const subAdaKonten = (slugModul: string, slugSub: string) => {
+		const awalan = `${slugModul}/${slugSub}`;
+		return peta.some((b) => b.target_path === awalan || b.target_path.startsWith(`${awalan}/`));
+	};
 	const ada = (...segmen: string[]) =>
 		fs.existsSync(path.join(docs, ...segmen, 'index.mdx')) ||
 		fs.existsSync(path.join(docs, ...segmen, 'index.md'));
@@ -212,8 +229,8 @@ export function periksaIndeksHilang(konfigurasi: ReturnType<typeof muatKonfigura
 			temuan.push({ berkas: `${modul.slug}/index.mdx`, tingkat: 'galat', kode: 'indeks-hilang', pesan: `Modul "${modul.slug}" tidak punya index.` });
 		}
 		for (const sub of modul.sub) {
-			if (!ada(modul.slug, sub.slug)) {
-				temuan.push({ berkas: `${modul.slug}/${sub.slug}/index.mdx`, tingkat: 'galat', kode: 'indeks-hilang', pesan: `Sub-menu "${sub.slug}" modul "${modul.slug}" tidak punya index.` });
+			if (subAdaKonten(modul.slug, sub.slug) && !ada(modul.slug, sub.slug)) {
+				temuan.push({ berkas: `${modul.slug}/${sub.slug}/index.mdx`, tingkat: 'galat', kode: 'indeks-hilang', pesan: `Sub-menu "${sub.slug}" modul "${modul.slug}" punya artikel di peta konten tetapi tidak punya index.` });
 			}
 		}
 	}

@@ -1,19 +1,22 @@
 # Daftar modul SAKTI = sumber kebenaran untuk sidebar, halaman modul, kartu landing page,
 # taksonomi frontmatter (field `modul`), dan CODEOWNERS.
 #
-# ⚠️ KONFIRMASI KE PEMILIK PROYEK: urutan dan nama harus sama persis dengan menu SAKTI
-# yang berlaku. Lihat docs/09-keputusan-terbuka.md (K1).
+# Acuan: pohon menu asli aplikasi SAKTI di sources/menu.json (keputusan K1, K25-K27 di
+# docs/09-keputusan-terbuka.md). Nama dan urutan modul serta sub-menu HARUS sama dengan
+# menu.json; `pnpm test` gagal jika berbeda (tests/menu.test.ts).
 #
 # Field:
 #   slug        : folder di src/content/docs/<slug>/ dan segmen URL
-#   nama        : label sesuai menu SAKTI
-#   kelompok    : pengelompokan di landing page
+#   kode        : `kode` simpul di sources/menu.json. Tanpa `kode` = bagian khusus KB
+#                 yang tidak ada di menu SAKTI.
+#   nama        : label persis seperti di menu SAKTI (menu.json)
+#   kelompok    : pengelompokan di landing page (bukan bagian menu SAKTI)
 #   ikon        : nama ikon Starlight (https://starlight.astro.build/reference/icons/)
 #   ringkasan   : 1 kalimat untuk kartu
-#   sumber      : sumber utama (A/B/C, lihat docs/01-sumber-konten.md)
-#   sub         : sub-menu tingkat 1 (urutan sidebar). Tingkat berikutnya dibentuk dari folder.
-#                 Entri berupa slug, atau { slug, nama } jika nama menu SAKTI berbeda
-#                 dari label yang dibentuk otomatis dari slug.
+#   sumber      : sumber utama (A/B/C, lihat docs/01-sumber-konten.md); [] = belum ada sumber
+#   sub         : sub-menu tingkat 1 (urutan sidebar): semua anak simpul modul di menu.json,
+#                 lalu sub khusus KB (tanpa `kode`). Halaman indeks sub-menu hanya dibuat
+#                 bila ada artikel di bawahnya. Tingkat berikutnya dibentuk dari folder.
 
 
 kelompok:
@@ -23,104 +26,297 @@ kelompok:
     nama: Pelaksanaan Anggaran
   - id: pelaporan
     nama: Akuntansi & Pelaporan
-  - id: bun
-    nama: BUN (KPPN & Kanwil)
+  - id: lain
+    nama: KPPN & Modul Lainnya
 
 modul:
+  # Bagian khusus KB; tidak ada di menu SAKTI (K25), karena itu tanpa `kode`.
   - slug: mulai
     nama: Mulai Menggunakan SAKTI
     kelompok: umum
     ikon: rocket
     ringkasan: Akses aplikasi, pendaftaran user, MFA, dan email SAKTI.
     sumber: [A]
-    sub: [akses-aplikasi, pendaftaran-user, { slug: mfa, nama: MFA }, { slug: email-sakti, nama: Email SAKTI }]
+    sub:
+      - { slug: akses-aplikasi, nama: "Akses Aplikasi" }
+      - { slug: pendaftaran-user, nama: "Pendaftaran User" }
+      - { slug: mfa, nama: "MFA" }
+      - { slug: email-sakti, nama: "Email SAKTI" }
 
   - slug: admin
-    nama: Administrasi (Admin)
+    kode: ADM
+    nama: "Administrasi"
     kelompok: umum
     ikon: setting
     ringkasan: Pengelolaan user, role, PKIPA, dan monitoring status DS.
     sumber: [A]
-    sub: [role, manajemen-user, { slug: pkipa, nama: PKIPA }, { slug: monitoring-ds, nama: Monitoring Status DS }, formulir]
+    sub:
+      - { slug: pengguna, nama: "Pengguna", kode: ADM_ADMIN }
+      - { slug: mapping, nama: "Mapping", kode: ADM_MAPPING }
+      - { slug: penandatangan, nama: "Penandatangan", kode: ADM_PENANDATANGAN }
+      - { slug: monitoring, nama: "Monitoring", kode: ADM_MONITORING }
+      - { slug: pkipa, nama: "PKIPA" }
+      - { slug: role, nama: "Role" }
+      - { slug: formulir, nama: "Formulir" }
 
   - slug: referensi
-    nama: Referensi
+    kode: REF
+    nama: "Referensi"
     kelompok: umum
     ikon: open-book
     ringkasan: Data referensi satker, akun, dan tabel pendukung.
-    sumber: []        # belum ada sumber; buat halaman indeks saja
+    sumber: [A]
+    sub:
+      - { slug: pusat, nama: "Pusat", kode: REF_PUSAT }
+      - { slug: anggaran, nama: "Anggaran", kode: ADM_ANG }
+      - { slug: aset-tetap, nama: "Aset Tetap", kode: ADM_AST }
+      - { slug: bendahara, nama: "Bendahara", kode: ADM_BEN }
+      - { slug: gl-dan-pelaporan, nama: "GL dan Pelaporan", kode: ADM_GLP }
+      - { slug: komitmen, nama: "Komitmen", kode: ADM_KOM }
+      - { slug: pembayaran, nama: "Pembayaran", kode: ADM_SPM }
+      - { slug: persediaan, nama: "Persediaan", kode: ADM_PER }
+      - { slug: umum, nama: "Umum", kode: ADM_UMUM }
+      - { slug: transfer-ke-daerah, nama: "Transfer Ke Daerah", kode: ADM_TKD }
+
+  - slug: sinkronisasi-renja-rka
+    kode: RENJA
+    nama: "Sinkronisasi Renja-RKA"
+    kelompok: pelaksanaan
+    ikon: random
+    ringkasan: Menu Sinkronisasi Renja-RKA pada aplikasi SAKTI.
+    sumber: []
     sub: []
 
   - slug: penganggaran
-    nama: Penganggaran
+    kode: ANG
+    nama: "Penganggaran"
     kelompok: pelaksanaan
     ikon: document
     ringkasan: Penyusunan, revisi, dan pengelolaan DIPA.
-    sumber: []        # belum ada sumber; tanyakan (K1)
-    sub: []
+    sumber: []
+    sub:
+      - { slug: ruh, nama: "RUH", kode: ANG_RUH }
+      - { slug: adk, nama: "ADK", kode: ANG_ADK }
+      - { slug: monitoring, nama: "Monitoring", kode: ANG_MONITORING }
+      - { slug: cetak-formulir, nama: "Cetak Formulir", kode: ANG_CETAK_FORMULIR }
+      - { slug: pegawai, nama: "Pegawai", kode: ANG_PEGAWAI }
+      - { slug: konsolidasi, nama: "Konsolidasi", kode: ANG_KONSOLIDASI }
+      - { slug: utility, nama: "Utility", kode: ANG_UTILITY }
+      - { slug: laporan-cetak, nama: "Laporan / Cetak", kode: ANG_CETAK_MULTIYEAR }
+      - { slug: revisi-dipa, nama: "Revisi DIPA", kode: ANG_REVISI_DIPA }
+      - { slug: penelaahan-rkakl, nama: "Penelaahan RKAKL", kode: ANG_PENELAAHAN }
+      - { slug: review-angka-dasar, nama: "Review Angka Dasar", kode: ANG_REVIEW_AD }
+      - { slug: monev, nama: "Monev", kode: ANG_INFO_KINERJA }
+      - { slug: blu, nama: "BLU", kode: ANG_BLU }
 
   - slug: komitmen
-    nama: Komitmen
+    kode: KOM
+    nama: "Komitmen"
     kelompok: pelaksanaan
     ikon: pencil
     ringkasan: Supplier, kontrak, BAST, escrow, dan ADK GPP.
     sumber: [B, C]
-    sub: [{ slug: ruh, nama: RUH }, { slug: escrow, nama: Proses Escrow }, cetak, { slug: adk, nama: ADK }, { slug: upload, nama: Upload/Rekam }, monitoring, jurnal]
+    sub:
+      - { slug: ruh, nama: "RUH", kode: KOM_RUH }
+      - { slug: cetak, nama: "Cetak", kode: KOM_CETAK }
+      - { slug: adk, nama: "ADK", kode: KOM_ADK }
+      - { slug: upload, nama: "Upload / Import", kode: KOM_UPLOAD }
+      - { slug: monitoring, nama: "Monitoring", kode: KOM_MONITORING }
+      - { slug: proses-tte, nama: "Proses TTE", kode: KOM_TTE }
 
-  - slug: pembayaran
-    nama: Pembayaran
+  - slug: bendahara-valas
+    kode: BEN_VALAS
+    nama: "Bendahara Valas"
     kelompok: pelaksanaan
-    ikon: approve-check
-    ringkasan: SPP, SPM, catat/upload, dan monitoring pembayaran.
-    sumber: [B, C]
-    sub: [{ slug: ruh, nama: RUH Pembayaran }, cetak, { slug: adk, nama: ADK }, { slug: catat-upload, nama: Catat/Upload }, monitoring, referensi]
+    ikon: translate
+    ringkasan: Penerimaan kas, pengeluaran kas, transaksi belanja valas, serta penukaran dan mutasi uang.
+    sumber: []
+    sub:
+      - { slug: penerimaan-kas, nama: "Penerimaan Kas", kode: BEN_VALAS_PEN }
+      - { slug: pengeluaran-kas, nama: "Pengeluaran Kas", kode: BEN_VALAS_PENG }
+      - { slug: transaksi-belanja-valas, nama: "Transaksi Belanja Valas", kode: BEN_VALAS_TRX }
+      - { slug: penukaran-dan-mutasi-uang, nama: "Penukaran Dan Mutasi Uang", kode: BEN_VALAS_TUKAR }
+      - { slug: utilitas-dan-pelaporan, nama: "Utilitas dan Pelaporan", kode: BEN_VALAS_UTIL }
+      - { slug: referensi, nama: "Referensi", kode: BEN_VALAS_REFERENSI }
 
   - slug: bendahara
-    nama: Bendahara
+    kode: BEN
+    nama: "Bendahara"
     kelompok: pelaksanaan
     ikon: list-format
     ringkasan: BKU, pajak, LPJ, dan transaksi bendahara.
     sumber: [B, C]
-    sub: []
+    sub:
+      - { slug: membuat-usulan, nama: "Membuat Usulan", kode: BEN_USULAN }
+      - { slug: transaksi, nama: "Transaksi", kode: BEN_TRANSAKSI }
+      - { slug: setoran, nama: "Setoran", kode: BEN_SETORAN }
+      - { slug: pemindahan-kas, nama: "Pemindahan Kas", kode: BEN_APPROVAL_KAS }
+      - { slug: cetak-laporan, nama: "Cetak Laporan", kode: BEN_LAPORAN }
+      - { slug: monitoring, nama: "Monitoring", kode: BEN_MONITORING }
+      - { slug: upload, nama: "Upload", kode: BEN_UPLOAD }
+      - { slug: referensi, nama: "Referensi", kode: BEN_UTILITY }
+      - { slug: tutup-buku, nama: "Tutup Buku", kode: BEN_TUTUP_BUKU }
+      - { slug: validasi, nama: "Validasi", kode: BEN_VALIDASI }
+      - { slug: proses-tte, nama: "Proses TTE", kode: BEN_TTE }
+
+  - slug: komitmen-valas
+    kode: KOM_VALAS
+    nama: "Komitmen Valas"
+    kelompok: pelaksanaan
+    ikon: pen
+    ringkasan: BAST UP/TUP Valas.
+    sumber: []
+    sub:
+      - { slug: bast-up-tup-valas, nama: "BAST UP/TUP Valas", kode: KOM_VALAS_BAST }
+
+  - slug: pembayaran
+    kode: SPM
+    nama: "Pembayaran"
+    kelompok: pelaksanaan
+    ikon: approve-check
+    ringkasan: SPP, SPM, catat/upload, dan monitoring pembayaran.
+    sumber: [B, C]
+    sub:
+      - { slug: ruh, nama: "RUH Pembayaran", kode: SPM_RUH_SPP }
+      - { slug: validasi, nama: "Validasi", kode: SPM_VALIDASI_SPP }
+      - { slug: cetak, nama: "Cetak", kode: SPM_PENCETAKAN_SPP }
+      - { slug: adk, nama: "ADK", kode: SPM_ADK }
+      - { slug: catat-upload, nama: "Catat/Upload", kode: SPM_UPLOAD }
+      - { slug: monitoring, nama: "Monitoring", kode: SPM_MONITORING }
+      - { slug: referensi, nama: "Referensi", kode: SPM_REFERENSI }
+      - { slug: proses-tte, nama: "Proses TTE", kode: SPM_TTE }
 
   - slug: persediaan
-    nama: Persediaan
+    kode: PER
+    nama: "Persediaan"
     kelompok: pelaporan
     ikon: puzzle
     ringkasan: Transaksi masuk/keluar, koreksi, opname, dan tutup buku persediaan.
     sumber: [C]
-    sub: [transaksi-masuk, transaksi-keluar, koreksi, opname-fisik, tutup-buku, referensi, persediaan-dalam-proses, pelaporan, migrasi-data, monitoring, persediaan-tak-dikuasai, likuidasi, { slug: upload-data-blu, nama: Upload Data BLU }]
+    sub:
+      - { slug: referensi, nama: "Referensi", kode: PER_REFERENSI }
+      - { slug: transaksi-masuk, nama: "Transaksi Masuk", kode: PER_TRANSAKSI_MASUK }
+      - { slug: transaksi-keluar, nama: "Transaksi Keluar", kode: PER_TRANSAKSI_KELUAR }
+      - { slug: koreksi, nama: "Koreksi", kode: PER_KOREKSI }
+      - { slug: opname-fisik, nama: "Opname Fisik", kode: PER_OPNAME_FISIK }
+      - { slug: persetujuan, nama: "Persetujuan", kode: PER_PERSETUJUAN }
+      - { slug: pelaporan, nama: "Pelaporan", kode: PER_PELAPORAN }
+      - { slug: tutup-buku, nama: "Tutup Buku", kode: PER_TUTUP_BUKU }
+      - { slug: migrasi-data, nama: "Migrasi Data", kode: PER_MIGRASI_DATA }
+      - { slug: monitoring, nama: "Monitoring", kode: PER_MONITORING }
+      - { slug: persediaan-tak-dikuasai, nama: "Persediaan Tak Dikuasai", kode: PER_TAK_DIKUASAI }
+      - { slug: persediaan-dalam-proses, nama: "Persediaan Dalam Proses", kode: PER_DALAM_PROSES }
+      - { slug: koreksi-audited, nama: "Koreksi Audited", kode: PER_KOREKSI_AUDITED }
+      - { slug: likuidasi, nama: "Likuidasi", kode: PER_LIKUIDASI }
+      - { slug: upload-data-blu, nama: "Upload Data BLU", kode: PER_UPLOAD_DATA }
 
   - slug: aset-tetap
-    nama: Aset Tetap
+    kode: AST
+    nama: "Aset Tetap"
     kelompok: pelaporan
     ikon: laptop
     ringkasan: Transaksi BMN, KDP, persetujuan, normalisasi, dan konsesi jasa.
     sumber: [C]
-    sub: [{ slug: ruh, nama: RUH }, persetujuan, monitoring, cetak, penutupan-periode, { slug: adk, nama: ADK }, likuidasi, normalisasi, konsesi-jasa-mitra, { slug: penghapusan-masal, nama: Usul Hapus & Penghapusan Masal }, referensi]
+    sub:
+      - { slug: ruh, nama: "RUH", kode: AST_RUH }
+      - { slug: perhitungan-penyusutan, nama: "Perhitungan Penyusutan", kode: AST_RUH_PENYUSUTAN_PERHITUNGAN }
+      - { slug: persetujuan, nama: "Persetujuan", kode: AST_PERSETUJUAN }
+      - { slug: monitoring, nama: "Monitoring", kode: AST_MONITORING }
+      - { slug: cetak, nama: "Cetak", kode: AST_CETAK }
+      - { slug: adk, nama: "ADK", kode: AST_ADK }
+      - { slug: penutupan-periode, nama: "Penutupan Periode", kode: AST_TUTUP_PERIODE }
+      - { slug: penyusutan, nama: "Penyusutan", kode: AST_RUH_PENYUSUTAN }
+      - { slug: pengaturan, nama: "Pengaturan", kode: AST_PENGATURAN }
+      - { slug: referensi, nama: "Referensi", kode: AST_REFERENSI }
+      - { slug: bantuan, nama: "Bantuan", kode: AST_BANTUAN }
+      - { slug: keluar, nama: "Keluar", kode: AST_KELUAR }
+      - { slug: likuidasi, nama: "Likuidasi", kode: AST_LIKUIDASI }
+      - { slug: normalisasi, nama: "Normalisasi", kode: AST_NORMALISASI }
+      - { slug: konsesi-jasa-mitra, nama: "Konsesi Jasa Mitra", kode: AST_KONJAS_MITRA }
+      - { slug: penghapusan-masal, nama: "Usul Hapus dan Penghapusan Masal", kode: AST_USUL_HAPUS_MASAL }
 
   - slug: piutang
-    nama: Piutang
+    kode: AR
+    nama: "Piutang"
     kelompok: pelaporan
     ikon: information
     ringkasan: Debitur, pencatatan, settlement, penyisihan, dan pelimpahan piutang.
     sumber: [C]
-    sub: [referensi, pencatatan, transaksi, koreksi, transfer, laporan, tutup-periode, upload, piutang-jangka-panjang, likuidasi]
+    sub:
+      - { slug: penerimaan, nama: "Penerimaan", kode: AR_PENERIMAAN }
+      - { slug: likuidasi, nama: "Likuidasi", kode: AR_LIKUIDASI }
+      - { slug: pengelolaan-piutang, nama: "Pengelolaan Piutang", kode: AR_PENGELUARAN }
 
   - slug: akuntansi-pelaporan
-    nama: Akuntansi dan Pelaporan (GLP)
+    kode: GLP
+    nama: "Akuntansi dan Pelaporan"
     kelompok: pelaporan
-    ikon: seti:config
+    ikon: "seti:config"
     ringkasan: Jurnal, posting, tutup buku, resiprokal, dan laporan keuangan.
     sumber: [C]
-    sub: [proses, tutup-buku, transaksi-resiprokal, laporan, { slug: mphl-bjs, nama: Juknis MPHL-BJS SAKTI }, likuidasi-satker, { slug: koreksi-spm-jurnal-manual, nama: Koreksi SPM yang Memerlukan Jurnal Manual }]
+    sub:
+      - { slug: proses, nama: "Proses", kode: GLP_PROSES }
+      - { slug: tutup-buku, nama: "Tutup Buku", kode: GLP_PROSES_TUTUP_BUKU }
+      - { slug: laporan, nama: "Laporan", kode: GLP_LAPORAN }
+      - { slug: adk, nama: "ADK", kode: GLP_ADK }
+      - { slug: likuidasi-satker, nama: "Likuidasi Satker", kode: GLP_PROSES_LIKUIDASI_SATKER }
+      - { slug: transaksi-resiprokal, nama: "Transaksi Resiprokal", kode: GLP_TRANSAKSI_RESIPROKAL_BLU }
+      - { slug: seting-laporan-keuangan, nama: "Seting Laporan Keuangan", kode: GLP_SETING_LAPORAN_KEUANGAN }
+      - { slug: mphl-bjs, nama: "Juknis MPHL-BJS SAKTI" }
+      - { slug: koreksi-spm-jurnal-manual, nama: "Koreksi SPM yang Memerlukan Jurnal Manual" }
+
+  - slug: bendahara-umum-blu
+    kode: BU_BLU
+    nama: "Bendahara Umum BLU"
+    kelompok: lain
+    ikon: approve-check-circle
+    ringkasan: Transaksi dan referensi Bendahara Umum BLU.
+    sumber: []
+    sub:
+      - { slug: transaksi, nama: "Transaksi", kode: BU_BLU_TRX }
+      - { slug: referensi, nama: "Referensi", kode: BU_BLU_REF }
+
+  - slug: kpjm
+    kode: KPJMN
+    nama: "KPJM"
+    kelompok: lain
+    ikon: bars
+    ringkasan: Pagu indikatif, pagu anggaran, alokasi anggaran, dan laporan KPJM.
+    sumber: []
+    sub:
+      - { slug: pagu-indikatif, nama: "PAGU INDIKATIF", kode: KPJMN_PI }
+      - { slug: pagu-anggaran, nama: "PAGU ANGGARAN", kode: KPJMN_PAGU_ANGGARAN }
+      - { slug: alokasi-anggaran, nama: "ALOKASI ANGGARAN", kode: KPJMN_ALOKASI_ANGGARAN }
+      - { slug: laporan, nama: "LAPORAN", kode: KPJMN_LAPORAN }
 
   - slug: kppn-bun
-    nama: KPPN (BUN)
-    kelompok: bun
+    kode: KPPNBUN
+    nama: "KPPN"
+    kelompok: lain
     ikon: star
     ringkasan: Fungsi Kuasa BUN di SAKTI untuk KPPN dan Kanwil DJPb.
     sumber: [A, B]
+    sub:
+      - { slug: manajemen-satker, nama: "Manajemen Satker", kode: KPPNBUN_MNJM_SATKER }
+      - { slug: pencairan-dana, nama: "Pencairan Dana", kode: KPPN_PD }
+      - { slug: verifikasi-dan-akuntansi, nama: "Verifikasi dan Akuntansi", kode: KPPN_VERA }
+
+  - slug: laporan
+    kode: REPORT
+    nama: "Laporan"
+    kelompok: lain
+    ikon: add-document
+    ringkasan: Menu Laporan pada aplikasi SAKTI.
+    sumber: []
+    sub: []
+
+  - slug: transfer-ke-daerah
+    kode: TKD
+    nama: "Transfer ke Daerah"
+    kelompok: lain
+    ikon: right-arrow
+    ringkasan: Menu Transfer ke Daerah pada aplikasi SAKTI.
+    sumber: []
     sub: []
 
 # Bagian lintas modul (bukan modul SAKTI, tetapi ada di sidebar)

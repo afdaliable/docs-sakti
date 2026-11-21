@@ -96,6 +96,17 @@ test('email domain co.id terdeteksi', () => {
 	assert.ok(kode(periksa('komitmen/x.md', dasar + 'Email seseorang@yahoo.co.id.')).includes('data-pribadi-email'));
 });
 
+test('menu_sakti harus jalur baku di pohon menu SAKTI', () => {
+	const dasar = (menu: string) =>
+		`---\ntitle: X\nmodul: komitmen\nmenu_sakti: "${menu}"\nsumber: [{judul: a, url: "https://a.b/c", jenis: lainnya, diambil: 2026-01-01}]\n---\n`;
+	assert.ok(!kode(periksa('komitmen/x.md', dasar('Komitmen > RUH > Kontrak'))).includes('menu-sakti-tidak-dikenal'));
+	assert.ok(kode(periksa('komitmen/x.md', dasar('Komitmen > Menu Palsu'))).includes('menu-sakti-tidak-dikenal'));
+	const tidakBaku = periksa('komitmen/x.md', dasar('komitmen > ruh > kontrak'));
+	assert.ok(kode(tidakBaku).includes('menu-sakti-tidak-baku'));
+	assert.ok(tidakBaku.find((t) => t.kode === 'menu-sakti-tidak-baku')!.pesan.includes('Komitmen > RUH > Kontrak'));
+	assert.ok(!kode(periksa('komitmen/x.md', '---\ntitle: X\nmodul: komitmen\nsumber: [{judul: a, url: "https://a.b/c", jenis: lainnya, diambil: 2026-01-01}]\n---\n')).some((k) => k.startsWith('menu-sakti')));
+});
+
 test('tautan peran tidak dikenal', () => {
 	const dasar = '---\ntitle: X\nmodul: komitmen\nsumber: [{judul: a, url: "https://a.b/c", jenis: lainnya, diambil: 2026-01-01}]\n---\n\n';
 	assert.ok(kode(periksa('komitmen/x.md', dasar + '[lihat](/peran/tidak-ada/)')).includes('peran-tidak-dikenal'));

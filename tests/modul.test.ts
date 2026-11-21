@@ -2,7 +2,7 @@ import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import { muatKonfigurasi, labelDariSlug } from '../src/lib/modul.ts';
 
-test('12 modul dalam urutan YAML', () => {
+test('19 modul dalam urutan YAML', () => {
 	const konfigurasi = muatKonfigurasi();
 	assert.deepEqual(
 		konfigurasi.modul.map((m) => m.slug),
@@ -10,31 +10,45 @@ test('12 modul dalam urutan YAML', () => {
 			'mulai',
 			'admin',
 			'referensi',
+			'sinkronisasi-renja-rka',
 			'penganggaran',
 			'komitmen',
-			'pembayaran',
+			'bendahara-valas',
 			'bendahara',
+			'komitmen-valas',
+			'pembayaran',
 			'persediaan',
 			'aset-tetap',
 			'piutang',
 			'akuntansi-pelaporan',
+			'bendahara-umum-blu',
+			'kpjm',
 			'kppn-bun',
+			'laporan',
+			'transfer-ke-daerah',
 		],
 	);
 });
 
-test('sub berupa string mendapat nama bawaan dari slug', () => {
+test('hanya modul mulai yang tanpa kode', () => {
 	const konfigurasi = muatKonfigurasi();
-	const persediaan = konfigurasi.modul.find((m) => m.slug === 'persediaan')!;
-	const transaksiMasuk = persediaan.sub.find((s) => s.slug === 'transaksi-masuk')!;
-	assert.equal(transaksiMasuk.nama, 'Transaksi Masuk');
+	const tanpaKode = konfigurasi.modul.filter((m) => m.kode === undefined).map((m) => m.slug);
+	assert.deepEqual(tanpaKode, ['mulai']);
 });
 
 test('sub berupa objek mempertahankan nama', () => {
 	const konfigurasi = muatKonfigurasi();
 	const komitmen = konfigurasi.modul.find((m) => m.slug === 'komitmen')!;
-	const escrow = komitmen.sub.find((s) => s.slug === 'escrow')!;
-	assert.equal(escrow.nama, 'Proses Escrow');
+	const upload = komitmen.sub.find((s) => s.slug === 'upload')!;
+	assert.equal(upload.nama, 'Upload / Import');
+	assert.equal(upload.kode, 'KOM_UPLOAD');
+});
+
+test('sub tanpa kode adalah sub khusus KB', () => {
+	const konfigurasi = muatKonfigurasi();
+	const admin = konfigurasi.modul.find((m) => m.slug === 'admin')!;
+	const pkipa = admin.sub.find((s) => s.slug === 'pkipa')!;
+	assert.equal(pkipa.kode, undefined);
 });
 
 test('9 peran', () => {
