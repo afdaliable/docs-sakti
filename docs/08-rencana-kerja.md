@@ -38,8 +38,8 @@ Kerjakan berurutan. Centang `[x]` saat selesai. Setiap fase diakhiri **gerbang**
 - [x] 2.2 `scripts/inventory/linktree.ts` + `scripts/inventory/gdrive.ts` untuk Sumber B (rekursif).
 - [x] 2.3 Resolver link Slides/Docs/Sheets/short-link yang ditemukan di halaman.
 - [x] 2.4 Tulis `sources/manifest.json` + `sources/laporan-inventaris.md`.
-- [ ] 2.5 `scripts/extract/*` untuk HTML, PPTX, PDF (+OCR), DOCX, Sheets.
-- [ ] 2.6 Jalankan ekstraksi untuk semua item; item gagal dicatat.
+- [x] 2.5 `scripts/extract/*` untuk HTML, PPTX, PDF (+OCR), DOCX, Sheets.
+- [x] 2.6 Jalankan ekstraksi untuk semua item; item gagal dicatat.
 - [ ] 2.7 Buat `sources/peta-konten.csv` (pemetaan ke artikel target + dedup).
 - [ ] 2.8 **Berhenti dan minta review** pemilik proyek atas `laporan-inventaris.md` dan `peta-konten.csv` (keputusan K1, K2, K6).
 

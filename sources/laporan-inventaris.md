@@ -1,6 +1,6 @@
 # Laporan Inventaris Konten SAKTI
 
-Dibuat: 2026-11-21T20:11:03+07:00
+Dibuat: 2026-11-21T19:17:21+07:00
 
 ## Item per sumber dan jenis
 
@@ -41,9 +41,9 @@ Dibuat: 2026-11-21T20:11:03+07:00
 
 ## Item per status
 
+- diekstrak: 667
 - ditolak: 1
 - gagal: 9
-- terinventaris: 667
 
 ## Penanda sumber
 
@@ -183,7 +183,7 @@ Dibuat: 2026-11-21T20:11:03+07:00
 
 ## Gagal
 
-- A-dok-010 — https://docs.google.com/presentation/d/1YdQGJaawc-a_mT49frmBOj0Os06Q8Tnb1nfiiQEijhw/ — jaringan: TimeoutError: The operation was aborted due to timeout
+- A-download — https://sites.google.com/view/saktiadm/download — halaman 404 di sumber (tautan Unduh Form rusak)
 - C-dok-079 — https://drive.google.com/file/d/1fHAL9HQEthex16guGU7QzuHaI_f4gtYU/view — butuh login
 - C-dok-081 — https://drive.google.com/file/d/18cP_BLDyS7KhTXw7Ckg3l2dZ4lMRZChD/view — butuh login
 - C-dok-120 — https://drive.google.com/file/d/17Z3z_9NPjxnbhDBwOSE1HoawcO-4H7yN/view — butuh login
@@ -522,3 +522,38 @@ Dibuat: 2026-11-21T20:11:03+07:00
 ## Item tanpa target modul
 
 - C-home — https://sites.google.com/view/saktipelaporan/home
+
+## Hasil ekstraksi
+
+- diekstrak: 667
+- diunduh: 0
+- belum diproses: 0
+- gagal: 9
+
+Dokumen dengan halaman OCR (26):
+- A-dok-057 (halaman 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49)
+- B-ben-008 (halaman 1)
+- B-ben-010 (halaman 1)
+- B-ben-017 (halaman 1)
+- B-kom-001 (halaman 1)
+- B-kom-003 (halaman 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46)
+- B-kom-004 (halaman 22, 45)
+- B-kom-016 (halaman 39)
+- B-kom-017 (halaman 33)
+- B-kom-022 (halaman 12)
+- B-kom-026 (halaman 13)
+- B-kom-032 (halaman 14)
+- B-pem-001 (halaman 1)
+- B-pem-006 (halaman 1)
+- B-pem-024 (halaman 10)
+- B-pem-028 (halaman 4)
+- B-pem-030 (halaman 1)
+- B-pem-033 (halaman 1)
+- B-pem-035 (halaman 6)
+- B-pem-041 (halaman 1)
+- C-dok-028 (halaman 1)
+- C-dok-161 (halaman 9, 18)
+- C-dok-178 (halaman 9)
+- C-dok-180 (halaman 1)
+- C-dok-181 (halaman 1)
+- C-dok-182 (halaman 1)
