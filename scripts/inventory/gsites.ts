@@ -257,15 +257,15 @@ export async function crawlSitus(
 		judul = stripPenanda(judul).label;
 
 		const teksHash = hashTeks(data.teks);
-		if (hashKeId.has(teksHash)) {
-			const lainnya = hashKeId.get(teksHash)!;
-			if (pathSetelahBase === '' || pathSetelahBase === 'beranda') {
+		const lainnya = hashKeId.get(teksHash);
+		if (lainnya === undefined) {
+			hashKeId.set(teksHash, id);
+		} else if (lainnya !== id) {
+			if (pathSetelahBase === '') {
 				idDihapus.push(id);
 			} else if (lainnya.endsWith('-beranda')) {
 				idDihapus.push(lainnya);
 			}
-		} else {
-			hashKeId.set(teksHash, id);
 		}
 
 		const { jalur, penanda } = jalurMenuDariPath(situs, pathSetelahBase, navMap);
