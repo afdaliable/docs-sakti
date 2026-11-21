@@ -1,0 +1,70 @@
+---
+title: Mengelola Referensi Bendaharawan
+description: Merekam bendahara pengeluaran, bendahara penerimaan, dan bendahara pengeluaran pembantu pada menu Referensi Bendahara.
+modul: referensi
+menu_sakti: "Referensi > Bendahara > Bendaharawan"
+peran: [satker]
+jenis: juknis
+kata_kunci: [bendaharawan, referensi bendaharawan, bendahara pengeluaran, bendahara penerimaan, rekam bendahara]
+status: review
+perlu_review: true
+sumber:
+  - judul: "Juknis Admin SAKTI Tipe Satker"
+    url: "https://docs.google.com/presentation/d/10egiSsDGl4zU5e5Ok3jtZAVOmWyTeVRAtSYuMnjyh78/"
+    jenis: google-slides
+    diambil: 2026-11-21
+    id_manifest: A-dok-018
+  - judul: "1. Juknis SAKTI Admin Updated 2024"
+    url: "https://docs.google.com/presentation/d/1dbhAhtZ-uotv_CxZ5GefYlmeF11DCnZNaswn0Oym6PE/"
+    jenis: google-slides
+    diambil: 2026-11-21
+    id_manifest: A-dok-005
+sidebar:
+  order: 1
+---
+
+import { Aside } from '@astrojs/starlight/components';
+import MenuSakti from '~/components/MenuSakti.astro';
+import SumberAsli from '~/components/SumberAsli.astro';
+
+Referensi Bendaharawan digunakan untuk merekam bendahara pengeluaran,
+bendahara penerimaan, dan bendahara pengeluaran pembantu. Pengelolaannya
+termasuk lingkup tugas Admin Satker pada Referensi Modul Bendaharawan.
+
+<MenuSakti />
+
+## Prasyarat
+
+Referensi pejabat harus sudah direkam terlebih dahulu sebelum merekam
+referensi bendahara — lihat [Melengkapi Data Pejabat
+Perbendaharaan](/admin/pengguna/pejabat-perbendaharaan/).
+
+## Isian form Referensi Bendaharawan
+
+- Satker
+- NIP
+- Tampilan Cetak NIP (Ya/Tidak)
+- Nama
+- Kelompok Jabatan
+- Jabatan
+- NPWP
+
+Data yang sudah direkam tampil pada **Tabel Bendaharawan**. Tombol yang
+tersedia: **Rekam**, **Simpan**, **Ubah**, **Batal**, **Hapus**, dan
+**Unduh**.
+
+<Aside type="caution" title="Perlu verifikasi">
+Uraian langkah tidak ada di juknis; nama isian dan tombol dibaca dari
+tangkapan layar juknis 2022. Juknis menulis jalur **Administrasi >
+Bendahara > Bendaharawan**, sedangkan di menu aplikasi saat ini form
+berada di **Referensi > Bendahara > Bendaharawan**.
+</Aside>
+
+## Terkait
+
+- [Melengkapi Data Pejabat Perbendaharaan](/admin/pengguna/pejabat-perbendaharaan/)
+- [Mengelola Data Pengguna sebagai Admin Satker](/admin/pengguna/pengelolaan-pengguna/)
+
+## Sumber
+
+<SumberAsli />
