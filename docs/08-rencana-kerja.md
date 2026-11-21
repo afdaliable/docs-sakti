@@ -40,8 +40,9 @@ Kerjakan berurutan. Centang `[x]` saat selesai. Setiap fase diakhiri **gerbang**
 - [x] 2.4 Tulis `sources/manifest.json` + `sources/laporan-inventaris.md`.
 - [x] 2.5 `scripts/extract/*` untuk HTML, PPTX, PDF (+OCR), DOCX, Sheets.
 - [x] 2.6 Jalankan ekstraksi untuk semua item; item gagal dicatat.
-- [ ] 2.7 Buat `sources/peta-konten.csv` (pemetaan ke artikel target + dedup).
+- [x] 2.7 Buat `sources/peta-konten.csv` (pemetaan ke artikel target + dedup).
 - [ ] 2.8 **Berhenti dan minta review** pemilik proyek atas `laporan-inventaris.md` dan `peta-konten.csv` (keputusan K1, K2, K6).
+  - Status 21 Nov 2026: review sudah diminta; menunggu jawaban pemilik atas K1, K2, K6, K21–K24 dan komentar di `sources/peta-konten.csv`.
 
 **Gerbang 2:** setiap item manifest berstatus `diekstrak`, `ditolak`, atau `gagal` (dengan catatan); peta konten disetujui.
 
