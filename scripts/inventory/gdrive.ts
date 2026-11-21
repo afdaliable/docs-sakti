@@ -58,6 +58,7 @@ export interface MetaBerkas {
 	modified: string | null;
 	tipe: string | null;
 	status: number | null;
+	login: boolean;
 	ok: boolean;
 }
 
@@ -67,6 +68,10 @@ export async function metaBerkas(fileId: string): Promise<MetaBerkas> {
 			`https://drive.usercontent.google.com/download?id=${fileId}&export=download&confirm=t`,
 			{ method: 'HEAD' },
 		);
+		if (res.url.includes('accounts.google.com')) {
+			res.body?.cancel().catch(() => {});
+			return { nama: null, ukuran: null, modified: null, tipe: null, status: res.status, login: true, ok: false };
+		}
 		const cd = res.headers.get('content-disposition') ?? '';
 		const nama = decodeURIComponent(cd.match(/filename\*?=(?:UTF-8'')?"?([^";]+)/)?.[1] ?? '') || null;
 		const ukuran = Number(res.headers.get('content-length')) || null;
@@ -78,10 +83,58 @@ export async function metaBerkas(fileId: string): Promise<MetaBerkas> {
 			modified: modified ? new Date(modified).toISOString() : null,
 			tipe,
 			status: res.status,
+			login: false,
 			ok: res.status < 400,
 		};
 	} catch {
-		return { nama: null, ukuran: null, modified: null, tipe: null, status: null, ok: false };
+		return { nama: null, ukuran: null, modified: null, tipe: null, status: null, login: false, ok: false };
+	}
+}
+
+export async function ambilJudulDriveFile(fileId: string): Promise<{ judul: string; login: boolean; hilang: boolean }> {
+	try {
+		const res = await ambil(`https://drive.google.com/file/d/${fileId}/view`, { timeout: 20000 });
+		if (res.url.includes('accounts.google.com')) {
+			res.body?.cancel().catch(() => {});
+			return { judul: '', login: true, hilang: false };
+		}
+		const html = await res.text();
+		const og = html.match(/<meta[^>]+property=["']og:title["'][^>]+content=["']([^"']+)["']/i)
+			?? html.match(/<meta[^>]+content=["']([^"']+)["'][^>]+property=["']og:title["']/i);
+		let judul = og?.[1] ?? html.match(/<title[^>]*>([^<]+)<\/title>/i)?.[1] ?? '';
+		judul = decodeEntities(judul).replace(/\s*-\s*Google Drive\s*$/i, '').trim();
+		const hilang = res.status === 404 || /Error 404/.test(judul);
+		return { judul: hilang ? '' : judul, login: false, hilang };
+	} catch {
+		return { judul: '', login: false, hilang: false };
+	}
+}
+
+export interface InfoFolder {
+	judul: string;
+	entri: EntriDrive[];
+	login: boolean;
+	hilang: boolean;
+}
+
+export async function infoFolder(folderId: string): Promise<InfoFolder> {
+	try {
+		const res = await ambil(`https://drive.google.com/embeddedfolderview?id=${folderId}#list`);
+		if (res.url.includes('accounts.google.com')) {
+			res.body?.cancel().catch(() => {});
+			return { judul: '', entri: [], login: true, hilang: false };
+		}
+		const html = await res.text();
+		const title = html.match(/<title[^>]*>([^<]*)<\/title>/i)?.[1] ?? '';
+		const hilang = res.status === 404 || /Error 404/.test(title);
+		return {
+			judul: hilang ? '' : decodeEntities(title).trim(),
+			entri: hilang ? [] : parseEmbeddedFolderView(html),
+			login: false,
+			hilang,
+		};
+	} catch {
+		return { judul: '', entri: [], login: false, hilang: false };
 	}
 }
 
@@ -95,7 +148,7 @@ export function jenisDari(nama: string, mime: string): 'pdf' | 'pptx' | 'docx' |
 	if (mime === 'application/vnd.google-apps.presentation') return 'google-slides';
 	if (mime === 'application/vnd.google-apps.document') return 'google-docs';
 	if (mime === 'application/vnd.google-apps.spreadsheet') return 'sheets';
-	if (n.endsWith('.mp4') || n.endsWith('.mov') || n.endsWith('.webm') || n.endsWith('.avi')) return 'video';
+	if (/\.(mp4|mkv|mov|webm|avi|m4v|wmv|ts)$/.test(n)) return 'video';
 	return 'lainnya';
 }
 

@@ -1,6 +1,6 @@
 import { ambil } from './http.ts';
 import { klasifikasiUrl, buangGoogleRedirect } from './resolver.ts';
-import { daftarFolder, metaBerkas, jenisDari, type EntriDrive } from './gdrive.ts';
+import { infoFolder, metaBerkas, jenisDari, ambilJudulDriveFile, type EntriDrive } from './gdrive.ts';
 import { itemBaru, type ItemManifest, type JenisItem, type Sumber } from './tipe.ts';
 import { DITOLAK } from './aturan.ts';
 import type { PemberiId } from './manifest.ts';
@@ -159,12 +159,14 @@ export async function resolusiTautan({
 
 	if (k.jenis === 'drive-folder') {
 		const id = pemberiId.idDokumen(sumber === 'B' ? 'A' : sumber, k.id, url);
+		const info = await infoFolder(k.id);
+		const judulNonGen = judulGenerik(teks) ? '' : teks.trim();
 		const induk = itemBaru({
 			id,
 			sumber,
 			jenis: 'google-drive',
 			url: `https://drive.google.com/drive/folders/${k.id}`,
-			judul: judulGenerik(teks) ? '' : teks || `Folder ${k.id}`,
+			judul: info.judul || judulNonGen || teksTautan || `Folder ${k.id}`,
 			teks_tautan: teksTautan,
 			ditautkan_dari: [dariId],
 			drive_id: k.id,
@@ -172,11 +174,17 @@ export async function resolusiTautan({
 			target_path: dariTarget.target_path,
 			target_peran: dariTarget.target_peran,
 		});
+		if (info.hilang) {
+			induk.status = 'gagal';
+			induk.catatan = 'HTTP 404';
+		} else if (info.login) {
+			induk.status = 'gagal';
+			induk.catatan = 'butuh login';
+		}
 		const subItems: ItemManifest[] = [];
-		if (kedalaman < 5) {
+		if (kedalaman < 5 && !info.hilang && !info.login) {
 			try {
-				const entri = await daftarFolder(k.id);
-				for (const e of entri) {
+				for (const e of info.entri) {
 					if (e.adalahFolder) {
 						const sub = await resolusiTautan({
 							urlMentah: `https://drive.google.com/drive/folders/${e.id}`,
@@ -205,8 +213,9 @@ export async function resolusiTautan({
 	let urlKanon: string = url;
 	let cek: { ok: boolean; alasan: string } = { ok: true, alasan: '' };
 	let meta: Awaited<ReturnType<typeof metaBerkas>> | null = null;
-	let judul = judulGenerik(teks) ? '' : teks.trim();
+	const judulNonGen = judulGenerik(teks) ? '' : teks.trim();
 	const ariaJudul = bersihkanAria(aria ?? null);
+	let judul = '';
 
 	switch (k.jenis) {
 		case 'slides':
@@ -215,9 +224,7 @@ export async function resolusiTautan({
 			jenis = k.jenis === 'slides' ? 'google-slides' : k.jenis === 'docs' ? 'google-docs' : 'sheets';
 			driveId = k.id;
 			urlKanon = URL_DOK[k.jenis](k.id);
-			if (!judul) {
-				judul = ariaJudul || (await ambilJudulDok(k.jenis, k.id));
-			}
+			judul = ariaJudul || (await ambilJudulDok(k.jenis, k.id)) || judulNonGen;
 			cek = await cekEkspor(URL_EKSPOR[k.jenis](k.id, k.jenis === 'sheets' ? k.gid : undefined));
 			break;
 		}
@@ -227,24 +234,31 @@ export async function resolusiTautan({
 			meta = await metaBerkas(k.id);
 			if (meta.status === 404) {
 				cek = { ok: false, alasan: 'HTTP 404' };
+			} else if (meta.login) {
+				cek = { ok: false, alasan: 'butuh login' };
 			} else if (!meta.ok) {
 				cek = { ok: false, alasan: 'file tidak bisa diakses' };
 			}
-			jenis = jenisDari(meta.nama ?? '', meta.tipe ?? '');
-			if (!judul) {
-				judul = (meta.nama ?? '').replace(/\.[a-z0-9]{1,5}$/i, '') || ariaJudul;
+			let namaFile = meta.nama;
+			if (!namaFile && !meta.login && meta.status !== 404) {
+				const og = await ambilJudulDriveFile(k.id);
+				if (og.login) cek = { ok: false, alasan: 'butuh login' };
+				else if (og.hilang && cek.ok) cek = { ok: false, alasan: 'HTTP 404' };
+				namaFile = og.judul || null;
 			}
+			jenis = jenisDari(namaFile ?? '', meta.tipe ?? '');
+			judul = (namaFile ?? '').replace(/\.[a-z0-9]{1,5}$/i, '') || ariaJudul || judulNonGen;
 			break;
 		}
 		case 'video': {
 			jenis = 'video';
-			if (!judul) judul = ariaJudul || `YouTube ${k.id}`;
+			judul = ariaJudul || judulNonGen || `YouTube ${k.id}`;
 			break;
 		}
 		default:
 			break;
 	}
-	if (!judul) judul = ariaJudul;
+	if (!judul) judul = judulNonGen || ariaJudul || teksTautan || (driveId ? `File ${driveId}` : `Item ${k.id ?? url}`);
 
 	const idDok = pemberiId.idDokumen(sumber === 'B' ? 'A' : sumber, driveId, urlKanon);
 	const ditolak = driveId ? DITOLAK[driveId] : undefined;
@@ -293,6 +307,6 @@ async function buatItemDriveFile(
 		target_path: dariTarget.target_path,
 		target_peran: dariTarget.target_peran,
 		status: ditolak ? 'ditolak' : ok ? 'terinventaris' : 'gagal',
-		catatan: ditolak ?? (ok ? '' : meta.status === 404 ? 'HTTP 404' : 'file tidak bisa diakses'),
+		catatan: ditolak ?? (ok ? '' : meta.login ? 'butuh login' : meta.status === 404 ? 'HTTP 404' : 'file tidak bisa diakses'),
 	});
 }

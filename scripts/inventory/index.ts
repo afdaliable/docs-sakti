@@ -220,7 +220,7 @@ async function daftarBerkasFolder(
 				modified: meta.modified ?? e.modified,
 				target_modul: modul,
 				status: ditolak ? 'ditolak' : meta.ok ? 'terinventaris' : 'gagal',
-				catatan: ditolak ?? (meta.ok ? '' : meta.status === 404 ? 'HTTP 404' : 'metadata file tidak bisa diambil'),
+				catatan: ditolak ?? (meta.ok ? '' : meta.login ? 'butuh login' : meta.status === 404 ? 'HTTP 404' : 'metadata file tidak bisa diambil'),
 			}),
 		);
 		berkas.sumber = 'B';
