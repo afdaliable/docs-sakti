@@ -12,7 +12,7 @@ Kerjakan berurutan. Centang `[x]` saat selesai. Setiap fase diakhiri **gerbang**
 - [x] 0.4 `.env.example` sesuai `07-deploy-ops.md`.
 - [x] 0.5 Konfigurasi dasar Starlight: `title: 'SAKTI Knowledge Base'`, `defaultLocale: 'root'` dengan `locales.root = { label: 'Bahasa Indonesia', lang: 'id' }`, `lastUpdated: true`, `editLink`.
 - [x] 0.6 Tambah script `package.json` sesuai `CLAUDE.md` §4 (boleh berupa placeholder yang di-isi di fase berikutnya).
-- [ ] 0.7 Commit awal.
+- [x] 0.7 Commit awal.
 
 **Gerbang 0:** `pnpm dev` jalan, halaman default tampil dalam bahasa Indonesia.
 
