@@ -87,3 +87,21 @@ test('jumlahKata menghitung kata', () => {
 	assert.equal(jumlahKata('satu dua   tiga\nempat'), 4);
 	assert.equal(jumlahKata(''), 0);
 });
+
+test('bersihkanMarkdown menghapus heading kosong, jangkar tanpa teks, dan pembungkus list', async () => {
+	const { bersihkanMarkdown } = await import('../scripts/extract/html.ts');
+	const masukan = '## \n\n<#h.p_jkSCubOHvgDk>\n\n[](#h.x)\n\n-   -   -   Langkah satu\n-   -   Langkah dua';
+	const hasil = bersihkanMarkdown(masukan);
+	assert.doesNotMatch(hasil, /##\s*$/m);
+	assert.doesNotMatch(hasil, /#h\./);
+	assert.match(hasil, /- Langkah satu/);
+	assert.match(hasil, /- Langkah dua/);
+	assert.doesNotMatch(hasil, /-\s+-/);
+});
+
+test('html situs membersihkan artefak jangkar google sites', () => {
+	const md = htmlKeMarkdown('<section><h2><a href="#h.p_abc"></a></h2><ul><li><ul><li>isi</li></ul></li></ul></section>');
+	assert.doesNotMatch(md, /#h\./);
+	assert.match(md, /- isi/);
+	assert.doesNotMatch(md, /-\s+-/);
+});

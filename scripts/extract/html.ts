@@ -29,5 +29,36 @@ export function htmlKeMarkdown(html: string): string {
 			return src ? `[Sematan](${src})` : '';
 		},
 	});
-	return td.turndown(html).trim();
+	td.addRule('jangkar-kosong', {
+		filter(node) {
+			return (
+				node.nodeName === 'A' &&
+				(node as HTMLAnchorElement).getAttribute('href')?.startsWith('#') === true &&
+				!(node.textContent ?? '').trim()
+			);
+		},
+		replacement(isi) {
+			return isi || '';
+		},
+	});
+	return bersihkanMarkdown(td.turndown(html));
+}
+
+export function bersihkanMarkdown(md: string): string {
+	let hasil = md;
+	// Tautan jangkar dalam-halaman tanpa teks: [](#h.x) atau <#h.x>
+	hasil = hasil.replace(/\[([^\]]*)\]\(#h\.[^)]*\)/g, '$1');
+	hasil = hasil.replace(/<#h\.[^>]*>/g, '');
+	// Pembungkus list anak-tunggal: "-   -   teks" -> "- teks"
+	let sebelum: string;
+	do {
+		sebelum = hasil;
+		hasil = hasil.replace(/^(\s*)-\s+-(\s+)/gm, '$1-$2');
+	} while (hasil !== sebelum);
+	hasil = hasil.replace(/^(\s*)-\s{2,}/gm, '$1- ');
+	// Heading kosong
+	hasil = hasil.replace(/^#{1,6}\s*$/gm, '');
+	// Baris kosong beruntun
+	hasil = hasil.replace(/\n{3,}/g, '\n\n');
+	return hasil.trim();
 }
