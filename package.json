@@ -15,7 +15,7 @@
     "check:content": "tsx scripts/check-content.ts",
     "check:links": "astro build",
     "search:eval": "node scripts/belum-tersedia.mjs search:eval 5",
-    "migrate:inventory": "node scripts/belum-tersedia.mjs migrate:inventory 2",
+    "migrate:inventory": "tsx scripts/inventory/index.ts",
     "migrate:extract": "node scripts/belum-tersedia.mjs migrate:extract 2",
     "migrate:draft": "node scripts/belum-tersedia.mjs migrate:draft 4",
     "test": "tsx --test tests/*.test.ts",
@@ -28,6 +28,7 @@
     "yaml": "2.9.1"
   },
   "devDependencies": {
+    "playwright": "1.65.1",
     "starlight-links-validator": "0.27.0",
     "tsx": "4.23.15"
   }
