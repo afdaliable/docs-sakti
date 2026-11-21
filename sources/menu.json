@@ -1,0 +1,7034 @@
+[
+ {
+  "kode": "ADM",
+  "label": "Administrasi",
+  "seq": 0,
+  "forms": [
+   {
+    "label": "Pernyataan Komitmen Integritas",
+    "form": "admStatementOfResponsibility",
+    "seq": 20652
+   }
+  ],
+  "children": [
+   {
+    "kode": "ADM_ADMIN",
+    "label": "Pengguna",
+    "seq": 1,
+    "forms": [
+     {
+      "label": "Manajemen Pengguna",
+      "form": "admPenggunaForm",
+      "seq": 4
+     },
+     {
+      "label": "Manajemen Pengguna (ALL)",
+      "form": "admPenggunaForm",
+      "seq": 6
+     },
+     {
+      "label": "Pejabat Perbendaharaan",
+      "form": "admPejabatForm",
+      "seq": 7
+     },
+     {
+      "label": "Reset Kata Sandi",
+      "form": "admResetPasswordForm",
+      "seq": 9
+     },
+     {
+      "label": "Bantuan",
+      "form": "admBantuanForm",
+      "seq": 15
+     },
+     {
+      "label": "Ubah Kata Sandi",
+      "form": "admUbahKataSandiForm",
+      "seq": 19
+     },
+     {
+      "label": "Konfirmasi Data Nama dan NIK",
+      "form": "admUpdatingPenggunaMandiriForm",
+      "seq": 20
+     },
+     {
+      "label": "Verifikator Digital Signature",
+      "form": "admRegistrationAuthForm",
+      "seq": 21
+     }
+    ],
+    "children": []
+   },
+   {
+    "kode": "ADM_MAPPING",
+    "label": "Mapping",
+    "seq": 2,
+    "forms": [
+     {
+      "label": "Mapping PA - BA",
+      "form": "angMapPAForm",
+      "seq": 83
+     },
+     {
+      "label": "Mapping User DITPA",
+      "form": "admMapingOprPaForm",
+      "seq": 84
+     },
+     {
+      "label": "Mapping User Rocan Unit",
+      "form": "admMapingRocanForm",
+      "seq": 85
+     },
+     {
+      "label": "Mapping Opr. Anggaran-PPK",
+      "form": "admMapingOprPPkAng",
+      "seq": 87
+     },
+     {
+      "label": "Mapping User DJA",
+      "form": "admMapingOprDJAForm",
+      "seq": 113
+     },
+     {
+      "label": "Mapping Opr. Pelaksanaan dan PPK",
+      "form": "admMapingPpk",
+      "seq": 200
+     },
+     {
+      "label": "Mapping User DJKN dan APK",
+      "form": "admMappingDjknApkForm",
+      "seq": 243
+     },
+     {
+      "label": "Mapping User Bappenas",
+      "form": "admMapingOprDJAForm",
+      "seq": 20600
+     },
+     {
+      "label": "Mapping KL - Bappenas",
+      "form": "admKLDjaBappenasForm",
+      "seq": 20602
+     },
+     {
+      "label": "Mapping KL - DJA",
+      "form": "admKLDjaBappenasForm",
+      "seq": 20604
+     }
+    ],
+    "children": []
+   },
+   {
+    "kode": "ADM_PENANDATANGAN",
+    "label": "Penandatangan",
+    "seq": 3,
+    "forms": [
+     {
+      "label": "Penandatangan",
+      "form": "admPenandatanganForm",
+      "seq": 220
+     },
+     {
+      "label": "Penandatangan Aset Persediaan",
+      "form": "admPenandatanganAsetPersedianForm",
+      "seq": 221
+     },
+     {
+      "label": "Digital Signature",
+      "form": "admDigitalSignatureForm",
+      "seq": 20599
+     }
+    ],
+    "children": []
+   },
+   {
+    "kode": "ADM_MONITORING",
+    "label": "Monitoring",
+    "seq": 4,
+    "forms": [
+     {
+      "label": "Monitoring Pejabat",
+      "form": "admMonitoringPejabatForm",
+      "seq": 1
+     },
+     {
+      "label": "Monitoring Pengguna Inaktif",
+      "form": "admMonUserInaktifForm",
+      "seq": 2
+     },
+     {
+      "label": "Monitoring Login",
+      "form": "admMonitoringLoginForm",
+      "seq": 3
+     },
+     {
+      "label": "Monitoring Login Satker",
+      "form": "admMonitoringLoginSatkerForm",
+      "seq": 4
+     }
+    ],
+    "children": []
+   }
+  ]
+ },
+ {
+  "kode": "REF",
+  "label": "Referensi",
+  "seq": 10,
+  "forms": [],
+  "children": [
+   {
+    "kode": "REF_PUSAT",
+    "label": "Pusat",
+    "seq": 1,
+    "forms": [
+     {
+      "label": "Manajemen Kelompok Pengguna",
+      "form": "admKelompokPenggunaForm",
+      "seq": 3
+     },
+     {
+      "label": "Pengelolaan Kontrol Akses",
+      "form": "admMenuManager",
+      "seq": 7
+     },
+     {
+      "label": "Master Referensi",
+      "form": "admMasterReferensiForm",
+      "seq": 237
+     }
+    ],
+    "children": []
+   },
+   {
+    "kode": "ADM_ANG",
+    "label": "Anggaran",
+    "seq": 19,
+    "forms": [
+     {
+      "label": "Mapping Satker Kanwil",
+      "form": "angMapKanwilSatkerForm",
+      "seq": 86
+     },
+     {
+      "label": "Jenis Revisi",
+      "form": "admJnsRevisiForm",
+      "seq": 88
+     },
+     {
+      "label": "KPBC",
+      "form": "admKpbcForm",
+      "seq": 89
+     },
+     {
+      "label": "Fokus",
+      "form": "admFokusForm",
+      "seq": 90
+     },
+     {
+      "label": "Gaji",
+      "form": "admGajiForm",
+      "seq": 91
+     },
+     {
+      "label": "IKK ",
+      "form": "admIKKForm",
+      "seq": 92
+     },
+     {
+      "label": "IKU",
+      "form": "admIKUform",
+      "seq": 93
+     },
+     {
+      "label": "Inisiatif Baru",
+      "form": "admInisiatifBaruForm",
+      "seq": 94
+     },
+     {
+      "label": "Pemblokiran ",
+      "form": "admPemblokiranForm",
+      "seq": 95
+     },
+     {
+      "label": "Jenis Dokumen",
+      "form": "admJenisDokumenForm",
+      "seq": 96
+     },
+     {
+      "label": "Jenis Kegiatan",
+      "form": "admJenisKegiatanForm",
+      "seq": 97
+     },
+     {
+      "label": "Jenis Output",
+      "form": "admJenisOutputForm",
+      "seq": 98
+     },
+     {
+      "label": "KPJM",
+      "form": "admTipeKPJMForm",
+      "seq": 99
+     },
+     {
+      "label": "Misi",
+      "form": "admMisiForm",
+      "seq": 100
+     },
+     {
+      "label": "Misi Unit",
+      "form": "admMisiUnitForm",
+      "seq": 101
+     },
+     {
+      "label": "Parameter Gaji",
+      "form": "admParameterGajiForm",
+      "seq": 102
+     },
+     {
+      "label": "Penanggungjawab Kegiatan",
+      "form": "admPenanggungJawabKegiatanForm",
+      "seq": 103
+     },
+     {
+      "label": "Prioritas",
+      "form": "admPrioritasForm",
+      "seq": 104
+     },
+     {
+      "label": "Sasaran",
+      "form": "admSasaranForm",
+      "seq": 105
+     },
+     {
+      "label": "SBU/SBK",
+      "form": "admSBUForm",
+      "seq": 106
+     },
+     {
+      "label": "Status History",
+      "form": "admStatusHistoryForm",
+      "seq": 107
+     },
+     {
+      "label": "Tema",
+      "form": "admTemaForm",
+      "seq": 108
+     },
+     {
+      "label": "Visi",
+      "form": "admVisiForm",
+      "seq": 109
+     },
+     {
+      "label": "Referensi Validasi Belanja",
+      "form": "angValidasiForm",
+      "seq": 110
+     },
+     {
+      "label": "Pejabat Tingkat Unit/Eselon1",
+      "form": "pejabatUnitForm",
+      "seq": 111
+     },
+     {
+      "label": "Disclaimer",
+      "form": "uraianReportForm",
+      "seq": 112
+     }
+    ],
+    "children": [
+     {
+      "kode": "ADM_ANG_FUNGSI",
+      "label": "Fungsi",
+      "seq": 20,
+      "forms": [
+       {
+        "label": "Sub Fungsi",
+        "form": "admSubFungsiForm",
+        "seq": 22
+       }
+      ],
+      "children": []
+     },
+     {
+      "kode": "ADM_ANG_MULTIYEAR",
+      "label": "Multiyears",
+      "seq": 23,
+      "forms": [
+       {
+        "label": "Fungsi",
+        "form": "angFungsiForm",
+        "seq": 49
+       },
+       {
+        "label": "Terima SBM",
+        "form": "formImportSBU",
+        "seq": 50
+       },
+       {
+        "label": "Standar Biaya Masukan",
+        "form": "formPencarianSbmSaktiForm",
+        "seq": 51
+       },
+       {
+        "label": "Terima SBK",
+        "form": "formImportSBK",
+        "seq": 52
+       },
+       {
+        "label": "Standar Biaya Keluaran",
+        "form": "formMonitoringSBK",
+        "seq": 53
+       }
+      ],
+      "children": [
+       {
+        "kode": "ADM_ANG_MULTIYEAR_KEMEN",
+        "label": "KEMENTERIAN/LEMBAGA",
+        "seq": 24,
+        "forms": [
+         {
+          "label": "Unit",
+          "form": "kementerianUnitAngForm",
+          "seq": 25
+         },
+         {
+          "label": "Kementerian",
+          "form": "kementerianAngForm",
+          "seq": 26
+         },
+         {
+          "label": "Eselon2",
+          "form": "eselon2AngForm",
+          "seq": 27
+         }
+        ],
+        "children": []
+       },
+       {
+        "kode": "ADM_ANG_MULTIYEAR_LOKASI",
+        "label": "LOKASI",
+        "seq": 28,
+        "forms": [
+         {
+          "label": "PROPINSI",
+          "form": "angLokasiForm",
+          "seq": 29
+         },
+         {
+          "label": "KABUPATEN KOTA",
+          "form": "angKabupatenKotaForm",
+          "seq": 30
+         }
+        ],
+        "children": []
+       },
+       {
+        "kode": "ADM_ANG_MULTIYEAR_AKUN",
+        "label": "AKUN",
+        "seq": 31,
+        "forms": [
+         {
+          "label": "KELOMPOK AKUN",
+          "form": "angKelompokAkunForm",
+          "seq": 32
+         },
+         {
+          "label": "BKPK",
+          "form": "angBKPKForm",
+          "seq": 33
+         },
+         {
+          "label": "GBKPK",
+          "form": "angGBKPKForm",
+          "seq": 34
+         },
+         {
+          "label": "AKUN",
+          "form": "angAkunForm",
+          "seq": 35
+         },
+         {
+          "label": "KBKPK",
+          "form": "angKBKPKForm",
+          "seq": 36
+         },
+         {
+          "label": "JENIS BELANJA",
+          "form": "angJenisBelanjaForm",
+          "seq": 37
+         }
+        ],
+        "children": []
+       },
+       {
+        "kode": "ADM_ANG_MULTIYEAR_COA",
+        "label": "COA",
+        "seq": 38,
+        "forms": [
+         {
+          "label": "Register",
+          "form": "registerAngForm",
+          "seq": 39
+         },
+         {
+          "label": "Komponen",
+          "form": "angKomponenForm",
+          "seq": 40
+         },
+         {
+          "label": "SubOutput",
+          "form": "angSubOutputForm",
+          "seq": 41
+         },
+         {
+          "label": "Output",
+          "form": "outputAngForm",
+          "seq": 42
+         },
+         {
+          "label": "Sumber Dana",
+          "form": "angSumberDanaForm",
+          "seq": 43
+         },
+         {
+          "label": "Program",
+          "form": "programAngForm",
+          "seq": 44
+         },
+         {
+          "label": "Satker",
+          "form": "angSatuanKerjaForm",
+          "seq": 45
+         },
+         {
+          "label": "Cara Penarikan",
+          "form": "admCaraPenarikanForm",
+          "seq": 46
+         },
+         {
+          "label": "KPPN",
+          "form": "angKPPNForm",
+          "seq": 47
+         },
+         {
+          "label": "Kegiatan",
+          "form": "kegiatanAngForm",
+          "seq": 48
+         }
+        ],
+        "children": []
+       }
+      ]
+     },
+     {
+      "kode": "ADM_ANG_KRISNA",
+      "label": "Krisna",
+      "seq": 54,
+      "forms": [
+       {
+        "label": "Visi",
+        "form": "angVisiForm",
+        "seq": 55
+       },
+       {
+        "label": "Misi",
+        "form": "angMisiForm",
+        "seq": 56
+       },
+       {
+        "label": "Sasaran Strategis",
+        "form": "angSasaranForm",
+        "seq": 57
+       },
+       {
+        "label": "Indikator Sasaran Strategis",
+        "form": "angSasaraninForm",
+        "seq": 58
+       },
+       {
+        "label": "Sasaran Program",
+        "form": "sasaranProgramForm",
+        "seq": 59
+       },
+       {
+        "label": "Indikator Kinerja Program",
+        "form": "indikatorKinerjaProgramForm",
+        "seq": 60
+       },
+       {
+        "label": "Output Program",
+        "form": "angOutputProgramForm",
+        "seq": 61
+       },
+       {
+        "label": "Indikator Output Program",
+        "form": "angIndikatorOutputProgramForm",
+        "seq": 62
+       },
+       {
+        "label": "Sasaran Kegiatan",
+        "form": "angSasaranKegiatanForm",
+        "seq": 63
+       },
+       {
+        "label": "Indikator Kinerja Kegiatan",
+        "form": "angIndikatorKinerjaKegiatanForm",
+        "seq": 64
+       },
+       {
+        "label": "Indikator Output Kegiatan",
+        "form": "angOutputinForm",
+        "seq": 65
+       },
+       {
+        "label": "Tematik",
+        "form": "angTemaForm",
+        "seq": 66
+       },
+       {
+        "label": "Nawacita",
+        "form": "angNawacitaForm",
+        "seq": 67
+       },
+       {
+        "label": "Janji Presiden",
+        "form": "angJanpresForm",
+        "seq": 68
+       },
+       {
+        "label": "Program Prioritas",
+        "form": "angPriprogForm",
+        "seq": 69
+       },
+       {
+        "label": "Kegiatan Prioritas",
+        "form": "angPrigiatForm",
+        "seq": 70
+       },
+       {
+        "label": "Proyek Prioritas Nasional",
+        "form": "angPriproyForm",
+        "seq": 71
+       },
+       {
+        "label": "Prioritas Nasional",
+        "form": "angPrinasForm",
+        "seq": 72
+       }
+      ],
+      "children": []
+     },
+     {
+      "kode": "ADM_ANG_MIGRASI",
+      "label": "Migrasi",
+      "seq": 73,
+      "forms": [
+       {
+        "label": "Migrasi Krisna",
+        "form": "migrasiKrisnaForm2",
+        "seq": 74
+       },
+       {
+        "label": "Migrasi Antar Tahun",
+        "form": "migrasiAntarTahunForm",
+        "seq": 75
+       },
+       {
+        "label": "Migrasi Krisna Tertentu",
+        "form": "migrasiTahunTertentuForm",
+        "seq": 76
+       }
+      ],
+      "children": []
+     },
+     {
+      "kode": "ADM_ANG_SSB",
+      "label": "SSB",
+      "seq": 77,
+      "forms": [
+       {
+        "label": "Kelompok SSB",
+        "form": "angKelSSbForm",
+        "seq": 78
+       },
+       {
+        "label": "SSB",
+        "form": "angSSBForm",
+        "seq": 79
+       },
+       {
+        "label": "Mapping SSB Satker",
+        "form": "angMapSSBForm",
+        "seq": 80
+       }
+      ],
+      "children": []
+     },
+     {
+      "kode": "ADM_ANG_PA",
+      "label": "PA",
+      "seq": 81,
+      "forms": [
+       {
+        "label": "Sie PA",
+        "form": "angSiePAForm",
+        "seq": 82
+       }
+      ],
+      "children": []
+     },
+     {
+      "kode": "ADM_ANG_DJA",
+      "label": "DJA",
+      "seq": 2025,
+      "forms": [
+       {
+        "label": "Referensi Direktorat DJA",
+        "form": "admDitDjaBappenasForm",
+        "seq": 20603
+       }
+      ],
+      "children": []
+     },
+     {
+      "kode": "ADM_ANG_BAPPENAS",
+      "label": "Bappenas",
+      "seq": 2026,
+      "forms": [
+       {
+        "label": "Referensi Direktorat Bappenas",
+        "form": "admDitDjaBappenasForm",
+        "seq": 20601
+       }
+      ],
+      "children": []
+     }
+    ]
+   },
+   {
+    "kode": "ADM_AST",
+    "label": "Aset Tetap",
+    "seq": 114,
+    "forms": [
+     {
+      "label": "KPKNL",
+      "form": "admKpklnForm",
+      "seq": 115
+     },
+     {
+      "label": "Ruangan",
+      "form": "admRuanganForm",
+      "seq": 116
+     },
+     {
+      "label": "UAPA/B",
+      "form": "admUAPBForm",
+      "seq": 117
+     },
+     {
+      "label": "UAPPA/B-E1",
+      "form": "admUAPPBE1Form",
+      "seq": 118
+     },
+     {
+      "label": "UAPPA/BW",
+      "form": "admUAPPBWForm",
+      "seq": 119
+     },
+     {
+      "label": "UAKPA/B",
+      "form": "admUAKPBForm",
+      "seq": 120
+     },
+     {
+      "label": "Jenis Transaksi",
+      "form": "admJenisTransaksiForm",
+      "seq": 121
+     },
+     {
+      "label": "Referensi UAPPA Wilayah",
+      "form": "admUappawMonsaktiForm",
+      "seq": 20605
+     }
+    ],
+    "children": []
+   },
+   {
+    "kode": "ADM_BEN",
+    "label": "Bendahara",
+    "seq": 122,
+    "forms": [
+     {
+      "label": "Bendaharawan",
+      "form": "admBendaharawanForm",
+      "seq": 123
+     },
+     {
+      "label": "Buku Pembantu",
+      "form": "admBukuPembantuForm",
+      "seq": 124
+     },
+     {
+      "label": "Unit Teknis",
+      "form": "admUnitTeknisForm",
+      "seq": 125
+     }
+    ],
+    "children": []
+   },
+   {
+    "kode": "ADM_GLP",
+    "label": "GL dan Pelaporan",
+    "seq": 126,
+    "forms": [
+     {
+      "label": "Periode Tutup Buku ",
+      "form": "admPeriodeTutupBukuForm",
+      "seq": 133
+     },
+     {
+      "label": "Setup Likuidasi",
+      "form": "admSetupLikuidasiSatkerForm",
+      "seq": 134
+     },
+     {
+      "label": "Backup",
+      "form": "admBackupGlpForm",
+      "seq": 135
+     }
+    ],
+    "children": [
+     {
+      "kode": "ADM_GLP_PETA_JURNAL",
+      "label": "Peta Jurnal",
+      "seq": 127,
+      "forms": [
+       {
+        "label": "Sumber Data",
+        "form": "adm93ASumberDataForm",
+        "seq": 128
+       },
+       {
+        "label": "Kelompok Jurnal ",
+        "form": "adm93BKelompokJurnalForm",
+        "seq": 129
+       },
+       {
+        "label": "Sub Kelompok Jurnal",
+        "form": "adm93CSubKelompokJurnalForm",
+        "seq": 130
+       },
+       {
+        "label": "Tipe Jurnal",
+        "form": "adm93DTipeJurnalForm",
+        "seq": 131
+       },
+       {
+        "label": "Jurnal ",
+        "form": "adm93EJurnalForm",
+        "seq": 132
+       }
+      ],
+      "children": []
+     }
+    ]
+   },
+   {
+    "kode": "ADM_KOM",
+    "label": "Komitmen",
+    "seq": 135,
+    "forms": [
+     {
+      "label": "Jenis Kontrak",
+      "form": "admJenisKontrakForm",
+      "seq": 136
+     },
+     {
+      "label": "Tipe Komitmen",
+      "form": "admTipeKomitmenForm",
+      "seq": 137
+     },
+     {
+      "label": "Tipe Kontrak ",
+      "form": "admTipeKontrakForm",
+      "seq": 138
+     },
+     {
+      "label": "Tipe Perusahaan",
+      "form": "admTipePerusahaanForm",
+      "seq": 139
+     },
+     {
+      "label": "Tipe Supplier",
+      "form": "admTipeSupplierForm",
+      "seq": 140
+     },
+     {
+      "label": "Pengembalian Uang Muka ",
+      "form": "admKembaliUangMukaForm",
+      "seq": 141
+     },
+     {
+      "label": "Potong Retensi  ",
+      "form": "admPotongRetensiForm",
+      "seq": 142
+     },
+     {
+      "label": "Tipe Belanja",
+      "form": "admTipeBelanjaForm",
+      "seq": 143
+     },
+     {
+      "label": "Jumlah Termin",
+      "form": "admJumlahTerminForm",
+      "seq": 144
+     }
+    ],
+    "children": []
+   },
+   {
+    "kode": "ADM_SPM",
+    "label": "Pembayaran",
+    "seq": 145,
+    "forms": [
+     {
+      "label": "Akun SPP",
+      "form": "admAkunSPPForm",
+      "seq": 150
+     },
+     {
+      "label": "Cara Bayar",
+      "form": "admCaraBayarForm",
+      "seq": 151
+     },
+     {
+      "label": "Dasar Pembayaran",
+      "form": "admDasarPembayaranForm",
+      "seq": 152
+     },
+     {
+      "label": "Jatuh Tempo",
+      "form": "admJatuhTempoForm",
+      "seq": 153
+     },
+     {
+      "label": "Jenis Pembayaran",
+      "form": "admJenisPembayaranForm",
+      "seq": 154
+     },
+     {
+      "label": "Sifat Pembayaran",
+      "form": "admSifatPembayaranForm",
+      "seq": 156
+     },
+     {
+      "label": "Potongan SPP",
+      "form": "admPotonganSPPForm",
+      "seq": 157
+     }
+    ],
+    "children": [
+     {
+      "kode": "ADM_PEMBAYARAN_JENIS_SPP",
+      "label": "Jenis SPP",
+      "seq": 146,
+      "forms": [
+       {
+        "label": "Kelompok SPP",
+        "form": "admSppKelompokForm",
+        "seq": 147
+       },
+       {
+        "label": "Sub Kelompok SPP",
+        "form": "admSppSubKelompokForm",
+        "seq": 148
+       },
+       {
+        "label": "Jenis SPP",
+        "form": "admSppJenisForm",
+        "seq": 149
+       }
+      ],
+      "children": []
+     }
+    ]
+   },
+   {
+    "kode": "ADM_PER",
+    "label": "Persediaan",
+    "seq": 158,
+    "forms": [],
+    "children": []
+   },
+   {
+    "kode": "ADM_UMUM",
+    "label": "Umum",
+    "seq": 159,
+    "forms": [
+     {
+      "label": "Bank",
+      "form": "admBankForm",
+      "seq": 234
+     },
+     {
+      "label": "Kantor Wilayah",
+      "form": "admKantorWilayahForm",
+      "seq": 235
+     },
+     {
+      "label": "Kantor Wilayah Asset Persediaan",
+      "form": "admKantorWilayahAssetForm",
+      "seq": 236
+     },
+     {
+      "label": "Tahun Anggaran",
+      "form": "admTahunAnggaranForm",
+      "seq": 238
+     },
+     {
+      "label": "Tipe ADK",
+      "form": "admTipeAdkForm",
+      "seq": 239
+     },
+     {
+      "label": "Kelompok Kegiatan",
+      "form": "admKelompokKegiatanForm",
+      "seq": 240
+     },
+     {
+      "label": "Jenis Satker",
+      "form": "admJenisSatkerForm",
+      "seq": 241
+     },
+     {
+      "label": "Buku Pembantu",
+      "form": "admBukuPembantuForm",
+      "seq": 242
+     },
+     {
+      "label": "Cara Bayar Kontrak",
+      "form": "admCaraBayarKontrakForm",
+      "seq": 243
+     },
+     {
+      "label": "Sifat SPM",
+      "form": "admSifatSpmForm",
+      "seq": 244
+     },
+     {
+      "label": "Konfigurasi Sistem",
+      "form": "admKonfigSistem",
+      "seq": 245
+     },
+     {
+      "label": "Jenis Bantuan",
+      "form": "admJenisBantuanForm",
+      "seq": 246
+     },
+     {
+      "label": "Konfigurasi Sistem (ALL)",
+      "form": "admKonfigSistem",
+      "seq": 247
+     },
+     {
+      "label": "Monitoring SMS",
+      "form": "admMonSmsForm",
+      "seq": 248
+     },
+     {
+      "label": "Satuan Kerja BLU",
+      "form": "admSatkerBluForm",
+      "seq": 300
+     }
+    ],
+    "children": [
+     {
+      "kode": "ADM_UMUM_KL",
+      "label": "Kementerian/Lembaga",
+      "seq": 160,
+      "forms": [
+       {
+        "label": "Mengelola Kementerian /Lembaga",
+        "form": "admKementerianForm",
+        "seq": 161
+       },
+       {
+        "label": "Mengelola Unit",
+        "form": "admUnitForm",
+        "seq": 162
+       },
+       {
+        "label": "Eselon 2",
+        "form": "admEselon2Form",
+        "seq": 163
+       }
+      ],
+      "children": []
+     },
+     {
+      "kode": "ADM_UMUM_AKUN",
+      "label": "Akun",
+      "seq": 164,
+      "forms": [
+       {
+        "label": "Jenis Belanja",
+        "form": "admJenisBelanjaForm",
+        "seq": 165
+       },
+       {
+        "label": "GBKPK",
+        "form": "admGBKPKForm",
+        "seq": 166
+       },
+       {
+        "label": "KBKPK",
+        "form": "admKBKPKForm",
+        "seq": 167
+       },
+       {
+        "label": "BKPK",
+        "form": "admBKPKForm",
+        "seq": 168
+       },
+       {
+        "label": "Kelompok Akun",
+        "form": "admKelompokAkunForm",
+        "seq": 169
+       },
+       {
+        "label": "Akun",
+        "form": "admAkunForm",
+        "seq": 170
+       },
+       {
+        "label": "Tipe Akun",
+        "form": "admTipeAkunForm",
+        "seq": 171
+       }
+      ],
+      "children": []
+     },
+     {
+      "kode": "ADM_UMUM_BARANG",
+      "label": "Barang",
+      "seq": 172,
+      "forms": [
+       {
+        "label": "Kategori Golongan",
+        "form": "admKategoriGolonganForm",
+        "seq": 173
+       },
+       {
+        "label": "Kategori Bidang",
+        "form": "admKategoriBidangForm",
+        "seq": 174
+       },
+       {
+        "label": "Kategori Kelompok",
+        "form": "admKategoriKelompokForm",
+        "seq": 175
+       },
+       {
+        "label": "Kategori Sub Kelompok",
+        "form": "admKategoriSubKelompokForm",
+        "seq": 176
+       },
+       {
+        "label": "Kategori Sub Sub Kelompok",
+        "form": "admKategoriSubSubKelompokForm",
+        "seq": 177
+       },
+       {
+        "label": "Intrakomptable",
+        "form": "admIntrakomtabelForm",
+        "seq": 178
+       },
+       {
+        "label": "Jenis Hubungan Transaksi Antara Kode Barang dengan Kode Akun ",
+        "form": "admJenisHubBarangAkunForm",
+        "seq": 179
+       },
+       {
+        "label": "Mapping Kode Barang Kode Jenis Hubungan ",
+        "form": "admMappingKodeBarangKodeJnsHubForn",
+        "seq": 180
+       }
+      ],
+      "children": []
+     },
+     {
+      "kode": "ADM_UMUM_COA",
+      "label": "COA",
+      "seq": 181,
+      "forms": [
+       {
+        "label": "Satker",
+        "form": "admSatuanKerjaForm",
+        "seq": 182
+       },
+       {
+        "label": "KPPN",
+        "form": "admKPPNForm",
+        "seq": 183
+       },
+       {
+        "label": "Program",
+        "form": "admProgramForm",
+        "seq": 184
+       },
+       {
+        "label": "Output",
+        "form": "admOutputForm",
+        "seq": 185
+       },
+       {
+        "label": "Sumber Dana",
+        "form": "admSumberDanaForm",
+        "seq": 186
+       },
+       {
+        "label": "Cara Penarikan",
+        "form": "admCaraPenarikanForm",
+        "seq": 187
+       },
+       {
+        "label": "Register",
+        "form": "admRegisterForm",
+        "seq": 188
+       },
+       {
+        "label": "Rekening Bank ",
+        "form": "admRekeningBankForm",
+        "seq": 189
+       },
+       {
+        "label": "Kewenangan ",
+        "form": "admKewenanganForm",
+        "seq": 190
+       },
+       {
+        "label": "Tipe Anggaran",
+        "form": "admTipeAnggaranForm",
+        "seq": 191
+       },
+       {
+        "label": "Kegiatan",
+        "form": "admKegiatanForm",
+        "seq": 192
+       },
+       {
+        "label": "Komponen",
+        "form": "admKomponenForm",
+        "seq": 193
+       },
+       {
+        "label": "SubOutput",
+        "form": "admSubOutputForm",
+        "seq": 194
+       },
+       {
+        "label": "Anak Satker",
+        "form": "admAnakSatkerForm",
+        "seq": 195
+       }
+      ],
+      "children": []
+     },
+     {
+      "kode": "ADM_UMUM_JABATAN",
+      "label": "Jabatan",
+      "seq": 196,
+      "forms": [
+       {
+        "label": "Mengelola  Kelompok ",
+        "form": "admKelompokJabatan1Form",
+        "seq": 197
+       },
+       {
+        "label": "Jabatan",
+        "form": "admJabatanForm",
+        "seq": 198
+       }
+      ],
+      "children": []
+     },
+     {
+      "kode": "ADM_UMUM_JURNAL",
+      "label": "Jurnal",
+      "seq": 201,
+      "forms": [],
+      "children": []
+     },
+     {
+      "kode": "ADM_UMUM_KURS",
+      "label": "Kurs",
+      "seq": 202,
+      "forms": [
+       {
+        "label": "Kurs",
+        "form": "admKursForm",
+        "seq": 203
+       },
+       {
+        "label": "Kurs Anggaran",
+        "form": "admKursAnggaranForm",
+        "seq": 204
+       },
+       {
+        "label": "Mata Uang",
+        "form": "admMataUangForm",
+        "seq": 205
+       },
+       {
+        "label": "Tipe Kurs",
+        "form": "admTipeKursForm",
+        "seq": 206
+       }
+      ],
+      "children": []
+     },
+     {
+      "kode": "ADM_UMUM_LOKASI",
+      "label": "Lokasi",
+      "seq": 207,
+      "forms": [
+       {
+        "label": "Negara",
+        "form": "admNegaraForm",
+        "seq": 208
+       },
+       {
+        "label": "Propinsi",
+        "form": "admPropinsiForm",
+        "seq": 209
+       },
+       {
+        "label": "Kabupaten Kota",
+        "form": "admKabupatenKotaForm",
+        "seq": 210
+       },
+       {
+        "label": "Kecamatan",
+        "form": "admKecamatanForm",
+        "seq": 211
+       },
+       {
+        "label": "Kelurahan",
+        "form": "admKelurahanForm",
+        "seq": 212
+       }
+      ],
+      "children": []
+     },
+     {
+      "kode": "ADM_UMUM_PEGAWAI",
+      "label": "Pegawai",
+      "seq": 213,
+      "forms": [
+       {
+        "label": "Jenis Pegawai",
+        "form": "admJenisPegawaiForm",
+        "seq": 214
+       },
+       {
+        "label": "EselonPegawai",
+        "form": "admEselonPegawaiForm",
+        "seq": 215
+       },
+       {
+        "label": "Golongan Pegawai",
+        "form": "admGolonganPegawaiForm",
+        "seq": 216
+       },
+       {
+        "label": "Pendidikan",
+        "form": "admPendidikanForm",
+        "seq": 217
+       },
+       {
+        "label": "Status Pegawai",
+        "form": "admStatusPegawaiForm",
+        "seq": 218
+       }
+      ],
+      "children": []
+     },
+     {
+      "kode": "ADM_UMUM_TUNJANGAN_PEGAWAI",
+      "label": "Tunjangan Pegawai",
+      "seq": 222,
+      "forms": [
+       {
+        "label": "Mengelola Ahli Medis",
+        "form": "admAhliMedisForm",
+        "seq": 223
+       },
+       {
+        "label": "Babin Kamtibmas ",
+        "form": "admBabinKamtibmasForm",
+        "seq": 224
+       },
+       {
+        "label": "Brevet",
+        "form": "admBrevetForm",
+        "seq": 225
+       },
+       {
+        "label": "Daerah Terpencil ",
+        "form": "admDaerahTerpencilForm",
+        "seq": 226
+       },
+       {
+        "label": "Keahlian Khusus ",
+        "form": "admKeahlianKhususForm",
+        "seq": 227
+       },
+       {
+        "label": "Kelompok Tunjangan",
+        "form": "admKelompokTunjanganForm",
+        "seq": 228
+       },
+       {
+        "label": "Tunjangan Papua",
+        "form": "admPapuaForm",
+        "seq": 229
+       },
+       {
+        "label": "Tunjangan Umum",
+        "form": "admTunjanganUmumForm",
+        "seq": 230
+       },
+       {
+        "label": "Mengelola Ahli Sandi",
+        "form": "admAhliSandiForm",
+        "seq": 231
+       }
+      ],
+      "children": []
+     },
+     {
+      "kode": "ADM_UMUM_PERIODE",
+      "label": "Periode",
+      "seq": 232,
+      "forms": [
+       {
+        "label": "Periode",
+        "form": "admPeriodeForm",
+        "seq": 233
+       }
+      ],
+      "children": []
+     },
+     {
+      "kode": "ADM_UMUM_MAPPING_USER",
+      "label": "Mapping User",
+      "seq": 242,
+      "forms": [],
+      "children": []
+     }
+    ]
+   },
+   {
+    "kode": "ADM_TKD",
+    "label": "Transfer Ke Daerah",
+    "seq": 167,
+    "forms": [
+     {
+      "label": "Mapping User DAK Fisik",
+      "form": "admMapingOprBidangTkdForm",
+      "seq": 20743
+     },
+     {
+      "label": "Bidang DAK Fisik",
+      "form": "admBidangTkdForm",
+      "seq": 20744
+     }
+    ],
+    "children": []
+   }
+  ]
+ },
+ {
+  "kode": "RENJA",
+  "label": "Sinkronisasi Renja-RKA",
+  "seq": 20,
+  "forms": [
+   {
+    "label": "Monitoring Migrasi ",
+    "form": "renjaLogMigrasi",
+    "seq": 937
+   },
+   {
+    "label": "Sanding Data Renja API ",
+    "form": "RenjaSandingApiMonForm",
+    "seq": 937
+   },
+   {
+    "label": "RUH Sinkronisasi Renja",
+    "form": "renjaMonitoringForm",
+    "seq": 20510
+   },
+   {
+    "label": "Proses Realisasi",
+    "form": "renjaRealisasiForm",
+    "seq": 20515
+   },
+   {
+    "label": "Dasar Parameter",
+    "form": "renjaDasarParameterForm",
+    "seq": 20516
+   },
+   {
+    "label": "RUH RENJA",
+    "form": "ruhRenjaForm",
+    "seq": 20521
+   },
+   {
+    "label": "Sandingan Renja - RKA",
+    "form": "RenjaSandingMonForm",
+    "seq": 20525
+   },
+   {
+    "label": "Hapus Data Renja",
+    "form": "renjaHapusDataForm",
+    "seq": 20526
+   },
+   {
+    "label": "Quick Report",
+    "form": "renjaQuickReportForm",
+    "seq": 20527
+   }
+  ],
+  "children": []
+ },
+ {
+  "kode": "ANG",
+  "label": "Penganggaran",
+  "seq": 30,
+  "forms": [],
+  "children": [
+   {
+    "kode": "ANG_RUH",
+    "label": "RUH",
+    "seq": 736,
+    "forms": [
+     {
+      "label": "Rencana Kinerja",
+      "form": "rencanaKinerja",
+      "seq": 737
+     },
+     {
+      "label": "SBK",
+      "form": "formRuhSbk",
+      "seq": 738
+     },
+     {
+      "label": "Belanja",
+      "form": "formRuhBelanja",
+      "seq": 739
+     },
+     {
+      "label": "Belanja Redesain",
+      "form": "formRuhBelanjaReDes",
+      "seq": 740
+     },
+     {
+      "label": "RPD Bulanan (Hal III)",
+      "form": "formRuhPok",
+      "seq": 741
+     },
+     {
+      "label": "Penerimaan/Pendapatan",
+      "form": "formRuhPendapatan2Multi",
+      "seq": 743
+     },
+     {
+      "label": "Rincian PHLN / DN",
+      "form": "formPhln",
+      "seq": 747
+     },
+     {
+      "label": "Narasi Sasaran",
+      "form": "formNarasiSasaran",
+      "seq": 748
+     },
+     {
+      "label": "Narasi Program",
+      "form": "formNarasiProgram",
+      "seq": 749
+     },
+     {
+      "label": "Narasi Kegiatan",
+      "form": "formNarasiKegiatan",
+      "seq": 750
+     },
+     {
+      "label": "Validasi Data Belanja ",
+      "form": "formValidasiBelanjaAkun",
+      "seq": 752
+     },
+     {
+      "label": "Kontrol Pagu",
+      "form": "formKontrolPagu",
+      "seq": 754
+     },
+     {
+      "label": "Pagu per PPK",
+      "form": "angPaguForm",
+      "seq": 755
+     },
+     {
+      "label": "AFP",
+      "form": "formScreenHitungAfpMultiyear",
+      "seq": 758
+     },
+     {
+      "label": "Rencana Penerimaan/Pendapatan",
+      "form": "formRuhRencanaPenerimaanPendapatanMulti",
+      "seq": 760
+     },
+     {
+      "label": "Informasi BLU",
+      "form": "formBluMulti",
+      "seq": 761
+     },
+     {
+      "label": "Migrasi RKAKL",
+      "form": "formRuhBelanjaMigrasi",
+      "seq": 769
+     },
+     {
+      "label": "Persetujuan Pagu PPK",
+      "form": "formValidasiPaguPPK",
+      "seq": 770
+     },
+     {
+      "label": "Pembagian Pagu per Operator",
+      "form": "angMappingBelanja",
+      "seq": 771
+     },
+     {
+      "label": "Gabung Usulan SABA",
+      "form": "formGabungUsulanSaba",
+      "seq": 846
+     },
+     {
+      "label": "TTE DIPA",
+      "form": "angTTEForm",
+      "seq": 20685
+     },
+     {
+      "label": "Upload REVISI DIPA DBH",
+      "form": "angUploadRevisiDBHForm",
+      "seq": 20687
+     },
+     {
+      "label": "Dispensasi Perjadin",
+      "form": "formRuhPerjadin",
+      "seq": 21064
+     }
+    ],
+    "children": []
+   },
+   {
+    "kode": "ANG_ADK",
+    "label": "ADK",
+    "seq": 772,
+    "forms": [
+     {
+      "label": "Kirim ADK Narasi",
+      "form": "formKirimNarasi",
+      "seq": 773
+     },
+     {
+      "label": "ADK BACKUP",
+      "form": "formKirimAdkSASAll",
+      "seq": 797
+     }
+    ],
+    "children": [
+     {
+      "kode": "ANG_ADK_SBK",
+      "label": "SBK",
+      "seq": 774,
+      "forms": [],
+      "children": []
+     },
+     {
+      "kode": "ANG_ADK_RKAKL_POK",
+      "label": "ADK KE SPAN",
+      "seq": 780,
+      "forms": [
+       {
+        "label": "Kirim ADK Ke SPAN",
+        "form": "formKirimRkaklDipaPok",
+        "seq": 781
+       }
+      ],
+      "children": []
+     },
+     {
+      "kode": "ANG_ADK_PEGAWAI",
+      "label": "Pegawai",
+      "seq": 792,
+      "forms": [
+       {
+        "label": "Kirim ADK Pegawai",
+        "form": "formKirimPegawai",
+        "seq": 793
+       },
+       {
+        "label": "Terima ADK Pegawai",
+        "form": "formTerimaPegawai",
+        "seq": 794
+       }
+      ],
+      "children": []
+     }
+    ]
+   },
+   {
+    "kode": "ANG_MONITORING",
+    "label": "Monitoring",
+    "seq": 798,
+    "forms": [
+     {
+      "label": "Submit dan Approve Data ",
+      "form": "formMonitoringDanApproveMulti",
+      "seq": 799
+     },
+     {
+      "label": "Digital Stamp",
+      "form": "formMonitoringDigitalStamp",
+      "seq": 800
+     },
+     {
+      "label": "Monitoring Kanwil",
+      "form": "formMonitoringKanwilNew",
+      "seq": 801
+     },
+     {
+      "label": "Standar Struktur Biaya",
+      "form": "formMonitoringSsb",
+      "seq": 802
+     },
+     {
+      "label": "Monitoring PA",
+      "form": "formMonitoringRolePA",
+      "seq": 803
+     },
+     {
+      "label": "Pagu Satker",
+      "form": "formMonitoringPaguSatker",
+      "seq": 804
+     },
+     {
+      "label": "Revisi DIPA",
+      "form": "angMonCwSakti",
+      "seq": 805
+     },
+     {
+      "label": "Monitoring KPJM",
+      "form": "formKpjm",
+      "seq": 806
+     },
+     {
+      "label": "Pemutakhiran KPA",
+      "form": "formMonCwSakti",
+      "seq": 892
+     },
+     {
+      "label": "Arsip Data Revisi",
+      "form": "formRevisiArsip",
+      "seq": 893
+     },
+     {
+      "label": "Dokumen DIPA",
+      "form": "angDokumenDipaForm",
+      "seq": 894
+     },
+     {
+      "label": "Sanding Data PNBP",
+      "form": "angSandingPnbpForm",
+      "seq": 20660
+     },
+     {
+      "label": "Sanding Data RKBMN",
+      "form": "angSandingRkbmnForm",
+      "seq": 20684
+     },
+     {
+      "label": "Monitoring Pagu KL Baru",
+      "form": "angMonPaguKLBaruForm",
+      "seq": 21045
+     },
+     {
+      "label": "Monitoring Pagu Blokir Perjadin",
+      "form": "angMonPaguBlokirPerjadinForm",
+      "seq": 21048
+     },
+     {
+      "label": "Monitoring Target n Blokir Perjadin",
+      "form": "angMonTargetBlokirPerjadinForm",
+      "seq": 21049
+     },
+     {
+      "label": "Monitoring Efisiensi Belanja",
+      "form": "angMonEfisiensiBelanja",
+      "seq": 21062
+     },
+     {
+      "label": "Monitoring Efisiensi Belanja per Jenis Belanja",
+      "form": "angMonEfisiensiBelanjaPerJenis",
+      "seq": 21063
+     },
+     {
+      "label": "Monitoring Efisiensi Perjadin",
+      "form": "angMonEfisiensiPerjadin",
+      "seq": 21065
+     }
+    ],
+    "children": []
+   },
+   {
+    "kode": "ANG_CETAK_FORMULIR",
+    "label": "Cetak Formulir",
+    "seq": 821,
+    "forms": [
+     {
+      "label": "Form 1 RKAKL RSPP",
+      "form": "formCetakRencanaTingkatKLRab",
+      "seq": 824
+     },
+     {
+      "label": "Rekap Penandaan Anggaran",
+      "form": "formCetakLaporanTematik",
+      "seq": 828
+     }
+    ],
+    "children": []
+   },
+   {
+    "kode": "ANG_PEGAWAI",
+    "label": "Pegawai",
+    "seq": 829,
+    "forms": [
+     {
+      "label": "RUH Data PNS Pusat",
+      "form": "formPegawaiPns",
+      "seq": 830
+     },
+     {
+      "label": "RUH Data TNI Pusat",
+      "form": "formRuhDataPersonilTni",
+      "seq": 831
+     },
+     {
+      "label": "RUH Data Polri Pusat",
+      "form": "formPegawaiPolri",
+      "seq": 832
+     },
+     {
+      "label": "Rekapitulasi Data Pegawai",
+      "form": "formCetakRekapPegawai",
+      "seq": 833
+     },
+     {
+      "label": "Hapus Data Pegawai",
+      "form": "formHapusDataPegawai",
+      "seq": 834
+     },
+     {
+      "label": "Import Data Pegawai per KL",
+      "form": "formImportPegawaiKL",
+      "seq": 19265
+     }
+    ],
+    "children": []
+   },
+   {
+    "kode": "ANG_KONSOLIDASI",
+    "label": "Konsolidasi",
+    "seq": 836,
+    "forms": [
+     {
+      "label": "Terima Konsolidasi RKAKL",
+      "form": "formKonsolidasiRkakl",
+      "seq": 837
+     },
+     {
+      "label": "Kirim Konsolidasi",
+      "form": "formKirimKonsolidasi",
+      "seq": 838
+     }
+    ],
+    "children": []
+   },
+   {
+    "kode": "ANG_UTILITY",
+    "label": "Utility",
+    "seq": 839,
+    "forms": [
+     {
+      "label": "Copy Data Antar Satker",
+      "form": "formCopyDataAntarSatker",
+      "seq": 840
+     },
+     {
+      "label": "Copy Program Antar Satker",
+      "form": "formCopyProgramAntarSatker",
+      "seq": 841
+     },
+     {
+      "label": "Hapus Data",
+      "form": "formHapusData",
+      "seq": 842
+     },
+     {
+      "label": "Reformat Pagu TKDD",
+      "form": "formKonversiData",
+      "seq": 843
+     },
+     {
+      "label": "Memilih Status History",
+      "form": "formStatusHistory",
+      "seq": 844
+     },
+     {
+      "label": "Blokir Masal",
+      "form": "formBlokirMasal",
+      "seq": 845
+     },
+     {
+      "label": "Ubah Masal",
+      "form": "formUbahMasal",
+      "seq": 846
+     },
+     {
+      "label": "Generate Masal",
+      "form": "formGenerateMasal",
+      "seq": 21046
+     }
+    ],
+    "children": []
+   },
+   {
+    "kode": "ANG_CETAK_MULTIYEAR",
+    "label": "Laporan / Cetak",
+    "seq": 852,
+    "forms": [
+     {
+      "label": "RKA Satker",
+      "form": "formCetakRkaSatkerBun",
+      "seq": 853
+     },
+     {
+      "label": "Rincian Kertas Kerja Satker ",
+      "form": "formCetakKertasKerjaSatker",
+      "seq": 854
+     },
+     {
+      "label": "Cetak Kontrol Pagu",
+      "form": "formCetakKontrolPagu",
+      "seq": 855
+     },
+     {
+      "label": "Halaman III DIPA",
+      "form": "formHalaman4Dipa1Multi",
+      "seq": 856
+     },
+     {
+      "label": "Summary Akun",
+      "form": "formSummaryAkun1Multi",
+      "seq": 857
+     },
+     {
+      "label": "Matriks Usulan Revisi",
+      "form": "formRevisiRkaklMultiyear",
+      "seq": 858
+     },
+     {
+      "label": "Matriks Revisi Hal III DIPA",
+      "form": "formCetakRevisiHal3",
+      "seq": 859
+     },
+     {
+      "label": "Matriks Revisi Hal IV DIPA",
+      "form": "formCetakRevisiHal4",
+      "seq": 860
+     },
+     {
+      "label": "Matriks Revisi PNBP",
+      "form": "formCetakRevisiPNBP",
+      "seq": 861
+     },
+     {
+      "label": "Matriks Revisi Unit",
+      "form": "formCetakRevisiUnit",
+      "seq": 862
+     },
+     {
+      "label": "Petikan DIPA",
+      "form": "formCetakKonsepDipa1Multi",
+      "seq": 863
+     },
+     {
+      "label": "Laporan per Unit",
+      "form": "formCetakLaporanPerUnit",
+      "seq": 867
+     },
+     {
+      "label": "Laporan per Lokasi",
+      "form": "formCetakLaporanPerLokasi",
+      "seq": 868
+     },
+     {
+      "label": "Laporan per Program",
+      "form": "formCetakLaporanPerProgram",
+      "seq": 869
+     },
+     {
+      "label": "Laporan per Fungsi/Sub Fungsi",
+      "form": "formCetakLaporanPerFungsi",
+      "seq": 870
+     },
+     {
+      "label": "Laporan per Lokasi Program",
+      "form": "formCetakLaporanPerLokasiPropinsi",
+      "seq": 871
+     },
+     {
+      "label": "Laporan per PHLN/PNBP",
+      "form": "formCetakLaporanPerPHLN",
+      "seq": 872
+     },
+     {
+      "label": "Laporan per Register",
+      "form": "formCetakLaporanPerRegister",
+      "seq": 873
+     },
+     {
+      "label": "Laporan per Akun",
+      "form": "formCetakLaporanPerAkun",
+      "seq": 874
+     },
+     {
+      "label": "Laporan per Blokir",
+      "form": "formCetakLaporanPerBlokir",
+      "seq": 875
+     },
+     {
+      "label": "Persetujuan RKAKL",
+      "form": "formPersetujuanRKAKL",
+      "seq": 876
+     },
+     {
+      "label": "Nota Keuangan",
+      "form": "formCetakNotaRKAKL",
+      "seq": 879
+     },
+     {
+      "label": "Laporan per Penggunaan PNBP",
+      "form": "formCetakLaporanPNBP",
+      "seq": 880
+     },
+     {
+      "label": "Laporan Target Penerimaan Pendapatan",
+      "form": "formCetakLaporanPerUnitPen",
+      "seq": 881
+     },
+     {
+      "label": "Laporan Himpunan",
+      "form": "renjaLampiranHimpunanForm",
+      "seq": 20662
+     }
+    ],
+    "children": []
+   },
+   {
+    "kode": "ANG_REVISI_DIPA",
+    "label": "Revisi DIPA",
+    "seq": 853,
+    "forms": [
+     {
+      "label": "Pengajuan Revisi DJA",
+      "form": "formRevisiDja",
+      "seq": 2050
+     },
+     {
+      "label": "Pengajuan Revisi",
+      "form": "formRevisi",
+      "seq": 2051
+     },
+     {
+      "label": "Kewenangan KANWIL",
+      "form": "angMonRevKanwil",
+      "seq": 2052
+     },
+     {
+      "label": "Kewenangan KANWIL Redesain",
+      "form": "angMonRevKanwilRedesain",
+      "seq": 2052
+     },
+     {
+      "label": "Kewenangan PA",
+      "form": "angMonRevPA",
+      "seq": 2053
+     },
+     {
+      "label": "Kewenangan DJA",
+      "form": "angMonRevDJA",
+      "seq": 2054
+     },
+     {
+      "label": "Monitoring Revisi",
+      "form": "angFormMonRev",
+      "seq": 2055
+     },
+     {
+      "label": "Quick Report Data Revisi",
+      "form": "quickReportRevisi",
+      "seq": 2056
+     },
+     {
+      "label": "Pengajuan Revisi SABA",
+      "form": "formRevisiSaba",
+      "seq": 20512
+     },
+     {
+      "label": "Kewenangan DJA SABA",
+      "form": "angMonRevDJASaba",
+      "seq": 20514
+     },
+     {
+      "label": "Monitoring Revisi SABA",
+      "form": "angMonRevisiSabaNew",
+      "seq": 20712
+     },
+     {
+      "label": "Monitoring Revisi SABA",
+      "form": "angMonRevisiSaba",
+      "seq": 20712
+     },
+     {
+      "label": "Pengajuan Revisi Redesain",
+      "form": "formRevisiRedesain",
+      "seq": 21064
+     }
+    ],
+    "children": []
+   },
+   {
+    "kode": "ANG_PENELAAHAN",
+    "label": "Penelaahan RKAKL",
+    "seq": 882,
+    "forms": [
+     {
+      "label": "Upload Surat Tugas",
+      "form": "angSuratTugasPenelaahanForm",
+      "seq": 883
+     },
+     {
+      "label": "Monitoring Approval",
+      "form": "angMonitoringPenelaahan",
+      "seq": 884
+     },
+     {
+      "label": "Forum Penelaahan",
+      "form": "angForumPenelaahan",
+      "seq": 885
+     },
+     {
+      "label": "Monitoring Pagu",
+      "form": "admRekeningBankForm",
+      "seq": 886
+     },
+     {
+      "label": "Ambil ADK ",
+      "form": "angPenelaahanAdk",
+      "seq": 887
+     },
+     {
+      "label": "Quick Report",
+      "form": "formQuickReport",
+      "seq": 888
+     }
+    ],
+    "children": []
+   },
+   {
+    "kode": "ANG_REVIEW_AD",
+    "label": "Review Angka Dasar",
+    "seq": 883,
+    "forms": [
+     {
+      "label": "Tinjau Angka Dasar",
+      "form": "angTinjauAngkaDasarForm",
+      "seq": 1
+     },
+     {
+      "label": "Cetak Form",
+      "form": "angReportAngkaDasarForm",
+      "seq": 2
+     }
+    ],
+    "children": []
+   },
+   {
+    "kode": "ANG_INFO_KINERJA",
+    "label": "Monev",
+    "seq": 890,
+    "forms": [
+     {
+      "label": "Indikator Kinerja Program",
+      "form": "angIndikatorKinerjaProgram",
+      "seq": 1
+     },
+     {
+      "label": "Indikator Sasaran Strategis",
+      "form": "angIndikatorSasaranStrategis",
+      "seq": 3
+     }
+    ],
+    "children": []
+   },
+   {
+    "kode": "ANG_BLU",
+    "label": "BLU",
+    "seq": 2072,
+    "forms": [
+     {
+      "label": "Migrasi RBA BLU",
+      "form": "angBluMigrasiRBAForm",
+      "seq": 20731
+     },
+     {
+      "label": "RUH RBA BLU",
+      "form": "angBluRUHForm",
+      "seq": 20733
+     },
+     {
+      "label": "RUH Hasil Analisis BLU",
+      "form": "angBluRuhHasilAnalisForm",
+      "seq": 20734
+     },
+     {
+      "label": "Matriks Semula Menjadi RBA BLU",
+      "form": "angBluMatriksRBAForm",
+      "seq": 20735
+     },
+     {
+      "label": "Monitoring RBA",
+      "form": "angBluMonTahapForm",
+      "seq": 20741
+     },
+     {
+      "label": "Laporan RBA BLU",
+      "form": "angBluReportRBAForm",
+      "seq": 20742
+     },
+     {
+      "label": "Laporan Usulan dan Hasil Analisa RBA",
+      "form": "angBluReportAnalisaRBAForm",
+      "seq": 20743
+     },
+     {
+      "label": "Laporan Ikhtisar RBA Pendapatan",
+      "form": "angBluReportIkhtisarPenForm",
+      "seq": 20744
+     },
+     {
+      "label": "Laporan Ikhtisar RBA Belanja",
+      "form": "angBluReportIkhtisarBelForm",
+      "seq": 20745
+     }
+    ],
+    "children": []
+   }
+  ]
+ },
+ {
+  "kode": "KOM",
+  "label": "Komitmen",
+  "seq": 40,
+  "forms": [],
+  "children": [
+   {
+    "kode": "KOM_RUH",
+    "label": "RUH",
+    "seq": 652,
+    "forms": [
+     {
+      "label": "Supplier",
+      "form": "komRUHSupplier2Form",
+      "seq": 653
+     },
+     {
+      "label": "Kontrak",
+      "form": "kontrakViewList",
+      "seq": 654
+     },
+     {
+      "label": "Pencatatan Transaksi Transitoris BLU",
+      "form": "komRUHTransitorisBluForm",
+      "seq": 663
+     },
+     {
+      "label": "Interkoneksi BAST Non Kontraktual",
+      "form": "komApiBastNonKontrakForm",
+      "seq": 664
+     },
+     {
+      "label": "Informasi P3DN",
+      "form": "komRUHTKDNForm",
+      "seq": 20597
+     },
+     {
+      "label": "Reklasifikasi BAST/BMN",
+      "form": "komReklasBastBMNForm",
+      "seq": 20598
+     },
+     {
+      "label": "Void BAST",
+      "form": "komVoidBastform",
+      "seq": 20599
+     },
+     {
+      "label": "Interkoneksi BAST Kontraktual",
+      "form": "komApiBastKontrakForm",
+      "seq": 21065
+     }
+    ],
+    "children": [
+     {
+      "kode": "KOM_ESCROW",
+      "label": "Proses Escrow",
+      "seq": 653,
+      "forms": [
+       {
+        "label": "Penerimaan Barang/Jasa Transaksi Escrow",
+        "form": "komRUHBASTEscrowForm",
+        "seq": 670
+       },
+       {
+        "label": "Monitoring Kontrak Escrow - PA / PKN",
+        "form": "komMonEscrowPAPKN",
+        "seq": 20656
+       },
+       {
+        "label": "Monitoring Kontrak Escrow - Unit Eselon I",
+        "form": "komMonEscrowUO",
+        "seq": 20657
+       },
+       {
+        "label": "Monitoring Kontrak Escrow - Satker",
+        "form": "komMonEscrowSatker",
+        "seq": 20658
+       }
+      ],
+      "children": [
+       {
+        "kode": "KOM_ESCROW_REG",
+        "label": "Registrasi Escrow",
+        "seq": 654,
+        "forms": [
+         {
+          "label": "Unit Kerja Satker",
+          "form": "escrowReg1",
+          "seq": 1
+         },
+         {
+          "label": "Unit Kerja UO",
+          "form": "escrowReg2",
+          "seq": 11
+         },
+         {
+          "label": "Unit Kerja PA",
+          "form": "escrowReg3",
+          "seq": 21
+         },
+         {
+          "label": "Unit Kerja PKN",
+          "form": "escrowReg4",
+          "seq": 31
+         }
+        ],
+        "children": []
+       },
+       {
+        "kode": "KOM_ESCROW_REALISASI",
+        "label": "Realisasi Escrow",
+        "seq": 2037,
+        "forms": [
+         {
+          "label": "Unit Kerja PKN - Approval SKP/SP-SKP",
+          "form": "xR3",
+          "seq": 20651
+         },
+         {
+          "label": "Unit Kerja Satker - Kirim Data SKP",
+          "form": "xR2",
+          "seq": 20652
+         },
+         {
+          "label": "Unit Kerja PKN - Pemindahbukuan RDCA",
+          "form": "xR1",
+          "seq": 20653
+         }
+        ],
+        "children": []
+       }
+      ]
+     },
+     {
+      "kode": "KOM_RUH_BAST",
+      "label": "BAST/BAKP/BAPP/DYD",
+      "seq": 653,
+      "forms": [
+       {
+        "label": "BAST/BG Kontraktual",
+        "form": "komRUHBASTBankGaransiForm",
+        "seq": 655
+       },
+       {
+        "label": "BAST LS Non Kontraktual",
+        "form": "komMainBastNonKontrakForm",
+        "seq": 656
+       },
+       {
+        "label": "Penerimaan Barang/Jasa Hibah B/J/S",
+        "form": "komMainBastNonKontrakFormHIBAH",
+        "seq": 657
+       },
+       {
+        "label": "Penerimaan Barang/Jasa UP KKP",
+        "form": "komMainBastNonKontrakForm",
+        "seq": 658
+       },
+       {
+        "label": "Penerimaan Barang/Jasa UP Valas",
+        "form": "komMainBastNonKontrakForm",
+        "seq": 659
+       },
+       {
+        "label": "Penerimaan Barang/Jasa UP Tunai",
+        "form": "komMainBastPencatatanBarangJasaForm",
+        "seq": 661
+       },
+       {
+        "label": "Penerimaan Barang/Jasa Hibah Kas",
+        "form": "komMainBastPencatatanBarangJasaHibahForm",
+        "seq": 662
+       },
+       {
+        "label": "Penerimaan Barang/Jasa UP Valas",
+        "form": "komMainBastNonKontrakForm",
+        "seq": 689
+       },
+       {
+        "label": "Dokumen Kontraktual TAYL",
+        "form": "komBastTAYLKontrakForm",
+        "seq": 20669
+       },
+       {
+        "label": "Dokumen Non Kontraktual TAYL",
+        "form": "komBastTAYLNonkForm",
+        "seq": 20670
+       }
+      ],
+      "children": []
+     },
+     {
+      "kode": "KOM_RUH_JAMINAN",
+      "label": "Jaminan Akhir Tahun (Valas)",
+      "seq": 2039,
+      "forms": [
+       {
+        "label": "Bank Garansi / SPTJM",
+        "form": "komRUHJaminanAkhirTahunForm",
+        "seq": 667
+       },
+       {
+        "label": "Addendum Bank Garansi/SPTJM",
+        "form": "komRUHAddJaminanAkhirTahunForm",
+        "seq": 668
+       },
+       {
+        "label": "Addendum Bank Garansi/SPTJM",
+        "form": "komRUHAddJaminanAkhirTahunForm",
+        "seq": 702
+       }
+      ],
+      "children": []
+     },
+     {
+      "kode": "KOM_RUH_CAPAIAN",
+      "label": "Capaian Kinerja",
+      "seq": 2040,
+      "forms": [
+       {
+        "label": "Realisasi Kinerja Satker",
+        "form": "komInputKinerjaSatkerForm",
+        "seq": 665
+       },
+       {
+        "label": "Target Kinerja Satker",
+        "form": "komTargetKinerjaSatkerForm",
+        "seq": 20659
+       }
+      ],
+      "children": []
+     },
+     {
+      "kode": "KOM_TRX_RPATA",
+      "label": "Transakti RPATA",
+      "seq": 2041,
+      "forms": [
+       {
+        "label": "Perpanjangan Kontrak",
+        "form": "komRuhExtendSubstitusiRetensiKontrakForm",
+        "seq": 1
+       },
+       {
+        "label": "Penerimaan Barang/Jasa RPATA",
+        "form": "komBastRpataForm",
+        "seq": 2
+       },
+       {
+        "label": "Monitoring RPATA",
+        "form": "komMonKontrakRpataForm",
+        "seq": 3
+       }
+      ],
+      "children": []
+     }
+    ]
+   },
+   {
+    "kode": "KOM_CETAK",
+    "label": "Cetak",
+    "seq": 666,
+    "forms": [
+     {
+      "label": "Resume Supplier",
+      "form": "komCetakResumeSupplierForm",
+      "seq": 667
+     },
+     {
+      "label": "Resume Kontrak",
+      "form": "komCetakResumeKontrakForm",
+      "seq": 668
+     },
+     {
+      "label": "Laporan FA Detil 16 Segmen",
+      "form": "glpLaporanFADetailForm",
+      "seq": 669
+     },
+     {
+      "label": "Cetak Resume Bast Non Kontrak",
+      "form": "komResumeBastNonKontrak",
+      "seq": 670
+     },
+     {
+      "label": "Karwas Kontrak",
+      "form": "komMonKontrakForm",
+      "seq": 686
+     },
+     {
+      "label": "Resume BAST Barang/Jasa",
+      "form": "komCetakBASTForm",
+      "seq": 710
+     }
+    ],
+    "children": [
+     {
+      "kode": "KOM_CETAK_TKDN",
+      "label": "Laporan P3DN",
+      "seq": 2024,
+      "forms": [
+       {
+        "label": "P3DN Per Pagu Anggaran",
+        "form": "komCetakTKDNPaguForm",
+        "seq": 20595
+       },
+       {
+        "label": "P3DN Per Kategori & Jenis Belanja",
+        "form": "komCetakTKDNForm",
+        "seq": 20596
+       }
+      ],
+      "children": []
+     }
+    ]
+   },
+   {
+    "kode": "KOM_ADK",
+    "label": "ADK",
+    "seq": 671,
+    "forms": [
+     {
+      "label": "ADK Supplier Interkoneksi OTP",
+      "form": "komADKSupplierInterkoneksiOtp",
+      "seq": 721
+     },
+     {
+      "label": "ADK Kontrak Interkoneksi OTP",
+      "form": "komADKKontrakInterfaceOtp",
+      "seq": 722
+     }
+    ],
+    "children": []
+   },
+   {
+    "kode": "KOM_UPLOAD",
+    "label": "Upload / Import",
+    "seq": 682,
+    "forms": [
+     {
+      "label": "Upload Data Pegawai",
+      "form": "komUploadADKPegawaiSBForm",
+      "seq": 674
+     },
+     {
+      "label": "Import Supplier Interkoneksi SPAN",
+      "form": "komImportSupplier",
+      "seq": 678
+     },
+     {
+      "label": "Import GPP Terpusat",
+      "form": "komImportGPPTerpusatForm",
+      "seq": 679
+     },
+     {
+      "label": "Upload Dok.Pendukung Supplier",
+      "form": "supplierUplDokPendukung",
+      "seq": 20665
+     },
+     {
+      "label": "Upload Dok.Pendukung Kontrak",
+      "form": "komKontrakUplDokPendukung",
+      "seq": 20666
+     }
+    ],
+    "children": []
+   },
+   {
+    "kode": "KOM_MONITORING",
+    "label": "Monitoring",
+    "seq": 685,
+    "forms": [
+     {
+      "label": "Nomor Register Supplier (NRS)",
+      "form": "komUploadADKNRSForm",
+      "seq": 683
+     },
+     {
+      "label": "Nomor Register Kontrak (CAN)",
+      "form": "komUploadADKCANForm",
+      "seq": 684
+     },
+     {
+      "label": "ADK GPP",
+      "form": "komMonitoringGppForm",
+      "seq": 687
+     },
+     {
+      "label": "ADK Kontrak/Supplier/BAST",
+      "form": "komMonitoringAdk",
+      "seq": 688
+     },
+     {
+      "label": "Monitoring ADK",
+      "form": "komMonitoringAdk",
+      "seq": 689
+     },
+     {
+      "label": "Monitoring Realisasi Kinerja Satker",
+      "form": "komInputKinerjaSatkerForm",
+      "seq": 20644
+     },
+     {
+      "label": "Monitoring Realisasi Kinerja Satker",
+      "form": "komInputKinerjaSatkerForm",
+      "seq": 20645
+     },
+     {
+      "label": "Monitoring Dokumen Pendukung Kontrak",
+      "form": "komMonitoringDokPendukungKontrak",
+      "seq": 20663
+     },
+     {
+      "label": "Monitoring Dokumen Pendukung Supplier",
+      "form": "komMonitoringDokPendukungSupplier",
+      "seq": 20664
+     }
+    ],
+    "children": []
+   },
+   {
+    "kode": "KOM_TTE",
+    "label": "Proses TTE",
+    "seq": 2035,
+    "forms": [
+     {
+      "label": "Dokumen Pendukung SPM",
+      "form": "formMonitoringDokPendukung",
+      "seq": 20646
+     }
+    ],
+    "children": []
+   }
+  ]
+ },
+ {
+  "kode": "BEN_VALAS",
+  "label": "Bendahara Valas",
+  "seq": 46,
+  "forms": [],
+  "children": [
+   {
+    "kode": "BEN_VALAS_PEN",
+    "label": "Penerimaan Kas",
+    "seq": 2042,
+    "forms": [
+     {
+      "label": "Pencatatan Penerimaan PNBP",
+      "form": "kasPnbpBenValasForm",
+      "seq": 20690
+     },
+     {
+      "label": "Penerimaan Kas Dari Pusat",
+      "form": "penerimaanDropingBenValasForm",
+      "seq": 20692
+     },
+     {
+      "label": "Mencatat Kas Pengembalian Belanja",
+      "form": "pengembalianBelanjaBenValasForm",
+      "seq": 20694
+     },
+     {
+      "label": "Pungutan Pajak",
+      "form": "pungutanPajakBenValasForm",
+      "seq": 20696
+     },
+     {
+      "label": "Menerima Pelunasan Kas Besi",
+      "form": "menerimaPelunasanBenValasForm",
+      "seq": 21065
+     },
+     {
+      "label": "Menerima Pinjaman Kas Besi",
+      "form": "menerimaPeminjamanBenValasForm",
+      "seq": 21066
+     }
+    ],
+    "children": []
+   },
+   {
+    "kode": "BEN_VALAS_PENG",
+    "label": "Pengeluaran Kas",
+    "seq": 2043,
+    "forms": [
+     {
+      "label": "Pengeluaran Kas Dari Pusat ",
+      "form": "pengeluaranKasDroppingBenValasForm",
+      "seq": 20702
+     },
+     {
+      "label": "Setoran Pengembalian Belanja",
+      "form": "setorPengembalianBenValasForm",
+      "seq": 20703
+     },
+     {
+      "label": "Penyetoran UP/TUP/PNBP ",
+      "form": "setorUptupPnbpBenValasForm",
+      "seq": 20704
+     },
+     {
+      "label": "Setoran Pajak ",
+      "form": "setorPajakBenValasForm",
+      "seq": 20705
+     },
+     {
+      "label": "Memberikan Pinjaman Kas Besi",
+      "form": "memberikanPinjamanBenValasForm",
+      "seq": 21063
+     },
+     {
+      "label": "Membayar Pelunasan Pinjaman Kas Besi",
+      "form": "bayarPelunasanPinjamanValasForm",
+      "seq": 21064
+     }
+    ],
+    "children": []
+   },
+   {
+    "kode": "BEN_VALAS_TRX",
+    "label": "Transaksi Belanja Valas",
+    "seq": 2044,
+    "forms": [
+     {
+      "label": "Mencatat SPBY Valas",
+      "form": "catatSPBYValasForm",
+      "seq": 20665
+     },
+     {
+      "label": "Validasi SPBY Valas",
+      "form": "validasiSpbyForm",
+      "seq": 20666
+     },
+     {
+      "label": "Mencatat Kwitansi Valas",
+      "form": "CatatKwitansiBenValasForm",
+      "seq": 20680
+     },
+     {
+      "label": "Membuat DRPP Valas",
+      "form": "catatDRPPBenValasForm",
+      "seq": 20681
+     }
+    ],
+    "children": []
+   },
+   {
+    "kode": "BEN_VALAS_TUKAR",
+    "label": "Penukaran Dan Mutasi Uang",
+    "seq": 2045,
+    "forms": [
+     {
+      "label": "Pemindahan Kas Bank",
+      "form": "pemindahanKasBankBenValasForm",
+      "seq": 20663
+     },
+     {
+      "label": "Pemindahan Kas Tunai",
+      "form": "pemindahanKasTunaiBenValasForm",
+      "seq": 20664
+     },
+     {
+      "label": "Penukaran Uang Eksternal",
+      "form": "penukaranUangEksForm",
+      "seq": 20667
+     },
+     {
+      "label": "Penukaran Uang Internal Valas",
+      "form": "penukaranUangInternalForm",
+      "seq": 20685
+     },
+     {
+      "label": "Approve Penukaran Uang Internal Valas",
+      "form": "approveUangInternalForm",
+      "seq": 20686
+     },
+     {
+      "label": "Peminjaman Kas Antar Kategori",
+      "form": "peminjamanKasBenValasForm",
+      "seq": 20693
+     },
+     {
+      "label": "Pengembalian Kas Antar Kategori",
+      "form": "pengembalianKasBenValasForm",
+      "seq": 20694
+     }
+    ],
+    "children": []
+   },
+   {
+    "kode": "BEN_VALAS_UTIL",
+    "label": "Utilitas dan Pelaporan",
+    "seq": 2046,
+    "forms": [
+     {
+      "label": "RUH Zonasi",
+      "form": "ruhZonasiBenValasForm",
+      "seq": 20517
+     },
+     {
+      "label": "Monitoring FIFO",
+      "form": "monitoringFIFOBenValasForm",
+      "seq": 20518
+     },
+     {
+      "label": "Menghitung Kas Fisik",
+      "form": "hitungKasFisikBenValasForm",
+      "seq": 20519
+     },
+     {
+      "label": "Input Saldo Awal USD",
+      "form": "migrasiSAwalUSDBenValasForm",
+      "seq": 20520
+     },
+     {
+      "label": "Input Saldo Awal FIFO VS",
+      "form": "migrasiSAwalFifoVSBenValasForm",
+      "seq": 20724
+     },
+     {
+      "label": "Input Saldo Awal VS",
+      "form": "migrasiSAwalVSBenValasForm",
+      "seq": 20725
+     },
+     {
+      "label": "Form Laporan Pertanggung Jawaban",
+      "form": "cetakLPJBenValasForm",
+      "seq": 20740
+     },
+     {
+      "label": "Migrasi Saldo Awal Pungutan Pajak",
+      "form": "migSawalPungutanPajakbenValasForm",
+      "seq": 20741
+     },
+     {
+      "label": "Migrasi Saldo Awal PNBP",
+      "form": "migSawalPNBPbenValasForm",
+      "seq": 20742
+     }
+    ],
+    "children": []
+   },
+   {
+    "kode": "BEN_VALAS_REFERENSI",
+    "label": "Referensi",
+    "seq": 19854,
+    "forms": [],
+    "children": []
+   }
+  ]
+ },
+ {
+  "kode": "BEN",
+  "label": "Bendahara",
+  "seq": 50,
+  "forms": [],
+  "children": [
+   {
+    "kode": "BEN_USULAN",
+    "label": "Membuat Usulan",
+    "seq": 432,
+    "forms": [
+     {
+      "label": "Menghitung Usul UP",
+      "form": "benUsulanUPForm",
+      "seq": 433
+     },
+     {
+      "label": "Membuat Rincian Pembiayaan TUP",
+      "form": "benRincianPembiayaanTUPForm",
+      "seq": 434
+     },
+     {
+      "label": "Membuat SPTB",
+      "form": "benMembuatSPTBForm",
+      "seq": 435
+     },
+     {
+      "label": "Membuat DRPP",
+      "form": "benDrppForm",
+      "seq": 436
+     },
+     {
+      "label": "Membuat DRPP Hibah",
+      "form": "benDrppHibahForm",
+      "seq": 437
+     },
+     {
+      "label": "Membuat SPTB Kuitansi Hibah",
+      "form": "benMembuatSPTBHibahForm",
+      "seq": 438
+     }
+    ],
+    "children": []
+   },
+   {
+    "kode": "BEN_TRANSAKSI",
+    "label": "Transaksi",
+    "seq": 439,
+    "forms": [
+     {
+      "label": "Merekam Uang Muka dan Alokasi BPP 2019",
+      "form": "benRekamUangMukaForm",
+      "seq": 440
+     },
+     {
+      "label": "Membuat Kuitansi 2019",
+      "form": "benKwitansiForm",
+      "seq": 442
+     },
+     {
+      "label": "Mencatat Pungutan Pajak",
+      "form": "benCatatPungutanPajakForm",
+      "seq": 443
+     },
+     {
+      "label": "Merekam Daftar Honor",
+      "form": "benDaftarHonorForm",
+      "seq": 444
+     },
+     {
+      "label": "Mencatat Pembayaran Dana Titipan",
+      "form": "benPembayaranDanaTitipanForm",
+      "seq": 445
+     },
+     {
+      "label": "Mencatat Uang Masuk Bendahara Penerimaan",
+      "form": "benMencatatUangMasukForm",
+      "seq": 446
+     },
+     {
+      "label": "Mencatat Uang Masuk Bendahara Pengeluaran",
+      "form": "benMencatatUangMasukForm",
+      "seq": 447
+     },
+     {
+      "label": "Menerima Kas Hibah",
+      "form": "benMenerimaKasHibahForm",
+      "seq": 449
+     },
+     {
+      "label": "Membuat Kuitansi Hibah 2019",
+      "form": "benMembuatKuitansiHibahForm",
+      "seq": 450
+     },
+     {
+      "label": "Merekam Uang Muka dan Alokasi BPP",
+      "form": "benRekamUangMukaBpBppForm",
+      "seq": 451
+     },
+     {
+      "label": "Membuat Kuitansi",
+      "form": "benMembuatKwitansiTunaiForm",
+      "seq": 452
+     },
+     {
+      "label": "Membuat Kuitansi Hibah ",
+      "form": "benMembuatKwitansiBastHibahForm",
+      "seq": 453
+     }
+    ],
+    "children": []
+   },
+   {
+    "kode": "BEN_SETORAN",
+    "label": "Setoran",
+    "seq": 454,
+    "forms": [
+     {
+      "label": "Setoran Pajak",
+      "form": "benSetoranPajakForm",
+      "seq": 455
+     },
+     {
+      "label": "Setoran PNBP Bendahara Penerimaan",
+      "form": "benSetoranUPTUPPNBPForm",
+      "seq": 456
+     },
+     {
+      "label": "Setoran UP/TUP/PNBP Bendahara Pengeluaran",
+      "form": "benSetoranUPTUPPNBPForm",
+      "seq": 457
+     },
+     {
+      "label": "Pengembalian Belanja",
+      "form": "benCatatPengembalianBelanjaForm",
+      "seq": 458
+     },
+     {
+      "label": "Setoran Perpajakan",
+      "form": "benSetoranPajakDanaTitipanForm",
+      "seq": 459
+     },
+     {
+      "label": "Setoran PNBP Dana Titipan / DPK",
+      "form": "benSetoranPNBPDanaTitipanForm",
+      "seq": 460
+     },
+     {
+      "label": "Membuat Billing Interkoneksi",
+      "form": "benBillingInterkoneksiForm",
+      "seq": 20686
+     }
+    ],
+    "children": []
+   },
+   {
+    "kode": "BEN_APPROVAL_KAS",
+    "label": "Pemindahan Kas",
+    "seq": 461,
+    "forms": [
+     {
+      "label": "Kas Bank Bendahara Pengeluaran",
+      "form": "benKasBankBenPengForm",
+      "seq": 462
+     },
+     {
+      "label": "Kas Bendahara Penerimaan",
+      "form": "benPemindahanKasBenPenForm",
+      "seq": 463
+     },
+     {
+      "label": "Kas Tunai Bendahara Pengeluaran",
+      "form": "benKasTunaiBenPengForm",
+      "seq": 464
+     },
+     {
+      "label": "Migrasi Saldo Awal Kas Bendahara Pengeluaran",
+      "form": "formMigrasiSaldoAwalKasPengeluaran",
+      "seq": 465
+     },
+     {
+      "label": "Migrasi Saldo Awal Kas Bendahara Penerimaan",
+      "form": "saldoAwalKasPenerimaanForm",
+      "seq": 466
+     },
+     {
+      "label": "Migrasi Saldo Awal Pungutan Pajak",
+      "form": "formMigrasiPungutanPajakBenPeng",
+      "seq": 467
+     },
+     {
+      "label": "Migrasi Saldo Awal Penerimaan PNBP Bendahara Pengeluaran",
+      "form": "formMigrasiPenerimaanPNBP",
+      "seq": 468
+     },
+     {
+      "label": "Kas Tunai Bendahara Penerimaan",
+      "form": "benKasTunaiBenPenForm",
+      "seq": 469
+     },
+     {
+      "label": "Kas Bank Bendahara Penerimaan",
+      "form": "benKasBankBenPenForm",
+      "seq": 470
+     },
+     {
+      "label": "Migrasi Saldo Awal PNBP Bendahara Penerimaan",
+      "form": "formMigrasiPenerimaanPNBPPenerimaan",
+      "seq": 471
+     },
+     {
+      "label": "Migrasi Saldo Awal Kas Bendahara Pengeluaran Pembantu",
+      "form": "formMigrasiSaldoAwalKasPengeluaranBpp",
+      "seq": 20597
+     },
+     {
+      "label": "Pengurangan Kas akibat Hilang/Bencana Bendahara Pengeluaran",
+      "form": "benPenguranganKasForm",
+      "seq": 21057
+     }
+    ],
+    "children": []
+   },
+   {
+    "kode": "BEN_LAPORAN",
+    "label": "Cetak Laporan",
+    "seq": 472,
+    "forms": [
+     {
+      "label": "LPJ Bendahara Pengeluaran",
+      "form": "benMembuatLPJBenPengNewForm",
+      "seq": 473
+     },
+     {
+      "label": "LPJ Bendahara Penerimaan",
+      "form": "benMembuatLPJBenPenNewForm",
+      "seq": 474
+     },
+     {
+      "label": "Laporan FA Detail (16 Segmen)",
+      "form": "glpLaporanFADetailForm",
+      "seq": 475
+     },
+     {
+      "label": "Cetak DPT & Kuitansi KKP",
+      "form": "komResumeBastNonKontrak",
+      "seq": 476
+     },
+     {
+      "label": "LPJ Bendahara BLU",
+      "form": "benLpjBluForm",
+      "seq": 477
+     },
+     {
+      "label": "Cetak Kuitansi Valas",
+      "form": "komResumeBastNonKontrak",
+      "seq": 503
+     },
+     {
+      "label": "Cetakan Penggunaan KKP per Kartu",
+      "form": "benReportKKPperKartuForm",
+      "seq": 20508
+     },
+     {
+      "label": "LPJ Bendahara Pengeluaran Valas",
+      "form": "benLpjValasTransisiPengForm",
+      "seq": 21054
+     },
+     {
+      "label": "LPJ Bendahara Penerimaan Valas",
+      "form": "benLpjValasTransisiPenForm",
+      "seq": 21055
+     }
+    ],
+    "children": []
+   },
+   {
+    "kode": "BEN_MONITORING",
+    "label": "Monitoring",
+    "seq": 477,
+    "forms": [
+     {
+      "label": "Monitoring UP/TUP/UPKP",
+      "form": "benMonitoringSetoranUPTUPUPKPForm",
+      "seq": 478
+     },
+     {
+      "label": "Monitoring Uang Muka",
+      "form": "benMonitoringUangMukaForm",
+      "seq": 479
+     },
+     {
+      "label": "Monitoring Penerimaan Bendahara",
+      "form": "benMonitoringRealisasiPenerimaan",
+      "seq": 480
+     },
+     {
+      "label": "Monitoring Dana Titipan",
+      "form": "benMonitoringDanaTitipanForm",
+      "seq": 481
+     },
+     {
+      "label": "Monitoring UPBPP",
+      "form": "benMonitoringUpbppForm",
+      "seq": 483
+     }
+    ],
+    "children": []
+   },
+   {
+    "kode": "BEN_UPLOAD",
+    "label": "Upload",
+    "seq": 482,
+    "forms": [
+     {
+      "label": "Upload Data Penerimaan",
+      "form": "benUploadDataPenerimaanForm",
+      "seq": 483
+     },
+     {
+      "label": "Upload Dok persetujuan UP",
+      "form": "benUploadDokPersetujuanUpForm",
+      "seq": 20519
+     },
+     {
+      "label": "Upload Dok persetujuan TUP",
+      "form": "benUploadDokPersetujuanTupForm",
+      "seq": 20548
+     }
+    ],
+    "children": []
+   },
+   {
+    "kode": "BEN_UTILITY",
+    "label": "Referensi",
+    "seq": 484,
+    "forms": [
+     {
+      "label": "Referensi Kelompok Akun UP",
+      "form": "benKelompokAkunUPForm",
+      "seq": 485
+     },
+     {
+      "label": "Referensi Wajib Pajak / Wajib Bayar",
+      "form": "benWajibPajakForm",
+      "seq": 486
+     },
+     {
+      "label": "Referensi Variabel UP PNBP",
+      "form": "benVariableUPForm",
+      "seq": 487
+     },
+     {
+      "label": "Referensi Pajak Honorarium",
+      "form": "benPajakHonorariumForm",
+      "seq": 488
+     },
+     {
+      "label": "Referensi Penerima Honor",
+      "form": "benPenerimaHonorForm",
+      "seq": 489
+     },
+     {
+      "label": "Membuat Mapping Kategori Kas dan Jenis SPP",
+      "form": "benJenisKategoriSpp",
+      "seq": 490
+     },
+     {
+      "label": "Referensi Detail Rekening",
+      "form": "benRekeningBendaharaForm",
+      "seq": 491
+     },
+     {
+      "label": "Referensi Kartu Kredit Pemerintah",
+      "form": "benKartuKreditPemerintahForm",
+      "seq": 492
+     },
+     {
+      "label": "Referensi Valas",
+      "form": "benRefValasForm",
+      "seq": 21053
+     }
+    ],
+    "children": []
+   },
+   {
+    "kode": "BEN_TUTUP_BUKU",
+    "label": "Tutup Buku",
+    "seq": 492,
+    "forms": [],
+    "children": []
+   },
+   {
+    "kode": "BEN_VALIDASI",
+    "label": "Validasi",
+    "seq": 520,
+    "forms": [
+     {
+      "label": "Validasi Usulan UP KPA",
+      "form": "benValidasiUsulanUpForm",
+      "seq": 20511
+     },
+     {
+      "label": "Validasi Pembiayaan TUP KPA",
+      "form": "benValidasiPembiayaanTupForm",
+      "seq": 20516
+     },
+     {
+      "label": "Validasi Persetujuan UP KPPN",
+      "form": "benValidasiPersetujuanUpKppnForm",
+      "seq": 20520
+     },
+     {
+      "label": "Validasi Persetujuan TUP KPPN",
+      "form": "benValidasiPersetujuanTupKppnForm",
+      "seq": 20547
+     },
+     {
+      "label": "Validasi LPJ Bendahara",
+      "form": "benValidasiLpjForm",
+      "seq": 20671
+     },
+     {
+      "label": "Validasi Pengurangan Kas akibat Hilang/Bencana",
+      "form": "benValidasiPenguranganKasForm",
+      "seq": 21056
+     }
+    ],
+    "children": []
+   },
+   {
+    "kode": "BEN_TTE",
+    "label": "Proses TTE",
+    "seq": 2036,
+    "forms": [
+     {
+      "label": "Dokumen Pendukung SPM",
+      "form": "formMonitoringDokPendukung",
+      "seq": 20647
+     }
+    ],
+    "children": []
+   }
+  ]
+ },
+ {
+  "kode": "KOM_VALAS",
+  "label": "Komitmen Valas",
+  "seq": 56,
+  "forms": [],
+  "children": [
+   {
+    "kode": "KOM_VALAS_BAST",
+    "label": "BAST UP/TUP Valas",
+    "seq": 2052,
+    "forms": [
+     {
+      "label": "Mencatat Penerima Barang/Jasa UP Valas",
+      "form": "komValasCatatUPForm",
+      "seq": 20675
+     }
+    ],
+    "children": []
+   }
+  ]
+ },
+ {
+  "kode": "SPM",
+  "label": "Pembayaran",
+  "seq": 60,
+  "forms": [],
+  "children": [
+   {
+    "kode": "SPM_RUH_SPP",
+    "label": "RUH Pembayaran",
+    "seq": 693,
+    "forms": [
+     {
+      "label": "Referensi Wajib Pajak / Wajib Bayar",
+      "form": "benWajibPajakForm",
+      "seq": 694
+     },
+     {
+      "label": "Catat/Ubah SPP",
+      "form": "spmDaftarSPP",
+      "seq": 695
+     },
+     {
+      "label": "Renkas Harian",
+      "form": "formAwalRenkasHarianMultiyear",
+      "seq": 697
+     },
+     {
+      "label": "Mencatat Perintah Bayar",
+      "form": "benCatatPerintahBayarForm",
+      "seq": 698
+     },
+     {
+      "label": "Dispensasi RPD",
+      "form": "spmKppnSpdRenkasHarian",
+      "seq": 19869
+     },
+     {
+      "label": "Proyeksi Belanja Bulanan",
+      "form": "formProyeksiBulanan",
+      "seq": 20593
+     }
+    ],
+    "children": []
+   },
+   {
+    "kode": "SPM_VALIDASI_SPP",
+    "label": "Validasi",
+    "seq": 700,
+    "forms": [
+     {
+      "label": "Validasi SPP",
+      "form": "spmValidasiSPP",
+      "seq": 701
+     },
+     {
+      "label": "Validasi SPM",
+      "form": "spmValidasiSPM",
+      "seq": 702
+     },
+     {
+      "label": "Validasi Perintah Bayar",
+      "form": "validasiPerintahBayarForm",
+      "seq": 703
+     },
+     {
+      "label": "Void SP2D",
+      "form": "spmVoidSP2D",
+      "seq": 704
+     }
+    ],
+    "children": []
+   },
+   {
+    "kode": "SPM_PENCETAKAN_SPP",
+    "label": "Cetak",
+    "seq": 705,
+    "forms": [
+     {
+      "label": "Mencetak SPP",
+      "form": "formCetakSpp",
+      "seq": 706
+     },
+     {
+      "label": "Mencetak SPM",
+      "form": "formCetakSpm",
+      "seq": 707
+     },
+     {
+      "label": "Cetak Arsip SPM",
+      "form": "formCetakSpmU",
+      "seq": 709
+     },
+     {
+      "label": "Cetak Arsip SPP",
+      "form": "formCetakSppU",
+      "seq": 710
+     },
+     {
+      "label": "Cetak Arsip SPP TTE",
+      "form": "formCetakSppUTTE",
+      "seq": 711
+     },
+     {
+      "label": "Laporan FA Detail (16 Segmen)",
+      "form": "glpLaporanFADetailForm",
+      "seq": 711
+     },
+     {
+      "label": "Cetak Arsip SPM TTE",
+      "form": "formCetakSpmUTTE",
+      "seq": 712
+     },
+     {
+      "label": "Cetak DPT & SPBy KKP",
+      "form": "komResumeBastNonKontrak",
+      "seq": 713
+     }
+    ],
+    "children": []
+   },
+   {
+    "kode": "SPM_ADK",
+    "label": "ADK",
+    "seq": 714,
+    "forms": [
+     {
+      "label": "ADK SPP OTP",
+      "form": "formAdkSppOtp",
+      "seq": 716
+     },
+     {
+      "label": "ADK SPP DS",
+      "form": "formAdkSppDs",
+      "seq": 716
+     },
+     {
+      "label": "ADK SPM DS",
+      "form": "formAdkSpmDs",
+      "seq": 717
+     },
+     {
+      "label": "Kirim MPHLBJS ke KPPN",
+      "form": "formAdkHibahOTP",
+      "seq": 718
+     },
+     {
+      "label": "ADK SPM OTP",
+      "form": "formAdkSpmInterkoneksiOtp",
+      "seq": 719
+     }
+    ],
+    "children": []
+   },
+   {
+    "kode": "SPM_UPLOAD",
+    "label": "Catat/Upload",
+    "seq": 720,
+    "forms": [
+     {
+      "label": "Upload Dokumen Pendukung",
+      "form": "spmUploadDokPendukung",
+      "seq": 721
+     },
+     {
+      "label": "Mencatat/Upload Nomor Tagihan ADK",
+      "form": "spmMencatatNomorTagihanADK",
+      "seq": 722
+     },
+     {
+      "label": "Mencatat/Upload BLU",
+      "form": "spmMencatatNomorTagihanBLU",
+      "seq": 723
+     },
+     {
+      "label": "Mencatat/Upload SP2D",
+      "form": "spmMencatatNomorTagihanSP2D",
+      "seq": 724
+     },
+     {
+      "label": "Mencatat/Upload SP3",
+      "form": "spmMencatatNomorTagihanSP3",
+      "seq": 725
+     },
+     {
+      "label": "Mencatat Nomor Persetujuan MPHL-BJS",
+      "form": "spmMencatatNomorPengesahan",
+      "seq": 726
+     },
+     {
+      "label": "Mencatat Persetujuan SP2D Koreksi",
+      "form": "spmMencatatTanggalSP2DKoreksi",
+      "seq": 727
+     },
+     {
+      "label": "ADK Rekening Penyalur",
+      "form": "formAdkRekPenyalur",
+      "seq": 728
+     },
+     {
+      "label": "Mencatat SP3 LC",
+      "form": "spmMencatatTagihanSP3LC",
+      "seq": 729
+     }
+    ],
+    "children": []
+   },
+   {
+    "kode": "SPM_MONITORING",
+    "label": "Monitoring",
+    "seq": 727,
+    "forms": [
+     {
+      "label": "Monitoring DRPP",
+      "form": "benDrppForm",
+      "seq": 1
+     },
+     {
+      "label": "Monitoring DRPP Hibah",
+      "form": "benDrppHibahForm",
+      "seq": 2
+     },
+     {
+      "label": "Monitoring Perintah Bayar",
+      "form": "benMonitoringPerintahBayarForm",
+      "seq": 728
+     },
+     {
+      "label": "Monitoring Dok.Pendukung",
+      "form": "formMonitoringDokPendukung",
+      "seq": 729
+     },
+     {
+      "label": "Monitoring SPP",
+      "form": "formMonitoringSPP",
+      "seq": 730
+     },
+     {
+      "label": "Monitoring Belanja Operasional (PPP)",
+      "form": "formMonitoringCommonExpenses",
+      "seq": 731
+     },
+     {
+      "label": "Monitoring ADK",
+      "form": "formMonitoringADKOTP",
+      "seq": 731
+     },
+     {
+      "label": "Monitoring Tagihan Interkoneksi",
+      "form": "formMonitoringTagihanSaktiApi",
+      "seq": 799
+     },
+     {
+      "label": "Pemulihan/penggantian Dokumen",
+      "form": "formMonitoringDokPengganti",
+      "seq": 20683
+     }
+    ],
+    "children": []
+   },
+   {
+    "kode": "SPM_REFERENSI",
+    "label": "Referensi",
+    "seq": 734,
+    "forms": [
+     {
+      "label": "Referensi Data Pelanggan",
+      "form": "formReferensiTelkom",
+      "seq": 735
+     },
+     {
+      "label": "Referensi Reksus",
+      "form": "spmReferensiReksus",
+      "seq": 736
+     },
+     {
+      "label": "Mapping COA SPM",
+      "form": "formMappingCOA",
+      "seq": 737
+     }
+    ],
+    "children": []
+   },
+   {
+    "kode": "SPM_TTE",
+    "label": "Proses TTE",
+    "seq": 2041,
+    "forms": [
+     {
+      "label": "Dokumen Pendukung SPM",
+      "form": "formMonitoringDokPendukung",
+      "seq": 20661
+     }
+    ],
+    "children": []
+   }
+  ]
+ },
+ {
+  "kode": "PER",
+  "label": "Persediaan",
+  "seq": 70,
+  "forms": [],
+  "children": [
+   {
+    "kode": "PER_REFERENSI",
+    "label": "Referensi",
+    "seq": 890,
+    "forms": [
+     {
+      "label": "Metode Pencatatan Persediaan",
+      "form": "perMetodePencatatanForm",
+      "seq": 891
+     },
+     {
+      "label": "Metode Penilaian Persediaan",
+      "form": "perMetodePenilaianForm",
+      "seq": 892
+     },
+     {
+      "label": "Mengelola Barang Persediaan",
+      "form": "perBarangPersediaanForm",
+      "seq": 893
+     },
+     {
+      "label": "Mengelola Kategori SubSubKelompok",
+      "form": "perSubSubKelompokForm",
+      "seq": 894
+     }
+    ],
+    "children": []
+   },
+   {
+    "kode": "PER_TRANSAKSI_MASUK",
+    "label": "Transaksi Masuk",
+    "seq": 895,
+    "forms": [
+     {
+      "label": "Saldo Awal",
+      "form": "perDaftarTransaksiMasukForm",
+      "seq": 896
+     },
+     {
+      "label": "Pembelian",
+      "form": "perDaftarTransaksiMasukForm",
+      "seq": 897
+     },
+     {
+      "label": "Hibah Masuk",
+      "form": "perDaftarTransaksiMasukForm",
+      "seq": 899
+     },
+     {
+      "label": "Rampasan",
+      "form": "perDaftarTransaksiMasukForm",
+      "seq": 900
+     },
+     {
+      "label": "Perolehan Lainnya",
+      "form": "perDaftarTransaksiMasukForm",
+      "seq": 901
+     },
+     {
+      "label": "Reklasifikasi Dari Aset",
+      "form": "perDaftarTransaksiMasukForm",
+      "seq": 902
+     },
+     {
+      "label": "Reklasifikasi Masuk",
+      "form": "perDaftarTransaksiMasukForm",
+      "seq": 903
+     },
+     {
+      "label": "Hibah Masuk BLU",
+      "form": "perDaftarTransaksiMasukForm",
+      "seq": 904
+     },
+     {
+      "label": "Transfer Masuk Online (Sesama SAKTI)",
+      "form": "perDaftarTransaksiMasukForm",
+      "seq": 905
+     },
+     {
+      "label": "Internal Transfer Masuk",
+      "form": "perDaftarTransaksiMasukForm",
+      "seq": 906
+     },
+     {
+      "label": "Internal Transfer Masuk Non Aktif Pembantu",
+      "form": "perDaftarTransaksiMasukForm",
+      "seq": 907
+     }
+    ],
+    "children": []
+   },
+   {
+    "kode": "PER_TRANSAKSI_KELUAR",
+    "label": "Transaksi Keluar",
+    "seq": 909,
+    "forms": [
+     {
+      "label": "Pemakaian (Habis Pakai\\ Penjualan\\ Penyerahan ke Masyarakat\\ Bansos)",
+      "form": "perDaftarTransaksiKeluarForm",
+      "seq": 910
+     },
+     {
+      "label": "Hibah Keluar",
+      "form": "perDaftarTransaksiKeluarForm",
+      "seq": 912
+     },
+     {
+      "label": "Penghapusan (Keluar) Lainnya",
+      "form": "perDaftarTransaksiKeluarForm",
+      "seq": 913
+     },
+     {
+      "label": "Internal Transfer Keluar",
+      "form": "perDaftarTransaksiKeluarForm",
+      "seq": 914
+     },
+     {
+      "label": "Internal Transfer Non Aktif UAPKPB",
+      "form": "perDaftarTransaksiKeluarForm",
+      "seq": 915
+     },
+     {
+      "label": "Usang",
+      "form": "perDaftarTransaksiKeluarForm",
+      "seq": 916
+     },
+     {
+      "label": "Rusak",
+      "form": "perDaftarTransaksiKeluarForm",
+      "seq": 917
+     },
+     {
+      "label": "Penghapusan (Usang/Rusak)",
+      "form": "perDaftarPenghapusanLainnyaForm",
+      "seq": 918
+     },
+     {
+      "label": "Internal Transfer Seluruhnya",
+      "form": "perDaftarInternalTransferTotal",
+      "seq": 919
+     },
+     {
+      "label": "Reklasifikasi Ke Aset",
+      "form": "perDaftarTransaksiKeluarForm",
+      "seq": 920
+     },
+     {
+      "label": "Reklasifikasi Keluar",
+      "form": "perDaftarTransaksiKeluarForm",
+      "seq": 921
+     },
+     {
+      "label": "Transfer Keluar Online (Sesama SAKTI)",
+      "form": "perDaftarTransaksiKeluarForm",
+      "seq": 922
+     }
+    ],
+    "children": []
+   },
+   {
+    "kode": "PER_KOREKSI",
+    "label": "Koreksi",
+    "seq": 924,
+    "forms": [
+     {
+      "label": "Koreksi Jumlah",
+      "form": "perDaftarKoreksiForm",
+      "seq": 925
+     },
+     {
+      "label": "Koreksi Nilai",
+      "form": "perDaftarKoreksiNilaiBarangForm",
+      "seq": 926
+     },
+     {
+      "label": "Batal Transfer Keluar Online",
+      "form": "perDaftarKoreksiTransferForm",
+      "seq": 927
+     },
+     {
+      "label": "Batal Penghapusan (Usang/Rusak)",
+      "form": "perDaftarTransaksiMasukForm",
+      "seq": 20611
+     },
+     {
+      "label": "Batal Catat Usang Rusak",
+      "form": "perDaftarTransaksiMasukForm",
+      "seq": 20661
+     },
+     {
+      "label": "Batal Catat Usang Rusak",
+      "form": "perDaftarTransaksiMasukForm",
+      "seq": 20688
+     },
+     {
+      "label": "Normalisasi Data Persediaan",
+      "form": "perDaftarTransaksiMasukForm",
+      "seq": 20734
+     }
+    ],
+    "children": []
+   },
+   {
+    "kode": "PER_OPNAME_FISIK",
+    "label": "Opname Fisik",
+    "seq": 928,
+    "forms": [
+     {
+      "label": "Cetak Bahan Opname Fisik",
+      "form": "perDaftarCetakBahanOpnameFisikForm",
+      "seq": 929
+     },
+     {
+      "label": "Rekam Hasil Opname Fisik",
+      "form": "perDaftarMemasukkanHasilOpnamFisikForm",
+      "seq": 930
+     },
+     {
+      "label": "Persetujuan Opname Fisik",
+      "form": "perDaftarPersetujuanHasilOpnameFisikForm",
+      "seq": 931
+     }
+    ],
+    "children": []
+   },
+   {
+    "kode": "PER_PERSETUJUAN",
+    "label": "Persetujuan",
+    "seq": 932,
+    "forms": [
+     {
+      "label": "Hapus Transaksi Persediaan Per Periode",
+      "form": "perHapusTransaksiPersediaanForm",
+      "seq": 933
+     },
+     {
+      "label": "Persetujuan Transaksi",
+      "form": "perDaftarPersetujuanTransaksiForm",
+      "seq": 934
+     }
+    ],
+    "children": []
+   },
+   {
+    "kode": "PER_PELAPORAN",
+    "label": "Pelaporan",
+    "seq": 950,
+    "forms": [
+     {
+      "label": "Cetak Laporan Buku Persediaan",
+      "form": "perDetailCetakLaporanBukuPersediaanForm",
+      "seq": 951
+     },
+     {
+      "label": "Cetak Laporan Persediaan",
+      "form": "perDetailCetakLaporanPersediaanUAKPBForm",
+      "seq": 952
+     },
+     {
+      "label": "Cetak Laporan Rincian Persediaan",
+      "form": "perDetailLaporanRincianPersediaanUAKPBForm",
+      "seq": 953
+     },
+     {
+      "label": "Cetak Laporan Transaksi Persediaan",
+      "form": "perDetailLaporanTransaksiPersedianForm",
+      "seq": 954
+     },
+     {
+      "label": "Cetak Laporan Mutasi Persediaan",
+      "form": "perDetailLaporanMutasiPersediaanForm",
+      "seq": 955
+     },
+     {
+      "label": "Cetak Laporan Posisi Persediaan Neraca",
+      "form": "perDetailLaporanPosisiPersediaanNeracaForm",
+      "seq": 956
+     },
+     {
+      "label": "Cetak Laporan Monitoring Reklas Aset Persediaan",
+      "form": "perDetailLaporanMonitorReklasifikasiDariAsset",
+      "seq": 957
+     },
+     {
+      "label": "Cetak Laporan Monitoring Reklas Masuk - Reklas Keluar",
+      "form": "perDetailLaporanMonitorReklasifikasi",
+      "seq": 958
+     },
+     {
+      "label": "Cetak Laporan Monitoring Transfer Masuk - Keluar",
+      "form": "perDetailLaporanMonitoringTransferOnline",
+      "seq": 959
+     },
+     {
+      "label": "Cetak Laporan Monitoring Internal Transfer Masuk - Keluar",
+      "form": "perDetailLaporanMonitoringTransfer",
+      "seq": 960
+     }
+    ],
+    "children": []
+   },
+   {
+    "kode": "PER_TUTUP_BUKU",
+    "label": "Tutup Buku",
+    "seq": 961,
+    "forms": [
+     {
+      "label": "Tutup Periode Persediaan",
+      "form": "perTutupPeriodeForm",
+      "seq": 962
+     },
+     {
+      "label": "Buka Periode Persediaan",
+      "form": "perBukaPeriodeForm",
+      "seq": 21083
+     }
+    ],
+    "children": []
+   },
+   {
+    "kode": "PER_MIGRASI_DATA",
+    "label": "Migrasi Data",
+    "seq": 963,
+    "forms": [
+     {
+      "label": "Migrasi Saldo Awal",
+      "form": "perMigrasiSaldoAwalForm",
+      "seq": 1264
+     }
+    ],
+    "children": []
+   },
+   {
+    "kode": "PER_MONITORING",
+    "label": "Monitoring",
+    "seq": 967,
+    "forms": [
+     {
+      "label": "Monitoring Pembelian Persediaan",
+      "form": "perMonitoringPembelian",
+      "seq": 968
+     }
+    ],
+    "children": []
+   },
+   {
+    "kode": "PER_TAK_DIKUASAI",
+    "label": "Persediaan Tak Dikuasai",
+    "seq": 969,
+    "forms": [
+     {
+      "label": "Pencatatan Persediaan tak Dikuasai",
+      "form": "perDaftarTransaksiKeluarForm",
+      "seq": 970
+     },
+     {
+      "label": "Penghapusan Daftar Persediaan tak Dikuasai",
+      "form": "perDaftarTransaksiKeluarForm",
+      "seq": 971
+     },
+     {
+      "label": "Batal Pencatatan Persediaan tak Dikuasai",
+      "form": "perDaftarTransaksiMasukForm",
+      "seq": 972
+     },
+     {
+      "label": "Laporan Persediaan tak Dikuasai",
+      "form": "perLaporanPersediaanTakDikuasai",
+      "seq": 973
+     },
+     {
+      "label": "Daftar Persediaan tak Dikuasai",
+      "form": "perDaftarPersediaanTakDikuasai",
+      "seq": 974
+     }
+    ],
+    "children": []
+   },
+   {
+    "kode": "PER_DALAM_PROSES",
+    "label": "Persediaan Dalam Proses",
+    "seq": 975,
+    "forms": [
+     {
+      "label": "Penyelesaian Persediaan Dalam Proses",
+      "form": "perDaftarTransaksiMasukForm",
+      "seq": 976
+     },
+     {
+      "label": "Laporan Persediaan Dalam Proses",
+      "form": "perDetailLaporanDalamProses",
+      "seq": 977
+     }
+    ],
+    "children": []
+   },
+   {
+    "kode": "PER_KOREKSI_AUDITED",
+    "label": "Koreksi Audited",
+    "seq": 1019,
+    "forms": [
+     {
+      "label": "Koreksi Audited Bertambah",
+      "form": "perKoreksiBarangAuditedForm",
+      "seq": 20728
+     },
+     {
+      "label": "Koreksi Audited Berkurang",
+      "form": "perKoreksiBerkurangAuditedForm",
+      "seq": 20729
+     },
+     {
+      "label": "Pembalik Koreksi Audited",
+      "form": "perDaftarTransaksiMasukForm",
+      "seq": 20730
+     },
+     {
+      "label": "Tinjut Koreksi Audited",
+      "form": "perDaftarTransaksiMasukForm",
+      "seq": 20731
+     }
+    ],
+    "children": []
+   },
+   {
+    "kode": "PER_LIKUIDASI",
+    "label": "Likuidasi",
+    "seq": 1256,
+    "forms": [
+     {
+      "label": "Likuidasi Masuk",
+      "form": "perDaftarTransaksiMasukForm",
+      "seq": 1257
+     },
+     {
+      "label": "Likuidasi Keluar",
+      "form": "perDaftarTransaksiKeluarForm",
+      "seq": 1258
+     }
+    ],
+    "children": []
+   },
+   {
+    "kode": "PER_UPLOAD_DATA",
+    "label": "Upload Data BLU",
+    "seq": 2026,
+    "forms": [
+     {
+      "label": "Upload Data Referensi",
+      "form": "perUploadReferensiForm",
+      "seq": 20606
+     },
+     {
+      "label": "Upload Data Transaksi",
+      "form": "perUploadDataForm",
+      "seq": 20607
+     }
+    ],
+    "children": []
+   }
+  ]
+ },
+ {
+  "kode": "AST",
+  "label": "Aset Tetap",
+  "seq": 80,
+  "forms": [],
+  "children": [
+   {
+    "kode": "AST_RUH",
+    "label": "RUH",
+    "seq": 249,
+    "forms": [],
+    "children": [
+     {
+      "kode": "AST_RUH_BMN",
+      "label": "Transaksi BMN",
+      "seq": 250,
+      "forms": [],
+      "children": [
+       {
+        "kode": "AST_RUH_BMN_PEROLEHAN",
+        "label": "Perolehan",
+        "seq": 251,
+        "forms": [
+         {
+          "label": "Saldo Awal",
+          "form": "astListBMNForm",
+          "seq": 252
+         },
+         {
+          "label": "Pembelian",
+          "form": "astListBMNForm",
+          "seq": 253
+         },
+         {
+          "label": "Transfer Masuk Melalui ADK",
+          "form": "astListTransferMasukBMNForm",
+          "seq": 254
+         },
+         {
+          "label": "Transfer Masuk Online",
+          "form": "astListTransferMasukBMNForm",
+          "seq": 255
+         },
+         {
+          "label": "Transfer Masuk Manual",
+          "form": "astListTransferMasukBMNForm",
+          "seq": 256
+         },
+         {
+          "label": "Hibah Masuk",
+          "form": "astListBMNForm",
+          "seq": 257
+         },
+         {
+          "label": "Rampasan",
+          "form": "astListBMNForm",
+          "seq": 258
+         },
+         {
+          "label": "Penyelesaian Pembangunan Langsung",
+          "form": "astListBMNForm",
+          "seq": 259
+         },
+         {
+          "label": "Penyelesaian Pembangunan Dengan KDP",
+          "form": "astListBMNForm",
+          "seq": 260
+         },
+         {
+          "label": "Pembatalan Penghapusan",
+          "form": "astListBMNForm",
+          "seq": 261
+         },
+         {
+          "label": "Reklasifikasi Masuk",
+          "form": "astListBMNForm",
+          "seq": 262
+         },
+         {
+          "label": "Bangun Serah Guna",
+          "form": "astListBMNForm",
+          "seq": 263
+         },
+         {
+          "label": "Bangun Guna Serah",
+          "form": "astListBMNForm",
+          "seq": 264
+         },
+         {
+          "label": "Pertukaran",
+          "form": "astListBMNForm",
+          "seq": 265
+         },
+         {
+          "label": "Perolehan Lainnya",
+          "form": "astListBMNForm",
+          "seq": 266
+         },
+         {
+          "label": "Reklasifikasi Dari BPYBDS",
+          "form": "astListBMNForm",
+          "seq": 267
+         },
+         {
+          "label": "Reklas Asset Dari Persediaan",
+          "form": "astListReklasMasukAssetPersediaanForm",
+          "seq": 268
+         },
+         {
+          "label": "Batal Transfer Keluar Online",
+          "form": "astListBatalTransferMasukBMNForm",
+          "seq": 1260
+         }
+        ],
+        "children": []
+       },
+       {
+        "kode": "AST_RUH_BMN_PERUBAHAN",
+        "label": "Perubahan",
+        "seq": 269,
+        "forms": [
+         {
+          "label": "Perubahan Kuantitas",
+          "form": "astListBMNPerubahanForm",
+          "seq": 270
+         },
+         {
+          "label": "Pengembangan Langsung",
+          "form": "astListBMNPerubahanForm",
+          "seq": 271
+         },
+         {
+          "label": "Pengembangan Dengan KDP",
+          "form": "astListBMNPerubahanForm",
+          "seq": 272
+         },
+         {
+          "label": "Perubahan Kondisi",
+          "form": "astListBMNPerubahanForm",
+          "seq": 273
+         },
+         {
+          "label": "Koreksi Perubahan Nilai Bertambah",
+          "form": "astListBMNPerubahanForm",
+          "seq": 274
+         },
+         {
+          "label": "Koreksi Perubahan Nilai Berkurang",
+          "form": "astListBMNPerubahanForm",
+          "seq": 275
+         },
+         {
+          "label": "Penerimaan Aset dari Pengembangan Aset Renovasi",
+          "form": "astListBMNPerubahanForm",
+          "seq": 276
+         },
+         {
+          "label": "Koreksi Rincian Aset",
+          "form": "astPerubahanRincianLain",
+          "seq": 277
+         },
+         {
+          "label": "Koreksi Manual",
+          "form": "astListKoreksiManualTransaksiForm",
+          "seq": 278
+         },
+         {
+          "label": "Koreksi Rincian Aset per Transaksi",
+          "form": "astListBMNPerubahanRincianTrxForm",
+          "seq": 1261
+         },
+         {
+          "label": "Perubahan Satker Tujuan TK",
+          "form": "astListBMNPenghapusanForm",
+          "seq": 1262
+         },
+         {
+          "label": "Koreksi Susulan",
+          "form": "astListBMNPerubahanForm",
+          "seq": 20506
+         }
+        ],
+        "children": []
+       },
+       {
+        "kode": "AST_RUH_BMN_BMNUSANG",
+        "label": "BMN Usang",
+        "seq": 279,
+        "forms": [
+         {
+          "label": "Pencatatan Barang Usang",
+          "form": "astListBMNHilangForm",
+          "seq": 280
+         },
+         {
+          "label": "Pencatatan Pembatalan Barang Usang",
+          "form": "astListBMNHilangForm",
+          "seq": 281
+         }
+        ],
+        "children": []
+       },
+       {
+        "kode": "AST_RUH_BMN_BMNHILANG",
+        "label": "BMN Hilang",
+        "seq": 282,
+        "forms": [
+         {
+          "label": "Pencatatan Barang Hilang",
+          "form": "astListBMNHilangForm",
+          "seq": 283
+         },
+         {
+          "label": "Pencatatan Pembatalan Barang Hilang",
+          "form": "astListBMNHilangForm",
+          "seq": 284
+         }
+        ],
+        "children": []
+       },
+       {
+        "kode": "AST_RUH_BMN_PENGHENTIANGUNA",
+        "label": "Penghentian Penggunaan",
+        "seq": 285,
+        "forms": [
+         {
+          "label": "Penghentian Penggunaan",
+          "form": "astListBMNHentiGunaForm",
+          "seq": 286
+         },
+         {
+          "label": "Penggunaan Kembali",
+          "form": "astListBMNHentiGunaForm",
+          "seq": 287
+         }
+        ],
+        "children": []
+       },
+       {
+        "kode": "AST_RUH_BMN_USULHAPUSBMN",
+        "label": "Usulan Penghapusan BMN",
+        "seq": 288,
+        "forms": [
+         {
+          "label": "Pencatatan Barang Yang Akan Dihapuskan",
+          "form": "astListBMNUsulanHapusForm",
+          "seq": 289
+         },
+         {
+          "label": "Pencatatan Pembatalan Barang Yang Akan Dihapuskan",
+          "form": "astListBMNUsulanHapusForm",
+          "seq": 290
+         }
+        ],
+        "children": []
+       },
+       {
+        "kode": "AST_RUH_BMN_PENGHAPUSAN",
+        "label": "Penghapusan",
+        "seq": 291,
+        "forms": [
+         {
+          "label": "Penghapusan",
+          "form": "astListBMNPenghapusanForm",
+          "seq": 292
+         },
+         {
+          "label": "Transfer Keluar (Barang Aktif)",
+          "form": "astListBMNPenghapusanForm",
+          "seq": 293
+         },
+         {
+          "label": "Transfer Keluar (Henti Guna)",
+          "form": "astListBMNPenghapusanForm",
+          "seq": 294
+         },
+         {
+          "label": "Hibah Keluar",
+          "form": "astListBMNPenghapusanForm",
+          "seq": 295
+         },
+         {
+          "label": "Reklasifikasi Keluar",
+          "form": "astListBMNPenghapusanForm",
+          "seq": 296
+         },
+         {
+          "label": "Koreksi Pencatatan",
+          "form": "astListBMNPenghapusanForm",
+          "seq": 297
+         },
+         {
+          "label": "Reklas Keluar Persediaan",
+          "form": "astListBMNPenghapusanForm",
+          "seq": 298
+         },
+         {
+          "label": "Transfer Keluar (ATR)",
+          "form": "astListBMNPenghapusanForm",
+          "seq": 299
+         },
+         {
+          "label": "Hibah Keluar (Barang Henti)",
+          "form": "astListBMNPenghapusanForm",
+          "seq": 300
+         },
+         {
+          "label": "Transfer Keluar (Usul Hapus)",
+          "form": "astListBMNPenghapusanForm",
+          "seq": 20678
+         }
+        ],
+        "children": []
+       },
+       {
+        "kode": "AST_RUH_BMN_BPYBDS",
+        "label": "B P Y B D S",
+        "seq": 300,
+        "forms": [
+         {
+          "label": "Reklasifikasi Dari BMN",
+          "form": "astListBPYBDSForm",
+          "seq": 301
+         },
+         {
+          "label": "Penghapusan",
+          "form": "astListBPYBDSForm",
+          "seq": 302
+         }
+        ],
+        "children": []
+       },
+       {
+        "kode": "AST_RUH_BMN_KEMITRAAN",
+        "label": "Aset Kemitraan",
+        "seq": 303,
+        "forms": [
+         {
+          "label": "Perubahan BMN ke Aset Kemitraan",
+          "form": "astListKemitraanForm",
+          "seq": 304
+         },
+         {
+          "label": "Perubahan Aset kemitraan ke BMN",
+          "form": "astListKemitraanForm",
+          "seq": 305
+         },
+         {
+          "label": "Transfer Keluar Kemitraan",
+          "form": "astListKemitraanForm",
+          "seq": 20677
+         }
+        ],
+        "children": []
+       },
+       {
+        "kode": "AST_RUH_BMN_TRANSFERINTERNAL",
+        "label": "Transfer Internal",
+        "seq": 306,
+        "forms": [
+         {
+          "label": "Transfer Internal Keluar",
+          "form": "astListTransferInternalKeluarForm",
+          "seq": 307
+         },
+         {
+          "label": "Transfer Internal Masuk",
+          "form": "astListTransferInternalMasukForm",
+          "seq": 308
+         }
+        ],
+        "children": []
+       },
+       {
+        "kode": "AST_RUH_BMN_KONJAS",
+        "label": "Aset Konsesi Jasa",
+        "seq": 2031,
+        "forms": [
+         {
+          "label": "Perubahan BMN ke Aset Konsesi Jasa",
+          "form": "astListKonjasForm",
+          "seq": 20608
+         },
+         {
+          "label": "Perubahan Aset Konsesi Jasa ke BMN",
+          "form": "astListKonjasForm",
+          "seq": 20609
+         }
+        ],
+        "children": []
+       },
+       {
+        "kode": "AST_PROPERTI",
+        "label": "Properti Investasi",
+        "seq": 2034,
+        "forms": [
+         {
+          "label": "Reklas BMN ke PI",
+          "form": "astListBmnKePIForm",
+          "seq": 19796
+         },
+         {
+          "label": "Reklas PI ke BMN",
+          "form": "astListBmnKePIForm",
+          "seq": 19796
+         }
+        ],
+        "children": []
+       },
+       {
+        "kode": "AST_RUH_BMN_PMPP",
+        "label": "BMN Dalam Proses PMPP",
+        "seq": 2035,
+        "forms": [
+         {
+          "label": "Reklasifikasi BMN ke BMN Dalam Proses PMPP",
+          "form": "astListBmnKeBDPForm",
+          "seq": 20713
+         },
+         {
+          "label": "Reklasifikasi BMN Dalam Proses PMPP ke BMN",
+          "form": "astListBmnKeBDPForm",
+          "seq": 20714
+         },
+         {
+          "label": "Penghapusan Barang Dalam Proses PMPP",
+          "form": "astListBmnKeBDPForm",
+          "seq": 20729
+         }
+        ],
+        "children": []
+       }
+      ]
+     },
+     {
+      "kode": "AST_RUH_RENOVASI",
+      "label": "ATR - Menambah Masa Manfaat",
+      "seq": 317,
+      "forms": [
+       {
+        "label": "Saldo Awal",
+        "form": "astListRenovasiForm",
+        "seq": 318
+       },
+       {
+        "label": "Pembelian Aset",
+        "form": "astListRenovasiForm",
+        "seq": 319
+       },
+       {
+        "label": "Penyelesaian Langsung",
+        "form": "astListRenovasiForm",
+        "seq": 320
+       },
+       {
+        "label": "Penyelesaian Dengan KDP",
+        "form": "astListRenovasiForm",
+        "seq": 321
+       },
+       {
+        "label": "Perolehan Lainnya",
+        "form": "astListRenovasiForm",
+        "seq": 322
+       }
+      ],
+      "children": []
+     },
+     {
+      "kode": "AST_RUH_KDP",
+      "label": "Transaksi KDP",
+      "seq": 323,
+      "forms": [
+       {
+        "label": "Transfer Internal Keluar KDP",
+        "form": "astListTransferInternalKeluarKDPForm",
+        "seq": 324
+       },
+       {
+        "label": "Transfer Internal Masuk KDP",
+        "form": "astListTransferInternalMasukKDPForm",
+        "seq": 325
+       },
+       {
+        "label": "Saldo Awal",
+        "form": "astListKDPForm",
+        "seq": 326
+       },
+       {
+        "label": "Perolehan",
+        "form": "astListKDPForm",
+        "seq": 327
+       },
+       {
+        "label": "Transfer Masuk",
+        "form": "astListKDPForm",
+        "seq": 328
+       },
+       {
+        "label": "Hibah Masuk",
+        "form": "astListKDPForm",
+        "seq": 329
+       },
+       {
+        "label": "Pengembangan",
+        "form": "astListKDPForm",
+        "seq": 330
+       },
+       {
+        "label": "Koreksi Perubahan Nilai Bertambah",
+        "form": "astListKDPForm",
+        "seq": 331
+       },
+       {
+        "label": "Koreksi Perubahan Nilai Berkurang",
+        "form": "astListKDPForm",
+        "seq": 332
+       },
+       {
+        "label": "Transfer Keluar",
+        "form": "astListHapusKDPForm",
+        "seq": 333
+       },
+       {
+        "label": "Hibah Keluar",
+        "form": "astListHapusKDPForm",
+        "seq": 334
+       },
+       {
+        "label": "Penghapusan KDP",
+        "form": "astListHapusKDPForm",
+        "seq": 335
+       },
+       {
+        "label": "Perolehan Lainnya KDP",
+        "form": "astListKDPForm",
+        "seq": 336
+       },
+       {
+        "label": "Reklasifikasi KDP",
+        "form": "astListHapusKDPForm",
+        "seq": 1263
+       },
+       {
+        "label": "Transfer Masuk Online",
+        "form": "astListKDPForm",
+        "seq": 1268
+       },
+       {
+        "label": "Batal Transfer Keluar Online",
+        "form": "astListHapusKDPForm",
+        "seq": 1269
+       },
+       {
+        "label": "Koreksi Pencatatan KDP",
+        "form": "astListHapusKDPForm",
+        "seq": 1270
+       },
+       {
+        "label": "Penghentian KDP",
+        "form": "astListKDPForm",
+        "seq": 21051
+       },
+       {
+        "label": "Penggunaan Kembali KDP",
+        "form": "astListKDPForm",
+        "seq": 21052
+       }
+      ],
+      "children": []
+     },
+     {
+      "kode": "AST_RUH_BMNSEJ",
+      "label": "Transaksi BMN Bersejarah",
+      "seq": 337,
+      "forms": [
+       {
+        "label": "Saldo Awal",
+        "form": "astListBMNBersejarahForm",
+        "seq": 338
+       },
+       {
+        "label": "Perolehan",
+        "form": "astListBMNBersejarahForm",
+        "seq": 339
+       },
+       {
+        "label": "Penghapusan",
+        "form": "astListBMNBersejarahForm",
+        "seq": 340
+       },
+       {
+        "label": "Transfer Masuk",
+        "form": "astListBMNBersejarahForm",
+        "seq": 20675
+       },
+       {
+        "label": "Transfer Keluar",
+        "form": "astListBMNBersejarahForm",
+        "seq": 20679
+       }
+      ],
+      "children": []
+     },
+     {
+      "kode": "AST_RUH_BRGPHK3",
+      "label": "Transaksi Barang Pihak Ketiga",
+      "seq": 341,
+      "forms": [
+       {
+        "label": "Penghapusan",
+        "form": "astListBarangPihakKetigaForm",
+        "seq": 342
+       },
+       {
+        "label": "Perolehan",
+        "form": "astListBarangPihakKetigaForm",
+        "seq": 343
+       },
+       {
+        "label": "Transfer Masuk",
+        "form": "astListBarangPihakKetigaForm",
+        "seq": 20674
+       },
+       {
+        "label": "Transfer Keluar",
+        "form": "astListBarangPihakKetigaForm",
+        "seq": 20676
+       }
+      ],
+      "children": []
+     }
+    ]
+   },
+   {
+    "kode": "AST_RUH_PENYUSUTAN_PERHITUNGAN",
+    "label": "Perhitungan Penyusutan",
+    "seq": 354,
+    "forms": [],
+    "children": []
+   },
+   {
+    "kode": "AST_PERSETUJUAN",
+    "label": "Persetujuan",
+    "seq": 355,
+    "forms": [
+     {
+      "label": "Validasi",
+      "form": "astPersetujuanForm",
+      "seq": 356
+     },
+     {
+      "label": "Batal Validasi",
+      "form": "astPersetujuanForm",
+      "seq": 357
+     },
+     {
+      "label": "Persetujuan Transaksi",
+      "form": "astPersetujuanForm",
+      "seq": 358
+     },
+     {
+      "label": "Batal Persetujuan Transaksi",
+      "form": "astBatalTrxForm",
+      "seq": 359
+     }
+    ],
+    "children": []
+   },
+   {
+    "kode": "AST_MONITORING",
+    "label": "Monitoring",
+    "seq": 360,
+    "forms": [
+     {
+      "label": "Status Transaksi",
+      "form": "astMonitoringStatusTransaksiForm",
+      "seq": 361
+     },
+     {
+      "label": "BAST/Kuitansi Belum Tercatat",
+      "form": "astMonBastKuitansiBlmTrcatatForm",
+      "seq": 363
+     },
+     {
+      "label": "Penerimaan Data Aset dari UAPKPB",
+      "form": "astMonPenerimaanAsetForm",
+      "seq": 364
+     },
+     {
+      "label": "Penerimaan ADK Konsolidasi",
+      "form": "astPenerimaanADKKonsolidasi",
+      "seq": 365
+     }
+    ],
+    "children": []
+   },
+   {
+    "kode": "AST_CETAK",
+    "label": "Cetak",
+    "seq": 367,
+    "forms": [],
+    "children": [
+     {
+      "kode": "AST_CETAK_BUKU",
+      "label": "Buku/Daftar",
+      "seq": 368,
+      "forms": [
+       {
+        "label": "Buku Barang",
+        "form": "astCetakBukuBarangForm",
+        "seq": 369
+       },
+       {
+        "label": "Buku Barang Bersejarah",
+        "form": "astCetakBarangBersejarahForm",
+        "seq": 370
+       },
+       {
+        "label": "Daftar BMN Tahun Lalu",
+        "form": "astCetakBMNTahunLaluForm",
+        "seq": 372
+       },
+       {
+        "label": "Daftar Transaksi BMN",
+        "form": "astCetakTransaksiBMNForm",
+        "seq": 374
+       },
+       {
+        "label": "Register Transaksi Harian (RTH)",
+        "form": "astCetakRegisterTransaksiHarian",
+        "seq": 375
+       },
+       {
+        "label": "Listing BMN",
+        "form": "astCetakListingBMN",
+        "seq": 376
+       },
+       {
+        "label": "History BMN",
+        "form": "astCetakHistoryBMN2",
+        "seq": 377
+       },
+       {
+        "label": "Laporan Inventarisasi dan Penilaian Kembali",
+        "form": "astCetakDaftarRevalForm",
+        "seq": 378
+       },
+       {
+        "label": "Kartu Konstruksi Dalam Pengerjaan",
+        "form": "astCetakKartuKDP",
+        "seq": 379
+       },
+       {
+        "label": "Daftar Barang RB/H yang Diusulkan ke Pengelola",
+        "form": "astCetakDaftarBarangRBH",
+        "seq": 380
+       },
+       {
+        "label": "Monitoring Terima Reklas dari Persediaan",
+        "form": "astLapTerimaReklasDariPersediaan",
+        "seq": 381
+       },
+       {
+        "label": "Daftar SPM Terkait BMN",
+        "form": "astCetakSPMTerkaitBMN",
+        "seq": 382
+       },
+       {
+        "label": "Catatan Ringkas BMN",
+        "form": "astCatatanRingkasBMNForm",
+        "seq": 389
+       }
+      ],
+      "children": []
+     },
+     {
+      "kode": "AST_CETAK_LAPORAN",
+      "label": "Laporan",
+      "seq": 383,
+      "forms": [
+       {
+        "label": "Laporan Kondisi Barang",
+        "form": "astLapKondisiBarangForm",
+        "seq": 387
+       },
+       {
+        "label": "Laporan BMN",
+        "form": "astLaporanBMN",
+        "seq": 20607
+       }
+      ],
+      "children": []
+     },
+     {
+      "kode": "AST_CETAK_LAPORAN_KONJAS",
+      "label": "Laporan Konsesi Jasa Mitra",
+      "seq": 2032,
+      "forms": [
+       {
+        "label": "Laporan Aset Konjas",
+        "form": "astLapAsetKonjasForm",
+        "seq": 20633
+       },
+       {
+        "label": "Laporan Penyusutan Aset Konjas",
+        "form": "astLapPenyusutanAsetKonjasForm",
+        "seq": 20637
+       },
+       {
+        "label": "Laporan Aset Konjas Per Kontrak",
+        "form": "astLapAsetKonjasPerkontrakForm",
+        "seq": 20638
+       },
+       {
+        "label": "History Konjas",
+        "form": "astCetakHistoryKonjas",
+        "seq": 20639
+       },
+       {
+        "label": "Kartu KDP Konjas",
+        "form": "astCetakKartuKDPKonjas",
+        "seq": 20640
+       }
+      ],
+      "children": []
+     }
+    ]
+   },
+   {
+    "kode": "AST_ADK",
+    "label": "ADK",
+    "seq": 394,
+    "forms": [
+     {
+      "label": "Upload ADK",
+      "form": "astUploadADKForm",
+      "seq": 20727
+     }
+    ],
+    "children": [
+     {
+      "kode": "AST_ADK_PEMBUATAN",
+      "label": "Pembuatan ADK",
+      "seq": 395,
+      "forms": [
+       {
+        "label": "Pembuatan ADK Saldo Awal",
+        "form": "astPercabanganPembuatanADKSaldoAwal",
+        "seq": 396
+       },
+       {
+        "label": "Pembuatan ADK Konsolidasi",
+        "form": "astPercabanganPembuatanADKTahunBerjalan",
+        "seq": 397
+       },
+       {
+        "label": "Pembuatan ADK Pengembalian Konsolidasi",
+        "form": "astPengirimanKembaliADK",
+        "seq": 398
+       },
+       {
+        "label": "Pembuatan ADK Transfer Keluar",
+        "form": "astADKKirimTranferKeluar",
+        "seq": 399
+       },
+       {
+        "label": "Pembuatan ADK Permintaan Aktivasi Pembelian",
+        "form": "astADKPermintaanAktivasiPembantu",
+        "seq": 400
+       },
+       {
+        "label": "Pembuatan ADK Persetujuan Aktivasi Pembelian",
+        "form": "astADKLevelInduk",
+        "seq": 401
+       },
+       {
+        "label": "Pembuatan ADK Internal Transfer Keluar",
+        "form": "astADKLevelInduk",
+        "seq": 402
+       },
+       {
+        "label": "Pembuatan ADK Internal Transfer Keluar KDP",
+        "form": "astADKLevelIndukKDP",
+        "seq": 403
+       }
+      ],
+      "children": []
+     },
+     {
+      "kode": "AST_ADK_PENERIMAAN",
+      "label": "Penerimaan ADK",
+      "seq": 404,
+      "forms": [
+       {
+        "label": "Penerimaan ADK Saldo Awal",
+        "form": "astListADKForm",
+        "seq": 406
+       },
+       {
+        "label": "Penerimaan ADK Konsolidasi",
+        "form": "astListADKForm",
+        "seq": 407
+       },
+       {
+        "label": "Penerimaan ADK Pengembalian Konsolidasi",
+        "form": "astListADKForm",
+        "seq": 408
+       },
+       {
+        "label": "Penerimaan ADK Transfer Masuk",
+        "form": "astListADKForm",
+        "seq": 409
+       },
+       {
+        "label": "Penerimaan ADK Persetujuan Aktivasi Pembelian",
+        "form": "astListADKForm",
+        "seq": 410
+       },
+       {
+        "label": "Penerimaan ADK Internal Transfer Masuk",
+        "form": "astListADKForm",
+        "seq": 411
+       },
+       {
+        "label": "Penerimaan ADK Internal Transfer Masuk KDP",
+        "form": "astADKLevelTransferInternalKDP",
+        "seq": 412
+       },
+       {
+        "label": "Penerimaan Migrasi Saldo Awal",
+        "form": "astMigrasiSaldoAwalForm",
+        "seq": 1265
+       }
+      ],
+      "children": [
+       {
+        "kode": "AST_ADK_PENERIMAAN_AKTIVASI",
+        "label": "Penerimaan ADK Aktivasi",
+        "seq": 413,
+        "forms": [
+         {
+          "label": "Upload ADK",
+          "form": "astListADKForm",
+          "seq": 414
+         },
+         {
+          "label": "Menghubungkan Transaksi Dengan Kuitansi",
+          "form": "astPenempatanBastKwitansiDanAktivasiPembelian",
+          "seq": 415
+         },
+         {
+          "label": "Melakukan Aktivasi",
+          "form": "astAktivasiPembelian",
+          "seq": 416
+         }
+        ],
+        "children": []
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "kode": "AST_TUTUP_PERIODE",
+    "label": "Penutupan Periode",
+    "seq": 419,
+    "forms": [
+     {
+      "label": "Penutupan Periode Bulanan",
+      "form": "astTutupBukuModulForm",
+      "seq": 420
+     },
+     {
+      "label": "Buka Penutupan Periode",
+      "form": "astBukaTutupBukuModulForm",
+      "seq": 421
+     }
+    ],
+    "children": []
+   },
+   {
+    "kode": "AST_RUH_PENYUSUTAN",
+    "label": "Penyusutan",
+    "seq": 422,
+    "forms": [],
+    "children": []
+   },
+   {
+    "kode": "AST_PENGATURAN",
+    "label": "Pengaturan",
+    "seq": 425,
+    "forms": [
+     {
+      "label": "Pemilihan Logo",
+      "form": "astMengubahLogoForm",
+      "seq": 426
+     },
+     {
+      "label": "Hapus Data Untuk Migrasi Ulang",
+      "form": "astHapusAsetForm",
+      "seq": 427
+     }
+    ],
+    "children": []
+   },
+   {
+    "kode": "AST_REFERENSI",
+    "label": "Referensi",
+    "seq": 428,
+    "forms": [],
+    "children": []
+   },
+   {
+    "kode": "AST_BANTUAN",
+    "label": "Bantuan",
+    "seq": 429,
+    "forms": [],
+    "children": []
+   },
+   {
+    "kode": "AST_KELUAR",
+    "label": "Keluar",
+    "seq": 430,
+    "forms": [],
+    "children": []
+   },
+   {
+    "kode": "AST_LIKUIDASI",
+    "label": "Likuidasi",
+    "seq": 432,
+    "forms": [
+     {
+      "label": "Likuidasi Keluar",
+      "form": "astListBMNLikuidasiKeluarForm",
+      "seq": 1266
+     },
+     {
+      "label": "Likuidasi Masuk",
+      "form": "astListBMNLikuidasiMasukForm",
+      "seq": 1267
+     }
+    ],
+    "children": []
+   },
+   {
+    "kode": "AST_NORMALISASI",
+    "label": "Normalisasi",
+    "seq": 433,
+    "forms": [
+     {
+      "label": "Normalisasi BMN",
+      "form": "astListNormalisasiForm",
+      "seq": 20582
+     },
+     {
+      "label": "Normalisasi KDP",
+      "form": "astListNormalisasiForm",
+      "seq": 20583
+     },
+     {
+      "label": "Tinjut Normalisasi BMN",
+      "form": "astListTinjutNormalisasiBmnForm",
+      "seq": 20591
+     },
+     {
+      "label": "Tinjut Normalisasi KDP",
+      "form": "astListTinjutNormalisasiKdpForm",
+      "seq": 20592
+     }
+    ],
+    "children": []
+   },
+   {
+    "kode": "AST_KONJAS_MITRA",
+    "label": "Konsesi Jasa Mitra",
+    "seq": 2027,
+    "forms": [],
+    "children": [
+     {
+      "kode": "AST_RUH_KONJAS_MITRA",
+      "label": "Transaksi Konjas Mitra",
+      "seq": 2028,
+      "forms": [
+       {
+        "label": "Saldo Awal Konjas",
+        "form": "astListBMNKonjasForm",
+        "seq": 20610
+       },
+       {
+        "label": "Perolehan Konjas",
+        "form": "astListBMNKonjasForm",
+        "seq": 20611
+       },
+       {
+        "label": "Penyelesaian Pembangunan Konjas Dengan KDP Konjas",
+        "form": "astListBMNKonjasForm",
+        "seq": 20612
+       },
+       {
+        "label": "Pengembangan Konjas Dengan KDP Konjas",
+        "form": "astListBMNKonjasForm",
+        "seq": 20613
+       },
+       {
+        "label": "Transfer Masuk Konjas",
+        "form": "astListTransferMasukKonjasForm",
+        "seq": 20614
+       },
+       {
+        "label": "Batal Transfer Keluar Konjas",
+        "form": "astListTransferMasukKonjasForm",
+        "seq": 20615
+       },
+       {
+        "label": "Reklasifikasi Masuk Konjas",
+        "form": "astListBMNKonjasForm",
+        "seq": 20616
+       },
+       {
+        "label": "Koreksi Perubahan Nilai Bertambah Konjas",
+        "form": "astListKonjasPerubahanForm",
+        "seq": 20617
+       },
+       {
+        "label": "Koreksi Perubahan Nilai Berkurang Konjas",
+        "form": "astListKonjasPerubahanForm",
+        "seq": 20618
+       },
+       {
+        "label": "Transfer Keluar Konjas",
+        "form": "astListKonjasPenghapusanForm",
+        "seq": 20619
+       },
+       {
+        "label": "Reklasifikasi Keluar Konjas",
+        "form": "astListKonjasPenghapusanForm",
+        "seq": 20620
+       },
+       {
+        "label": "Perubahan Kuantitas Konjas",
+        "form": "astListBMNKonjasForm",
+        "seq": 20633
+       },
+       {
+        "label": "Koreksi Manual Konjas",
+        "form": "astListBMNKonjasForm",
+        "seq": 20641
+       },
+       {
+        "label": "Koreksi Pencatatan Konjas",
+        "form": "astListBMNKonjasForm",
+        "seq": 20654
+       }
+      ],
+      "children": []
+     },
+     {
+      "kode": "AST_RUH_KDP_KONJAS_MITRA",
+      "label": "Transaksi KDP Konjas Mitra",
+      "seq": 2029,
+      "forms": [
+       {
+        "label": "Saldo Awal KDP Konjas",
+        "form": "astListKDPKonjasForm",
+        "seq": 20621
+       },
+       {
+        "label": "Perolehan KDP Konjas",
+        "form": "astListKDPKonjasForm",
+        "seq": 20622
+       },
+       {
+        "label": "Transfer Masuk KDP Konjas",
+        "form": "astListKDPKonjasForm",
+        "seq": 20623
+       },
+       {
+        "label": "Reklasifikasi KDP Konjas",
+        "form": "astListHapusKDPKonjasForm",
+        "seq": 20624
+       },
+       {
+        "label": "Batal Transfer Keluar KDP Konjas",
+        "form": "astListHapusKDPKonjasForm",
+        "seq": 20625
+       },
+       {
+        "label": "Pengembangan KDP Konjas",
+        "form": "astListKDPKonjasForm",
+        "seq": 20626
+       },
+       {
+        "label": "Koreksi Perubahan Nilai Bertambah KDP Konjas",
+        "form": "astListKDPKonjasForm",
+        "seq": 20627
+       },
+       {
+        "label": "Koreksi Perubahan Nilai Berkurang KDP Konjas",
+        "form": "astListKDPKonjasForm",
+        "seq": 20628
+       },
+       {
+        "label": "Koreksi Pencatatan KDP Konjas",
+        "form": "astListHapusKDPKonjasForm",
+        "seq": 20629
+       },
+       {
+        "label": "Penghapusan/Penghentian KDP Konjas",
+        "form": "astListHapusKDPKonjasForm",
+        "seq": 20630
+       },
+       {
+        "label": "Transfer Keluar KDP Konjas",
+        "form": "astListHapusKDPKonjasForm",
+        "seq": 20631
+       },
+       {
+        "label": "Koreksi Perubahan Nilai Berkurang KDP Konjas",
+        "form": "astListKDPKonjasForm",
+        "seq": 20648
+       },
+       {
+        "label": "Koreksi Perubahan Nilai Bertambah KDP Konjas",
+        "form": "astListKDPKonjasForm",
+        "seq": 20649
+       }
+      ],
+      "children": []
+     },
+     {
+      "kode": "AST_KONJAS_MITRA_REFERENSI",
+      "label": "Referensi Konsesi Jasa Mitra",
+      "seq": 2030,
+      "forms": [
+       {
+        "label": "Kontrak Konjas",
+        "form": "astListKontrakKonjasForm",
+        "seq": 20632
+       },
+       {
+        "label": "Mitra Konjas",
+        "form": "astListMitraKonjasForm",
+        "seq": 20634
+       }
+      ],
+      "children": []
+     }
+    ]
+   },
+   {
+    "kode": "AST_USUL_HAPUS_MASAL",
+    "label": "Usul Hapus dan Penghapusan Masal",
+    "seq": 2033,
+    "forms": [],
+    "children": []
+   }
+  ]
+ },
+ {
+  "kode": "AR",
+  "label": "Piutang",
+  "seq": 90,
+  "forms": [],
+  "children": [
+   {
+    "kode": "AR_PENERIMAAN",
+    "label": "Penerimaan",
+    "seq": 1058,
+    "forms": [],
+    "children": [
+     {
+      "kode": "AR_PENERIMAAN_REFERENSI",
+      "label": "Referensi",
+      "seq": 1059,
+      "forms": [
+       {
+        "label": "Debitur",
+        "form": "piutangWajibPajakForm",
+        "seq": 1060
+       }
+      ],
+      "children": []
+     },
+     {
+      "kode": "AR_PENERIMAAN_PENCATATAN",
+      "label": "Pencatatan",
+      "seq": 1061,
+      "forms": [
+       {
+        "label": "Pencatatan Piutang/Tagihan",
+        "form": "piutangPencatatanPiutangForm",
+        "seq": 1062
+       }
+      ],
+      "children": []
+     },
+     {
+      "kode": "AR_PENERIMAAN_TRANSAKSI",
+      "label": "Transaksi",
+      "seq": 1063,
+      "forms": [
+       {
+        "label": "Settlement SBS",
+        "form": "piutangSettlementSbsPiutangForm",
+        "seq": 1064
+       },
+       {
+        "label": "Settlement SSBP Non SBS",
+        "form": "piutangSettlementSSBPForm",
+        "seq": 1066
+       },
+       {
+        "label": "Settlement via Potongan SPM & Data Upload",
+        "form": "piutangSpmPiutangForm",
+        "seq": 1067
+       },
+       {
+        "label": "Penyisihan Piutang",
+        "form": "penyisihanPiutangForm",
+        "seq": 1068
+       },
+       {
+        "label": "Penghapusan Piutang",
+        "form": "piutangPenghapusanPiutangForm",
+        "seq": 1069
+       },
+       {
+        "label": "Surat Peringatan (SP)",
+        "form": "suratPeringatanPiutangForm",
+        "seq": 1070
+       },
+       {
+        "label": "Restrukturisasi Piutang",
+        "form": "piutangReklasPiutangForm",
+        "seq": 1071
+       }
+      ],
+      "children": []
+     },
+     {
+      "kode": "AR_PENERIMAAN_KOREKSI",
+      "label": "Koreksi",
+      "seq": 1072,
+      "forms": [
+       {
+        "label": "Koreksi Piutang",
+        "form": "piutangKoreksiPiutangForm",
+        "seq": 1073
+       }
+      ],
+      "children": []
+     },
+     {
+      "kode": "AR_PENERIMAAN_TRANSFER",
+      "label": "Transfer",
+      "seq": 1074,
+      "forms": [
+       {
+        "label": "Transfer Masuk",
+        "form": "transferMasukForm",
+        "seq": 1075
+       },
+       {
+        "label": "Transfer Keluar",
+        "form": "transferKeluarForm",
+        "seq": 1076
+       }
+      ],
+      "children": []
+     },
+     {
+      "kode": "AR_PENERIMAAN_LAPORAN",
+      "label": "Laporan",
+      "seq": 1077,
+      "forms": [
+       {
+        "label": "Rekap Piutang yang sudah Lunas",
+        "form": "cetakRekapPiutangLunasForm",
+        "seq": 1078
+       },
+       {
+        "label": "Kartu Buku Piutang",
+        "form": "cetakKartuForm",
+        "seq": 1079
+       },
+       {
+        "label": "Kartu Penyisihan Piutang tak Tertagih",
+        "form": "cetakRekapSaldoForm",
+        "seq": 1080
+       },
+       {
+        "label": "Rekapitulasi TKTM",
+        "form": "cetakRekapTkTmForm",
+        "seq": 1081
+       },
+       {
+        "label": "Rekonsiliasi Piutang - GLP",
+        "form": "cetakRekonsiliasiGlForm",
+        "seq": 1082
+       },
+       {
+        "label": "Piutang Jatuh Tempo",
+        "form": "cetakPiutangJatuhTempoForm",
+        "seq": 1083
+       }
+      ],
+      "children": []
+     },
+     {
+      "kode": "AR_PENERIMAAN_TUTUPPERIODE",
+      "label": "Tutup Periode",
+      "seq": 1084,
+      "forms": [
+       {
+        "label": "Tutup Periode",
+        "form": "tutupBukuForm",
+        "seq": 1085
+       }
+      ],
+      "children": []
+     }
+    ]
+   },
+   {
+    "kode": "AR_LIKUIDASI",
+    "label": "Likuidasi",
+    "seq": 1086,
+    "forms": [
+     {
+      "label": "Likuidasi Keluar",
+      "form": "piutangLikuidasiKeluarForm",
+      "seq": 1087
+     },
+     {
+      "label": "Likuidasi Masuk",
+      "form": "piutangLikuidasiMasukForm",
+      "seq": 1088
+     }
+    ],
+    "children": []
+   },
+   {
+    "kode": "AR_PENGELUARAN",
+    "label": "Pengelolaan Piutang",
+    "seq": 1089,
+    "forms": [],
+    "children": [
+     {
+      "kode": "AR_PENGELUARAN_REFERENSI",
+      "label": "Referensi",
+      "seq": 1090,
+      "forms": [
+       {
+        "label": "Debitur",
+        "form": "piutangWajibPajakForm",
+        "seq": 1091
+       }
+      ],
+      "children": []
+     },
+     {
+      "kode": "AR_PENGELUARAN_PENCATATAN",
+      "label": "Pencatatan",
+      "seq": 1092,
+      "forms": [
+       {
+        "label": "Pencatatan Piutang/Tagihan",
+        "form": "piutangPencatatanPiutangForm",
+        "seq": 1093
+       }
+      ],
+      "children": []
+     },
+     {
+      "kode": "AR_PENGELUARAN_TRANSAKSI",
+      "label": "Transaksi",
+      "seq": 1094,
+      "forms": [
+       {
+        "label": "Settlement SBS",
+        "form": "piutangSettlementSbsPiutangForm",
+        "seq": 1095
+       },
+       {
+        "label": "Settlement SSBP Non SBS",
+        "form": "piutangSettlementSSBPForm",
+        "seq": 1097
+       },
+       {
+        "label": "Settlement via Potongan SPM & Data Upload",
+        "form": "piutangSpmPiutangForm",
+        "seq": 1098
+       },
+       {
+        "label": "Penyisihan Piutang",
+        "form": "penyisihanPiutangForm",
+        "seq": 1099
+       },
+       {
+        "label": "Penghapusan Piutang",
+        "form": "piutangPenghapusanPiutangForm",
+        "seq": 1100
+       },
+       {
+        "label": "Surat Peringatan (SP)",
+        "form": "suratPeringatanPiutangForm",
+        "seq": 1101
+       },
+       {
+        "label": "Restrukturisasi Piutang",
+        "form": "piutangReklasPiutangForm",
+        "seq": 1102
+       },
+       {
+        "label": "Pelimpahan Piutang ke DJKN/PUPN",
+        "form": "plimpahanPiutangForm",
+        "seq": 1103
+       }
+      ],
+      "children": []
+     },
+     {
+      "kode": "AR_PENGELUARAN_KOREKSI",
+      "label": "Koreksi",
+      "seq": 1104,
+      "forms": [
+       {
+        "label": "Koreksi Piutang",
+        "form": "piutangKoreksiPiutangForm",
+        "seq": 1105
+       },
+       {
+        "label": "Hapus Piutang",
+        "form": "piutangKoreksiHapusPiutangForm",
+        "seq": 20622
+       }
+      ],
+      "children": []
+     },
+     {
+      "kode": "AR_PENGELUARAN_TRANSFER",
+      "label": "Transfer",
+      "seq": 1106,
+      "forms": [
+       {
+        "label": "Transfer Masuk",
+        "form": "transferMasukForm",
+        "seq": 1107
+       },
+       {
+        "label": "Transfer Keluar",
+        "form": "transferKeluarForm",
+        "seq": 1108
+       }
+      ],
+      "children": []
+     },
+     {
+      "kode": "AR_PENGELUARAN_LAPORAN",
+      "label": "Laporan",
+      "seq": 1109,
+      "forms": [
+       {
+        "label": "Rekap Piutang yang sudah Lunas",
+        "form": "cetakRekapPiutangLunasForm",
+        "seq": 1110
+       },
+       {
+        "label": "Kartu Buku Piutang",
+        "form": "cetakKartuForm",
+        "seq": 1111
+       },
+       {
+        "label": "Kartu Penyisihan Piutang tak Tertagih",
+        "form": "cetakRekapSaldoForm",
+        "seq": 1112
+       },
+       {
+        "label": "Rekapitulasi TKTM",
+        "form": "cetakRekapTkTmForm",
+        "seq": 1113
+       },
+       {
+        "label": "Rekonsiliasi Piutang - GLP",
+        "form": "cetakRekonsiliasiGlForm",
+        "seq": 1114
+       },
+       {
+        "label": "Piutang Jatuh Tempo",
+        "form": "cetakPiutangJatuhTempoForm",
+        "seq": 1115
+       },
+       {
+        "label": "Piutang yang pengurusannya diserahkan kepada PUPN",
+        "form": "cetakPiutangPUPNForm",
+        "seq": 1116
+       },
+       {
+        "label": "Saldo Piutang Valas",
+        "form": "CetakSaldoPiutangForm",
+        "seq": 1873
+       }
+      ],
+      "children": []
+     },
+     {
+      "kode": "AR_PENGELUARAN_TUTUPPERIODE",
+      "label": "Tutup Periode",
+      "seq": 1116,
+      "forms": [
+       {
+        "label": "Tutup Periode",
+        "form": "tutupBukuForm",
+        "seq": 1117
+       }
+      ],
+      "children": []
+     },
+     {
+      "kode": "AR_PENGELUARAN_LANCAR",
+      "label": "Piutang Jangka Panjang",
+      "seq": 2034,
+      "forms": [
+       {
+        "label": "Menghitung Bagian Lancar Periode Desember",
+        "form": "piutangHitungLancarForm",
+        "seq": 20517
+       },
+       {
+        "label": "Update Bagian Lancar Periode Januari",
+        "form": "piutangUpdateLancarForm",
+        "seq": 20518
+       }
+      ],
+      "children": []
+     },
+     {
+      "kode": "AR_PENGELUARAN_UPLOAD",
+      "label": "Upload",
+      "seq": 2038,
+      "forms": [
+       {
+        "label": "Upload",
+        "form": "piutangUploadForm",
+        "seq": 20655
+       }
+      ],
+      "children": []
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "kode": "GLP",
+  "label": "Akuntansi dan Pelaporan",
+  "seq": 100,
+  "forms": [],
+  "children": [
+   {
+    "kode": "GLP_PROSES",
+    "label": "Proses",
+    "seq": 495,
+    "forms": [
+     {
+      "label": "Jurnal Manual",
+      "form": "glpJurnalManualListForm",
+      "seq": 497
+     },
+     {
+      "label": "Monitoring Jurnal",
+      "form": "glpMonitoringJurnalForm",
+      "seq": 501
+     },
+     {
+      "label": "Jurnal Penyesuaian Khusus",
+      "form": "glpJurnalKhususListForm",
+      "seq": 502
+     },
+     {
+      "label": "Penerimaan dari Potongan SP2D Satker Lain ",
+      "form": "glpPendariPotSP2DSatkerLainForm",
+      "seq": 505
+     },
+     {
+      "label": "Jurnal BAST Void",
+      "form": "glpJurnalBASTVoid",
+      "seq": 506
+     },
+     {
+      "label": "Jurnal Manual Transaksi Khusus (999.99)",
+      "form": "glpJurnalManualKhususForm",
+      "seq": 710
+     },
+     {
+      "label": "Jurnal Penyesuaian Transaksi Khusus (999.99)",
+      "form": "glpJurnalPenyesuaianKhususForm",
+      "seq": 711
+     },
+     {
+      "label": "Koreksi Pendapatan dari Transaksi Pertukaran/Nonpertukaran",
+      "form": "glpKoreksiPendapatanPNPForm",
+      "seq": 726
+     }
+    ],
+    "children": []
+   },
+   {
+    "kode": "GLP_PROSES_TUTUP_BUKU",
+    "label": "Tutup Buku",
+    "seq": 505,
+    "forms": [
+     {
+      "label": "Monitoring Tutup Transaksi",
+      "form": "glpTutupBukuMonitoringForm",
+      "seq": 506
+     },
+     {
+      "label": "Tutup Buku",
+      "form": "glpTutupBukuForm",
+      "seq": 507
+     },
+     {
+      "label": "Buka Periode Modul Pelaksanaan",
+      "form": "glpTutupBukuPelaksanaanForm",
+      "seq": 20699
+     }
+    ],
+    "children": []
+   },
+   {
+    "kode": "GLP_LAPORAN",
+    "label": "Laporan",
+    "seq": 508,
+    "forms": [
+     {
+      "label": "Buku Besar (SATKER)",
+      "form": "glpLaporanModel1NewForm",
+      "seq": 511
+     },
+     {
+      "label": "Buku Besar (WILAYAH)",
+      "form": "glpLaporanModel1NewForm",
+      "seq": 512
+     },
+     {
+      "label": "Buku Besar (ESELON 1)",
+      "form": "glpLaporanModel1NewForm",
+      "seq": 513
+     },
+     {
+      "label": "Buku Besar (KL)",
+      "form": "glpLaporanModel1NewForm",
+      "seq": 514
+     },
+     {
+      "label": "Laporan FA",
+      "form": "glpLaporanFAForm",
+      "seq": 553
+     },
+     {
+      "label": "Laporan Tambahan (WILAYAH)",
+      "form": "glpLaporanTambahan",
+      "seq": 559
+     },
+     {
+      "label": "Laporan Tambahan (ESELON 1)",
+      "form": "glpLaporanTambahan",
+      "seq": 560
+     },
+     {
+      "label": "Laporan Tambahan (KL)",
+      "form": "glpLaporanTambahan",
+      "seq": 561
+     },
+     {
+      "label": "Laporan Transaksi Gantung",
+      "form": "LapTransaksiGantungForm",
+      "seq": 562
+     },
+     {
+      "label": "Laporan Transaksi Gantung (WILAYAH)",
+      "form": "LapTransaksiGantungMainForm",
+      "seq": 563
+     },
+     {
+      "label": "Laporan Transaksi Gantung (ESELON 1)",
+      "form": "LapTransaksiGantungMainForm",
+      "seq": 564
+     },
+     {
+      "label": "Laporan Transaksi Gantung (KL)",
+      "form": "LapTransaksiGantungMainForm",
+      "seq": 565
+     },
+     {
+      "label": "Laporan Keuangan",
+      "form": "glpLapKeuanganForm",
+      "seq": 567
+     },
+     {
+      "label": "Rincian Laporan Keuangan",
+      "form": "glpRincianLapKeuanganForm",
+      "seq": 568
+     },
+     {
+      "label": "Laporan Keuangan BLU",
+      "form": "glpRincianLapKeuanganBLUForm",
+      "seq": 569
+     },
+     {
+      "label": "Laporan FA Detail (16 Segmen)",
+      "form": "glpLaporanFADetailForm",
+      "seq": 99999
+     }
+    ],
+    "children": []
+   },
+   {
+    "kode": "GLP_ADK",
+    "label": "ADK",
+    "seq": 562,
+    "forms": [],
+    "children": [
+     {
+      "kode": "GLP_ADK_REKONSILIASI",
+      "label": "Rekonsiliasi",
+      "seq": 566,
+      "forms": [],
+      "children": []
+     },
+     {
+      "kode": "GLP_ADK_KONFIRMASI",
+      "label": "Konfirmasi",
+      "seq": 577,
+      "forms": [],
+      "children": []
+     },
+     {
+      "kode": "GLP_ADK_KONSOLIDASI",
+      "label": "Konsolidasi",
+      "seq": 586,
+      "forms": [],
+      "children": []
+     }
+    ]
+   },
+   {
+    "kode": "GLP_PROSES_LIKUIDASI_SATKER",
+    "label": "Likuidasi Satker",
+    "seq": 644,
+    "forms": [
+     {
+      "label": "Likuidasi Keluar",
+      "form": "glpProsesLikuidasiKeluarForm",
+      "seq": 645
+     },
+     {
+      "label": "Likuidasi Masuk",
+      "form": "glpProsesLikuidasiMasukForm",
+      "seq": 646
+     }
+    ],
+    "children": []
+   },
+   {
+    "kode": "GLP_TRANSAKSI_RESIPROKAL_BLU",
+    "label": "Transaksi Resiprokal",
+    "seq": 647,
+    "forms": [
+     {
+      "label": "Pendapatan",
+      "form": "glpPendetilanPendapatanBluForm",
+      "seq": 648
+     },
+     {
+      "label": "Belanja",
+      "form": "glpResiprokalBelanjaForm",
+      "seq": 649
+     },
+     {
+      "label": "Cetak Daftar Resiprokal",
+      "form": "glpLaporanResiprokalForm",
+      "seq": 650
+     }
+    ],
+    "children": []
+   },
+   {
+    "kode": "GLP_SETING_LAPORAN_KEUANGAN",
+    "label": "Seting Laporan Keuangan",
+    "seq": 647,
+    "forms": [
+     {
+      "label": "Referensi Laporan",
+      "form": "glpReferensiLap",
+      "seq": 640
+     },
+     {
+      "label": "Referensi Pos",
+      "form": "glpReferensiForm",
+      "seq": 648
+     },
+     {
+      "label": "Mapping Pos dan Akun",
+      "form": "glpMappingPosAkun",
+      "seq": 650
+     },
+     {
+      "label": "Kalkulasi Pos",
+      "form": "glpKalkulasiPos",
+      "seq": 700
+     },
+     {
+      "label": "Simulasi Laporan",
+      "form": "glpSimulasiPos",
+      "seq": 710
+     }
+    ],
+    "children": []
+   }
+  ]
+ },
+ {
+  "kode": "BU_BLU",
+  "label": "Bendahara Umum BLU",
+  "seq": 110,
+  "forms": [],
+  "children": [
+   {
+    "kode": "BU_BLU_TRX",
+    "label": "Transaksi",
+    "seq": 2063,
+    "forms": [
+     {
+      "label": "Monitoring SP2R",
+      "form": "catatSp2rBubluForm",
+      "seq": 20697
+     },
+     {
+      "label": "Mencatat Penerimaan PNBP BLU",
+      "form": "catatPenPnbpBubluForm",
+      "seq": 20698
+     },
+     {
+      "label": "Validasi SP2R",
+      "form": "validasiSp2rBubluForm",
+      "seq": 20699
+     }
+    ],
+    "children": [
+     {
+      "kode": "BU_BLU_STJ_SUPP",
+      "label": "Persetujuan Supplier",
+      "seq": 2063,
+      "forms": [
+       {
+        "label": "Reviewer Supplier",
+        "form": "komBluApproveReviewerForm",
+        "seq": 21052
+       },
+       {
+        "label": "Approver Supplier",
+        "form": "komBluApproveApproverForm",
+        "seq": 21053
+       }
+      ],
+      "children": []
+     },
+     {
+      "kode": "BU_BLU_STJ_KTRK",
+      "label": "Persetujuan Kontrak",
+      "seq": 19824,
+      "forms": [
+       {
+        "label": "Reviewer Kontrak",
+        "form": "komBluAprKontrakReviewerForm",
+        "seq": 21058
+       },
+       {
+        "label": "Approver Kontrak",
+        "form": "komBluAprKontrakApproverForm",
+        "seq": 21059
+       }
+      ],
+      "children": []
+     }
+    ]
+   },
+   {
+    "kode": "BU_BLU_REF",
+    "label": "Referensi",
+    "seq": 2120,
+    "forms": [
+     {
+      "label": "Setting Validasi",
+      "form": "settingValidasiBubluForm",
+      "seq": 20700
+     },
+     {
+      "label": "Setting Peran",
+      "form": "settingPeranBubluForm",
+      "seq": 21063
+     },
+     {
+      "label": "Mapping Rekening Penerimaan",
+      "form": "mappingRekeningBendaharaBubluForm",
+      "seq": 21064
+     }
+    ],
+    "children": []
+   }
+  ]
+ },
+ {
+  "kode": "KPJMN",
+  "label": "KPJM",
+  "seq": 140,
+  "forms": [],
+  "children": [
+   {
+    "kode": "KPJMN_PI",
+    "label": "PAGU INDIKATIF",
+    "seq": 1125,
+    "forms": [],
+    "children": [
+     {
+      "kode": "KPJMN_PI_LT",
+      "label": "Lanjut/Tidak Berlanjut",
+      "seq": 1126,
+      "forms": [
+       {
+        "label": "Proses Transfer Data",
+        "form": "kpjmProcedureForm",
+        "seq": 1127
+       },
+       {
+        "label": "Lanjut/Tidak Berlanjut",
+        "form": "kpjmLtPiForm",
+        "seq": 1128
+       },
+       {
+        "label": "Proses Lanjut/Tidak Berlanjut",
+        "form": "kpjmProsesLTForm",
+        "seq": 1129
+       }
+      ],
+      "children": []
+     },
+     {
+      "kode": "KPJMN_PI_GULIR",
+      "label": "Pengguliran dan PM3",
+      "seq": 1130,
+      "forms": [
+       {
+        "label": "Proses Pengguliran",
+        "form": "kpjmProcedureForm",
+        "seq": 1131
+       },
+       {
+        "label": "Undo Lanjut/Tidak Berlanjut",
+        "form": "kpjmProcedureRestoreForm",
+        "seq": 1132
+       }
+      ],
+      "children": []
+     },
+     {
+      "kode": "KPJMN_PI_REALISASI",
+      "label": "Realisasi",
+      "seq": 1133,
+      "forms": [
+       {
+        "label": "Proses Realisasi",
+        "form": "kpjmProcedureForm",
+        "seq": 1134
+       },
+       {
+        "label": "Dasar Realisasi",
+        "form": "kpjmRealisasiAnggaranForm",
+        "seq": 1135
+       }
+      ],
+      "children": []
+     },
+     {
+      "kode": "KPJMN_PI_PARAMETER",
+      "label": "Parameter PI",
+      "seq": 1136,
+      "forms": [
+       {
+        "label": "Dasar Parameter",
+        "form": "kpjmDasarParameterPiForm",
+        "seq": 1137
+       },
+       {
+        "label": "Proses Parameter",
+        "form": "kpjmProsesParameter",
+        "seq": 1138
+       }
+      ],
+      "children": []
+     },
+     {
+      "kode": "KPJMN_PI_PERBAIKAN_AD",
+      "label": "Perbaikan Angka Dasar",
+      "seq": 1139,
+      "forms": [
+       {
+        "label": "Undo Perbaikan Angka Dasar",
+        "form": "kpjmProcedureRestoreForm",
+        "seq": 1140
+       },
+       {
+        "label": "Setting Prakiraan Batas Maksimum Angka Dasar",
+        "form": "kpjmAngkaDasarForm",
+        "seq": 1141
+       },
+       {
+        "label": "Perubahan Volume KRO Teknis dan Alokasi Komponen Pendukung",
+        "form": "kpjmPerbaikanVolumePiAngkaDasarForm",
+        "seq": 1142
+       },
+       {
+        "label": "Proses Perbaikan",
+        "form": "kpjmProcedureBaruForm",
+        "seq": 1143
+       },
+       {
+        "label": "Penyesuaian Alokasi Komponen Utama",
+        "form": "kpjmPenyesuaianAlokasiPiAngkaDasarForm",
+        "seq": 1144
+       },
+       {
+        "label": "Laporan Angka Dasar",
+        "form": "kpjmProcedureBaruForm",
+        "seq": 1145
+       },
+       {
+        "label": "Usulan KRO Baru",
+        "form": "kpjmOutputBaruForm",
+        "seq": 1146
+       },
+       {
+        "label": "Proses KRO Baru",
+        "form": "kpjmProsesOutputPiForm",
+        "seq": 1147
+       },
+       {
+        "label": "Laporan KRO Baru",
+        "form": "kpjmProsesOutputPiForm",
+        "seq": 1148
+       }
+      ],
+      "children": []
+     },
+     {
+      "kode": "KPJMN_PI_REVIU_AD",
+      "label": "Reviu Angka Dasar",
+      "seq": 1149,
+      "forms": [
+       {
+        "label": "Proses Setuju/Ditolak",
+        "form": "kpjmSetujuTolakForm",
+        "seq": 1150
+       }
+      ],
+      "children": []
+     },
+     {
+      "kode": "KPJMN_PI_PENYESUAIAN_RE",
+      "label": "Penyesuaian Resource Envelope",
+      "seq": 1151,
+      "forms": [
+       {
+        "label": "Undo Perbaikan Angka Dasar",
+        "form": "kpjmProcedureRestoreForm",
+        "seq": 1152
+       },
+       {
+        "label": "Resource Envelope",
+        "form": "kpjmResourceEnvelopePerubahanSuperSaiya",
+        "seq": 1153
+       },
+       {
+        "label": "Penyesuaian Per-Level",
+        "form": "kpjmPILanjutTidakLanjutForm",
+        "seq": 1154
+       },
+       {
+        "label": "Proses Penyesuaian Per-Level",
+        "form": "kpjmProcedureForm",
+        "seq": 1155
+       },
+       {
+        "label": "Perbaikan Anggaran dan Perkiraan Maju",
+        "form": "kpjmPerbaikanForm",
+        "seq": 1156
+       },
+       {
+        "label": "Proses Perbaikan",
+        "form": "kpjmProcedureBaruForm",
+        "seq": 1157
+       },
+       {
+        "label": "Penyesuaian Komponen Utama",
+        "form": "kpjmPerbaikanForm",
+        "seq": 1158
+       },
+       {
+        "label": "Usulan KRO Baru",
+        "form": "kpjmOutputBaruForm",
+        "seq": 1159
+       },
+       {
+        "label": "Proses KRO Baru",
+        "form": "kpjmProcedureBaruForm",
+        "seq": 1160
+       }
+      ],
+      "children": []
+     },
+     {
+      "kode": "KPJMN_PI_PENYESUAIAN_PI",
+      "label": "Penyesuaian PI",
+      "seq": 1161,
+      "forms": [
+       {
+        "label": "Undo Penyesuaian PI",
+        "form": "kpjmProcedureRestoreForm",
+        "seq": 1163
+       },
+       {
+        "label": "Setting Surat Bersama Pagu Indikatif",
+        "form": "kpjmAlokasiAngkaDasarForm",
+        "seq": 1164
+       },
+       {
+        "label": "Penyesuaian Per-Level",
+        "form": "kpjmPemotonganPerLevelPiForm",
+        "seq": 1165
+       },
+       {
+        "label": "Proses Penyesuaian Per-Level",
+        "form": "kpjmProcedureForm",
+        "seq": 1166
+       },
+       {
+        "label": "Perubahan Volume KRO Teknis dan Alokasi Komponen Pendukung",
+        "form": "kpjmPerbaikanVolumePiPenyesuaianForm",
+        "seq": 1167
+       },
+       {
+        "label": "Proses Perbaikan",
+        "form": "kpjmProcedureBaruForm",
+        "seq": 1168
+       },
+       {
+        "label": "Penyesuaian Alokasi Komponen Utama",
+        "form": "kpjmPenyesuaianAlokasiPiPenyesuaianForm",
+        "seq": 1169
+       },
+       {
+        "label": "Usulan Output Baru",
+        "form": "kpjmOutputBaruForm",
+        "seq": 1170
+       },
+       {
+        "label": "Laporan Penyesuaian PI",
+        "form": "kpjmProcedureBaruForm",
+        "seq": 1171
+       },
+       {
+        "label": "Persetujuan DJA",
+        "form": "kpjmPersetujuanDja",
+        "seq": 1172
+       }
+      ],
+      "children": []
+     }
+    ]
+   },
+   {
+    "kode": "KPJMN_PAGU_ANGGARAN",
+    "label": "PAGU ANGGARAN",
+    "seq": 1173,
+    "forms": [
+     {
+      "label": "Persetujuan DJA",
+      "form": "kpjmPersetujuanDjaPa",
+      "seq": 1196
+     },
+     {
+      "label": "Kirim Data ke DJA",
+      "form": "kpjmNotaKeuanganForm",
+      "seq": 1197
+     }
+    ],
+    "children": [
+     {
+      "kode": "KPJMN_PAGU_ANGGARAN_KEBIJAKAN_BARU",
+      "label": "Kebijakan Baru PA",
+      "seq": 1174,
+      "forms": [
+       {
+        "label": "Transfer Data Dari PI & RKAKL (Dxx)",
+        "form": "kpjmProcedureForm",
+        "seq": 1175
+       },
+       {
+        "label": "Laporan Data Pagu Anggaran ",
+        "form": "kpjmLaporanForm",
+        "seq": 1176
+       },
+       {
+        "label": "Laporan Semula-Menjadi",
+        "form": "kpjmLaporanForm",
+        "seq": 1177
+       },
+       {
+        "label": "Laporan Sumber Dana",
+        "form": "kpjmLaporanForm",
+        "seq": 1178
+       },
+       {
+        "label": "Surat Bersama Pagu Anggaran",
+        "form": "kpjmPaguSEPAForm",
+        "seq": 1179
+       }
+      ],
+      "children": []
+     },
+     {
+      "kode": "KPJMN_PAGU_PENYESUAIAN_PA",
+      "label": "Penyesuaian Angka PM pada Proses PA",
+      "seq": 1180,
+      "forms": [
+       {
+        "label": "Surat Bersama Pagu Anggaran",
+        "form": "kpjmPaguSEPAForm",
+        "seq": 1181
+       },
+       {
+        "label": "Undo Perbaikan Angka PM pada Proses Pagu Anggaran",
+        "form": "kpjmProcedureRestoreForm",
+        "seq": 1182
+       },
+       {
+        "label": "Penyesuaian Per Level",
+        "form": "kpjmPemotonganPerLevelPaForm",
+        "seq": 1183
+       },
+       {
+        "label": "Proses Penyesuaian Per Level",
+        "form": "kpjmProcedureForm",
+        "seq": 1184
+       },
+       {
+        "label": "Perubahan Volume KRO Teknis dan Alokasi Komponen Pendukung",
+        "form": "kpjmPerbaikanVolumePaForm",
+        "seq": 1185
+       },
+       {
+        "label": "Proses Perbaikan",
+        "form": "kpjmProcedureBaruForm",
+        "seq": 1186
+       },
+       {
+        "label": "Penyesuaian Alokasi Komponen Utama",
+        "form": "kpjmPenyesuaianAlokasiPaForm",
+        "seq": 1187
+       },
+       {
+        "label": "Laporan Pagu Anggaran",
+        "form": "kpjmProcedureBaruForm",
+        "seq": 1188
+       }
+      ],
+      "children": []
+     },
+     {
+      "kode": "KPJMN_PAGU_ANGGARAN_PARAMETER",
+      "label": "Parameter",
+      "seq": 1190,
+      "forms": [
+       {
+        "label": "Dasar Parameter",
+        "form": "kpjmDasarParameterPaForm",
+        "seq": 1191
+       },
+       {
+        "label": "Proses Parameter",
+        "form": "kpjmProsesParameter",
+        "seq": 1192
+       }
+      ],
+      "children": []
+     }
+    ]
+   },
+   {
+    "kode": "KPJMN_ALOKASI_ANGGARAN",
+    "label": "ALOKASI ANGGARAN",
+    "seq": 1198,
+    "forms": [
+     {
+      "label": "Persetujuan DJA",
+      "form": "kpjmPersetujuanDjaAa",
+      "seq": 1226
+     },
+     {
+      "label": "Kirim Data ke DJA",
+      "form": "kpjmNotaKeuanganForm",
+      "seq": 1227
+     }
+    ],
+    "children": [
+     {
+      "kode": "KPJMN_KEBIJAKAN_BARU_AA",
+      "label": "Kebijakan Baru AA",
+      "seq": 1199,
+      "forms": [
+       {
+        "label": "Transfer Data dari PA & RKAKL (Exx)",
+        "form": "kpjmProcedureForm",
+        "seq": 1200
+       },
+       {
+        "label": "Laporan Data Alokasi Anggaran ",
+        "form": "kpjmLaporanForm",
+        "seq": 1201
+       },
+       {
+        "label": "Laporan Semula-Menjadi",
+        "form": "kpjmLaporanForm",
+        "seq": 1202
+       },
+       {
+        "label": "Laporan Sumber Dana",
+        "form": "kpjmLaporanForm",
+        "seq": 1203
+       }
+      ],
+      "children": []
+     },
+     {
+      "kode": "KPJMN_PENYESUAIAN_AA",
+      "label": "Penyesuaian Angka PM pada Proses AA",
+      "seq": 1205,
+      "forms": [
+       {
+        "label": "Undo Perbaikan Angka PM pada proses  Alokasi Anggaran",
+        "form": "kpjmProcedureRestoreForm",
+        "seq": 1207
+       },
+       {
+        "label": "Penyesuaian Per Level",
+        "form": "kpjmPemotonganPerLevelAaForm",
+        "seq": 1208
+       },
+       {
+        "label": "Proses Penyesuaian Per Level",
+        "form": "kpjmProcedureForm",
+        "seq": 1209
+       },
+       {
+        "label": "Perubahan Volume KRO Teknis dan Alokasi Komponen Pendukung",
+        "form": "kpjmPerbaikanVolumeAaForm",
+        "seq": 1210
+       },
+       {
+        "label": "Proses Perbaikan",
+        "form": "kpjmProcedureBaruForm",
+        "seq": 1211
+       },
+       {
+        "label": "Penyesuaian Alokasi Komponen Utama",
+        "form": "kpjmPenyesuaianAlokasiAaForm",
+        "seq": 1212
+       },
+       {
+        "label": "Laporan Alokasi Anggaran",
+        "form": "kpjmProcedureBaruForm",
+        "seq": 1213
+       }
+      ],
+      "children": []
+     },
+     {
+      "kode": "KPJMN_PARAMETER_AA",
+      "label": "Parameter",
+      "seq": 1215,
+      "forms": [
+       {
+        "label": "Dasar Parameter",
+        "form": "kpjmDasarParameterAaForm",
+        "seq": 1216
+       },
+       {
+        "label": "Proses Parameter",
+        "form": "kpjmProsesParameter",
+        "seq": 1217
+       }
+      ],
+      "children": []
+     },
+     {
+      "kode": "KPJMN_LANJUT_TIDAK_LANJUT_AA",
+      "label": "Lanjut/Tidak Berlanjut",
+      "seq": 1220,
+      "forms": [
+       {
+        "label": "Lanjut/Tidak Berlanjut",
+        "form": "kpjmLtAaForm",
+        "seq": 1221
+       },
+       {
+        "label": "Proses Lanjut/Tidak Berlanjut",
+        "form": "kpjmProsesLTForm",
+        "seq": 1222
+       }
+      ],
+      "children": []
+     }
+    ]
+   },
+   {
+    "kode": "KPJMN_LAPORAN",
+    "label": "LAPORAN",
+    "seq": 1228,
+    "forms": [],
+    "children": [
+     {
+      "kode": "KPJMN_LAPORAN_RESMI",
+      "label": "Laporan Resmi",
+      "seq": 1229,
+      "forms": [
+       {
+        "label": "Laporan Anggaran dan PM Tingkat Program",
+        "form": "kpjmLaporanForm",
+        "seq": 1230
+       },
+       {
+        "label": "Laporan Anggaran dan PM Tingkat Aktifitas",
+        "form": "kpjmLaporanForm",
+        "seq": 1231
+       },
+       {
+        "label": "Laporan Anggaran dan Prakiraan Maju Tingkat KRO",
+        "form": "kpjmLaporanForm",
+        "seq": 1232
+       },
+       {
+        "label": "Laporan Per Kelompok Belanja",
+        "form": "kpjmLaporanKelompokBelanjaForm",
+        "seq": 1233
+       },
+       {
+        "label": "Laporan Tinjau Ulang Angka Dasar",
+        "form": "kpjmLaporanKelompokBelanjaForm",
+        "seq": 1234
+       },
+       {
+        "label": "Laporan Proses Perbaikan dan Usulan KRO/Komponen Baru",
+        "form": "kpjmLaporanKelompokBelanjaForm",
+        "seq": 1235
+       },
+       {
+        "label": "Rincian Anggaran Belanja Pemerintah Pusat",
+        "form": "kpjmLaporanForm",
+        "seq": 1236
+       },
+       {
+        "label": "Laporan Reviu Rencana Anggaran & PM",
+        "form": "kpjmLaporanForm",
+        "seq": 1237
+       },
+       {
+        "label": "Laporan Perubahan Anggaran & PM",
+        "form": "kpjmLaporanKegiatanForm",
+        "seq": 1238
+       }
+      ],
+      "children": []
+     },
+     {
+      "kode": "KPJMN_LAPORAN_PENDUKUNG",
+      "label": "Laporan Pendukung",
+      "seq": 1239,
+      "forms": [
+       {
+        "label": "Laporan Rencana Anggaran dan PM",
+        "form": "kpjmLaporanKelompokBelanjaForm",
+        "seq": 1240
+       },
+       {
+        "label": "Laporan Per Jenis KRO",
+        "form": "kpjmLaporanKelompokBelanjaForm",
+        "seq": 1241
+       },
+       {
+        "label": "Laporan KRO Prioritas",
+        "form": "kpjmLaporanForm",
+        "seq": 1242
+       },
+       {
+        "label": "Laporan Per KRO 994 dan 951",
+        "form": "kpjmLaporanForm",
+        "seq": 1243
+       },
+       {
+        "label": "Laporan Per Akun",
+        "form": "kpjmLaporanForm",
+        "seq": 1244
+       },
+       {
+        "label": "Laporan Rekonsiliasi",
+        "form": "kpjmLaporanForm",
+        "seq": 1245
+       }
+      ],
+      "children": []
+     },
+     {
+      "kode": "KPJMN_LAPORAN_KERTAS_KERJA",
+      "label": "Laporan Kertas Kerja",
+      "seq": 1246,
+      "forms": [
+       {
+        "label": "Kertas Kerja Data Rencana Anggaran dan Prakiraan Maju",
+        "form": "kpjmLaporanForm",
+        "seq": 1247
+       },
+       {
+        "label": "Kertas Kerja KRO Generik & Komponen",
+        "form": "kpjmLaporanForm",
+        "seq": 1248
+       },
+       {
+        "label": "Kertas Kerja KRO Teknis & Komponen",
+        "form": "kpjmLaporanForm",
+        "seq": 1249
+       },
+       {
+        "label": "Kertas Kerja Volume KRO Teknis",
+        "form": "kpjmLaporanForm",
+        "seq": 1250
+       },
+       {
+        "label": "Kertas Kerja Volume KRO Generik",
+        "form": "kpjmLaporanForm",
+        "seq": 1251
+       },
+       {
+        "label": "Kertas Kerja Alokasi Komponen Pendukung",
+        "form": "kpjmLaporanForm",
+        "seq": 1252
+       },
+       {
+        "label": "Kertas Kerja Penelahaan",
+        "form": "kpjmLaporanDetailForm",
+        "seq": 1253
+       }
+      ],
+      "children": []
+     },
+     {
+      "kode": "KPJMN_LAPORAN_PERMINTAAN_DJPBN",
+      "label": "Laporan Permintaan DJPBN",
+      "seq": 1254,
+      "forms": [
+       {
+        "label": "Pagu Total Matrix Penyesuaian Kpjm Reviu Angka Dasar Base Line",
+        "form": "kpjmLaporanForm",
+        "seq": 1255
+       },
+       {
+        "label": "Sumber Dana Matrix Penyesuaian Kpjm Reviu Angka Dasar Base Line",
+        "form": "kpjmLaporanForm",
+        "seq": 1256
+       },
+       {
+        "label": "Matrix Penyesuaian Kpjm Reviu Angka Dasar Base Line",
+        "form": "kpjmLaporanForm",
+        "seq": 1257
+       },
+       {
+        "label": "Perubahan Volume KRO",
+        "form": "kpjmLaporanForm",
+        "seq": 1258
+       }
+      ],
+      "children": []
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "kode": "KPPNBUN",
+  "label": "KPPN",
+  "seq": 150,
+  "forms": [],
+  "children": [
+   {
+    "kode": "KPPNBUN_MNJM_SATKER",
+    "label": "Manajemen Satker",
+    "seq": 2019,
+    "forms": [
+     {
+      "label": "Upload Persetujuan UP KPPN",
+      "form": "benUploadDokPersetujuanUpForm",
+      "seq": 2021
+     },
+     {
+      "label": "Validasi Persetujuan UP KPPN",
+      "form": "benValidasiPersetujuanUpKppnForm",
+      "seq": 2022
+     },
+     {
+      "label": "Upload Persetujuan TUP KPPN",
+      "form": "benUploadDokPersetujuanTupForm",
+      "seq": 2023
+     },
+     {
+      "label": "Validasi Persetujuan TUP KPPN",
+      "form": "benValidasiPersetujuanTupKppnForm",
+      "seq": 2024
+     },
+     {
+      "label": "Monitoring UP/TUP KPPN",
+      "form": "benMonitoringUpKppn",
+      "seq": 2025
+     },
+     {
+      "label": "Jam Layanan/Hari Libur",
+      "form": "formJamLayanan",
+      "seq": 20553
+     },
+     {
+      "label": "Scheduled Payment Date",
+      "form": "spmKppnSpdRenkasHarian",
+      "seq": 20594
+     }
+    ],
+    "children": []
+   },
+   {
+    "kode": "KPPN_PD",
+    "label": "Pencairan Dana",
+    "seq": 2020,
+    "forms": [
+     {
+      "label": "Mapping User Portal",
+      "form": "formMappingUserPortal",
+      "seq": 20552
+     }
+    ],
+    "children": [
+     {
+      "kode": "KPPN_PD_PROSES",
+      "label": "Proses",
+      "seq": 2021,
+      "forms": [
+       {
+        "label": "SPM",
+        "form": "spmKppnProsesSpm",
+        "seq": 2023
+       },
+       {
+        "label": "SPM Koreksi",
+        "form": "spmKppnProsesSpm",
+        "seq": 2024
+       },
+       {
+        "label": "Scheduled Payment Date",
+        "form": "spmKppnSpdRenkasHarian",
+        "seq": 19961
+       },
+       {
+        "label": "ADK Supplier",
+        "form": "komADKKontrakKPPNForm",
+        "seq": 20667
+       },
+       {
+        "label": "ADK Kontrak",
+        "form": "komADKKontrakKPPNForm",
+        "seq": 20668
+       }
+      ],
+      "children": []
+     },
+     {
+      "kode": "KPPN_PD_MON",
+      "label": "Monitoring",
+      "seq": 2022,
+      "forms": [
+       {
+        "label": "Monitoring Proses Kontrak dan Supplier",
+        "form": "komKppnMonitoringKontrakSupplier",
+        "seq": 801
+       },
+       {
+        "label": "Monitoring Proses SPM",
+        "form": "spmKppnMonitoringSpm",
+        "seq": 2022
+       },
+       {
+        "label": "Monitoring Kontrak Escrow",
+        "form": "komKppnMonitoringKontrakEscrow",
+        "seq": 20650
+       },
+       {
+        "label": "Pemulihan/penggantian Dokumen",
+        "form": "formMonitoringDokPengganti",
+        "seq": 20682
+       },
+       {
+        "label": "Monitoring Kontrak RPATA",
+        "form": "komKppnMonitoringKontrakRpata",
+        "seq": 20683
+       }
+      ],
+      "children": []
+     }
+    ]
+   },
+   {
+    "kode": "KPPN_VERA",
+    "label": "Verifikasi dan Akuntansi",
+    "seq": 2023,
+    "forms": [
+     {
+      "label": "Dokumen Pendukung MPHL-BJS",
+      "form": "spmKppnDokMphlBjs",
+      "seq": 2
+     },
+     {
+      "label": "Penginputan/Pencabutan Sanksi",
+      "form": "formInputSanksi",
+      "seq": 20554
+     },
+     {
+      "label": "Void BAST",
+      "form": "komKppnVoidBastForm",
+      "seq": 21050
+     }
+    ],
+    "children": [
+     {
+      "kode": "KPPN_VERA_VALIDASI",
+      "label": "Validasi",
+      "seq": 2042,
+      "forms": [
+       {
+        "label": "Validasi Persetujuan LPJ KPPN",
+        "form": "benValidasiPersetujuanLpjKppnForm",
+        "seq": 20672
+       }
+      ],
+      "children": []
+     },
+     {
+      "kode": "KPPN_VERA_REFERENSI",
+      "label": "Referensi",
+      "seq": 2043,
+      "forms": [
+       {
+        "label": "Referensi Satker LPJ",
+        "form": "benSatkerLpjForm",
+        "seq": 20673
+       }
+      ],
+      "children": []
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "kode": "REPORT",
+  "label": "Laporan",
+  "seq": 160,
+  "forms": [
+   {
+    "label": "Monitoring",
+    "form": "reportMonitoringForm",
+    "seq": 1
+   }
+  ],
+  "children": []
+ },
+ {
+  "kode": "TKD",
+  "label": "Transfer ke Daerah",
+  "seq": 2130,
+  "forms": [
+   {
+    "label": "Akses TKD",
+    "form": "tkdRedirectForm",
+    "seq": 20745
+   }
+  ],
+  "children": []
+ }
+]
