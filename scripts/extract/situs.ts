@@ -26,6 +26,11 @@ export async function ekstrakSitus(item: ItemManifest, petaItem: Map<string, Ite
 		? (JSON.parse(fs.readFileSync(jalurJson, 'utf8')) as { gambar?: { src: string; alt: string }[] }).gambar ?? []
 		: [];
 
+	const jalurPeta = path.resolve(process.cwd(), item.file_lokal!.replace(/\.html$/, '.img/map.json'));
+	const petaLokal: Record<string, string> = fs.existsSync(jalurPeta)
+		? JSON.parse(fs.readFileSync(jalurPeta, 'utf8'))
+		: {};
+
 	if (gambar.length > 0) {
 		const dirImg = path.join(dir, 'img');
 		fs.mkdirSync(dirImg, { recursive: true });
@@ -34,6 +39,17 @@ export async function ekstrakSitus(item: ItemManifest, petaItem: Map<string, Ite
 			if (!g.src?.startsWith('http')) continue;
 			n++;
 			const nama = `img/${String(n).padStart(2, '0')}`;
+			const lokal = petaLokal[g.src];
+			if (lokal) {
+				const sumberLokal = path.resolve(process.cwd(), 'sources/raw/gsites', item.sumber === 'A' ? 'saktiadm' : 'saktipelaporan', lokal);
+				if (fs.existsSync(sumberLokal)) {
+					const ext = path.extname(lokal).slice(1) || 'png';
+					const namaFile = `${nama}.${ext}`;
+					fs.copyFileSync(sumberLokal, path.join(dir, namaFile));
+					md = md.split(`(${g.src})`).join(`(${namaFile})`);
+					continue;
+				}
+			}
 			try {
 				const res = await ambil(g.src, { timeout: 30000 });
 				if (res.status >= 400) {

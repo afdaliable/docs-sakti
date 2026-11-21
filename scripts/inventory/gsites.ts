@@ -172,6 +172,7 @@ function hashTeks(teks: string): string {
 export interface OpsiCrawl {
 	batas?: number;
 	tanpaScreenshot?: boolean;
+	hanyaUrl?: Set<string>;
 }
 
 export async function crawlSitus(
@@ -196,7 +197,7 @@ export async function crawlSitus(
 	const navMap = new Map<string, EntriNav>();
 	const hashKeId = new Map<string, string>();
 	const idDihapus: string[] = [];
-	const antrean: string[] = [situs.base];
+	const antrean: string[] = opsi.hanyaUrl ? [...opsi.hanyaUrl] : [situs.base];
 	const terlihat = new Set<string>();
 
 	while (antrean.length > 0 && halaman.size < (opsi.batas ?? 1000)) {
@@ -270,7 +271,7 @@ export async function crawlSitus(
 			const internal = normalisasiInternal(t.href, situs);
 			if (internal) {
 				tautanInternal.add(internal);
-				if (!terlihat.has(internal) && !antrean.includes(internal)) {
+				if (!opsi.hanyaUrl && !terlihat.has(internal) && !antrean.includes(internal)) {
 					antrean.push(internal);
 				}
 			} else {
@@ -313,6 +314,27 @@ export async function crawlSitus(
 		const jalurPng = path.join(dirRaw, `${namaBerkas}.png`);
 		if (!opsi.tanpaScreenshot && !fs.existsSync(jalurPng)) {
 			await page.screenshot({ path: jalurPng, fullPage: true }).catch(() => {});
+		}
+		if (data.gambar.length > 0) {
+			const dirImg = path.join(dirRaw, `${namaBerkas}.img`);
+			fs.mkdirSync(dirImg, { recursive: true });
+			const peta: Record<string, string> = {};
+			let n = 0;
+			for (const g of data.gambar) {
+				if (!g.src?.startsWith('http')) continue;
+				n++;
+				try {
+					const res = await page.request.get(g.src, { timeout: 15000 });
+					if (!res.ok()) continue;
+					const buf = await res.body();
+					const tipe = res.headers()['content-type'] ?? '';
+					const ext = tipe.includes('png') ? 'png' : tipe.includes('jpeg') ? 'jpg' : tipe.includes('webp') ? 'webp' : tipe.includes('gif') ? 'gif' : tipe.includes('svg') ? 'svg' : 'png';
+					const berkas = `${String(n).padStart(2, '0')}.${ext}`;
+					fs.writeFileSync(path.join(dirImg, berkas), buf);
+					peta[g.src] = `${namaBerkas}.img/${berkas}`;
+				} catch {}
+			}
+			fs.writeFileSync(path.join(dirImg, 'map.json'), JSON.stringify(peta, null, 1));
 		}
 
 		const target = petakanTarget(situs.sumber, pathSetelahBase);

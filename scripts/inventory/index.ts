@@ -30,6 +30,7 @@ function argumen() {
 	const sumber = new Set<Sumber>();
 	let batas: number | undefined;
 	let tanpaScreenshot = false;
+	const halaman = new Set<string>();
 	for (let i = 0; i < args.length; i++) {
 		if (args[i] === '--sumber') {
 			for (const s of args[++i].split(',')) sumber.add(s.trim() as Sumber);
@@ -37,9 +38,11 @@ function argumen() {
 			batas = parseInt(args[++i]);
 		} else if (args[i] === '--tanpa-screenshot') {
 			tanpaScreenshot = true;
+		} else if (args[i] === '--halaman') {
+			for (const s of args[++i].split(',')) halaman.add(s.trim());
 		}
 	}
-	return { sumber: sumber.size ? sumber : new Set<Sumber>(['A', 'B', 'C']), batas, tanpaScreenshot };
+	return { sumber: sumber.size ? sumber : new Set<Sumber>(['A', 'B', 'C']), batas, tanpaScreenshot, halaman };
 }
 
 function tanggalWIB(): string {
@@ -50,7 +53,7 @@ function tanggalWIB(): string {
 }
 
 async function main() {
-	const { sumber, batas, tanpaScreenshot } = argumen();
+	const { sumber, batas, tanpaScreenshot, halaman } = argumen();
 	const manifest = bacaManifest();
 	const pemberiId = new PemberiId(manifest);
 	const idTerlihat = new Set<string>();
@@ -91,7 +94,8 @@ async function main() {
 		if (!sumber.has(situs.sumber)) continue;
 		sumberDicrawl.add(situs.sumber);
 		console.log(`[${new Date().toISOString()}] crawl situs ${situs.sumber} (${situs.base})`);
-		const hasilCrawl = await crawlSitus(situs, { batas, tanpaScreenshot }, async (item, hasil) => {
+		const hanyaUrl = halaman.size ? new Set([...halaman].map((h) => `${situs.base}/${h.replace(/^\/+|\/+$/g, '')}`)) : undefined;
+		const hasilCrawl = await crawlSitus(situs, { batas, tanpaScreenshot, hanyaUrl }, async (item, hasil) => {
 			const digabung = gabungItem(manifest, item);
 			idTerlihat.add(digabung.id);
 			if (!hasil.url) return;
