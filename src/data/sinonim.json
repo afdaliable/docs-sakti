@@ -81,9 +81,11 @@
   },
   {
     "istilah": "PKIPA",
-    "panjang": "",
-    "sinonim": [],
-    "perlu_verifikasi": true
+    "panjang": "Pernyataan Komitmen Integritas Pelaksanaan Anggaran",
+    "sinonim": [
+      "komitmen integritas",
+      "pernyataan komitmen integritas"
+    ]
   },
   {
     "istilah": "DS",
@@ -204,6 +206,59 @@
     "sinonim": [
       "aparat pengawasan intern pemerintah",
       "auditor kementerian"
+    ],
+    "perlu_verifikasi": true
+  },
+  {
+    "istilah": "TTE",
+    "panjang": "Tanda Tangan Elektronik",
+    "sinonim": [
+      "tanda tangan elektronik",
+      "sign dokumen"
+    ]
+  },
+  {
+    "istilah": "BSrE",
+    "panjang": "",
+    "sinonim": [
+      "portal bsre",
+      "ams"
+    ],
+    "perlu_verifikasi": true
+  },
+  {
+    "istilah": "BSSN",
+    "panjang": "",
+    "sinonim": [
+      "sertifikat bssn"
+    ],
+    "perlu_verifikasi": true
+  },
+  {
+    "istilah": "Passphrase",
+    "panjang": "",
+    "sinonim": [
+      "passphrase ds",
+      "passphrase bssn"
+    ],
+    "perlu_verifikasi": true
+  },
+  {
+    "istilah": "Admin Satker",
+    "panjang": "",
+    "sinonim": [
+      "admin lokal",
+      "administrator lokal",
+      "adm satker"
+    ],
+    "perlu_verifikasi": true
+  },
+  {
+    "istilah": "Kelompok Pengguna",
+    "panjang": "",
+    "sinonim": [
+      "kewenangan",
+      "role"
     ],
     "perlu_verifikasi": true
   }

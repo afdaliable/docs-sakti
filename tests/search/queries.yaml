@@ -16,3 +16,19 @@
   harap: ["/mulai/pendaftaran-user/bpk/"]
 - q: "form pendaftaran pengguna kanwil djpb"
   harap: ["/mulai/pendaftaran-user/kanwil-djpb-bun/"]
+- q: "cara tanda tangan pkipa elektronik"
+  harap: ["/admin/pkipa/tte-pkipa/"]
+- q: "apa itu pkipa sakti"
+  harap: ["/admin/pkipa/"]
+- q: "cek status sertifikat digital signature"
+  harap: ["/admin/penandatangan/monitoring-status-ds/"]
+- q: "operator tidak bisa buat spm mapping ppk"
+  harap: ["/admin/mapping/mapping-operator-ppk/"]
+- q: "cara rekam pejabat perbendaharaan"
+  harap: ["/admin/pengguna/pejabat-perbendaharaan/"]
+- q: "bedanya admin operator validator approver"
+  harap: ["/admin/role/"]
+- q: "unduh formulir pendaftaran user sakti"
+  harap: ["/admin/formulir/"]
+- q: "error pengguna sudah login sakti"
+  harap: ["/admin/monitoring/monitoring-login-satker/"]

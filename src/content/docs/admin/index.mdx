@@ -4,21 +4,69 @@ description: Pengelolaan user, role, PKIPA, dan monitoring status DS.
 modul: admin
 jenis: indeks
 status: terbit
+sumber:
+  - judul: "1. Juknis SAKTI Admin Updated 2024"
+    url: "https://docs.google.com/presentation/d/1dbhAhtZ-uotv_CxZ5GefYlmeF11DCnZNaswn0Oym6PE/"
+    jenis: google-slides
+    diambil: 2026-11-21
+    id_manifest: A-dok-005
+  - judul: "SAKTI Admin Knowledge Base"
+    url: "https://sites.google.com/view/saktiadm/beranda"
+    jenis: google-sites
+    diambil: 2026-11-21
+    id_manifest: A-beranda
 sidebar:
   label: Ringkasan
   order: 0
 ---
 
-Pengelolaan user, role, PKIPA, dan monitoring status DS.
+import { CardGrid, LinkCard } from '@astrojs/starlight/components';
+import SumberAsli from '~/components/SumberAsli.astro';
 
-Panduan modul ini sedang dimigrasikan dari sumber aslinya.
+Admin SAKTI berperan besar pada aplikasi SAKTI. Ibarat pemegang kunci,
+user-user dan referensi ke depannya dikelola melalui user admin. Admin
+berfungsi mengelola manajemen user/pengguna pada aplikasi SAKTI sesuai
+tipe dan kewenangannya. Modul ini memuat panduan pengelolaan pengguna,
+referensi, mapping, penandatangan, PKIPA, dan monitoring.
 
-## Sub-menu
+<CardGrid>
+	<LinkCard
+		title="Pengguna"
+		description="Pengelolaan data pengguna, pejabat perbendaharaan, dan pemutakhiran data pengguna."
+		href="/admin/pengguna/"
+	/>
+	<LinkCard
+		title="Mapping"
+		description="Memetakan operator pelaksanaan dan operator anggaran dengan PPK-nya."
+		href="/admin/mapping/"
+	/>
+	<LinkCard
+		title="Penandatangan"
+		description="Referensi penandatangan dan monitoring sertifikat Digital Signature BSSN."
+		href="/admin/penandatangan/"
+	/>
+	<LinkCard
+		title="Monitoring"
+		description="Monitoring login satker pada modul Administrasi."
+		href="/admin/monitoring/"
+	/>
+	<LinkCard
+		title="PKIPA"
+		description="Pernyataan Komitmen Integritas Pelaksanaan Anggaran dan penandatanganannya."
+		href="/admin/pkipa/"
+	/>
+	<LinkCard
+		title="Role"
+		description="Jenis peran dan kewenangan (kelompok pengguna) pada aplikasi SAKTI."
+		href="/admin/role/"
+	/>
+	<LinkCard
+		title="Formulir"
+		description="Daftar tautan unduh formulir pengguna SAKTI per tipe kantor."
+		href="/admin/formulir/"
+	/>
+</CardGrid>
 
-- [Pengguna](/admin/pengguna/)
-- [Mapping](/admin/mapping/)
-- [Penandatangan](/admin/penandatangan/)
-- [Monitoring](/admin/monitoring/)
-- [PKIPA](/admin/pkipa/)
-- [Role](/admin/role/)
-- [Formulir](/admin/formulir/)
+## Sumber
+
+<SumberAsli />
