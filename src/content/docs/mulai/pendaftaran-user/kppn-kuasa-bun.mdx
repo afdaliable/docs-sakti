@@ -6,7 +6,7 @@ peran: [kppn-kanwil]
 jenis: juknis
 kata_kunci: [user kppn, kuasa bun, admuser, apruser, admkppn, pendaftaran kppn]
 status: review
-perlu_review: false
+perlu_review: true
 sumber:
   - judul: "Download Form untuk Kantor Vertikal DJPb (BUN)"
     url: "https://sites.google.com/view/saktiadm/kppn-bun-dan-kanwil-djpb"
@@ -37,7 +37,7 @@ sidebar:
   order: 4
 ---
 
-import { Steps } from '@astrojs/starlight/components';
+import { Steps, Aside } from '@astrojs/starlight/components';
 import SumberAsli from '~/components/SumberAsli.astro';
 
 User SAKTI level KPPN selaku **Kuasa BUN** mengakomodasi fitur KPPN termasuk
@@ -66,7 +66,8 @@ User SAKTI KPPN selaku Kuasa BUN terdiri atas kelompok berikut:
      proses SPM.
    - Approver (`aprkppn`) — Kepala Seksi PD/PDMS; memeriksa dan menyetujui SPM.
 4. **Terkait proses MPHL-BJS** — Operator Seksi Vera (`oprkppn`), peran
-   `KPPN_OPERATOR_VERA`, untuk pembuatan Hibang Langsung BJS.
+   `KPPN_OPERATOR_VERA`, untuk pembuatan "Hibang Langsung BJS" (istilah
+   persis seperti pada sumber).
 
 Penamaan User ID mengikuti peran: `admkppn_kodesatker_nip`,
 `oprkppn_kodesatker_nip`, `valkppn_kodesatker_nip`, dan
@@ -120,6 +121,11 @@ Matriks peran untuk pendaftaran user KPPN selaku Kuasa BUN:
 | Pencairan Dana | `KPPN_OPERATOR_PD` | Staf PD/PDMS — FO | `oprkppn_kodesatker_nip` |
 | Pencairan Dana | `KPPN_VALIDATOR_PD` | Staf PD/PDMS — MO | `valkppn_kodesatker_nip` |
 | Pencairan Dana | `KPPN_APPROVER_PD` | Kasi PD/PDMS | `aprkppn_kodesatker_nip` |
+
+<Aside type="caution" title="Perlu verifikasi">
+Sumber menulis "Hibang Langsung BJS"; kemungkinan yang dimaksud adalah
+**Hibah Langsung**.
+</Aside>
 
 ## Formulir
 

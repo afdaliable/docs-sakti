@@ -7,7 +7,7 @@ peran: [satker, kppn-kanwil, djpb-pusat, dja, djkn, bappenas, bpk, apip, widyais
 jenis: juknis
 kata_kunci: [ubah kata sandi, ganti password, lupa password, reset password, password kedaluwarsa]
 status: review
-perlu_review: false
+perlu_review: true
 sumber:
   - judul: "1. Juknis SAKTI Admin Updated 2024"
     url: "https://docs.google.com/presentation/d/1dbhAhtZ-uotv_CxZ5GefYlmeF11DCnZNaswn0Oym6PE/"
@@ -23,7 +23,7 @@ sidebar:
   order: 2
 ---
 
-import { Steps } from '@astrojs/starlight/components';
+import { Steps, Aside } from '@astrojs/starlight/components';
 import MenuSakti from '~/components/MenuSakti.astro';
 import SumberAsli from '~/components/SumberAsli.astro';
 
@@ -34,15 +34,12 @@ mengubah kata sandi secara mandiri demi menjaga keamanan.
 
 ## Mengubah kata sandi
 
-<Steps>
+Buka menu **Administrasi > Pengguna > Ubah Kata Sandi**.
 
-1. Login ke aplikasi SAKTI.
-
-2. Buka menu **Administrasi > Pengguna > Ubah Kata Sandi**.
-
-3. Masukkan kata sandi baru sesuai ketentuan aplikasi, lalu simpan.
-
-</Steps>
+<Aside type="caution" title="Perlu verifikasi">
+Juknis hanya menyebutkan jalur menu ini tanpa merinci langkah di dalam
+formulirnya.
+</Aside>
 
 ## Mereset kata sandi yang lupa
 
@@ -55,11 +52,8 @@ sandi dengan ketentuan berikut:
    dimintakan oleh pemilik akun yang bersangkutan dengan menggunakan email
    SAKTI yang telah didaftarkan.
 
-2. KPPN mereset kata sandi, dan SMS berisi kata sandi baru dikirim ke nomor
-   pengguna.
-
-3. Login kembali menggunakan kata sandi baru, lalu segera ubah kata sandi
-   secara mandiri.
+2. KPPN mereset kata sandi, dan SMS berisi kata sandi baru akan masuk ke
+   nomor pengguna.
 
 </Steps>
 
