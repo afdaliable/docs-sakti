@@ -32,3 +32,13 @@
   harap: ["/admin/formulir/"]
 - q: "error pengguna sudah login sakti"
   harap: ["/admin/monitoring/monitoring-login-satker/"]
+- q: "cara ubah konsolidator satker"
+  harap: ["/referensi/umum/perubahan-konsolidator/"]
+- q: "level satker user login tidak dibolehkan lebih besar"
+  harap: ["/referensi/umum/perubahan-konsolidator/"]
+- q: "rekam bendaharawan bendahara pengeluaran"
+  harap: ["/referensi/bendahara/bendaharawan/"]
+- q: "input daftar ruangan satker"
+  harap: ["/referensi/aset-tetap/ruangan/"]
+- q: "satker tidak masuk konsolidasi wilayah"
+  harap: ["/referensi/umum/perubahan-konsolidator/"]

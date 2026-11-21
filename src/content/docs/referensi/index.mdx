@@ -4,15 +4,43 @@ description: Data referensi satker, akun, dan tabel pendukung.
 modul: referensi
 jenis: indeks
 status: terbit
+sumber:
+  - judul: "1. Juknis SAKTI Admin Updated 2024"
+    url: "https://docs.google.com/presentation/d/1dbhAhtZ-uotv_CxZ5GefYlmeF11DCnZNaswn0Oym6PE/"
+    jenis: google-slides
+    diambil: 2026-11-21
+    id_manifest: A-dok-005
 sidebar:
   label: Ringkasan
   order: 0
 ---
 
-Data referensi satker, akun, dan tabel pendukung.
+import { CardGrid, LinkCard } from '@astrojs/starlight/components';
+import SumberAsli from '~/components/SumberAsli.astro';
 
-Panduan modul ini sedang dimigrasikan dari sumber aslinya.
+Sebelum PMK 158, pengelolaan pengguna dan pengelolaan referensi berada
+dalam satu modul administrator; sesudahnya, referensi menjadi modul
+tersendiri (Modul Referensi). Referensi berfungsi mengelola referensi
+aplikasi SAKTI sesuai tipe dan kewenangannya.
 
-## Sub-menu
+<CardGrid>
+	<LinkCard
+		title="Aset Tetap"
+		description="Referensi modul Aset Tetap, termasuk daftar ruangan."
+		href="/referensi/aset-tetap/"
+	/>
+	<LinkCard
+		title="Bendahara"
+		description="Referensi modul Bendahara, termasuk bendaharawan."
+		href="/referensi/bendahara/"
+	/>
+	<LinkCard
+		title="Umum"
+		description="Referensi umum, termasuk perubahan konsolidator pelaporan."
+		href="/referensi/umum/"
+	/>
+</CardGrid>
 
-- [Umum](/referensi/umum/)
+## Sumber
+
+<SumberAsli />
