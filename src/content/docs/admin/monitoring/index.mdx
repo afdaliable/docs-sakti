@@ -1,6 +1,6 @@
 ---
 title: Monitoring
-description: Panduan menu Monitoring pada modul Administrasi.
+description: Panduan monitoring pada modul Administrasi, termasuk monitoring login satker.
 modul: admin
 jenis: indeks
 status: terbit
@@ -9,4 +9,15 @@ sidebar:
   order: 0
 ---
 
-Panduan untuk menu **Monitoring** sedang disiapkan.
+import { CardGrid, LinkCard } from '@astrojs/starlight/components';
+
+Sub-menu ini berisi panduan fitur monitoring yang tersedia bagi Admin
+Satker pada modul Administrasi.
+
+<CardGrid>
+	<LinkCard
+		title="Memantau Login Satker"
+		description="Melihat pengguna yang sedang login dan menangani kendala sesi login."
+		href="/admin/monitoring/monitoring-login-satker/"
+	/>
+</CardGrid>

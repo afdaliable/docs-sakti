@@ -1,0 +1,51 @@
+---
+title: Memantau Login Satker
+description: Melihat pengguna yang sedang login pada satker dan menangani error "Pengguna Sudah Login".
+modul: admin
+menu_sakti: "Administrasi > Monitoring > Monitoring Login Satker"
+peran: [satker]
+jenis: juknis
+kata_kunci: [monitoring login, pengguna sudah login, buka akun, hapus session, sesi login]
+status: review
+perlu_review: true
+sumber:
+  - judul: "Juknis Admin SAKTI Tipe Satker"
+    url: "https://docs.google.com/presentation/d/10egiSsDGl4zU5e5Ok3jtZAVOmWyTeVRAtSYuMnjyh78/"
+    jenis: google-slides
+    diambil: 2026-11-21
+    id_manifest: A-dok-018
+sidebar:
+  order: 1
+---
+
+import { Aside } from '@astrojs/starlight/components';
+import MenuSakti from '~/components/MenuSakti.astro';
+import SumberAsli from '~/components/SumberAsli.astro';
+
+Menu **Monitoring Login Satker** digunakan untuk melihat pengguna yang
+sedang login serta menghapus session dari user admin.
+
+<MenuSakti />
+
+Saat ini penghapusan session login juga dapat dilakukan secara mandiri
+oleh masing-masing pengguna saat login melalui fitur **Buka Akun**.
+
+## Masalah umum
+
+<details>
+<summary>Saat login muncul "Error Pengguna Sudah Login"</summary>
+
+Klik **Buka Akun**, masukkan password untuk membuka session.
+
+</details>
+
+<Aside type="caution" title="Perlu verifikasi">
+Juknis 2022 menyebut menu ini sebagai **Administrasi > Admin >
+Pengelolaan Pengguna dan Kontrol Akses > Monitoring Login Satker**.
+Menu tersebut hanya ada di juknis 2022; materi ini tidak tercantum pada
+deck juknis 2024.
+</Aside>
+
+## Sumber
+
+<SumberAsli />
