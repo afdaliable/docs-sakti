@@ -3,6 +3,7 @@ import { Badge } from '@astrojs/starlight/components';
 import { muatKonfigurasi } from '~/lib/modul.ts';
 import { labelJenis } from '~/lib/istilah.ts';
 import { jalurHalaman } from '~/lib/jalur.ts';
+import { adalahEntriKonten } from '~/lib/artikel.ts';
 
 const { entry } = Astro.locals.starlightRoute;
 const data = entry.data;
@@ -29,7 +30,8 @@ const jalur = jalurHalaman({
 });
 const namaPeran = new Map(konfigurasi.peran.map((p) => [p.slug, p.nama]));
 const tampilJalur = jalur.length > 0 && jenis !== undefined;
-const adalahArtikel = typeof data.modul === 'string' && jenis !== 'indeks';
+const adalahArtikel =
+	adalahEntriKonten(entry) && jenis !== 'indeks' && data.template !== 'splash';
 ---
 
 {

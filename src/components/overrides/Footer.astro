@@ -2,10 +2,12 @@
 import FooterBawaan from '@astrojs/starlight/components/Footer.astro';
 import { Icon } from '@astrojs/starlight/components';
 import { formatTanggal } from '~/lib/tanggal.ts';
+import { adalahEntriKonten } from '~/lib/artikel.ts';
 
 const { entry } = Astro.locals.starlightRoute;
 const data = entry.data;
-const adalahIndeks = typeof data.modul !== 'string' || data.jenis === 'indeks';
+const adalahIndeks =
+	!adalahEntriKonten(entry) || data.jenis === 'indeks' || data.template === 'splash';
 const verifikasi =
 	data.terakhir_diverifikasi instanceof Date ? data.terakhir_diverifikasi : undefined;
 const url = Astro.url.pathname;
