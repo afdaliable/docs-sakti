@@ -1,6 +1,6 @@
 # Laporan Inventaris Konten SAKTI
 
-Dibuat: 2026-11-21T19:17:21+07:00
+Dibuat: 2026-11-21T14:54:33.831Z
 
 ## Item per sumber dan jenis
 
@@ -47,8 +47,8 @@ Dibuat: 2026-11-21T19:17:21+07:00
 
 ## Penanda sumber
 
-- ✅: 32
-- 🟡: 4
+- ✅: 31
+- 🟡: 5
 
 ## Halaman kosong
 
@@ -522,6 +522,99 @@ Dibuat: 2026-11-21T19:17:21+07:00
 ## Item tanpa target modul
 
 - C-home — https://sites.google.com/view/saktipelaporan/home
+
+## Ringkasan peta konten
+
+Baris per jenis:
+- ditolak: 50
+- faq: 1
+- indeks: 66
+- juknis: 295
+- konsep: 1
+- peraturan: 1
+- referensi: 2
+
+Artikel target per modul:
+- admin: 14
+- akuntansi-pelaporan: 23
+- aset-tetap: 129
+- bantuan: 2
+- bendahara: 18
+- faq: 1
+- komitmen: 63
+- kppn-bun: 4
+- mulai: 21
+- pembayaran: 69
+- peraturan: 1
+- persediaan: 48
+- piutang: 22
+
+### Usulan ditolak
+
+- ADK Data Pegawai — C-sakti-pelaksanaan-komitmen-adk-adk-data-pegawai — halaman sumber kosong (3 kata, tanpa dokumen)
+- Cetak Resume BAST Barang/Jasa — C-sakti-pelaksanaan-komitmen-cetak-cetak-resume-bast-barangjasa — halaman sumber kosong (4 kata, tanpa dokumen)
+- Cetak Resume BAST Non Kontrak — C-sakti-pelaksanaan-komitmen-cetak-cetak-resume-bast-non-kontrak — halaman sumber kosong (5 kata, tanpa dokumen)
+- Cetak Resume Kontrak — C-sakti-pelaksanaan-komitmen-cetak-cetak-resume-kontrak — halaman sumber kosong (3 kata, tanpa dokumen)
+- Cetak Resume Suplier — C-sakti-pelaksanaan-komitmen-cetak-cetak-resume-suplier — halaman sumber kosong (3 kata, tanpa dokumen)
+- Laporan FA Detail (16 Segmen) — C-sakti-pelaksanaan-komitmen-cetak-laporan-fa-detail-16-segmen — halaman sumber kosong (5 kata, tanpa dokumen)
+- TKDN Per Kategori & Jenis Belanja — C-sakti-pelaksanaan-komitmen-cetak-laporan-tkdnpdn-tkdn-per-kategori-jenis-belanja — halaman sumber kosong (6 kata, tanpa dokumen)
+- TKDN Per Pagu Anggaran — C-sakti-pelaksanaan-komitmen-cetak-laporan-tkdnpdn-tkdn-per-pagu-anggaran — halaman sumber kosong (4 kata, tanpa dokumen)
+- Registrasi Escrow — C-sakti-pelaksanaan-komitmen-proses-escrow-registrasi-escrow — halaman sumber kosong (2 kata, tanpa dokumen)
+- Karwas Kontrak — C-sakti-pelaksanaan-komitmen-monitoring-karwas-kontrak — halaman sumber kosong (2 kata, tanpa dokumen)
+- Monitoring ADK GPP — C-sakti-pelaksanaan-komitmen-monitoring-monitoring-adk-gpp — halaman sumber kosong (3 kata, tanpa dokumen)
+- Monitoring ADK Kontrak dan Supplier — C-sakti-pelaksanaan-komitmen-monitoring-monitoring-adk-kontrak-dan-supplier — halaman sumber kosong (5 kata, tanpa dokumen)
+- Interkoneksi BAST Non Kontraktual — C-sakti-pelaksanaan-komitmen-ruh-interkoneksi-bast-non-kontraktual — halaman sumber kosong (4 kata, tanpa dokumen)
+- Migrasi Kontrak Escrow — C-sakti-pelaksanaan-komitmen-ruh-migrasi-kontrak-escrow — halaman sumber kosong (3 kata, tanpa dokumen)
+- Pencatatan BAST Hibah B/J/S — C-sakti-pelaksanaan-komitmen-ruh-pencatatan-bast-hibah-bjs — halaman sumber kosong (4 kata, tanpa dokumen)
+- Pencatatan Penerimaan Barang/Jasa Hibah — C-sakti-pelaksanaan-komitmen-ruh-pencatatan-penerimaan-barangjasa-hibah — halaman sumber kosong (4 kata, tanpa dokumen)
+- Pencatatan Penerimaan Barang/Jasa KKP — C-sakti-pelaksanaan-komitmen-ruh-pencatatan-penerimaan-barangjasa-kkp — halaman sumber kosong (4 kata, tanpa dokumen)
+- Pencatatan Penerimaan Barang/Jasa UP Tunai/Bank — C-sakti-pelaksanaan-komitmen-ruh-pencatatan-penerimaan-barangjasa-up-tunaibank — halaman sumber kosong (5 kata, tanpa dokumen)
+- Pencatatan Penerimaan Barang/Jasa Valas — C-sakti-pelaksanaan-komitmen-ruh-pencatatan-penerimaan-barangjasa-valas — halaman sumber kosong (4 kata, tanpa dokumen)
+- Upload / Rekam ADK CAN — C-sakti-pelaksanaan-komitmen-upload-rekam-upload-rekam-adk-can — halaman sumber kosong (5 kata, tanpa dokumen)
+- Upload / Rekam ADK NRS — C-sakti-pelaksanaan-komitmen-upload-rekam-upload-rekam-adk-nrs — halaman sumber kosong (5 kata, tanpa dokumen)
+- Folder Drive Juknis Pelaksanaan — B-folder-ben;B-folder-kom;B-folder-pem;B-folder-bun — wadah folder; isi sudah dipetakan per berkas (bukan konten)
+- ADK Rekening Penyalur — C-sakti-pelaksanaan-pembayaran-catatupload-adk-rekening-penyalur — halaman sumber kosong (3 kata, tanpa dokumen)
+- Mencatat Nomor Persetujuan MPHL-BJS — C-sakti-pelaksanaan-pembayaran-catatupload-mencatat-nomor-persetujuan-mphl-bjs — halaman sumber kosong (4 kata, tanpa dokumen)
+- Mencatat Persetujuan SP2D Koreksi — C-sakti-pelaksanaan-pembayaran-catatupload-mencatat-persetujuan-sp2d-koreksi — halaman sumber kosong (4 kata, tanpa dokumen)
+- Mencatat SP3 LC — C-sakti-pelaksanaan-pembayaran-catatupload-mencatat-sp3-lc — halaman sumber kosong (3 kata, tanpa dokumen)
+- Mencatat/Upload Nomor Tagihan ADK — C-sakti-pelaksanaan-pembayaran-catatupload-mencatatupload-nomor-tagihan-adk — halaman sumber kosong (3 kata, tanpa dokumen)
+- Mencatat/Upload SP2D — C-sakti-pelaksanaan-pembayaran-catatupload-mencatatupload-sp2d — halaman sumber kosong (2 kata, tanpa dokumen)
+- Mencatat/Upload SP3 — C-sakti-pelaksanaan-pembayaran-catatupload-mencatatupload-sp3 — halaman sumber kosong (2 kata, tanpa dokumen)
+- Upload Dokumen Pendukung — C-sakti-pelaksanaan-pembayaran-catatupload-upload-dokumen-pendukung — halaman sumber kosong (3 kata, tanpa dokumen)
+- Cetak Arsip SPM — C-sakti-pelaksanaan-pembayaran-cetak-cetak-arsip-spm — halaman sumber kosong (3 kata, tanpa dokumen)
+- Cetak Arsip SPP — C-sakti-pelaksanaan-pembayaran-cetak-cetak-arsip-spp — halaman sumber kosong (3 kata, tanpa dokumen)
+- Laporan FA Detail (12 Segmen) — C-sakti-pelaksanaan-pembayaran-cetak-laporan-fa-detail-12-segmen — halaman sumber kosong (5 kata, tanpa dokumen)
+- Mencetak SPM — C-sakti-pelaksanaan-pembayaran-cetak-mencetak-spm — halaman sumber kosong (2 kata, tanpa dokumen)
+- Mencetak SPP — C-sakti-pelaksanaan-pembayaran-cetak-mencetak-spp — halaman sumber kosong (2 kata, tanpa dokumen)
+- Monitoring ADK — C-sakti-pelaksanaan-pembayaran-monitoring-monitoring-adk — halaman sumber kosong (2 kata, tanpa dokumen)
+- Monitoring Belanja Operasional (PPP) — C-sakti-pelaksanaan-pembayaran-monitoring-monitoring-belanja-operasional-ppp — halaman sumber kosong (4 kata, tanpa dokumen)
+- Monitoring Dok. Pendukung — C-sakti-pelaksanaan-pembayaran-monitoring-monitoring-dok-pendukung — halaman sumber kosong (3 kata, tanpa dokumen)
+- Monitoring Perintah Bayar — C-sakti-pelaksanaan-pembayaran-monitoring-monitoring-perintah-bayar — halaman sumber kosong (3 kata, tanpa dokumen)
+- Monitoring SPP — C-sakti-pelaksanaan-pembayaran-monitoring-monitoring-spp — halaman sumber kosong (2 kata, tanpa dokumen)
+- Mengelola Barang Persediaan — C-persediaan-referensi-mengelola-barang-persediaan — halaman sumber kosong (7 kata, tanpa dokumen)
+- Persetujuan Transaksi - APPROVER — C-aset-tetap-persetujuan-persetujuan-transaksi-approver — halaman sumber kosong (4 kata, tanpa dokumen)
+- Validasi - VALIDATOR — C-aset-tetap-persetujuan-validasi-validator — halaman sumber kosong (3 kata, tanpa dokumen)
+- Batal Transfer Keluar Online — C-aset-tetap-ruh-transaksi-bmn-perolehan-bmn-batal-transfer-keluar-online — halaman sumber kosong (9 kata, tanpa dokumen)
+- Koreksi Rincian Aset — C-aset-tetap-ruh-transaksi-bmn-perubahan-bmn-koreksi-rincian-aset — halaman sumber kosong (7 kata, tanpa dokumen)
+- Koreksi Rincian Aset Per Transaksi — C-aset-tetap-ruh-transaksi-bmn-perubahan-bmn-koreksi-rincian-aset-per-transaksi — halaman sumber kosong (11 kata, tanpa dokumen)
+- Koreksi Susulan — C-aset-tetap-ruh-transaksi-bmn-perubahan-bmn-koreksi-susulan — halaman sumber kosong (2 kata, tanpa dokumen)
+- Perubahan Satker Tujuan TK — C-aset-tetap-ruh-transaksi-bmn-perubahan-bmn-perubahan-satker-tujuan-tk — halaman sumber kosong (9 kata, tanpa dokumen)
+- Koreksi Pencatatan KDP — C-aset-tetap-ruh-transaksi-kdp-koreksi-pencatatan-kdp — halaman sumber kosong (3 kata, tanpa dokumen)
+- Beranda — C-home — beranda situs lama (pengantar saja)
+
+## Perlu diunduh manual
+
+Simpan berkas ke `sources/raw/manual/<id>.<ekstensi>`, lalu jalankan `pnpm migrate:extract --id <id>`.
+
+- A-download — 404 — https://sites.google.com/view/saktiadm/download — halaman 404 di sumber (tautan Unduh Form rusak) — ditautkan dari: -
+- C-dok-079 — Download Juknis Video — https://drive.google.com/file/d/1fHAL9HQEthex16guGU7QzuHaI_f4gtYU/view — butuh login — ditautkan dari: C-aset-tetap-ruh-transaksi-bmn-usulan-penghapusan-bmn-pencatatan-barang-yang-akan-dihapuskan
+- C-dok-081 — Download Juknis Video — https://drive.google.com/file/d/18cP_BLDyS7KhTXw7Ckg3l2dZ4lMRZChD/view — butuh login — ditautkan dari: C-aset-tetap-ruh-transaksi-bmn-usulan-penghapusan-bmn-pencatatan-pembatalan-barang-yang-akan-dihapuskan
+- C-dok-120 — Download Juknis Video — https://drive.google.com/file/d/17Z3z_9NPjxnbhDBwOSE1HoawcO-4H7yN/view — butuh login — ditautkan dari: C-aset-tetap-ruh-transaksi-bmn-bersejarah-saldo-awal
+- C-dok-122 — Download Juknis Video — https://drive.google.com/file/d/1VeqNLPJpNZ4kcvhQfNByZcHnPZvsEBOR/view — butuh login — ditautkan dari: C-aset-tetap-ruh-transaksi-bmn-bersejarah-perolehan
+- C-dok-124 — Download Juknis Video — https://drive.google.com/file/d/13Ze2AJjl_Go-TT849E4UCSLJpQG9Az-x/view — butuh login — ditautkan dari: C-aset-tetap-ruh-transaksi-bmn-bersejarah-penghapusan, C-aset-tetap-ruh-transaksi-bmn-bersejarah-transfer-masuk, C-aset-tetap-ruh-transaksi-bmn-bersejarah-transfer-keluar
+- C-dok-146 — Download Juknis Video — https://drive.google.com/file/d/1BEpjfG_LTx2Ql2Cxdyzlwwnu-EaiC8K4/view — HTTP 404 — ditautkan dari: C-piutang-pengelolaan-piutang-transaksi-pelimpahan-piutang-ke-djkn-pupn
+- C-dok-169 — Download Juknis Video — https://drive.google.com/drive/folders/1jeMTgTG6HFRj6ZX1uGRVsqSed21X48j4 — HTTP 404 — ditautkan dari: C-akuntansi-dan-pelaporan-proses-jurnal-penyesuaian-khusus-jurnal-balik
+- C-dok-175 — Download Juknis Video — https://drive.google.com/file/d/1eDd_o6NArpLsiXnl9vpS7p95bUgHlEjZ/view — HTTP 404 — ditautkan dari: C-akuntansi-dan-pelaporan-transaksi-resiprokal
 
 ## Hasil ekstraksi
 

@@ -1,5 +1,5 @@
 {
-  "dibuat": "2026-11-21T19:17:21+07:00",
+  "dibuat": "2026-11-21T21:52:52+07:00",
   "item": [
     {
       "judul": "Download FormPengguna SAKTI - APIP",
@@ -6563,9 +6563,9 @@
       "teks_tautan": null,
       "jalur_menu": [
         "Aset Tetap",
-        "🟡 RUH"
+        "RUH"
       ],
-      "penanda_sumber": "✅",
+      "penanda_sumber": "🟡",
       "modified": "2025-06-23T03:43:00.240Z",
       "file_lokal": "sources/raw/gsites/saktipelaporan/aset-tetap_ruh.html",
       "embed": [],
@@ -6590,7 +6590,7 @@
       "teks_tautan": null,
       "jalur_menu": [
         "Aset Tetap",
-        "🟡 RUH",
+        "RUH",
         "ATR - Menambah Masa Manfaat"
       ],
       "penanda_sumber": "🟡",
@@ -6618,7 +6618,7 @@
       "teks_tautan": null,
       "jalur_menu": [
         "Aset Tetap",
-        "🟡 RUH",
+        "RUH",
         "ATR - Menambah Masa Manfaat",
         "Pembelian Aset"
       ],
@@ -6647,7 +6647,7 @@
       "teks_tautan": null,
       "jalur_menu": [
         "Aset Tetap",
-        "🟡 RUH",
+        "RUH",
         "ATR - Menambah Masa Manfaat",
         "Penyelesaian dengan KDP"
       ],
@@ -6676,7 +6676,7 @@
       "teks_tautan": null,
       "jalur_menu": [
         "Aset Tetap",
-        "🟡 RUH",
+        "RUH",
         "ATR - Menambah Masa Manfaat",
         "Penyelesaian Langsung"
       ],
@@ -6705,7 +6705,7 @@
       "teks_tautan": null,
       "jalur_menu": [
         "Aset Tetap",
-        "🟡 RUH",
+        "RUH",
         "ATR - Menambah Masa Manfaat",
         "Perolehan Lainnya"
       ],
@@ -6734,7 +6734,7 @@
       "teks_tautan": null,
       "jalur_menu": [
         "Aset Tetap",
-        "🟡 RUH",
+        "RUH",
         "ATR - Menambah Masa Manfaat",
         "Saldo Awal"
       ],
@@ -6763,7 +6763,7 @@
       "teks_tautan": null,
       "jalur_menu": [
         "Aset Tetap",
-        "🟡 RUH",
+        "RUH",
         "Transaksi Barang Pihak Ketiga"
       ],
       "penanda_sumber": "✅",
@@ -6791,7 +6791,7 @@
       "teks_tautan": null,
       "jalur_menu": [
         "Aset Tetap",
-        "🟡 RUH",
+        "RUH",
         "Transaksi Barang Pihak Ketiga",
         "Penghapusan"
       ],
@@ -6823,7 +6823,7 @@
       "teks_tautan": null,
       "jalur_menu": [
         "Aset Tetap",
-        "🟡 RUH",
+        "RUH",
         "Transaksi Barang Pihak Ketiga",
         "Perolehan"
       ],
@@ -6855,7 +6855,7 @@
       "teks_tautan": null,
       "jalur_menu": [
         "Aset Tetap",
-        "🟡 RUH",
+        "RUH",
         "Transaksi Barang Pihak Ketiga",
         "Transfer Keluar"
       ],
@@ -6884,7 +6884,7 @@
       "teks_tautan": null,
       "jalur_menu": [
         "Aset Tetap",
-        "🟡 RUH",
+        "RUH",
         "Transaksi Barang Pihak Ketiga",
         "Transfer Masuk"
       ],
@@ -6913,7 +6913,7 @@
       "teks_tautan": null,
       "jalur_menu": [
         "Aset Tetap",
-        "🟡 RUH",
+        "RUH",
         "Transaksi BMN"
       ],
       "penanda_sumber": "✅",
@@ -6941,7 +6941,7 @@
       "teks_tautan": null,
       "jalur_menu": [
         "Aset Tetap",
-        "🟡 RUH",
+        "RUH",
         "Transaksi BMN",
         "Aset Kemitraan"
       ],
@@ -6970,7 +6970,7 @@
       "teks_tautan": null,
       "jalur_menu": [
         "Aset Tetap",
-        "🟡 RUH",
+        "RUH",
         "Transaksi BMN",
         "Aset Kemitraan",
         "Perubahan Aset Kemitraan ke BMN"
@@ -7000,7 +7000,7 @@
       "teks_tautan": null,
       "jalur_menu": [
         "Aset Tetap",
-        "🟡 RUH",
+        "RUH",
         "Transaksi BMN",
         "Aset Kemitraan",
         "Perubahan BMN ke Aset Kemitraan"
@@ -7030,7 +7030,7 @@
       "teks_tautan": null,
       "jalur_menu": [
         "Aset Tetap",
-        "🟡 RUH",
+        "RUH",
         "Transaksi BMN",
         "Aset Kemitraan",
         "Transfer Keluar Kemitraan"
@@ -7060,7 +7060,7 @@
       "teks_tautan": null,
       "jalur_menu": [
         "Aset Tetap",
-        "🟡 RUH",
+        "RUH",
         "Transaksi BMN",
         "Aset Konsesi Jasa"
       ],
@@ -7089,7 +7089,7 @@
       "teks_tautan": null,
       "jalur_menu": [
         "Aset Tetap",
-        "🟡 RUH",
+        "RUH",
         "Transaksi BMN",
         "Aset Konsesi Jasa",
         "Perubahan Aset Konsesi Jasa ke BMN"
@@ -7119,7 +7119,7 @@
       "teks_tautan": null,
       "jalur_menu": [
         "Aset Tetap",
-        "🟡 RUH",
+        "RUH",
         "Transaksi BMN",
         "Aset Konsesi Jasa",
         "Perubahan BMN ke Aset Konsesi Jasa"
@@ -7149,7 +7149,7 @@
       "teks_tautan": null,
       "jalur_menu": [
         "Aset Tetap",
-        "🟡 RUH",
+        "RUH",
         "Transaksi BMN Bersejarah"
       ],
       "penanda_sumber": "✅",
@@ -7177,7 +7177,7 @@
       "teks_tautan": null,
       "jalur_menu": [
         "Aset Tetap",
-        "🟡 RUH",
+        "RUH",
         "Transaksi BMN Bersejarah",
         "Penghapusan"
       ],
@@ -7209,7 +7209,7 @@
       "teks_tautan": null,
       "jalur_menu": [
         "Aset Tetap",
-        "🟡 RUH",
+        "RUH",
         "Transaksi BMN Bersejarah",
         "Perolehan"
       ],
@@ -7241,7 +7241,7 @@
       "teks_tautan": null,
       "jalur_menu": [
         "Aset Tetap",
-        "🟡 RUH",
+        "RUH",
         "Transaksi BMN Bersejarah",
         "Saldo Awal"
       ],
@@ -7273,7 +7273,7 @@
       "teks_tautan": null,
       "jalur_menu": [
         "Aset Tetap",
-        "🟡 RUH",
+        "RUH",
         "Transaksi BMN Bersejarah",
         "Transfer Keluar"
       ],
@@ -7305,7 +7305,7 @@
       "teks_tautan": null,
       "jalur_menu": [
         "Aset Tetap",
-        "🟡 RUH",
+        "RUH",
         "Transaksi BMN Bersejarah",
         "Transfer Masuk"
       ],
@@ -7337,7 +7337,7 @@
       "teks_tautan": null,
       "jalur_menu": [
         "Aset Tetap",
-        "🟡 RUH",
+        "RUH",
         "Transaksi BMN",
         "BMN dalam Proses PMPP"
       ],
@@ -7366,7 +7366,7 @@
       "teks_tautan": null,
       "jalur_menu": [
         "Aset Tetap",
-        "🟡 RUH",
+        "RUH",
         "Transaksi BMN",
         "BMN Hilang"
       ],
@@ -7395,7 +7395,7 @@
       "teks_tautan": null,
       "jalur_menu": [
         "Aset Tetap",
-        "🟡 RUH",
+        "RUH",
         "Transaksi BMN",
         "BMN Hilang",
         "Pencatatan BMN Hilang"
@@ -7425,7 +7425,7 @@
       "teks_tautan": null,
       "jalur_menu": [
         "Aset Tetap",
-        "🟡 RUH",
+        "RUH",
         "Transaksi BMN",
         "BMN Hilang",
         "Pencatatan Pembatalan BMN Hilang"
@@ -7455,7 +7455,7 @@
       "teks_tautan": null,
       "jalur_menu": [
         "Aset Tetap",
-        "🟡 RUH",
+        "RUH",
         "Transaksi BMN",
         "BPYBDS"
       ],
@@ -7484,7 +7484,7 @@
       "teks_tautan": null,
       "jalur_menu": [
         "Aset Tetap",
-        "🟡 RUH",
+        "RUH",
         "Transaksi BMN",
         "BPYBDS",
         "Penghapusan BPYBDS"
@@ -7514,7 +7514,7 @@
       "teks_tautan": null,
       "jalur_menu": [
         "Aset Tetap",
-        "🟡 RUH",
+        "RUH",
         "Transaksi BMN",
         "BPYBDS",
         "Reklas dari BMN"
@@ -7544,7 +7544,7 @@
       "teks_tautan": null,
       "jalur_menu": [
         "Aset Tetap",
-        "🟡 RUH",
+        "RUH",
         "Transaksi BMN",
         "Penghapusan"
       ],
@@ -7573,7 +7573,7 @@
       "teks_tautan": null,
       "jalur_menu": [
         "Aset Tetap",
-        "🟡 RUH",
+        "RUH",
         "Transaksi BMN",
         "Penghapusan",
         "Hibah Keluar"
@@ -7606,7 +7606,7 @@
       "teks_tautan": null,
       "jalur_menu": [
         "Aset Tetap",
-        "🟡 RUH",
+        "RUH",
         "Transaksi BMN",
         "Penghapusan",
         "Hibah Keluar (Barang Henti)"
@@ -7639,7 +7639,7 @@
       "teks_tautan": null,
       "jalur_menu": [
         "Aset Tetap",
-        "🟡 RUH",
+        "RUH",
         "Transaksi BMN",
         "Penghapusan",
         "Koreksi Pencatatan"
@@ -7672,7 +7672,7 @@
       "teks_tautan": null,
       "jalur_menu": [
         "Aset Tetap",
-        "🟡 RUH",
+        "RUH",
         "Transaksi BMN",
         "Penghapusan",
         "Penghapusan"
@@ -7705,7 +7705,7 @@
       "teks_tautan": null,
       "jalur_menu": [
         "Aset Tetap",
-        "🟡 RUH",
+        "RUH",
         "Transaksi BMN",
         "Penghapusan",
         "Reklas Keluar Persediaan"
@@ -7738,7 +7738,7 @@
       "teks_tautan": null,
       "jalur_menu": [
         "Aset Tetap",
-        "🟡 RUH",
+        "RUH",
         "Transaksi BMN",
         "Penghapusan",
         "Reklasifikasi Keluar"
@@ -7771,7 +7771,7 @@
       "teks_tautan": null,
       "jalur_menu": [
         "Aset Tetap",
-        "🟡 RUH",
+        "RUH",
         "Transaksi BMN",
         "Penghapusan",
         "Transfer Keluar (ATR)"
@@ -7803,7 +7803,7 @@
       "teks_tautan": null,
       "jalur_menu": [
         "Aset Tetap",
-        "🟡 RUH",
+        "RUH",
         "Transaksi BMN",
         "Penghapusan",
         "Transfer Keluar (Barang Aktif)"
@@ -7836,7 +7836,7 @@
       "teks_tautan": null,
       "jalur_menu": [
         "Aset Tetap",
-        "🟡 RUH",
+        "RUH",
         "Transaksi BMN",
         "Penghapusan",
         "Transfer Keluar (Henti Guna)"
@@ -7869,7 +7869,7 @@
       "teks_tautan": null,
       "jalur_menu": [
         "Aset Tetap",
-        "🟡 RUH",
+        "RUH",
         "Transaksi BMN",
         "Penghapusan",
         "Transfer Keluar (Usul Hapus)"
@@ -7899,7 +7899,7 @@
       "teks_tautan": null,
       "jalur_menu": [
         "Aset Tetap",
-        "🟡 RUH",
+        "RUH",
         "Transaksi BMN",
         "Penghentian Penggunaan"
       ],
@@ -7928,7 +7928,7 @@
       "teks_tautan": null,
       "jalur_menu": [
         "Aset Tetap",
-        "🟡 RUH",
+        "RUH",
         "Transaksi BMN",
         "Penghentian Penggunaan",
         "Penggunaan Kembali"
@@ -7961,7 +7961,7 @@
       "teks_tautan": null,
       "jalur_menu": [
         "Aset Tetap",
-        "🟡 RUH",
+        "RUH",
         "Transaksi BMN",
         "Penghentian Penggunaan",
         "Penghentian Penggunaan"
@@ -7994,7 +7994,7 @@
       "teks_tautan": null,
       "jalur_menu": [
         "Aset Tetap",
-        "🟡 RUH",
+        "RUH",
         "Transaksi BMN",
         "Perolehan BMN"
       ],
@@ -8023,7 +8023,7 @@
       "teks_tautan": null,
       "jalur_menu": [
         "Aset Tetap",
-        "🟡 RUH",
+        "RUH",
         "Transaksi BMN",
         "Perolehan BMN",
         "Bangun Guna Serah"
@@ -8055,7 +8055,7 @@
       "teks_tautan": null,
       "jalur_menu": [
         "Aset Tetap",
-        "🟡 RUH",
+        "RUH",
         "Transaksi BMN",
         "Perolehan BMN",
         "Bangun Serah Guna"
@@ -8087,7 +8087,7 @@
       "teks_tautan": null,
       "jalur_menu": [
         "Aset Tetap",
-        "🟡 RUH",
+        "RUH",
         "Transaksi BMN",
         "Perolehan BMN",
         "Batal Transfer Keluar Online"
@@ -8117,7 +8117,7 @@
       "teks_tautan": null,
       "jalur_menu": [
         "Aset Tetap",
-        "🟡 RUH",
+        "RUH",
         "Transaksi BMN",
         "Perolehan BMN",
         "Hibah Masuk"
@@ -8150,7 +8150,7 @@
       "teks_tautan": null,
       "jalur_menu": [
         "Aset Tetap",
-        "🟡 RUH",
+        "RUH",
         "Transaksi BMN",
         "Perolehan BMN",
         "Pembatalan Penghapusan"
@@ -8183,7 +8183,7 @@
       "teks_tautan": null,
       "jalur_menu": [
         "Aset Tetap",
-        "🟡 RUH",
+        "RUH",
         "Transaksi BMN",
         "Perolehan BMN",
         "Pembelian"
@@ -8216,7 +8216,7 @@
       "teks_tautan": null,
       "jalur_menu": [
         "Aset Tetap",
-        "🟡 RUH",
+        "RUH",
         "Transaksi BMN",
         "Perolehan BMN",
         "Penyelesaian Pembangunan Dengan KDP"
@@ -8249,7 +8249,7 @@
       "teks_tautan": null,
       "jalur_menu": [
         "Aset Tetap",
-        "🟡 RUH",
+        "RUH",
         "Transaksi BMN",
         "Perolehan BMN",
         "Penyelesaian Pembangunan Langsung"
@@ -8281,7 +8281,7 @@
       "teks_tautan": null,
       "jalur_menu": [
         "Aset Tetap",
-        "🟡 RUH",
+        "RUH",
         "Transaksi BMN",
         "Perolehan BMN",
         "Perolehan Lainnya"
@@ -8314,7 +8314,7 @@
       "teks_tautan": null,
       "jalur_menu": [
         "Aset Tetap",
-        "🟡 RUH",
+        "RUH",
         "Transaksi BMN",
         "Perolehan BMN",
         "Pertukaran"
@@ -8344,7 +8344,7 @@
       "teks_tautan": null,
       "jalur_menu": [
         "Aset Tetap",
-        "🟡 RUH",
+        "RUH",
         "Transaksi BMN",
         "Perolehan BMN",
         "Rampasan"
@@ -8377,7 +8377,7 @@
       "teks_tautan": null,
       "jalur_menu": [
         "Aset Tetap",
-        "🟡 RUH",
+        "RUH",
         "Transaksi BMN",
         "Perolehan BMN",
         "Reklas Aset Dari Persediaan"
@@ -8407,7 +8407,7 @@
       "teks_tautan": null,
       "jalur_menu": [
         "Aset Tetap",
-        "🟡 RUH",
+        "RUH",
         "Transaksi BMN",
         "Perolehan BMN",
         "Reklasifikasi dari BPYBDS"
@@ -8437,7 +8437,7 @@
       "teks_tautan": null,
       "jalur_menu": [
         "Aset Tetap",
-        "🟡 RUH",
+        "RUH",
         "Transaksi BMN",
         "Perolehan BMN",
         "Reklasifikasi Masuk"
@@ -8470,7 +8470,7 @@
       "teks_tautan": null,
       "jalur_menu": [
         "Aset Tetap",
-        "🟡 RUH",
+        "RUH",
         "Transaksi BMN",
         "Perolehan BMN",
         "Saldo Awal"
@@ -8502,7 +8502,7 @@
       "teks_tautan": null,
       "jalur_menu": [
         "Aset Tetap",
-        "🟡 RUH",
+        "RUH",
         "Transaksi BMN",
         "Perolehan BMN",
         "Transfer Masuk Manual"
@@ -8535,7 +8535,7 @@
       "teks_tautan": null,
       "jalur_menu": [
         "Aset Tetap",
-        "🟡 RUH",
+        "RUH",
         "Transaksi BMN",
         "Perolehan BMN",
         "Transfer Masuk Online"
@@ -8568,7 +8568,7 @@
       "teks_tautan": null,
       "jalur_menu": [
         "Aset Tetap",
-        "🟡 RUH",
+        "RUH",
         "Transaksi BMN",
         "Perubahan BMN"
       ],
@@ -8597,7 +8597,7 @@
       "teks_tautan": null,
       "jalur_menu": [
         "Aset Tetap",
-        "🟡 RUH",
+        "RUH",
         "Transaksi BMN",
         "Perubahan BMN",
         "Koreksi Manual"
@@ -8630,7 +8630,7 @@
       "teks_tautan": null,
       "jalur_menu": [
         "Aset Tetap",
-        "🟡 RUH",
+        "RUH",
         "Transaksi BMN",
         "Perubahan BMN",
         "Koreksi Perubahan Nilai Berkurang"
@@ -8663,7 +8663,7 @@
       "teks_tautan": null,
       "jalur_menu": [
         "Aset Tetap",
-        "🟡 RUH",
+        "RUH",
         "Transaksi BMN",
         "Perubahan BMN",
         "Koreksi Perubahan Nilai Bertambah"
@@ -8696,7 +8696,7 @@
       "teks_tautan": null,
       "jalur_menu": [
         "Aset Tetap",
-        "🟡 RUH",
+        "RUH",
         "Transaksi BMN",
         "Perubahan BMN",
         "Koreksi Rincian Aset"
@@ -8726,7 +8726,7 @@
       "teks_tautan": null,
       "jalur_menu": [
         "Aset Tetap",
-        "🟡 RUH",
+        "RUH",
         "Transaksi BMN",
         "Perubahan BMN",
         "Koreksi Rincian Aset Per Transaksi"
@@ -8756,7 +8756,7 @@
       "teks_tautan": null,
       "jalur_menu": [
         "Aset Tetap",
-        "🟡 RUH",
+        "RUH",
         "Transaksi BMN",
         "Perubahan BMN",
         "Koreksi Susulan"
@@ -8786,7 +8786,7 @@
       "teks_tautan": null,
       "jalur_menu": [
         "Aset Tetap",
-        "🟡 RUH",
+        "RUH",
         "Transaksi BMN",
         "Perubahan BMN",
         "Penerimaan Aset dari Pengembangan Aset Renovasi"
@@ -8818,7 +8818,7 @@
       "teks_tautan": null,
       "jalur_menu": [
         "Aset Tetap",
-        "🟡 RUH",
+        "RUH",
         "Transaksi BMN",
         "Perubahan BMN",
         "Pengembangan Dengan KDP"
@@ -8851,7 +8851,7 @@
       "teks_tautan": null,
       "jalur_menu": [
         "Aset Tetap",
-        "🟡 RUH",
+        "RUH",
         "Transaksi BMN",
         "Perubahan BMN",
         "Pengembangan Langsung"
@@ -8883,7 +8883,7 @@
       "teks_tautan": null,
       "jalur_menu": [
         "Aset Tetap",
-        "🟡 RUH",
+        "RUH",
         "Transaksi BMN",
         "Perubahan BMN",
         "Perubahan Kondisi"
@@ -8916,7 +8916,7 @@
       "teks_tautan": null,
       "jalur_menu": [
         "Aset Tetap",
-        "🟡 RUH",
+        "RUH",
         "Transaksi BMN",
         "Perubahan BMN",
         "Perubahan Kuantitas"
@@ -8949,7 +8949,7 @@
       "teks_tautan": null,
       "jalur_menu": [
         "Aset Tetap",
-        "🟡 RUH",
+        "RUH",
         "Transaksi BMN",
         "Perubahan BMN",
         "Perubahan Satker Tujuan TK"
@@ -8979,7 +8979,7 @@
       "teks_tautan": null,
       "jalur_menu": [
         "Aset Tetap",
-        "🟡 RUH",
+        "RUH",
         "Transaksi BMN",
         "Properti Investasi"
       ],
@@ -9008,7 +9008,7 @@
       "teks_tautan": null,
       "jalur_menu": [
         "Aset Tetap",
-        "🟡 RUH",
+        "RUH",
         "Transaksi BMN",
         "Transfer Internal"
       ],
@@ -9037,7 +9037,7 @@
       "teks_tautan": null,
       "jalur_menu": [
         "Aset Tetap",
-        "🟡 RUH",
+        "RUH",
         "Transaksi BMN",
         "Transfer Internal"
       ],
@@ -9066,7 +9066,7 @@
       "teks_tautan": null,
       "jalur_menu": [
         "Aset Tetap",
-        "🟡 RUH",
+        "RUH",
         "Transaksi BMN",
         "Transfer Internal",
         "Transfer Internal Keluar"
@@ -9096,7 +9096,7 @@
       "teks_tautan": null,
       "jalur_menu": [
         "Aset Tetap",
-        "🟡 RUH",
+        "RUH",
         "Transaksi BMN",
         "Transfer Internal",
         "Transfer Internal Masuk"
@@ -9126,7 +9126,7 @@
       "teks_tautan": null,
       "jalur_menu": [
         "Aset Tetap",
-        "🟡 RUH",
+        "RUH",
         "Transaksi BMN",
         "Transfer Internal",
         "Transfer Internal Keluar"
@@ -9156,7 +9156,7 @@
       "teks_tautan": null,
       "jalur_menu": [
         "Aset Tetap",
-        "🟡 RUH",
+        "RUH",
         "Transaksi BMN",
         "Transfer Internal",
         "Transfer Internal Masuk"
@@ -9186,7 +9186,7 @@
       "teks_tautan": null,
       "jalur_menu": [
         "Aset Tetap",
-        "🟡 RUH",
+        "RUH",
         "Transaksi BMN",
         "Usulan Penghapusan BMN"
       ],
@@ -9215,7 +9215,7 @@
       "teks_tautan": null,
       "jalur_menu": [
         "Aset Tetap",
-        "🟡 RUH",
+        "RUH",
         "Transaksi BMN",
         "Usulan Penghapusan BMN",
         "Pencatatan Barang yang Akan Dihapuskan"
@@ -9248,7 +9248,7 @@
       "teks_tautan": null,
       "jalur_menu": [
         "Aset Tetap",
-        "🟡 RUH",
+        "RUH",
         "Transaksi BMN",
         "Usulan Penghapusan BMN",
         "Pencatatan Pembatalan Barang yang Akan Dihapuskan"
@@ -9281,7 +9281,7 @@
       "teks_tautan": null,
       "jalur_menu": [
         "Aset Tetap",
-        "🟡 RUH",
+        "RUH",
         "Transaksi KDP"
       ],
       "penanda_sumber": "✅",
@@ -9309,7 +9309,7 @@
       "teks_tautan": null,
       "jalur_menu": [
         "Aset Tetap",
-        "🟡 RUH",
+        "RUH",
         "Transaksi KDP",
         "Batal Transfer Keluar Online"
       ],
@@ -9338,7 +9338,7 @@
       "teks_tautan": null,
       "jalur_menu": [
         "Aset Tetap",
-        "🟡 RUH",
+        "RUH",
         "Transaksi KDP",
         "Hibah Keluar KDP"
       ],
@@ -9370,7 +9370,7 @@
       "teks_tautan": null,
       "jalur_menu": [
         "Aset Tetap",
-        "🟡 RUH",
+        "RUH",
         "Transaksi KDP",
         "Hibah Masuk KDP"
       ],
@@ -9402,7 +9402,7 @@
       "teks_tautan": null,
       "jalur_menu": [
         "Aset Tetap",
-        "🟡 RUH",
+        "RUH",
         "Transaksi KDP",
         "Koreksi Pencatatan KDP"
       ],
@@ -9431,7 +9431,7 @@
       "teks_tautan": null,
       "jalur_menu": [
         "Aset Tetap",
-        "🟡 RUH",
+        "RUH",
         "Transaksi KDP",
         "Koreksi Perubahan Nilai Berkurang KDP"
       ],
@@ -9463,7 +9463,7 @@
       "teks_tautan": null,
       "jalur_menu": [
         "Aset Tetap",
-        "🟡 RUH",
+        "RUH",
         "Transaksi KDP",
         "Koreksi Perubahan Nilai Bertambah KDP"
       ],
@@ -9495,7 +9495,7 @@
       "teks_tautan": null,
       "jalur_menu": [
         "Aset Tetap",
-        "🟡 RUH",
+        "RUH",
         "Transaksi KDP",
         "Pengembangan KDP"
       ],
@@ -9527,7 +9527,7 @@
       "teks_tautan": null,
       "jalur_menu": [
         "Aset Tetap",
-        "🟡 RUH",
+        "RUH",
         "Transaksi KDP",
         "Penghapusan/Penghentian KDP"
       ],
@@ -9559,7 +9559,7 @@
       "teks_tautan": null,
       "jalur_menu": [
         "Aset Tetap",
-        "🟡 RUH",
+        "RUH",
         "Transaksi KDP",
         "Perolehan KDP"
       ],
@@ -9591,7 +9591,7 @@
       "teks_tautan": null,
       "jalur_menu": [
         "Aset Tetap",
-        "🟡 RUH",
+        "RUH",
         "Transaksi KDP",
         "Perolehan Lainnya KDP"
       ],
@@ -9623,7 +9623,7 @@
       "teks_tautan": null,
       "jalur_menu": [
         "Aset Tetap",
-        "🟡 RUH",
+        "RUH",
         "Transaksi KDP",
         "Reklasifikasi KDP"
       ],
@@ -9652,7 +9652,7 @@
       "teks_tautan": null,
       "jalur_menu": [
         "Aset Tetap",
-        "🟡 RUH",
+        "RUH",
         "Transaksi KDP",
         "Saldo Awal KDP"
       ],
@@ -9684,7 +9684,7 @@
       "teks_tautan": null,
       "jalur_menu": [
         "Aset Tetap",
-        "🟡 RUH",
+        "RUH",
         "Transaksi KDP",
         "Transfer Internal Keluar KDP"
       ],
@@ -9713,7 +9713,7 @@
       "teks_tautan": null,
       "jalur_menu": [
         "Aset Tetap",
-        "🟡 RUH",
+        "RUH",
         "Transaksi KDP",
         "Transfer Internal Masuk KDP"
       ],
@@ -9742,7 +9742,7 @@
       "teks_tautan": null,
       "jalur_menu": [
         "Aset Tetap",
-        "🟡 RUH",
+        "RUH",
         "Transaksi KDP",
         "Transfer Keluar KDP"
       ],
@@ -9774,7 +9774,7 @@
       "teks_tautan": null,
       "jalur_menu": [
         "Aset Tetap",
-        "🟡 RUH",
+        "RUH",
         "Transaksi KDP",
         "Transfer Masuk KDP"
       ],
@@ -9806,7 +9806,7 @@
       "teks_tautan": null,
       "jalur_menu": [
         "Aset Tetap",
-        "🟡 RUH",
+        "RUH",
         "Transaksi KDP",
         "Transfer Masuk Online KDP"
       ],
