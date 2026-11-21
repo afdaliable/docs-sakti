@@ -11,11 +11,20 @@
     "dev": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "astro": "astro"
+    "astro": "astro",
+    "check:content": "node scripts/belum-tersedia.mjs check:content 1",
+    "check:links": "astro build",
+    "search:eval": "node scripts/belum-tersedia.mjs search:eval 5",
+    "migrate:inventory": "node scripts/belum-tersedia.mjs migrate:inventory 2",
+    "migrate:extract": "node scripts/belum-tersedia.mjs migrate:extract 2",
+    "migrate:draft": "node scripts/belum-tersedia.mjs migrate:draft 4"
   },
   "dependencies": {
     "@astrojs/starlight": "0.43.1",
     "astro": "7.4.12",
     "sharp": "0.35.5"
+  },
+  "devDependencies": {
+    "starlight-links-validator": "0.27.0"
   }
 }
