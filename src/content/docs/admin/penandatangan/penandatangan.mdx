@@ -1,0 +1,57 @@
+---
+title: Mengelola Referensi Penandatangan
+description: Merekam, mengubah, dan menghapus referensi penandatangan dokumen untuk modul non aset dan aset persediaan.
+modul: admin
+menu_sakti: "Administrasi > Penandatangan"
+peran: [satker]
+jenis: juknis
+kata_kunci: [penandatangan, referensi penandatangan, penandatangan aset persediaan, tanda tangan dokumen, nip penandatangan]
+status: review
+perlu_review: false
+sumber:
+  - judul: "1. Juknis SAKTI Admin Updated 2024"
+    url: "https://docs.google.com/presentation/d/1dbhAhtZ-uotv_CxZ5GefYlmeF11DCnZNaswn0Oym6PE/"
+    jenis: google-slides
+    diambil: 2026-11-21
+    id_manifest: A-dok-005
+  - judul: "Juknis Admin SAKTI Tipe Satker (versi lama, digantikan)"
+    url: "https://docs.google.com/presentation/d/10egiSsDGl4zU5e5Ok3jtZAVOmWyTeVRAtSYuMnjyh78/"
+    jenis: google-slides
+    diambil: 2026-11-21
+    id_manifest: A-dok-018
+sidebar:
+  order: 1
+---
+
+import MenuSakti from '~/components/MenuSakti.astro';
+import SumberAsli from '~/components/SumberAsli.astro';
+
+Admin Satker mengelola referensi penandatangan melalui dua menu di bawah
+**Administrasi > Penandatangan**.
+
+<MenuSakti />
+
+| Menu | Kegunaan |
+|---|---|
+| **Penandatangan** (non aset) | Merekam/mengubah/menghapus referensi penandatangan modul anggaran, pembayaran, komitmen, dan bendahara |
+| **Penandatangan Aset Persediaan** | Merekam/mengubah/menghapus referensi penandatangan modul aset, persediaan, dan GLP |
+
+## Hal yang perlu diperhatikan
+
+- Data penandatangan diisi secara manual.
+- Pastikan isian NIP yang diinput di penandatangan sama dengan NIP pada
+  menu data pengguna.
+
+Pada juknis versi 2022, kedua menu ini berada di jalur **Administrasi >
+Umum > Penandatangan > Penandatangan** dan **Administrasi > Umum >
+Penandatangan > Penandatangan Aset Persediaan**; pada aplikasi saat ini
+keduanya berada langsung di bawah **Administrasi > Penandatangan**.
+
+## Terkait
+
+- [Melengkapi Data Pejabat Perbendaharaan](/admin/pengguna/pejabat-perbendaharaan/)
+- [Memantau Status Sertifikat Digital Signature (DS)](/admin/penandatangan/monitoring-status-ds/)
+
+## Sumber
+
+<SumberAsli />

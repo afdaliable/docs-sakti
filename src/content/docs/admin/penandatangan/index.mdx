@@ -1,6 +1,6 @@
 ---
 title: Penandatangan
-description: Panduan menu Penandatangan pada modul Administrasi.
+description: Pengelolaan referensi penandatangan dan monitoring sertifikat Digital Signature pada modul Administrasi.
 modul: admin
 jenis: indeks
 status: terbit
@@ -9,4 +9,20 @@ sidebar:
   order: 0
 ---
 
-Panduan untuk menu **Penandatangan** sedang disiapkan.
+import { CardGrid, LinkCard } from '@astrojs/starlight/components';
+
+Sub-menu ini berisi panduan pengelolaan referensi penandatangan dokumen
+serta pemantauan status sertifikat Digital Signature (DS) BSSN di SAKTI.
+
+<CardGrid>
+	<LinkCard
+		title="Mengelola Referensi Penandatangan"
+		description="Merekam referensi penandatangan modul non aset dan aset persediaan."
+		href="/admin/penandatangan/penandatangan/"
+	/>
+	<LinkCard
+		title="Memantau Status Sertifikat Digital Signature (DS)"
+		description="Melihat status sertifikat DS BSSN, alur pendaftarannya, dan pemecahan masalah."
+		href="/admin/penandatangan/monitoring-status-ds/"
+	/>
+</CardGrid>
