@@ -1,0 +1,9 @@
+---
+import SearchBawaan from '@astrojs/starlight/components/Search.astro';
+
+const base = import.meta.env.BASE_URL;
+const relatif = '/' + Astro.url.pathname.slice(base.length).replace(/\/+$/, '');
+const lewati = relatif === '/' || relatif === '/cari';
+---
+
+{lewati ? null : <SearchBawaan {...Astro.props} />}

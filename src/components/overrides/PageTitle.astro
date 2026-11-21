@@ -1,0 +1,76 @@
+---
+import { muatKonfigurasi } from '~/lib/modul.ts';
+import { labelJenis } from '~/lib/istilah.ts';
+
+const { entry } = Astro.locals.starlightRoute;
+const data = entry.data;
+
+const konfigurasi = muatKonfigurasi();
+const segmen = String(entry.id ?? '').split('/');
+const modul = konfigurasi.modul.find((m) => m.slug === data.modul || m.slug === segmen[0]);
+const sub =
+	segmen.length >= 2 ? modul?.sub.find((s) => s.slug === segmen[1]) : undefined;
+const breadcrumb = [modul?.nama, sub?.nama].filter(Boolean).join(' › ');
+const jenis = typeof data.jenis === 'string' ? data.jenis : undefined;
+const peran: string[] = Array.isArray(data.peran) ? data.peran : [];
+const kataKunci: string[] = Array.isArray(data.kata_kunci) ? data.kata_kunci : [];
+---
+
+<h1 id="_top" data-pagefind-weight="10">{data.title}</h1>
+{
+	modul && (
+		<>
+			<span class="sr-only" aria-hidden="true" data-pagefind-filter="modul">
+				{modul.slug}
+			</span>
+			<span class="sr-only" aria-hidden="true" data-pagefind-meta="modul">
+				{modul.nama}
+			</span>
+		</>
+	)
+}
+{
+	jenis && (
+		<>
+			<span class="sr-only" aria-hidden="true" data-pagefind-filter="jenis">
+				{jenis}
+			</span>
+			<span class="sr-only" aria-hidden="true" data-pagefind-meta="jenis">
+				{labelJenis(jenis)}
+			</span>
+		</>
+	)
+}
+{
+	peran.map((slug) => (
+		<span class="sr-only" aria-hidden="true" data-pagefind-filter="peran">
+			{slug}
+		</span>
+	))
+}
+{
+	breadcrumb && (
+		<span class="sr-only" aria-hidden="true" data-pagefind-meta="breadcrumb">
+			{breadcrumb}
+		</span>
+	)
+}
+{
+	kataKunci.length > 0 && (
+		<span class="sr-only" aria-hidden="true" data-pagefind-weight="7">
+			{kataKunci.join(', ')}
+		</span>
+	)
+}
+
+<style>
+	@layer starlight.core {
+		h1 {
+			margin-top: 1rem;
+			font-size: var(--sl-text-h1);
+			line-height: var(--sl-line-height-headings);
+			font-weight: 600;
+			color: var(--sl-color-white);
+		}
+	}
+</style>

@@ -1,0 +1,379 @@
+---
+interface Props {
+	modul?: string;
+	autofocus?: boolean;
+}
+
+const { modul, autofocus = true } = Astro.props;
+const base = import.meta.env.BASE_URL;
+const inputId = `sakti-cari-${Math.random().toString(36).slice(2, 8)}`;
+---
+
+<sakti-cari
+	class="sakti-cari"
+	data-base={base}
+	data-modul={modul}
+	data-autofocus={autofocus ? '' : undefined}
+>
+	<form role="search" action={`${base}cari/`} method="get" class="form-cari">
+		<label class="sr-only" for={inputId}>Cari panduan SAKTI</label>
+		<div class="kotak-cari">
+			<svg aria-hidden="true" viewBox="0 0 24 24" width="20" height="20" class="ikon-cari">
+				<path
+					fill="currentColor"
+					d="M15.5 14h-.79l-.28-.27a6.5 6.5 0 1 0-.7.7l.27.28v.79l5 4.99L20.49 19l-4.99-5Zm-6 0A4.5 4.5 0 1 1 14 9.5 4.5 4.5 0 0 1 9.5 14Z"
+				></path>
+			</svg>
+			<input
+				id={inputId}
+				type="search"
+				name="q"
+				autocomplete="off"
+				role="combobox"
+				aria-autocomplete="list"
+				aria-expanded="false"
+				aria-controls={`${inputId}-panel`}
+				aria-activedescendant=""
+				placeholder='Cari panduan SAKTI, mis. "cara batal SPM"'
+			/>
+			{modul && <input type="hidden" name="modul" value={modul} />}
+		</div>
+		<div class="panel-cari" hidden>
+			<ul id={`${inputId}-panel`} role="listbox" aria-label="Hasil pencarian"></ul>
+			<p class="status-panel" data-status></p>
+		</div>
+		<p class="sr-only" aria-live="polite" data-pengumuman></p>
+	</form>
+</sakti-cari>
+
+<script>
+	import { muatPagefind, type Pagefind } from '../lib/cari/pagefind';
+
+	const MAKS_HASIL = 6;
+	const DEBOUNCE_MS = 150;
+
+	function bisaDiketik(el: EventTarget | null): boolean {
+		if (!(el instanceof HTMLElement)) return false;
+		return (
+			el.isContentEditable ||
+			['INPUT', 'TEXTAREA', 'SELECT'].includes(el.tagName) ||
+			el.getAttribute('role') === 'searchbox'
+		);
+	}
+
+	class SaktiCari extends HTMLElement {
+		input!: HTMLInputElement;
+		panel!: HTMLElement;
+		listbox!: HTMLUListElement;
+		statusPanel!: HTMLElement;
+		pengumuman!: HTMLElement;
+		pagefind: Pagefind | null = null;
+		pagefindGagal = false;
+		timer: ReturnType<typeof setTimeout> | undefined;
+		token = 0;
+		aktif = -1;
+
+		get modulFilter(): Record<string, unknown> | undefined {
+			const modul = this.dataset.modul;
+			return modul ? { modul } : undefined;
+		}
+
+		connectedCallback() {
+			this.input = this.querySelector('input[type="search"]')!;
+			this.panel = this.querySelector('.panel-cari')!;
+			this.listbox = this.querySelector('ul[role="listbox"]')!;
+			this.statusPanel = this.querySelector('[data-status]')!;
+			this.pengumuman = this.querySelector('[data-pengumuman]')!;
+
+			this.input.addEventListener('input', () => this.jadwalkanCari());
+			this.input.addEventListener('keydown', (e) => this.tombolInput(e));
+			this.input.addEventListener('blur', () => {
+				setTimeout(() => {
+					if (!this.contains(document.activeElement)) this.tutup();
+				}, 120);
+			});
+			this.listbox.addEventListener('mousedown', (e) => e.preventDefault());
+			document.addEventListener('keydown', (e) => this.pintasan(e));
+
+			if (
+				this.dataset.autofocus !== undefined &&
+				window.matchMedia('(min-width: 50rem) and (pointer: fine)').matches
+			) {
+				this.input.focus();
+			}
+		}
+
+		pintasan(e: KeyboardEvent) {
+			if (e.defaultPrevented || bisaDiketik(e.target)) return;
+			if (e.key === '/' || ((e.ctrlKey || e.metaKey) && e.key.toLowerCase() === 'k')) {
+				e.preventDefault();
+				this.input.focus();
+				this.input.select();
+			}
+		}
+
+		tombolInput(e: KeyboardEvent) {
+			const opsi = this.opsi();
+			if (e.key === 'Escape') {
+				this.tutup();
+				return;
+			}
+			if (this.panel.hidden) return;
+			if (e.key === 'ArrowDown' || e.key === 'ArrowUp') {
+				e.preventDefault();
+				if (opsi.length === 0) return;
+				const arah = e.key === 'ArrowDown' ? 1 : -1;
+				this.aktif = (this.aktif + arah + opsi.length) % opsi.length;
+				this.tandaiAktif(opsi);
+				return;
+			}
+			if (e.key === 'Enter' && this.aktif >= 0 && opsi[this.aktif]) {
+				e.preventDefault();
+				(opsi[this.aktif].querySelector('a') as HTMLAnchorElement | null)?.click();
+			}
+		}
+
+		opsi(): HTMLLIElement[] {
+			return [...this.listbox.querySelectorAll('li[role="option"]')];
+		}
+
+		tandaiAktif(opsi: HTMLLIElement[]) {
+			opsi.forEach((li, i) => {
+				li.dataset.aktif = i === this.aktif ? '' : undefined!;
+				if (i === this.aktif) li.scrollIntoView({ block: 'nearest' });
+			});
+			this.input.setAttribute(
+				'aria-activedescendant',
+				this.aktif >= 0 ? opsi[this.aktif].id : '',
+			);
+		}
+
+		jadwalkanCari() {
+			clearTimeout(this.timer);
+			this.timer = setTimeout(() => this.cari(), DEBOUNCE_MS);
+		}
+
+		async muatIndeks(): Promise<Pagefind | null> {
+			if (this.pagefind) return this.pagefind;
+			if (this.pagefindGagal) return null;
+			try {
+				this.pagefind = await muatPagefind();
+				return this.pagefind;
+			} catch {
+				this.pagefindGagal = true;
+				return null;
+			}
+		}
+
+		tampilStatus(pesan: string) {
+			this.listbox.replaceChildren();
+			this.statusPanel.textContent = pesan;
+			this.panel.hidden = false;
+			this.input.setAttribute('aria-expanded', 'true');
+			this.pengumuman.textContent = pesan;
+		}
+
+		tutup() {
+			this.panel.hidden = true;
+			this.input.setAttribute('aria-expanded', 'false');
+			this.aktif = -1;
+		}
+
+		async cari() {
+			const q = this.input.value.trim();
+			if (q.length < 2) {
+				this.tutup();
+				return;
+			}
+			const token = ++this.token;
+			const pf = await this.muatIndeks();
+			if (token !== this.token) return;
+			if (!pf) {
+				this.tampilStatus('Pencarian tersedia setelah pnpm build. Jalankan pnpm preview.');
+				return;
+			}
+			this.tampilStatus('Mencari…');
+			let hasil;
+			try {
+				hasil = await pf.search(q, { filters: this.modulFilter });
+			} catch {
+				if (token !== this.token) return;
+				this.tampilStatus('Pencarian gagal dijalankan. Coba lagi.');
+				return;
+			}
+			if (token !== this.token) return;
+			const data = await Promise.all(hasil.results.map((r) => r.data()));
+			if (token !== this.token) return;
+			this.renderHasil(q, data);
+		}
+
+		renderHasil(q: string, data: { url: string; excerpt: string; meta: Record<string, unknown> }[]) {
+			this.aktif = -1;
+			this.statusPanel.textContent = '';
+			const base = this.dataset.base ?? '/';
+			if (data.length === 0) {
+				this.tampilStatus(`Tidak ada hasil untuk "${q}". Coba kata lain.`);
+				return;
+			}
+			const frag = document.createDocumentFragment();
+			for (const [i, r] of data.slice(0, MAKS_HASIL).entries()) {
+				const li = document.createElement('li');
+				li.setAttribute('role', 'option');
+				li.id = `${this.input.id}-opsi-${i}`;
+				const a = document.createElement('a');
+				a.href = r.url;
+				const judul = document.createElement('span');
+				judul.className = 'judul-hasil';
+				judul.textContent = String(r.meta.title ?? r.url);
+				a.append(judul);
+				const baris = document.createElement('span');
+				baris.className = 'meta-hasil';
+				const breadcrumb = String(r.meta.breadcrumb ?? '');
+				if (breadcrumb) {
+					const bc = document.createElement('span');
+					bc.className = 'breadcrumb-hasil';
+					bc.textContent = breadcrumb;
+					baris.append(bc);
+				}
+				const jenis = String(r.meta.jenis ?? '');
+				if (jenis) {
+					const label = document.createElement('span');
+					label.className = 'jenis-hasil';
+					label.textContent = jenis;
+					baris.append(label);
+				}
+				a.append(baris);
+				const cuplikan = document.createElement('span');
+				cuplikan.className = 'cuplikan-hasil';
+				cuplikan.innerHTML = `…${r.excerpt}…`;
+				a.append(cuplikan);
+				li.append(a);
+				frag.append(li);
+			}
+			if (data.length > MAKS_HASIL) {
+				const li = document.createElement('li');
+				li.className = 'semua-hasil';
+				const a = document.createElement('a');
+				a.href = `${base}cari/?q=${encodeURIComponent(q)}`;
+				a.textContent = `Lihat semua hasil (${data.length})`;
+				li.append(a);
+				frag.append(li);
+			}
+			this.listbox.replaceChildren(frag);
+			this.panel.hidden = false;
+			this.input.setAttribute('aria-expanded', 'true');
+			this.input.setAttribute('aria-activedescendant', '');
+			this.pengumuman.textContent = `${data.length} hasil untuk "${q}".`;
+		}
+	}
+
+	customElements.define('sakti-cari', SaktiCari);
+</script>
+
+<style>
+	.sakti-cari {
+		display: block;
+		position: relative;
+	}
+	.form-cari {
+		position: relative;
+	}
+	.kotak-cari {
+		display: flex;
+		align-items: center;
+		gap: 0.5rem;
+		border: 1px solid var(--sl-color-gray-4);
+		border-radius: 0.5rem;
+		background-color: var(--sl-color-bg);
+		padding-inline: 0.875rem;
+	}
+	.kotak-cari:focus-within {
+		border-color: var(--sl-color-accent);
+		outline: 2px solid var(--sl-color-accent);
+		outline-offset: 1px;
+	}
+	.ikon-cari {
+		color: var(--sl-color-gray-3);
+		flex-shrink: 0;
+	}
+	input[type='search'] {
+		width: 100%;
+		border: 0;
+		background: transparent;
+		color: var(--sl-color-white);
+		font-size: var(--sl-text-lg);
+		padding-block: 0.875rem;
+	}
+	input[type='search']:focus {
+		outline: none;
+	}
+	input[type='search']::placeholder {
+		color: var(--sl-color-gray-3);
+		opacity: 1;
+	}
+	.panel-cari {
+		position: absolute;
+		inset-inline: 0;
+		top: calc(100% + 0.375rem);
+		z-index: 10;
+		border: 1px solid var(--sl-color-gray-4);
+		border-radius: 0.5rem;
+		background-color: var(--sl-color-bg);
+		max-height: min(24rem, 60vh);
+		overflow-y: auto;
+	}
+	.panel-cari ul {
+		list-style: none;
+		margin: 0;
+		padding: 0;
+	}
+	.panel-cari li a {
+		display: flex;
+		flex-direction: column;
+		gap: 0.125rem;
+		padding: 0.625rem 0.875rem;
+		color: var(--sl-color-white);
+		text-decoration: none;
+	}
+	.panel-cari li[data-aktif] a,
+	.panel-cari li a:hover,
+	.panel-cari li a:focus-visible {
+		background-color: var(--sl-color-accent-low);
+		outline: none;
+	}
+	.judul-hasil {
+		font-weight: 600;
+	}
+	.meta-hasil {
+		display: flex;
+		gap: 0.5rem;
+		align-items: baseline;
+		font-size: var(--sl-text-xs);
+	}
+	.breadcrumb-hasil {
+		color: var(--sl-color-gray-3);
+	}
+	.jenis-hasil {
+		color: var(--sl-color-text-accent);
+	}
+	.cuplikan-hasil {
+		font-size: var(--sl-text-sm);
+		color: var(--sl-color-gray-2);
+	}
+	.cuplikan-hasil :global(mark) {
+		background-color: transparent;
+		color: var(--sl-color-text-accent);
+		font-weight: 600;
+	}
+	.semua-hasil a {
+		font-size: var(--sl-text-sm);
+		font-weight: 600;
+		color: var(--sl-color-text-accent);
+	}
+	.status-panel {
+		margin: 0;
+		padding: 0.75rem 0.875rem;
+		font-size: var(--sl-text-sm);
+		color: var(--sl-color-gray-3);
+	}
+</style>

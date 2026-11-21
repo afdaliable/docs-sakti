@@ -10,6 +10,11 @@ export default defineConfig({
 	integrations: [
 		starlight({
 			title: 'SAKTI Knowledge Base',
+			customCss: ['./src/styles/kustom.css'],
+			components: {
+				PageTitle: './src/components/overrides/PageTitle.astro',
+				Search: './src/components/overrides/Search.astro',
+			},
 			defaultLocale: 'root',
 			locales: {
 				root: { label: 'Bahasa Indonesia', lang: 'id' },

@@ -50,7 +50,7 @@ Kerjakan berurutan. Centang `[x]` saat selesai. Setiap fase diakhiri **gerbang**
 
 ## Fase 3 — Tampilan help center
 
-- [ ] 3.1 `BigSearch` (Level 1 Pagefind dulu) sesuai `04-tampilan-ux.md`, termasuk aksesibilitas keyboard/ARIA.
+- [x] 3.1 `BigSearch` (Level 1 Pagefind dulu) sesuai `04-tampilan-ux.md`, termasuk aksesibilitas keyboard/ARIA.
 - [ ] 3.2 `ModuleGrid`, `RoleChips`, `RecentlyUpdated`, `HelpBox`, `PopularLinks`.
 - [ ] 3.3 Landing page `template: splash`.
 - [ ] 3.4 Halaman `/cari/` dengan filter modul/peran/jenis.
