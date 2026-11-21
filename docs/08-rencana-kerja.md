@@ -75,12 +75,13 @@ Untuk **setiap** modul (pakai perintah `/migrasi-modul <slug>`):
 - [ ] PR `content(<slug>): migrasi awal` → review pemilik modul.
 
 Checklist modul:
-- [ ] mulai  - [ ] admin  - [ ] referensi  - [ ] komitmen  - [ ] pembayaran  - [ ] bendahara
+- [x] mulai  - [ ] admin  - [ ] referensi  - [ ] komitmen  - [ ] pembayaran  - [ ] bendahara
 - [ ] persediaan  - [ ] aset-tetap  - [ ] piutang  - [ ] akuntansi-pelaporan  - [ ] kppn-bun
 - [ ] peran  - [ ] peraturan  - [ ] faq
 
 Status per modul:
-- `mulai` (21 Nov 2026): 20 artikel + 3 halaman indeks didraf di branch lokal `konten/migrasi-mulai`; 5 artikel `perlu_review`; 2 gambar; 9 query uji; build, `check:content`, `check:links`, tes lolos. Belum dicentang: PR `content(mulai): migrasi awal` dan review pemilik modul belum dilakukan (izin push hanya untuk `main`).
+- `mulai` (21 Nov 2026): 20 artikel + 3 halaman indeks didraf di branch lokal `konten/migrasi-mulai`; 5 artikel `perlu_review`; 2 gambar; 9 query uji; build, `check:content`, `check:links`, tes lolos. Di-merge fast-forward ke `main` dan di-push (7f450bb); 22 Nov 2026 pemilik menyatakan tidak ada koreksi gaya, modul dicentang (K35).
+- `admin` (22 Nov 2026): 12 baris peta konten didraf di branch lokal `konten/migrasi-admin` — 9 artikel + 3 halaman berisi di indeks sub-menu (`pkipa`, `role`, `formulir`) + 5 halaman indeks; 9 `perlu_review`; 2 gambar (diagram alur, tanpa tangkapan layar aplikasi); 8 query uji; build, `check:content` (0 galat), `check:links`, tes lolos. Di-merge fast-forward ke `main` (K35). Belum dicentang: menunggu review pemilik modul.
 
 **Gerbang 4:** semua item manifest `dimigrasi` atau `ditolak`; ≥ 40 query uji; tidak ada artikel `draft` yang tersisa tanpa issue.
 
