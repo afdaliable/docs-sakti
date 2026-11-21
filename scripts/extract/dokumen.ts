@@ -132,17 +132,27 @@ export async function ekstrakPptx(item: ItemManifest): Promise<HasilEkstrak> {
 	const slides = await teksPptx(pptx);
 	hasil.md = mdDariSlides(slides);
 	hasil.jumlahHalaman = slides.length;
+	let pdf: string | null = null;
 	try {
-		await jalankan('soffice', ['--headless', `-env:UserInstallation=${PROFIL_LO}`, '--convert-to', 'pdf', '--outdir', dir, pptx], 300000);
-		const pdf = path.join(dir, `${path.basename(pptx, '.pptx')}.pdf`);
-		if (fs.existsSync(pdf)) {
+		pdf = await unduhFile(item, `https://docs.google.com/presentation/d/${item.drive_id}/export/pdf`, 'pdf');
+	} catch {
+		try {
+			await jalankan('soffice', ['--headless', `-env:UserInstallation=${PROFIL_LO}`, '--convert-to', 'pdf', '--outdir', dir, pptx], 300000);
+			const lokal = path.join(dir, `${path.basename(pptx, '.pptx')}.pdf`);
+			if (fs.existsSync(lokal)) pdf = lokal;
+		} catch (e) {
+			hasil.peringatan.push(`render slide gagal: ${String(e).slice(0, 120)}`);
+		}
+	}
+	if (pdf) {
+		try {
 			await renderPng(pdf, path.join(dir, 'slides'));
 			hasil.jumlahGambar = slides.length;
-		} else {
-			hasil.peringatan.push('soffice tidak menghasilkan pdf untuk render slide');
+		} catch (e) {
+			hasil.peringatan.push(`render slide gagal: ${String(e).slice(0, 120)}`);
 		}
-	} catch (e) {
-		hasil.peringatan.push(`render slide gagal: ${String(e).slice(0, 120)}`);
+	} else {
+		hasil.peringatan.push('tidak ada pdf untuk render slide');
 	}
 	return hasil;
 }
