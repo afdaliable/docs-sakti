@@ -35,7 +35,7 @@ Kerjakan berurutan. Centang `[x]` saat selesai. Setiap fase diakhiri **gerbang**
 ## Fase 2 — Inventaris & ekstraksi sumber
 
 - [x] 2.1 `scripts/inventory/gsites.ts` (Playwright) untuk Sumber A dan C.
-- [ ] 2.2 `scripts/inventory/linktree.ts` + `scripts/inventory/gdrive.ts` untuk Sumber B (rekursif).
+- [x] 2.2 `scripts/inventory/linktree.ts` + `scripts/inventory/gdrive.ts` untuk Sumber B (rekursif).
 - [ ] 2.3 Resolver link Slides/Docs/Sheets/short-link yang ditemukan di halaman.
 - [ ] 2.4 Tulis `sources/manifest.json` + `sources/laporan-inventaris.md`.
 - [ ] 2.5 `scripts/extract/*` untuk HTML, PPTX, PDF (+OCR), DOCX, Sheets.
