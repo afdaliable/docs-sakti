@@ -171,12 +171,15 @@ export async function crawlSitus(
 	const dirRaw = path.resolve(process.cwd(), 'sources/raw/gsites', situs.nama);
 	fs.mkdirSync(dirRaw, { recursive: true });
 
-	const browser = await chromium.launch({ headless: true });
-	const konteks = await browser.newContext({
-		userAgent:
-			'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36',
-	});
-	const page = await konteks.newPage();
+	async function buatHalaman(): Promise<Page> {
+		const b = await chromium.launch({ headless: true });
+		const k = await b.newContext({
+			userAgent:
+				'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36',
+		});
+		return k.newPage();
+	}
+	let page = await buatHalaman();
 
 	const halaman = new Map<string, HasilHalaman>();
 	const navMap = new Map<string, EntriNav>();
@@ -191,13 +194,28 @@ export async function crawlSitus(
 		terlihat.add(url);
 
 		await acakJeda();
-		try {
+		let data: Awaited<ReturnType<typeof ekstrakHalaman>> | null = null;
+		let errorTerakhir: unknown = null;
+		for (let coba = 0; coba < 3 && data === null; coba++) {
 			try {
-				await page.goto(url, { waitUntil: 'networkidle', timeout: 30000 });
-			} catch {
-				await page.goto(url, { waitUntil: 'load', timeout: 30000 });
+				try {
+					await page.goto(url, { waitUntil: 'networkidle', timeout: 30000 });
+				} catch {
+					await page.goto(url, { waitUntil: 'load', timeout: 30000 });
+				}
+				data = await ekstrakHalaman(page);
+			} catch (e) {
+				errorTerakhir = e;
+				if (/closed|crash|disposed/i.test(String(e))) {
+					try {
+						await page.context().browser()?.close();
+					} catch {}
+					page = await buatHalaman();
+				}
+				await acakJeda();
 			}
-		} catch (e) {
+		}
+		if (data === null) {
 			await padaItem(
 				itemBaru({
 					id: `${situs.sumber}-gagal-${terlihat.size}`,
@@ -205,14 +223,12 @@ export async function crawlSitus(
 					jenis: 'google-sites',
 					url,
 					status: 'gagal',
-					catatan: `gagal memuat: ${String(e).slice(0, 120)}`,
+					catatan: `gagal memuat: ${String(errorTerakhir).slice(0, 120)}`,
 				}),
 				{} as HasilHalaman,
 			);
 			continue;
 		}
-
-		const data = await ekstrakHalaman(page);
 
 		for (const frame of page.frames()) {
 			if (frame === page.mainFrame()) continue;
@@ -257,9 +273,9 @@ export async function crawlSitus(
 		judul = stripPenanda(judul).label;
 
 		const teksHash = hashTeks(data.teks);
-		const lainnya = hashKeId.get(teksHash);
+		const lainnya = data.teks.trim().length < 100 ? undefined : hashKeId.get(teksHash);
 		if (lainnya === undefined) {
-			hashKeId.set(teksHash, id);
+			if (data.teks.trim().length >= 100) hashKeId.set(teksHash, id);
 		} else if (lainnya !== id) {
 			if (pathSetelahBase === '') {
 				idDihapus.push(id);
@@ -329,6 +345,8 @@ export async function crawlSitus(
 		);
 	}
 
-	await browser.close();
+	try {
+		await page.context().browser()?.close();
+	} catch {}
 	return { halaman, navMap, idDihapus };
 }
