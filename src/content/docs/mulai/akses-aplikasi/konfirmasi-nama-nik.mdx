@@ -1,0 +1,85 @@
+---
+title: Mengonfirmasi Data Nama dan NIK
+description: Cara mengonfirmasi nama dan NIK pengguna SAKTI agar cocok dengan data kependudukan Dukcapil.
+modul: mulai
+menu_sakti: "Administrasi > Pengguna > Konfirmasi Data Nama dan NIK"
+peran: [satker, kppn-kanwil, djpb-pusat, dja, djkn, bappenas, bpk, apip, widyaiswara]
+jenis: juknis
+kata_kunci: [konfirmasi nik, nama tidak cocok, data dukcapil, nik salah, konfirmasi nama]
+status: review
+perlu_review: true
+sumber:
+  - judul: "1. Juknis SAKTI Admin Updated 2024"
+    url: "https://docs.google.com/presentation/d/1dbhAhtZ-uotv_CxZ5GefYlmeF11DCnZNaswn0Oym6PE/"
+    jenis: google-slides
+    diambil: 2026-11-21
+    id_manifest: A-dok-005
+  - judul: "SAKTI Admin Knowledge Base"
+    url: "https://sites.google.com/view/saktiadm/beranda"
+    jenis: google-sites
+    diambil: 2026-11-21
+    id_manifest: A-beranda
+sidebar:
+  order: 3
+---
+
+import { Steps, Aside } from '@astrojs/starlight/components';
+import MenuSakti from '~/components/MenuSakti.astro';
+import SumberAsli from '~/components/SumberAsli.astro';
+
+Nama dan NIK pengguna SAKTI sudah terinterkoneksi dengan data Kependudukan
+Dukcapil. Konfirmasi data dilakukan untuk memastikan nama dan NIK cocok 100%
+dengan data kependudukan pada penerapan login SAKTI dengan NIK.
+
+<MenuSakti />
+
+## Ketentuan konfirmasi
+
+- Nama pada fisik KTP dapat berbeda dengan nama di database kependudukan.
+- Pengecekan melalui aplikasi SAKTI dibatasi **6 kali sehari**.
+- Pendaftaran user dapat dilakukan saat kecocokan data minimal **90%**
+  (karakter `.` dan `,` diabaikan). Setelah itu, pengguna diminta melakukan
+  konfirmasi hingga mencapai **100%** pada halaman awal aplikasi SAKTI.
+- Apabila perubahan nama menghasilkan persentase kecocokan yang lebih rendah,
+  aplikasi SAKTI otomatis mengambil data nama dengan tingkat kecocokan paling
+  tinggi.
+
+## Langkah
+
+<Steps>
+
+1. Login ke aplikasi SAKTI di **sakti.kemenkeu.go.id**.
+
+2. Buka menu **Administrasi > Pengguna > Konfirmasi Data Nama dan NIK**.
+
+3. Periksa tingkat kecocokan antara NIK dan Nama; nilai maksimal adalah 100%.
+
+4. Untuk memperbarui, klik **Ubah Data**, sesuaikan isian, lalu **Simpan**.
+
+</Steps>
+
+## Masalah umum
+
+<details>
+<summary>Konfirmasi gagal karena data NIK tidak sesuai</summary>
+
+Hubungi Dukcapil setempat atau Halo Dukcapil **1500537** untuk memperbaiki data
+kependudukan, lalu ulangi konfirmasi.
+
+</details>
+
+<Aside type="caution" title="Perlu verifikasi">
+Situs SAKTI Admin lama menyebut jalur menu ini sebagai **Administrasi > Admin >
+Pengelolaan Pengguna > Konfirmasi Data Nama dan NIK**. Artikel ini memakai label
+menu pada aplikasi saat ini, yaitu **Administrasi > Pengguna > Konfirmasi Data
+Nama dan NIK**.
+</Aside>
+
+## Terkait
+
+- [Masuk (Login) ke Aplikasi SAKTI](/mulai/akses-aplikasi/login-sakti/)
+- [Pendaftaran User](/mulai/pendaftaran-user/)
+
+## Sumber
+
+<SumberAsli />

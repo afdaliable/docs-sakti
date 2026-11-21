@@ -1,0 +1,76 @@
+---
+title: Mengubah dan Mereset Kata Sandi
+description: Cara mengubah kata sandi SAKTI secara mandiri dan mengajukan reset kata sandi ke KPPN.
+modul: mulai
+menu_sakti: "Administrasi > Pengguna > Ubah Kata Sandi"
+peran: [satker, kppn-kanwil, djpb-pusat, dja, djkn, bappenas, bpk, apip, widyaiswara]
+jenis: juknis
+kata_kunci: [ubah kata sandi, ganti password, lupa password, reset password, password kedaluwarsa]
+status: review
+perlu_review: false
+sumber:
+  - judul: "1. Juknis SAKTI Admin Updated 2024"
+    url: "https://docs.google.com/presentation/d/1dbhAhtZ-uotv_CxZ5GefYlmeF11DCnZNaswn0Oym6PE/"
+    jenis: google-slides
+    diambil: 2026-11-21
+    id_manifest: A-dok-005
+  - judul: "Juknis Admin SAKTI Tipe Satker"
+    url: "https://docs.google.com/presentation/d/10egiSsDGl4zU5e5Ok3jtZAVOmWyTeVRAtSYuMnjyh78/"
+    jenis: google-slides
+    diambil: 2026-11-21
+    id_manifest: A-dok-018
+sidebar:
+  order: 2
+---
+
+import { Steps } from '@astrojs/starlight/components';
+import MenuSakti from '~/components/MenuSakti.astro';
+import SumberAsli from '~/components/SumberAsli.astro';
+
+Kata sandi SAKTI berlaku selama **180 hari**. Setelah masa itu, pengguna diminta
+mengubah kata sandi secara mandiri demi menjaga keamanan.
+
+<MenuSakti />
+
+## Mengubah kata sandi
+
+<Steps>
+
+1. Login ke aplikasi SAKTI.
+
+2. Buka menu **Administrasi > Pengguna > Ubah Kata Sandi**.
+
+3. Masukkan kata sandi baru sesuai ketentuan aplikasi, lalu simpan.
+
+</Steps>
+
+## Mereset kata sandi yang lupa
+
+Apabila lupa atau salah memasukkan kata sandi, ajukan permohonan reset kata
+sandi dengan ketentuan berikut:
+
+<Steps>
+
+1. Ajukan permohonan **Reset Password** ke KPPN. Permohonan hanya dapat
+   dimintakan oleh pemilik akun yang bersangkutan dengan menggunakan email
+   SAKTI yang telah didaftarkan.
+
+2. KPPN mereset kata sandi, dan SMS berisi kata sandi baru dikirim ke nomor
+   pengguna.
+
+3. Login kembali menggunakan kata sandi baru, lalu segera ubah kata sandi
+   secara mandiri.
+
+</Steps>
+
+Reset kata sandi pengguna dibatasi sebanyak **3 kali sebulan**. Apabila
+membutuhkan reset lebih dari itu, hubungi HAI DJPb (hai.kemenkeu.go.id).
+
+## Terkait
+
+- [Masuk (Login) ke Aplikasi SAKTI](/mulai/akses-aplikasi/login-sakti/)
+- [Mengonfirmasi Data Nama dan NIK](/mulai/akses-aplikasi/konfirmasi-nama-nik/)
+
+## Sumber
+
+<SumberAsli />

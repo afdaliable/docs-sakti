@@ -1,6 +1,6 @@
 ---
 title: Akses Aplikasi
-description: Panduan menu Akses Aplikasi pada modul Mulai Menggunakan SAKTI.
+description: Cara masuk ke aplikasi SAKTI, mengubah kata sandi, mengonfirmasi data NIK, dan menggunakan user pelatihan.
 modul: mulai
 jenis: indeks
 status: terbit
@@ -9,4 +9,30 @@ sidebar:
   order: 0
 ---
 
-Panduan untuk menu **Akses Aplikasi** sedang disiapkan.
+import { CardGrid, LinkCard } from '@astrojs/starlight/components';
+
+Sub-menu ini berisi panduan untuk mengakses aplikasi SAKTI: login, kata sandi,
+konfirmasi data nama dan NIK, serta user khusus pelatihan.
+
+<CardGrid>
+	<LinkCard
+		title="Masuk (Login) ke Aplikasi SAKTI"
+		description="Tata cara login ke sakti.kemenkeu.go.id dan tampilan awal aplikasi."
+		href="/mulai/akses-aplikasi/login-sakti/"
+	/>
+	<LinkCard
+		title="Mengubah dan Mereset Kata Sandi"
+		description="Mengubah kata sandi sendiri dan mengajukan reset kata sandi ke KPPN."
+		href="/mulai/akses-aplikasi/ubah-kata-sandi/"
+	/>
+	<LinkCard
+		title="Mengonfirmasi Data Nama dan NIK"
+		description="Mencocokkan nama dan NIK pengguna dengan data kependudukan Dukcapil."
+		href="/mulai/akses-aplikasi/konfirmasi-nama-nik/"
+	/>
+	<LinkCard
+		title="Menggunakan User Pelatihan (Pandu SAKTI dan User Dummy)"
+		description="Alternatif belajar SAKTI lewat Pandu SAKTI dan user dummy per satker."
+		href="/mulai/akses-aplikasi/user-pelatihan/"
+	/>
+</CardGrid>

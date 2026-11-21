@@ -1,0 +1,55 @@
+---
+title: Menggunakan User Pelatihan (Pandu SAKTI dan User Dummy)
+description: Cara belajar SAKTI menggunakan Pandu SAKTI, user SAKTI TRAINER, dan user dummy per satker.
+modul: mulai
+peran: [satker, kppn-kanwil, djpb-pusat, dja, djkn, bappenas, bpk, apip, widyaiswara]
+jenis: juknis
+kata_kunci: [user pelatihan, pandu sakti, user dummy, sakti trainer, akun latihan, belajar sakti]
+status: review
+perlu_review: false
+sumber:
+  - judul: "1. Juknis SAKTI Admin Updated 2024"
+    url: "https://docs.google.com/presentation/d/1dbhAhtZ-uotv_CxZ5GefYlmeF11DCnZNaswn0Oym6PE/"
+    jenis: google-slides
+    diambil: 2026-11-21
+    id_manifest: A-dok-005
+sidebar:
+  order: 4
+---
+
+import { Aside } from '@astrojs/starlight/components';
+import SumberAsli from '~/components/SumberAsli.astro';
+
+Untuk keperluan pelatihan, SAKTI menyediakan dua alternatif tanpa memakai akun
+produksi: aplikasi Pandu SAKTI dan user dummy pada setiap satker.
+
+## Pandu SAKTI
+
+- Seluruh pengguna SAKTI dapat menggunakan **Pandu SAKTI**
+  (pandu-sakti.kemenkeu.go.id) tanpa perlu mendaftarkan lagi user di Pandu
+  SAKTI.
+- Khusus untuk Kanwil DJPb dan KPPN, pengguna dapat mendaftarkan dirinya dengan
+  peran **SAKTI TRAINER** untuk keperluan pelatihan menggunakan Pandu SAKTI.
+- SAKTI TRAINER adalah user yang dapat digunakan untuk berpindah satker dan
+  berpindah peran/role secara mandiri.
+- Permohonan pendaftaran user SAKTI TRAINER diusulkan ke HAI DJPb
+  (hai.kemenkeu.go.id).
+
+## User dummy
+
+Saat ini kata sandi di Pandu SAKTI sudah tidak disinkronkan karena terkait
+keamanan data pengguna. Sebagai alternatif, disediakan user dummy untuk seluruh
+satker dengan ketentuan berikut:
+
+- Setiap satker memiliki **4 user dummy** dengan nama user **USER TRAINING**,
+  masing-masing sudah memiliki seluruh role.
+- User ID mengikuti pola:
+  `(KODE_BA)(KODE_UNIT)(KODE_SATKER)(0000)(NO. URUT 1–4)`, di mana nomor urut
+  menunjukkan peran: **1** = Admin, **2** = Operator, **3** = Validator,
+  **4** = Approver.
+- Kata sandi user dummy tidak dicantumkan di knowledge base ini; gunakan kata
+  sandi yang tercantum pada juknis asli atau tanyakan ke KPPN mitra kerja.
+
+## Sumber
+
+<SumberAsli />

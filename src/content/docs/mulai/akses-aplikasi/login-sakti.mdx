@@ -1,0 +1,85 @@
+---
+title: Masuk (Login) ke Aplikasi SAKTI
+description: Tata cara masuk ke aplikasi SAKTI, memilih peran, dan tampilan dashboard awal.
+modul: mulai
+peran: [satker, kppn-kanwil, djpb-pusat, dja, djkn, bappenas, bpk, apip, widyaiswara]
+jenis: juknis
+kata_kunci: [login sakti, masuk sakti, sakti.kemenkeu.go.id, tidak bisa login, pengguna sudah login, ganti peran]
+status: review
+perlu_review: false
+sumber:
+  - judul: "1. Juknis SAKTI Admin Updated 2024"
+    url: "https://docs.google.com/presentation/d/1dbhAhtZ-uotv_CxZ5GefYlmeF11DCnZNaswn0Oym6PE/"
+    jenis: google-slides
+    diambil: 2026-11-21
+    id_manifest: A-dok-005
+  - judul: "Juknis Admin SAKTI Tipe Satker"
+    url: "https://docs.google.com/presentation/d/10egiSsDGl4zU5e5Ok3jtZAVOmWyTeVRAtSYuMnjyh78/"
+    jenis: google-slides
+    diambil: 2026-11-21
+    id_manifest: A-dok-018
+sidebar:
+  order: 1
+---
+
+import { Steps } from '@astrojs/starlight/components';
+import SumberAsli from '~/components/SumberAsli.astro';
+
+Aplikasi SAKTI diakses melalui alamat **sakti.kemenkeu.go.id** menggunakan akun
+pengguna yang telah didaftarkan. Setiap pengguna hanya dapat login dengan satu
+user pada satu perangkat.
+
+## Langkah
+
+<Steps>
+
+1. Buka alamat **sakti.kemenkeu.go.id** di peramban.
+
+2. Masukkan **username NIK** dan kata sandi Anda.
+
+3. Isi **kode Captcha** yang tampil, lalu masuk.
+
+4. Apabila satu user memiliki banyak peran, pilih peran yang akan digunakan
+   sebelum masuk ke aplikasi.
+
+</Steps>
+
+## Hasil yang diharapkan
+
+Setelah login, halaman dashboard menampilkan informasi pada pojok kanan atas:
+**Nama | NIK | Peran | Kode Satker | Tahun**.
+
+- Untuk berpindah peran, klik nama pengguna lalu pilih **Ganti Peran**.
+- Menu **To Do List** memuat informasi status (DS dan Sertifikat) serta hal-hal
+  yang masih harus diselesaikan oleh satker.
+- Khusus user Pejabat Perbendaharaan tampil **Status Sertifikat Pejabat
+  Perbendaharaan**, yaitu data interkoneksi dari aplikasi SIMASPATEN. Status ini
+  bersifat monitoring dan belum memvalidasi pendaftaran user pejabat
+  perbendaharaan.
+
+## Masalah umum
+
+<details>
+<summary>Saat login muncul pesan "Error Pengguna Sudah Login"</summary>
+
+Klik **Buka Akun**, lalu masukkan kata sandi untuk membuka sesi.
+
+</details>
+
+<details>
+<summary>Lupa kata sandi</summary>
+
+Ajukan permohonan reset kata sandi sesuai panduan
+[Mengubah dan Mereset Kata Sandi](/mulai/akses-aplikasi/ubah-kata-sandi/).
+
+</details>
+
+## Terkait
+
+- [Mengubah dan Mereset Kata Sandi](/mulai/akses-aplikasi/ubah-kata-sandi/)
+- [Mengonfirmasi Data Nama dan NIK](/mulai/akses-aplikasi/konfirmasi-nama-nik/)
+- [Mendaftar dan Menggunakan MFA SAKTI](/mulai/mfa/)
+
+## Sumber
+
+<SumberAsli />
