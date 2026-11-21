@@ -1,6 +1,8 @@
 ---
+import { Badge } from '@astrojs/starlight/components';
 import { muatKonfigurasi } from '~/lib/modul.ts';
 import { labelJenis } from '~/lib/istilah.ts';
+import { jalurHalaman } from '~/lib/jalur.ts';
 
 const { entry } = Astro.locals.starlightRoute;
 const data = entry.data;
@@ -14,9 +16,53 @@ const breadcrumb = [modul?.nama, sub?.nama].filter(Boolean).join(' › ');
 const jenis = typeof data.jenis === 'string' ? data.jenis : undefined;
 const peran: string[] = Array.isArray(data.peran) ? data.peran : [];
 const kataKunci: string[] = Array.isArray(data.kata_kunci) ? data.kata_kunci : [];
+const menuSakti = typeof data.menu_sakti === 'string' ? data.menu_sakti : undefined;
+const status = typeof data.status === 'string' ? data.status : undefined;
+const base = import.meta.env.BASE_URL;
+
+const jalur = jalurHalaman({
+	menuSakti,
+	modulSlug: modul?.slug,
+	entryId: String(entry.id ?? ''),
+	konfigurasi,
+	base,
+});
+const namaPeran = new Map(konfigurasi.peran.map((p) => [p.slug, p.nama]));
+const tampilJalur = jalur.length > 0 && jenis !== undefined;
 ---
 
+{
+	tampilJalur && (
+		<nav class="jalur-sakti" aria-label="Jalur menu SAKTI">
+			<ol>
+				{jalur.map((s, i) => (
+					<li>
+						{i > 0 && (
+							<span class="pemisah-jalur" aria-hidden="true">
+								›
+							</span>
+						)}
+						{s.href ? <a href={s.href}>{s.label}</a> : <span>{s.label}</span>}
+					</li>
+				))}
+			</ol>
+		</nav>
+	)
+}
 <h1 id="_top" data-pagefind-weight="10">{data.title}</h1>
+{
+	(jenis && jenis !== 'indeks') || peran.length > 0 || status === 'review' ? (
+		<p class="badge-artikel">
+			{jenis && jenis !== 'indeks' && <Badge text={labelJenis(jenis)} variant="note" />}
+			{peran.map((slug) => (
+				<a class="badge-peran" href={`${base}peran/${slug}/`}>
+					<Badge text={namaPeran.get(slug) ?? slug} variant="tip" />
+				</a>
+			))}
+			{status === 'review' && <Badge text="Sedang ditinjau" variant="caution" />}
+		</p>
+	) : null
+}
 {
 	modul && (
 		<>
@@ -71,6 +117,42 @@ const kataKunci: string[] = Array.isArray(data.kata_kunci) ? data.kata_kunci : [
 			line-height: var(--sl-line-height-headings);
 			font-weight: 600;
 			color: var(--sl-color-white);
+		}
+		.jalur-sakti {
+			margin-top: 1rem;
+			font-size: var(--sl-text-sm);
+		}
+		.jalur-sakti ol {
+			display: flex;
+			flex-wrap: wrap;
+			gap: 0.375rem;
+			list-style: none;
+			margin: 0;
+			padding: 0;
+		}
+		.jalur-sakti li {
+			display: flex;
+			align-items: center;
+			gap: 0.375rem;
+			margin: 0;
+		}
+		.pemisah-jalur {
+			color: var(--sl-color-gray-4);
+		}
+		.jalur-sakti a {
+			color: var(--sl-color-text-accent);
+		}
+		.jalur-sakti span {
+			color: var(--sl-color-gray-2);
+		}
+		.badge-artikel {
+			display: flex;
+			flex-wrap: wrap;
+			gap: 0.375rem;
+			margin-top: 0.5rem;
+		}
+		.badge-peran {
+			text-decoration: none;
 		}
 	}
 </style>
