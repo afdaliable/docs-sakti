@@ -9,4 +9,20 @@ sidebar:
   order: 0
 ---
 
-Panduan untuk menu **Opname Fisik** sedang disiapkan.
+import { CardGrid, LinkCard } from '@astrojs/starlight/components';
+
+Menu Opname Fisik mencakup pencetakan bahan opname fisik dan
+perekaman hasil opname fisik persediaan.
+
+<CardGrid>
+	<LinkCard
+		title="Mencetak Bahan Opname Fisik Persediaan"
+		description="Melihat dan mencetak daftar barang persediaan yang tercatat dalam sistem untuk dibandingkan dengan persediaan fisik."
+		href="/persediaan/opname-fisik/cetak-bahan-opname-fisik/"
+	/>
+	<LinkCard
+		title="Merekam Hasil Opname Fisik Persediaan"
+		description="Menginput hasil opname fisik bila terdapat perbedaan jumlah antara saldo di gudang dan di aplikasi."
+		href="/persediaan/opname-fisik/rekam-hasil-opname-fisik/"
+	/>
+</CardGrid>

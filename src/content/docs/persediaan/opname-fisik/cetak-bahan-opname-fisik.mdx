@@ -1,0 +1,86 @@
+---
+title: Mencetak Bahan Opname Fisik Persediaan
+description: Melihat dan mencetak daftar barang persediaan yang tercatat dalam sistem untuk dibandingkan dengan persediaan fisik.
+modul: persediaan
+menu_sakti: "Persediaan > Opname Fisik > Cetak Bahan Opname Fisik"
+peran: [satker]
+jenis: juknis
+kata_kunci: [bahan opname fisik, cetak opname, stok opname]
+status: review
+perlu_review: false
+sumber:
+  - judul: "Cetak Bahan Opname Fisik"
+    url: "https://sites.google.com/view/saktipelaporan/persediaan/opname-fisik/cetak-bahan-opname-fisik"
+    jenis: google-sites
+    diambil: 2026-11-21
+    id_manifest: C-persediaan-opname-fisik-cetak-bahan-opname-fisik
+  - judul: "13. Opname Fisik.pptx"
+    url: "https://docs.google.com/presentation/d/1EVKfBGe06Qa1krWbDH1Mv73sn1q6TqzH/"
+    jenis: google-slides
+    diambil: 2026-11-21
+    id_manifest: C-dok-035
+  - judul: "JUKNIS SAKTI WEB-Persediaan_30122020"
+    url: "https://drive.google.com/file/d/1p_-rUAu_on0H0d_TKFEE2vmpDXCPDzy5/view"
+    jenis: pdf
+    diambil: 2026-11-21
+    id_manifest: C-dok-001
+sidebar:
+  order: 1
+---
+
+import { Steps } from '@astrojs/starlight/components';
+import MenuSakti from '~/components/MenuSakti.astro';
+import SumberAsli from '~/components/SumberAsli.astro';
+
+Menu Cetak Bahan Opname Fisik digunakan untuk melihat dan mencetak
+bahan (catatan) opname fisik — jumlah atau keadaan persediaan yang
+tercatat dalam sistem — untuk kemudian dibandingkan dengan
+persediaan fisik yang dimiliki satuan kerja.
+
+<MenuSakti />
+
+## Prasyarat
+
+- Role yang dibutuhkan: Operator Persediaan; menurut juknis 2020,
+  pengguna sebagai Operator UAKPB atau Operator UAPKPB.
+- Semua transaksi pada semester bersangkutan harus telah dilakukan
+  persetujuan (approved); menurut juknis 2020, jika masih ada
+  transaksi yang belum selesai atau pending, sistem menampilkan
+  pesan dan bahan opname fisik tidak dapat dicetak.
+- Validasi urutan tanggal transaksi atas barang yang sejenis (tidak
+  bisa sisip tanggal transaksi).
+- Sudah tutup buku modul Persediaan periode sebelumnya.
+
+## Langkah
+
+<Steps>
+
+1. Pilih menu **Persediaan > Opname Fisik > Cetak Bahan Opname
+   Fisik**, lalu pilih salah satu barang dari daftar yang tersedia.
+2. Klik **Unduh** — menurut juknis slide dan juknis 2020 tombol
+   **Cetak** — untuk mencetak saldo barang yang sesuai dengan
+   aplikasi.
+
+</Steps>
+
+## Hasil yang diharapkan
+
+Bahan opname fisik siap dicetak dan dapat digunakan untuk
+pengecekan saldo barang sesuai kondisi di gudang.
+
+## Ilustrasi transaksi
+
+Menurut halaman situs, ilustrasi pada sumber memuat contoh satker
+yang pada akhir semester melakukan opname fisik: petugas terlebih
+dahulu mencetak rincian persediaan yang tercatat pada sistem
+(SAKTI), kemudian mencocokkannya dengan persediaan fisik di gudang
+kantor; hasil opname fisik tersebut kemudian dicatat pada menu
+Rekam Hasil Opname Fisik.
+
+## Terkait
+
+- [Merekam Hasil Opname Fisik Persediaan](/persediaan/opname-fisik/rekam-hasil-opname-fisik/)
+
+## Sumber
+
+<SumberAsli />

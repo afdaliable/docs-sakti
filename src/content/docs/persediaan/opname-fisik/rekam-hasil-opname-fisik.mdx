@@ -1,0 +1,115 @@
+---
+title: Merekam Hasil Opname Fisik Persediaan
+description: Menginput hasil opname fisik bila terdapat perbedaan jumlah antara saldo di gudang dan di aplikasi.
+modul: persediaan
+menu_sakti: "Persediaan > Opname Fisik > Rekam Hasil Opname Fisik"
+peran: [satker]
+jenis: juknis
+kata_kunci: [rekam hasil opname fisik, stok opname, selisih saldo]
+status: review
+perlu_review: false
+sumber:
+  - judul: "Rekam Hasil Opname Fisik"
+    url: "https://sites.google.com/view/saktipelaporan/persediaan/opname-fisik/rekam-hasil-opname-fisik"
+    jenis: google-sites
+    diambil: 2026-11-21
+    id_manifest: C-persediaan-opname-fisik-rekam-hasil-opname-fisik
+  - judul: "13. Opname Fisik.pptx"
+    url: "https://docs.google.com/presentation/d/1EVKfBGe06Qa1krWbDH1Mv73sn1q6TqzH/"
+    jenis: google-slides
+    diambil: 2026-11-21
+    id_manifest: C-dok-035
+  - judul: "3-Opname Fisik"
+    url: "https://drive.google.com/file/d/1RtK8nR8V-MyeJgp1xcJhSEda9UO8vIgk/view"
+    jenis: lainnya
+    diambil: 2026-11-21
+    id_manifest: C-dok-034
+  - judul: "JUKNIS SAKTI WEB-Persediaan_30122020"
+    url: "https://drive.google.com/file/d/1p_-rUAu_on0H0d_TKFEE2vmpDXCPDzy5/view"
+    jenis: pdf
+    diambil: 2026-11-21
+    id_manifest: C-dok-001
+sidebar:
+  order: 2
+---
+
+import { Steps } from '@astrojs/starlight/components';
+import MenuSakti from '~/components/MenuSakti.astro';
+import SumberAsli from '~/components/SumberAsli.astro';
+
+Menu Rekam Hasil Opname Fisik (kode transaksi P01 atau P02)
+digunakan untuk menginput hasil opname fisik dalam hal terdapat
+perbedaan jumlah barang persediaan antara hasil pemeriksaan fisik
+dengan Buku Persediaan per tanggal dilakukannya opname fisik.
+Opname fisik dilakukan paling sedikit sekali dalam setiap semester.
+
+<MenuSakti />
+
+## Prasyarat
+
+- Role yang dibutuhkan: Operator Persediaan; menurut juknis 2020,
+  pengguna sebagai Operator UAKPB atau Operator UAPKPB.
+- Dokumen sumber: Berita Acara Hasil Opname Fisik.
+- Sebelum melakukan rekam hasil opname fisik, semua transaksi pada
+  semester bersangkutan harus sudah dilakukan persetujuan, sehingga
+  tidak boleh ada transaksi yang masih belum disetujui oleh
+  approver.
+- Validasi urutan tanggal transaksi atas barang yang sejenis (tidak
+  bisa sisip tanggal transaksi).
+- Sudah tutup buku modul Persediaan periode sebelumnya.
+
+## Langkah
+
+<Steps>
+
+1. Setelah mengisi hasil opname fisik pada bahan opname fisik,
+   operator masuk ke menu **Persediaan > Opname Fisik > Rekam Hasil
+   Opname Fisik**, lalu klik tombol **Rekam**.
+2. Pilih barang persediaan yang hasil opname fisiknya selisih, lalu
+   klik (centang) kotak kecil pada kolom edit dan isikan jumlah
+   barang sesuai hasil inventarisasi dan atau harga satuan barang
+   dimaksud.
+3. Jika sudah selesai, klik **Simpan**.
+
+</Steps>
+
+## Hasil yang diharapkan
+
+Hasil opname fisik terekam; menurut juknis 2020, persetujuan hasil
+opname fisik dilakukan oleh Approver UAKPB atau Approver UAPKPB pada
+submenu Persetujuan Hasil Opname Fisik — dengan persetujuan itu,
+saldo barang secara fisik akan sama dengan saldo barang di sistem
+dan terbentuk jurnal yang dikirim ke buku besar.
+
+## Ketentuan
+
+- Perekaman hanya dilakukan atas barang persediaan yang selisih
+  (tidak harus input semua barang); apabila kuantitas hasil opname
+  fisik dengan Buku Persediaan sudah sama, tidak perlu dicatat
+  lagi.
+- Tanggal buku diisikan paling tidak sama dengan tanggal transaksi
+  terakhir untuk barang yang sama.
+
+## Jurnal transaksi
+
+Menurut tabel overview pada halaman situs:
+
+- (D) Beban Persediaan
+- (K) Barang Persediaan
+
+## Ilustrasi transaksi
+
+Pada setiap akhir semester, satker melakukan opname fisik dengan
+cara mencetak bahan opname fisik yang berisi saldo barang sesuai
+yang tercatat di aplikasi, kemudian operator mencocokkan saldo
+aplikasi dengan saldo barang riil di gudang; jika ada perbedaan
+saldo, operator menginput saldo yang sesuai kondisi fisik.
+
+## Terkait
+
+- [Mencetak Bahan Opname Fisik Persediaan](/persediaan/opname-fisik/cetak-bahan-opname-fisik/)
+- [Mengoreksi Jumlah Persediaan](/persediaan/koreksi/koreksi-jumlah/)
+
+## Sumber
+
+<SumberAsli />
