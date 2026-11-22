@@ -208,3 +208,31 @@
   harap: ["/piutang/pengelolaan-piutang/koreksi/koreksi-piutang/"]
 - q: "cetak laporan piutang"
   harap: ["/piutang/pengelolaan-piutang/laporan/"]
+- q: "cara membuat jurnal manual di sakti"
+  harap: ["/akuntansi-pelaporan/proses/jurnal-manual/"]
+- q: "validasi jurnal glp"
+  harap: ["/akuntansi-pelaporan/proses/validasi-jurnal/"]
+- q: "posting jurnal"
+  harap: ["/akuntansi-pelaporan/proses/posting-jurnal/"]
+- q: "monitoring jurnal yang belum diposting"
+  harap: ["/akuntansi-pelaporan/proses/monitoring-jurnal/"]
+- q: "jurnal balik awal tahun akrual"
+  harap: ["/akuntansi-pelaporan/proses/jurnal-penyesuaian-khusus/jurnal-balik/", "/akuntansi-pelaporan/proses/jurnal-penyesuaian-khusus/"]
+- q: "jurnal bast void"
+  harap: ["/akuntansi-pelaporan/proses/jurnal-bast-void/"]
+- q: "tutup buku bulanan glp"
+  harap: ["/akuntansi-pelaporan/tutup-buku/tutup-buku/"]
+- q: "monitoring tutup transaksi modul lain"
+  harap: ["/akuntansi-pelaporan/tutup-buku/monitoring-tutup-transaksi/"]
+- q: "cetak laporan keuangan neraca lra"
+  harap: ["/akuntansi-pelaporan/laporan/"]
+- q: "transaksi resiprokal blu"
+  harap: ["/akuntansi-pelaporan/transaksi-resiprokal/"]
+- q: "likuidasi satker glp"
+  harap: ["/akuntansi-pelaporan/likuidasi-satker/likuidasi-glp/", "/akuntansi-pelaporan/likuidasi-satker/"]
+- q: "koreksi spm ralat jurnal penyesuaian"
+  harap: ["/akuntansi-pelaporan/koreksi-spm-jurnal-manual/"]
+- q: "pencatatan hibah langsung barang mphl-bjs"
+  harap: ["/akuntansi-pelaporan/mphl-bjs/", "/persediaan/transaksi-masuk/hibah-masuk/"]
+- q: "penerimaan dari potongan sp2d satker lain"
+  harap: ["/akuntansi-pelaporan/proses/penerimaan-potongan-sp2d-satker-lain/"]

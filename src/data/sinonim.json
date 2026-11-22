@@ -1295,5 +1295,189 @@
       "bagian lancar piutang"
     ],
     "perlu_verifikasi": true
+  },
+  {
+    "istilah": "LAK",
+    "panjang": "",
+    "sinonim": [
+      "laporan arus kas",
+      "lak"
+    ],
+    "perlu_verifikasi": true
+  },
+  {
+    "istilah": "LPSAL",
+    "panjang": "",
+    "sinonim": [
+      "lpsal",
+      "laporan perubahan saldo anggaran lebih"
+    ],
+    "perlu_verifikasi": true
+  },
+  {
+    "istilah": "SAIBA",
+    "panjang": "",
+    "sinonim": [
+      "saiba",
+      "saldo neraca"
+    ],
+    "perlu_verifikasi": true
+  },
+  {
+    "istilah": "LRA",
+    "panjang": "Laporan Realisasi Anggaran",
+    "sinonim": [
+      "laporan realisasi anggaran",
+      "lra"
+    ],
+    "perlu_verifikasi": true
+  },
+  {
+    "istilah": "LKKL",
+    "panjang": "Laporan Keuangan Kementerian Negara/Lembaga",
+    "sinonim": [
+      "lkkl",
+      "laporan keuangan kementerian"
+    ],
+    "perlu_verifikasi": true
+  },
+  {
+    "istilah": "LKPP",
+    "panjang": "Laporan Keuangan Pemerintah Pusat",
+    "sinonim": [
+      "lkpp",
+      "laporan keuangan pemerintah pusat"
+    ],
+    "perlu_verifikasi": true
+  },
+  {
+    "istilah": "Neraca Saldo",
+    "panjang": "Trial Balance",
+    "sinonim": [
+      "trial balance",
+      "neraca saldo",
+      "neraca percobaan"
+    ],
+    "perlu_verifikasi": true
+  },
+  {
+    "istilah": "Buku Besar",
+    "panjang": "",
+    "sinonim": [
+      "buku besar",
+      "general ledger"
+    ],
+    "perlu_verifikasi": true
+  },
+  {
+    "istilah": "Jurnal Penyesuaian Khusus",
+    "panjang": "",
+    "sinonim": [
+      "jurnal penyesuaian",
+      "jurnal akrual",
+      "penyesuaian khusus"
+    ],
+    "perlu_verifikasi": true
+  },
+  {
+    "istilah": "Jurnal Balik",
+    "panjang": "",
+    "sinonim": [
+      "jurnal pembalik",
+      "jurnal balik"
+    ],
+    "perlu_verifikasi": true
+  },
+  {
+    "istilah": "Resiprokal",
+    "panjang": "",
+    "sinonim": [
+      "transaksi resiprokal",
+      "resiprokal pendapatan",
+      "resiprokal belanja"
+    ],
+    "perlu_verifikasi": true
+  },
+  {
+    "istilah": "e-Rekon",
+    "panjang": "",
+    "sinonim": [
+      "e-rekon",
+      "erekon",
+      "rekonsiliasi"
+    ],
+    "perlu_verifikasi": true
+  },
+  {
+    "istilah": "SPNRH",
+    "panjang": "Surat Penetapan Nomor Register Hibah",
+    "sinonim": [
+      "spnrh",
+      "nomor register hibah"
+    ],
+    "perlu_verifikasi": true
+  },
+  {
+    "istilah": "SPTMHL",
+    "panjang": "Surat Pernyataan Telah Menerima Hibah Langsung",
+    "sinonim": [
+      "sptmhl"
+    ],
+    "perlu_verifikasi": true
+  },
+  {
+    "istilah": "SP3HL-BJS",
+    "panjang": "",
+    "sinonim": [
+      "sp3hl-bjs",
+      "surat pengantar satker"
+    ],
+    "perlu_verifikasi": true
+  },
+  {
+    "istilah": "TAYL",
+    "panjang": "",
+    "sinonim": [
+      "bast tayl",
+      "tahun anggaran yang lalu"
+    ],
+    "perlu_verifikasi": true
+  },
+  {
+    "istilah": "DJPPR",
+    "panjang": "Ditjen Pengelolaan Pembiayaan dan Resiko",
+    "sinonim": [
+      "djppr",
+      "register hibah djppr"
+    ],
+    "perlu_verifikasi": true
+  },
+  {
+    "istilah": "Korolari",
+    "panjang": "",
+    "sinonim": [
+      "jurnal korolari",
+      "korolari blu"
+    ],
+    "perlu_verifikasi": true
+  },
+  {
+    "istilah": "Subledger",
+    "panjang": "",
+    "sinonim": [
+      "sub-ledger",
+      "subledger",
+      "sub ledger"
+    ],
+    "perlu_verifikasi": true
+  },
+  {
+    "istilah": "Satker Intraco",
+    "panjang": "",
+    "sinonim": [
+      "satker intraco",
+      "intraco"
+    ],
+    "perlu_verifikasi": true
   }
 ]

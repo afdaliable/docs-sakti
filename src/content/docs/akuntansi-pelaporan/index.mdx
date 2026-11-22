@@ -1,24 +1,52 @@
 ---
 title: Akuntansi dan Pelaporan
-description: Jurnal, posting, tutup buku, resiprokal, dan laporan keuangan.
+description: Jurnal, posting, tutup buku, resiprokal, likuidasi satker, dan laporan keuangan.
 modul: akuntansi-pelaporan
+menu_sakti: "Akuntansi dan Pelaporan"
 jenis: indeks
-status: terbit
-sidebar:
-  label: Ringkasan
-  order: 0
+status: review
+sumber:
+  - judul: "SAKTI PELAPORAN - GL & Pelaporan"
+    url: "https://sites.google.com/view/saktipelaporan/akuntansi-dan-pelaporan"
+    jenis: google-sites
+    diambil: 2026-11-21
+    id_manifest: C-akuntansi-dan-pelaporan
+  - judul: "Juknis SAKTI Web - GLP_30122020"
+    url: "https://drive.google.com/file/d/1Z8R3bR_pYK-God0fQSBy5twxtJDASqaa/view"
+    jenis: pdf
+    diambil: 2026-11-21
+    id_manifest: C-dok-161
 ---
 
-Jurnal, posting, tutup buku, resiprokal, dan laporan keuangan.
+import { LinkCard, CardGrid } from '@astrojs/starlight/components';
+import MenuSakti from '../../components/MenuSakti.astro';
+import SumberAsli from '../../components/SumberAsli.astro';
 
-Panduan modul ini sedang dimigrasikan dari sumber aslinya.
+Modul **Akuntansi dan Pelaporan** (GLP) menampung penyusunan
+Laporan Keuangan: jurnal dari semua modul divalidasi dan
+diposting ke neraca saldo, periode ditutup, lalu laporan
+dicetak.
 
-## Sub-menu
+Alur penyusunan LK SAKTI menurut sumber: Migrasi Saldo Awal
+(Persediaan, BMN Aset Tetap/ATB, Saldo Neraca SAIBA) →
+Jurnal (Komitmen, Pembayaran, Bendahara, Aset Tetap,
+Persediaan, Manual & Penyesuaian, Terkait Interkoneksi
+Perpajakan) → Validasi & Posting (Neraca Saldo) → Tutup
+Periode → Pelaporan (Basis Akrual, Basis Kas, Rekonsiliasi,
+Laporan Konsolidasi).
 
-- [Proses](/akuntansi-pelaporan/proses/)
-- [Tutup Buku](/akuntansi-pelaporan/tutup-buku/)
-- [Laporan](/akuntansi-pelaporan/laporan/)
-- [Likuidasi Satker](/akuntansi-pelaporan/likuidasi-satker/)
-- [Transaksi Resiprokal](/akuntansi-pelaporan/transaksi-resiprokal/)
-- [Juknis MPHL-BJS SAKTI](/akuntansi-pelaporan/mphl-bjs/)
-- [Koreksi SPM yang Memerlukan Jurnal Manual](/akuntansi-pelaporan/koreksi-spm-jurnal-manual/)
+<MenuSakti />
+
+<CardGrid>
+  <LinkCard title="Proses" href="/akuntansi-pelaporan/proses/" description="Jurnal manual, jurnal penyesuaian khusus, validasi, posting, monitoring, dan BAST void." />
+  <LinkCard title="Tutup Buku" href="/akuntansi-pelaporan/tutup-buku/" description="Tutup buku sementara/permanen dan monitoring tutup transaksi modul." />
+  <LinkCard title="Laporan" href="/akuntansi-pelaporan/laporan/" description="Laporan keuangan tingkat satker sampai kementerian." />
+  <LinkCard title="Likuidasi Satker" href="/akuntansi-pelaporan/likuidasi-satker/" description="Likuidasi keluar/masuk neraca GLP, aset tetap, persediaan, dan piutang." />
+  <LinkCard title="Transaksi Resiprokal" href="/akuntansi-pelaporan/transaksi-resiprokal/" description="Resiprokal pendapatan dan belanja antara satker BLU/Non BLU." />
+  <LinkCard title="MPHL-BJS" href="/akuntansi-pelaporan/mphl-bjs/" description="Pengesahan hibah langsung barang, jasa, dan surat berharga." />
+  <LinkCard title="Koreksi SPM (Jurnal Manual)" href="/akuntansi-pelaporan/koreksi-spm-jurnal-manual/" description="Jurnal penyesuaian ralat/koreksi akun SPM/SP2D." />
+</CardGrid>
+
+## Sumber
+
+<SumberAsli />
