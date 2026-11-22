@@ -1,0 +1,83 @@
+---
+title: Merekam Reklasifikasi Keluar Persediaan
+description: Merekam pengeluaran persediaan karena jenis atau kode barang persediaan diubah menjadi jenis atau kode barang persediaan yang lain.
+modul: persediaan
+menu_sakti: "Persediaan > Transaksi Keluar > Reklasifikasi Keluar"
+peran: [satker]
+jenis: juknis
+kata_kunci: [reklasifikasi keluar, reklas keluar, BAST reklasifikasi]
+status: review
+perlu_review: true
+sumber:
+  - judul: "Reklasifikasi Keluar"
+    url: "https://sites.google.com/view/saktipelaporan/persediaan/transaksi-keluar/reklasifikasi-keluar"
+    jenis: google-sites
+    diambil: 2026-11-21
+    id_manifest: C-persediaan-transaksi-keluar-reklasifikasi-keluar
+  - judul: "009_RK-RM satu siklus"
+    url: "https://drive.google.com/file/d/14GVDnVAWDMdqh8-sKJyVmkGJbJoC_0HG/view"
+    jenis: lainnya
+    diambil: 2026-11-21
+    id_manifest: C-dok-025
+sidebar:
+  order: 10
+---
+
+import { Aside } from '@astrojs/starlight/components';
+import MenuSakti from '~/components/MenuSakti.astro';
+import SumberAsli from '~/components/SumberAsli.astro';
+
+Menu Reklasifikasi Keluar (kode transaksi K10) digunakan untuk
+mencatat pengeluaran persediaan karena jenis atau kode barang
+persediaan diubah menjadi jenis atau kode barang persediaan yang
+lain, termasuk mencatat pengeluaran barang persediaan yang diperoleh
+melalui pembayaran secara bertahap (termin) untuk dicatat menjadi
+barang persediaan yang utuh.
+
+<MenuSakti />
+
+## Prasyarat
+
+- Dokumen sumber: BAST Reklasifikasi.
+- Transaksi Reklasifikasi Keluar dan Reklasifikasi Masuk harus
+  dibukukan dalam bulan yang sama.
+- Validasi urutan tanggal transaksi atas barang yang sejenis (tidak
+  bisa sisip tanggal transaksi).
+- Sudah tutup buku modul Persediaan periode sebelumnya.
+
+## Ketentuan
+
+- Tanggal buku diisikan paling tidak sama dengan tanggal transaksi
+  terakhir untuk barang yang sama.
+
+## Jurnal transaksi
+
+Menurut tabel overview pada halaman situs:
+
+- (D) Beban Penyesuaian Persediaan
+- (K) Barang Persediaan
+
+## Ilustrasi transaksi
+
+Menurut tabel overview pada halaman situs, ilustrasi pada sumber
+memuat contoh satker yang salah merekam kodifikasi barang
+persediaan; untuk memperbaikinya satker melakukan reklasifikasi
+keluar atas kode barang yang salah dan reklasifikasi masuk dengan
+kode barang yang benar.
+
+<Aside type="caution" title="Perlu verifikasi">
+Sumber tidak memuat langkah perekaman: halaman situs hanya berisi
+gambar tabel overview dan tautan video, juknis 2020 tidak memuat
+bagian khusus untuk menu ini (bagian "Reklasifikasi Keluar" di
+juknis 2020 membahas Reklasifikasi Keluar ke Aset tetap), sehingga
+bagian Langkah tidak ditulis.
+</Aside>
+
+## Terkait
+
+- [Merekam Reklasifikasi Masuk Persediaan](/persediaan/transaksi-masuk/reklasifikasi-masuk/)
+- [Merekam Reklasifikasi Ke Aset](/persediaan/transaksi-keluar/reklasifikasi-ke-aset/)
+
+## Sumber
+
+<SumberAsli />

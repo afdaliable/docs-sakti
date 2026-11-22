@@ -1,0 +1,133 @@
+---
+title: Merekam Transfer Keluar Online (Sesama SAKTI) Persediaan
+description: Merekam pengeluaran barang persediaan yang dikirimkan kepada satker lain sesama pengguna SAKTI dalam lingkup Pemerintah Pusat.
+modul: persediaan
+menu_sakti: "Persediaan > Transaksi Keluar > Transfer Keluar Online (Sesama SAKTI)"
+peran: [satker]
+jenis: juknis
+kata_kunci: [transfer keluar online, TK online, transfer antar satker, BAST]
+status: review
+perlu_review: false
+sumber:
+  - judul: "Transfer Keluar Online (Sesama SAKTI)"
+    url: "https://sites.google.com/view/saktipelaporan/persediaan/transaksi-keluar/transfer-keluar-online-sesama-sakti"
+    jenis: google-sites
+    diambil: 2026-11-21
+    id_manifest: C-persediaan-transaksi-keluar-transfer-keluar-online-sesama-sakti
+  - judul: "14. TK Online (sesama pengguna SAKTI).pptx"
+    url: "https://docs.google.com/presentation/d/16ykflkWGnSBuQYK-IVXmtyT0GdZ1PU-n/"
+    jenis: pptx
+    diambil: 2026-11-21
+    id_manifest: C-dok-022
+  - judul: "008_TKTM online satu siklus"
+    url: "https://drive.google.com/file/d/1F_FDMnxrqlhRK0R8TP_jd8upXhC30ehd/view"
+    jenis: lainnya
+    diambil: 2026-11-21
+    id_manifest: C-dok-021
+  - judul: "JUKNIS SAKTI WEB-Persediaan_30122020"
+    url: "https://drive.google.com/file/d/1p_-rUAu_on0H0d_TKFEE2vmpDXCPDzy5/view"
+    jenis: pdf
+    diambil: 2026-11-21
+    id_manifest: C-dok-001
+sidebar:
+  order: 11
+---
+
+import { Steps } from '@astrojs/starlight/components';
+import MenuSakti from '~/components/MenuSakti.astro';
+import SumberAsli from '~/components/SumberAsli.astro';
+
+Menu Transfer Keluar Online (Sesama SAKTI) (kode transaksi K02)
+digunakan untuk merekam transaksi transfer keluar — pengeluaran
+barang persediaan yang dikirimkan — ke satker (UAKPB) lain sesama
+pengguna aplikasi SAKTI dalam lingkup Pemerintah Pusat. Dokumen
+sumber yang dapat digunakan adalah Berita Acara Transfer.
+
+<MenuSakti />
+
+## Prasyarat
+
+- Role yang dibutuhkan: Operator Persediaan; menurut juknis 2020,
+  OPR dan APR.
+- Dokumen sumber: BAST; menurut juknis 2020 dan juknis slide,
+  dokumen input adalah BAST Serah Terima Barang.
+- Modul lain yang terkait menurut juknis 2020: GLP.
+- Masih terdapat saldo barang persediaan yang akan dilakukan
+  transfer keluar.
+- Satker penerima barang yang dituju tidak boleh melakukan tutup
+  buku pada bulan saat direkam transaksi Transfer Keluar Online.
+- Validasi urutan tanggal transaksi atas barang yang sejenis (tidak
+  bisa sisip tanggal transaksi).
+- Sudah tutup buku modul Persediaan periode sebelumnya.
+
+## Langkah
+
+<Steps>
+
+1. Login menggunakan user operator Persediaan, kemudian pilih menu
+   **Persediaan > Transaksi Keluar > Transfer Keluar Online (Sesama
+   SAKTI)** dan klik tombol **Rekam**.
+2. Isikan **No Bukti**, **Tanggal Buku** dan **Tanggal Dokumen**.
+3. Isikan kode UAKPB (kode satker tujuan).
+4. Klik tombol (+) di kanan untuk menambahkan kode barang per sub
+   sub kelompok dan mengisikan satuan serta harga satuan yang akan
+   digunakan, lalu klik **Simpan**.
+5. Jika ingin menambah detil kode barang lagi, klik tombol (+) di
+   kanan lalu isikan jumlah dan harga satuan barang yang akan
+   dipakai.
+6. Setelah selesai semua, klik **Simpan** di bagian bawah untuk
+   menyelesaikan perekaman satu dokumen.
+
+</Steps>
+
+## Hasil yang diharapkan
+
+Perekaman satu dokumen transfer keluar online selesai dan data siap
+untuk disetujui; menurut juknis 2020, output transaksi ini adalah
+semua laporan pada modul Persediaan.
+
+## Ketentuan
+
+- Operator melakukan perekaman kode satker tujuan yang telah
+  menggunakan aplikasi SAKTI.
+- Tanggal buku diisikan paling tidak sama dengan tanggal transaksi
+  terakhir untuk barang yang sama.
+- Perlu diperhatikan untuk melakukan koordinasi dengan satker
+  penerima, bahwa pada bulan bersangkutan modul Persediaan pada
+  satker penerima masih dalam keadaan buka modul.
+- Menurut juknis 2020, transaksi Transfer Keluar dan Transfer Masuk
+  Online hanya dapat dilakukan dalam satu periode tahun anggaran:
+  setiap transaksi Transfer Masuk Online hanya dapat direkam pada
+  satker penerima maksimal tanggal 31 Desember pada tahun Transfer
+  Keluar Online dibukukan; sangat dianjurkan TKTM online dibukukan
+  pada bulan/periode yang sama untuk menghindari selisih TKTM.
+- Menurut juknis 2020, apabila Transfer Masuk Online belum direkam
+  di satker penerima dan telah melewati periode bulan dokumen
+  Transfer Keluar Online dibukukan oleh satker pengirim, maka akan
+  muncul peringatan yang bersifat informatif pada saat tutup periode
+  di satker pengirim dan penerima, namun tutup buku masih dapat
+  dilakukan.
+
+## Jurnal transaksi
+
+Menurut tabel overview pada halaman situs:
+
+- (D) Transfer Keluar
+- (K) Barang Persediaan
+
+## Ilustrasi transaksi
+
+Menurut tabel overview pada halaman situs, ilustrasi pada sumber
+memuat contoh satker yang mentransfer keluar barang persediaan ke
+satker lain sesama pengguna SAKTI; satker pengirim menginput
+transaksi TK Online dengan memilih kode satker dan kode barang yang
+sesuai agar satker penerima dapat menerima transfer online tersebut.
+
+## Terkait
+
+- [Merekam Transfer Masuk Online (Sesama SAKTI) Persediaan](/persediaan/transaksi-masuk/transfer-masuk-online-sesama-sakti/)
+- [Membatalkan Transfer Keluar Online Persediaan](/persediaan/koreksi/batal-transfer-keluar-online/)
+
+## Sumber
+
+<SumberAsli />

@@ -1,0 +1,122 @@
+---
+title: Merekam Hibah Keluar Persediaan
+description: Merekam pengeluaran persediaan sebagai hibah kepada masyarakat, pemerintah daerah, atau pihak lain di luar Pemerintah Pusat.
+modul: persediaan
+menu_sakti: "Persediaan > Transaksi Keluar > Hibah Keluar"
+peran: [satker]
+jenis: juknis
+kata_kunci: [hibah keluar, hibah persediaan, BAST hibah, penyerahan pemda]
+status: review
+perlu_review: false
+sumber:
+  - judul: "Hibah Keluar"
+    url: "https://sites.google.com/view/saktipelaporan/persediaan/transaksi-keluar/hibah-keluar"
+    jenis: google-sites
+    diambil: 2026-11-21
+    id_manifest: C-persediaan-transaksi-keluar-hibah-keluar
+  - judul: "73. hibah Keluar"
+    url: "https://drive.google.com/file/d/1ursOppihv3lakGl0zupoeNJ3VEbD0iNU/view"
+    jenis: pptx
+    diambil: 2026-11-21
+    id_manifest: C-dok-024
+  - judul: "8-Hibah Keluar"
+    url: "https://drive.google.com/file/d/1_UWJZ2ZfY7LzJn9-AzlifN5Q30y1W4Aw/view"
+    jenis: lainnya
+    diambil: 2026-11-21
+    id_manifest: C-dok-023
+  - judul: "JUKNIS SAKTI WEB-Persediaan_30122020"
+    url: "https://drive.google.com/file/d/1p_-rUAu_on0H0d_TKFEE2vmpDXCPDzy5/view"
+    jenis: pdf
+    diambil: 2026-11-21
+    id_manifest: C-dok-001
+sidebar:
+  order: 2
+---
+
+import { Steps } from '@astrojs/starlight/components';
+import MenuSakti from '~/components/MenuSakti.astro';
+import SumberAsli from '~/components/SumberAsli.astro';
+
+Menu Hibah Keluar (kode transaksi K03) digunakan untuk mencatat
+pengeluaran persediaan kepada masyarakat, pemerintah daerah, atau
+pihak lain yang bukan lingkup Pemerintah Pusat — barang yang pada
+awal perolehannya tidak diniatkan untuk diserahkan kepada pihak
+lain, dan penyerahannya dilakukan pada tahun anggaran berjalan.
+Pencatatan transaksi ini harus didahului oleh pencatatan transaksi
+BAST Hibah dari modul Komitmen, kemudian modul Persediaan melakukan
+pendetilan dan modul Pembayaran melakukan pengesahan MPHLBJS.
+
+<MenuSakti />
+
+## Prasyarat
+
+- Role yang dibutuhkan: OPR dan APR; menurut juknis, pengguna
+  sebagai Operator UAKPB atau Operator UAPKPB.
+- Dokumen sumber: BAST; dokumen input menurut juknis adalah BAST
+  serah terima barang.
+- Sudah ada pencatatan transaksi BAST Hibah dari modul Komitmen.
+- Masih terdapat saldo barang persediaan yang akan dilakukan hibah
+  keluar.
+- Validasi urutan tanggal transaksi atas barang yang sejenis (tidak
+  bisa sisip tanggal transaksi).
+- Sudah tutup buku modul Persediaan periode sebelumnya.
+- Menurut juknis 2021 dan 2020: validasi HST.
+
+## Langkah
+
+<Steps>
+
+1. Login menggunakan user operator Persediaan, kemudian pilih menu
+   **Persediaan > Transaksi Keluar > Hibah Keluar** dan klik tombol
+   **Rekam**.
+2. Pilih dokumen Hibah Keluar yang ingin didetilkan.
+3. Pada form yang tampil, isikan parameter tanggal, kode barang
+   persediaan, jumlah, dan kolom keterangan, lalu klik **Simpan** —
+   data sudah siap dilakukan persetujuan oleh user approval.
+
+</Steps>
+
+## Hasil yang diharapkan
+
+Perekaman transaksi hibah keluar siap untuk disetujui oleh approver
+dan masuk ke semua laporan pada modul Persediaan.
+
+## Ketentuan
+
+- Operator melakukan isian pihak lain di luar Pemerintah Pusat yang
+  menerima hibah.
+- Tanggal dokumen diisikan sesuai dengan dokumen sumber (BAST
+  hibah).
+- Tanggal buku diisikan paling tidak sama dengan tanggal transaksi
+  terakhir untuk barang yang sama; menurut juknis, tanggal buku
+  harus sama dengan tanggal dokumen karena menggunakan metode
+  pencatatan perpetual.
+
+## Jurnal transaksi
+
+Menurut teks halaman situs:
+
+- D. 526311 Beban barang lainnya untuk dijual/diserahkan kpd
+  masy/pemda
+- K. Persediaan (Barang Konsumsi/Amunisi/Bahan Untuk Pemeliharaan
+  dll)
+
+Menurut tabel overview pada halaman situs:
+
+- (D) (tidak disebutkan akunnya)
+- (K) Barang Persediaan
+
+## Ilustrasi transaksi
+
+Satker sebagai pengguna SAKTI memberikan hibah barang persediaan ke
+satker pemerintah daerah; operator persediaan merekam transaksi
+hibah keluar dengan kode satker tujuan (satker pemda).
+
+## Terkait
+
+- [Merekam Hibah Masuk Persediaan](/persediaan/transaksi-masuk/hibah-masuk/)
+- [Merekam Pemakaian Persediaan](/persediaan/transaksi-keluar/pemakaian/)
+
+## Sumber
+
+<SumberAsli />

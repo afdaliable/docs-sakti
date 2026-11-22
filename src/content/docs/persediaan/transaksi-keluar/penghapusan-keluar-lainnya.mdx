@@ -1,0 +1,75 @@
+---
+title: Merekam Penghapusan (Keluar) Lainnya Persediaan
+description: Merekam pengeluaran persediaan selain habis pakai, transfer keluar, dan hibah keluar.
+modul: persediaan
+menu_sakti: "Persediaan > Transaksi Keluar > Penghapusan (Keluar) Lainnya"
+peran: [satker]
+jenis: juknis
+kata_kunci: [penghapusan keluar lainnya, persediaan keluar, SK penghapusan]
+status: review
+perlu_review: true
+sumber:
+  - judul: "Penghapusan (Keluar) Lainnya"
+    url: "https://sites.google.com/view/saktipelaporan/persediaan/transaksi-keluar/penghapusan-keluar-lainnya"
+    jenis: google-sites
+    diambil: 2026-11-21
+    id_manifest: C-persediaan-transaksi-keluar-penghapusan-keluar-lainnya
+  - judul: "JUKNIS SAKTI WEB-Persediaan_30122020"
+    url: "https://drive.google.com/file/d/1p_-rUAu_on0H0d_TKFEE2vmpDXCPDzy5/view"
+    jenis: pdf
+    diambil: 2026-11-21
+    id_manifest: C-dok-001
+sidebar:
+  order: 3
+---
+
+import { Steps, Aside } from '@astrojs/starlight/components';
+import MenuSakti from '~/components/MenuSakti.astro';
+import SumberAsli from '~/components/SumberAsli.astro';
+
+Menu Penghapusan (Keluar) Lainnya digunakan untuk mencatat penghapusan
+persediaan lainnya — menurut juknis 2020, yaitu pengeluaran persediaan
+selain habis pakai, transfer keluar, dan hibah keluar.
+
+<MenuSakti />
+
+## Prasyarat
+
+- Role yang dibutuhkan: menurut juknis 2020, OPR dan APR, yaitu
+  pengguna sebagai Operator UAKPB atau Operator UAPKPB.
+- Dokumen sumber: SK atau dokumen lain; menurut juknis 2020, dokumen
+  input adalah BAST serah terima barang.
+- Modul lain yang terkait: GLP.
+- Menurut juknis 2020: validasi HST.
+
+## Langkah
+
+<Steps>
+
+1. Klik tombol (+) di bagian bawah.
+2. Lengkapi seluruh isian form yang tersedia.
+3. Klik simpan dan selesai.
+
+</Steps>
+
+## Hasil yang diharapkan
+
+Menurut juknis 2020, output transaksi ini adalah semua laporan pada
+modul Persediaan.
+
+## Ketentuan
+
+- Menurut juknis 2020, tanggal buku harus sama dengan tanggal
+  dokumen dari transaksi tersebut karena metode pencatatan
+  perpetual.
+
+<Aside type="caution" title="Perlu verifikasi">
+Halaman situs menyebut nama menu "Penghapusan (Keluar) Lainnya",
+sedangkan juknis 2020 menulis jalur menu "Transaksi Keluar > Keluar
+Lainnya" dan menyebut dokumen input BAST serah terima barang, yang
+berbeda dari isian halaman situs ("SK atau dokumen lain").
+</Aside>
+
+## Sumber
+
+<SumberAsli />

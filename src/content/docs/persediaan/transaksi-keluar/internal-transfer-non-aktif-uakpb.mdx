@@ -1,0 +1,114 @@
+---
+title: Merekam Internal Transfer Non-Aktif UAKPB Persediaan
+description: Merekam transfer keluar likuidasi, yaitu penyerahan semua barang persediaan dari UAKPB yang dilikuidasi ke UAKPB penerima.
+modul: persediaan
+menu_sakti: "Persediaan > Transaksi Keluar > Internal Transfer Non Aktif UAPKPB"
+peran: [satker]
+jenis: juknis
+kata_kunci: [internal transfer non aktif, transfer keluar likuidasi, likuidasi uakpb]
+status: review
+perlu_review: true
+sumber:
+  - judul: "Internal TransferNon-Aktif UAKPB"
+    url: "https://sites.google.com/view/saktipelaporan/persediaan/transaksi-keluar/internal-transfer-non-aktif-uakpb"
+    jenis: google-sites
+    diambil: 2026-11-21
+    id_manifest: C-persediaan-transaksi-keluar-internal-transfer-non-aktif-uakpb
+  - judul: "Persediaan likuidasi_1"
+    url: "https://drive.google.com/file/d/1X0yhHgvex1bKB-WR98hI_8aH5L92KazR/view"
+    jenis: pdf
+    diambil: 2026-11-21
+    id_manifest: C-dok-028
+  - judul: "92. Likuidasi Persediaan.pptx"
+    url: "https://docs.google.com/presentation/d/1DZ79MHTYTeQ1LWxYkh8vg9x6yWaDQUoM/"
+    jenis: pptx
+    diambil: 2026-11-21
+    id_manifest: C-dok-029
+sidebar:
+  order: 5
+---
+
+import { Steps, Aside } from '@astrojs/starlight/components';
+import MenuSakti from '~/components/MenuSakti.astro';
+import SumberAsli from '~/components/SumberAsli.astro';
+
+Menu ini digunakan untuk mencatat. Menurut dokumen tertaut, menu
+likuidasi keluar digunakan untuk mencatat penyerahan semua aset
+tetap atau aset lainnya dan persediaan kepada UAKPB lain yang masih
+dalam satu entitas pelaporan akuntansi Pemerintah Pusat — nama menu
+dalam dokumen adalah "Transfer Keluar Likuidasi UAKPB".
+
+<MenuSakti />
+
+## Prasyarat
+
+- Role yang dibutuhkan: Operator Persediaan (menurut dokumen
+  tertaut).
+- Dokumen sumber: No Bukti transaksi likuidasi (Surat Ketetapan).
+- Setup likuidasi di user admin sudah selesai dilakukan (menu
+  Administrasi > GL dan Pelaporan > Setup Likuidasi).
+- Satker memastikan semua transaksi telah selesai direkam dan
+  disetujui oleh approver.
+- Semua transaksi yang memerlukan pendetailan telah didetailkan —
+  tidak boleh ada transaksi yang belum didetailkan.
+- Tanggal buku transaksi likuidasi keluar harus masih dalam periode
+  bulan yang sama dengan periode bulan yang dipilih pada saat Setup
+  Likuidasi dan masih dalam rentang tanggal mulai–tanggal akhir yang
+  direkam pada Setup Likuidasi.
+- Tanggal pembukuan transaksi likuidasi keluar harus sama atau lebih
+  besar daripada tanggal pembukuan transaksi paling besar dari semua
+  transaksi yang pernah direkam.
+- Semua transaksi Reklasifikasi Keluar telah ditindaklanjuti dengan
+  transaksi Reklasifikasi Masuk sampai status disetujui approver.
+- Semua transaksi Transfer Masuk telah direkam dan telah disetujui
+  oleh approver.
+
+## Langkah
+
+<Steps>
+
+1. Setelah setup likuidasi di user admin selesai, pada user operator
+   persediaan masuk ke menu **Persediaan > Transaksi Keluar >
+   Internal Transfer Non Aktif UAPKPB** (menurut dokumen tertaut:
+   "Transfer Keluar Likuidasi UAKPB").
+2. Klik tombol **Rekam**, lalu isikan **No Bukti** transaksi
+   likuidasi (Surat Ketetapan) serta periksa kesesuaian setup
+   tanggal dokumen, tanggal buku, dan kode UAKPB tujuan (kode satker
+   tujuan) yang sudah di-setup sebelumnya pada user admin.
+3. Setelah rincian transaksi dipastikan, klik tombol **Simpan**.
+4. Masuk menggunakan user approval persediaan untuk melakukan proses
+   persetujuan transaksi likuidasi keluar.
+
+</Steps>
+
+## Hasil yang diharapkan
+
+Proses likuidasi keluar sudah dilakukan perekamannya dan tinggal
+dilakukan proses persetujuan di approval; transaksi tersimpan dengan
+status belum disetujui sampai approver menyetujuinya.
+
+## Ketentuan
+
+- Transaksi transfer keluar likuidasi di satker yang dilikuidasi
+  dilanjutkan dengan perekaman seluruh referensi kode barang yang
+  dilikuidasi pada satker asal dan transaksi transfer masuk
+  likuidasi pada satker tujuan.
+
+<Aside type="caution" title="Perlu verifikasi">
+Halaman situs hanya memuat satu kalimat dan menautkan dokumen
+juknis likuidasi persediaan; isi artikel ini diambil dari dokumen
+tertaut tersebut. Nama menu pada dokumen ("Transfer Keluar
+Likuidasi UAKPB") dan pada halaman situs ("Internal Transfer
+Non-Aktif UAKPB") berbeda dari nama menu di aplikasi ("Internal
+Transfer Non Aktif UAPKPB"), sehingga padanan menu ini belum
+pastikan. Bagian likuidasi masuk pada dokumen yang sama tidak
+dimuat di sini.
+</Aside>
+
+## Terkait
+
+- [Merekam Internal Transfer Keluar Persediaan](/persediaan/transaksi-keluar/internal-transfer-keluar/)
+
+## Sumber
+
+<SumberAsli />

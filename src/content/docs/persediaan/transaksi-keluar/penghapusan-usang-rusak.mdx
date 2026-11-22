@@ -1,0 +1,107 @@
+---
+title: Merekam Penghapusan (Usang/Rusak) Persediaan
+description: Merekam penghapusan barang persediaan usang/rusak yang sudah pernah dicatat melalui transaksi persediaan keluar rusak atau usang.
+modul: persediaan
+menu_sakti: "Persediaan > Transaksi Keluar > Penghapusan (Usang/Rusak)"
+peran: [satker]
+jenis: juknis
+kata_kunci: [penghapusan usang rusak, SK penghapusan, persediaan keluar]
+status: review
+perlu_review: true
+sumber:
+  - judul: "Penghapusan (Usang/Rusak)"
+    url: "https://sites.google.com/view/saktipelaporan/persediaan/transaksi-keluar/penghapusan-usangrusak"
+    jenis: google-sites
+    diambil: 2026-11-21
+    id_manifest: C-persediaan-transaksi-keluar-penghapusan-usangrusak
+  - judul: "JUKNIS SAKTI WEB-Persediaan_30122020"
+    url: "https://drive.google.com/file/d/1p_-rUAu_on0H0d_TKFEE2vmpDXCPDzy5/view"
+    jenis: pdf
+    diambil: 2026-11-21
+    id_manifest: C-dok-001
+sidebar:
+  order: 8
+---
+
+import { Steps, Aside } from '@astrojs/starlight/components';
+import MenuSakti from '~/components/MenuSakti.astro';
+import SumberAsli from '~/components/SumberAsli.astro';
+
+Menu Penghapusan (Usang/Rusak) (kode transaksi H01/H02) digunakan
+untuk merekam penghapusan barang persediaan yang rusak/usang, dan
+barang-barang persediaan rusak/usang tersebut sudah pernah dicatat
+melalui transaksi persediaan keluar rusak atau usang.
+
+<MenuSakti />
+
+## Prasyarat
+
+- Role yang dibutuhkan: menurut juknis 2020, OPR dan APR.
+- Dokumen sumber: SK Penghapusan Barang Persediaan; menurut juknis
+  2020, SK Penghapusan barang usang/rusak.
+- Modul Persediaan telah melakukan persetujuan transaksi usang atau
+  rusak.
+- Harus ada saldo barang persediaan yang usang/rusak.
+- Validasi urutan tanggal transaksi atas barang yang sejenis (tidak
+  bisa sisip tanggal transaksi).
+- Sudah tutup buku modul Persediaan periode sebelumnya.
+
+## Langkah
+
+Menurut juknis 2020:
+
+<Steps>
+
+1. Pilih menu **Persediaan > Transaksi Keluar > Penghapusan
+   (Usang/Rusak)** (menurut juknis 2020: "Penghapusan Usang/Rusak"),
+   kemudian klik tombol **Rekam** di kiri bawah.
+2. Pada form detil, pilih jenis transaksi barang yang akan
+   dihapuskan, yaitu persediaan usang atau rusak, lalu isikan
+   parameter perekaman.
+3. Untuk memilih barang, tekan combo lookup Barang Persediaan yang
+   tercatat usang atau rusak, lakukan pencarian berdasarkan nama
+   barang atau kode barang, lalu tekan baris grid yang akan dipilih.
+4. Klik **Simpan** untuk menyimpan data penghapusan barang yang
+   telah diinput.
+
+</Steps>
+
+## Hasil yang diharapkan
+
+Menurut juknis 2020, output transaksi ini adalah semua laporan pada
+modul Persediaan.
+
+## Ketentuan
+
+- Menurut juknis 2020, tanggal buku harus sama dengan tanggal
+  dokumen dari transaksi tersebut karena metode pencatatan
+  perpetual, dan diisikan paling tidak sama dengan tanggal transaksi
+  terakhir untuk barang yang sama.
+- Menurut juknis 2020, jika kombinasi kode barang yang dipilih tidak
+  tercatat sebagai barang yang usang atau rusak, sistem menampilkan
+  pesan kesalahan.
+
+## Jurnal transaksi
+
+Menurut tabel overview pada halaman situs:
+
+- (D) Beban Kerugian Pelepasan Aset
+- (K) Barang Persediaan
+
+<Aside type="caution" title="Perlu verifikasi">
+Halaman situs tidak memuat tata cara perekaman (hanya memuat
+gambar tabel overview), sehingga langkah di atas diambil dari
+juknis 2020. Isian "Tata cara perekaman" pada tabel overview hanya
+menyebut pemilihan jenis transaksi usang atau rusak dan aturan
+tanggal buku.
+</Aside>
+
+## Terkait
+
+- [Merekam Persediaan Usang](/persediaan/transaksi-keluar/usang/)
+- [Merekam Persediaan Rusak](/persediaan/transaksi-keluar/rusak/)
+- [Membatalkan Penghapusan Persediaan Usang/Rusak](/persediaan/koreksi/batal-penghapusan-usang-rusak/)
+
+## Sumber
+
+<SumberAsli />

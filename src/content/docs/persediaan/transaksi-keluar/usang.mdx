@@ -1,0 +1,77 @@
+---
+title: Merekam Persediaan Usang
+description: Merekam pengeluaran barang persediaan yang disebabkan oleh barang yang usang.
+modul: persediaan
+menu_sakti: "Persediaan > Transaksi Keluar > Usang"
+peran: [satker]
+jenis: juknis
+kata_kunci: [usang, persediaan usang, penghapusan, SK penghapusan]
+status: review
+perlu_review: false
+sumber:
+  - judul: "Transaksi Keluar: Usang"
+    url: "https://sites.google.com/view/saktipelaporan/persediaan/transaksi-keluar/usang"
+    jenis: google-sites
+    diambil: 2026-11-21
+    id_manifest: C-persediaan-transaksi-keluar-usang
+  - judul: "JUKNIS SAKTI WEB-Persediaan_30122020"
+    url: "https://drive.google.com/file/d/1p_-rUAu_on0H0d_TKFEE2vmpDXCPDzy5/view"
+    jenis: pdf
+    diambil: 2026-11-21
+    id_manifest: C-dok-001
+sidebar:
+  order: 6
+---
+
+import { Steps } from '@astrojs/starlight/components';
+import MenuSakti from '~/components/MenuSakti.astro';
+import SumberAsli from '~/components/SumberAsli.astro';
+
+Menu Usang digunakan untuk mencatat pengeluaran barang persediaan
+yang disebabkan oleh barang yang usang. Menurut juknis 2020,
+persediaan usang adalah persediaan yang tidak dapat dimanfaatkan
+untuk kegiatan operasional — bukan hanya karena usianya, tetapi juga
+karena sudah ketinggalan teknologi atau ketidaksesuaian spesifikasi.
+
+<MenuSakti />
+
+## Prasyarat
+
+- Role yang dibutuhkan: menurut juknis 2020, OPR dan APR.
+- Dokumen sumber: SK Penghapusan; menurut juknis 2020, SK Penetapan
+  barang usang/rusak.
+- Modul persediaan telah menyetujui transaksi barang usang.
+- Harus ada saldo barang persediaan yang usang/rusak.
+- Validasi urutan tanggal transaksi atas barang yang sejenis (tidak
+  bisa sisip tanggal transaksi).
+- Sudah tutup buku modul Persediaan periode sebelumnya.
+
+## Langkah
+
+<Steps>
+
+1. Masukkan nomor dan tanggal bukti pendukung.
+2. Cari dan pilih persediaan yang akan dihapus.
+3. Simpan.
+
+</Steps>
+
+## Jurnal transaksi
+
+- (D) Beban kerugian pelepasan aset
+- (K) Persediaan
+
+## Ilustrasi transaksi
+
+Menurut halaman situs, ilustrasi pada sumber memuat contoh satker
+yang akan melakukan penghapusan atas barang yang sudah usang.
+
+## Terkait
+
+- [Merekam Persediaan Rusak](/persediaan/transaksi-keluar/rusak/)
+- [Merekam Penghapusan (Usang/Rusak) Persediaan](/persediaan/transaksi-keluar/penghapusan-usang-rusak/)
+- [Membatalkan Pencatatan Persediaan Usang/Rusak](/persediaan/koreksi/batal-catat-usang-rusak/)
+
+## Sumber
+
+<SumberAsli />

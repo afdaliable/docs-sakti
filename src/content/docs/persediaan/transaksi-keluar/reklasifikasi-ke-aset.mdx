@@ -1,0 +1,119 @@
+---
+title: Merekam Reklasifikasi Ke Aset
+description: Merekam perubahan klasifikasi barang yang sudah didetilkan sebagai persediaan menjadi klasifikasi barang aset tetap.
+modul: persediaan
+menu_sakti: "Persediaan > Transaksi Keluar > Reklasifikasi Ke Aset"
+peran: [satker]
+jenis: juknis
+kata_kunci: [reklasifikasi ke aset, reklas aset tetap, BAST reklasifikasi]
+status: review
+perlu_review: false
+sumber:
+  - judul: "Reklasifikasi Ke Aset"
+    url: "https://sites.google.com/view/saktipelaporan/persediaan/transaksi-keluar/reklasifikasi-ke-aset"
+    jenis: google-sites
+    diambil: 2026-11-21
+    id_manifest: C-persediaan-transaksi-keluar-reklasifikasi-ke-aset
+  - judul: "17. Reklas ke aset"
+    url: "https://drive.google.com/file/d/1uq75oDoaL8Fms225J-j0IuJWvzK22sCc/view"
+    jenis: pptx
+    diambil: 2026-11-21
+    id_manifest: C-dok-027
+  - judul: "007_Reklas Persediaan ke Aset (satu siklus)"
+    url: "https://drive.google.com/file/d/1iloMQPtt3jDPoJc5ucoFUSjJnjotr74A/view"
+    jenis: lainnya
+    diambil: 2026-11-21
+    id_manifest: C-dok-026
+  - judul: "JUKNIS SAKTI WEB-Persediaan_30122020"
+    url: "https://drive.google.com/file/d/1p_-rUAu_on0H0d_TKFEE2vmpDXCPDzy5/view"
+    jenis: pdf
+    diambil: 2026-11-21
+    id_manifest: C-dok-001
+sidebar:
+  order: 9
+---
+
+import { Steps } from '@astrojs/starlight/components';
+import MenuSakti from '~/components/MenuSakti.astro';
+import SumberAsli from '~/components/SumberAsli.astro';
+
+Menu Reklasifikasi Ke Aset digunakan untuk mencatat pengeluaran
+persediaan karena jenis atau kode barang persediaan diubah menjadi
+jenis atau kode aset — yaitu barang yang sebelumnya sudah terlanjur
+diklasifikasikan (didetilkan) sebagai persediaan menjadi klasifikasi
+barang aset tetap. Menu ini harus digunakan secara bersamaan dengan
+menu reklasifikasi aset tetap ke persediaan dalam periode yang sama.
+
+<MenuSakti />
+
+## Prasyarat
+
+- Role yang dibutuhkan: OPR dan APR (menurut juknis slide dan
+  juknis 2020).
+- Dokumen sumber: BAST Reklasifikasi.
+- Modul Aset harus menindaklanjuti dengan melakukan perekaman Reklas
+  Aset dari Persediaan pada bulan yang sama; modul lain yang terkait
+  menurut juknis adalah GLP dan modul Aset Tetap.
+- Transaksi Reklasifikasi Ke Aset (di modul Persediaan) dan Reklas
+  Aset dari Persediaan (di modul Aset) harus dibukukan dalam bulan
+  yang sama.
+- Modul Aset tidak boleh melakukan tutup buku pada bulan ketika
+  transaksi Reklasifikasi Ke Aset akan dibukukan.
+- Validasi urutan tanggal transaksi atas barang yang sejenis (tidak
+  bisa sisip tanggal transaksi).
+- Sudah tutup buku modul Persediaan periode sebelumnya.
+- Menurut juknis 2020, harus sudah dilakukan approve transaksi di
+  modul aset tetap, yaitu transaksi reklasifikasi dari persediaan ke
+  aset tetap.
+
+## Langkah
+
+<Steps>
+
+1. Login menggunakan user operator Persediaan, kemudian pilih menu
+   **Persediaan > Transaksi Keluar > Reklasifikasi Ke Aset** dan
+   klik tombol **Rekam**.
+2. Pilih dokumen Reklasifikasi Ke Aset yang ingin didetilkan.
+3. Pada form detil perekaman, isikan parameter perekaman dan klik
+   tombol **Tambah** di sebelah kanan untuk mengisikan detil barang
+   persediaan yang akan direkam.
+4. Klik **Simpan** di bagian bawah — perekaman transaksi sudah siap
+   untuk disetujui oleh approval.
+
+</Steps>
+
+## Hasil yang diharapkan
+
+Perekaman transaksi reklasifikasi ke aset siap untuk disetujui oleh
+approver dan masuk ke semua laporan pada modul Persediaan.
+
+## Ketentuan
+
+- Tanggal buku diisikan paling tidak sama dengan tanggal transaksi
+  terakhir untuk barang yang sama.
+- Menu ini harus digunakan secara bersamaan dengan menu
+  reklasifikasi aset tetap ke persediaan dalam periode yang sama.
+
+## Jurnal transaksi
+
+Menurut tabel overview pada halaman situs:
+
+- (D) Beban Penyesuaian Persediaan
+- (K) Barang Persediaan
+
+## Ilustrasi transaksi
+
+Menurut tabel overview pada halaman situs, ilustrasi pada sumber
+memuat contoh satker yang salah merekam kodifikasi barang
+persediaan yang seharusnya aset tetap; untuk memperbaikinya satker
+melakukan reklasifikasi ke aset atas kode barang tersebut dan
+reklasifikasi masuk di aset dengan kode barang aset tetap.
+
+## Terkait
+
+- [Merekam Reklasifikasi dari Aset](/persediaan/transaksi-masuk/reklasifikasi-dari-aset/)
+- [Merekam Reklasifikasi Keluar Persediaan](/persediaan/transaksi-keluar/reklasifikasi-keluar/)
+
+## Sumber
+
+<SumberAsli />

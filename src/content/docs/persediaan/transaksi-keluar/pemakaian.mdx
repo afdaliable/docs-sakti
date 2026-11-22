@@ -1,0 +1,161 @@
+---
+title: Merekam Pemakaian Persediaan
+description: Merekam pengeluaran barang persediaan tahun anggaran berjalan karena pemakaian, penjualan, penyerahan ke masyarakat, atau bantuan sosial.
+modul: persediaan
+menu_sakti: "Persediaan > Transaksi Keluar > Pemakaian (Habis Pakai\\ Penjualan\\ Penyerahan ke Masyarakat\\ Bansos)"
+peran: [satker]
+jenis: juknis
+kata_kunci: [pemakaian, habis pakai, penyerahan masyarakat, bansos, persediaan keluar]
+status: review
+perlu_review: true
+sumber:
+  - judul: "Pemakaian"
+    url: "https://sites.google.com/view/saktipelaporan/persediaan/transaksi-keluar/pemakaian"
+    jenis: google-sites
+    diambil: 2026-11-21
+    id_manifest: C-persediaan-transaksi-keluar-pemakaian
+  - judul: "12. Pemakaian Persediaan.pptx"
+    url: "https://docs.google.com/presentation/d/10T9DHGXRsB-VjXoC7j-nLs_dR-gPBejR/"
+    jenis: pptx
+    diambil: 2026-11-21
+    id_manifest: C-dok-020
+  - judul: "YouTube vXUwQch293A"
+    url: "https://youtu.be/vXUwQch293A"
+    jenis: lainnya
+    diambil: 2026-11-21
+    id_manifest: C-dok-019
+  - judul: "Juknis SAKTI BLU"
+    url: "https://drive.google.com/file/d/1gt7ZitAXOh7tvJff1HFT4LTzni5X4yk5/view"
+    jenis: pdf
+    diambil: 2026-11-21
+    id_manifest: B-pem-041
+  - judul: "JUKNIS SAKTI WEB-Persediaan_30122020"
+    url: "https://drive.google.com/file/d/1p_-rUAu_on0H0d_TKFEE2vmpDXCPDzy5/view"
+    jenis: pdf
+    diambil: 2026-11-21
+    id_manifest: C-dok-001
+sidebar:
+  order: 1
+---
+
+import { Steps, Aside } from '@astrojs/starlight/components';
+import MenuSakti from '~/components/MenuSakti.astro';
+import SumberAsli from '~/components/SumberAsli.astro';
+
+Menu Pemakaian (kode transaksi K01) digunakan untuk menginput
+persediaan keluar tahun anggaran berjalan, baik yang dipakai oleh
+satker sebagai habis pakai maupun penjualan, penyerahan ke
+masyarakat, bansos, pemakaian untuk tujuan strategis, atau
+berjaga-jaga. Pembebanan persediaan diatur dalam pemetaan kode
+barang dengan kode akun bebannya.
+
+<MenuSakti />
+
+## Prasyarat
+
+- Role yang dibutuhkan: Operator Persediaan; menurut juknis 2020,
+  OPR dan APR, yaitu pengguna sebagai Operator UAKPB atau Operator
+  UAPKPB.
+- Dokumen sumber: dokumen permintaan barang persediaan (bon barang
+  atau semisalnya); menurut juknis BLU, dokumen sumber berupa daftar
+  permintaan barang persediaan.
+- Masih terdapat sisa barang persediaan yang akan dilakukan
+  pemakaian.
+- Validasi urutan tanggal transaksi atas barang yang sejenis (tidak
+  bisa sisip tanggal transaksi).
+- Sudah tutup buku modul Persediaan periode sebelumnya.
+- Menurut juknis 2020: validasi HST dan tanggal urutan transaksi
+  dengan transaksi pembelian barang sejenis.
+
+## Langkah
+
+<Steps>
+
+1. Login menggunakan user operator Persediaan, kemudian pilih menu
+   **Persediaan > Transaksi Keluar > Pemakaian (Habis Pakai\
+   Penjualan\ Penyerahan ke Masyarakat\ Bansos)** dan klik tombol
+   **Rekam**.
+2. Isikan **No Bukti**, **Tanggal Buku** dan **Tanggal Dokumen**.
+3. Klik tombol (+) di kanan untuk menambahkan kode barang per sub
+   sub kelompok dan mengisikan satuan serta harga satuan yang akan
+   digunakan, lalu klik **Simpan**.
+4. Jika ingin menambah detil kode barang lagi, klik tombol (+) di
+   kanan lalu isikan jumlah dan harga satuan barang yang akan
+   dipakai.
+5. Setelah selesai semua, klik **Simpan** di bagian bawah untuk
+   menyelesaikan perekaman satu dokumen.
+
+</Steps>
+
+## Hasil yang diharapkan
+
+Perekaman satu dokumen pemakaian selesai; menurut juknis 2020, data
+sudah siap dilakukan persetujuan oleh user approval dan masuk ke
+semua laporan pada modul Persediaan.
+
+## Persetujuan transaksi
+
+Juknis SAKTI untuk satker BLU memuat tahap persetujuan oleh approver
+setelah perekaman:
+
+<Steps>
+
+1. Masuk aplikasi SAKTI sebagai User Approver.
+2. Pilih modul Persediaan, masuk menu **Persediaan > Persetujuan >
+   Persetujuan Transaksi**.
+3. Pilih dokumen kemudian lakukan proses persetujuan transaksi.
+
+</Steps>
+
+Pada saat persetujuan, transaksi yang disetujui telah final dan
+tidak bisa dilakukan perbaikan; setelah persetujuan dilakukan,
+terbentuk penjurnalan dalam modul GL dan Pelaporan.
+
+## Ketentuan
+
+- Tanggal dokumen diisikan sesuai dengan tanggal pada dokumen
+  sumber.
+- Tanggal buku diisikan paling tidak sama dengan tanggal transaksi
+  terakhir untuk barang yang sama.
+- Menurut juknis 2020, tanggal buku harus sama dengan tanggal
+  dokumen dari transaksi tersebut karena metode pencatatan
+  perpetual.
+- Pembebanan persediaan diatur dalam pemetaan kode barang dengan
+  kode akun bebannya.
+
+## Jurnal transaksi
+
+Menurut teks halaman situs:
+
+- D. Beban sesuai mapping kode barang dengan kode akun
+- K. Persediaan (Barang Konsumsi/Amunisi/Bahan Untuk Pemeliharaan
+  dll)
+
+Menurut tabel overview pada halaman situs:
+
+- (D) Beban Persediaan
+- (K) Barang Persediaan
+
+## Ilustrasi transaksi
+
+Pada saat satker melakukan pemakaian barang persediaan, operator
+persediaan menginput transaksi tersebut pada menu ini. Penyerahan
+barang persediaan ke masyarakat juga diinput ke menu ini, dengan
+memperhatikan kode barang yang benar (kode barang khusus untuk
+diserahkan ke masyarakat).
+
+<Aside type="caution" title="Perlu verifikasi">
+Tahap persetujuan bersumber dari juknis satker BLU; sumber modul
+Persediaan tidak merinci langkah persetujuan. Halaman situs memuat
+dua rumusan jurnal (teks halaman dan tabel overview) dengan redaksi
+yang berbeda.
+</Aside>
+
+## Terkait
+
+- [Mengoreksi Jumlah Persediaan](/persediaan/koreksi/koreksi-jumlah/)
+- [Mencetak Laporan Persediaan](/persediaan/pelaporan/)
+
+## Sumber
+
+<SumberAsli />

@@ -1,0 +1,101 @@
+---
+title: Merekam Internal Transfer Keluar Persediaan
+description: Merekam transfer keluar persediaan ke satker (UAKPB) lain sesama pengguna SAKTI.
+modul: persediaan
+menu_sakti: "Persediaan > Transaksi Keluar > Internal Transfer Keluar"
+peran: [satker]
+jenis: juknis
+kata_kunci: [internal transfer keluar, transfer antar uakpb, persediaan keluar]
+status: review
+perlu_review: true
+sumber:
+  - judul: "Internal Transfer Keluar"
+    url: "https://sites.google.com/view/saktipelaporan/persediaan/transaksi-keluar/internal-transfer-keluar"
+    jenis: google-sites
+    diambil: 2026-11-21
+    id_manifest: C-persediaan-transaksi-keluar-internal-transfer-keluar
+  - judul: "JUKNIS SAKTI WEB-Persediaan_30122020"
+    url: "https://drive.google.com/file/d/1p_-rUAu_on0H0d_TKFEE2vmpDXCPDzy5/view"
+    jenis: pdf
+    diambil: 2026-11-21
+    id_manifest: C-dok-001
+sidebar:
+  order: 4
+---
+
+import { Steps, Aside } from '@astrojs/starlight/components';
+import MenuSakti from '~/components/MenuSakti.astro';
+import SumberAsli from '~/components/SumberAsli.astro';
+
+Menu Internal Transfer Keluar digunakan untuk merekam transaksi
+transfer keluar ke satker (UAKPB) lain sesama pengguna SAKTI —
+menurut juknis 2020, hanya bisa dilakukan dari satker induk ke
+satker pembantu ataupun sebaliknya.
+
+<MenuSakti />
+
+## Prasyarat
+
+- Role yang dibutuhkan: menurut juknis 2020, OPR dan APR, yaitu
+  pengguna sebagai Operator UAKPB atau Operator UAPKPB.
+- Dokumen sumber: SK atau dokumen lain yang dapat dipersamakan;
+  menurut juknis 2020, dokumen input adalah BAST serah terima
+  barang.
+- Modul lain yang terkait: GLP.
+- Menurut juknis 2020: validasi HST dan hanya bisa dilakukan oleh
+  satker induk ke satker pembantu atau sebaliknya.
+
+## Langkah
+
+Menurut juknis 2020:
+
+<Steps>
+
+1. Pilih menu **Persediaan > Transaksi Keluar > Internal Transfer
+   Keluar**, kemudian klik tombol **Rekam** di kiri bawah.
+2. Pada form detil perekaman, isikan parameter tanggal, isian kode
+   UAKPB/UAPKPB tujuan, kode barang persediaan, jumlah, dan kolom
+   keterangan.
+3. Klik **Simpan** di kanan bawah untuk mengakhiri perekaman satu
+   dokumen — data sudah siap dilakukan persetujuan oleh user
+   approval.
+
+</Steps>
+
+## Hasil yang diharapkan
+
+Perekaman transaksi internal transfer keluar siap untuk disetujui
+oleh approver dan masuk ke semua laporan pada modul Persediaan.
+
+## Ketentuan
+
+- Transfer keluar harus segera dilanjutkan dengan transfer masuk
+  oleh UAKPB penerima barang.
+- Pengisian kode UAKPB/UAPKPB tujuan harus benar-benar diperhatikan:
+  bila terjadi kesalahan, barang persediaan yang ditransfer internal
+  keluar tidak akan ada di kode UAKPB/UAPKPB tujuan.
+- Menurut juknis 2020, tanggal buku harus sama dengan tanggal
+  dokumen dari transaksi tersebut karena metode pencatatan
+  perpetual.
+
+## Jurnal transaksi
+
+- (D) Transfer keluar
+- (K) Persediaan
+
+<Aside type="caution" title="Perlu verifikasi">
+Halaman situs tidak memuat tata cara perekaman ("-"), sehingga
+langkah di atas diambil dari juknis 2020. Halaman situs menuliskan
+nama menu "Internal Transfer Non-Aktif UAKPB" pada isian Nama Menu,
+yang berbeda dari judul halaman ("Internal Transfer Keluar") dan dari
+nama menu di aplikasi.
+</Aside>
+
+## Terkait
+
+- [Merekam Internal Transfer Masuk Persediaan](/persediaan/transaksi-masuk/internal-transfer-masuk/)
+- [Merekam Internal Transfer Non-Aktif UAKPB Persediaan](/persediaan/transaksi-keluar/internal-transfer-non-aktif-uakpb/)
+
+## Sumber
+
+<SumberAsli />

@@ -9,4 +9,65 @@ sidebar:
   order: 0
 ---
 
-Panduan untuk menu **Transaksi Keluar** sedang disiapkan.
+import { CardGrid, LinkCard } from '@astrojs/starlight/components';
+
+Sub-menu Transaksi Keluar modul Persediaan digunakan untuk merekam
+seluruh pengeluaran barang persediaan.
+
+<CardGrid>
+	<LinkCard
+		title="Merekam Pemakaian Persediaan"
+		description="Merekam pengeluaran barang persediaan tahun anggaran berjalan karena pemakaian, penjualan, penyerahan ke masyarakat, atau bantuan sosial."
+		href="/persediaan/transaksi-keluar/pemakaian/"
+	/>
+	<LinkCard
+		title="Merekam Hibah Keluar Persediaan"
+		description="Merekam pengeluaran persediaan sebagai hibah kepada masyarakat, pemerintah daerah, atau pihak lain di luar Pemerintah Pusat."
+		href="/persediaan/transaksi-keluar/hibah-keluar/"
+	/>
+	<LinkCard
+		title="Merekam Penghapusan (Keluar) Lainnya Persediaan"
+		description="Merekam pengeluaran persediaan selain habis pakai, transfer keluar, dan hibah keluar."
+		href="/persediaan/transaksi-keluar/penghapusan-keluar-lainnya/"
+	/>
+	<LinkCard
+		title="Merekam Internal Transfer Keluar Persediaan"
+		description="Merekam transfer keluar persediaan ke satker (UAKPB) lain sesama pengguna SAKTI."
+		href="/persediaan/transaksi-keluar/internal-transfer-keluar/"
+	/>
+	<LinkCard
+		title="Merekam Internal Transfer Non-Aktif UAKPB Persediaan"
+		description="Merekam transfer keluar likuidasi, yaitu penyerahan semua barang persediaan dari UAKPB yang dilikuidasi ke UAKPB penerima."
+		href="/persediaan/transaksi-keluar/internal-transfer-non-aktif-uakpb/"
+	/>
+	<LinkCard
+		title="Merekam Persediaan Usang"
+		description="Merekam pengeluaran barang persediaan yang disebabkan oleh barang yang usang."
+		href="/persediaan/transaksi-keluar/usang/"
+	/>
+	<LinkCard
+		title="Merekam Persediaan Rusak"
+		description="Merekam pengeluaran barang persediaan yang disebabkan oleh barang yang rusak."
+		href="/persediaan/transaksi-keluar/rusak/"
+	/>
+	<LinkCard
+		title="Merekam Penghapusan (Usang/Rusak) Persediaan"
+		description="Merekam penghapusan barang persediaan usang/rusak yang sudah pernah dicatat melalui transaksi persediaan keluar rusak atau usang."
+		href="/persediaan/transaksi-keluar/penghapusan-usang-rusak/"
+	/>
+	<LinkCard
+		title="Merekam Reklasifikasi Ke Aset"
+		description="Merekam perubahan klasifikasi barang yang sudah didetilkan sebagai persediaan menjadi klasifikasi barang aset tetap."
+		href="/persediaan/transaksi-keluar/reklasifikasi-ke-aset/"
+	/>
+	<LinkCard
+		title="Merekam Reklasifikasi Keluar Persediaan"
+		description="Merekam pengeluaran persediaan karena jenis atau kode barang persediaan diubah menjadi jenis atau kode barang persediaan yang lain."
+		href="/persediaan/transaksi-keluar/reklasifikasi-keluar/"
+	/>
+	<LinkCard
+		title="Merekam Transfer Keluar Online (Sesama SAKTI) Persediaan"
+		description="Merekam pengeluaran barang persediaan yang dikirimkan kepada satker lain sesama pengguna SAKTI dalam lingkup Pemerintah Pusat."
+		href="/persediaan/transaksi-keluar/transfer-keluar-online-sesama-sakti/"
+	/>
+</CardGrid>
