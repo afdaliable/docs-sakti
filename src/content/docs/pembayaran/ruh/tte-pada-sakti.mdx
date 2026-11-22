@@ -1,0 +1,248 @@
+---
+title: Menggunakan Tanda Tangan Elektronik (TTE) pada SAKTI
+description: Menandatangani SPP, SPM, dan dokumen pendukung secara elektronik menggunakan Digital Signature tersertifikasi BSSN di SAKTI.
+modul: pembayaran
+peran: [satker]
+jenis: juknis
+kata_kunci: [tte, tanda tangan elektronik, digital signature, bssn, passphrase, cetak arsip]
+status: review
+perlu_review: true
+sumber:
+  - judul: "Juknis TTE pada SAKTI"
+    url: "https://drive.google.com/file/d/1PdSinOkmftJhnr1MjUcBh4FbnvDXdPvv/view"
+    jenis: pdf
+    diambil: 2026-11-21
+    id_manifest: B-pem-042
+sidebar:
+  order: 5
+---
+
+import { Steps, Aside } from '@astrojs/starlight/components';
+import SumberAsli from '~/components/SumberAsli.astro';
+
+Tanda Tangan Elektronik (TTE)/Digital Signature (DS) pada SAKTI
+digunakan untuk menandatangani SPP, SPM, dan dokumen pendukung
+secara elektronik. Penyelenggara tanda tangan digital yang digunakan
+aplikasi SAKTI saat ini adalah Badan Siber dan Sandi Negara (BSSN).
+
+## Prasyarat
+
+- Pengguna TTE/Digital Signature telah terdaftar di BSSN dan telah
+  diaktifkan (petunjuk pendaftaran: Administrasi – Pendaftaran User
+  DS SAKTI).
+- Role yang dibutuhkan: operator, validator (PPK), dan approver
+  (PPSPM) pada modul Pembayaran.
+- Dokumen input: SPP, SPM, dan dokumen pendukung.
+
+## Status Digital Signature
+
+PPK/PPSPM dapat melihat status Digital Signature pada halaman utama
+setelah login SAKTI — klik pada daftar berwarna hijau untuk melihat
+detail status DS. Detail status DS memuat:
+
+- Informasi Digital Signature: nama, nomor HP, NIK, email,
+  kedaluwarsa, dan status registrasi BSSN.
+- Informasi status sertifikat Digital Signature BSSN: merah, oranye,
+  dan hijau.
+- Informasi syarat pendaftaran, email, perpanjangan kedaluwarsa, dan
+  sebagainya.
+- Tombol untuk reset passphrase DS BSSN.
+
+## Langkah
+
+### Mengunggah dokumen pendukung TTE eksternal pada SPP (Operator)
+
+Apabila terdapat dokumen PDF dari luar aplikasi SAKTI yang akan
+dijadikan lampiran/dokumen pendukung SPP dan membutuhkan TTE,
+pengguna dapat mengunggahnya setelah login sebagai operator
+Pembayaran dengan status **Cetak SPP**.
+
+<Steps>
+
+1. Buka menu **Pembayaran > Catat/Upload > Upload Dokumen
+   Pendukung**.
+2. Pilih data SPP yang akan dilampirkan dokumen pendukung.
+3. Pilih jenis dokumen pendukung.
+4. Klik **Choose** dan pilih file PDF yang akan dilakukan TTE.
+5. Klik **Upload**.
+
+</Steps>
+
+### Menambah pejabat penandatangan dokumen pendukung (Operator)
+
+Masih pada menu **Upload Dokumen Pendukung**:
+
+<Steps>
+
+1. Pilih dokumen pendukung SPP.
+2. Pada **Penandatangan**, pilih pejabat yang menandatangani dokumen
+   pendukung tersebut.
+3. Klik **Tambah** — dapat dipilih beberapa pejabat.
+
+</Steps>
+
+### Menandatangani dokumen pendukung SPP (Pejabat penandatangan)
+
+Login sebagai pejabat yang menandatangani dokumen pendukung.
+
+<Steps>
+
+1. Buka menu **Pembayaran > Monitoring > Monitoring
+   Dok.Pendukung**.
+2. Klik **Preview**.
+3. Klik **Daftar Dokumen**.
+4. Lakukan proses TTE dengan klik ikon pensil.
+5. Pada popup **Proses Setuju**, input passphrase. Apabila benar,
+   muncul notifikasi "TTE berhasil" dan dokumen pendukung telah
+   berhasil di-TTE — klik tutup.
+
+</Steps>
+
+### Memvalidasi SPP (PPK)
+
+Setelah operator mengunggah dokumen pendukung TTE, PPK dapat
+memvalidasi SPP — login sebagai validator (PPK) penandatangan SPP.
+
+<Steps>
+
+1. Buka menu **Pembayaran > Validasi > Validasi SPP**.
+2. Pilih data SPP yang akan divalidasi.
+3. Klik **Proses Persetujuan** untuk menampilkan data detail SPP —
+   PPK dapat melakukan pengecekan SPP secara elektronik sebelum
+   validasi: informasi utama (satker, KPPN, jenis dokumen, mata uang,
+   nomor SPP/SPM, jatuh tempo, cara bayar, tanggal, uraian); dasar
+   pembayaran dan nomor DIPA; informasi supplier beserta lampiran;
+   daftar dokumen pendukung; dan daftar penandatangan dokumen
+   eksternal beserta status TTE.
+4. Untuk maju-mundur nomor SPP klik **Sebelumnya** atau **Lewati**;
+   untuk memilih SPP yang akan divalidasi klik **Tandai setuju &
+   lanjut**; lalu klik **Proses**.
+5. Pada popup **Proses Setuju**, input passphrase — apabila benar
+   muncul notifikasi "Proses Setuju resume tagihan berhasil", status
+   SPP berubah menjadi **Setuju SPP** dan terbentuk SPP dengan TTE.
+
+</Steps>
+
+### Memeriksa SPP bertanda tangan elektronik
+
+<Steps>
+
+1. Buka menu **Pembayaran > Cetak > Cetak Arsip SPP** atau
+   **Pembayaran > Monitoring > Monitoring Dok.Pendukung**.
+2. Pilih SPP yang akan diperiksa pada daftar.
+3. Klik tombol **Preview**.
+
+</Steps>
+
+Dokumen SPP maupun lampiran yang berasal dari aplikasi SAKTI secara
+otomatis terbentuk TTE setelah validasi/persetujuan SPP — pada
+dokumen PDF terbentuk QR Code yang dapat diuji keasliannya melalui
+tautan Kemenkeu. Panel verifikasi menampilkan tombol **Daftar
+Dokumen**, info penandatangan (jenis dokumen dan nama file dokumen
+TTE), alat navigasi dokumen (memperbesar/memperkecil, rotasi,
+pencarian halaman), serta daftar dokumen yang telah diproses TTE
+berupa jenis dokumen dan tanda tangan eksternal. Bagian **Verifikasi
+DS** memuat informasi dari situs Kominfo: pernyataan dokumen asli,
+penandatangan DS, lokasi, alasan, waktu ditandatangani, penyelenggara
+DS, info perubahan dokumen, verifikasi identitas penandatangan, dan
+stempel waktu.
+
+### Mengunggah dokumen pendukung TTE eksternal pada SPM (Operator)
+
+Login sebagai operator Pembayaran dengan status **Cetak SPM**.
+
+<Steps>
+
+1. Buka menu **Pembayaran > Catat/Upload > Upload Dokumen
+   Pendukung**.
+2. Pilih data SPM yang akan dilampirkan dokumen pendukung.
+3. Pilih jenis dokumen pendukung.
+4. Klik **Choose** dan pilih file PDF yang akan dilakukan TTE.
+5. Klik **Upload**.
+6. Masih pada menu yang sama, pilih dokumen pendukung SPM lalu pada
+   **Penandatangan** pilih pejabat penandatangan dan klik **Tambah**
+   — dapat dipilih beberapa pejabat.
+7. Operator SPM dapat mencentang dan menghapus centang pada kolom
+   **Kirim KPPN** untuk memilih dokumen pendukung yang akan dikirim
+   ke KPPN.
+
+</Steps>
+
+### Menandatangani dokumen pendukung SPM (Pejabat penandatangan)
+
+<Steps>
+
+1. Login sebagai pejabat yang menandatangani dokumen pendukung, buka
+   menu **Pembayaran > Monitoring > Monitoring Dok.Pendukung**.
+2. Klik **Preview**.
+3. Klik **Daftar Dokumen**.
+4. Lakukan proses TTE dengan klik ikon pensil.
+5. Pada popup **Proses Setuju**, input passphrase — apabila benar
+   muncul notifikasi "TTE berhasil" dan dokumen pendukung telah
+   berhasil di-TTE, klik tutup.
+
+</Steps>
+
+### Memvalidasi SPM (PPSPM)
+
+Login sebagai approver (PPSPM) penandatangan SPM.
+
+<Steps>
+
+1. Buka menu **Pembayaran > Validasi > Validasi SPM**.
+2. Pilih data SPM yang akan disetujui.
+3. Klik **Proses Persetujuan** untuk menampilkan data detail SPM —
+   PPSPM dapat mengecek SPM secara elektronik sebelum persetujuan:
+   informasi utama, dasar pembayaran dan nomor DIPA, informasi
+   supplier beserta lampiran, daftar dokumen pendukung (di sini
+   PPSPM dapat mencentang kolom **Kirim KPPN**), dan daftar
+   penandatangan dokumen eksternal beserta status TTE.
+4. Gunakan **Sebelumnya**/**Lewati** untuk maju-mundur nomor SPM,
+   klik **Tandai setuju & lanjut** untuk memilih, lalu klik
+   **Proses**.
+5. Pada popup **Proses Setuju**, input passphrase — apabila benar
+   muncul notifikasi "Proses Setuju SPM berhasil", status SPM
+   berubah menjadi **Setuju SPM** dan terbentuk SPM dengan TTE.
+
+</Steps>
+
+### Memeriksa SPM dan mengirim ADK SPM ke KPPN
+
+<Steps>
+
+1. Untuk memeriksa SPM yang telah di-TTE, buka menu **Pembayaran >
+   Cetak > Cetak Arsip SPM** atau **Pembayaran > Monitoring >
+   Monitoring Dok.Pendukung**, pilih SPM, lalu klik **Preview** —
+   panel verifikasi DS sama seperti pada SPP.
+2. Untuk mengirim ADK SPM ke KPPN, buka menu **Pembayaran > ADK >
+   ADK SPM OTP**, pilih data SPM yang akan dikirim ke KPPN, lalu klik
+   **Proses ADK SPM**.
+
+</Steps>
+
+## Hasil yang diharapkan
+
+SPP, SPM, dan dokumen pendukung eksternal ditandatangani secara
+elektronik; dokumen PDF memuat QR Code yang dapat diverifikasi
+keasliannya, dan SPM dapat diproses ke KPPN melalui ADK SPM.
+
+<Aside type="caution" title="Perlu verifikasi">
+- Juknis menulis jalur "Pembayaran → Monitoring Dokumen pendukung";
+  jalur baku aplikasi saat ini adalah **Pembayaran > Monitoring >
+  Monitoring Dok.Pendukung**.
+- Juknis menamai menu "ADK SPM Interkoneksi OTP"; nama baku aplikasi
+  saat ini adalah **Pembayaran > ADK > ADK SPM OTP**.
+- Juknis ini berlaku untuk pembaruan aplikasi SAKTI versi 3 Juni
+  2023.
+- Artikel ini mencakup beberapa menu lintas bagian (Catat/Upload,
+  Monitoring, Validasi, Cetak, ADK) dan ditempatkan di bawah grup
+  RUH Pembayaran — penempatannya perlu dikonfirmasi.
+</Aside>
+
+## Terkait
+
+- [Monitoring Status Digital Signature](/admin/penandatangan/monitoring-status-ds/)
+
+## Sumber
+
+<SumberAsli />

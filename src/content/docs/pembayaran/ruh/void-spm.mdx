@@ -1,0 +1,76 @@
+---
+title: Melakukan Void SPM
+description: Melakukan void SPM pada submenu Void SP2D setelah SP2D dibatalkan di SPAN.
+modul: pembayaran
+menu_sakti: "Pembayaran > Validasi > Void SP2D"
+peran: [satker]
+jenis: juknis
+kata_kunci: [void spm, void sp2d, pembatalan spm, ppspm]
+status: review
+perlu_review: true
+sumber:
+  - judul: "Juknis Void SPM"
+    url: "https://drive.google.com/file/d/1xg1lPEAjQoSDJ6l6_y0MCqRpnB_cF3Jl/view"
+    jenis: pdf
+    diambil: 2026-11-21
+    id_manifest: B-pem-043
+sidebar:
+  order: 6
+---
+
+import { Steps, Aside } from '@astrojs/starlight/components';
+import MenuSakti from '~/components/MenuSakti.astro';
+import SumberAsli from '~/components/SumberAsli.astro';
+
+Setelah SP2D dibatalkan (void) pada SPAN, PPSPM memperbarui status SPM
+di aplikasi SAKTI menjadi VOID SP2D dengan tombol **Void SPM** pada
+submenu **Void SP2D**.
+
+<MenuSakti />
+
+## Prasyarat
+
+- Role yang dibutuhkan: PPSPM (APR) pada modul Pembayaran.
+- Proses void hanya dapat dilakukan setelah terdapat void SP2D pada
+  SPAN; terdapat scheduler yang memperbarui status SPM yang divoid
+  pada SPAN.
+- Dokumen input: informasi void SP2D dari KPPN.
+
+## Langkah
+
+### Void SP2D oleh PPSPM
+
+Login menggunakan user PPSPM, buka menu **Pembayaran > Validasi >
+Void SP2D**.
+
+<Steps>
+
+1. Pilih nomor SPP yang telah divoid SP2D.
+2. Klik tombol **Void SPM**.
+3. Klik **Yes**.
+
+</Steps>
+
+## Hasil yang diharapkan
+
+Status SPM pada aplikasi SAKTI diperbarui menjadi VOID SP2D.
+
+## Notifikasi/Validasi
+
+Juknis mencatat tiga kondisi berikut:
+
+1. Void jika saat dibatalkan ada nomor SP2D alias di-PPR ulang.
+2. Void jika saat dicek statusnya tidak ditemukan nomor invoice pada
+   interface SPAN — perlu konfirmasi ke tim OMSPAN.
+3. Void jika saat dicek status invoice-nya belum "CANCELED" — perlu
+   konfirmasi ke tim OMSPAN.
+
+<Aside type="caution" title="Perlu verifikasi">
+Artikel ini ditempatkan di bawah **RUH Pembayaran**, sedangkan menunya
+berada di **Pembayaran > Validasi > Void SP2D**; penempatan artikel
+perlu dikonfirmasi. Juknis sumbernya berjudul "Void SP2D".
+</Aside>
+
+## Sumber
+
+<SumberAsli />

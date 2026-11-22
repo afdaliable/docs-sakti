@@ -1,0 +1,133 @@
+---
+title: Merekam Proyeksi Pengeluaran Bulanan dan RPD Harian
+description: Menginput proyeksi pengeluaran bulanan dan memahami pembentukan RPD harian otomatis beserta dispensasinya di KPPN.
+modul: pembayaran
+menu_sakti: "Pembayaran > RUH Pembayaran > Proyeksi Belanja Bulanan"
+peran: [satker, kppn-kanwil]
+jenis: juknis
+kata_kunci: [proyeksi belanja, rpd harian, jatuh tempo, dispensasi spd, scheduled payment date]
+status: review
+perlu_review: true
+sumber:
+  - judul: "Juknis Perekaman Proyeksi Pengeluaran Bulanan dan RPD Harian"
+    url: "https://drive.google.com/file/d/1tbJu4cGxZEO3EdXT6td0etche7OuY5B5/view"
+    jenis: pdf
+    diambil: 2026-11-21
+    id_manifest: B-pem-004
+sidebar:
+  order: 3
+---
+
+import { Steps, Aside } from '@astrojs/starlight/components';
+import MenuSakti from '~/components/MenuSakti.astro';
+import SumberAsli from '~/components/SumberAsli.astro';
+
+Seluruh satker pengguna SAKTI membuat proyeksi pengeluaran bulanan
+sesuai ketentuan; RPD harian kemudian terbentuk secara otomatis dari
+persetujuan SPP/SPM dengan jatuh tempo yang diatur juknis.
+
+<MenuSakti />
+
+## Prasyarat
+
+- Role yang dibutuhkan: operator (OPR), validator (PPK), dan
+  approver/PPSPM (APR) pada modul Pembayaran; operator FO KPPN
+  (BUN) untuk monitoring dan dispensasi.
+- Dokumen input: proyeksi pengeluaran bulanan; validasi SPP dan
+  validasi SPM.
+
+## Langkah
+
+### Menginput proyeksi belanja bulanan (Operator)
+
+<Steps>
+
+1. Buka menu **Pembayaran > RUH Pembayaran > Proyeksi Belanja
+   Bulanan** — tampil daftar Proyeksi Belanja Bulanan dengan kolom
+   Pagu Total per jenis belanja, realisasi sampai bulan sebelumnya,
+   jenis belanja sesuai DIPA satker, dan kolom proyeksi bulanan.
+2. Pilih jenis belanja yang akan diinput nilai proyeksinya.
+3. Klik tombol **Ubah** untuk menginput nilai proyeksi.
+4. Klik dan input pada kolom Proyeksi sesuai bulan yang diisi —
+   nilai yang diinput adalah nilai bruto pengeluaran; tidak ada
+   nilai default sehingga satker menginput manual (dapat diisi 0
+   apabila tidak ada rencana realisasi pada bulan berkenaan).
+5. Klik tombol **Simpan** untuk menyimpan hasil input, atau **Batal**
+   untuk membatalkan.
+
+</Steps>
+
+### Mekanisme pembentukan RPD harian
+
+<Steps>
+
+1. RPD harian terbentuk otomatis setelah PPK menyetujui SPP yang
+   akan dikirimkan (status SPP **Setuju SPP**) dengan jatuh tempo 5
+   hari kerja sejak tanggal setuju SPP — jatuh tempo pada cetakan
+   SPP adalah 5 hari kerja/terjadwal.
+2. Setelah PPSPM menyetujui SPM: untuk SPM bernilai bersih di bawah
+   Rp5 miliar, RPD harian diperbarui menjadi 2 hari kerja sejak
+   tanggal setuju SPM; untuk SPM di atas Rp5 miliar, jatuh tempo RPD
+   harian tetap/tidak diperbarui — jatuh tempo pada cetakan SPM
+   adalah 2 hari kerja/terjadwal.
+
+</Steps>
+
+### Monitoring dan dispensasi RPD harian (Operator FO KPPN/BUN)
+
+<Steps>
+
+1. Login sebagai operator FO KPPN (BUN), buka menu **KPPN >
+   Manajemen Satker > Scheduled Payment Date**.
+2. Untuk memfilter data RPD harian, input kode KPPN, tanggal awal,
+   dan tanggal akhir.
+3. Daftar RPD harian yang sudah terbentuk dari satuan kerja akan
+   tampil.
+4. Gunakan fitur dispensasi: tombol tanggal untuk
+   menggeser/menjadwalkan ulang tanggal RPD harian, dan tombol
+   hapus untuk menghapus RPD harian (untuk user dengan kewenangan
+   khusus).
+5. Gunakan tombol **Simpan**, **Ubah**, **Batal**, dan **Hapus**
+   dispensasi sesuai kebutuhan.
+
+</Steps>
+
+## Hasil yang diharapkan
+
+Proyeksi pengeluaran bulanan terekam dan menjadi dasar realisasi
+belanja bulanan serta jatuh tempo pencairan melalui RPD harian.
+
+## Ketentuan
+
+- Periode penyusunan proyeksi: tanggal 1–5 setiap bulan, dan dapat
+  dimutakhirkan tanggal 10–15 setiap bulan atau sesuai ketentuan
+  yang berlaku; proyeksi dapat berbeda dengan halaman III DIPA.
+- Proyeksi selain jenis belanja 51 tidak boleh melebihi 100%;
+  proyeksi jenis belanja 51 tidak boleh melebihi 120% dari nilai
+  pagu; input proyeksi tidak boleh kosong tetapi dapat diisi 0.
+- Pengiriman ADK SPM tidak boleh melebihi tanggal jatuh tempo RPD
+  harian.
+- RPD harian hanya berlaku untuk jenis SPP, jenis belanja, dan jenis
+  tagihan tertentu — contoh transaksi yang tidak membentuk SPD: SPM
+  UP, SPM TUP, SPM pengesahan, gaji, PPP, sumber dana SBSN,
+  transaksi valas, dan SPM koreksi.
+- SPM dengan RPD harian yang diajukan melebihi tanggal akhir
+  pengajuan SPM (langkah-langkah akhir tahun) akan terbentuk jatuh
+  tempo immediately (segera).
+- Pemberian dispensasi oleh kepala KPPN dilakukan setelah SPM
+  disetujui dan sebelum ADK SPM dikirimkan; memajukan jatuh tempo
+  oleh KPPN harus dengan surat dispensasi.
+
+<Aside type="caution" title="Perlu verifikasi">
+Juknis menulis jalur "Pembayaran → RUH SPP dan Renkas → Proyeksi
+Belanja Bulanan"; jalur baku aplikasi saat ini adalah **Pembayaran >
+RUH Pembayaran > Proyeksi Belanja Bulanan**.
+</Aside>
+
+## Terkait
+
+- [Mengajukan Dispensasi RPD Harian](/pembayaran/ruh/dispensasi-rpd-harian/)
+
+## Sumber
+
+<SumberAsli />

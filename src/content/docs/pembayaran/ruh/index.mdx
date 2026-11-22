@@ -9,4 +9,41 @@ sidebar:
   order: 0
 ---
 
-Panduan untuk menu **RUH Pembayaran** sedang disiapkan.
+import { CardGrid, LinkCard } from '@astrojs/starlight/components';
+
+Menu RUH Pembayaran mencakup perekaman SPP dan SPM, pencatatan
+perintah bayar, proyeksi belanja dan RPD harian, serta tanda tangan
+elektronik dokumen pembayaran.
+
+<CardGrid>
+	<LinkCard
+		title="Catat/Ubah SPP"
+		description="Perekaman SPP berbagai jenis sampai penerbitan SPM dan pengiriman ADK ke KPPN."
+		href="/pembayaran/ruh/catat-ubah-spp/"
+	/>
+	<LinkCard
+		title="Mencatat Perintah Bayar"
+		description="Panduan pencatatan perintah bayar (SPBy) pada modul Pembayaran."
+		href="/pembayaran/ruh/mencatat-perintah-bayar/"
+	/>
+	<LinkCard
+		title="Merekam Proyeksi Pengeluaran Bulanan dan RPD Harian"
+		description="Menginput proyeksi pengeluaran bulanan dan memahami pembentukan RPD harian otomatis."
+		href="/pembayaran/ruh/proyeksi-belanja-bulanan/"
+	/>
+	<LinkCard
+		title="Mengajukan Dispensasi RPD Harian"
+		description="Permohonan dispensasi RPD harian oleh KPA sampai persetujuan KPPN/Dit. PKN."
+		href="/pembayaran/ruh/dispensasi-rpd-harian/"
+	/>
+	<LinkCard
+		title="Menggunakan Tanda Tangan Elektronik (TTE) pada SAKTI"
+		description="Menandatangani SPP, SPM, dan dokumen pendukung secara elektronik dengan DS tersertifikasi BSSN."
+		href="/pembayaran/ruh/tte-pada-sakti/"
+	/>
+	<LinkCard
+		title="Melakukan Void SPM"
+		description="Memperbarui status SPM menjadi VOID SP2D setelah SP2D dibatalkan di SPAN."
+		href="/pembayaran/ruh/void-spm/"
+	/>
+</CardGrid>

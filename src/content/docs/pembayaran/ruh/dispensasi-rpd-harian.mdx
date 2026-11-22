@@ -1,0 +1,175 @@
+---
+title: Mengajukan Dispensasi RPD Harian
+description: Merekam permohonan dispensasi RPD harian oleh KPA sampai persetujuan KPPN/Dit. PKN dan pergeseran mundur RPD.
+modul: pembayaran
+menu_sakti: "Pembayaran > RUH Pembayaran > Dispensasi RPD"
+peran: [satker, kppn-kanwil, djpb-pusat]
+jenis: juknis
+kata_kunci: [dispensasi rpd, rpd harian, jatuh tempo, kepala kppn, dit pkn, pergeseran mundur]
+status: review
+perlu_review: false
+sumber:
+  - judul: "Juknis Dispensasi RPD Harian.docx"
+    url: "https://drive.google.com/file/d/1i5bbApB01BPMHSztbeOebb8eXVn6vJfj/view"
+    jenis: pdf
+    diambil: 2026-11-21
+    id_manifest: B-pem-001
+sidebar:
+  order: 4
+---
+
+import { Steps } from '@astrojs/starlight/components';
+import MenuSakti from '~/components/MenuSakti.astro';
+import SumberAsli from '~/components/SumberAsli.astro';
+
+Fitur dispensasi RPD harian pada SAKTI (ditambahkan pada pembaruan
+tanggal 5 April 2024) digunakan untuk permohonan dispensasi RPD
+dalam rangka penyesuaian proses bisnis RPD sesuai PMK Nomor 155
+Tahun 2023.
+
+<MenuSakti />
+
+## Prasyarat
+
+- Role yang dibutuhkan: operator (OPR), validator (VAL), approver
+  (APP) pada modul Pembayaran; KPA sebagai pengaju; Kepala KPPN,
+  Seksi MSKI, dan Dit. PKN pada sisi persetujuan (modul BUN).
+- Permohonan dispensasi dilakukan dengan kriteria yang bersifat
+  penting dan mendesak, diajukan oleh KPA sebelum tagihan dikirimkan
+  (setelah Setuju SPP), tanpa hard copy dokumen.
+- Satker dapat mengajukan permohonan untuk satu atau beberapa
+  tagihan dalam tanggal jatuh tempo yang sama per jenis belanja.
+
+## Alur proses
+
+1. Operator SPP/SPM — merekam permohonan dispensasi RPD.
+2. KPA — menyetujui atau menolak dispensasi RPD.
+3. Kepala KPPN — persetujuan dispensasi di bawah Rp1 triliun; Seksi
+   MSKI pada proses KPPN.
+4. Dit. PKN — persetujuan dispensasi di atas Rp1 triliun.
+5. KPPN/Dit. PKN — pergeseran mundur RPD harian.
+
+## Langkah
+
+### Merekam dispensasi RPD harian (Operator SPP/SPM)
+
+Login sebagai user modul Pembayaran (operator SPM atau operator
+SPP), buka menu **Pembayaran > RUH Pembayaran > Dispensasi RPD**.
+
+Daftar dispensasi menampilkan data yang telah direkam satker dengan
+informasi KPPN, satker, status, tanggal dispensasi, nilai total,
+keterangan, dan daftar RPD; tombol **Lihat** untuk melihat data RPD
+SPP yang diberikan dispensasi. Fitur tampilan data:
+
+- Menampilkan semua data: centang **Tampilkan semua data?** lalu
+  klik **Ambil Data**.
+- Menampilkan data hari ini: centang **Tampilkan data hari ini?**
+  lalu klik **Ambil Data**.
+
+<Steps>
+
+1. Untuk merekam dispensasi klik tombol **Rekam**, lalu klik tombol
+   **Pilih** — muncul popup data Renkas.
+2. Pilih data RPD yang akan diberikan dispensasi — satu pengajuan
+   dispensasi bisa lebih dari satu RPD harian — lalu klik **Pilih**.
+3. Tentukan tanggal dispensasi RPD — beberapa RPD membentuk satu
+   tanggal dispensasi yang dipilih.
+4. Pilih keterangan alasan dispensasi, atau pilih **5. Kegiatan
+   mendesak lainnya** apabila alasan tidak ada dalam pilihan, dan
+   input keterangan pada kotak teks.
+5. Klik tombol **Simpan**.
+
+</Steps>
+
+### Menyetujui dispensasi RPD (KPA)
+
+<Steps>
+
+1. Login menggunakan user KPA.
+2. Pada Daftar Dispensasi, pilih data yang akan disetujui — KPA
+   masih dapat mengubah tanggal dan keterangan sebelum menyetujui.
+3. Klik tombol **Approve** untuk menyetujui, atau isi keterangan
+   tolak terlebih dahulu lalu klik **Tolak** untuk menolak.
+
+</Steps>
+
+Status dispensasi RPD (dimonitor pada form status):
+
+- Status masih kosong apabila dispensasi baru dibuat operator
+  SPP/SPM.
+- **Disetujui KPA** apabila telah disetujui KPA.
+- **Disetujui Kepala KPPN** apabila telah disetujui kepala KPPN.
+- **Disetujui PKN** apabila dispensasi di atas Rp1 triliun telah
+  disetujui Dit. PKN.
+- **Ditolak** apabila tidak disetujui oleh KPA/Seksi MSKI/Kepala
+  KPPN/Dit. PKN.
+- Keterangan tolak adalah alasan penolakan yang wajib diinput saat
+  menolak dispensasi RPD.
+
+### Persetujuan oleh KPPN dan Dit. PKN
+
+Buka menu **KPPN > Pencairan Dana > Proses > Scheduled Payment
+Date**.
+
+<Steps>
+
+1. KPPN melihat detail dispensasi dengan tombol **Lihat**; KPPN
+   dapat mengubah tanggal dispensasi tetapi tidak dapat mengubah
+   keterangan.
+2. Untuk menolak, KPPN wajib mengisi keterangan tolak terlebih
+   dahulu.
+3. Untuk nilai dispensasi di bawah Rp1 triliun, persetujuan sampai
+   dengan kepala KPPN — status menjadi **Setuju** setelah disetujui
+   kepala KPPN.
+4. Untuk nilai di atas Rp1 triliun, persetujuan sampai dengan Dit.
+   PKN — status menjadi **Setuju** setelah disetujui Dit. PKN; Dit.
+   PKN juga dapat mengubah tanggal tetapi tidak keterangan, dan
+   wajib mengisi keterangan tolak untuk menolak.
+
+</Steps>
+
+### Pergeseran mundur RPD harian (KPPN/Dit. PKN)
+
+Buka menu **KPPN > Pencairan Dana > Proses > Scheduled Payment
+Date** lalu pilih tab **Pergeseran Mundur**.
+
+<Steps>
+
+1. Tahun dan kode KPPN terinput otomatis; pilih **Tanggal Awal** dan
+   **Tanggal Akhir** RPD harian.
+2. Pilih data RPD harian yang akan digeser.
+3. Klik tombol **Ubah**.
+4. Pada **Tanggal Renkas Baru**, pilih tanggal mundur.
+5. Pilih keterangan alasan mundur — pilih nomor 5 untuk keterangan
+   lainnya apabila tidak tersedia.
+6. Klik tombol **Simpan**.
+
+</Steps>
+
+## Hasil yang diharapkan
+
+Permohonan dispensasi RPD harian oleh KPA diproses sampai disetujui
+Kepala KPPN atau Dit. PKN sesuai nominal, dan RPD harian dapat
+digeser mundur oleh KPPN/Dit. PKN.
+
+## Ketentuan
+
+- Pengajuan dispensasi RPD harian oleh satker dilakukan oleh KPA;
+  pergeseran mundur RPD harian menjadi wewenang Kepala KPPN.
+- Wewenang persetujuan dibagi berdasarkan nominal SPM: di bawah Rp1
+  triliun oleh kepala KPPN, di atas Rp1 triliun membutuhkan
+  persetujuan Dit. PKN.
+- Pergeseran mundur yang melebihi 3 hari ke belakang (H+3) memunculkan
+  notifikasi dan tidak dapat disimpan; pergeseran mundur dapat
+  dilakukan user operator KPPN dan tidak melihat besaran nilai RPD
+  harian.
+- Pemberian dispensasi dan pergeseran mundur dilakukan melalui
+  aplikasi SAKTI tanpa hard copy dokumen.
+
+## Terkait
+
+- [Merekam Proyeksi Pengeluaran Bulanan dan RPD Harian](/pembayaran/ruh/proyeksi-belanja-bulanan/)
+
+## Sumber
+
+<SumberAsli />
