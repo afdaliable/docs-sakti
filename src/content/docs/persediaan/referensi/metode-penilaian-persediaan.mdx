@@ -1,0 +1,75 @@
+---
+title: Mengatur Metode Penilaian Persediaan
+description: Memilih metode penilaian persediaan (FIFO) untuk Tahun Anggaran 2021.
+modul: persediaan
+menu_sakti: "Persediaan > Referensi > Metode Penilaian Persediaan"
+peran: [satker]
+jenis: juknis
+kata_kunci: [metode penilaian persediaan, FIFO, setup FIFO]
+status: review
+perlu_review: false
+sumber:
+  - judul: "Metode Penilaian Persediaan"
+    url: "https://sites.google.com/view/saktipelaporan/persediaan/referensi/metode-penilaian-persediaan"
+    jenis: google-sites
+    diambil: 2026-11-21
+    id_manifest: C-persediaan-referensi-metode-penilaian-persediaan
+  - judul: "90. Setting Metode Penilaian FIFO"
+    url: "https://drive.google.com/file/d/1v-AL7HKHKqIbg812d_NciydmSdIKCST3/view"
+    jenis: pptx
+    diambil: 2026-11-21
+    id_manifest: C-dok-039
+  - judul: "SETUP FIFO"
+    url: "https://drive.google.com/file/d/1i7_mp-dTHzzByAWDUTX9b9GQ9A9YD6OM/view"
+    jenis: lainnya
+    diambil: 2026-11-21
+    id_manifest: C-dok-038
+sidebar:
+  order: 1
+---
+
+import { Steps } from '@astrojs/starlight/components';
+import MenuSakti from '~/components/MenuSakti.astro';
+import SumberAsli from '~/components/SumberAsli.astro';
+
+Menu Metode Penilaian Persediaan digunakan untuk memilih metode
+penilaian persediaan untuk Tahun Anggaran 2021 menjadi menggunakan
+metode FIFO. Yang dapat melakukan pemilihan Metode Penilaian
+Persediaan adalah pengguna sebagai Operator UAKPB.
+
+<MenuSakti />
+
+## Prasyarat
+
+- Role yang dibutuhkan: OPR (menurut juknis slide); pengguna
+  sebagai Operator UAKPB.
+- Transaksi yang terkait menurut juknis slide: transaksi masuk
+  persediaan dan transaksi keluar persediaan.
+
+## Langkah
+
+Data direkam per bidang, sehingga dilakukan perekaman sebanyak tiga
+kali karena terdapat tiga bidang:
+
+<Steps>
+
+1. Masuk menu **Persediaan > Referensi > Metode Penilaian
+   Persediaan**, lalu klik tombol **Rekam**.
+2. Pilih **Bidang** (01), pilih Metode Penilaian **FIFO**, pilih
+   **Tahun Mulai Berlaku** (2021), lalu **Simpan**.
+3. Pilih **Bidang** (02), pilih Metode Penilaian **FIFO**, pilih
+   **Tahun Mulai Berlaku** (2021), lalu **Simpan**.
+4. Pilih **Bidang** (03), pilih Metode Penilaian **FIFO**, pilih
+   **Tahun Mulai Berlaku** (2021), lalu **Simpan**.
+
+</Steps>
+
+## Hasil yang diharapkan
+
+Penilaian persediaan untuk Tahun Anggaran 2021 menggunakan metode
+FIFO; perekaman Metode Penilaian Persediaan ini tidak perlu
+dilakukan approval.
+
+## Sumber
+
+<SumberAsli />

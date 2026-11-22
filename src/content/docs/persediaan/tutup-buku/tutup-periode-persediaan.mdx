@@ -1,0 +1,99 @@
+---
+title: Menutup Periode Persediaan
+description: Menutup periode persediaan untuk menyusun saldo akhir (periode balance) persediaan per periode.
+modul: persediaan
+menu_sakti: "Persediaan > Tutup Buku > Tutup Periode Persediaan"
+peran: [satker]
+jenis: juknis
+kata_kunci: [tutup periode, tutup buku persediaan, periode balance]
+status: review
+perlu_review: false
+sumber:
+  - judul: "Tutup Periode Persediaan"
+    url: "https://sites.google.com/view/saktipelaporan/persediaan/tutup-buku/tutup-periode-persediaan"
+    jenis: google-sites
+    diambil: 2026-11-21
+    id_manifest: C-persediaan-tutup-buku-tutup-periode-persediaan
+  - judul: "80. tutup buku"
+    url: "https://drive.google.com/file/d/1uxrgNpxBTLDlf--jCGCK_j2A_2Dv9fL6/view"
+    jenis: pptx
+    diambil: 2026-11-21
+    id_manifest: C-dok-037
+  - judul: "16-Tutup Periode Persediaan"
+    url: "https://drive.google.com/file/d/15wLwzXXYUjR_FJ9jxmFZg1jtkdtkLcpR/view"
+    jenis: lainnya
+    diambil: 2026-11-21
+    id_manifest: C-dok-036
+  - judul: "JUKNIS SAKTI WEB-Persediaan_30122020"
+    url: "https://drive.google.com/file/d/1p_-rUAu_on0H0d_TKFEE2vmpDXCPDzy5/view"
+    jenis: pdf
+    diambil: 2026-11-21
+    id_manifest: C-dok-001
+sidebar:
+  order: 1
+---
+
+import { Steps } from '@astrojs/starlight/components';
+import MenuSakti from '~/components/MenuSakti.astro';
+import SumberAsli from '~/components/SumberAsli.astro';
+
+Menu Tutup Periode Persediaan digunakan untuk melakukan penutupan
+periode persediaan pada modul Persediaan SAKTI. Selain untuk menjaga
+transaksi agar tidak terjadi salah periode, proses ini menyusun
+saldo akhir (periode balance) persediaan per periode — informasi
+periode balance digunakan pada saat pengiriman data persediaan ke
+Aset Tetap dan untuk bahan rekonsiliasi dengan modul GLP.
+
+<MenuSakti />
+
+## Prasyarat
+
+- Role yang dibutuhkan: Approver UAKPB atau Approver UAPKPB;
+  menurut juknis, user role APR.
+- Proses tutup buku hanya dapat dilakukan oleh user approver.
+- Semua transaksi sudah selesai dilakukan dan disetujui oleh
+  approver, sehingga tidak boleh ada transaksi yang pending.
+- Tutup buku sampai bulan sebelumnya harus sudah dilakukan agar
+  dapat melakukan perekaman dan persetujuan transaksi pada bulan
+  berkenaan.
+
+## Langkah
+
+<Steps>
+
+1. Login menggunakan user approver Persediaan, kemudian pilih menu
+   **Persediaan > Tutup Buku > Tutup Periode Persediaan** dan klik
+   tombol **Rekam** — otomatis muncul periode bulan yang akan
+   ditutup.
+2. Pilih periode yang akan ditutup pada pojok kanan atas, lalu
+   **Simpan**.
+3. Pada tombol konfirmasi yang muncul, pilih **Ya** — terbentuk
+   data penutupan periode baru di bagian paling atas.
+
+</Steps>
+
+## Hasil yang diharapkan
+
+Periode persediaan yang dipilih ditutup dan terbentuk saldo akhir
+(periode balance) persediaan per periode.
+
+## Ketentuan
+
+- Sebelum melakukan persetujuan atau melakukan transaksi persediaan,
+  perlu dilakukan tutup buku periode sebelumnya.
+- Tutup buku persediaan bisa dibuka dengan cara membuka tutup
+  sementara modul GLP di periode yang sama.
+- Apabila bulan berkenaan telah dilakukan tutup buku, modul
+  Persediaan tidak dapat menambahkan, mengubah, atau menghapus
+  transaksi pada bulan yang telah ditutup buku.
+- Menurut juknis 2020, jika masih ada transaksi yang belum selesai,
+  sistem menampilkan pesan dan dapat menampilkan laporan transaksi
+  yang pending.
+
+## Terkait
+
+- [Mencetak Laporan Persediaan](/persediaan/pelaporan/)
+
+## Sumber
+
+<SumberAsli />
