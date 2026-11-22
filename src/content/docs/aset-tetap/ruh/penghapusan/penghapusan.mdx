@@ -1,0 +1,86 @@
+---
+title: Merekam Penghapusan BMN
+description: Merekam penghapusan BMN dari pembukuan berdasarkan surat keputusan penghapusan oleh instansi yang berwenang.
+modul: aset-tetap
+menu_sakti: "Aset Tetap > RUH > Transaksi BMN > Penghapusan > Penghapusan"
+peran: [satker]
+jenis: juknis
+kata_kunci: [penghapusan bmn, sk penghapusan, kode transaksi 301]
+status: terbit
+sumber:
+  - judul: "SAKTI PELAPORAN - Penghapusan"
+    url: "https://sites.google.com/view/saktipelaporan/aset-tetap/ruh/transaksi-bmn/penghapusan/penghapusan"
+    jenis: google-sites
+    diambil: 2026-11-21
+    id_manifest: C-aset-tetap-ruh-transaksi-bmn-penghapusan-penghapusan
+  - judul: "Juknis SAKTI 2021 Penghapusan"
+    url: "https://docs.google.com/presentation/d/1KLCQVnNQhfD9GN_YgunhDntPCPqjJGFUJ81gi5lFGWU/"
+    jenis: google-slides
+    diambil: 2026-11-21
+    id_manifest: C-dok-084
+  - judul: "Juknis Lengkap MAT 2020 SAKTI Web_30122020"
+    url: "https://drive.google.com/file/d/1WYvNEpEKn7Jzddq1OhmX8kSY1ecEPOsW/view"
+    jenis: pdf
+    diambil: 2026-11-21
+    id_manifest: C-dok-040
+sidebar:
+  order: 2
+---
+
+import { Steps } from '@astrojs/starlight/components';
+import MenuSakti from '~/components/MenuSakti.astro';
+import SumberAsli from '~/components/SumberAsli.astro';
+
+Menu Penghapusan (kode transaksi 301) digunakan untuk merekam
+penghapusan BMN dari pembukuan berdasarkan suatu surat keputusan
+penghapusan oleh instansi yang berwenang. Secara umum, urutan
+transaksi penghapusan BMN pada Aplikasi SAKTI adalah:
+
+1. Perubahan kondisi BMN menjadi status Rusak Berat (RB).
+2. Penghentian dari penggunaan.
+3. Usulan penghapusan.
+4. Penghapusan.
+
+<MenuSakti />
+
+## Prasyarat
+
+- Dokumen sumber: SK Penghapusan.
+- BMN yang dapat dilakukan penghapusan adalah BMN yang telah
+  diusulkan penghapusan (transaksi Pencatatan Barang Yang Akan
+  Dihapuskan) dan telah disetujui oleh approver.
+
+## Langkah
+
+<Steps>
+
+1. Pilih menu **Aset Tetap > RUH > Transaksi BMN > Penghapusan >
+   Penghapusan**, lalu klik **Rekam**.
+2. Pilih **Kode Barang** yang akan dihapuskan, yaitu BMN yang
+   berasal dari transaksi Pencatatan Barang Yang Akan Dihapuskan
+   yang telah disetujui oleh Approver.
+3. Isikan **NUP awal** dan **NUP akhir** BMN.
+4. Pilih tanggal pembukuan sesuai dengan dokumen sumber.
+5. Isikan dan pilih nomor dan tanggal dokumen sumber penghapusan
+   berupa SK Penghapusan.
+6. Klik tombol **Simpan**.
+
+</Steps>
+
+:::note
+Tidak ada jurnal yang terbentuk atas transaksi ini.
+:::
+
+## Ilustrasi
+
+Satker KPPN Pekalongan melakukan transaksi penghapusan atas BMN
+AC Split NUP 1 berdasarkan SK Penghapusan dari pihak berwenang
+(Pengelola BMN). Setelah sebelumnya BMN dimaksud telah disetujui
+transaksi usulan penghapusan.
+
+## Terkait
+
+- [Merekam Pembatalan Penghapusan](/aset-tetap/ruh/perolehan-bmn/pembatalan-penghapusan/)
+- [Merekam Transfer Keluar (Usul Hapus)](/aset-tetap/ruh/penghapusan/transfer-keluar-usul-hapus/)
+
+<SumberAsli />

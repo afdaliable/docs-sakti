@@ -1,0 +1,94 @@
+---
+title: Merekam Transfer Keluar (Barang Aktif)
+description: Mencatat penyerahan Aset Tetap/Aset Tetap Lainnya yang masih aktif kepada UAKPB lain.
+modul: aset-tetap
+menu_sakti: "Aset Tetap > RUH > Transaksi BMN > Penghapusan > Transfer Keluar (Barang Aktif)"
+peran: [satker]
+jenis: juknis
+kata_kunci: [transfer keluar barang aktif, serah terima bmn, kode transaksi 302]
+status: terbit
+sumber:
+  - judul: "SAKTI PELAPORAN - Transfer Keluar (Barang Aktif)"
+    url: "https://sites.google.com/view/saktipelaporan/aset-tetap/ruh/transaksi-bmn/penghapusan/transfer-keluar-barang-aktif"
+    jenis: google-sites
+    diambil: 2026-11-21
+    id_manifest: C-aset-tetap-ruh-transaksi-bmn-penghapusan-transfer-keluar-barang-aktif
+  - judul: "Juknis SAKTI 2021 Transfer Keluar Barang Aktif"
+    url: "https://docs.google.com/presentation/d/133Zzud8rXO3mdesCfjSgG7UXSrFPSq42JYQhWSA-CO0/"
+    jenis: google-slides
+    diambil: 2026-11-21
+    id_manifest: C-dok-086
+  - judul: "Juknis Lengkap MAT 2020 SAKTI Web_30122020"
+    url: "https://drive.google.com/file/d/1WYvNEpEKn7Jzddq1OhmX8kSY1ecEPOsW/view"
+    jenis: pdf
+    diambil: 2026-11-21
+    id_manifest: C-dok-040
+sidebar:
+  order: 3
+---
+
+import { Steps } from '@astrojs/starlight/components';
+import MenuSakti from '~/components/MenuSakti.astro';
+import SumberAsli from '~/components/SumberAsli.astro';
+
+Menu Transfer Keluar (Barang Aktif) (kode transaksi 302)
+digunakan untuk mencatat penyerahan Aset Tetap/Aset Tetap Lainnya
+yang masih aktif kepada UAKPB lain dimana UAKPB tersebut masih
+dalam satu entitas pelaporan akuntansi Pemerintah Pusat, baik
+UAKPB penerima BMN telah maupun belum menggunakan Aplikasi SAKTI.
+
+<MenuSakti />
+
+## Prasyarat
+
+- Dokumen sumber: Berita Acara Serah Terima atau dokumen yang
+  dapat dipersamakan.
+- Status BMN yang diserahkan adalah BMN yang aktif (bukan BMN
+  henti guna/diusulkan penghapusan/sudah dihapuskan).
+
+## Langkah
+
+<Steps>
+
+1. Pilih menu **Aset Tetap > RUH > Transaksi BMN > Penghapusan >
+   Transfer Keluar (Barang Aktif)**, lalu klik **Rekam**.
+2. Pilih **Kode Barang** yang akan diserahkan kepada entitas
+   lain.
+3. Isikan **NUP awal** dan **NUP akhir** BMN yang akan diserahkan
+   kepada entitas lain.
+4. Pilih tanggal pembukuan sesuai dengan dokumen sumber.
+5. Isikan dan pilih nomor dan tanggal SK dokumen pendukung.
+6. Pilih satker tujuan yaitu satker pengguna SAKTI atau bukan
+   pengguna SAKTI (Non SAKTI).
+7. Apabila satker tujuan adalah satker pengguna SAKTI, maka pilih
+   kode atau nama satker tujuan. Apabila satker tujuan adalah
+   satker Non SAKTI, maka ketikkan kode satker dan nama satker.
+8. Klik tombol **Simpan**.
+
+</Steps>
+
+:::caution[Perlu diperhatikan]
+Satker Pemberi harus tetap membuat surat pengantar dan BAST atas
+Transfer Keluar, yang salah satu kegunaannya adalah untuk
+mencocokkan antara data transfer BMN pada Aplikasi SAKTI dengan
+fisik aset.
+:::
+
+Jurnal yang terbentuk: (D) Transfer Keluar; (K) Aset Tetap; (D)
+Akumulasi Penyusutan; (K) Transfer Keluar; (D) Beban Penyusutan;
+(K) Transfer Keluar.
+
+## Ilustrasi
+
+Satker KPPN Pekalongan melakukan transfer keluar dengan
+menyerahkan AC Split NUP 6-7 kepada Kantor Kementerian Agama
+Kota Pekalongan.
+
+## Terkait
+
+- [Merekam Transfer Masuk Online](/aset-tetap/ruh/perolehan-bmn/transfer-masuk-online/)
+- [Merekam Transfer Masuk Manual](/aset-tetap/ruh/perolehan-bmn/transfer-masuk-manual/)
+- [Merekam Transfer Keluar (Henti Guna)](/aset-tetap/ruh/penghapusan/transfer-keluar-henti-guna/)
+- [Merekam Perubahan Satker Tujuan TK](/aset-tetap/ruh/perubahan-bmn/perubahan-satker-tujuan-tk/)
+
+<SumberAsli />

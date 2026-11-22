@@ -1,0 +1,75 @@
+---
+title: Merekam Hibah Keluar BMN
+description: Merekam penyerahan BMN kepada entitas di luar lingkup Pemerintah Pusat pada tahun berjalan.
+modul: aset-tetap
+menu_sakti: "Aset Tetap > RUH > Transaksi BMN > Penghapusan > Hibah Keluar"
+peran: [satker]
+jenis: juknis
+kata_kunci: [hibah keluar, hibah bmn, kode transaksi 303]
+status: terbit
+sumber:
+  - judul: "SAKTI PELAPORAN - Hibah Keluar"
+    url: "https://sites.google.com/view/saktipelaporan/aset-tetap/ruh/transaksi-bmn/penghapusan/hibah-keluar"
+    jenis: google-sites
+    diambil: 2026-11-21
+    id_manifest: C-aset-tetap-ruh-transaksi-bmn-penghapusan-hibah-keluar
+  - judul: "Juknis SAKTI 2021 Hibah Keluar"
+    url: "https://docs.google.com/presentation/d/1Z0yxpCc5Uina7YAOS-F4OfX8V6l39-cWNGnTg_2oq18/"
+    jenis: google-slides
+    diambil: 2026-11-21
+    id_manifest: C-dok-091
+  - judul: "Juknis Lengkap MAT 2020 SAKTI Web_30122020"
+    url: "https://drive.google.com/file/d/1WYvNEpEKn7Jzddq1OhmX8kSY1ecEPOsW/view"
+    jenis: pdf
+    diambil: 2026-11-21
+    id_manifest: C-dok-040
+sidebar:
+  order: 5
+---
+
+import { Steps } from '@astrojs/starlight/components';
+import MenuSakti from '~/components/MenuSakti.astro';
+import SumberAsli from '~/components/SumberAsli.astro';
+
+Menu Hibah Keluar (kode transaksi 303) digunakan untuk merekam
+transaksi penyerahan BMN kepada entitas di luar lingkup
+Pemerintah Pusat pada tahun berjalan. Misalnya penyerahan BMN
+kepada Pemerintah Daerah, perorangan, perusahaan, BUMN, dll.
+
+<MenuSakti />
+
+## Prasyarat
+
+- Dokumen sumber: Berita Acara Serah Terima Hibah atau dokumen
+  yang dapat dipersamakan.
+
+## Langkah
+
+<Steps>
+
+1. Pilih menu **Aset Tetap > RUH > Transaksi BMN > Penghapusan >
+   Hibah Keluar**, lalu klik **Rekam**.
+2. Pilih **Kode Barang** yang akan dihibahkan kepada pihak lain.
+3. Isikan **NUP awal** dan **NUP akhir** BMN yang akan dihibahkan
+   kepada pihak lain.
+4. Pilih tanggal pembukuan sesuai dengan dokumen sumber.
+5. Isikan dan pilih nomor dan tanggal SK dokumen pendukung.
+6. Klik tombol **Simpan**.
+
+</Steps>
+
+Jurnal yang terbentuk: (D) Koreksi Aset Tetap Non-Revaluasi; (K)
+Aset Tetap; (D) Akumulasi Penyusutan Aset Tetap; (K) Koreksi Aset
+Tetap Non-Revaluasi.
+
+## Ilustrasi
+
+Satker KPPN Pekalongan menyerahkan Sepeda Motor NUP 2 kepada
+Pemerintah Kota Pekalongan.
+
+## Terkait
+
+- [Merekam Hibah Masuk](/aset-tetap/ruh/perolehan-bmn/hibah-masuk/)
+- [Merekam Hibah Keluar (Barang Henti)](/aset-tetap/ruh/penghapusan/hibah-keluar-barang-henti/)
+
+<SumberAsli />

@@ -1,0 +1,107 @@
+---
+title: Merekam Reklasifikasi Keluar BMN
+description: Merekam penghapusan BMN karena kesalahan klasifikasi/kodefikasi pada perekaman sebelumnya.
+modul: aset-tetap
+menu_sakti: "Aset Tetap > RUH > Transaksi BMN > Penghapusan > Reklasifikasi Keluar"
+peran: [satker]
+jenis: juknis
+kata_kunci: [reklasifikasi keluar, salah kodefikasi bmn, kode transaksi 304]
+status: terbit
+sumber:
+  - judul: "SAKTI PELAPORAN - Reklasifikasi Keluar"
+    url: "https://sites.google.com/view/saktipelaporan/aset-tetap/ruh/transaksi-bmn/penghapusan/reklasifikasi-keluar"
+    jenis: google-sites
+    diambil: 2026-11-21
+    id_manifest: C-aset-tetap-ruh-transaksi-bmn-penghapusan-reklasifikasi-keluar
+  - judul: "Reklasifiksi Keluar"
+    url: "https://docs.google.com/presentation/d/1YFOoixz1J_8mrw3HignkAKYwJt82kYecU2p7Yd-l4es/"
+    jenis: google-slides
+    diambil: 2026-11-21
+    id_manifest: C-dok-093
+  - judul: "Juknis Lengkap MAT 2020 SAKTI Web_30122020"
+    url: "https://drive.google.com/file/d/1WYvNEpEKn7Jzddq1OhmX8kSY1ecEPOsW/view"
+    jenis: pdf
+    diambil: 2026-11-21
+    id_manifest: C-dok-040
+sidebar:
+  order: 6
+---
+
+import { Steps } from '@astrojs/starlight/components';
+import MenuSakti from '~/components/MenuSakti.astro';
+import SumberAsli from '~/components/SumberAsli.astro';
+
+Menu Reklasifikasi Keluar (kode transaksi 304) digunakan untuk
+merekam penghapusan BMN yang disebabkan oleh kesalahan
+klasifikasi BMN pada perekaman sebelumnya. Contoh penggunaan
+menu ini antara lain: kesalahan perekaman kodefikasi BMN yaitu
+operator salah merekam BMN sebagai Sepeda Motor, padahal
+seharusnya direkam sebagai Scooter. Atas kesalahan tersebut, maka
+dilakukan reklasifikasi keluar atas Sepeda Motor, lalu
+dilanjutkan dengan transaksi reklasifikasi masuk atas Scooter.
+Jadi, transaksi Reklasifikasi Keluar ini merupakan pasangan yang
+tidak terpisahkan dengan transaksi Reklasifikasi Masuk.
+
+<MenuSakti />
+
+## Prasyarat
+
+- Dokumen sumber: Surat Keterangan Perbaikan Pencatatan Laporan
+  Barang Milik Negara yang ditandatangani KPB.
+- Total nilai bruto aset yang direklasifikasi masuk dengan yang
+  direklasifikasi keluar harus sama.
+- Transaksi Reklasifikasi Keluar dengan Reklasifikasi Masuk harus
+  dilaksanakan dalam periode yang sama — menurut tabel ikhtisar
+  juknis: dalam periode **bulan** yang sama; menurut juknis 2020
+  dan slide: dalam periode **semester** yang sama.
+
+## Langkah
+
+<Steps>
+
+1. Pilih menu **Aset Tetap > RUH > Transaksi BMN > Penghapusan >
+   Reklasifikasi Keluar**, lalu klik **Rekam**.
+2. Pilih **Kode Barang** yang akan direklasifikasi (kode BMN dan
+   NUP BMN yang salah kodefikasinya).
+3. Isikan **NUP awal** dan **NUP akhir** BMN yang akan
+   direklasifikasi.
+4. Pilih tanggal pembukuan sesuai dengan dokumen sumber.
+5. Isikan dan pilih nomor dan tanggal SK dokumen pendukung.
+6. Klik tombol **Simpan**.
+
+</Steps>
+
+:::caution[Perlu diperhatikan]
+Setelah transaksi Reklasifikasi Keluar ini dilakukan persetujuan
+oleh approver, perlu dilanjutkan dengan perekaman transaksi
+[Reklasifikasi Masuk](/aset-tetap/ruh/perolehan-bmn/reklasifikasi-masuk/)
+dengan memilih jenis BMN yang seharusnya. Periode yang disebutkan
+sumber berbeda: tabel ikhtisar menyebut "periode bulan yang
+sama", sedangkan juknis 2020 dan slide menyebut "periode semester
+yang sama".
+:::
+
+Jurnal yang terbentuk: (D) 391151 Koreksi Atas Reklasifikasi
+Persediaan/Aset Tetap/Aset Lainnya; (K) Aset Tetap; (D)
+Akumulasi Penyusutan; (K) 391151 Koreksi Atas Reklasifikasi
+Persediaan/Aset Tetap/Aset Lainnya; (D) Akumulasi Penyusutan; (K)
+Beban Penyusutan.
+
+## Ilustrasi
+
+Operator Modul Aset Tetap (MAT) terlanjur melakukan kesalahan
+perekaman kodefikasi BMN dan telah disetujui pendetailan BMN
+sebagai Sepeda Motor, padahal seharusnya memilih kodefikasi BMN
+sebagai Scooter. Atas kesalahan di atas, operator MAT membuat
+transaksi reklasifikasi keluar atas BMN Sepeda Motor. Setelah
+transaksi reklasifikasi keluar ini dilakukan persetujuan oleh
+approver, maka perlu dilanjutkan dengan melakukan perekaman
+transaksi reklasifikasi masuk dengan memilih jenis BMN yang
+seharusnya yaitu Scooter.
+
+## Terkait
+
+- [Merekam Reklasifikasi Masuk](/aset-tetap/ruh/perolehan-bmn/reklasifikasi-masuk/)
+- [Merekam Reklas Keluar Persediaan](/aset-tetap/ruh/penghapusan/reklas-keluar-persediaan/)
+
+<SumberAsli />

@@ -1,0 +1,101 @@
+---
+title: Merekam Reklas Keluar Persediaan
+description: Merekam penghapusan BMN yang seharusnya dicatat sebagai barang persediaan.
+modul: aset-tetap
+menu_sakti: "Aset Tetap > RUH > Transaksi BMN > Penghapusan > Reklas Keluar Persediaan"
+peran: [satker]
+jenis: juknis
+kata_kunci: [reklas keluar persediaan, reklasifikasi keluar persediaan, kode transaksi 315]
+status: terbit
+sumber:
+  - judul: "SAKTI PELAPORAN - Reklasifikasi Keluar Persediaan"
+    url: "https://sites.google.com/view/saktipelaporan/aset-tetap/ruh/transaksi-bmn/penghapusan/reklas-keluar-persediaan"
+    jenis: google-sites
+    diambil: 2026-11-21
+    id_manifest: C-aset-tetap-ruh-transaksi-bmn-penghapusan-reklas-keluar-persediaan
+  - judul: "Juknis SAKTI 2021 Reklas ke Persediaan"
+    url: "https://docs.google.com/presentation/d/1esEwS_W9vymvgjwV9mie3pijtkNph2ktW6USaey2kpA/"
+    jenis: google-slides
+    diambil: 2026-11-21
+    id_manifest: C-dok-097
+  - judul: "Juknis Lengkap MAT 2020 SAKTI Web_30122020"
+    url: "https://drive.google.com/file/d/1WYvNEpEKn7Jzddq1OhmX8kSY1ecEPOsW/view"
+    jenis: pdf
+    diambil: 2026-11-21
+    id_manifest: C-dok-040
+sidebar:
+  order: 8
+---
+
+import { Steps } from '@astrojs/starlight/components';
+import MenuSakti from '~/components/MenuSakti.astro';
+import SumberAsli from '~/components/SumberAsli.astro';
+
+Menu Reklasifikasi Keluar Persediaan (kode transaksi 315)
+digunakan untuk merekam penghapusan BMN yang disebabkan oleh
+kesalahan kodefikasi/klasifikasi BMN pada perekaman sebelumnya,
+yaitu salah catat sebagai BMN, padahal seharusnya dicatat sebagai
+barang persediaan. Contoh penggunaan menu ini antara lain:
+kesalahan perekaman kodefikasi BMN yaitu operator salah merekam
+BMN (kode selain 1xxxxxxxxx), padahal seharusnya direkam sebagai
+barang persediaan (kode 1xxxxxxxxx).
+
+<MenuSakti />
+
+## Prasyarat
+
+- Dokumen sumber: Surat Keterangan Perbaikan Pencatatan Laporan
+  Barang Milik Negara yang ditandatangani KPB.
+- Total nilai bruto aset yang direklasifikasi keluar persediaan
+  harus sama dengan yang direklasifikasi dari aset.
+- Transaksi Reklasifikasi Keluar Persediaan dengan Reklasifikasi
+  dari Aset harus dilaksanakan dalam periode semester yang sama.
+
+## Langkah
+
+<Steps>
+
+1. Pilih menu **Aset Tetap > RUH > Transaksi BMN > Penghapusan >
+   Reklas Keluar Persediaan**, lalu klik **Rekam**.
+2. Pilih **Kode Barang** yang akan direklasifikasi menjadi barang
+   persediaan.
+3. Isikan **NUP awal** dan **NUP akhir** BMN yang akan
+   direklasifikasi menjadi barang persediaan.
+4. Pilih tanggal pembukuan sesuai dengan dokumen sumber.
+5. Isikan dan pilih nomor dan tanggal SK dokumen pendukung.
+6. Klik tombol **Simpan**.
+
+</Steps>
+
+:::note[Perlakuan transaksi pada Aplikasi SAKTI]
+1. Modul MAT, menu **RUH > Transaksi BMN > Penghapusan > Reklas
+   Keluar Persediaan**: untuk mengeluarkan BMN yang salah rekam.
+2. Modul Persediaan, menu **RUH > Transaksi Masuk >
+   Reklasifikasi dari Aset**: untuk merekam nama dan kodefikasi
+   barang persediaan yang benar.
+:::
+
+Jurnal yang terbentuk: (D) 391151 Koreksi Atas Reklasifikasi
+Persediaan/Aset Tetap/Aset Lainnya; (K) Aset Tetap; (D)
+Akumulasi Penyusutan; (K) 391151 Koreksi Atas Reklasifikasi
+Persediaan/Aset Tetap/Aset Lainnya; (D) Akumulasi Penyusutan; (K)
+Beban Penyusutan.
+
+## Ilustrasi
+
+Operator Modul Aset Tetap (MAT) terlanjur melakukan kesalahan
+perekaman kodefikasi BMN dan telah disetujui pendetailan BMN
+sebagai Keset Kaki (kode 3050206061), padahal seharusnya memilih
+kodefikasi barang persediaan Keset Dan Tempat Sampah (kode
+1010305004). Atas kesalahan tersebut, maka dilakukan
+reklasifikasi keluar persediaan atas Keset Kaki (kode 3050206061)
+(di MAT), lalu dilanjutkan dengan transaksi reklasifikasi dari
+aset dengan memilih barang persediaan Keset Dan Tempat Sampah
+(kode 1010305004) (Modul Persediaan).
+
+## Terkait
+
+- [Merekam Reklas Aset dari Persediaan](/aset-tetap/ruh/perolehan-bmn/reklas-aset-dari-persediaan/)
+- [Merekam Reklasifikasi dari Aset (Modul Persediaan)](/persediaan/transaksi-masuk/reklasifikasi-dari-aset/)
+
+<SumberAsli />

@@ -1,0 +1,31 @@
+---
+title: Penghapusan
+description: Transaksi penghapusan BMN dari pembukuan, meliputi penghapusan, transfer keluar, hibah keluar, reklasifikasi keluar, dan koreksi pencatatan.
+modul: aset-tetap
+jenis: indeks
+status: terbit
+sidebar:
+  label: Ringkasan
+  order: 1
+---
+
+import { LinkCard, CardGrid } from '@astrojs/starlight/components';
+
+Sub-menu **Aset Tetap > RUH > Transaksi BMN > Penghapusan** memuat transaksi
+yang mengeluarkan BMN dari pembukuan: penghapusan berdasarkan SK, penyerahan
+kepada satker lain (transfer keluar), penyerahan kepada entitas di luar
+Pemerintah Pusat (hibah keluar), serta penghapusan karena kesalahan pencatatan
+(reklasifikasi keluar dan koreksi pencatatan).
+
+<CardGrid>
+  <LinkCard title="Penghapusan" href="/aset-tetap/ruh/penghapusan/penghapusan/" description="Merekam penghapusan BMN dari pembukuan berdasarkan SK penghapusan." />
+  <LinkCard title="Transfer Keluar (Barang Aktif)" href="/aset-tetap/ruh/penghapusan/transfer-keluar-barang-aktif/" description="Menyerahkan BMN yang masih aktif kepada UAKPB lain." />
+  <LinkCard title="Transfer Keluar (Henti Guna)" href="/aset-tetap/ruh/penghapusan/transfer-keluar-henti-guna/" description="Menyerahkan BMN yang sudah dihentikan penggunaannya kepada UAKPB lain." />
+  <LinkCard title="Hibah Keluar" href="/aset-tetap/ruh/penghapusan/hibah-keluar/" description="Menyerahkan BMN kepada entitas di luar lingkup Pemerintah Pusat." />
+  <LinkCard title="Reklasifikasi Keluar" href="/aset-tetap/ruh/penghapusan/reklasifikasi-keluar/" description="Menghapuskan BMN karena kesalahan klasifikasi/kodefikasi." />
+  <LinkCard title="Koreksi Pencatatan" href="/aset-tetap/ruh/penghapusan/koreksi-pencatatan/" description="Menghapuskan BMN karena kesalahan pencatatan kuantitas." />
+  <LinkCard title="Reklas Keluar Persediaan" href="/aset-tetap/ruh/penghapusan/reklas-keluar-persediaan/" description="Menghapuskan BMN yang seharusnya dicatat sebagai barang persediaan." />
+  <LinkCard title="Transfer Keluar (ATR)" href="/aset-tetap/ruh/penghapusan/transfer-keluar-atr/" description="Menyerahkan Aset Tetap Renovasi kepada satker pemilik BMN." />
+  <LinkCard title="Hibah Keluar (Barang Henti)" href="/aset-tetap/ruh/penghapusan/hibah-keluar-barang-henti/" description="Menyerahkan BMN yang sudah dihentikan penggunaannya kepada entitas di luar Pemerintah Pusat." />
+  <LinkCard title="Transfer Keluar (Usul Hapus)" href="/aset-tetap/ruh/penghapusan/transfer-keluar-usul-hapus/" description="Menyerahkan aset yang telah diusulkan untuk dihapuskan kepada satker pada entitas yang sama." />
+</CardGrid>

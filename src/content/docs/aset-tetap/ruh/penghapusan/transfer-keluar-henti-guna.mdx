@@ -1,0 +1,93 @@
+---
+title: Merekam Transfer Keluar (Henti Guna)
+description: Mencatat penyerahan Aset Tetap/Aset Tetap Lainnya yang sudah dihentikan penggunaannya kepada UAKPB lain.
+modul: aset-tetap
+menu_sakti: "Aset Tetap > RUH > Transaksi BMN > Penghapusan > Transfer Keluar (Henti Guna)"
+peran: [satker]
+jenis: juknis
+kata_kunci: [transfer keluar henti guna, bmn henti guna, kode transaksi 302]
+status: terbit
+sumber:
+  - judul: "SAKTI PELAPORAN - Transfer Keluar (Henti Guna)"
+    url: "https://sites.google.com/view/saktipelaporan/aset-tetap/ruh/transaksi-bmn/penghapusan/transfer-keluar-henti-guna"
+    jenis: google-sites
+    diambil: 2026-11-21
+    id_manifest: C-aset-tetap-ruh-transaksi-bmn-penghapusan-transfer-keluar-henti-guna
+  - judul: "Transfer Keluar (Henti Guna)"
+    url: "https://docs.google.com/presentation/d/1n-VbdNnfRGi1fiKHlG_F5fqJQdCGe-EZa9wRKj-h9pA/"
+    jenis: google-slides
+    diambil: 2026-11-21
+    id_manifest: C-dok-088
+  - judul: "Juknis Lengkap MAT 2020 SAKTI Web_30122020"
+    url: "https://drive.google.com/file/d/1WYvNEpEKn7Jzddq1OhmX8kSY1ecEPOsW/view"
+    jenis: pdf
+    diambil: 2026-11-21
+    id_manifest: C-dok-040
+sidebar:
+  order: 4
+---
+
+import { Steps } from '@astrojs/starlight/components';
+import MenuSakti from '~/components/MenuSakti.astro';
+import SumberAsli from '~/components/SumberAsli.astro';
+
+Menu Transfer Keluar (Henti Guna) (kode transaksi 302) pada
+dasarnya sama dengan menu Transfer Keluar (Barang Aktif), hanya
+saja menu ini digunakan untuk mencatat penyerahan Aset Tetap/Aset
+Tetap Lainnya yang sudah dihentikan penggunaannya, kepada UAKPB
+lain dimana UAKPB tersebut masih dalam satu entitas pelaporan
+akuntansi Pemerintah Pusat.
+
+<MenuSakti />
+
+## Prasyarat
+
+- Dokumen sumber: Berita Acara Serah Terima atau dokumen yang
+  dapat dipersamakan.
+- Status BMN yang diserahkan adalah BMN henti guna — sebelumnya
+  telah ada transaksi Penghentian Penggunaan yang telah disetujui
+  oleh approver.
+
+## Langkah
+
+<Steps>
+
+1. Pilih menu **Aset Tetap > RUH > Transaksi BMN > Penghapusan >
+   Transfer Keluar (Henti Guna)**, lalu klik **Rekam**.
+2. Pilih BMN yang akan ditransfer keluar sesuai BMN yang telah
+   disetujui penghentian penggunaan.
+3. Pilih tanggal buku. Tanggal Buku dipilih sesuai dengan dokumen
+   sumber atau pada periode bulan yang masih terbuka.
+4. Pilih **Jenis Satker Tujuan / Penerima Transfer**: Satker
+   SAKTI atau Non SAKTI.
+5. Pilih **Kode Satker Tujuan/Penerima Transfer**.
+6. Klik tombol **Simpan**.
+
+</Steps>
+
+:::note
+Satker pemberi harus tetap membuat surat pengantar dan BAST atas
+transfer keluar, yang salah satu kegunaannya adalah untuk
+mencocokkan antara data transfer BMN pada Aplikasi SAKTI dengan
+fisik aset.
+:::
+
+Jurnal yang terbentuk: (D) Transfer Keluar; (K) Aset Tetap yang
+tidak digunakan dalam Operasi Pemerintahan; (D) Akumulasi
+Penyusutan Aset Tetap yang tidak digunakan dalam Operasi
+Pemerintahan; (K) Transfer Keluar; (D) Beban Penyusutan Aset
+Tetap yang tidak digunakan dalam Operasi Pemerintahan; (K)
+Transfer Keluar.
+
+## Ilustrasi
+
+Satker KPPN Pekalongan melakukan transfer keluar berupa barang
+Henti Guna kepada satuan kerja Kantor Kementerian Agama Kota
+Pekalongan berupa AC Split dengan NUP 30.
+
+## Terkait
+
+- [Merekam Transfer Keluar (Barang Aktif)](/aset-tetap/ruh/penghapusan/transfer-keluar-barang-aktif/)
+- [Merekam Transfer Masuk Online](/aset-tetap/ruh/perolehan-bmn/transfer-masuk-online/)
+
+<SumberAsli />

@@ -1,0 +1,76 @@
+---
+title: Merekam Koreksi Pencatatan BMN
+description: Merekam penghapusan BMN karena kesalahan pencatatan kuantitas BMN pada perekaman sebelumnya.
+modul: aset-tetap
+menu_sakti: "Aset Tetap > RUH > Transaksi BMN > Penghapusan > Koreksi Pencatatan"
+peran: [satker]
+jenis: juknis
+kata_kunci: [koreksi pencatatan, kelebihan nup, kode transaksi 305]
+status: terbit
+sumber:
+  - judul: "SAKTI PELAPORAN - Koreksi Pencatatan"
+    url: "https://sites.google.com/view/saktipelaporan/aset-tetap/ruh/transaksi-bmn/penghapusan/koreksi-pencatatan"
+    jenis: google-sites
+    diambil: 2026-11-21
+    id_manifest: C-aset-tetap-ruh-transaksi-bmn-penghapusan-koreksi-pencatatan
+  - judul: "Juknis SAKTI 2021 Koreksi Pencatatan"
+    url: "https://docs.google.com/presentation/d/1OpUKiiMEdB8ffPOgVGvCgw21hyNCXQLlKDgiAV7hV9k/"
+    jenis: google-slides
+    diambil: 2026-11-21
+    id_manifest: C-dok-095
+  - judul: "Juknis Lengkap MAT 2020 SAKTI Web_30122020"
+    url: "https://drive.google.com/file/d/1WYvNEpEKn7Jzddq1OhmX8kSY1ecEPOsW/view"
+    jenis: pdf
+    diambil: 2026-11-21
+    id_manifest: C-dok-040
+sidebar:
+  order: 7
+---
+
+import { Steps } from '@astrojs/starlight/components';
+import MenuSakti from '~/components/MenuSakti.astro';
+import SumberAsli from '~/components/SumberAsli.astro';
+
+Menu Koreksi Pencatatan (kode transaksi 305) digunakan untuk
+merekam penghapusan BMN yang disebabkan oleh kesalahan pencatatan
+kuantitas BMN pada perekaman sebelumnya. Contoh: kesalahan
+perekaman jumlah BMN yang dibeli yang seharusnya hanya 3 unit,
+tetapi dicatat sebanyak 4 unit, sehingga NUP aset yang terakhir
+harus dilakukan koreksi pencatatan. Nilai Aset Tetap akan
+berkurang sejumlah NUP dan sebesar nilai buku aset bersangkutan.
+
+<MenuSakti />
+
+## Prasyarat
+
+- Dokumen sumber: Surat Keterangan Perbaikan Pencatatan Laporan
+  Barang Milik Negara yang ditandatangani KPB.
+
+## Langkah
+
+<Steps>
+
+1. Pilih menu **Aset Tetap > RUH > Transaksi BMN > Penghapusan >
+   Koreksi Pencatatan**, lalu klik **Rekam**.
+2. Pilih **Kode Barang** yang akan dilakukan koreksi pencatatan.
+3. Isikan **NUP awal** dan **NUP akhir** BMN yang akan dilakukan
+   koreksi pencatatan.
+4. Pilih tanggal pembukuan sesuai dengan dokumen sumber.
+5. Isikan dan pilih nomor dan tanggal SK dokumen pendukung.
+6. Klik tombol **Simpan**.
+
+</Steps>
+
+Jurnal yang terbentuk: (D) Koreksi Aset Tetap Non-Revaluasi; (K)
+Aset Tetap; (D) Akumulasi Penyusutan; (K) Koreksi Aset Tetap
+Non-Revaluasi; (D) Akumulasi Penyusutan; (K) Beban Penyusutan.
+
+## Ilustrasi
+
+Operator MAT melakukan kesalahan perekaman yaitu seharusnya hanya
+4 unit AC Split NUP 30-33, tetapi dicatat AC Split sebanyak 5
+unit NUP 30-34, sehingga AC Split NUP 34 harus dilakukan koreksi
+pencatatan. Hal ini karena secara substansi AC Split NUP 34
+memang seharusnya dan sebenarnya tidak ada.
+
+<SumberAsli />
