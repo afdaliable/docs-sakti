@@ -1,0 +1,170 @@
+---
+title: Menguji SPM dengan TTE
+description: Pengujian SPM bertanda tangan elektronik tersertifikasi oleh FO, Validator, Reviewer, sampai approval Kasi PD.
+modul: kppn-bun
+menu_sakti: "KPPN > Pencairan Dana > Proses > SPM"
+peran: [kppn-kanwil]
+jenis: juknis
+kata_kunci: [pengujian spm, tte, digital signature, verifikasi ds, spm tersertifikasi]
+status: review
+sumber:
+  - judul: "Juknis Pengujian SPM dengan TTE"
+    url: "https://drive.google.com/file/d/1bNfoa1LIlwazA4I-74HD3FzApq5WwXWt/view"
+    jenis: pdf
+    diambil: 2026-11-21
+    id_manifest: B-bun-003
+---
+
+import { Steps } from '@astrojs/starlight/components';
+import MenuSakti from '~/components/MenuSakti.astro';
+import SumberAsli from '~/components/SumberAsli.astro';
+
+Juknis ini menjelaskan proses pengujian SPM dengan Tanda Tangan
+Elektronik (TTE) tersertifikasi pada aplikasi SAKTI BUN KPPN, mulai
+dari verifikasi DS oleh FO Konversi sampai approval oleh Kasi PD,
+termasuk penolakan setelah download ADK PMRT dan setelah ADK PMRT
+disetujui.
+
+<MenuSakti />
+
+| Keterangan | Isi |
+|---|---|
+| Modul | SAKTI BUN KPPN |
+| Role User | FO Konversi, FO Validasi, MO dan Kasi PD |
+| Modul lain terkait | SAKTI Modul Pembayaran |
+| Transaksi yang terkait | SAKTI Modul Pembayaran: Validasi SPM, Monitoring Dokumen Pendukung |
+| Dokumen input | SPM dan dokumen pendukung |
+| Output | Persetujuan atau penolakan SPM |
+| Petunjuk teknis terkait | Tanda Tangan Elektronik (TTE) Tersertifikasi/Digital Signature (DS) pada aplikasi SAKTI |
+
+## Prasyarat
+
+- Role yang dibutuhkan: FO Konversi, FO Validasi, MO, dan Kasi PD.
+
+## Alur proses
+
+1. FO Konversi — memverifikasi DS dan meneruskan SPM ke Validator.
+2. FO Validator — memverifikasi DS, download ADK, dan meneruskan ke
+   Reviewer.
+3. Reviewer — memverifikasi DS dan meneruskan ke approval.
+4. Kasi PD (Approval) — memverifikasi DS dan menyetujui; status ADK
+   menjadi **Disetujui**.
+
+## Langkah
+
+### Verifikasi DS oleh FO Konversi
+
+Login aplikasi SAKTI sebagai Fo KPPN.
+
+<Steps>
+
+1. Buka menu **KPPN > Pencairan Dana > Proses > SPM**.
+2. Pilih data SPM yang akan diproses, klik **Proses**.
+3. Setelah klik **Proses** akan muncul detail informasi aksi; klik
+   pada **Verifikasi DS** — akan muncul form Daftar Dokumen dan
+   Verifikasi DS.
+4. Periksa form yang tampil:
+
+   - tombol **Daftar Dokumen** merupakan list dokumen hasil
+     bentukan aplikasi SAKTI yang telah dilakukan TTE/DS dengan
+     status TTE Sudah TTE;
+   - Info Penandatangan menampilkan Jenis Dokumen dan Nama file
+     (dok. TTE);
+   - Tools dokumen digunakan untuk mengkostumisasi dokumen, mulai
+     dari memperbesar, memperkecil dokumen, rotasi, pencarian
+     halaman, dan sebagainya;
+   - daftar dokumen yang telah diproses tanda tangan elektronik
+     TTE/DS berupa informasi jenis dokumen dan Tandatangan
+     Eksternal;
+   - dokumen pdf yang telah di-TTE/DS dengan QR Code link
+     kemenkeu.go.id;
+   - Verifikasi DS merupakan informasi verifikasi DS yang diambil
+     dari link situs kominfo, berupa informasi: pernyataan dokumen
+     asli, penandatangan DS, lokasi, alasan, waktu ditandatangani,
+     penyelenggara DS, info perubahan dokumen, verifikasi identitas
+     penandatangan, dan stempel waktu.
+
+5. Untuk melanjutkan ke Validator klik **Lanjutkan**.
+
+</Steps>
+
+### Verifikasi DS oleh FO Validator
+
+<Steps>
+
+1. Pada user Validator klik tombol **Proses**.
+2. Verifikasi DS pada Validator sama seperti Fo — klik pada kolom
+   **Verifikasi DS**; untuk melanjutkan ke Reviewer, download ADK
+   dan klik **Lanjutkan**.
+
+</Steps>
+
+### Verifikasi DS oleh Reviewer
+
+<Steps>
+
+1. Verifikasi DS pada Reviewer — klik pada kolom **Verifikasi DS**.
+2. Untuk melanjutkan ke approval klik **Lanjutkan**.
+
+</Steps>
+
+### Verifikasi DS oleh Approval (Kasi PD)
+
+<Steps>
+
+1. Verifikasi DS pada Approval — klik pada kolom **Verifikasi DS**.
+2. Untuk menyetujui klik **Lanjutkan** sehingga status ADK akan
+   berubah menjadi **Disetujui**.
+
+</Steps>
+
+### Penolakan oleh Validator atau FO Validator setelah download ADK PMRT
+
+<Steps>
+
+1. Pada menu **KPPN > Pencairan Dana > Proses > SPM**, FO Validator
+   atau Validator SAKTI BUN melakukan penolakan setelah download
+   ADK PMRT: pada kolom proses klik **Tolak**, isi keterangan
+   penolakan, upload file (opsional), kemudian klik **Lanjutkan**.
+2. Login ke SAKTI BUN Kasi PD ke menu **KPPN > Pencairan Dana >
+   Proses > SPM**, kemudian klik **Setuju tolak** untuk melanjutkan
+   penolakan, atau klik **Batal** untuk membatalkan proses
+   penolakan dan mengembalikan status ke proses review.
+3. Apabila Kasi PD tidak melakukan setuju tolak maka satker tidak
+   bisa melakukan pembatalan SPM.
+
+</Steps>
+
+### Penolakan yang dilakukan setelah ADK PMRT disetujui Kasi PD
+
+<Steps>
+
+1. Kasi PD masih bisa melakukan penolakan atas ADK PMRT yang sedang
+   diproses hingga Seksi Bank selama status ADK di SAKTI masih
+   **Disetujui**.
+
+</Steps>
+
+## Hasil yang diharapkan
+
+Persetujuan atau penolakan SPM — status ADK menjadi **Disetujui**
+setelah approval Kasi PD.
+
+## Ketentuan
+
+- Penyelenggara tanda tangan digital yang digunakan pada aplikasi
+  SAKTI saat ini adalah Badan Siber dan Sandi Negara (BSSN).
+- Pastikan pengguna Tanda Tangan Elektronik (TTE)/Digital Signature
+  (DS) telah terdaftar di BSSN.
+- Pastikan fitur Tanda Tangan Elektronik (TTE)/Digital Signature
+  (DS) pada aplikasi SAKTI telah diaktifkan.
+
+## Terkait
+
+- [Menggunakan Fitur KPPN BUN](/kppn-bun/fitur-kppn-bun/)
+- [Memproses ADK SPM di KPPN](/kppn-bun/proses-adk-spm/)
+- [Memantau Proses SPM di KPPN](/kppn-bun/monitoring-proses-spm/)
+
+## Sumber
+
+<SumberAsli />
