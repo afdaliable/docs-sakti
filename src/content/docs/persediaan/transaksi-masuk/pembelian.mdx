@@ -7,7 +7,7 @@ peran: [satker]
 jenis: juknis
 kata_kunci: [pembelian persediaan, pendetilan pembelian, kode barang, bast pembelian]
 status: review
-perlu_review: false
+perlu_review: true
 sumber:
   - judul: "Pembelian"
     url: "https://sites.google.com/view/saktipelaporan/persediaan/transaksi-masuk/pembelian"
@@ -34,11 +34,16 @@ sumber:
     jenis: pdf
     diambil: 2026-11-21
     id_manifest: C-dok-001
+  - judul: "Juknis SAKTI BLU"
+    url: "https://drive.google.com/file/d/1gt7ZitAXOh7tvJff1HFT4LTzni5X4yk5/view"
+    jenis: pdf
+    diambil: 2026-11-21
+    id_manifest: B-pem-041
 sidebar:
   order: 2
 ---
 
-import { Steps } from '@astrojs/starlight/components';
+import { Steps, Aside } from '@astrojs/starlight/components';
 import MenuSakti from '~/components/MenuSakti.astro';
 import SumberAsli from '~/components/SumberAsli.astro';
 
@@ -54,9 +59,9 @@ pembelian menjadi tepat.
 
 ## Prasyarat
 
-- Role yang dibutuhkan: OPR dan APR (Operator Persediaan). Menurut
-  juknis 2020, transaksi ini dapat dilakukan oleh pengguna sebagai
-  Operator UAKPB atau Operator UAPKPB.
+- Role yang dibutuhkan: OPR dan APR; juknis slide menyebut Operator
+  Persediaan; juknis 2020 menyebut pengguna sebagai Operator UAKPB
+  atau Operator UAPKPB.
 - Dokumen sumber: pencatatan penerimaan barang, BAST Kontraktual, dan
   BAST non Kontraktual.
 - Modul dan transaksi terkait: GLP dan Komitmen; transaksi yang
@@ -77,8 +82,9 @@ pembelian menjadi tepat.
    **Tambah**.
 2. Pilih dokumen pembelian yang ingin didetilkan. Menurut juknis
    2020, akan muncul pilihan dari dokumen sumber mana pembelian yang
-   akan didetilkan — dalam hal ini terdapat 3 (tiga) pilihan, di
-   antaranya **Komitmen** dan **Non-Kontraktual**.
+   akan didetilkan — dalam hal ini disebutkan terdapat 3 (tiga)
+   pilihan, tetapi yang tercantum hanya **Komitmen** dan
+   **Non-Kontraktual**.
 3. Isikan tanggal pembukuan.
 4. Pilih kode barang yang ingin didetilkan dari daftar — kode sub-sub
    kelompok barang yang sudah dipilih oleh operator bendahara dan
@@ -97,6 +103,23 @@ pembelian menjadi tepat.
 
 Dokumen pembelian persediaan terekam dan masuk ke semua laporan pada
 modul Persediaan.
+
+## Persetujuan transaksi
+
+Juknis SAKTI untuk satker BLU memuat tahap persetujuan oleh approver
+setelah perekaman:
+
+<Steps>
+
+1. Masuk aplikasi SAKTI sebagai user approver.
+2. Pilih modul Persediaan, masuk menu **Persediaan > Persetujuan >
+   Persetujuan Transaksi**.
+3. Pilih dokumen persediaan yang akan disetujui, lalu lakukan proses
+   persetujuan transaksi — transaksi yang disetujui telah final dan
+   tidak bisa dilakukan perbaikan. Setelah persetujuan tersebut
+   dilakukan, terbentuk penjurnalan dalam modul GL dan Pelaporan.
+
+</Steps>
 
 ## Ketentuan
 
@@ -123,9 +146,17 @@ modul Persediaan.
 
 ## Jurnal transaksi
 
-- D. Persediaan (Barang Komsumsi/Amunisi/Bahan Untuk Pemeliharaan
+- D. Persediaan (Barang Konsumsi/Amunisi/Bahan Untuk Pemeliharaan
   dll)
 - K. Persediaan Yang Belum Diregister (117911)
+
+<Aside type="caution" title="Perlu verifikasi">
+Rincian pilihan dokumen sumber pada langkah 2 hanya ada di juknis
+2020; sumber itu sendiri menyebut 3 (tiga) pilihan tetapi hanya
+mencantumkan dua. Tahap persetujuan transaksi bersumber dari juknis
+SAKTI untuk satker BLU; sumber modul Persediaan tidak merinci langkah
+persetujuan.
+</Aside>
 
 ## Terkait
 
