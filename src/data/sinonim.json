@@ -679,5 +679,181 @@
       "platform pembayaran pemerintah",
       "belanja operasional ppp"
     ]
+  },
+  {
+    "istilah": "UP",
+    "panjang": "Uang Persediaan",
+    "sinonim": [
+      "uang persediaan",
+      "up satker"
+    ],
+    "perlu_verifikasi": false
+  },
+  {
+    "istilah": "TUP",
+    "panjang": "Tambahan Uang Persediaan",
+    "sinonim": [
+      "tambahan up",
+      "tup"
+    ],
+    "perlu_verifikasi": false
+  },
+  {
+    "istilah": "PTUP",
+    "panjang": "Pertanggungjawaban Tambahan Uang Persediaan",
+    "sinonim": [
+      "ptup",
+      "penyelesaian tup"
+    ],
+    "perlu_verifikasi": false
+  },
+  {
+    "istilah": "BPP",
+    "panjang": "Bendahara Pengeluaran Pembantu",
+    "sinonim": [
+      "bendahara pembantu",
+      "up bpp"
+    ],
+    "perlu_verifikasi": false
+  },
+  {
+    "istilah": "DPK",
+    "panjang": "Dana Pihak Ketiga",
+    "sinonim": [
+      "dana titipan",
+      "dpk"
+    ],
+    "perlu_verifikasi": false
+  },
+  {
+    "istilah": "SP2HL",
+    "panjang": "Surat Perintah Pengesahan Hibah Langsung",
+    "sinonim": [
+      "sp2hl",
+      "pengesahan hibah langsung"
+    ],
+    "perlu_verifikasi": false
+  },
+  {
+    "istilah": "SP4HL",
+    "panjang": "Surat Perintah Pengesahan Pengembalian Pendapatan Hibah Langsung",
+    "sinonim": [
+      "sp4hl",
+      "pengembalian hibah langsung"
+    ],
+    "perlu_verifikasi": false
+  },
+  {
+    "istilah": "GUP",
+    "panjang": "",
+    "sinonim": [
+      "ganti up",
+      "gup"
+    ],
+    "perlu_verifikasi": true
+  },
+  {
+    "istilah": "DRPP",
+    "panjang": "",
+    "sinonim": [
+      "drpp",
+      "pertanggungjawaban up"
+    ],
+    "perlu_verifikasi": true
+  },
+  {
+    "istilah": "SPTB",
+    "panjang": "",
+    "sinonim": [
+      "sptb kuitansi hibah"
+    ],
+    "perlu_verifikasi": true
+  },
+  {
+    "istilah": "LPJ",
+    "panjang": "",
+    "sinonim": [
+      "lpj bendahara",
+      "laporan bendahara"
+    ],
+    "perlu_verifikasi": true
+  },
+  {
+    "istilah": "SBS",
+    "panjang": "",
+    "sinonim": [
+      "sbs pnbp"
+    ],
+    "perlu_verifikasi": true
+  },
+  {
+    "istilah": "SSBP",
+    "panjang": "",
+    "sinonim": [
+      "ssbp"
+    ],
+    "perlu_verifikasi": true
+  },
+  {
+    "istilah": "NTPN",
+    "panjang": "",
+    "sinonim": [
+      "ntpn",
+      "kode ntpn"
+    ],
+    "perlu_verifikasi": true
+  },
+  {
+    "istilah": "Kode Billing",
+    "panjang": "",
+    "sinonim": [
+      "id billing",
+      "kode billing"
+    ],
+    "perlu_verifikasi": true
+  },
+  {
+    "istilah": "SIMPONI",
+    "panjang": "",
+    "sinonim": [
+      "simponi",
+      "adk simponi"
+    ],
+    "perlu_verifikasi": true
+  },
+  {
+    "istilah": "Hibah Kas",
+    "panjang": "",
+    "sinonim": [
+      "kas hibah",
+      "hibah langsung"
+    ],
+    "perlu_verifikasi": true
+  },
+  {
+    "istilah": "BKU",
+    "panjang": "",
+    "sinonim": [
+      "bku"
+    ],
+    "perlu_verifikasi": true
+  },
+  {
+    "istilah": "Kuitansi",
+    "panjang": "",
+    "sinonim": [
+      "membuat kuitansi",
+      "kuitansi hibah"
+    ],
+    "perlu_verifikasi": true
+  },
+  {
+    "istilah": "Pungutan Pajak",
+    "panjang": "",
+    "sinonim": [
+      "pungut pajak",
+      "mencatat pungutan"
+    ],
+    "perlu_verifikasi": true
   }
 ]

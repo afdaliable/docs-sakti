@@ -9,6 +9,118 @@ sidebar:
   order: 0
 ---
 
-BKU, pajak, LPJ, dan transaksi bendahara.
+import { CardGrid, LinkCard } from '@astrojs/starlight/components';
 
-Panduan modul ini sedang dimigrasikan dari sumber aslinya.
+Panduan modul Bendahara mencakup referensi bendaharawan dan wajib
+pajak, siklus uang persediaan (UP, TUP, GUP, PTUP, BPP, KKP), setoran,
+dana titipan, hibah kas, bendahara penerimaan, dan LPJ bendahara.
+
+## Referensi
+
+<CardGrid>
+	<LinkCard
+		title="Merekam Referensi Wajib Pajak/Wajib Bayar"
+		description="Perekaman NPWP wajib pajak dan wajib bayar untuk transaksi bendahara."
+		href="/bendahara/referensi-wajib-pajak/"
+	/>
+	<LinkCard
+		title="Merekam Referensi Detil Rekening"
+		description="Perekaman rekening bank bendahara untuk transaksi non tunai."
+		href="/bendahara/referensi-detil-rekening/"
+	/>
+</CardGrid>
+
+## Uang Persediaan dan Siklus Belanja
+
+<CardGrid>
+	<LinkCard
+		title="Merekam Siklus UP Awal"
+		description="Usulan uang persediaan awal sampai penerbitan SP2D UP."
+		href="/bendahara/siklus-up-awal/"
+	/>
+	<LinkCard
+		title="Merekam Siklus TUP"
+		description="Pengajuan tambahan uang persediaan sampai penerbitan SP2D TUP."
+		href="/bendahara/siklus-tup/"
+	/>
+	<LinkCard
+		title="Merekam Siklus Transaksi GUP"
+		description="Siklus ganti uang persediaan dari belanja sampai SPM GUP dan SP2D."
+		href="/bendahara/siklus-gup/"
+	/>
+	<LinkCard
+		title="Merekam Siklus Transaksi PTUP"
+		description="Pertanggungjawaban TUP melalui SPP PTUP sampai pencatatan SP2D."
+		href="/bendahara/siklus-ptup/"
+	/>
+	<LinkCard
+		title="Merekam Penihilan GUP"
+		description="Pengosongan saldo GUP melalui SPP GUP nihil sampai SP2D."
+		href="/bendahara/penihilan-gup/"
+	/>
+	<LinkCard
+		title="Merekam UP untuk BPP"
+		description="Siklus UP bendahara pengeluaran pembantu dari alokasi sampai pengembalian."
+		href="/bendahara/up-bpp/"
+	/>
+	<LinkCard
+		title="Merekam Transaksi Kartu Kredit Pemerintah (KKP)"
+		description="Siklus KKP dari BAST KKP sampai pembayaran tagihan ke bank."
+		href="/bendahara/kartu-kredit-pemerintah/"
+	/>
+</CardGrid>
+
+## Setoran
+
+<CardGrid>
+	<LinkCard
+		title="Merekam Setoran Pengembalian Belanja"
+		description="Setoran pengembalian belanja melalui SSPB sampai pengesahan."
+		href="/bendahara/setoran-pengembalian-belanja/"
+	/>
+	<LinkCard
+		title="Merekam Setoran UP/TUP Bendahara Pengeluaran"
+		description="Setoran sisa UP/TUP bendahara pengeluaran ke kas negara."
+		href="/bendahara/setoran-up-tup/"
+	/>
+	<LinkCard
+		title="Merekam Billing Interkoneksi"
+		description="Pembuatan billing dan pembayaran setoran melalui kanal bank/QRIS."
+		href="/bendahara/billing-interkoneksi/"
+	/>
+</CardGrid>
+
+## Transaksi Lain
+
+<CardGrid>
+	<LinkCard
+		title="Mencatat Pembayaran Dana Titipan"
+		description="Pembayaran dana titipan/DPK secara tunai, non tunai, atau sebagian."
+		href="/bendahara/pembayaran-dana-titipan/"
+	/>
+	<LinkCard
+		title="Menatausahakan Transaksi Hibah Kas"
+		description="Hibah kas dari penerimaan sampai SP2HL dan pengembalian sisa SP4HL."
+		href="/bendahara/transaksi-hibah-kas/"
+	/>
+	<LinkCard
+		title="Merekam Transaksi Bendahara Penerimaan"
+		description="Penatausahaan penerimaan, PNBP, dan kas DPK bendahara penerimaan."
+		href="/bendahara/bendahara-penerimaan/"
+	/>
+</CardGrid>
+
+## LPJ Bendahara
+
+<CardGrid>
+	<LinkCard
+		title="Membuat LPJ Bendahara Pengeluaran"
+		description="Pencetakan LPJ bendahara pengeluaran dan unduh ADK untuk SPRINT."
+		href="/bendahara/lpj-bendahara-pengeluaran/"
+	/>
+	<LinkCard
+		title="Membuat LPJ Bendahara Penerimaan dengan TTE"
+		description="LPJ bendahara penerimaan dengan TTE sampai validasi KPPN."
+		href="/bendahara/lpj-bendahara-penerimaan/"
+	/>
+</CardGrid>

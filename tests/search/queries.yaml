@@ -96,3 +96,25 @@
   harap: ["/pembayaran/catat-upload/mencatat-upload-blu/"]
 - q: "spp 171 rpata"
   harap: ["/komitmen/ruh/rpata/"]
+- q: "cara mengajukan uang persediaan awal satker"
+  harap: ["/bendahara/siklus-up-awal/"]
+- q: "pertanggungjawaban tup sampai sp2d"
+  harap: ["/bendahara/siklus-ptup/", "/bendahara/siklus-tup/"]
+- q: "gup nihil penihilan gup"
+  harap: ["/bendahara/penihilan-gup/", "/bendahara/siklus-gup/"]
+- q: "transaksi kartu kredit pemerintah kkp tagihan bank"
+  harap: ["/bendahara/kartu-kredit-pemerintah/"]
+- q: "setoran pengembalian belanja sspb"
+  harap: ["/bendahara/setoran-pengembalian-belanja/"]
+- q: "membuat id billing interkoneksi qris"
+  harap: ["/bendahara/billing-interkoneksi/"]
+- q: "membayar dana titipan pihak ketiga"
+  harap: ["/bendahara/pembayaran-dana-titipan/"]
+- q: "cetak lpj bendahara pengeluaran adk sprint"
+  harap: ["/bendahara/lpj-bendahara-pengeluaran/"]
+- q: "lpj bendahara penerimaan tanda tangan elektronik"
+  harap: ["/bendahara/lpj-bendahara-penerimaan/", "/bendahara/bendahara-penerimaan/"]
+- q: "penatausahaan hibah kas sp2hl drpp hibah"
+  harap: ["/bendahara/transaksi-hibah-kas/"]
+- q: "mereferensikan npwp wajib pajak bendahara"
+  harap: ["/bendahara/referensi-wajib-pajak/"]
