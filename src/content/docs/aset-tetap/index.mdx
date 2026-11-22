@@ -3,23 +3,87 @@ title: Aset Tetap
 description: Transaksi BMN, KDP, persetujuan, normalisasi, dan konsesi jasa.
 modul: aset-tetap
 jenis: indeks
-status: terbit
+status: review
+sumber:
+  - judul: "Aset Tetap"
+    url: "https://sites.google.com/view/saktipelaporan/aset-tetap"
+    jenis: google-sites
+    diambil: 2026-11-21
+    id_manifest: C-aset-tetap
+  - judul: "Juknis Lengkap MAT 2020 SAKTI Web_30122020"
+    url: "https://drive.google.com/file/d/1WYvNEpEKn7Jzddq1OhmX8kSY1ecEPOsW/view"
+    jenis: pdf
+    diambil: 2026-11-21
+    id_manifest: C-dok-040
 sidebar:
   label: Ringkasan
   order: 0
 ---
 
-Transaksi BMN, KDP, persetujuan, normalisasi, dan konsesi jasa.
+import { CardGrid, LinkCard } from '@astrojs/starlight/components';
 
-Panduan modul ini sedang dimigrasikan dari sumber aslinya.
+Barang Milik Negara (BMN) meliputi semua barang yang dibeli atau
+diperoleh atas beban APBN atau berasal dari perolehan lainnya yang
+sah, yaitu barang yang diperoleh dari hibah/sumbangan atau yang
+sejenis; barang yang diperoleh sebagai pelaksanaan dari
+perjanjian/kontrak; barang yang diperoleh berdasarkan ketentuan
+undang-undang; atau barang yang diperoleh berdasarkan putusan
+pengadilan yang telah memperoleh ketentuan hukum tetap.
+
+Ruang lingkup Modul Aset Tetap mencakup transaksi BMN (perolehan,
+perubahan, penghapusan), transaksi KDP (perolehan, pengembangan,
+koreksi, transfer, penghapusan), transaksi lainnya (BMN
+bersejarah, barang pihak ketiga), penyusutan metode garis lurus
+semesteran, dan pelaporan Barang Milik Negara (Buku Barang,
+Daftar Transaksi BMN, Laporan BMN, Kartu KDP, LKB, DBR, KIB,
+History BMN, dan lainnya).
+
+Level pengguna modul ini adalah operator (perekaman transaksi),
+validator (pengecekan dan validasi atas transaksi yang direkam
+operator), dan approver (pengecekan dan persetujuan atas
+transaksi yang telah divalidasi validator).
 
 ## Sub-menu
 
-- [RUH](/aset-tetap/ruh/)
-- [Monitoring](/aset-tetap/monitoring/)
-- [ADK](/aset-tetap/adk/)
-- [Penutupan Periode](/aset-tetap/penutupan-periode/)
-- [Referensi](/aset-tetap/referensi/)
-- [Likuidasi](/aset-tetap/likuidasi/)
-- [Normalisasi](/aset-tetap/normalisasi/)
-- [Konsesi Jasa Mitra](/aset-tetap/konsesi-jasa-mitra/)
+<CardGrid>
+	<LinkCard
+		title="RUH"
+		description="Transaksi BMN, ATR, KDP, BMN bersejarah, dan barang pihak ketiga."
+		href="/aset-tetap/ruh/"
+	/>
+	<LinkCard
+		title="Monitoring"
+		description="Memantau status transaksi Modul Aset Tetap."
+		href="/aset-tetap/monitoring/"
+	/>
+	<LinkCard
+		title="ADK"
+		description="Migrasi saldo awal satuan kerja yang sebelumnya tidak menggunakan SAKTI."
+		href="/aset-tetap/adk/"
+	/>
+	<LinkCard
+		title="Penutupan Periode"
+		description="Menutup buku Modul Aset Tetap dan membentuk jurnal penyusutan reguler."
+		href="/aset-tetap/penutupan-periode/"
+	/>
+	<LinkCard
+		title="Referensi"
+		description="Referensi pendukung, termasuk pemetaan akun dan kode barang BMN."
+		href="/aset-tetap/referensi/"
+	/>
+	<LinkCard
+		title="Likuidasi"
+		description="Pemindahan aset ketika satuan kerja mengalami likuidasi."
+		href="/aset-tetap/likuidasi/"
+	/>
+	<LinkCard
+		title="Normalisasi"
+		description="Menormalkan BMN dan KDP yang tidak normal."
+		href="/aset-tetap/normalisasi/"
+	/>
+	<LinkCard
+		title="Konsesi Jasa Mitra"
+		description="Pengelolaan aset konsesi jasa mitra, dari referensi kontrak sampai transaksi."
+		href="/aset-tetap/konsesi-jasa-mitra/"
+	/>
+</CardGrid>

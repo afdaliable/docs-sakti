@@ -146,3 +146,41 @@
   harap: ["/persediaan/referensi/mengelola-barang-persediaan/"]
 - q: "cetak laporan persediaan"
   harap: ["/persediaan/pelaporan/"]
+- q: "cara input pembelian aset tetap setelah bast"
+  harap: ["/aset-tetap/ruh/perolehan-bmn/pembelian/"]
+- q: "transfer masuk bmn online dari satker lain"
+  harap: ["/aset-tetap/ruh/perolehan-bmn/transfer-masuk-online/"]
+- q: "hibah masuk bmn"
+  harap: ["/aset-tetap/ruh/perolehan-bmn/hibah-masuk/"]
+- q: "reklasifikasi persediaan menjadi aset tetap"
+  harap: ["/aset-tetap/ruh/perolehan-bmn/reklas-aset-dari-persediaan/", "/persediaan/transaksi-keluar/reklasifikasi-ke-aset/"]
+- q: "penyelesaian pembangunan dengan kdp menjadi aset"
+  harap: ["/aset-tetap/ruh/perolehan-bmn/penyelesaian-pembangunan-dengan-kdp/"]
+- q: "pengembangan aset renovasi gedung menambah nilai"
+  harap: ["/aset-tetap/ruh/perubahan-bmn/pengembangan-langsung/", "/aset-tetap/ruh/perubahan-bmn/pengembangan-dengan-kdp/"]
+- q: "perubahan kondisi bmn rusak berat"
+  harap: ["/aset-tetap/ruh/perubahan-bmn/perubahan-kondisi/"]
+- q: "koreksi nilai bmn yang belum dicatat"
+  harap: ["/aset-tetap/ruh/perubahan-bmn/koreksi-susulan/", "/aset-tetap/ruh/perubahan-bmn/koreksi-perubahan-nilai-bertambah/", "/aset-tetap/ruh/perubahan-bmn/koreksi-perubahan-nilai-berkurang/"]
+- q: "penghapusan bmn"
+  harap: ["/aset-tetap/ruh/penghapusan/penghapusan/"]
+- q: "transfer keluar bmn ke satker lain"
+  harap: ["/aset-tetap/ruh/penghapusan/transfer-keluar-barang-aktif/"]
+- q: "penghentian penggunaan bmn"
+  harap: ["/aset-tetap/ruh/penghentian-penggunaan/penghentian-penggunaan/"]
+- q: "mencatat bmn hilang dicuri"
+  harap: ["/aset-tetap/ruh/bmn-hilang/pencatatan-bmn-hilang/"]
+- q: "perolehan kdp konstruksi dalam pengerjaan termin"
+  harap: ["/aset-tetap/ruh/transaksi-kdp/perolehan-kdp/"]
+- q: "aset tetap renovasi menambah masa manfaat"
+  harap: ["/aset-tetap/ruh/atr-menambah-masa-manfaat/pembelian-aset/", "/aset-tetap/ruh/atr-menambah-masa-manfaat/"]
+- q: "normalisasi bmn saldo negatif"
+  harap: ["/aset-tetap/normalisasi/normalisasi-bmn/"]
+- q: "tutup periode aset tetap bulanan"
+  harap: ["/aset-tetap/penutupan-periode/"]
+- q: "perolehan aset konsesi jasa mitra"
+  harap: ["/aset-tetap/konsesi-jasa-mitra/transaksi-konjas-mitra/perolehan-konjas/"]
+- q: "akun belanja modal untuk kode barang bmn"
+  harap: ["/aset-tetap/referensi/akun-vs-kode-barang/"]
+- q: "monitoring status transaksi aset tetap"
+  harap: ["/aset-tetap/monitoring/status-transaksi/"]
