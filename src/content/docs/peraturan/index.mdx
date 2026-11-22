@@ -1,8 +1,35 @@
 ---
 title: Peraturan
 description: Dasar hukum dan peraturan terkait penggunaan SAKTI.
+peran: [satker, kppn-kanwil, djpb-pusat, dja, djkn, bappenas, bpk, apip, widyaiswara]
 jenis: indeks
-status: terbit
+status: review
+sumber:
+  - judul: "Peraturan"
+    url: "https://sites.google.com/view/saktiadm/peraturan"
+    jenis: google-sites
+    diambil: 2026-11-21
+    id_manifest: A-peraturan
+  - judul: "Peraturan"
+    url: "https://drive.google.com/drive/folders/1nlih2WW1MUVDhZV061_QoNgeFtVUE6AC"
+    jenis: google-drive
+    diambil: 2026-11-21
+    id_manifest: A-dok-056
 ---
 
-Daftar peraturan sedang disiapkan.
+import { CardGrid, LinkCard } from '@astrojs/starlight/components';
+
+Daftar peraturan terkait pelaksanaan dan penggunaan SAKTI.
+
+<CardGrid>
+	<LinkCard
+		title="PMK Nomor 171/PMK.05/2021 tentang Pelaksanaan Sistem SAKTI"
+		description="Identitas, susunan bab, dan ruang lingkup PMK pelaksanaan SAKTI."
+		href="/peraturan/pmk-171-pmk05-2021/"
+	/>
+	<LinkCard
+		title="PER-16/PB/2020 tentang Hak Akses Pengguna dan Pengamanan Secara Elektronik dalam Piloting SAKTI"
+		description="Identitas, susunan bab, dan pasal ruang lingkup PER-16/PB/2020."
+		href="/peraturan/per-16-pb-2020/"
+	/>
+</CardGrid>
