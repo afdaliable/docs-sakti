@@ -1,0 +1,119 @@
+---
+title: Merekam Supplier untuk SPM-KP Kompensasi
+description: Menata supplier header, address tipe 6, dan supplier banyak penerima untuk kebutuhan SPM-KP kompensasi.
+modul: komitmen
+menu_sakti: "Komitmen > RUH > Supplier"
+peran: [satker]
+jenis: juknis
+kata_kunci: [spmkp, spm-kp, kompensasi, supplier tipe 6, supplier banyak penerima, rekening dummy]
+status: review
+perlu_review: true
+sumber:
+  - judul: "Juknis Perekaman Data Supplier untuk SPMKP Kompensasi"
+    url: "https://drive.google.com/file/d/1iVegwdUHuRLfTPjXGH99BTt4gG8KzOUx/view"
+    jenis: pdf
+    diambil: 2026-11-21
+    id_manifest: B-kom-024
+sidebar:
+  order: 4
+---
+
+import { Steps, Aside } from '@astrojs/starlight/components';
+import MenuSakti from '~/components/MenuSakti.astro';
+import SumberAsli from '~/components/SumberAsli.astro';
+
+Menurut PMK Nomor 154/PMK.05/2014 tentang Pelaksanaan Sistem
+Perbendaharaan dan Anggaran Negara, supplier adalah pihak yang berhak
+menerima pembayaran atas beban APBN. Prinsip dasar interkoneksi
+SIDJP–SAKTI adalah memberikan data utama berupa NPWP, nomor rekening
+WP, dan perhitungan SPM-KP dari SIDJP ke SAKTI.
+
+SPM hanya dapat membawa satu informasi Supplier Header dan satu
+informasi Supplier Address, sehingga seluruh data supplier yang
+digunakan dalam perekaman SPM-KP Kompensasi harus direkam pada satu
+Supplier Header serta satu Supplier Address.
+
+<MenuSakti />
+
+## Langkah
+
+### Rekam supplier
+
+**Supplier Header.** Pada tab Supplier Header, primary key-nya adalah
+Nama Supplier Header dan NPWP Supplier Header — kedua data tersebut
+yang membentuk NRS. Penulisan nama supplier yang berbeda atau NPWP yang
+berbeda akan menghasilkan NRS baru, dan kedua data itu tidak dapat
+diubah baik di aplikasi SAKTI maupun SPAN. Rekam supplier header sesuai
+kebutuhan: nama dan NPWP supplier adalah yang mengajukan permintaan
+SPM-KP (dapat berupa perusahaan induk maupun cabang, tergantung siapa
+yang mengajukan).
+
+**Supplier Address.** Pada tab Supplier Address, primary key-nya adalah
+Tipe Supplier, Kode Pos, dan Kode KPPN; perbedaan pada salah satu data
+membentuk site address baru. Satu header supplier dapat terdiri dari
+dua site address (misalnya tipe 6 dan tipe 7). Untuk SPM-KP tanpa
+kompensasi gunakan supplier **tipe 7**; untuk SPM-KP dengan kompensasi
+gunakan supplier **tipe 6**.
+
+**Supplier Banyak Penerima.** Pada tab Supplier Banyak Penerima,
+primary key-nya adalah Negara Asal Bank, Kode Bank, Nama Bank, dan
+Nomor Rekening; perbedaan salah satu data membentuk site bank baru.
+Data yang mengikuti keempat primary key itu (NPWP Penerima, Nama
+Penerima, Nama Pemilik Rekening, dan sebagainya) harus konsisten dan
+tidak boleh berbeda, baik di SAKTI maupun SPAN.
+
+Ketentuan khusus supplier SPM-KP Kompensasi pada tab Supplier Banyak
+Penerima:
+
+- harus terdapat satu data penerima yang Nama Penerima dan NPWP
+  Penerima-nya sama dengan Supplier Header;
+- penerima kompensasi dapat memiliki Nama Penerima dan NPWP Penerima
+  yang berbeda dengan informasi pada Supplier Header;
+- untuk supplier penerima kompensasi yang tidak menerima transaksi
+  pembayaran secara riil, dapat digunakan nomor rekening dummy —
+  sebaiknya gunakan nomor yang unik untuk menghindari nomor yang sama
+  telah digunakan satker lain;
+- jumlah supplier penerima kompensasi dapat direkam lebih dari satu,
+  disesuaikan dengan kebutuhan pembayaran SPM-KP.
+
+### Create ADK BCSR (PPK)
+
+Setelah selesai merekam data supplier, bentuk ADK menggunakan user PPK.
+Untuk pendaftaran data supplier baru, file ADK yang dihasilkan adalah
+ADK BCSR.
+
+### Proses KPPN
+
+ADK BCSR yang telah dibuat user PPK diproses oleh KPPN pada SPAN dengan
+mengacu pada SOP yang berlaku.
+
+## Hasil yang diharapkan
+
+Resume supplier dapat dicetak dan data supplier dapat digunakan untuk
+pembuatan SPP pada perekaman SPM-KP.
+
+## Ketentuan
+
+- Pada SPM-KP Kompensasi, data supplier yang digunakan adalah supplier
+  tipe 6; untuk SPM-KP tanpa kompensasi, supplier tipe 7.
+- Atas satu informasi nomor rekening dari bank yang sama hanya dapat
+  direkam menjadi satu baris Supplier Bank / Supplier Pegawai /
+  Supplier Banyak Penerima.
+- Nomor rekening dummy hanya digunakan untuk transaksi yang tidak
+  menghasilkan transfer dana secara riil.
+
+<Aside type="caution" title="Perlu verifikasi">
+Juknis tidak mencantumkan jalur menu langkah-demi-langkah; jalur form
+supplier mengikuti menu aplikasi saat ini **Komitmen > RUH > Supplier**.
+Contoh nilai pada ilustrasi juknis (nama/NPWP/rekening perusahaan)
+sengaja tidak disalin.
+</Aside>
+
+## Terkait
+
+- [Merekam Supplier Tipe 6](/komitmen/ruh/pencatatan-suplier/suplier-tipe-6/)
+- [Mengimpor Supplier lewat Interkoneksi Langsung SPAN](/komitmen/upload/import-suplier-interkoneksi-span/)
+
+## Sumber
+
+<SumberAsli />

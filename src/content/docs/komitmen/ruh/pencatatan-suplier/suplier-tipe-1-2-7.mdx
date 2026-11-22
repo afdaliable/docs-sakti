@@ -1,0 +1,169 @@
+---
+title: Merekam Supplier Tipe 1, 2, dan 7
+description: Langkah merekam data supplier tipe 1 (satker), 2 (penyedia barang/jasa), dan 7 (lain-lain) secara manual pada modul Komitmen.
+modul: komitmen
+menu_sakti: "Komitmen > RUH > Supplier"
+peran: [satker]
+jenis: juknis
+kata_kunci: [rekam supplier, pencatatan supplier, supplier tipe 2, penyedia barang jasa, nrs, bcsr, adk supplier]
+status: review
+perlu_review: true
+sumber:
+  - judul: "Juknis Perekaman Supplier Tipe 1, 2, dan 7"
+    url: "https://drive.google.com/file/d/1F49QC5a-b9BU5zlhiGs-7vCPYEu1oHyU/view"
+    jenis: pdf
+    diambil: 2026-11-21
+    id_manifest: B-kom-019
+sidebar:
+  order: 1
+---
+
+import { Steps, Aside } from '@astrojs/starlight/components';
+import MenuSakti from '~/components/MenuSakti.astro';
+import SumberAsli from '~/components/SumberAsli.astro';
+
+Perekaman supplier secara manual dilakukan apabila data supplier belum
+pernah didaftarkan pada aplikasi SPAN. Untuk supplier yang sudah pernah
+didaftarkan pada SPAN dan telah memiliki NRS, gunakan mekanisme import
+supplier sesuai petunjuk teknis import supplier interkoneksi langsung
+SPAN.
+
+<MenuSakti />
+
+## Prasyarat
+
+- Role yang dibutuhkan: **Operator Komitmen** untuk perekaman supplier
+  dan **PPK** (role validator) untuk pembentukan ADK.
+- NIP pejabat sudah didaftarkan ke portalsakti agar dapat mengirimkan
+  data supplier.
+
+## Langkah
+
+### Merekam supplier (Operator Komitmen)
+
+<Steps>
+
+1. Login menggunakan user operator komitmen, lalu buka menu **Komitmen
+   > RUH > Supplier** dan klik tombol **Rekam**.
+
+2. Isi **Jenis** dan **Nama Supplier** sesuai data yang tersedia
+   (contoh pada juknis memakai jenis CV), isi data **NPWP** supplier,
+   lalu klik **Simpan** — tab **Supplier Address** akan aktif.
+
+3. Klik nama supplier yang sudah tersimpan pada kolom Cari Supplier,
+   lalu klik tab **Supplier Address**.
+
+4. Klik tombol **Rekam** untuk mengaktifkan kolom isian, lalu lengkapi:
+
+   - Negara, KPPN, dan Provinsi (Provinsi – Kota/Kab – Kecamatan –
+     Kode Pos) dengan memilih dari daftar yang muncul saat menekan
+     tombol **[…]** di samping kolom. Pada form pencarian, pilih
+     kriteria filter (Kode atau Deskripsi), isi kata kunci, klik
+     **Cari**, pilih data, lalu klik **Ok**/**Pilih**.
+   - Alamat dan kontak supplier (email, nomor telepon, fax) diisi
+     manual.
+   - Tipe supplier dipilih dari daftar dropdown: **1 – Satker**,
+     **2 – Penyedia Barang dan Jasa**, atau **7 – lain-lain**.
+
+   Klik **Simpan** — tab **Supplier Bank** akan aktif.
+
+5. Klik kotak kecil di samping data supplier yang tersimpan pada menu
+   Cari Alamat, lalu klik tab **Supplier Bank** di bagian atas kolom.
+
+6. Klik tombol **Rekam**, lalu lengkapi:
+
+   - Negara Asal Bank, Bank, Mata Uang, dan Nama Cabang Bank dipilih
+     pada form pop-up setelah menekan tombol **[…]** (pilih kriteria
+     filter, isi kata kunci, klik **Cari**, pilih data, lalu klik
+     **Ok**/**Pilih**);
+   - Alamat, Detail Cabang Bank, Nomor Rekening, dan Nama Pemilik
+     Rekening diisi manual sesuai data riil supplier;
+   - kolom Kode Swift dan IBAN aktif dan dapat diisi apabila Negara
+     Asal Bank yang dipilih selain Indonesia.
+
+   Klik **Simpan**.
+
+7. Untuk mencetak resume supplier, buka menu **Komitmen > Cetak >
+   Resume Supplier**, klik data supplier yang telah direkam, lalu klik
+   **Unduh**. Teliti kembali data pada hasil cetakan sebelum melanjutkan
+   ke pembentukan ADK.
+
+</Steps>
+
+### Membentuk ADK supplier BCSR (PPK)
+
+<Steps>
+
+1. Login menggunakan user PPK, lalu buka menu **Komitmen > ADK > ADK
+   Supplier Interkoneksi OTP**.
+
+2. Pilih dan centang supplier yang akan dibuatkan ADK-nya, pastikan
+   detail site bank yang akan dibuat ADK sudah dicentang, lalu klik
+   **Proses** untuk melanjutkan ke form OTP.
+
+3. Klik **Req. OTP via SMS** — aplikasi mengirimkan kode OTP via SMS
+   ke nomor HP pejabat (PPK) yang didaftarkan — masukkan kode OTP pada
+   kolom **Masukkan Kode OTP**, lalu klik **Proses**.
+
+</Steps>
+
+Apabila OTP diinput salah sebanyak 3 kali, OTP pejabat akan terblokir;
+apabila OTP sudah di-request sebanyak 3 kali, request ke-4 akan
+dialihkan melalui email pejabat (PPK) yang terdaftar.
+
+### NRS dan monitoring
+
+Setelah ADK supplier berhasil dibuat, data supplier otomatis terkirim ke
+portalsakti pada KPPN mitra kerja untuk diproses pada SPAN. Jika
+pendaftaran berhasil dilakukan KPPN, Nomor Register Supplier (NRS)
+terisi otomatis pada SAKTI, atau dapat direkam manual pada menu
+**Komitmen → Upload/Rekam → Upload/Rekam ADK NRS** (jalur menurut
+juknis):
+
+<Steps>
+
+1. Login dengan user operator komitmen, lalu klik data supplier yang
+   akan dicatat NRS-nya.
+
+2. Isikan NRS sesuai data yang diberikan KPPN pada kolom NRS, lalu
+   klik **Simpan**.
+
+</Steps>
+
+Progress ADK supplier dan kontrak dapat dipantau pada menu **Komitmen
+> Monitoring > ADK Kontrak/Supplier/BAST**: pilih ADK yang akan
+ditampilkan (Semua/Supplier/Kontrak). Informasi yang ditampilkan antara
+lain Deskripsi ADK, Nilai/Site Address, Tanggal Upload, Type ADK,
+Status Upload, File ADK SPAN, Status SPAN, NRS/CAN, dan alasan
+penolakan.
+
+## Hasil yang diharapkan
+
+Supplier tercatat NRS dan dapat digunakan untuk transaksi pembayaran
+SPM, perekaman data kontrak, atau perekaman BAST non kontraktual.
+
+## Ketentuan
+
+- Data supplier yang belum memiliki NRS tidak dapat digunakan untuk
+  pembayaran, perekaman data kontrak, dan perekaman BAST non
+  kontraktual.
+
+<Aside type="caution" title="Perlu verifikasi">
+Juknis menulis jalur **Komitmen > RUH > Pencatatan Supplier** dan
+pencetakan resume pada **Komitmen > Cetak > Cetak Resume Supplier**;
+menu aplikasi saat ini memakai **Komitmen > RUH > Supplier** dan
+**Komitmen > Cetak > Resume Supplier**. Juknis juga menulis pencatatan
+NRS pada **Komitmen > Upload/Rekam > Upload/Rekam ADK NRS**; menu
+aplikasi saat ini tidak memuat **Upload / Rekam** — menu yang paling
+mirip adalah **Komitmen > Monitoring > Nomor Register Supplier
+(NRS)**, perlu dipastikan.
+</Aside>
+
+## Terkait
+
+- [Mengimpor Supplier lewat Interkoneksi Langsung SPAN](/komitmen/upload/import-suplier-interkoneksi-span/)
+- [Membuat ADK BCSU](/komitmen/adk/adk-bcsu/)
+
+## Sumber
+
+<SumberAsli />

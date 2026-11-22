@@ -1,0 +1,253 @@
+---
+title: Merekam Supplier Tipe 3
+description: Merekam dan memperbarui data supplier tipe 3 (pegawai) yang bersumber dari aplikasi Gaji Web, ADK GPP desktop, atau ADK supplier tipe 3 manual.
+modul: komitmen
+menu_sakti: "Komitmen > RUH > Supplier"
+peran: [satker]
+jenis: juknis
+kata_kunci: [supplier tipe 3, supplier pegawai, import gpp terpusat, adk pegawai, suppr, suppu, gaji web]
+status: review
+perlu_review: true
+sumber:
+  - judul: "Petunjuk Teknis Aplikasi SAKTI — Data Supplier Tipe 3"
+    url: "https://drive.google.com/file/d/1Ig1RcWWD4eMwmw0WXr8ROdnjGB5mxTih/view"
+    jenis: pdf
+    diambil: 2026-11-21
+    id_manifest: B-kom-001
+  - judul: "Juknis Pemindahan Pengelolaan dan Perekaman Supplier Tipe 3"
+    url: "https://drive.google.com/file/d/1miwCIZkDL_QXlhmWEgfoKuuSyrXg9t-a/view"
+    jenis: pdf
+    diambil: 2026-11-21
+    id_manifest: B-kom-015
+sidebar:
+  order: 2
+---
+
+import { Steps, Aside } from '@astrojs/starlight/components';
+import MenuSakti from '~/components/MenuSakti.astro';
+import SumberAsli from '~/components/SumberAsli.astro';
+
+Tipe supplier **3 – Pegawai** digunakan untuk pembayaran yang ditujukan
+kepada pegawai (PNS/TNI/POLRI/PPPK). Data supplier tipe 3 pada aplikasi
+SAKTI menggunakan *single database*: data pegawai yang sudah terinput
+tersaji secara nasional ke satker lain yang menggunakannya, sehingga
+perubahan data oleh satu satker memengaruhi data supplier pegawai
+terkait di satker lain.
+
+Perekaman data supplier tipe 3 dilakukan pada supplier header yang sama
+dengan data supplier tipe 1 (bendahara/satker); pastikan supplier header
+yang digunakan sudah berjenis SATKER.
+
+<MenuSakti />
+
+## Prasyarat
+
+- Role yang dibutuhkan: **Operator Komitmen** (perekaman) dan **PPK**
+  (pembentukan ADK).
+- Supplier header satuan kerja sudah mendapatkan Nomor Register
+  Supplier (NRS) dari SPAN.
+- Data pegawai sudah tersedia dari salah satu sumber: aplikasi Gaji
+  Web, ADK aplikasi GPP desktop, atau ADK supplier tipe 3 manual.
+
+## Sumber data supplier tipe 3
+
+- **Aplikasi Gaji Web** — bila data pegawai digunakan pada pengajuan
+  gaji (induk/susulan/kekurangan/dsb), uang makan/lembur, atau tunjangan
+  kinerja yang diinput pada aplikasi Gaji Web.
+- ADK aplikasi GPP desktop — bila data pegawai masih diinput pada
+  aplikasi GPP desktop (file `KOM...zip`).
+- **ADK supplier tipe 3 manual** — bila pembayaran ke pegawai tidak
+  dihitung menggunakan aplikasi gaji. Petunjuk teknis pembuatan ADK
+  manual dapat diakses melalui
+  [https://linktr.ee/CSVSAKTI](https://linktr.ee/CSVSAKTI) — baca
+  petunjuk teknis CSV Supplier tipe 3 generator terlebih dahulu sebelum
+  menggunakannya.
+
+## Langkah
+
+### Impor data pegawai
+
+Pilih salah satu mekanisme sesuai sumber data:
+
+**Via Import GPP Terpusat** — menarik data pegawai yang sudah diinput
+dan dibuatkan rekon pengujian gaji pada aplikasi Gaji Web:
+
+<Steps>
+
+1. Masuk ke menu **Komitmen > Upload / Import > Import GPP Terpusat**.
+
+2. Pada form impor, pilih **Jenis Pegawai**, **Jenis Data**, **Bulan
+   Tahun Gaji**, dan **Nomor Gaji**.
+
+3. Klik tombol **Import Data Pegawai** — SAKTI mengimpor data pegawai
+   yang ada pada pengujian gaji terkait.
+
+4. Setelah muncul notifikasi berhasil impor, lanjutkan ke pencatatan
+   data supplier pegawai pada menu Supplier.
+
+</Steps>
+
+**Via ADK GPP desktop** — ADK supplier tipe 3 dibentuk melalui aplikasi
+GPP desktop (file `KOMxxxxxxxxxxxxx.zip`):
+
+<Steps>
+
+1. Masuk ke menu **Komitmen > Upload / Import > Upload Data Pegawai**.
+
+2. Klik tombol **Cari**, arahkan ke file ADK terkait dan pilih.
+
+3. Klik tombol **Upload**; setelah muncul notifikasi berhasil,
+   lanjutkan ke pencatatan data supplier pegawai pada menu Supplier.
+
+</Steps>
+
+**Via ADK supplier tipe 3 manual** — bila satker tidak menggunakan
+aplikasi gaji: unggah ADK yang terbentuk (`SUPPRxxxxxx.zip` untuk
+menambah data, `SUPPUxxxxxx.zip` untuk mengupdate data) melalui menu
+**Komitmen > Upload / Import > Upload Data Pegawai** dengan langkah
+yang sama seperti ADK GPP desktop di atas.
+
+### Mencatat data supplier pegawai
+
+<Steps>
+
+1. Buka menu **Komitmen > RUH > Supplier**.
+
+2. Pilih supplier header yang sama dengan supplier tipe 1
+   (bendahara/satker).
+
+3. Klik tab **Supplier Address**, pilih supplier address tipe 3
+   (lakukan perekaman apabila belum ada).
+
+4. Klik tab **Supplier Pegawai**, lalu klik **Rekam** sehingga form
+   perekaman aktif.
+
+5. Klik tombol **[…]** di sebelah kanan kolom NIP — daftar data
+   pegawai hasil impor ditampilkan.
+
+6. Centang data pegawai yang akan direkam, lalu klik **Pilih** — data
+   supplier pegawai otomatis tersimpan.
+
+7. Lanjutkan dengan pendaftaran supplier ke KPPN mitra kerja
+   (pembentukan ADK oleh user PPK) agar tidak terjadi penolakan karena
+   supplier belum terdaftar.
+
+</Steps>
+
+### Pegawai pindah satker (aplikasi GPP)
+
+Menurut juknis 2022, pemindahan data pegawai antar satker dilakukan di
+aplikasi GPP (langkah-langkah berikut dilakukan pada aplikasi GPP,
+bukan SAKTI):
+
+- **Satker asal**: buat ADK pegawai pindah melalui menu Pegawai →
+  Kirim Pegawai Pindah; pilih semua pegawai yang akan dipindah. Terbentuk
+  ADK pindah untuk masing-masing pegawai (ekstensi `.pnd`) yang
+  dikirimkan ke satker baru.
+- **Satker baru**: bila perlu, buat anak satker baru melalui menu
+  Setting → Setting Referensi Anak Satker dan setting anak satker
+  tujuan pegawai. Restore ADK pegawai pindah melalui menu Pegawai →
+  Terima Data Pegawai Pindah (pegawai masuk ke anak satker yang
+  ter-default). Isikan status kawin awal tahun (menu Pegawai → Status
+  Kawin Awal Tahun) dan nomor urut pegawai (menu Pegawai → Nomor Urut
+  Pegawai); setelah itu proses gaji siap dijalankan.
+
+### Mengupdate data supplier tipe 3
+
+<Steps>
+
+1. Lakukan impor data pegawai melalui **Import GPP Terpusat** (bila
+   update dilakukan di aplikasi Gaji Web) atau unggah ADK update
+   `SUPPUxxxxxx.zip` (bila tidak menggunakan aplikasi Gaji Web). Data
+   pegawai pada modul Komitmen akan ditimpa dengan data hasil impor,
+   dengan catatan tidak ada perubahan kode bank dan nomor rekening.
+
+2. Buka **Komitmen > RUH > Supplier**, pilih supplier header terkait,
+   klik tab **Supplier Address**, pilih address tipe 3, lalu klik tab
+   **Supplier Pegawai**.
+
+3. Pilih data pegawai yang akan diupdate, klik **Ubah**, cek kembali
+   kesesuaian data, lalu klik **Simpan** — status data berubah dari
+   **Register** menjadi **Ubah**.
+
+4. Lanjutkan pembentukan ADK oleh user PPK; pada user PPK pastikan
+   memilih jenis data **Ubah** sehingga yang terbentuk adalah ADK
+   Update Supplier (BCSU). Status data supplier kembali menjadi
+   **Register** setelah ADK berhasil dibentuk.
+
+</Steps>
+
+## Masalah umum
+
+<details>
+<summary>Data supplier tipe 3 kosong padahal pegawai sudah diimpor</summary>
+
+Terjadi bila ada lebih dari satu supplier header berjenis SATKER.
+Pengguna agar segera menghapus supplier header yang tidak digunakan;
+apabila penghapusan tidak dapat dilakukan, buatkan tiket ke HAI DJPb.
+Solusi sementara: keluar dari form Supplier, buka ulang form, pilih
+supplier header yang sesuai, klik tab Supplier Address lalu Supplier
+Pegawai. Ulangi buka-tutup form bila berpindah supplier header lain,
+karena data dapat tampak tidak berubah bila form tidak dibuka ulang.
+
+</details>
+
+<details>
+<summary>Pegawai tidak muncul pada daftar yang belum direkam</summary>
+
+Bila data pegawai sudah ada pada tab Supplier Pegawai, saat impor/unggah
+ADK pegawai berikutnya data tersebut tidak akan muncul pada daftar
+pegawai yang belum direkam. Cek kembali data supplier terkait pada tab
+Supplier Pegawai.
+
+</details>
+
+<details>
+<summary>Data supplier tipe 3 berubah sendiri</summary>
+
+Data supplier tipe 3 memakai konsep *single database* dengan kode bank
+dan nomor rekening (site bank) sebagai data utama. Bila pegawai
+diperbantukan di satker lain atau menerima pembayaran hak dari beberapa
+instansi (misalnya gaji dibayarkan satker A dan uang makan dibayarkan
+satker B), perubahan data oleh satu satker memengaruhi data di instansi
+lain. Pengguna agar berkoordinasi dengan instansi/satker lain sehingga
+menggunakan data yang sama.
+
+</details>
+
+<details>
+<summary>Gagal mengunggah ADK supplier tipe 3</summary>
+
+Pada form Upload ADK Pegawai, notifikasi berhasil dapat muncul tetapi
+data pegawai tidak tampil pada form supplier karena ada ketidaksesuaian
+data pada ADK — misalnya nomor rekening memakai tanda pemisah, ada
+spasi sebelum/sesudah karakter separator (`|`), atau digit NPWP kurang
+sesuai. Penyelesaian: cek kembali ADK yang diunggah dan pastikan datanya
+sudah sesuai.
+
+</details>
+
+## Ketentuan
+
+- Data supplier yang belum memiliki NRS tidak dapat digunakan untuk
+  data pembayaran.
+
+<Aside type="caution" title="Perlu verifikasi">
+Juknis 2022 menulis pengunggahan ADK pegawai melalui **Komitmen → ADK
+→ ADK Data Pegawai**, sedangkan juknis Desember 2024 menulis unggah
+ADK pegawai/supplier tipe 3 pada **Komitmen > Upload / Import >
+Upload Data Pegawai** — artikel ini mengikuti versi 2024. Juknis juga
+menulis form supplier sebagai "Pencatatan Supplier"; menu aplikasi saat
+ini adalah **Komitmen > RUH > Supplier**. Langkah pemindahan pegawai
+pindah satker berasal dari juknis 2022 dan dilakukan pada aplikasi GPP.
+</Aside>
+
+## Terkait
+
+- [Mengimpor Data GPP Terpusat (Interkoneksi KPPN)](/komitmen/upload/import-gpp-terpusat/)
+- [Membuat ADK Supplier Tipe 3 secara Manual](/komitmen/adk/import-suplier-adk/)
+- [Merekam Supplier Tipe 1, 2, dan 7](/komitmen/ruh/pencatatan-suplier/suplier-tipe-1-2-7/)
+
+## Sumber
+
+<SumberAsli />

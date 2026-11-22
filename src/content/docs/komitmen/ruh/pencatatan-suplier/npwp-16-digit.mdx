@@ -1,0 +1,191 @@
+---
+title: Menggunakan NPWP 16 Digit pada Data Supplier
+description: Pemadanan dan perekaman manual NPWP 16 digit pada data supplier serta penyesuaian kontrak pasca implementasi.
+modul: komitmen
+menu_sakti: "Komitmen > RUH > Supplier"
+peran: [satker]
+jenis: juknis
+kata_kunci: [npwp 16 digit, nik sebagai npwp, pemadanan npwp, bcsu, supplier]
+status: review
+perlu_review: true
+sumber:
+  - judul: "Nota Dinas — Petunjuk Teknis Implementasi NPWP 16 Digit pada SAKTI (Lampiran II)"
+    url: "https://drive.google.com/file/d/1Zl39XPKlCXFVVLNmXOKGkSVPgTDnh41N/view"
+    jenis: pdf
+    diambil: 2026-11-21
+    id_manifest: B-kom-004
+sidebar:
+  order: 6
+---
+
+import { Steps, Aside } from '@astrojs/starlight/components';
+import MenuSakti from '~/components/MenuSakti.astro';
+import SumberAsli from '~/components/SumberAsli.astro';
+
+Dalam rangka mendukung penerapan NPWP 16 digit (berdasarkan antara lain
+UU HPP dan PMK 136 Tahun 2023), pada aplikasi SAKTI dilakukan pemadanan
+NPWP secara terpusat: NPWP lama (15 digit) dicek ke sistem DJP dan data
+NPWP 16 digit ditarik. Supplier yang sudah memperoleh NPWP 16 digit
+tidak perlu didaftarkan ulang. Apabila pemadanan tidak menemukan NPWP
+16 digit, pengguna wajib menginput NPWP 16 digit secara manual dan
+melanjutkan pendaftaran supplier ke KPPN mitra kerja.
+
+<MenuSakti />
+
+## Alur pemadanan per tipe supplier
+
+- **Tipe 1, 2, dan 7** — pemadanan dilakukan terpusat pada level
+  Supplier Header. Bila hasilnya *unmatch*, pengguna merekam NPWP 16
+  digit manual pada supplier header terkait lalu membentuk ADK untuk
+  diproses KPPN.
+- **Tipe 3** — pemadanan dilakukan pada aplikasi Gaji satker; bila
+  tidak ditemukan, update manual di aplikasi Gaji lalu lakukan impor
+  pada SAKTI. Bila data supplier tipe 3 tidak bersumber dari aplikasi
+  gaji, gunakan ADK pegawai manual (`SUPPUxxxxxxyyyymmdd.zip`). Atas
+  penyesuaian, lanjutkan pembentukan ADK update (BCSU).
+- **Tipe 6** — pemadanan terpusat pada tab Supplier Banyak Penerima;
+  bila tidak ditemukan, update lewat input manual atau ADK update data
+  supplier, lalu bentuk ADK BCSU.
+- **Tipe 4 dan 5** — pemadanan dilakukan terpusat pada SAKTI dan SPAN;
+  bila tidak ditemukan, user SPAN menginput manual di SPAN dan
+  pengguna SAKTI melakukan impor data supplier melalui interkoneksi
+  SPAN.
+
+## Langkah
+
+### Perekaman NPWP 16 digit pada supplier header
+
+Bila pemadanan pada level supplier header gagal, kolom NRS, NPWP, dan
+Kode Supplier pada tab Supplier Header menjadi kosong sehingga perlu
+direkam manual:
+
+<Steps>
+
+1. Pilih Supplier Header terkait, lalu klik tombol **Ubah**.
+
+2. Masukkan NPWP 16 digit supplier terkait pada kolom NPWP — kolom
+   Kode Supplier terbentuk otomatis setelah NPWP diinput — lalu klik
+   **Simpan**.
+
+3. Lanjutkan dengan pendaftaran supplier ke KPPN mitra kerja. Kolom
+   NRS otomatis terisi setelah pendaftaran berhasil diproses KPPN;
+   apabila NRS tidak terupdate otomatis, pengguna dapat mencatat NRS
+   secara manual.
+
+</Steps>
+
+### Perekaman NPWP 16 digit pada supplier pegawai (tipe 3)
+
+**Update melalui Interkoneksi GPP Terpusat** — bila data pegawai sudah
+diupdate NPWP 16 digit pada aplikasi Gaji Terpusat tetapi pemadanan di
+SAKTI gagal:
+
+<Steps>
+
+1. Masuk ke menu **Komitmen > Upload / Import > Import GPP Terpusat**
+   dan lakukan impor data pegawai.
+
+2. Buka menu **Supplier**, pilih Supplier Header terkait, pindah ke
+   tab **Supplier Address**, pilih address tipe 3, lalu pindah ke tab
+   **Supplier Pegawai**.
+
+3. Pilih pegawai yang akan diupdate NPWP-nya, klik **Ubah** lalu
+   **Simpan** — status supplier berubah menjadi **Ubah**.
+
+4. Lanjutkan pembentukan ADK BCSU melalui user PPK.
+
+</Steps>
+
+**Update melalui ADK supplier manual (SUPPxxxxxx)** — bila data
+pegawai tidak bersumber dari aplikasi gaji web:
+
+<Steps>
+
+1. Bentuk ADK supplier manual dengan penamaan
+   `SUPPUxxxxxxyyyymmdd.zip` (xxxxxx = kode satker, yyyy = tahun
+   anggaran, mm = bulan pembuatan ADK, dd = tanggal pembuatan ADK).
+   Pembentukan ADK dapat berpedoman pada petunjuk teknis terkait di
+   [https://linktr.ee/CSVSAKTI](https://linktr.ee/CSVSAKTI).
+
+2. Unggah ADK SUPPU melalui menu **Komitmen > Upload / Import >
+   Upload Data Pegawai**.
+
+3. Setelah berhasil, lakukan pengecekan kesesuaian data pada form
+   Supplier, lalu lanjutkan pembentukan ADK BCSU melalui user PPK.
+
+</Steps>
+
+### Perekaman NPWP 16 digit pada supplier banyak penerima (tipe 6)
+
+**Update secara manual:**
+
+<Steps>
+
+1. Masuk ke menu **Komitmen > RUH > Supplier**, pilih supplier header
+   terkait.
+
+2. Pindah ke tab **Supplier Address**, pilih address terkait (supplier
+   tipe 6), klik tab **Supplier Banyak Penerima**, lalu pilih supplier
+   yang akan diupdate NPWP 16 digit-nya.
+
+3. Klik **Ubah**, input NPWP 16 digit pada kolom NPWP, centang
+   checkbox **Ubah (BCSU)**, lalu klik **Simpan** — status data
+   berubah dari **Register** menjadi **Ubah**.
+
+4. Lanjutkan pembentukan ADK BCSU melalui user PPK.
+
+</Steps>
+
+**Update menggunakan ADK:**
+
+<Steps>
+
+1. Lakukan pembentukan ADK supplier banyak penerima.
+
+2. Masuk ke menu Supplier, tab **Supplier Banyak Penerima**, klik
+   tombol **Upload Excel** dan pilih **Update Status Data**.
+
+3. Pilih file ADK terkait; setelah upload berhasil, lanjutkan
+   pembentukan ADK BCSU melalui user PPK.
+
+</Steps>
+
+## Penyesuaian data kontrak
+
+Pasca implementasi NPWP 16 digit, pengguna agar menyesuaikan data
+kontrak agar memakai supplier dengan NPWP 16 digit. Bila pemadanan
+terpusat berhasil, tidak perlu tindakan apa pun karena data supplier
+pada kontrak di sisi SAKTI maupun SPAN sudah terupdate dan sama. Bila
+update dilakukan manual:
+
+- **Kontrak Multi Years** — lanjutkan pendaftaran supplier ke KPPN,
+  dilanjutkan proses *merge* supplier sehingga data supplier lama
+  (NPWP 15 digit) dilebur ke data supplier baru (NPWP 16 digit).
+- **Kontrak Pra DIPA / RPATA** — lanjutkan pendaftaran supplier ke
+  KPPN, kemudian ubah data kontrak terkait. Untuk kontrak Pra DIPA
+  lanjutkan pendaftaran kontrak ke KPPN; untuk RPATA lanjutkan
+  perekaman BAST RPATA-nya.
+
+## Monitoring pemadanan
+
+Pengecekan data supplier atas pemadanan terpusat dapat dilakukan pada
+fitur Monitoring Data Pemadanan NPWP 16 Digit melalui menu **Komitmen
+→ Monitoring Data Pemadanan NPWP 16 Digit** (jalur menurut juknis).
+
+<Aside type="caution" title="Perlu verifikasi">
+Juknis menulis menu monitoring pada **Komitmen → Monitoring Data
+Pemadanan NPWP 16 Digit**; menu aplikasi saat ini tidak memuat simpul
+tersebut, perlu dipastikan. Petunjuk teknis ini merupakan lampiran nota
+dinas; bagian nota dinas pengantar, lampiran implementasi pada SPAN,
+dan paparan mitigasi sengaja tidak dimasukkan.
+</Aside>
+
+## Terkait
+
+- [Merekam Supplier Tipe 3](/komitmen/ruh/pencatatan-suplier/suplier-tipe-3/)
+- [Merekam Supplier Tipe 6](/komitmen/ruh/pencatatan-suplier/suplier-tipe-6/)
+- [Mengimpor Data GPP Terpusat (Interkoneksi KPPN)](/komitmen/upload/import-gpp-terpusat/)
+
+## Sumber
+
+<SumberAsli />

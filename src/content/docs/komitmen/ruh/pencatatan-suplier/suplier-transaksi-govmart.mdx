@@ -1,0 +1,131 @@
+---
+title: Merekam Supplier pada Transaksi Govmart
+description: Merekam supplier tipe 6 beserta banyak penerima untuk pembayaran belanja lewat Govmart.
+modul: komitmen
+menu_sakti: "Komitmen > RUH > Supplier"
+peran: [satker]
+jenis: juknis
+kata_kunci: [govmart, supplier tipe 6, supplier banyak penerima, inaproc]
+status: review
+perlu_review: true
+sumber:
+  - judul: "Juknis Perekaman Supplier pada Transaksi melalui Govmart"
+    url: "https://drive.google.com/file/d/1pRTrCG3IuBhBZ8FGLVq0GqzHTbHWmHhv/view"
+    jenis: pdf
+    diambil: 2026-11-21
+    id_manifest: B-kom-005
+sidebar:
+  order: 5
+---
+
+import { Steps, Aside } from '@astrojs/starlight/components';
+import MenuSakti from '~/components/MenuSakti.astro';
+import SumberAsli from '~/components/SumberAsli.astro';
+
+Pembayaran transaksi Govmart menggunakan supplier tipe 6 dengan dua
+penerima pada tab Supplier Banyak Penerima: rekening penyedia sesuai
+data yang terdaftar pada Inaproc dan rekening PT Telkom.
+
+<MenuSakti />
+
+## Langkah
+
+### Merekam supplier (Operator Komitmen)
+
+<Steps>
+
+1. Login aplikasi SAKTI menggunakan user operator komitmen, masuk ke
+   menu **Komitmen > RUH > Supplier**, lalu klik **Rekam**.
+
+2. Pilih jenis supplier **Lainnya Badan Usaha**, tuliskan nama header
+   yang akan direkam, isi nomor NPWP supplier, lalu klik **Simpan**.
+
+3. Pilih data supplier yang baru direkam, lalu klik tab **Supplier
+   Address**.
+
+4. Klik **Rekam**, lalu lengkapi:
+
+   - klik tombol **[…]** di sebelah kanan kolom **Negara**, isi kata
+     kunci pencarian "ID" dengan filter Kode pada pop-up yang muncul;
+   - klik **[…]** di sebelah kanan kolom **KPPN** dan isikan kode KPPN
+     yang menjadi tempat bayar satker Anda;
+   - isi **alamat** menggunakan alamat satker;
+   - klik **[…]** di sebelah kanan kolom **Provinsi** dan isikan kode
+     pos satker Anda (pastikan filter pencarian yang digunakan adalah
+     Kode Pos);
+   - isi data email, nomor telepon, dan fax satker;
+   - pilih tipe supplier **6 – Penerusan Pinjaman**, lalu klik
+     **Simpan**.
+
+5. Centang supplier tipe 6 (penerusan pinjaman) yang telah berhasil
+   direkam, lalu klik tab **Supplier Banyak Penerima**.
+
+6. Klik **Rekam**, lalu lengkapi informasi penerima dengan menginput
+   secara manual Nama Penerima, NPWP, Alamat, Negara, Provinsi,
+   Kota/Kabupaten, Bank, Mata Uang, Nomor Rekening, dan Nama Pemilik
+   Rekening.
+
+7. Rekam informasi 2 penerima: data rekening penyedia sesuai data yang
+   terdaftar pada Inaproc, dan data rekening PT Telkom; kemudian klik
+   **Simpan**.
+
+</Steps>
+
+<Aside type="caution" title="Perhatian">
+Buat header supplier baru — **jangan** menggabungkan ke header supplier
+tipe 3 dan/atau tipe 1.
+</Aside>
+
+### Membentuk ADK supplier BCSR (PPK)
+
+<Steps>
+
+1. Login menggunakan user PPK, masuk ke menu **Komitmen > ADK > ADK
+   Supplier Interkoneksi OTP**.
+
+2. Pilih dan centang supplier yang ingin dibuat ADK; cek kembali data
+   pada daftar **Detail Site Bank** untuk memastikan data yang akan
+   didaftarkan sudah sesuai, lalu klik **Proses** untuk mengaktifkan
+   form OTP.
+
+3. Klik **Req. OTP via SMS** — kode OTP dikirim ke nomor HP pejabat
+   (PPK) — masukkan kode OTP yang diterima, lalu klik **Proses**.
+
+</Steps>
+
+Setelah ADK supplier berhasil, ADK langsung terkirim ke portalsakti
+KPPN; setelah berhasil diproses pada aplikasi SPAN, supplier
+mendapatkan Nomor Register Supplier (NRS) dan SAKTI mengupdate NRS
+secara otomatis.
+
+## Hasil yang diharapkan
+
+Supplier tipe 6 tercatat dan dapat digunakan pada transaksi Catat/Ubah
+SPP untuk pembayaran Govmart.
+
+## Ketentuan
+
+- Data supplier yang belum memiliki NRS tidak dapat digunakan untuk
+  data pembayaran.
+- Nomor rekening dummy hanya digunakan untuk transaksi yang tidak
+  menghasilkan transfer dana secara riil.
+- SPM hanya dapat membawa satu informasi Supplier Header dan satu
+  informasi Supplier Address.
+
+<Aside type="caution" title="Perlu verifikasi">
+Juknis menulis jalur **Komitmen → RUH → Supplier** (sudah sesuai menu
+aplikasi saat ini) dan pembentukan ADK pada **Komitmen → ADK → ADK
+Supplier Interkoneksi OTP**. Poin "Informasi Penting Lainnya" juknis
+menyebut perekaman "SPMKP Kompensasi"; pada konteks Govmart ketentuan
+tersebut dipahami sebagai ketentuan umum satu header–satu address.
+</Aside>
+
+## Terkait
+
+- [Merekam Transaksi Govmart dengan Pembayaran LS](/komitmen/ruh/govmart-ls/)
+- [Merekam Transaksi Govmart dengan UP/KKP](/komitmen/ruh/govmart-up-kkp/)
+- [Merekam Supplier Tipe 6](/komitmen/ruh/pencatatan-suplier/suplier-tipe-6/)
+
+## Sumber
+
+<SumberAsli />

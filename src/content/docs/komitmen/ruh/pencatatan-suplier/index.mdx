@@ -1,0 +1,48 @@
+---
+title: Supplier
+description: Panduan perekaman data supplier pada modul Komitmen.
+modul: komitmen
+jenis: indeks
+status: terbit
+sidebar:
+  label: Ringkasan
+  order: 1
+---
+
+import { CardGrid, LinkCard } from '@astrojs/starlight/components';
+
+Sub-menu ini berisi panduan perekaman data supplier berbagai tipe pada
+aplikasi SAKTI.
+
+<CardGrid>
+	<LinkCard
+		title="Merekam Supplier Tipe 1, 2, dan 7"
+		description="Merekam supplier satker, penyedia barang/jasa, dan lain-lain secara manual."
+		href="/komitmen/ruh/pencatatan-suplier/suplier-tipe-1-2-7/"
+	/>
+	<LinkCard
+		title="Merekam Supplier Tipe 3"
+		description="Merekam supplier pegawai dari aplikasi gaji atau ADK manual."
+		href="/komitmen/ruh/pencatatan-suplier/suplier-tipe-3/"
+	/>
+	<LinkCard
+		title="Merekam Supplier Tipe 6"
+		description="Merekam supplier PPNPN/penerusan pinjaman dari ADK aplikasi SAS."
+		href="/komitmen/ruh/pencatatan-suplier/suplier-tipe-6/"
+	/>
+	<LinkCard
+		title="Merekam Supplier untuk SPM-KP Kompensasi"
+		description="Menata supplier tipe 6 dan banyak penerima untuk SPM-KP kompensasi."
+		href="/komitmen/ruh/pencatatan-suplier/suplier-spm-kp-kompensasi/"
+	/>
+	<LinkCard
+		title="Merekam Supplier pada Transaksi Govmart"
+		description="Merekam supplier tipe 6 untuk pembayaran belanja lewat Govmart."
+		href="/komitmen/ruh/pencatatan-suplier/suplier-transaksi-govmart/"
+	/>
+	<LinkCard
+		title="Menggunakan NPWP 16 Digit pada Data Supplier"
+		description="Memadankan dan merekam NPWP 16 digit pada data supplier."
+		href="/komitmen/ruh/pencatatan-suplier/npwp-16-digit/"
+	/>
+</CardGrid>

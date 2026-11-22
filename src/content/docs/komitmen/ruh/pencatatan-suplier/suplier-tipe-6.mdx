@@ -1,0 +1,149 @@
+---
+title: Merekam Supplier Tipe 6
+description: Merekam supplier tipe 6 (PPNPN/penerusan pinjaman) secara manual menggunakan ADK dari aplikasi SAS.
+modul: komitmen
+menu_sakti: "Komitmen > RUH > Supplier"
+peran: [satker]
+jenis: juknis
+kata_kunci: [supplier tipe 6, ppnpn, penerusan pinjaman, adk sas, supplier banyak penerima]
+status: review
+perlu_review: true
+sumber:
+  - judul: "Juknis Perekaman Data Supplier Tipe 6 - PPNPN"
+    url: "https://drive.google.com/file/d/1YRvyK8JOQBO_XozeMJ2FKY-DxUtswEmw/view"
+    jenis: pdf
+    diambil: 2026-11-21
+    id_manifest: B-kom-020
+sidebar:
+  order: 3
+---
+
+import { Steps, Aside } from '@astrojs/starlight/components';
+import MenuSakti from '~/components/MenuSakti.astro';
+import SumberAsli from '~/components/SumberAsli.astro';
+
+Supplier tipe 6 – PPNPN (penerusan pinjaman) dapat direkam dengan dua
+cara: impor data supplier yang sudah terdaftar pada SPAN dan memiliki
+NRS (mengikuti petunjuk teknis import supplier interkoneksi langsung
+SPAN), atau perekaman manual menggunakan ADK excel dari aplikasi SAS.
+
+<MenuSakti />
+
+## Langkah
+
+### Membuat ADK PPNPN (aplikasi SAS)
+
+Langkah berikut dilakukan pada aplikasi SAS menurut juknis, menggunakan
+user PPK:
+
+<Steps>
+
+1. Login aplikasi SAS menggunakan user PPK, masuk ke menu PPNPN →
+   Utiliti → Kirim ADK Satker Pengguna SAKTI.
+
+2. Pilih daftar pembayaran PPNPN yang berisikan data PPNPN yang akan
+   diinput sebagai supplier, lalu klik **Kirim ADK**.
+
+3. Klik tombol **…** dan pilih folder tujuan untuk menyimpan ADK.
+
+4. Pilih opsi **ADK Supplier SAKTI**, lalu klik **Proses**.
+
+</Steps>
+
+### Merekam supplier pada SAKTI (Operator Komitmen)
+
+<Steps>
+
+1. Login aplikasi SAKTI menggunakan user operator komitmen, masuk ke
+   menu **Komitmen > RUH > Supplier**, lalu klik **Rekam**.
+
+2. Pilih jenis supplier **perorangan**, tuliskan nama header supplier
+   PPNPN yang akan direkam, isi nomor NPWP supplier, lalu klik
+   **Simpan**.
+
+3. Pilih data supplier yang baru direkam, lalu klik tab **Supplier
+   Address**.
+
+4. Klik **Rekam**, lalu lengkapi:
+
+   - klik tombol **[…]** di sebelah kanan kolom **Negara**, isi kata
+     kunci pencarian "ID" dengan filter Kode pada pop-up yang muncul;
+   - klik **[…]** di sebelah kanan kolom **KPPN** dan isikan kode KPPN
+     tempat bayar satker Anda;
+   - isi **alamat** menggunakan alamat satker;
+   - klik **[…]** di sebelah kanan kolom **Provinsi** dan isikan kode
+     pos satker Anda (pastikan filter pencarian yang digunakan adalah
+     Kode Pos);
+   - isi data email, nomor telepon, dan fax satker Anda;
+   - pilih tipe supplier **6 – Penerusan Pinjaman**, lalu klik
+     **Simpan**.
+
+5. Centang supplier tipe 6 (penerusan pinjaman) yang telah berhasil
+   direkam, lalu klik tab **Supplier Banyak Penerima**.
+
+6. Klik **Upload**, pilih ADK Supplier PPNPN yang telah dibuat dari
+   aplikasi SAS, lalu klik **Open**. Apabila berhasil, muncul notifikasi
+   berhasil upload dan nama-nama pegawai PPNPN tampil pada daftar Cari
+   Supplier Penerus Pinjaman.
+
+</Steps>
+
+<Aside type="caution" title="Perhatian">
+Buat header supplier baru — **jangan** menggabungkan ke header supplier
+tipe 3 dan/atau tipe 1.
+</Aside>
+
+### Membentuk ADK supplier BCSR (PPK)
+
+<Steps>
+
+1. Login menggunakan user PPK, masuk ke menu **Komitmen > ADK > ADK
+   Supplier Interkoneksi OTP**.
+
+2. Pilih dan centang supplier yang ingin dibuat ADK; cek kembali data
+   pada daftar **Detail Site Bank** untuk memastikan data yang akan
+   didaftarkan sudah sesuai.
+
+3. Klik **Proses** untuk mengaktifkan form OTP.
+
+4. Klik **Req. OTP via SMS** — kode OTP dikirim ke nomor HP pejabat
+   (PPK) — masukkan kode OTP yang diterima, lalu klik **Proses**.
+
+</Steps>
+
+### NRS
+
+Setelah ADK supplier berhasil, ADK langsung terkirim ke portalsakti
+KPPN. Setelah berhasil diproses pada aplikasi SPAN, supplier
+mendapatkan Nomor Register Supplier (NRS) dan SAKTI mengupdate NRS
+secara otomatis. Apabila NRS tidak terupdate otomatis, user dapat
+melakukan update NRS manual melalui user operator pada menu **Komitmen
+→ Upload / Rekam → Upload / Rekam ADK NRS** (jalur menurut juknis).
+
+## Hasil yang diharapkan
+
+Data supplier tipe 6 dapat digunakan untuk pembuatan SPP (SPP LS Non
+Kontraktual dengan supplier tipe 6); resume supplier dapat dicetak.
+
+## Ketentuan
+
+- Data supplier yang belum memiliki NRS tidak dapat digunakan untuk
+  data pembayaran.
+
+<Aside type="caution" title="Perlu verifikasi">
+Juknis menulis jalur **Komitmen → RUH → Pencatatan Supplier** dan
+pencatatan NRS pada **Komitmen → Upload / Rekam → Upload / Rekam ADK
+NRS**; menu aplikasi saat ini memakai **Komitmen > RUH > Supplier** dan
+tidak memuat simpul **Upload / Rekam** — menu yang paling mirip adalah
+**Komitmen > Monitoring > Nomor Register Supplier (NRS)**, perlu
+dipastikan.
+</Aside>
+
+## Terkait
+
+- [Mengimpor Supplier lewat Interkoneksi Langsung SPAN](/komitmen/upload/import-suplier-interkoneksi-span/)
+- [Merekam Supplier untuk SPM-KP Kompensasi](/komitmen/ruh/pencatatan-suplier/suplier-spm-kp-kompensasi/)
+
+## Sumber
+
+<SumberAsli />
