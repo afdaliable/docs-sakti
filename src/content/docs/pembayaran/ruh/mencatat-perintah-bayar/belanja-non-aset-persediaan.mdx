@@ -1,0 +1,200 @@
+---
+title: Mencatat Perintah Bayar untuk Belanja Non Aset/Persediaan
+description: Mencatat perintah bayar (SPBy) untuk belanja jasa yang tidak membentuk aset/persediaan, dari referensi wajib pajak sampai validasi PPK.
+modul: pembayaran
+menu_sakti: "Pembayaran > RUH Pembayaran > Mencatat Perintah Bayar"
+peran: [satker]
+jenis: juknis
+kata_kunci: [perintah bayar, spby, belanja non aset, kuitansi, bendahara]
+status: review
+perlu_review: true
+sumber:
+  - judul: "2021--Juknis Mencatat Perintah Bayar untuk Belanja Non Aset-Persediaan"
+    url: "https://drive.google.com/file/d/1O9QAibyN28C3w-zCNHLKnCDw1-9Hdw9j/view"
+    jenis: pdf
+    diambil: 2026-11-21
+    id_manifest: B-ben-002
+sidebar:
+  order: 1
+---
+
+import { Steps, Aside } from '@astrojs/starlight/components';
+import MenuSakti from '~/components/MenuSakti.astro';
+import SumberAsli from '~/components/SumberAsli.astro';
+
+Surat Perintah Bayar (SPBy) adalah bukti perintah PPK atas nama KPA
+kepada Bendahara Pengeluaran/BPP untuk mengeluarkan uang persediaan
+sebagai pembayaran kepada pihak yang dituju. Form Mencatat Perintah
+Bayar mencatat detail akun belanja, akun potongan, dan data lainnya
+sebagai dasar perekaman kuitansi dan pungutan pajak oleh Bendahara.
+
+<MenuSakti />
+
+## Prasyarat
+
+- Role yang dibutuhkan: operator (OPR) dan approver (APPR); modul
+  terkait Administrasi (mapping operator-PPK) dan Bendahara
+  (referensi wajib pajak/wajib bayar, kuitansi).
+- Dokumen input: bukti pembelian.
+- SPBy dilampiri bukti pengeluaran: kuitansi/bukti pembelian yang
+  disahkan PPK beserta faktur pajak dan SSP, serta nota/bukti
+  penerimaan barang/jasa atau dokumen pendukung lainnya yang
+  disahkan PPK; untuk uang muka kerja: rencana pelaksanaan
+  kegiatan, rincian kebutuhan dana, dan batas waktu
+  pertanggungjawaban.
+- Untuk belanja jasa (tidak membentuk aset/persediaan) operator
+  dapat langsung merekam perintah bayar; untuk belanja UP yang
+  menghasilkan aset/persediaan, pencatatan penerimaan barang/jasa UP
+  di modul Komitmen harus didahulukan — lihat
+  [Mencatat Perintah Bayar untuk Belanja Aset/Persediaan](/pembayaran/ruh/mencatat-perintah-bayar/belanja-aset-persediaan/).
+
+## Alur proses
+
+1. Operator Bendahara — input referensi wajib pajak/wajib bayar.
+2. Operator Pembayaran — mencatat perintah bayar.
+3. PPK — validasi perintah bayar (disetujui/ditolak/batal
+   persetujuan).
+
+## Langkah
+
+### Merekam referensi wajib pajak/wajib bayar (Operator Bendahara)
+
+Menu ini mencatat referensi wajib pajak untuk pencatatan transaksi
+dana UP/TUP melalui SPBy dan penerimaan barang/jasa UP/TUP
+tunai/bank. Berbeda dengan supplier di modul Komitmen yang harus
+didaftarkan ke SPAN agar memiliki NRS, referensi ini tidak
+memerlukan NRS dan cukup direkam sekali — rekam data baru apabila
+ada perubahan data.
+
+<Steps>
+
+1. Login menggunakan user operator Bendahara, buka menu **Bendahara
+   > Referensi > Referensi Wajib Pajak / Wajib Bayar**.
+2. Klik tombol **Tambah**.
+3. Pilih jenis wajib pajak/wajib bayar, misal Bendahara Pengeluaran.
+4. Lengkapi kolom isian nama wajib pajak/wajib setor, NPWP dengan
+   kode KPP yang valid, NIK, nomor rekening, bank, cabang bank,
+   nomor telepon, dan nomor HP (dapat diisi tanda "-" bila tidak
+   ada).
+5. Isikan kolom alamat dengan alamat kantor, lalu lengkapi kolom
+   pilihan provinsi, kabupaten, kecamatan, dan kodepos.
+6. Isikan email dan website satker (boleh dikosongkan atau diberi
+   tanda "-" jika tidak ada).
+7. Klik **Simpan** untuk menyimpan data.
+
+</Steps>
+
+### Mencatat perintah bayar (Operator Pembayaran)
+
+<Steps>
+
+1. Login menggunakan user operator Pembayaran, buka menu
+   **Pembayaran > RUH Pembayaran > Mencatat Perintah Bayar**.
+2. Klik tombol **Tambah**.
+3. Klik grid nama PPK, pilih PPK yang sesuai.
+4. Isikan data detail perintah bayar: tanggal, nomor referensi
+   kuitansi, jenis perintah bayar; klik **ada BAST** apabila
+   merupakan belanja yang menghasilkan aset/persediaan; isikan
+   sumber dana; pilih program, kegiatan, dan output.
+5. Pilih NPWP supplier bendahara yang telah direkam pada referensi
+   wajib pajak/wajib bayar di modul Bendahara.
+6. Klik tombol **Tambah** untuk menambah detail akun belanja.
+7. Pilih akun belanja yang sesuai.
+8. Klik tombol **Pendetailan**.
+9. Klik **Tambah**.
+10. Klik tombol ikon **kaca pembesar** pada kolom kode COA untuk
+    menampilkan detail COA.
+11. Pilih detail COA yang sesuai dengan belanjanya.
+12. Klik tombol **OK**.
+13. Isikan nilai tagihan sesuai nominal belanja yang dilakukan.
+14. Klik tombol **Simpan**.
+15. Kembali ke menu Input/Ubah Akun Belanja dengan kolom Jumlah
+    sudah terisi sesuai nilai pendetailan COA.
+16. Klik tombol **Simpan** untuk menyimpan detail akun belanja.
+17. Kode akun dan jumlah tampil di kolom Detail Akun Belanja; klik
+    **Lihat** pada kolom Detail COA untuk memastikan pendetailan
+    COA sudah benar.
+18. Klik **Tambah** untuk menambah detail akun potongan pajak (jika
+    ada).
+19. Lanjutkan perekaman detail akun potongan dan jumlahnya.
+20. Klik tombol **Simpan**.
+21. Klik tombol **Simpan** untuk menyimpan data perintah bayar.
+22. Perintah bayar yang direkam muncul pada grid Cari Perintah
+    Bayar.
+23. Klik tombol **Unduh** untuk mengunduh dokumen perintah bayar.
+
+</Steps>
+
+### Memvalidasi perintah bayar (PPK)
+
+Menu validasi perintah bayar hanya bisa diakses PPK. SPBy yang
+muncul pada grid validasi adalah SPBy yang direkam oleh semua
+operator pembayaran yang memiliki kesamaan PPK sesuai mapping.
+
+<Steps>
+
+1. Login menggunakan user PPK (Val/SPM_Validator), buka modul
+   Pembayaran lalu menu **Pembayaran > Validasi > Validasi Perintah
+   Bayar**.
+2. Klik tombol **Cari** untuk memfilter perintah bayar berdasarkan
+   status validasinya, misal Belum Divalidasi.
+3. Pilih dengan mencentang perintah bayar yang akan divalidasi —
+   bisa semua atau satu per satu.
+4. Pilih status validasi: **Disetujui**, **Ditolak**, atau **Batal
+   Persetujuan**.
+5. Isikan tanggal dan keterangan validasi — data tidak dapat
+   disimpan apabila keterangan tidak diisi.
+6. Klik tombol **Simpan** untuk menyimpan proses validasi.
+
+</Steps>
+
+Arti tiap status validasi:
+
+- **Disetujui** — PPK menyetujui perintah bayar; selanjutnya dapat
+  dilakukan perekaman kuitansi oleh bendahara.
+- **Ditolak** — PPK menolak dengan mencantumkan alasan penolakan;
+  perintah bayar kembali ke operator pembayaran untuk diubah/dihapus.
+- **Batal Persetujuan** — PPK membatalkan persetujuan yang
+  sebelumnya telah diberikan dengan menyertakan alasan pada kolom
+  keterangan; perintah bayar kembali ke operator pembayaran untuk
+  diubah/dihapus.
+
+## Hasil yang diharapkan
+
+Bukti pembelian diproses menjadi cetakan memo perintah bayar dan
+surat perintah bayar yang divalidasi PPK.
+
+## Ketentuan
+
+- Landasan: PMK 230/PMK.05/2016 tentang perubahan atas PMK
+  162/PMK.05/2013 (kedudukan bendahara) dan PMK 190/PMK.05/2012
+  tentang Tata Cara Pembayaran APBN — bendahara membayar tagihan
+  SPBy yang memenuhi pengujian dan wajib menolak SPBy yang tidak
+  memenuhi persyaratan.
+- Perekaman perintah bayar memerlukan approval PPK sebelum kuitansi;
+  titik realisasi FA dan jurnal terbentuk saat validasi perintah
+  bayar oleh PPK.
+- Perintah bayar yang sudah validasi tetapi tidak jadi digunakan
+  harus dibatalkan validasinya lalu dihapus — yang tidak dihapus
+  akan mengurangi nilai FA satker.
+- Dokumen sumber pendetailan Laporan FA detail 16 segmen adalah
+  perintah bayar dengan kategori PEM.
+- Validasi oleh PPK berupa setuju/tolak/batal persetujuan perintah
+  bayar.
+
+<Aside type="caution" title="Perlu verifikasi">
+Juknis menulis jalur "Bendahara > Referensi > Referensi Wajib
+Pajak/Wajib Bayar" dan "Administrasi > Umum > Jabatan > Mapping
+opr. Pelaksanaan - PPK"; jalur baku aplikasi saat ini adalah
+**Bendahara > Referensi > Referensi Wajib Pajak / Wajib Bayar** dan
+**Administrasi > Mapping > Mapping Opr. Pelaksanaan dan PPK**.
+Juknis terbit tahun 2021.
+</Aside>
+
+## Terkait
+
+- [Mencatat Perintah Bayar untuk Belanja Aset/Persediaan](/pembayaran/ruh/mencatat-perintah-bayar/belanja-aset-persediaan/)
+
+## Sumber
+
+<SumberAsli />

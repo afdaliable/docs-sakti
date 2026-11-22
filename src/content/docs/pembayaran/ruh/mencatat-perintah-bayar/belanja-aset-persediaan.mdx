@@ -1,0 +1,274 @@
+---
+title: Mencatat Perintah Bayar untuk Belanja Aset/Persediaan
+description: Mencatat perintah bayar (SPBy) untuk belanja yang menghasilkan aset/persediaan lewat BAST UP sampai kuitansi dan setoran pajak.
+modul: pembayaran
+menu_sakti: "Pembayaran > RUH Pembayaran > Mencatat Perintah Bayar"
+peran: [satker]
+jenis: juknis
+kata_kunci: [perintah bayar, spby, belanja aset, persediaan, bast up, kuitansi, pungutan pajak]
+status: review
+perlu_review: true
+sumber:
+  - judul: "2021-Juknis Mencatat Perintah Bayar untuk Belanja Aset-Persediaan"
+    url: "https://drive.google.com/file/d/1xXeOE9isPf0qvU-0DPBYuvuthgepXq41/view"
+    jenis: pdf
+    diambil: 2026-11-21
+    id_manifest: B-ben-003
+sidebar:
+  order: 2
+---
+
+import { Steps, Aside } from '@astrojs/starlight/components';
+import MenuSakti from '~/components/MenuSakti.astro';
+import SumberAsli from '~/components/SumberAsli.astro';
+
+Untuk belanja UP yang menghasilkan aset/persediaan, pencatatan
+perintah bayar harus didahului pencatatan penerimaan barang/jasa UP
+tunai/bank pada modul Komitmen — perintah bayar kemudian mengambil
+data dari transaksi tersebut.
+
+<MenuSakti />
+
+## Prasyarat
+
+- Role yang dibutuhkan: operator (OPR); modul terkait Pembayaran
+  (mencatat perintah bayar) dan Administrasi (mapping
+  operator-PPK).
+- Data pagu DIPA sudah tersedia; transaksi penerimaan belanja sesuai
+  akun/pagu satker.
+- Referensi wajib pajak/wajib bayar telah direkam oleh bendahara —
+  lihat
+  [Mencatat Perintah Bayar untuk Belanja Non Aset/Persediaan](/pembayaran/ruh/mencatat-perintah-bayar/belanja-non-aset-persediaan/).
+- Dokumen input: kuitansi pembelian dari supplier dan data belanja
+  bendahara lainnya.
+
+## Alur proses
+
+1. Operator Komitmen — pencatatan penerimaan barang/jasa UP
+   tunai/bank (BAST UP).
+2. Operator Pembayaran — mencatat perintah bayar.
+3. PPK — validasi perintah bayar.
+4. Operator Bendahara — membuat kuitansi.
+5. Operator Bendahara — mencatat pungutan pajak (bila ada akun
+   potongan).
+6. Operator Bendahara — mencatat setoran pajak (bila ada pungutan).
+
+## Langkah
+
+### Mencatat penerimaan barang/jasa UP tunai/bank (Operator Komitmen)
+
+Tahap ini dapat dilewati apabila belanja tidak menggunakan akun yang
+menghasilkan aset/persediaan (5218xx/53xxxx).
+
+<Steps>
+
+1. Login menggunakan user operator Komitmen, buka menu **Komitmen >
+   RUH > BAST/BAKP/BAPP/DYD > Penerimaan Barang/Jasa UP Tunai**.
+2. Klik **Tambah** — muncul form info dokumen; apabila muncul
+   notifikasi belum ada mapping operator dengan PPK, lakukan
+   mapping oleh user Admin di **Administrasi > Mapping > Mapping
+   Opr. Pelaksanaan dan PPK**.
+3. Nomor dokumen terisi otomatis; isikan tanggal dokumen sumber
+   pembelian, uraian transaksi belanja, mata uang (otomatis untuk
+   UP RM), dan nama penerima pembayaran.
+4. Lengkapi informasi supplier dengan tombol **Cari Supplier**
+   (supplier tipe 1/satker; apabila hanya ada satu supplier tipe
+   1/satker, tombol pilih tidak aktif dan terisi otomatis).
+5. Klik tombol **Cari Wajib Pajak/Wajib Setor** — muncul daftar
+   wajib pajak yang telah direkam; klik NPWP yang sesuai lalu klik
+   **Pilih**.
+6. Pilih program, aktivitas, KRO, akun, KPPN, sumber dana, cara
+   penarikan, dan nomor register — kolom COA terisi otomatis.
+7. Kolom IntraCo, cadangan, dan kode COA terisi otomatis; lakukan
+   pemilihan detail COA dengan tombol **Pendetilan COA**.
+8. Klik **Tambah**, klik ikon **kaca pembesar**, pilih detail COA
+   (sama dengan akun belanja yang akan direkam), klik **OK**.
+9. Isikan nilai belanja total, klik **Simpan**, klik **Keluar**.
+10. Pilih jenis kas UP atau TUP sesuai sumber dana, klik **Rincian
+    Barang**: klik **Rekam**, pilih kategori barang (misal
+    persediaan), klik ikon **kaca pembesar** untuk memilih kode
+    barang (gunakan filter nama/kode barang lalu **Cari**), isikan
+    jumlah dan harga satuan (harga total terisi otomatis), klik
+    **Simpan**.
+11. Klik **Simpan** — muncul notifikasi data BAST UP berhasil
+    disimpan; data tampil pada grid Daftar Dokumen dan dapat
+    dilanjutkan ke pencatatan perintah bayar.
+
+</Steps>
+
+### Mencatat perintah bayar (Operator Pembayaran)
+
+<Steps>
+
+1. Login menggunakan user operator Pembayaran, buka menu
+   **Pembayaran > RUH Pembayaran > Mencatat Perintah Bayar**.
+2. Klik **Tambah** untuk mengaktifkan form.
+3. Isikan detail perintah bayar: tanggal sesuai transaksi riil;
+   nomor referensi kuitansi/dokumen sumber (tanda "-" bila tidak
+   ada); jenis perintah bayar sesuai sumber dana (UP/TUP/Hibah —
+   untuk Hibah pilih tahun anggaran hibah TAB/TAYL); PPK sesuai
+   mapping; klik ikon **kaca pembesar** pada NPWP dan pilih NPWP
+   yang sama dengan supplier pada BAST UP — apabila berbeda, data
+   BAST UP tidak muncul pada form SPBy (untuk belanja non
+   aset/persediaan, NPWP bebas sesuai dokumen sumber).
+4. Pada kolom **Ada BAST?** klik "Klik, jika ada BAST" — sumber
+   dana, program, kegiatan, output, dan akun belanja terisi
+   otomatis; apabila tidak ada data BAST, pilih program/kegiatan/
+   output secara manual. Pada SPBy dengan BAST UP, pendetailan COA
+   dilakukan saat merekam BAST UP sehingga hanya tersedia tombol
+   Lihat — koreksi dilakukan dengan hapus/batal SPBy lalu **Ubah**
+   di menu BAST UP.
+5. Isikan uraian transaksi belanja.
+6. Kode akun dan jumlah tampil di Detail Akun Belanja; klik
+   **Lihat** pada Detail COA untuk memastikan data benar.
+7. Klik **Tambah** untuk detail akun potongan pajak (jika ada),
+   lanjutkan perekaman detail potongan dan jumlahnya, klik
+   **Simpan**.
+8. Klik **Simpan** pada bagian bawah untuk menyimpan perintah
+   bayar.
+9. Perintah bayar muncul pada grid Cari Perintah Bayar.
+10. Klik **Unduh** untuk mengunduh dokumen perintah bayar.
+
+</Steps>
+
+### Memvalidasi perintah bayar (PPK)
+
+Menu validasi hanya bisa diakses PPK; grid menampilkan SPBy dari
+operator pembayaran dengan mapping PPK yang sama.
+
+<Steps>
+
+1. Login menggunakan user PPK (Val/SPM_Validator), buka menu
+   **Pembayaran > Validasi > Validasi Perintah Bayar**.
+2. Klik **Cari** untuk memfilter status, misal Belum Divalidasi.
+3. Centang perintah bayar yang akan divalidasi — semua atau satu
+   per satu.
+4. Pilih status validasi: **Disetujui** (dapat dilanjutkan
+   perekaman kuitansi), **Ditolak** (kembali ke operator dengan
+   alasan), atau **Batal Persetujuan** (kembali ke operator untuk
+   diubah/dihapus).
+5. Isikan tanggal dan keterangan — tidak dapat disimpan tanpa
+   keterangan.
+6. Klik **Simpan**.
+7. Klik **Unduh** untuk mengunduh memo dan surat perintah bayar.
+
+</Steps>
+
+### Membuat kuitansi (Operator Bendahara)
+
+<Steps>
+
+1. Login menggunakan user bendahara, buka menu **Bendahara >
+   Transaksi > Membuat Kuitansi**.
+2. Klik **Tambah**.
+3. Isikan tanggal kuitansi dan tanggal dibayar (tanggal aliran kas
+   keluar dari bendahara).
+4. Klik ikon **kaca pembesar** pada nomor perintah bayar, pilih
+   perintah bayar, klik **Simpan** — program, kegiatan, output,
+   jenis kuitansi, sumber dana, supplier, jumlah, dan keterangan
+   terisi otomatis dari perintah bayar.
+5. Isikan nama penerima uang dan jabatan sesuai dokumen sumber.
+6. Isikan uraian keterangan kuitansi.
+7. Pilih cara pembayaran tunai (kolom saldo kas menampilkan sisa
+   kas tunai) atau non tunai (rekening bank aktif, terisi dari data
+   rekening BPG pada referensi detail rekening beserta saldonya).
+8. Detail COA tidak dapat diubah pada menu kuitansi — ubah
+   pendetailan lewat batal validasi SPBy lalu ubah SPBy (belanja
+   jasa) atau batal validasi SPBy, hapus SPBy, lalu ubah BAST UP
+   (belanja aset/persediaan).
+9. Klik **Simpan** — kuitansi muncul pada grid daftar kuitansi.
+10. Klik **Unduh** untuk mengunduh cetakan kuitansi.
+
+</Steps>
+
+### Mencatat pungutan pajak (Operator Bendahara)
+
+Lakukan tahap ini apabila pada SPBy terdapat akun potongan pajak
+yang direkam; bila tidak ada, lewati.
+
+<Steps>
+
+1. Login menggunakan user bendahara, buka menu **Bendahara >
+   Transaksi > Mencatat Pungutan Pajak**.
+2. Klik **Tambah**.
+3. Isikan tanggal dan dasar pungutan pajak — bersumber dari:
+   perintah bayar (potongan atas perhitungan PPK), lain-lain (tidak
+   dicatatkan pada perintah bayar/transaksi lain), GUP KKP, atau
+   PTUP KKP.
+4. Cari perintah bayar dengan tombol titik (**…**) pada nomor
+   perintah bayar, pilih, lalu klik **OK** — isian NPWP terisi
+   otomatis; tanpa memilih perintah bayar, identitas wajib bayar
+   diisi manual lewat tombol titik (**…**).
+5. Akun potongan pajak terisi otomatis dari perintah bayar — tanpa
+   memilih perintah bayar, isi manual dengan tombol **Tambah**.
+6. Isikan uraian keterangan; pilih pemindahan kas tunai atau non
+   tunai (disarankan mengikuti cara bayar kuitansi; untuk non tunai
+   menu rekening bank aktif).
+7. Klik **Simpan** — data muncul pada grid daftar bukti pungut.
+
+</Steps>
+
+### Mencatat setoran pajak (Operator Bendahara)
+
+Lakukan apabila terdapat pungutan pajak sebelumnya; bila tidak,
+lewati.
+
+<Steps>
+
+1. Login menggunakan user bendahara, buka menu **Bendahara >
+   Setoran > Setoran Pajak**.
+2. Klik **Tambah**.
+3. Pada menu akun pajak, pilih jenis akun yang telah dicatat
+   pungutan pajaknya.
+4. Pilih NPWP supplier dengan tombol dropdown.
+5. Pilih cara penyetoran tunai (isian rekening bank nonaktif/abu-abu)
+   atau non tunai (isian rekening bank aktif) — muncul data pungutan
+   pajak sesuai parameter NPWP dan akun pajak.
+6. Centang pungutan pajak yang akan direkam setorannya — jumlah
+   setoran terisi otomatis; pastikan pungutan tercentang agar tidak
+   error.
+7. Data NPWP, nama, dan alamat wajib pajak terisi otomatis; isikan:
+   nomor ketetapan pajak (tanda "--" bila tidak ada), masa pajak,
+   tanggal setoran sesuai cetakan Bukti Penerimaan Negara (BPN),
+   nomor objek pajak (tanda "--" bila tidak ada), alamat objek
+   pajak, jenis setoran sesuai billing/BPN, dan keterangan.
+8. Isikan pengesahan setoran: tanggal diterima bank sesuai BPN,
+   NTPN 16 digit dari BPN, NTB/NTP sesuai BPN, bank penyetoran, dan
+   ID billing 15 digit sesuai dokumen billing/BPN.
+9. Klik **Simpan**.
+10. Cek setoran yang telah direkam pada grid daftar setoran pajak.
+
+</Steps>
+
+## Hasil yang diharapkan
+
+Kuitansi pembelian dan data belanja bendahara diproses menjadi
+cetakan SPBy dan memo perintah bayar, kuitansi, serta setoran pajak.
+
+## Ketentuan
+
+- Form perintah bayar menjadi dasar perekaman kuitansi dan pungutan
+  pajak; perekaman terkait referensi wajib pajak/wajib bayar dan
+  mapping operator dengan PPK.
+- Titik realisasi FA dan pembentukan jurnal terjadi saat validasi
+  perintah bayar oleh PPK — perintah bayar tervalidasi yang tidak
+  dilanjutkan harus dihapus agar tidak mengurangi nilai FA satker.
+- Dokumen sumber pendetailan Laporan FA detail 16 segmen adalah
+  perintah bayar dengan kategori PEM.
+
+<Aside type="caution" title="Perlu verifikasi">
+Juknis menulis jalur "Komitmen > RUH > RUH Penerimaan Barang/Jasa UP
+Tunai/Bank" dan "Administrasi > Umum > Jabatan > Mapping opr.
+Pelaksanaan - PPK"; jalur baku aplikasi saat ini adalah **Komitmen >
+RUH > BAST/BAKP/BAPP/DYD > Penerimaan Barang/Jasa UP Tunai** dan
+**Administrasi > Mapping > Mapping Opr. Pelaksanaan dan PPK**.
+Juknis terbit tahun 2021.
+</Aside>
+
+## Terkait
+
+- [Mencatat Perintah Bayar untuk Belanja Non Aset/Persediaan](/pembayaran/ruh/mencatat-perintah-bayar/belanja-non-aset-persediaan/)
+
+## Sumber
+
+<SumberAsli />
