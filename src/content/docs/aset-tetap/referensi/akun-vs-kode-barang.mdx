@@ -1,0 +1,135 @@
+---
+title: Mencocokkan Akun dengan Kode Barang BMN
+description: Daftar akun untuk perolehan dan pengembangan BMN beserta kesesuaian peruntukan akun dengan kode barangnya.
+modul: aset-tetap
+peran: [satker]
+jenis: referensi
+kata_kunci: [akun bmn, kode barang, belanja modal, peruntukan akun, kodefikasi]
+status: review
+perlu_review: true
+sumber:
+  - judul: "SAKTI PELAPORAN - Daftar Akun Untuk Perolehan dan Pengembangan BMN (Akun vs Kode Barang)"
+    url: "https://sites.google.com/view/saktipelaporan/aset-tetap/referensi/daftar-akun-untuk-perolehan-dan-pengembangan-bmn-akun-vs-kode-barang"
+    jenis: google-sites
+    diambil: 2026-11-21
+    id_manifest: C-daftar-akun-untuk-perolehan-dan-pengembangan-bmn-akun-vs-kode-barang
+  - judul: "KODEBMN_UNTUK_PPK_BEND_PER_MAT_V01"
+    url: "https://drive.google.com/file/d/133-w0K2Nwu7JA1n1wfGO_SqmGZ3lfLa8/view"
+    jenis: lainnya
+    diambil: 2026-11-21
+    id_manifest: C-dok-184
+  - judul: "Daftar Akun Untuk Perolehan dan Pengembangan BMN_V01"
+    url: "https://drive.google.com/file/d/1O-SSI1SjUt8TqrCz8rafOxmR7c5WbBKx/view"
+    jenis: lainnya
+    diambil: 2026-11-21
+    id_manifest: C-dok-185
+sidebar:
+  order: 1
+---
+
+import { Aside } from '@astrojs/starlight/components';
+import SumberAsli from '~/components/SumberAsli.astro';
+
+Halaman ini merangkum dokumen **Daftar Akun Untuk Perolehan dan
+Pengembangan BMN** (kesesuaian peruntukan akun dengan output
+BMN-nya) serta **Kode BMN Untuk PPK dan Bendahara Perolehan
+Persediaan dan Aset Tetap**.
+
+## Ketentuan
+
+Akun untuk perolehan/pengembangan BMN menurut sumber:
+
+1. Akun untuk perolehan BMN seharusnya (idealnya) sesuai
+   peruntukannya sebagaimana sheet akun BMN.
+2. Ketidaksesuaian penggunaan akun dengan output BMN-nya dapat
+   mengganggu penyusunan LK yang wajar.
+3. Untuk penggunaan akun yang tepat pada setiap kegiatan perlu
+   dilihat output yang akan dihasilkan; apabila outputnya
+   berupa Barang Milik Negara maka harus menggunakan akun-akun
+   BMN sebagaimana sheet Akun BMN.
+4. Apabila terjadi kesalahan peruntukan akun maka yang dicatat/
+   dilaporkan sesuai substansi outputnya; apabila terkait
+   barang maka harus sesuai riil barangnya. Kesalahan semacam
+   ini dapat berpotensi harus dilakukannya koreksi.
+5. Diperlukan koordinasi antar operator modul SAKTI (terutama
+   Modul Komitmen, Modul Bendahara, Persediaan dan Modul Aset
+   Tetap) untuk memastikan pemilihan kode barang benar.
+6. Agar tidak terjadi kesalahan peruntukan akun yang disebabkan
+   karena kesalahan perencanaan/penganggaran, perlu koordinasi
+   antara unit teknis yang mempunyai kegiatan dengan bagian
+   perencanaan penganggaran agar bisa direncanakan dengan akun
+   yang sesuai.
+7. Apabila terlanjur terjadi kesalahan penganggaran (akun tidak
+   sesuai dengan peruntukannya) sebaiknya direvisi terlebih
+   dahulu sebelum pelaksanaan kegiatannya.
+
+**Ringkasan kode Barang Milik Negara** dari dokumen sumber:
+
+| No | Kode Barang | Uraian | Kategori Neraca |
+|---|---|---|---|
+| 1 | 1xxxxxxxxx | Persediaan — barang berwujud untuk mendukung tupoksi dengan masa manfaat kurang dari satu tahun; umumnya Persediaan Barang Konsumsi, Bahan Pemeliharaan dan Suku Cadang | Aset Lancar |
+| 2 | 2xxxxxxxxx | Tanah — idealnya menggunakan akun 531xxx (Belanja Modal Tanah); tidak semua satker memiliki tanah | Aset Tetap |
+| 3 | 3xxxxxxxxx | Peralatan dan Mesin — idealnya akun 532xxx; nilai kapitalisasi minimum Rp1 juta | Aset Tetap |
+| 4 | 4xxxxxxxxx | Gedung dan Bangunan — gedung kantor, gedung pendidikan, mess/wisma, rumah dinas, dll; idealnya akun 533xxx | Aset Tetap |
+| 5 | 5xxxxxxxxx | Jalan, Irigasi dan Jaringan — idealnya akun 534xxx | Aset Tetap |
+| 6 | 6xxxxxxxxx | Aset Tetap Lainnya — barang bercorak seni budaya, alat musik modern, koleksi buku perpustakaan, dan Aset Tetap dalam Renovasi (ATR) | Aset Tetap |
+| 7 | 7xxxxxxxxx | KDP — bagian dari aset tetap yang belum siap digunakan/masih dalam proses; idealnya akun 53xxxx sesuai jenis KDP-nya | Aset Tetap |
+| 8 | 8xxxxxxxxx | Aset Tak Berwujud — software, hasil kajian dan penelitian, hak cipta, KDP Aset Tak Berwujud, dll; idealnya akun 536xxx | Aset Lainnya |
+
+Catatan dari dokumen sumber:
+
+1. Untuk satker BLU, belanja untuk perolehan atau pengembangan
+   Aset Tetap/Aset Tak Berwujud bisa menggunakan akun 537xxx
+   (Belanja Modal BLU), sedangkan untuk Persediaan bisa
+   menggunakan akun 525xxx (Belanja Barang BLU).
+2. Operator PPK dan Bendahara sebaiknya berkoordinasi dengan
+   operator Persediaan dan Aset Tetap untuk memilih kode barang
+   yang benar.
+3. Operator PPK dan Bendahara segera menginformasikan kepada
+   operator Persediaan dan Aset Tetap apabila ada BAST/Kuitansi
+   barang agar dapat segera diverifikasi dan didetailkan.
+4. Kesalahan pemilihan kode barang oleh operator PPK dan
+   Bendahara hanya dapat diperbaiki apabila transaksi belum
+   berlanjut ke transaksi DRPP dan/atau SPP. Apabila sudah
+   terlanjur masuk ke DRPP/SPP maka harus dilakukan batal
+   terlebih dahulu untuk bisa mengubah kode barangnya. Apabila
+   sudah menjadi SP2D maka perbaikan dilakukan dengan mekanisme
+   koreksi.
+5. Untuk pemilihan kode barang Bahan Bakar Minyak (BBM),
+   obat-obatan, dan meterai (untuk persuratan) sebagai barang
+   yang akan digunakan langsung (habis pakai) sudah tersedia
+   kode barang 10103xxxx, misalnya 1010313001 Bahan Bakar
+   Minyak (Barang Konsumsi), 1010314002 Obat Padat (Barang
+   Konsumsi), dan 1010309001 Meterai. Untuk meterai yang
+   dimaksudkan untuk dijual/diserahkan ke masyarakat seperti
+   DJP/DJBC menggunakan kode 1010501001 Pita Cukai, Meterai,
+   Leges.
+6. Pemilihan kode barang perlu memperhatikan kode depannya
+   (kelompoknya), bukan hanya sekadar nama/uraiannya. Contoh:
+   Dispenser termasuk kelompok Alat Rumah Tangga (Home Use),
+   sedangkan Dispencer termasuk kelompok Alat Senjata Khusus
+   Kepolisian.
+7. Pemilihan kode barang KDP harus sesuai dengan aset
+   jadi/definitifnya (misalnya KDP Gedung digunakan untuk
+   menghasilkan Gedung; KDP Peralatan dan Mesin digunakan untuk
+   Peralatan dan Mesin).
+
+**Daftar akun untuk perolehan dan pengembangan BMN** dari dokumen sumber:
+
+Berkas sumber `Daftar Akun Untuk Perolehan dan Pengembangan
+BMN_V01` memuat 92 baris pemetaan dengan kolom: kode akun,
+uraian akun, penjelasan akun, kode BMN, uraian BMN, kode barang,
+uraian barang, dan nilai satuan minimal. Karena jumlahnya besar,
+daftar lengkap tidak disalin ke halaman ini; unduh berkas asli
+melalui tautan di bagian Sumber.
+
+<Aside type="caution" title="Perlu verifikasi">
+Kolom Keterangan pada tabel ringkasan kode BMN terpotong pada
+berkas sumber (xlsx); uraian pada tabel di atas merupakan
+ringkasan. Daftar akun (92 baris) tidak disalin; gunakan berkas
+asli.
+</Aside>
+
+## Sumber
+
+<SumberAsli />

@@ -1,12 +1,67 @@
 ---
 title: Likuidasi
-description: Panduan menu Likuidasi pada modul Aset Tetap.
+description: Memindahkan aset ke satuan kerja lain/baru ketika satuan kerja mengalami likuidasi.
 modul: aset-tetap
+menu_sakti: "Aset Tetap > Likuidasi"
+peran: [satker]
 jenis: indeks
-status: terbit
+status: review
+perlu_review: true
+sumber:
+  - judul: "SAKTI PELAPORAN - Likuidasi"
+    url: "https://sites.google.com/view/saktipelaporan/aset-tetap/likuidasi"
+    jenis: google-sites
+    diambil: 2026-11-21
+    id_manifest: C-aset-tetap-likuidasi
 sidebar:
   label: Ringkasan
   order: 0
 ---
 
-Panduan untuk menu **Likuidasi** sedang disiapkan.
+import { Aside } from '@astrojs/starlight/components';
+import MenuSakti from '~/components/MenuSakti.astro';
+import SumberAsli from '~/components/SumberAsli.astro';
+
+Menu **Aset Tetap > Likuidasi** digunakan jika satuan kerja
+mengalami likuidasi dan perlu memindahkan aset ke satuan kerja
+lain/baru.
+
+<MenuSakti />
+
+- **Likuidasi Keluar**: dicatat oleh satuan kerja yang
+  mengalami likuidasi.
+- **Likuidasi Masuk**: dicatat oleh satuan kerja baru/lain yang
+  menerima aset BMN.
+
+## Prasyarat
+
+- Dokumen sumber: SK atau dokumen lain yang dipersamakan.
+
+## Ketentuan
+
+- Harus dicatat likuidasi keluar terlebih dahulu, kemudian
+  likuidasi masuk.
+- Satuan kerja harus sudah terdaftar sebagai "Satker Asal" di
+  setup likuidasi.
+
+## Jurnal transaksi
+
+Satker asal:
+
+- D. Transfer keluar
+- K. Aset tetap/lainnya
+
+Satker tujuan:
+
+- D. Aset tetap/lainnya
+- K. Transfer masuk
+
+<Aside type="caution" title="Perlu verifikasi">
+Menurut halaman sumber, petunjuk teknis (juknis) likuidasi
+sedang dalam tahap finalisasi; tata cara perekaman rinci belum
+tersedia.
+</Aside>
+
+## Sumber
+
+<SumberAsli />

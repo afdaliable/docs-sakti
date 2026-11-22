@@ -1,12 +1,42 @@
 ---
 title: ADK
-description: Panduan menu ADK pada modul Aset Tetap.
+description: Merekam migrasi saldo awal pada satuan kerja yang sebelumnya tidak menggunakan SAKTI.
 modul: aset-tetap
+menu_sakti: "Aset Tetap > ADK"
+peran: [satker]
 jenis: indeks
-status: terbit
+status: review
+perlu_review: true
+sumber:
+  - judul: "SAKTI PELAPORAN - ADK"
+    url: "https://sites.google.com/view/saktipelaporan/aset-tetap/adk"
+    jenis: google-sites
+    diambil: 2026-11-21
+    id_manifest: C-aset-tetap-adk
 sidebar:
   label: Ringkasan
   order: 0
 ---
 
-Panduan untuk menu **ADK** sedang disiapkan.
+import { Aside } from '@astrojs/starlight/components';
+import MenuSakti from '~/components/MenuSakti.astro';
+import SumberAsli from '~/components/SumberAsli.astro';
+
+Menu **Aset Tetap > ADK** digunakan untuk merekam migrasi saldo
+awal pada satuan kerja yang sebelumnya tidak menggunakan SAKTI.
+Satuan kerja yang sejak awal telah menggunakan SAKTI tidak
+memerlukan menu ini.
+
+Saat ini, menu ini sudah tidak digunakan, karena semua satuan
+kerja telah terintegrasi dalam SAKTI.
+
+<MenuSakti />
+
+<Aside type="caution" title="Perlu verifikasi">
+Halaman sumber tidak memuat tata cara perekaman untuk
+sub-sub-menu ADK; juknis rinci belum tersedia.
+</Aside>
+
+## Sumber
+
+<SumberAsli />

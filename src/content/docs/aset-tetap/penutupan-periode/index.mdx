@@ -1,12 +1,64 @@
 ---
-title: Penutupan Periode
-description: Panduan menu Penutupan Periode pada modul Aset Tetap.
+title: Menutup Periode Aset Tetap
+description: Menutup buku Modul Aset Tetap dan membentuk jurnal penyusutan reguler untuk periode Juni dan Desember.
 modul: aset-tetap
-jenis: indeks
-status: terbit
+menu_sakti: "Aset Tetap > Penutupan Periode"
+peran: [satker]
+jenis: juknis
+kata_kunci: [tutup buku, penutupan periode, penyusutan reguler, buka periode]
+status: review
+sumber:
+  - judul: "SAKTI PELAPORAN - Penutupan Periode"
+    url: "https://sites.google.com/view/saktipelaporan/aset-tetap/penutupan-periode"
+    jenis: google-sites
+    diambil: 2026-11-21
+    id_manifest: C-aset-tetap-penutupan-periode
 sidebar:
-  label: Ringkasan
   order: 0
 ---
 
-Panduan untuk menu **Penutupan Periode** sedang disiapkan.
+import { Steps } from '@astrojs/starlight/components';
+import MenuSakti from '~/components/MenuSakti.astro';
+import SumberAsli from '~/components/SumberAsli.astro';
+
+Menu Penutupan Periode digunakan untuk menutup buku Modul Aset
+Tetap sehingga tidak dapat lagi dilakukan transaksi pada bulan
+yang telah ditutup, sekaligus membentuk jurnal penyusutan
+reguler untuk tutup buku bulan Juni dan Desember.
+
+<MenuSakti />
+
+## Langkah
+
+<Steps>
+
+1. Pilih menu **Aset Tetap > Penutupan Periode > Penutupan
+   Periode Bulanan**. Pada tabel akan muncul bulan-bulan yang
+   sudah ditutup.
+2. Pada kolom **Periode** akan muncul bulan yang masih buka dan
+   siap dilakukan tutup buku; klik tombol **Tutup Periode**.
+
+</Steps>
+
+## Ketentuan
+
+1. Tutup buku dapat dilakukan oleh user operator, validator,
+   maupun approver.
+2. Tutup buku dapat dilakukan apabila semua transaksi pada
+   bulan berkenaan telah lengkap dan benar direkam sehingga
+   tidak ada transaksi yang tertinggal rekam.
+3. Ketika telah dilakukan tutup buku, maka sistem otomatis
+   melakukan proses summary bulan berkenaan, sehingga periode
+   bulan yang telah ditutup buku tidak perlu dilakukan summary
+   ulang.
+4. Ketika dilakukan tutup buku bulan Juni dan Desember, maka
+   sistem akan otomatis melakukan penghitungan penyusutan
+   reguler dan pembentukan jurnal penyusutan reguler.
+5. Buka periode dapat dilakukan oleh user Modul GLP (untuk
+   bulan selain Juni dan Desember). Hal ini dikarenakan ketika
+   user Modul GLP melakukan buka buku sementara, maka modul
+   lainnya, termasuk MAT, akan ikut terbuka.
+
+## Sumber
+
+<SumberAsli />

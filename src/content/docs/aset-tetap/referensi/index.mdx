@@ -1,7 +1,9 @@
 ---
 title: Referensi
-description: Panduan menu Referensi pada modul Aset Tetap.
+description: Referensi pendukung Modul Aset Tetap, termasuk pemetaan akun dan kode barang BMN.
 modul: aset-tetap
+menu_sakti: "Aset Tetap > Referensi"
+peran: [satker]
 jenis: indeks
 status: terbit
 sidebar:
@@ -9,4 +11,14 @@ sidebar:
   order: 0
 ---
 
-Panduan untuk menu **Referensi** sedang disiapkan.
+import { LinkCard, CardGrid } from '@astrojs/starlight/components';
+import MenuSakti from '~/components/MenuSakti.astro';
+
+Menu **Aset Tetap > Referensi** dan referensi pendukung Modul
+Aset Tetap.
+
+<MenuSakti />
+
+<CardGrid>
+  <LinkCard title="Akun vs Kode Barang" href="/aset-tetap/referensi/akun-vs-kode-barang/" description="Mencocokkan akun belanja dengan kode barang BMN untuk perolehan dan pengembangan." />
+</CardGrid>
