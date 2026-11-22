@@ -1,0 +1,24 @@
+---
+title: Transaksi Barang Pihak Ketiga
+description: Pencatatan barang milik pihak ketiga yang dititipkan atau digunakan di satker.
+modul: aset-tetap
+jenis: indeks
+status: terbit
+sidebar:
+  label: Ringkasan
+  order: 1
+---
+
+import { LinkCard, CardGrid } from '@astrojs/starlight/components';
+
+Sub-menu **Aset Tetap > RUH > Transaksi Barang Pihak Ketiga**
+memuat pencatatan aset tetap/aset lainnya berupa barang pihak
+ketiga (bukan milik kantor) yang dititipkan kepada instansi atau
+digunakan sehari-hari.
+
+<CardGrid>
+  <LinkCard title="Perolehan" href="/aset-tetap/ruh/transaksi-barang-pihak-ketiga/perolehan/" description="Mencatat barang pihak ketiga yang dititipkan ke instansi." />
+  <LinkCard title="Penghapusan" href="/aset-tetap/ruh/transaksi-barang-pihak-ketiga/penghapusan/" description="Menghapus barang pihak ketiga dari daftar barang." />
+  <LinkCard title="Transfer Masuk" href="/aset-tetap/ruh/transaksi-barang-pihak-ketiga/transfer-masuk/" description="Mencatat aset pihak ketiga yang ditransfer dari satker lain." />
+  <LinkCard title="Transfer Keluar" href="/aset-tetap/ruh/transaksi-barang-pihak-ketiga/transfer-keluar/" description="Memindahkan barang pihak ketiga yang dititipkan ke satker lain." />
+</CardGrid>

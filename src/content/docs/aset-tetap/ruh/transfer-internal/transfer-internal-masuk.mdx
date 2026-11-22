@@ -1,0 +1,75 @@
+---
+title: Merekam Transfer Internal Masuk BMN
+description: Merekam penerimaan BMN atas kiriman atau transfer dari satker induk atau satker anak.
+modul: aset-tetap
+menu_sakti: "Aset Tetap > RUH > Transaksi BMN > Transfer Internal > Transfer Internal Masuk"
+peran: [satker]
+jenis: juknis
+kata_kunci: [transfer internal masuk, uakpb, uapkpb, kode transaksi 922]
+status: review
+sumber:
+  - judul: "SAKTI PELAPORAN - Transfer Internal Masuk"
+    url: "https://sites.google.com/view/saktipelaporan/aset-tetap/ruh/transaksi-bmn/transfer-internal/transfer-internal-masuk"
+    jenis: google-sites
+    diambil: 2026-11-21
+    id_manifest: C-aset-tetap-ruh-transaksi-bmn-transfer-internal-transfer-internal-masuk
+  - judul: "SAKTI PELAPORAN - Transfer Internal Masuk (halaman ganda)"
+    url: "https://sites.google.com/view/saktipelaporan/aset-tetap/ruh/transaksi-bmn/transfer-internal_1/transfer-internal-masuk"
+    jenis: google-sites
+    diambil: 2026-11-21
+    id_manifest: C-aset-tetap-ruh-transaksi-bmn-transfer-internal_1-transfer-internal-masuk
+sidebar:
+  order: 3
+---
+
+import MenuSakti from '~/components/MenuSakti.astro';
+import SumberAsli from '~/components/SumberAsli.astro';
+
+Menu Transfer Internal Masuk (kode transaksi 922) digunakan
+untuk merekam penerimaan BMN atas kiriman/transfer dari satker
+induk (UAKPB) atau satker anak (UAPKPB), atau sebaliknya. Jadi,
+satker induk (UAKPB) menerima transfer BMN dari satker anak
+(UAPKPB), maka dicatat melalui menu Transfer Masuk Internal;
+demikian juga apabila suatu satker anak (UAPKPB) menerima
+kiriman BMN dari satker induk (UAKPB), juga dicatat menggunakan
+menu Transfer Masuk Internal.
+
+<MenuSakti />
+
+## Prasyarat
+
+- Dokumen sumber: BAST Internal (SK atau dokumen lain yang
+  dipersamakan).
+- Transaksi ini hanya dapat dilakukan antara satker induk dengan
+  satker anak.
+- Harus sudah ada BMN yang berada di satuan kerja pembantu, dan
+  telah dilakukan persetujuan atas transaksi
+  [Transfer Internal Keluar](/aset-tetap/ruh/transfer-internal/transfer-internal-keluar/)
+  dari satker induk/anak.
+
+## Ketentuan
+
+- Sebagai penerima Transfer Masuk Internal tidak ada transaksi
+  perekaman, karena ketika satker pengirim melakukan persetujuan
+  transaksi Transfer Internal Keluar, maka otomatis akan muncul
+  sebagai Transfer Internal Masuk pada satker induk/anak
+  penerima.
+- Apabila transaksi yang otomatis terekam tersebut akan
+  dilakukan perubahan, maka tinggal diklik transaksinya lalu
+  klik **Ubah**.
+- Pada perekaman manual: pilih BMN yang akan ditransfer masuk,
+  lalu lengkapi data dan keterangan sesuai SK.
+- Transaksi ini tidak menghasilkan jurnal.
+
+## Ilustrasi transaksi
+
+Satker anak KP2KP Ranai menerima kiriman BMN berupa sepeda motor
+sebanyak 2 unit dari KPP Tanjungpinang (sebagai satker induk).
+
+## Terkait
+
+- [Merekam Transfer Internal Keluar BMN](/aset-tetap/ruh/transfer-internal/transfer-internal-keluar/)
+
+## Sumber
+
+<SumberAsli />

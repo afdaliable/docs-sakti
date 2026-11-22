@@ -1,0 +1,72 @@
+---
+title: Merekam Penghapusan Barang Pihak Ketiga
+description: Menghapus barang pihak ketiga dari Daftar Barang Pihak Ketiga.
+modul: aset-tetap
+menu_sakti: "Aset Tetap > RUH > Transaksi Barang Pihak Ketiga > Penghapusan"
+peran: [satker]
+jenis: juknis
+kata_kunci: [penghapusan barang pihak ketiga, barang titipan, kode transaksi 702]
+status: review
+sumber:
+  - judul: "SAKTI PELAPORAN - Penghapusan Barang Pihak Ketiga"
+    url: "https://sites.google.com/view/saktipelaporan/aset-tetap/ruh/transaksi-barang-pihak-ketiga/penghapusan"
+    jenis: google-sites
+    diambil: 2026-11-21
+    id_manifest: C-aset-tetap-ruh-transaksi-barang-pihak-ketiga-penghapusan
+  - judul: "Juknis SAKTI 2021 Penghapusan Barang Pihak Ketiga"
+    url: "https://docs.google.com/presentation/d/1v-0edFHzbK_B0NCQbLIYscEtR_zpBqwbXn-1_ua1h-w/"
+    jenis: google-slides
+    diambil: 2026-11-21
+    id_manifest: C-dok-129
+sidebar:
+  order: 3
+---
+
+import { Steps } from '@astrojs/starlight/components';
+import MenuSakti from '~/components/MenuSakti.astro';
+import SumberAsli from '~/components/SumberAsli.astro';
+
+Menu Penghapusan BMN Pihak Ketiga (kode transaksi 702) digunakan
+untuk menghapus barang pihak ketiga dari Daftar Barang Pihak
+Ketiga dikarenakan barang tersebut tidak ada lagi, misalnya
+karena dikembalikan ke pemiliknya, rusak berat atau hilang.
+
+<MenuSakti />
+
+## Prasyarat
+
+- Dokumen sumber: Surat keterangan penghapusan BMN Pihak Ketiga.
+
+## Langkah
+
+<Steps>
+
+1. Pilih menu **Aset Tetap > RUH > Transaksi Barang Pihak Ketiga
+   > Penghapusan**, lalu klik **Rekam**.
+2. Pilih Kode Barang pihak ketiga yang akan dihapuskan dan
+   isikan NUP-nya.
+3. Isikan NUP awal dan NUP akhir BMN.
+4. Pilih tanggal pembukuan sesuai dengan dokumen sumber; tidak
+   ada isian nilai.
+5. Isikan dan pilih nomor dan tanggal dasar penghapusan.
+6. Klik tombol **Simpan**.
+
+</Steps>
+
+## Ketentuan
+
+- Perekaman pada menu ini tidak perlu memasukkan nilai; tidak
+  ada jurnal yang dibentuk saat persetujuan transaksi ini.
+
+## Ilustrasi transaksi
+
+Pegawai mengambil kembali 1 unit televisi yang dititipkan di
+kantor untuk dibawa pulang dan digunakan di rumahnya sendiri.
+
+## Terkait
+
+- [Merekam Perolehan Barang Pihak Ketiga](/aset-tetap/ruh/transaksi-barang-pihak-ketiga/perolehan/)
+
+## Sumber
+
+<SumberAsli />

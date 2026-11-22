@@ -1,0 +1,75 @@
+---
+title: Merekam Transfer Internal Keluar BMN
+description: Merekam transfer keluar (penyerahan) BMN dari satker induk kepada satker anak atau sebaliknya.
+modul: aset-tetap
+menu_sakti: "Aset Tetap > RUH > Transaksi BMN > Transfer Internal > Transfer Internal Keluar"
+peran: [satker]
+jenis: juknis
+kata_kunci: [transfer internal keluar, uakpb, uapkpb, kode transaksi 921]
+status: review
+sumber:
+  - judul: "SAKTI PELAPORAN - Transfer Internal Keluar"
+    url: "https://sites.google.com/view/saktipelaporan/aset-tetap/ruh/transaksi-bmn/transfer-internal/transfer-internal-keluar"
+    jenis: google-sites
+    diambil: 2026-11-21
+    id_manifest: C-aset-tetap-ruh-transaksi-bmn-transfer-internal-transfer-internal-keluar
+  - judul: "SAKTI PELAPORAN - Transfer Internal Keluar (halaman ganda)"
+    url: "https://sites.google.com/view/saktipelaporan/aset-tetap/ruh/transaksi-bmn/transfer-internal_1/transfer-internal-keluar"
+    jenis: google-sites
+    diambil: 2026-11-21
+    id_manifest: C-aset-tetap-ruh-transaksi-bmn-transfer-internal_1-transfer-internal-keluar
+sidebar:
+  order: 2
+---
+
+import { Steps } from '@astrojs/starlight/components';
+import MenuSakti from '~/components/MenuSakti.astro';
+import SumberAsli from '~/components/SumberAsli.astro';
+
+Menu Transfer Internal Keluar (kode transaksi 921) digunakan
+untuk merekam transaksi transfer keluar (penyerahan) BMN dari
+satker induk (UAKPB) kepada satker anak (UAPKPB) atau
+sebaliknya, dari satker anak (UAPKPB) kepada satker induk
+(UAKPB). Transaksi ini tidak menghasilkan jurnal.
+
+<MenuSakti />
+
+## Prasyarat
+
+- Dokumen sumber: BAST Internal (SK atau dokumen lain yang
+  dipersamakan).
+- Transaksi ini hanya dapat dilakukan antara satker induk dengan
+  satker anak.
+
+## Langkah
+
+<Steps>
+
+1. Pilih menu **Aset Tetap > RUH > Transaksi BMN > Transfer
+   Internal > Transfer Internal Keluar**.
+2. Pilih Satker/Satker Pembantu tujuan.
+3. Masukkan rincian aset: pilih kodefikasi BMN dan jumlah BMN
+   serta NUP awal.
+4. Tanggal buku disesuaikan dengan SK atau dokumen sumber.
+5. Lengkapi nomor dan tanggal SK.
+
+</Steps>
+
+## Ketentuan
+
+- Transaksi ini tidak menghasilkan jurnal.
+
+## Ilustrasi transaksi
+
+Satker KPP Tanjungpinang (sebagai satker induk) menyerahkan BMN
+berupa sepeda motor sebanyak 2 unit NUP 1-2 kepada satker KP2KP
+Ranai (anak satker).
+
+## Terkait
+
+- [Merekam Transfer Internal Masuk BMN](/aset-tetap/ruh/transfer-internal/transfer-internal-masuk/)
+- [Merekam Transfer Keluar Kemitraan BMN](/aset-tetap/ruh/aset-kemitraan/transfer-keluar-kemitraan/)
+
+## Sumber
+
+<SumberAsli />

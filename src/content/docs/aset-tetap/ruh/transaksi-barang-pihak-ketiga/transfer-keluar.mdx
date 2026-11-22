@@ -1,0 +1,68 @@
+---
+title: Merekam Transfer Keluar Barang Pihak Ketiga
+description: Memindahkan aset barang pihak ketiga yang dititipkan di satker kepada satker lain.
+modul: aset-tetap
+menu_sakti: "Aset Tetap > RUH > Transaksi Barang Pihak Ketiga > Transfer Keluar"
+peran: [satker]
+jenis: juknis
+kata_kunci: [transfer keluar pihak ketiga, barang titipan, transfer barang]
+status: review
+sumber:
+  - judul: "SAKTI PELAPORAN - Transfer Keluar (Pihak Ketiga)"
+    url: "https://sites.google.com/view/saktipelaporan/aset-tetap/ruh/transaksi-barang-pihak-ketiga/transfer-keluar"
+    jenis: google-sites
+    diambil: 2026-11-21
+    id_manifest: C-aset-tetap-ruh-transaksi-barang-pihak-ketiga-transfer-keluar
+sidebar:
+  order: 5
+---
+
+import { Steps } from '@astrojs/starlight/components';
+import MenuSakti from '~/components/MenuSakti.astro';
+import SumberAsli from '~/components/SumberAsli.astro';
+
+Menu Transfer Keluar pada Transaksi Barang Pihak Ketiga
+digunakan untuk memindahkan (transfer) aset tetap/aset lainnya
+berupa Barang Pihak Ketiga (bukan milik kantor) yang dititipkan
+di satker.
+
+<MenuSakti />
+
+## Prasyarat
+
+- Dokumen sumber: surat keterangan penitipan barang atau
+  sejenisnya.
+- Barang pihak ketiga harus sudah tercatat sebelumnya, untuk
+  kemudian dapat ditransfer keluar.
+
+## Langkah
+
+<Steps>
+
+1. Pilih menu **Aset Tetap > RUH > Transaksi Barang Pihak Ketiga
+   > Transfer Keluar**.
+2. Masukkan kode dan NUP barang pihak ketiga.
+3. Tanggal buku sesuai dengan SK.
+4. Pilih satker tujuan.
+
+</Steps>
+
+## Ketentuan
+
+- Tidak ada jurnal yang terbentuk.
+
+## Ilustrasi transaksi
+
+Pegawai menitipkan keyboard (piano) pribadinya ke KPPN Kendari.
+Kemudian pegawai tersebut mutasi ke KPPN Semarang I dan
+menitipkan barangnya tersebut ke kantor barunya. KPPN Kendari
+akan mencatat transfer keluar (pihak ketiga); kemudian KPPN
+Semarang I dapat mencatat transfer masuk (pihak ketiga).
+
+## Terkait
+
+- [Merekam Transfer Masuk Barang Pihak Ketiga](/aset-tetap/ruh/transaksi-barang-pihak-ketiga/transfer-masuk/)
+
+## Sumber
+
+<SumberAsli />
