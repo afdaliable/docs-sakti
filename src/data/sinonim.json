@@ -1,1185 +1,1185 @@
 [
- {
-  "istilah": "SPM",
-  "panjang": "Surat Perintah Membayar",
-  "sinonim": [
-   "surat perintah membayar"
-  ]
- },
- {
-  "istilah": "SP2D",
-  "panjang": "Surat Perintah Pencairan Dana",
-  "sinonim": [
-   "pencairan dana"
-  ]
- },
- {
-  "istilah": "BAST",
-  "panjang": "Berita Acara Serah Terima",
-  "sinonim": [
-   "serah terima"
-  ]
- },
- {
-  "istilah": "BMN",
-  "panjang": "Barang Milik Negara",
-  "sinonim": [
-   "aset",
-   "barang milik negara"
-  ]
- },
- {
-  "istilah": "KDP",
-  "panjang": "Konstruksi Dalam Pengerjaan",
-  "sinonim": [
-   "konstruksi dalam pengerjaan"
-  ]
- },
- {
-  "istilah": "RUH",
-  "panjang": "Rekam, Ubah, Hapus",
-  "sinonim": [
-   "rekam data",
-   "input"
-  ]
- },
- {
-  "istilah": "ADK",
-  "panjang": "Arsip Data Komputer",
-  "sinonim": [
-   "file adk",
-   "upload adk"
-  ]
- },
- {
-  "istilah": "MFA",
-  "panjang": "Multi-Factor Authentication",
-  "sinonim": [
-   "otp",
-   "kode verifikasi",
-   "authenticator",
-   "tidak bisa login"
-  ]
- },
- {
-  "istilah": "GLP",
-  "panjang": "General Ledger dan Pelaporan",
-  "sinonim": [
-   "akuntansi",
-   "pelaporan",
-   "jurnal"
-  ]
- },
- {
-  "istilah": "GPP",
-  "panjang": "Gaji Pokok PNS",
-  "sinonim": [
-   "gaji",
-   "belanja pegawai"
-  ],
-  "perlu_verifikasi": true
- },
- {
-  "istilah": "PKIPA",
-  "panjang": "Pernyataan Komitmen Integritas Pelaksanaan Anggaran",
-  "sinonim": [
-   "komitmen integritas",
-   "pernyataan komitmen integritas"
-  ]
- },
- {
-  "istilah": "DS",
-  "panjang": "Digital Signature / Tanda Tangan Elektronik",
-  "sinonim": [
-   "tte",
-   "sertifikat elektronik",
-   "tanda tangan digital"
-  ]
- },
- {
-  "istilah": "OTP",
-  "panjang": "One Time Password",
-  "sinonim": [
-   "kode otp",
-   "kode sekali pakai",
-   "aktivasi otp",
-   "request otp"
-  ]
- },
- {
-  "istilah": "TOTP",
-  "panjang": "Time-based one-time password",
-  "sinonim": [
-   "passcode authenticator",
-   "kode authenticator"
-  ]
- },
- {
-  "istilah": "KPA",
-  "panjang": "Kuasa Pengguna Anggaran",
-  "sinonim": [
-   "kepala satker"
-  ]
- },
- {
-  "istilah": "PPK",
-  "panjang": "",
-  "sinonim": [
-   "pejabat pembuat komitmen"
-  ],
-  "perlu_verifikasi": true
- },
- {
-  "istilah": "PPSPM",
-  "panjang": "",
-  "sinonim": [
-   "pejabat penanda tangan spm"
-  ],
-  "perlu_verifikasi": true
- },
- {
-  "istilah": "KPPN",
-  "panjang": "",
-  "sinonim": [
-   "kantor pelayanan perbendaharaan"
-  ],
-  "perlu_verifikasi": true
- },
- {
-  "istilah": "BUN",
-  "panjang": "",
-  "sinonim": [
-   "bendahara umum negara",
-   "kuasa bun"
-  ],
-  "perlu_verifikasi": true
- },
- {
-  "istilah": "monSAKTI",
-  "panjang": "",
-  "sinonim": [
-   "monsakti",
-   "monitoring sakti"
-  ],
-  "perlu_verifikasi": true
- },
- {
-  "istilah": "Pandu SAKTI",
-  "panjang": "",
-  "sinonim": [
-   "pandu-sakti",
-   "user pelatihan",
-   "sakti trainer"
-  ],
-  "perlu_verifikasi": true
- },
- {
-  "istilah": "SAKTI Mail",
-  "panjang": "",
-  "sinonim": [
-   "email sakti",
-   "sakti.mail.go.id",
-   "email kedinasan"
-  ],
-  "perlu_verifikasi": true
- },
- {
-  "istilah": "Dukcapil",
-  "panjang": "",
-  "sinonim": [
-   "data kependudukan",
-   "halo dukcapil"
-  ],
-  "perlu_verifikasi": true
- },
- {
-  "istilah": "SIMASPATEN",
-  "panjang": "",
-  "sinonim": [
-   "status sertifikat pejabat"
-  ],
-  "perlu_verifikasi": true
- },
- {
-  "istilah": "APIP",
-  "panjang": "",
-  "sinonim": [
-   "aparat pengawasan intern pemerintah",
-   "auditor kementerian"
-  ],
-  "perlu_verifikasi": true
- },
- {
-  "istilah": "TTE",
-  "panjang": "Tanda Tangan Elektronik",
-  "sinonim": [
-   "tanda tangan elektronik",
-   "sign dokumen"
-  ]
- },
- {
-  "istilah": "BSrE",
-  "panjang": "",
-  "sinonim": [
-   "portal bsre",
-   "ams"
-  ],
-  "perlu_verifikasi": true
- },
- {
-  "istilah": "BSSN",
-  "panjang": "",
-  "sinonim": [
-   "sertifikat bssn"
-  ],
-  "perlu_verifikasi": true
- },
- {
-  "istilah": "Passphrase",
-  "panjang": "",
-  "sinonim": [
-   "passphrase ds",
-   "passphrase bssn"
-  ],
-  "perlu_verifikasi": true
- },
- {
-  "istilah": "Admin Satker",
-  "panjang": "",
-  "sinonim": [
-   "admin lokal",
-   "administrator lokal",
-   "adm satker"
-  ],
-  "perlu_verifikasi": true
- },
- {
-  "istilah": "Kelompok Pengguna",
-  "panjang": "",
-  "sinonim": [
-   "kewenangan",
-   "role"
-  ],
-  "perlu_verifikasi": true
- },
- {
-  "istilah": "Konsolidator",
-  "panjang": "",
-  "sinonim": [
-   "satker konsolidator",
-   "level konsolidasi",
-   "peran konsolidator",
-   "konsolidasi laporan"
-  ],
-  "perlu_verifikasi": true
- },
- {
-  "istilah": "NRS",
-  "panjang": "Nomor Register Supplier",
-  "sinonim": [
-   "nomor register supplier"
-  ]
- },
- {
-  "istilah": "CAN",
-  "panjang": "Commitment Application Number",
-  "sinonim": [
-   "nomor can",
-   "can kontrak"
-  ]
- },
- {
-  "istilah": "BCSU",
-  "panjang": "Budget Commitment Supplier Update",
-  "sinonim": [
-   "adk update supplier",
-   "ubah data supplier"
-  ]
- },
- {
-  "istilah": "BCKA",
-  "panjang": "",
-  "sinonim": [
-   "adk kontrak"
-  ],
-  "perlu_verifikasi": true
- },
- {
-  "istilah": "SPNP",
-  "panjang": "Surat Penetapan Nilai Pengembalian",
-  "sinonim": [
-   "surat penetapan nilai pengembalian"
-  ]
- },
- {
-  "istilah": "Bank Garansi",
-  "panjang": "",
-  "sinonim": [
-   "bank garansi",
-   "bg",
-   "jaminan bank"
-  ],
-  "perlu_verifikasi": true
- },
- {
-  "istilah": "SPTJM",
-  "panjang": "",
-  "sinonim": [
-   "sptjm"
-  ],
-  "perlu_verifikasi": true
- },
- {
-  "istilah": "RPATA",
-  "panjang": "Rekening Penampungan Akhir Tahun Anggaran",
-  "sinonim": [
-   "rekening penampungan",
-   "rpata"
-  ]
- },
- {
-  "istilah": "TKDN",
-  "panjang": "Tingkat Kandungan Dalam Negeri",
-  "sinonim": [
-   "tingkat kandungan dalam negeri"
-  ]
- },
- {
-  "istilah": "P3DN",
-  "panjang": "Peningkatan Penggunaan Produksi Dalam Negeri",
-  "sinonim": [
-   "produk dalam negeri"
-  ]
- },
- {
-  "istilah": "PDN",
-  "panjang": "Produk Dalam Negeri",
-  "sinonim": [
-   "produk dalam negeri"
-  ]
- },
- {
-  "istilah": "RO",
-  "panjang": "Rincian Output",
-  "sinonim": [
-   "rincian output",
-   "output satker"
-  ]
- },
- {
-  "istilah": "KRO",
-  "panjang": "Klasifikasi Rincian Output",
-  "sinonim": [
-   "klasifikasi rincian output"
-  ]
- },
- {
-  "istilah": "TPCRO",
-  "panjang": "Target Progres Capaian Rincian Output",
-  "sinonim": [
-   "target progres capaian output"
-  ]
- },
- {
-  "istilah": "TRVRO",
-  "panjang": "Target Rincian Volume Rincian Output",
-  "sinonim": [
-   "target volume output"
-  ]
- },
- {
-  "istilah": "PCRO",
-  "panjang": "Progres Capaian Rincian Output",
-  "sinonim": [
-   "progres capaian output"
-  ]
- },
- {
-  "istilah": "RVRO",
-  "panjang": "Realisasi Volume Rincian Output",
-  "sinonim": [
-   "realisasi volume output"
-  ]
- },
- {
-  "istilah": "COA",
-  "panjang": "Chart of Account",
-  "sinonim": [
-   "akun",
-   "chart of account",
-   "kode akun"
-  ]
- },
- {
-  "istilah": "Karwas",
-  "panjang": "Kartu Pengawasan",
-  "sinonim": [
-   "kartu pengawasan",
-   "karwas kontrak"
-  ]
- },
- {
-  "istilah": "Govmart",
-  "panjang": "",
-  "sinonim": [
-   "gov'mart",
-   "government marketplace"
-  ],
-  "perlu_verifikasi": true
- },
- {
-  "istilah": "Inaproc",
-  "panjang": "",
-  "sinonim": [
-   "inaproc",
-   "e-katalog",
-   "katalog elektronik"
-  ],
-  "perlu_verifikasi": true
- },
- {
-  "istilah": "SPBy",
-  "panjang": "Surat Perintah Bayar",
-  "sinonim": [
-   "surat perintah bayar",
-   "spby"
-  ]
- },
- {
-  "istilah": "KKP",
-  "panjang": "Kartu Kredit Pemerintah",
-  "sinonim": [
-   "kartu kredit pemerintah",
-   "kkp"
-  ]
- },
- {
-  "istilah": "Supplier",
-  "panjang": "",
-  "sinonim": [
-   "suplier",
-   "penyedia",
-   "rekanan"
-  ],
-  "perlu_verifikasi": true
- },
- {
-  "istilah": "Addendum",
-  "panjang": "",
-  "sinonim": [
-   "adendum",
-   "addendum kontrak",
-   "perubahan kontrak"
-  ],
-  "perlu_verifikasi": true
- },
- {
-  "istilah": "Termin",
-  "panjang": "",
-  "sinonim": [
-   "termin",
-   "termin pembayaran",
-   "jadwal pembayaran"
-  ],
-  "perlu_verifikasi": true
- },
- {
-  "istilah": "Void BAST",
-  "panjang": "",
-  "sinonim": [
-   "void bast",
-   "pembatalan bast",
-   "hapus bast"
-  ],
-  "perlu_verifikasi": true
- },
- {
-  "istilah": "JAT",
-  "panjang": "Jaminan Akhir Tahun",
-  "sinonim": [
-   "jaminan akhir tahun"
-  ]
- },
- {
-  "istilah": "SSPB",
-  "panjang": "Surat Setoran Pengembalian Belanja",
-  "sinonim": [
-   "setoran pengembalian belanja"
-  ]
- },
- {
-  "istilah": "SPP",
-  "panjang": "Surat Permintaan Pembayaran",
-  "sinonim": [
-   "surat permintaan pembayaran"
-  ]
- },
- {
-  "istilah": "RPD",
-  "panjang": "Rencana Penarikan Dana",
-  "sinonim": [
-   "rencana penarikan dana",
-   "rpd harian",
-   "rencana penarikan dana harian"
-  ]
- },
- {
-  "istilah": "Renkas",
-  "panjang": "",
-  "sinonim": [
-   "rencana kas",
-   "renkas harian"
-  ],
-  "perlu_verifikasi": true
- },
- {
-  "istilah": "SP3B",
-  "panjang": "Surat Perintah Pengesahan Pendapatan dan Belanja",
-  "sinonim": [
-   "surat perintah pengesahan pendapatan dan belanja",
-   "sp3b blu"
-  ]
- },
- {
-  "istilah": "BLU",
-  "panjang": "Badan Layanan Umum",
-  "sinonim": [
-   "badan layanan umum",
-   "satker blu"
-  ]
- },
- {
-  "istilah": "SPD",
-  "panjang": "",
-  "sinonim": [
-   "spd lc"
-  ],
-  "perlu_verifikasi": true
- },
- {
-  "istilah": "LC",
-  "panjang": "",
-  "sinonim": [
-   "letter of credit",
-   "spp-ls lc"
-  ],
-  "perlu_verifikasi": true
- },
- {
-  "istilah": "PPNPN",
-  "panjang": "Pegawai Pemerintah Non Pegawai Negeri",
-  "sinonim": [
-   "pegawai pemerintah non pegawai negeri",
-   "honorer"
-  ]
- },
- {
-  "istilah": "THR",
-  "panjang": "Tunjangan Hari Raya",
-  "sinonim": [
-   "tunjangan hari raya",
-   "thr"
-  ]
- },
- {
-  "istilah": "DAK Fisik",
-  "panjang": "Dana Alokasi Khusus Fisik",
-  "sinonim": [
-   "dak fisik",
-   "dana alokasi khusus"
-  ]
- },
- {
-  "istilah": "Dana BOS",
-  "panjang": "Bantuan Operasional Sekolah",
-  "sinonim": [
-   "bos",
-   "bantuan operasional sekolah",
-   "dana bos"
-  ]
- },
- {
-  "istilah": "Dana Desa",
-  "panjang": "",
-  "sinonim": [
-   "penyaluran dana desa",
-   "transfer dana desa"
-  ],
-  "perlu_verifikasi": true
- },
- {
-  "istilah": "SPMKC",
-  "panjang": "",
-  "sinonim": [
-   "kembali cukai",
-   "spm kembali cukai"
-  ],
-  "perlu_verifikasi": true
- },
- {
-  "istilah": "PNBP",
-  "panjang": "Penerimaan Negara Bukan Pajak",
-  "sinonim": [
-   "penerimaan negara bukan pajak",
-   "pnbp"
-  ]
- },
- {
-  "istilah": "SSP",
-  "panjang": "",
-  "sinonim": [
-   "surat setoran pajak",
-   "setoran pajak"
-  ],
-  "perlu_verifikasi": true
- },
- {
-  "istilah": "Perintah Bayar",
-  "panjang": "",
-  "sinonim": [
-   "spby",
-   "surat perintah bayar"
-  ],
-  "perlu_verifikasi": true
- },
- {
-  "istilah": "Void SP2D",
-  "panjang": "",
-  "sinonim": [
-   "void spm",
-   "pembatalan sp2d",
-   "batal sp2d"
-  ],
-  "perlu_verifikasi": true
- },
- {
-  "istilah": "Dispensasi RPD",
-  "panjang": "",
-  "sinonim": [
-   "dispensasi rpd harian",
-   "dispensasi renkas",
-   "dispensasi jatuh tempo"
-  ],
-  "perlu_verifikasi": true
- },
- {
-  "istilah": "Dokumen Pendukung",
-  "panjang": "",
-  "sinonim": [
-   "dokpend",
-   "dok pendukung",
-   "lampiran spm"
-  ],
-  "perlu_verifikasi": true
- },
- {
-  "istilah": "PPP",
-  "panjang": "Platform Pembayaran Pemerintah",
-  "sinonim": [
-   "platform pembayaran pemerintah",
-   "belanja operasional ppp"
-  ]
- },
- {
-  "istilah": "UP",
-  "panjang": "Uang Persediaan",
-  "sinonim": [
-   "uang persediaan",
-   "up satker"
-  ],
-  "perlu_verifikasi": false
- },
- {
-  "istilah": "TUP",
-  "panjang": "Tambahan Uang Persediaan",
-  "sinonim": [
-   "tambahan up",
-   "tup"
-  ],
-  "perlu_verifikasi": false
- },
- {
-  "istilah": "PTUP",
-  "panjang": "Pertanggungjawaban Tambahan Uang Persediaan",
-  "sinonim": [
-   "ptup",
-   "penyelesaian tup"
-  ],
-  "perlu_verifikasi": false
- },
- {
-  "istilah": "BPP",
-  "panjang": "Bendahara Pengeluaran Pembantu",
-  "sinonim": [
-   "bendahara pembantu",
-   "up bpp"
-  ],
-  "perlu_verifikasi": false
- },
- {
-  "istilah": "DPK",
-  "panjang": "Dana Pihak Ketiga",
-  "sinonim": [
-   "dana titipan",
-   "dpk"
-  ],
-  "perlu_verifikasi": false
- },
- {
-  "istilah": "SP2HL",
-  "panjang": "Surat Perintah Pengesahan Hibah Langsung",
-  "sinonim": [
-   "sp2hl",
-   "pengesahan hibah langsung"
-  ],
-  "perlu_verifikasi": false
- },
- {
-  "istilah": "SP4HL",
-  "panjang": "Surat Perintah Pengesahan Pengembalian Pendapatan Hibah Langsung",
-  "sinonim": [
-   "sp4hl",
-   "pengembalian hibah langsung"
-  ],
-  "perlu_verifikasi": false
- },
- {
-  "istilah": "GUP",
-  "panjang": "",
-  "sinonim": [
-   "ganti up",
-   "gup"
-  ],
-  "perlu_verifikasi": true
- },
- {
-  "istilah": "DRPP",
-  "panjang": "",
-  "sinonim": [
-   "drpp",
-   "pertanggungjawaban up"
-  ],
-  "perlu_verifikasi": true
- },
- {
-  "istilah": "SPTB",
-  "panjang": "",
-  "sinonim": [
-   "sptb kuitansi hibah"
-  ],
-  "perlu_verifikasi": true
- },
- {
-  "istilah": "LPJ",
-  "panjang": "",
-  "sinonim": [
-   "lpj bendahara",
-   "laporan bendahara"
-  ],
-  "perlu_verifikasi": true
- },
- {
-  "istilah": "SBS",
-  "panjang": "",
-  "sinonim": [
-   "sbs pnbp"
-  ],
-  "perlu_verifikasi": true
- },
- {
-  "istilah": "SSBP",
-  "panjang": "",
-  "sinonim": [
-   "ssbp"
-  ],
-  "perlu_verifikasi": true
- },
- {
-  "istilah": "NTPN",
-  "panjang": "",
-  "sinonim": [
-   "ntpn",
-   "kode ntpn"
-  ],
-  "perlu_verifikasi": true
- },
- {
-  "istilah": "Kode Billing",
-  "panjang": "",
-  "sinonim": [
-   "id billing",
-   "kode billing"
-  ],
-  "perlu_verifikasi": true
- },
- {
-  "istilah": "SIMPONI",
-  "panjang": "",
-  "sinonim": [
-   "simponi",
-   "adk simponi"
-  ],
-  "perlu_verifikasi": true
- },
- {
-  "istilah": "Hibah Kas",
-  "panjang": "",
-  "sinonim": [
-   "kas hibah",
-   "hibah langsung"
-  ],
-  "perlu_verifikasi": true
- },
- {
-  "istilah": "BKU",
-  "panjang": "",
-  "sinonim": [
-   "bku"
-  ],
-  "perlu_verifikasi": true
- },
- {
-  "istilah": "Kuitansi",
-  "panjang": "",
-  "sinonim": [
-   "membuat kuitansi",
-   "kuitansi hibah"
-  ],
-  "perlu_verifikasi": true
- },
- {
-  "istilah": "Pungutan Pajak",
-  "panjang": "",
-  "sinonim": [
-   "pungut pajak",
-   "mencatat pungutan"
-  ],
-  "perlu_verifikasi": true
- },
- {
-  "istilah": "UAKPB",
-  "panjang": "",
-  "sinonim": [
-   "uakpb",
-   "satker induk persediaan"
-  ],
-  "perlu_verifikasi": true
- },
- {
-  "istilah": "UAPKPB",
-  "panjang": "",
-  "sinonim": [
-   "uapkpb"
-  ],
-  "perlu_verifikasi": true
- },
- {
-  "istilah": "UAKPBP",
-  "panjang": "",
-  "sinonim": [
-   "uakpbp",
-   "satker anak persediaan",
-   "satker pembantu"
-  ],
-  "perlu_verifikasi": true
- },
- {
-  "istilah": "MPHLBJS",
-  "panjang": "",
-  "sinonim": [
-   "mphl bjs",
-   "mphlbjs",
-   "pengesahan mphl"
-  ],
-  "perlu_verifikasi": true
- },
- {
-  "istilah": "FIFO",
-  "panjang": "",
-  "sinonim": [
-   "metode fifo",
-   "first in first out persediaan"
-  ],
-  "perlu_verifikasi": true
- },
- {
-  "istilah": "HST",
-  "panjang": "",
-  "sinonim": [
-   "harga satuan terakhir",
-   "metode hst"
-  ],
-  "perlu_verifikasi": true
- },
- {
-  "istilah": "Metode Perpetual",
-  "panjang": "",
-  "sinonim": [
-   "perpetual",
-   "metode pencatatan perpetual"
-  ],
-  "perlu_verifikasi": true
- },
- {
-  "istilah": "Opname Fisik",
-  "panjang": "",
-  "sinonim": [
-   "opname",
-   "stok opname",
-   "stock opname persediaan"
-  ],
-  "perlu_verifikasi": true
- },
- {
-  "istilah": "Reklasifikasi",
-  "panjang": "",
-  "sinonim": [
-   "reklas",
-   "reklasifikasi persediaan",
-   "ubah kode barang"
-  ],
-  "perlu_verifikasi": true
- },
- {
-  "istilah": "Transfer Keluar Online",
-  "panjang": "",
-  "sinonim": [
-   "tk online",
-   "tko persediaan",
-   "transfer online sakti"
-  ],
-  "perlu_verifikasi": true
- },
- {
-  "istilah": "Likuidasi",
-  "panjang": "",
-  "sinonim": [
-   "likuidasi uakpb",
-   "likuidasi persediaan",
-   "satker likuidasi"
-  ],
-  "perlu_verifikasi": true
- },
- {
-  "istilah": "Persediaan dalam Proses",
-  "panjang": "",
-  "sinonim": [
-   "barang dalam proses",
-   "pdp",
-   "persediaan termin"
-  ],
-  "perlu_verifikasi": true
- },
- {
-  "istilah": "Persediaan Tak Dikuasai",
-  "panjang": "",
-  "sinonim": [
-   "persediaan tidak dikuasai",
-   "barang titipan persediaan"
-  ],
-  "perlu_verifikasi": true
- },
- {
-  "istilah": "Periode Balance",
-  "panjang": "",
-  "sinonim": [
-   "saldo akhir periode",
-   "saldo periode persediaan"
-  ],
-  "perlu_verifikasi": true
- },
- {
-  "istilah": "Saldo Awal",
-  "panjang": "",
-  "sinonim": [
-   "saldo awal persediaan",
-   "input saldo awal"
-  ],
-  "perlu_verifikasi": true
- },
- {
-  "istilah": "Memo Penyesuaian",
-  "panjang": "",
-  "sinonim": [
-   "memo koreksi",
-   "surat dasar koreksi"
-  ],
-  "perlu_verifikasi": true
- },
- {
-  "istilah": "Koreksi Jumlah",
-  "panjang": "",
-  "sinonim": [
-   "koreksi kuantitas persediaan",
-   "koreksi jumlah barang"
-  ],
-  "perlu_verifikasi": true
- },
- {
-  "istilah": "Koreksi Nilai",
-  "panjang": "",
-  "sinonim": [
-   "koreksi harga satuan",
-   "koreksi nilai persediaan"
-  ],
-  "perlu_verifikasi": true
- },
- {
-  "istilah": "Pemakaian",
-  "panjang": "",
-  "sinonim": [
-   "habis pakai",
-   "pemakaian persediaan",
-   "bon barang"
-  ],
-  "perlu_verifikasi": true
- },
- {
-  "istilah": "Persediaan Belum Diregister",
-  "panjang": "",
-  "sinonim": [
-   "belum diregister",
-   "persediaan blm diregister"
-  ],
-  "perlu_verifikasi": true
- },
- {
-  "istilah": "ATR",
-  "panjang": "Aset Tetap dalam Renovasi",
-  "sinonim": [
-   "atr",
-   "aset tetap renovasi",
-   "renovasi bmn"
-  ],
-  "perlu_verifikasi": true
- },
- {
-  "istilah": "BPYBDS",
-  "panjang": "",
-  "sinonim": [
-   "bpybds",
-   "reklas bpybds"
-  ],
-  "perlu_verifikasi": true
- },
- {
-  "istilah": "PMPP",
-  "panjang": "Penyertaan Modal Pemerintah Pusat",
-  "sinonim": [
-   "bmn dalam proses pmpp",
-   "penyertaan modal pemerintah pusat"
-  ],
-  "perlu_verifikasi": true
- },
- {
-  "istilah": "MAT",
-  "panjang": "Modul Aset Tetap",
-  "sinonim": [
-   "modul aset tetap",
-   "mat"
-  ],
-  "perlu_verifikasi": true
- },
- {
-  "istilah": "NUP",
-  "panjang": "",
-  "sinonim": [
-   "nup",
-   "nomor urut pendaftaran"
-  ],
-  "perlu_verifikasi": true
- },
- {
-  "istilah": "KPB",
-  "panjang": "Kuasa Pengguna Barang",
-  "sinonim": [
-   "kpb",
-   "kuasa pengguna barang"
-  ],
-  "perlu_verifikasi": true
- },
- {
-  "istilah": "Konjas",
-  "panjang": "",
-  "sinonim": [
-   "konjas",
-   "konsesi jasa",
-   "konsesi jasa mitra"
-  ],
-  "perlu_verifikasi": true
- },
- {
-  "istilah": "RB",
-  "panjang": "Rusak Berat",
-  "sinonim": [
-   "rusak berat",
-   "rb"
-  ],
-  "perlu_verifikasi": true
- },
- {
-  "istilah": "Usang",
-  "panjang": "",
-  "sinonim": [
-   "bmn usang",
-   "barang usang"
-  ],
-  "perlu_verifikasi": true
- },
- {
-  "istilah": "Henti Guna",
-  "panjang": "",
-  "sinonim": [
-   "henti guna",
-   "penghentian penggunaan",
-   "non henti guna"
-  ],
-  "perlu_verifikasi": true
- },
- {
-  "istilah": "Aset Tak Berwujud",
-  "panjang": "",
-  "sinonim": [
-   "atb",
-   "aset tak berwujud"
-  ],
-  "perlu_verifikasi": true
- },
- {
-  "istilah": "Tutup Buku",
-  "panjang": "",
-  "sinonim": [
-   "tutup buku",
-   "penutupan periode",
-   "tutup periode"
-  ],
-  "perlu_verifikasi": true
- },
- {
-  "istilah": "BMN Bersejarah",
-  "panjang": "",
-  "sinonim": [
-   "barang bersejarah",
-   "bmn bersejarah"
-  ],
-  "perlu_verifikasi": true
- },
- {
-  "istilah": "Barang Pihak Ketiga",
-  "panjang": "",
-  "sinonim": [
-   "barang pihak ketiga",
-   "barang titipan"
-  ],
-  "perlu_verifikasi": true
- },
- {
-  "istilah": "Transfer Internal",
-  "panjang": "",
-  "sinonim": [
-   "transfer internal",
-   "internal transfer"
-  ],
-  "perlu_verifikasi": true
- }
+  {
+    "istilah": "SPM",
+    "panjang": "Surat Perintah Membayar",
+    "sinonim": [
+      "surat perintah membayar"
+    ]
+  },
+  {
+    "istilah": "SP2D",
+    "panjang": "Surat Perintah Pencairan Dana",
+    "sinonim": [
+      "pencairan dana"
+    ]
+  },
+  {
+    "istilah": "BAST",
+    "panjang": "Berita Acara Serah Terima",
+    "sinonim": [
+      "serah terima"
+    ]
+  },
+  {
+    "istilah": "BMN",
+    "panjang": "Barang Milik Negara",
+    "sinonim": [
+      "aset",
+      "barang milik negara"
+    ]
+  },
+  {
+    "istilah": "KDP",
+    "panjang": "Konstruksi Dalam Pengerjaan",
+    "sinonim": [
+      "konstruksi dalam pengerjaan"
+    ]
+  },
+  {
+    "istilah": "RUH",
+    "panjang": "Rekam, Ubah, Hapus",
+    "sinonim": [
+      "rekam data",
+      "input"
+    ]
+  },
+  {
+    "istilah": "ADK",
+    "panjang": "Arsip Data Komputer",
+    "sinonim": [
+      "file adk",
+      "upload adk"
+    ]
+  },
+  {
+    "istilah": "MFA",
+    "panjang": "Multi-Factor Authentication",
+    "sinonim": [
+      "otp",
+      "kode verifikasi",
+      "authenticator",
+      "tidak bisa login"
+    ]
+  },
+  {
+    "istilah": "GLP",
+    "panjang": "General Ledger dan Pelaporan",
+    "sinonim": [
+      "akuntansi",
+      "pelaporan",
+      "jurnal"
+    ]
+  },
+  {
+    "istilah": "GPP",
+    "panjang": "Gaji Pokok PNS",
+    "sinonim": [
+      "gaji",
+      "belanja pegawai"
+    ],
+    "perlu_verifikasi": true
+  },
+  {
+    "istilah": "PKIPA",
+    "panjang": "Pernyataan Komitmen Integritas Pelaksanaan Anggaran",
+    "sinonim": [
+      "komitmen integritas",
+      "pernyataan komitmen integritas"
+    ]
+  },
+  {
+    "istilah": "DS",
+    "panjang": "Digital Signature / Tanda Tangan Elektronik",
+    "sinonim": [
+      "tte",
+      "sertifikat elektronik",
+      "tanda tangan digital"
+    ]
+  },
+  {
+    "istilah": "OTP",
+    "panjang": "One Time Password",
+    "sinonim": [
+      "kode otp",
+      "kode sekali pakai",
+      "aktivasi otp",
+      "request otp"
+    ]
+  },
+  {
+    "istilah": "TOTP",
+    "panjang": "Time-based one-time password",
+    "sinonim": [
+      "passcode authenticator",
+      "kode authenticator"
+    ]
+  },
+  {
+    "istilah": "KPA",
+    "panjang": "Kuasa Pengguna Anggaran",
+    "sinonim": [
+      "kepala satker"
+    ]
+  },
+  {
+    "istilah": "PPK",
+    "panjang": "",
+    "sinonim": [
+      "pejabat pembuat komitmen"
+    ],
+    "perlu_verifikasi": true
+  },
+  {
+    "istilah": "PPSPM",
+    "panjang": "",
+    "sinonim": [
+      "pejabat penanda tangan spm"
+    ],
+    "perlu_verifikasi": true
+  },
+  {
+    "istilah": "KPPN",
+    "panjang": "",
+    "sinonim": [
+      "kantor pelayanan perbendaharaan"
+    ],
+    "perlu_verifikasi": true
+  },
+  {
+    "istilah": "BUN",
+    "panjang": "",
+    "sinonim": [
+      "bendahara umum negara",
+      "kuasa bun"
+    ],
+    "perlu_verifikasi": true
+  },
+  {
+    "istilah": "monSAKTI",
+    "panjang": "",
+    "sinonim": [
+      "monsakti",
+      "monitoring sakti"
+    ],
+    "perlu_verifikasi": true
+  },
+  {
+    "istilah": "Pandu SAKTI",
+    "panjang": "",
+    "sinonim": [
+      "pandu-sakti",
+      "user pelatihan",
+      "sakti trainer"
+    ],
+    "perlu_verifikasi": true
+  },
+  {
+    "istilah": "SAKTI Mail",
+    "panjang": "",
+    "sinonim": [
+      "email sakti",
+      "sakti.mail.go.id",
+      "email kedinasan"
+    ],
+    "perlu_verifikasi": true
+  },
+  {
+    "istilah": "Dukcapil",
+    "panjang": "",
+    "sinonim": [
+      "data kependudukan",
+      "halo dukcapil"
+    ],
+    "perlu_verifikasi": true
+  },
+  {
+    "istilah": "SIMASPATEN",
+    "panjang": "",
+    "sinonim": [
+      "status sertifikat pejabat"
+    ],
+    "perlu_verifikasi": true
+  },
+  {
+    "istilah": "APIP",
+    "panjang": "",
+    "sinonim": [
+      "aparat pengawasan intern pemerintah",
+      "auditor kementerian"
+    ],
+    "perlu_verifikasi": true
+  },
+  {
+    "istilah": "TTE",
+    "panjang": "Tanda Tangan Elektronik",
+    "sinonim": [
+      "tanda tangan elektronik",
+      "sign dokumen"
+    ]
+  },
+  {
+    "istilah": "BSrE",
+    "panjang": "",
+    "sinonim": [
+      "portal bsre",
+      "ams"
+    ],
+    "perlu_verifikasi": true
+  },
+  {
+    "istilah": "BSSN",
+    "panjang": "",
+    "sinonim": [
+      "sertifikat bssn"
+    ],
+    "perlu_verifikasi": true
+  },
+  {
+    "istilah": "Passphrase",
+    "panjang": "",
+    "sinonim": [
+      "passphrase ds",
+      "passphrase bssn"
+    ],
+    "perlu_verifikasi": true
+  },
+  {
+    "istilah": "Admin Satker",
+    "panjang": "",
+    "sinonim": [
+      "admin lokal",
+      "administrator lokal",
+      "adm satker"
+    ],
+    "perlu_verifikasi": true
+  },
+  {
+    "istilah": "Kelompok Pengguna",
+    "panjang": "",
+    "sinonim": [
+      "kewenangan",
+      "role"
+    ],
+    "perlu_verifikasi": true
+  },
+  {
+    "istilah": "Konsolidator",
+    "panjang": "",
+    "sinonim": [
+      "satker konsolidator",
+      "level konsolidasi",
+      "peran konsolidator",
+      "konsolidasi laporan"
+    ],
+    "perlu_verifikasi": true
+  },
+  {
+    "istilah": "NRS",
+    "panjang": "Nomor Register Supplier",
+    "sinonim": [
+      "nomor register supplier"
+    ]
+  },
+  {
+    "istilah": "CAN",
+    "panjang": "Commitment Application Number",
+    "sinonim": [
+      "nomor can",
+      "can kontrak"
+    ]
+  },
+  {
+    "istilah": "BCSU",
+    "panjang": "Budget Commitment Supplier Update",
+    "sinonim": [
+      "adk update supplier",
+      "ubah data supplier"
+    ]
+  },
+  {
+    "istilah": "BCKA",
+    "panjang": "",
+    "sinonim": [
+      "adk kontrak"
+    ],
+    "perlu_verifikasi": true
+  },
+  {
+    "istilah": "SPNP",
+    "panjang": "Surat Penetapan Nilai Pengembalian",
+    "sinonim": [
+      "surat penetapan nilai pengembalian"
+    ]
+  },
+  {
+    "istilah": "Bank Garansi",
+    "panjang": "",
+    "sinonim": [
+      "bank garansi",
+      "bg",
+      "jaminan bank"
+    ],
+    "perlu_verifikasi": true
+  },
+  {
+    "istilah": "SPTJM",
+    "panjang": "",
+    "sinonim": [
+      "sptjm"
+    ],
+    "perlu_verifikasi": true
+  },
+  {
+    "istilah": "RPATA",
+    "panjang": "Rekening Penampungan Akhir Tahun Anggaran",
+    "sinonim": [
+      "rekening penampungan",
+      "rpata"
+    ]
+  },
+  {
+    "istilah": "TKDN",
+    "panjang": "Tingkat Kandungan Dalam Negeri",
+    "sinonim": [
+      "tingkat kandungan dalam negeri"
+    ]
+  },
+  {
+    "istilah": "P3DN",
+    "panjang": "Peningkatan Penggunaan Produksi Dalam Negeri",
+    "sinonim": [
+      "produk dalam negeri"
+    ]
+  },
+  {
+    "istilah": "PDN",
+    "panjang": "Produk Dalam Negeri",
+    "sinonim": [
+      "produk dalam negeri"
+    ]
+  },
+  {
+    "istilah": "RO",
+    "panjang": "Rincian Output",
+    "sinonim": [
+      "rincian output",
+      "output satker"
+    ]
+  },
+  {
+    "istilah": "KRO",
+    "panjang": "Klasifikasi Rincian Output",
+    "sinonim": [
+      "klasifikasi rincian output"
+    ]
+  },
+  {
+    "istilah": "TPCRO",
+    "panjang": "Target Progres Capaian Rincian Output",
+    "sinonim": [
+      "target progres capaian output"
+    ]
+  },
+  {
+    "istilah": "TRVRO",
+    "panjang": "Target Rincian Volume Rincian Output",
+    "sinonim": [
+      "target volume output"
+    ]
+  },
+  {
+    "istilah": "PCRO",
+    "panjang": "Progres Capaian Rincian Output",
+    "sinonim": [
+      "progres capaian output"
+    ]
+  },
+  {
+    "istilah": "RVRO",
+    "panjang": "Realisasi Volume Rincian Output",
+    "sinonim": [
+      "realisasi volume output"
+    ]
+  },
+  {
+    "istilah": "COA",
+    "panjang": "Chart of Account",
+    "sinonim": [
+      "akun",
+      "chart of account",
+      "kode akun"
+    ]
+  },
+  {
+    "istilah": "Karwas",
+    "panjang": "Kartu Pengawasan",
+    "sinonim": [
+      "kartu pengawasan",
+      "karwas kontrak"
+    ]
+  },
+  {
+    "istilah": "Govmart",
+    "panjang": "",
+    "sinonim": [
+      "gov'mart",
+      "government marketplace"
+    ],
+    "perlu_verifikasi": true
+  },
+  {
+    "istilah": "Inaproc",
+    "panjang": "",
+    "sinonim": [
+      "inaproc",
+      "e-katalog",
+      "katalog elektronik"
+    ],
+    "perlu_verifikasi": true
+  },
+  {
+    "istilah": "SPBy",
+    "panjang": "Surat Perintah Bayar",
+    "sinonim": [
+      "surat perintah bayar",
+      "spby"
+    ]
+  },
+  {
+    "istilah": "KKP",
+    "panjang": "Kartu Kredit Pemerintah",
+    "sinonim": [
+      "kartu kredit pemerintah",
+      "kkp"
+    ]
+  },
+  {
+    "istilah": "Supplier",
+    "panjang": "",
+    "sinonim": [
+      "suplier",
+      "penyedia",
+      "rekanan"
+    ],
+    "perlu_verifikasi": true
+  },
+  {
+    "istilah": "Addendum",
+    "panjang": "",
+    "sinonim": [
+      "adendum",
+      "addendum kontrak",
+      "perubahan kontrak"
+    ],
+    "perlu_verifikasi": true
+  },
+  {
+    "istilah": "Termin",
+    "panjang": "",
+    "sinonim": [
+      "termin",
+      "termin pembayaran",
+      "jadwal pembayaran"
+    ],
+    "perlu_verifikasi": true
+  },
+  {
+    "istilah": "Void BAST",
+    "panjang": "",
+    "sinonim": [
+      "void bast",
+      "pembatalan bast",
+      "hapus bast"
+    ],
+    "perlu_verifikasi": true
+  },
+  {
+    "istilah": "JAT",
+    "panjang": "Jaminan Akhir Tahun",
+    "sinonim": [
+      "jaminan akhir tahun"
+    ]
+  },
+  {
+    "istilah": "SSPB",
+    "panjang": "Surat Setoran Pengembalian Belanja",
+    "sinonim": [
+      "setoran pengembalian belanja"
+    ]
+  },
+  {
+    "istilah": "SPP",
+    "panjang": "Surat Permintaan Pembayaran",
+    "sinonim": [
+      "surat permintaan pembayaran"
+    ]
+  },
+  {
+    "istilah": "RPD",
+    "panjang": "Rencana Penarikan Dana",
+    "sinonim": [
+      "rencana penarikan dana",
+      "rpd harian",
+      "rencana penarikan dana harian"
+    ]
+  },
+  {
+    "istilah": "Renkas",
+    "panjang": "",
+    "sinonim": [
+      "rencana kas",
+      "renkas harian"
+    ],
+    "perlu_verifikasi": true
+  },
+  {
+    "istilah": "SP3B",
+    "panjang": "Surat Perintah Pengesahan Pendapatan dan Belanja",
+    "sinonim": [
+      "surat perintah pengesahan pendapatan dan belanja",
+      "sp3b blu"
+    ]
+  },
+  {
+    "istilah": "BLU",
+    "panjang": "Badan Layanan Umum",
+    "sinonim": [
+      "badan layanan umum",
+      "satker blu"
+    ]
+  },
+  {
+    "istilah": "SPD",
+    "panjang": "",
+    "sinonim": [
+      "spd lc"
+    ],
+    "perlu_verifikasi": true
+  },
+  {
+    "istilah": "LC",
+    "panjang": "",
+    "sinonim": [
+      "letter of credit",
+      "spp-ls lc"
+    ],
+    "perlu_verifikasi": true
+  },
+  {
+    "istilah": "PPNPN",
+    "panjang": "Pegawai Pemerintah Non Pegawai Negeri",
+    "sinonim": [
+      "pegawai pemerintah non pegawai negeri",
+      "honorer"
+    ]
+  },
+  {
+    "istilah": "THR",
+    "panjang": "Tunjangan Hari Raya",
+    "sinonim": [
+      "tunjangan hari raya",
+      "thr"
+    ]
+  },
+  {
+    "istilah": "DAK Fisik",
+    "panjang": "Dana Alokasi Khusus Fisik",
+    "sinonim": [
+      "dak fisik",
+      "dana alokasi khusus"
+    ]
+  },
+  {
+    "istilah": "Dana BOS",
+    "panjang": "Bantuan Operasional Sekolah",
+    "sinonim": [
+      "bos",
+      "bantuan operasional sekolah",
+      "dana bos"
+    ]
+  },
+  {
+    "istilah": "Dana Desa",
+    "panjang": "",
+    "sinonim": [
+      "penyaluran dana desa",
+      "transfer dana desa"
+    ],
+    "perlu_verifikasi": true
+  },
+  {
+    "istilah": "SPMKC",
+    "panjang": "",
+    "sinonim": [
+      "kembali cukai",
+      "spm kembali cukai"
+    ],
+    "perlu_verifikasi": true
+  },
+  {
+    "istilah": "PNBP",
+    "panjang": "Penerimaan Negara Bukan Pajak",
+    "sinonim": [
+      "penerimaan negara bukan pajak",
+      "pnbp"
+    ]
+  },
+  {
+    "istilah": "SSP",
+    "panjang": "",
+    "sinonim": [
+      "surat setoran pajak",
+      "setoran pajak"
+    ],
+    "perlu_verifikasi": true
+  },
+  {
+    "istilah": "Perintah Bayar",
+    "panjang": "",
+    "sinonim": [
+      "spby",
+      "surat perintah bayar"
+    ],
+    "perlu_verifikasi": true
+  },
+  {
+    "istilah": "Void SP2D",
+    "panjang": "",
+    "sinonim": [
+      "void spm",
+      "pembatalan sp2d",
+      "batal sp2d"
+    ],
+    "perlu_verifikasi": true
+  },
+  {
+    "istilah": "Dispensasi RPD",
+    "panjang": "",
+    "sinonim": [
+      "dispensasi rpd harian",
+      "dispensasi renkas",
+      "dispensasi jatuh tempo"
+    ],
+    "perlu_verifikasi": true
+  },
+  {
+    "istilah": "Dokumen Pendukung",
+    "panjang": "",
+    "sinonim": [
+      "dokpend",
+      "dok pendukung",
+      "lampiran spm"
+    ],
+    "perlu_verifikasi": true
+  },
+  {
+    "istilah": "PPP",
+    "panjang": "Platform Pembayaran Pemerintah",
+    "sinonim": [
+      "platform pembayaran pemerintah",
+      "belanja operasional ppp"
+    ]
+  },
+  {
+    "istilah": "UP",
+    "panjang": "Uang Persediaan",
+    "sinonim": [
+      "uang persediaan",
+      "up satker"
+    ],
+    "perlu_verifikasi": false
+  },
+  {
+    "istilah": "TUP",
+    "panjang": "Tambahan Uang Persediaan",
+    "sinonim": [
+      "tambahan up",
+      "tup"
+    ],
+    "perlu_verifikasi": false
+  },
+  {
+    "istilah": "PTUP",
+    "panjang": "Pertanggungjawaban Tambahan Uang Persediaan",
+    "sinonim": [
+      "ptup",
+      "penyelesaian tup"
+    ],
+    "perlu_verifikasi": false
+  },
+  {
+    "istilah": "BPP",
+    "panjang": "Bendahara Pengeluaran Pembantu",
+    "sinonim": [
+      "bendahara pembantu",
+      "up bpp"
+    ],
+    "perlu_verifikasi": false
+  },
+  {
+    "istilah": "DPK",
+    "panjang": "Dana Pihak Ketiga",
+    "sinonim": [
+      "dana titipan",
+      "dpk"
+    ],
+    "perlu_verifikasi": false
+  },
+  {
+    "istilah": "SP2HL",
+    "panjang": "Surat Perintah Pengesahan Hibah Langsung",
+    "sinonim": [
+      "sp2hl",
+      "pengesahan hibah langsung"
+    ],
+    "perlu_verifikasi": false
+  },
+  {
+    "istilah": "SP4HL",
+    "panjang": "Surat Perintah Pengesahan Pengembalian Pendapatan Hibah Langsung",
+    "sinonim": [
+      "sp4hl",
+      "pengembalian hibah langsung"
+    ],
+    "perlu_verifikasi": false
+  },
+  {
+    "istilah": "GUP",
+    "panjang": "",
+    "sinonim": [
+      "ganti up",
+      "gup"
+    ],
+    "perlu_verifikasi": true
+  },
+  {
+    "istilah": "DRPP",
+    "panjang": "",
+    "sinonim": [
+      "drpp",
+      "pertanggungjawaban up"
+    ],
+    "perlu_verifikasi": true
+  },
+  {
+    "istilah": "SPTB",
+    "panjang": "",
+    "sinonim": [
+      "sptb kuitansi hibah"
+    ],
+    "perlu_verifikasi": true
+  },
+  {
+    "istilah": "LPJ",
+    "panjang": "",
+    "sinonim": [
+      "lpj bendahara",
+      "laporan bendahara"
+    ],
+    "perlu_verifikasi": true
+  },
+  {
+    "istilah": "SBS",
+    "panjang": "",
+    "sinonim": [
+      "sbs pnbp"
+    ],
+    "perlu_verifikasi": true
+  },
+  {
+    "istilah": "SSBP",
+    "panjang": "",
+    "sinonim": [
+      "ssbp"
+    ],
+    "perlu_verifikasi": true
+  },
+  {
+    "istilah": "NTPN",
+    "panjang": "",
+    "sinonim": [
+      "ntpn",
+      "kode ntpn"
+    ],
+    "perlu_verifikasi": true
+  },
+  {
+    "istilah": "Kode Billing",
+    "panjang": "",
+    "sinonim": [
+      "id billing",
+      "kode billing"
+    ],
+    "perlu_verifikasi": true
+  },
+  {
+    "istilah": "SIMPONI",
+    "panjang": "",
+    "sinonim": [
+      "simponi",
+      "adk simponi"
+    ],
+    "perlu_verifikasi": true
+  },
+  {
+    "istilah": "Hibah Kas",
+    "panjang": "",
+    "sinonim": [
+      "kas hibah",
+      "hibah langsung"
+    ],
+    "perlu_verifikasi": true
+  },
+  {
+    "istilah": "BKU",
+    "panjang": "",
+    "sinonim": [
+      "bku"
+    ],
+    "perlu_verifikasi": true
+  },
+  {
+    "istilah": "Kuitansi",
+    "panjang": "",
+    "sinonim": [
+      "membuat kuitansi",
+      "kuitansi hibah"
+    ],
+    "perlu_verifikasi": true
+  },
+  {
+    "istilah": "Pungutan Pajak",
+    "panjang": "",
+    "sinonim": [
+      "pungut pajak",
+      "mencatat pungutan"
+    ],
+    "perlu_verifikasi": true
+  },
+  {
+    "istilah": "UAKPB",
+    "panjang": "",
+    "sinonim": [
+      "uakpb",
+      "satker induk persediaan"
+    ],
+    "perlu_verifikasi": true
+  },
+  {
+    "istilah": "UAPKPB",
+    "panjang": "",
+    "sinonim": [
+      "uapkpb"
+    ],
+    "perlu_verifikasi": true
+  },
+  {
+    "istilah": "UAKPBP",
+    "panjang": "",
+    "sinonim": [
+      "uakpbp",
+      "satker anak persediaan",
+      "satker pembantu"
+    ],
+    "perlu_verifikasi": true
+  },
+  {
+    "istilah": "MPHLBJS",
+    "panjang": "",
+    "sinonim": [
+      "mphl bjs",
+      "mphlbjs",
+      "pengesahan mphl"
+    ],
+    "perlu_verifikasi": true
+  },
+  {
+    "istilah": "FIFO",
+    "panjang": "",
+    "sinonim": [
+      "metode fifo",
+      "first in first out persediaan"
+    ],
+    "perlu_verifikasi": true
+  },
+  {
+    "istilah": "HST",
+    "panjang": "",
+    "sinonim": [
+      "harga satuan terakhir",
+      "metode hst"
+    ],
+    "perlu_verifikasi": true
+  },
+  {
+    "istilah": "Metode Perpetual",
+    "panjang": "",
+    "sinonim": [
+      "perpetual",
+      "metode pencatatan perpetual"
+    ],
+    "perlu_verifikasi": true
+  },
+  {
+    "istilah": "Opname Fisik",
+    "panjang": "",
+    "sinonim": [
+      "opname",
+      "stok opname",
+      "stock opname persediaan"
+    ],
+    "perlu_verifikasi": true
+  },
+  {
+    "istilah": "Reklasifikasi",
+    "panjang": "",
+    "sinonim": [
+      "reklas",
+      "reklasifikasi persediaan",
+      "ubah kode barang"
+    ],
+    "perlu_verifikasi": true
+  },
+  {
+    "istilah": "Transfer Keluar Online",
+    "panjang": "",
+    "sinonim": [
+      "tk online",
+      "tko persediaan",
+      "transfer online sakti"
+    ],
+    "perlu_verifikasi": true
+  },
+  {
+    "istilah": "Likuidasi",
+    "panjang": "",
+    "sinonim": [
+      "likuidasi uakpb",
+      "likuidasi persediaan",
+      "satker likuidasi"
+    ],
+    "perlu_verifikasi": true
+  },
+  {
+    "istilah": "Persediaan dalam Proses",
+    "panjang": "",
+    "sinonim": [
+      "barang dalam proses",
+      "pdp",
+      "persediaan termin"
+    ],
+    "perlu_verifikasi": true
+  },
+  {
+    "istilah": "Persediaan Tak Dikuasai",
+    "panjang": "",
+    "sinonim": [
+      "persediaan tidak dikuasai",
+      "barang titipan persediaan"
+    ],
+    "perlu_verifikasi": true
+  },
+  {
+    "istilah": "Periode Balance",
+    "panjang": "",
+    "sinonim": [
+      "saldo akhir periode",
+      "saldo periode persediaan"
+    ],
+    "perlu_verifikasi": true
+  },
+  {
+    "istilah": "Saldo Awal",
+    "panjang": "",
+    "sinonim": [
+      "saldo awal persediaan",
+      "input saldo awal"
+    ],
+    "perlu_verifikasi": true
+  },
+  {
+    "istilah": "Memo Penyesuaian",
+    "panjang": "",
+    "sinonim": [
+      "memo koreksi",
+      "surat dasar koreksi"
+    ],
+    "perlu_verifikasi": true
+  },
+  {
+    "istilah": "Koreksi Jumlah",
+    "panjang": "",
+    "sinonim": [
+      "koreksi kuantitas persediaan",
+      "koreksi jumlah barang"
+    ],
+    "perlu_verifikasi": true
+  },
+  {
+    "istilah": "Koreksi Nilai",
+    "panjang": "",
+    "sinonim": [
+      "koreksi harga satuan",
+      "koreksi nilai persediaan"
+    ],
+    "perlu_verifikasi": true
+  },
+  {
+    "istilah": "Pemakaian",
+    "panjang": "",
+    "sinonim": [
+      "habis pakai",
+      "pemakaian persediaan",
+      "bon barang"
+    ],
+    "perlu_verifikasi": true
+  },
+  {
+    "istilah": "Persediaan Belum Diregister",
+    "panjang": "",
+    "sinonim": [
+      "belum diregister",
+      "persediaan blm diregister"
+    ],
+    "perlu_verifikasi": true
+  },
+  {
+    "istilah": "ATR",
+    "panjang": "Aset Tetap dalam Renovasi",
+    "sinonim": [
+      "atr",
+      "aset tetap renovasi",
+      "renovasi bmn"
+    ],
+    "perlu_verifikasi": true
+  },
+  {
+    "istilah": "BPYBDS",
+    "panjang": "",
+    "sinonim": [
+      "bpybds",
+      "reklas bpybds"
+    ],
+    "perlu_verifikasi": true
+  },
+  {
+    "istilah": "PMPP",
+    "panjang": "Penyertaan Modal Pemerintah Pusat",
+    "sinonim": [
+      "bmn dalam proses pmpp",
+      "penyertaan modal pemerintah pusat"
+    ],
+    "perlu_verifikasi": true
+  },
+  {
+    "istilah": "MAT",
+    "panjang": "Modul Aset Tetap",
+    "sinonim": [
+      "modul aset tetap",
+      "mat"
+    ],
+    "perlu_verifikasi": true
+  },
+  {
+    "istilah": "NUP",
+    "panjang": "",
+    "sinonim": [
+      "nup",
+      "nomor urut pendaftaran"
+    ],
+    "perlu_verifikasi": true
+  },
+  {
+    "istilah": "KPB",
+    "panjang": "Kuasa Pengguna Barang",
+    "sinonim": [
+      "kpb",
+      "kuasa pengguna barang"
+    ],
+    "perlu_verifikasi": true
+  },
+  {
+    "istilah": "Konjas",
+    "panjang": "",
+    "sinonim": [
+      "konjas",
+      "konsesi jasa",
+      "konsesi jasa mitra"
+    ],
+    "perlu_verifikasi": true
+  },
+  {
+    "istilah": "RB",
+    "panjang": "Rusak Berat",
+    "sinonim": [
+      "rusak berat",
+      "rb"
+    ],
+    "perlu_verifikasi": true
+  },
+  {
+    "istilah": "Usang",
+    "panjang": "",
+    "sinonim": [
+      "bmn usang",
+      "barang usang"
+    ],
+    "perlu_verifikasi": true
+  },
+  {
+    "istilah": "Henti Guna",
+    "panjang": "",
+    "sinonim": [
+      "henti guna",
+      "penghentian penggunaan",
+      "non henti guna"
+    ],
+    "perlu_verifikasi": true
+  },
+  {
+    "istilah": "Aset Tak Berwujud",
+    "panjang": "",
+    "sinonim": [
+      "atb",
+      "aset tak berwujud"
+    ],
+    "perlu_verifikasi": true
+  },
+  {
+    "istilah": "Tutup Buku",
+    "panjang": "",
+    "sinonim": [
+      "tutup buku",
+      "penutupan periode",
+      "tutup periode"
+    ],
+    "perlu_verifikasi": true
+  },
+  {
+    "istilah": "BMN Bersejarah",
+    "panjang": "",
+    "sinonim": [
+      "barang bersejarah",
+      "bmn bersejarah"
+    ],
+    "perlu_verifikasi": true
+  },
+  {
+    "istilah": "Barang Pihak Ketiga",
+    "panjang": "",
+    "sinonim": [
+      "barang pihak ketiga",
+      "barang titipan"
+    ],
+    "perlu_verifikasi": true
+  },
+  {
+    "istilah": "Transfer Internal",
+    "panjang": "",
+    "sinonim": [
+      "transfer internal",
+      "internal transfer"
+    ],
+    "perlu_verifikasi": true
+  }
 ]
