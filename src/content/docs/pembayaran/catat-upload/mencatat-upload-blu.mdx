@@ -1,0 +1,212 @@
+---
+title: Mencatat dan Mengunggah Transaksi BLU
+description: Menerbitkan SP3B BLU dari BAST Non Kontraktual sampai pencatatan SP2D melalui menu Mencatat/Upload BLU.
+modul: pembayaran
+menu_sakti: "Pembayaran > Catat/Upload > Mencatat/Upload BLU"
+peran: [satker]
+jenis: juknis
+kata_kunci: [blu, sp3b, bast non kontraktual, 511 pengesahan blu, upload xml, daftar sp2d, omspan]
+status: review
+perlu_review: true
+sumber:
+  - judul: "Juknis SAKTI BLU"
+    url: "https://drive.google.com/file/d/1gt7ZitAXOh7tvJff1HFT4LTzni5X4yk5/view"
+    jenis: pdf
+    diambil: 2026-11-21
+    id_manifest: B-pem-041
+sidebar:
+  order: 1
+---
+
+import { Steps, Aside } from '@astrojs/starlight/components';
+import MenuSakti from '~/components/MenuSakti.astro';
+import SumberAsli from '~/components/SumberAsli.astro';
+
+Satuan Kerja Badan Layanan Umum (BLU) adalah instansi di lingkungan
+Pemerintah Pusat yang dibentuk untuk memberikan pelayanan kepada
+masyarakat berupa penyediaan barang dan/atau jasa yang dijual tanpa
+mengutamakan mencari keuntungan, dan dalam melakukan kegiatannya
+didasarkan pada prinsip efisiensi dan produktivitas. Modul Pembayaran
+memuat proses bisnis pembayaran yang diajukan satker melalui SPM
+untuk mencairkan/membayar dana dari rekening pemerintah kepada pihak
+yang berhak melalui penerbitan SP2D; keluarannya antara lain dokumen
+SPP, SPM, SP3B atau yang dipersamakan, serta ADK resume tagihan dan
+ADK SPM. Artikel ini mencakup penerbitan Surat Perintah Pengesahan
+Pendapatan dan Belanja (SP3B) beserta pencatatan SP2D-nya.
+
+<MenuSakti />
+
+## Prasyarat
+
+- Role yang dibutuhkan: operator pada modul Komitmen dan Pembayaran,
+  serta PPSPM untuk persetujuan SP3B.
+- SP3B diterbitkan atas BAST Non Kontraktual yang telah direkam pada
+  modul Komitmen.
+
+## Alur proses
+
+1. Operator Komitmen — merekam BAST Non Kontraktual.
+2. Operator Pembayaran — merekam SPP jenis 511 (Pengesahan BLU)
+   menjadi SP3B.
+3. Operator Pembayaran — mencetak SP3B dan mengunggah dokumen
+   pendukung hasil tanda tangan.
+4. PPSPM — menyetujui SP3B dan mengirim ADK SPM ke KPPN.
+5. Operator Pembayaran — mencatat SP2D yang terbit dari KPPN melalui
+   Mencatat/Upload BLU.
+
+## Langkah
+
+### Merekam BAST Non Kontraktual (Operator Komitmen)
+
+<Steps>
+
+1. Masuk aplikasi SAKTI sebagai user operator.
+2. Pilih modul Komitmen, buka menu **Komitmen > RUH >
+   BAST/BAKP/BAPP/DYD > BAST LS Non Kontraktual**, lalu klik
+   **Tambah**.
+3. Rekam informasi dokumen secara lengkap dan benar — nomor dokumen,
+   tanggal dokumen, uraian dokumen (gunakan kode output untuk
+   mempermudah pencarian saat membuat SP3B), mata uang, informasi
+   supplier, kementerian, eselon I, program, kegiatan, output, akun,
+   KPPN, sumber dana, cara penarikan, nomor register, dan nilai.
+4. Pada kolom Kategori: pilih **Aset/Jasa Dikapitalisasi Aset**
+   untuk transaksi yang menghasilkan aset atau barang persediaan,
+   atau **Jasa/Non Aset/Belanja Modal Pengembangan di Bawah
+   Kapitalisasi Aset** untuk transaksi yang tidak menghasilkan aset
+   atau barang persediaan.
+5. Klik **Simpan**.
+
+</Steps>
+
+Ketentuan BAST Non Kontraktual:
+
+- BAST Non Kontraktual diinput tanpa didahului pencatatan kontrak.
+- Kategori dipilih Aset/Jasa Dikapitalisasi Aset apabila menghasilkan
+  BMN intrakomptabel/ekstrakomptabel, dan Jasa/Non Aset/Belanja Modal
+  Pengembangan di Bawah Kapitalisasi Aset untuk pengadaan jasa atau
+  pengembangan BMN di bawah kapitalisasi aset.
+- Apabila BAST merupakan pengembangan BMN, kode sub-sub kelompok
+  barang mengikuti kode sub-sub kelompok barang induk yang
+  dikembangkan.
+- Untuk aset dengan kode sub-sub kelompok barang yang sama tetapi
+  harga satuan berbeda, asetnya direkam terpisah dengan harga
+  satuannya masing-masing.
+- Modul Aset Tetap dan modul Persediaan dapat melakukan pendetailan
+  barang, dan modul Pembayaran dapat membuat SP3B setelah BAST Non
+  Kontraktual direkam.
+
+### Merekam SPP 511 Pengesahan BLU menjadi SP3B (Operator Pembayaran)
+
+<Steps>
+
+1. Masuk aplikasi SAKTI sebagai user operator.
+2. Pilih modul Pembayaran, buka menu **Pembayaran > RUH Pembayaran >
+   Catat/Ubah SPP**, pilih jenis SPP **511 - Pengesahan BLU**, lalu
+   klik **Tambah**.
+3. Pilih data pengesahan sesuai output, lalu klik **Pilih** —
+   apabila terdapat beberapa dokumen dengan output yang sama, pilih
+   semua data tersebut lalu klik **Pilih**.
+4. Isi informasi dasar pembayaran secara lengkap dan benar, lalu
+   klik **Tambah**.
+5. Pada dokumen dasar pembayaran yang muncul, geser ke kanan/kiri,
+   klik **Peraturan**, lalu **Pilih** — dokumen dasar pembayaran
+   berubah setiap tahun sesuai peraturan yang berlaku, jadi pilih
+   sesuai peraturan pada tahun anggaran berkenaan.
+6. Isi uraian pembayaran secara lengkap dan benar.
+7. Isi informasi Pengesahan BLU secara lengkap dan benar: pilih
+   periode triwulan dan sesuaikan saldo awal dengan saldo akhir kas
+   yang lalu.
+8. Periksa dan teliti distribusi COA pada kolom Belanja.
+9. Apabila terdapat PNBP yang akan disahkan, klik kolom Pendapatan
+   lalu **RUH Akun**: klik **Tambah**, klik **Cari Bukti Setor**,
+   pilih PNBP yang akan disahkan lalu **Pilih** dan **Simpan** —
+   apabila semua PNBP telah disimpan klik **Keluar**.
+10. Informasi Pengesahan BLU akan terisi pendapatan yang akan
+    disahkan dan distribusi COA kolom Pendapatan akan terisi akun
+    pendapatan yang akan disahkan — klik **Simpan**.
+11. Pada informasi "Simpan data berhasil" klik **OK**. Apabila masih
+    terdapat dokumen yang akan disahkan klik **Tambah**; apabila
+    sudah selesai klik **Keluar** — SP3B yang direkam muncul pada
+    dasbor Catat/Ubah SPP.
+
+</Steps>
+
+### Mencetak SP3B dan mengunggah dokumen pendukung (Operator Pembayaran)
+
+<Steps>
+
+1. Buka menu **Pembayaran > Cetak > Mencetak SPM**, pilih SP3B yang
+   akan dicetak, pilih PPSPM, pilih **Cetak Ke Layar/Printer**, lalu
+   klik **Cetak**.
+2. Cetakan menghasilkan Surat Perintah Pengesahan Pendapatan dan
+   Belanja BLU (SP3B BLU) yang harus ditandatangani PPSPM, dan Surat
+   Pernyataan Tanggung Jawab (SPTJ) yang harus ditandatangani KPA —
+   pindai dokumen tersebut menjadi softcopy.
+3. Buka menu **Pembayaran > Catat/Upload > Upload Dokumen
+   Pendukung**, pilih SP3B, pilih direktori file softcopy SP3B dan
+   SPTJ, pilih jenis dokumen pendukung SPM hasil pindai yang telah
+   ditandatangani PPSPM, lalu klik **Upload**.
+4. Pada informasi "File Berhasil di Upload" klik **OK**.
+
+</Steps>
+
+### Menyetujui SP3B dan mengirim ADK SPM (PPSPM)
+
+<Steps>
+
+1. Masuk aplikasi SAKTI sebagai user PPSPM, buka menu **Pembayaran >
+   Validasi > Validasi SPM**, pilih SP3B, pilih PPSPM, lalu **Setuju**
+   — verifikasi bahwa transaksi yang diinput telah sama dengan
+   dokumen sumber melalui **Tayang Pra Cetak** sebelum persetujuan.
+2. Pada konfirmasi persetujuan, klik **Yes**.
+3. Buka menu **Pembayaran > ADK > ADK SPM** (jalur menurut juknis),
+   pilih SP3B, lalu klik **Proses ADK SPM**.
+4. Muncul otorisasi PIN PPSPM — masukkan PIN PPSPM dengan benar
+   lalu **Proses**.
+5. Untuk melihat ADK SP3B yang telah diproses, buka menu
+   **Pembayaran > Monitoring > Monitoring ADK** — ADK SPM yang
+   berhasil dikirim ke KPPN tampil dengan status Berhasil.
+
+</Steps>
+
+### Mencatat SP2D (Operator Pembayaran)
+
+<Steps>
+
+1. Buka peramban dan akses OMSPAN pada `spanint.kemenkeu.go.id`,
+   lalu login dengan nama pengguna, kata sandi, dan kode captcha.
+2. Pada OMSPAN pilih modul Pembayaran lalu **Daftar SP2D**, pilih
+   SP3B yang telah terbit SP2D-nya, klik **Unduh XML** — periksa
+   berkas XML unduhan (format nama berkas diawali `PMSP`) pada folder
+   Downloads.
+3. Masuk aplikasi SAKTI sebagai user operator, buka menu
+   **Pembayaran > Catat/Upload > Mencatat/Upload BLU**.
+4. Pilih semua SP3B yang akan dicatat SP2D-nya.
+5. Pilih direktori file tempat unduhan XML SP2D, cari berkas XML
+   unduhan, lalu klik **Upload**.
+
+</Steps>
+
+## Hasil yang diharapkan
+
+SP3B BLU terbit dan disetujui PPSPM, ADK SPM terkirim ke KPPN, dan
+SP2D yang diterbitkan KPPN tercatat pada aplikasi SAKTI melalui
+Mencatat/Upload BLU.
+
+<Aside type="caution" title="Perlu verifikasi">
+- Juknis menulis jalur "Komitmen → RUH → Pencatatan BAST Non
+  Kontraktual"; menu aplikasi saat ini adalah **Komitmen > RUH >
+  BAST/BAKP/BAPP/DYD > BAST LS Non Kontraktual**.
+- Juknis menulis menu "ADK → ADK SPM" dengan otorisasi "PIN PPSPM".
+  Menu aplikasi saat ini memuat **ADK SPM OTP** dan **ADK SPM DS** di
+  bawah **Pembayaran > ADK**; menu dan cara otorisasi yang berlaku
+  perlu dipastikan. Langkah di atas ditulis mengikuti juknis.
+- Tahun terbit juknis tidak tertulis pada bagian yang dipakai.
+- Sumbernya adalah petunjuk teknis SAKTI untuk satker BLU; bagian lain
+  (pengelolaan aset, persediaan, PNBP, pelaporan, dan penganggaran
+  BLU) belum dimigrasikan ke knowledge base ini.
+</Aside>
+
+## Sumber
+
+<SumberAsli />
