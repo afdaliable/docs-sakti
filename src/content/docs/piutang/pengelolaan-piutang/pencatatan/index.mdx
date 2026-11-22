@@ -1,0 +1,21 @@
+---
+title: Pencatatan
+description: Pencatatan piutang baru, saldo awal, dan piutang dari hapus buku, termasuk unggah data lewat excel.
+modul: piutang
+jenis: indeks
+status: terbit
+sidebar:
+  label: Ringkasan
+  order: 2
+---
+
+import { LinkCard, CardGrid } from '@astrojs/starlight/components';
+
+Sub-menu **Piutang > Pengelolaan Piutang > Pencatatan** memuat
+perekaman piutang/tagihan dari piutang baru, saldo awal piutang,
+dan piutang dari hapus buku.
+
+<CardGrid>
+  <LinkCard title="Pencatatan Piutang/Tagihan" href="/piutang/pengelolaan-piutang/pencatatan/pencatatan-piutang-tagihan/" description="Merekam piutang baru, saldo awal, dan piutang dari hapus buku." />
+  <LinkCard title="Upload Data Piutang" href="/piutang/pengelolaan-piutang/pencatatan/upload-data-piutang/" description="Mengunggah banyak data piutang sekaligus lewat file excel." />
+</CardGrid>

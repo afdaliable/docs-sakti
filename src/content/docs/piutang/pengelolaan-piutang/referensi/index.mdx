@@ -1,0 +1,38 @@
+---
+title: Referensi
+description: Referensi debitur piutang yang dapat digunakan oleh semua satker.
+modul: piutang
+menu_sakti: "Piutang > Pengelolaan Piutang > Referensi"
+peran: [satker]
+jenis: indeks
+status: review
+sumber:
+  - judul: "SAKTI PELAPORAN - Referensi Debitur"
+    url: "https://sites.google.com/view/saktipelaporan/piutang/pengelolaan-piutang/referensi"
+    jenis: google-sites
+    diambil: 2026-11-21
+    id_manifest: C-piutang-pengelolaan-piutang-referensi
+sidebar:
+  label: Ringkasan
+  order: 1
+---
+
+import { LinkCard, CardGrid } from '@astrojs/starlight/components';
+import MenuSakti from '~/components/MenuSakti.astro';
+import SumberAsli from '~/components/SumberAsli.astro';
+
+Menu **Piutang > Pengelolaan Piutang > Referensi > Debitur**
+digunakan untuk merekam data referensi debitur piutang yang
+baru. Referensi debitur dapat digunakan oleh semua satker;
+referensi yang dibuat oleh satu satker dapat digunakan satker
+lain apabila memiliki debitur yang sama.
+
+<MenuSakti />
+
+<CardGrid>
+  <LinkCard title="Data Debitur" href="/piutang/pengelolaan-piutang/referensi/data-debitur/" description="Merekam dan mengunggah data referensi debitur piutang." />
+</CardGrid>
+
+## Sumber
+
+<SumberAsli />

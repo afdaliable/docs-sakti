@@ -1,0 +1,93 @@
+---
+title: Mengunggah Data Piutang
+description: Mengunggah banyak data piutang sekaligus dengan file excel lewat tombol Upload Saldo Awal.
+modul: piutang
+menu_sakti: "Piutang > Pengelolaan Piutang > Pencatatan"
+peran: [satker]
+jenis: juknis
+kata_kunci: [upload piutang, unggah piutang, excel piutang, saldo awal]
+status: review
+perlu_review: true
+sumber:
+  - judul: "SAKTI PELAPORAN - Upload Data Piutang"
+    url: "https://sites.google.com/view/saktipelaporan/piutang/pengelolaan-piutang/pencatatan/upload-data-piutang"
+    jenis: google-sites
+    diambil: 2026-11-21
+    id_manifest: C-piutang-pengelolaan-piutang-pencatatan-upload-data-piutang
+  - judul: "format_uploadpiutang.xlsx"
+    url: "https://docs.google.com/spreadsheets/d/1s4k6brjWgxC17QErPmnxyz0IA392__KC/"
+    jenis: sheets
+    diambil: 2026-11-21
+    id_manifest: C-dok-137
+sidebar:
+  order: 3
+---
+
+import { Steps, Aside } from '@astrojs/starlight/components';
+import MenuSakti from '~/components/MenuSakti.astro';
+import SumberAsli from '~/components/SumberAsli.astro';
+
+Fitur Upload Data Piutang disediakan untuk mempermudah operator
+piutang dalam merekam data piutang, baik saldo awal maupun
+piutang baru, terutama apabila data yang perlu direkam sekaligus
+banyak dan merekam satu per satu dirasa memberatkan.
+
+<MenuSakti />
+
+## Langkah
+
+<Steps>
+
+1. Pilih menu **Piutang > Pengelolaan Piutang > Pencatatan >
+   Pencatatan Piutang/Tagihan**.
+2. Klik tombol **Upload Saldo Awal**.
+3. Unggah file excel data piutang yang sudah diisi sesuai
+   petunjuk pengisian.
+
+</Steps>
+
+## Ketentuan
+
+- Upload data piutang saldo awal dan piutang baru tidak bisa
+  menggunakan file excel yang sama.
+- Kolom pada file excel harus memuat data berikut dan dengan
+  urutan yang sama.
+
+| Kolom | Keterangan/format |
+|---|---|
+| NIK | Diisikan NIK Debitur; format Cell General; berikan tanda kutip satu (') di depan angka |
+| JENIS_PIUTANG | Diisikan Jenis Piutang dengan pilihan (1) untuk Perorangan atau (2) untuk Corporate; format Cell General |
+| KODE_SATKER | Diisikan dengan kode Satker; format Cell General |
+| KODE_AKUN_PENDAPATAN | Diisikan dengan kode akun pendapatan dari piutang (4xxxxx); format Cell General |
+| TANGGAL_SK | Diisikan dengan tanggal SK/Surat Ketetapan dari Piutang; format Cell Text atau General dengan isian dd-mm-yyy; berikan tanda kutip satu (') di depan angka |
+| NO_SK | Diisikan dengan nomor SK/Surat Ketetapan Piutang; format Cell General |
+| TANGGAL_SURAT_PENAGIHAN | Diisikan dengan tanggal Surat Penagihan terakhir dari Piutang; format Cell Text atau General dengan isian dd-mm-yyy; berikan tanda kutip satu (') di depan angka |
+| SURAT_PENAGIHAN | Diisikan dengan nomor Surat Penagihan terakhir dari Piutang; format Cell General |
+| TANGGAL_MULAI | Diisikan dengan tanggal mulainya Piutang; format Cell Text atau General dengan isian dd-mm-yyy; berikan tanda kutip satu (') di depan angka |
+| TANGGAL_JATUH_TEMPO | Diisikan dengan tanggal jatuh tempo Piutang; format Cell Text atau General dengan isian dd-mm-yyy; berikan tanda kutip satu (') di depan angka |
+| NILAI_PIUTANG | Diisikan dengan nilai piutang dalam rupiah; format cell Accounting tanpa simbol mata uang |
+| SISIH_PIUTANG | Diisikan dengan nilai penyisihan piutang dalam rupiah; format cell Accounting tanpa simbol mata uang |
+| STATUS_PIUTANG | Diisikan dengan kode kualitas piutang, yaitu L = Lancar, KR = Kurang Lancar, RR = Ragu-ragu, atau M = Macet; format Cell General |
+| KETERANGAN_PIUTANG | Diisikan dengan uraian piutang; format Cell General |
+| NILAI_AGUNAN | Diisikan dengan nilai agunan piutang dalam rupiah; format cell Accounting tanpa simbol mata uang; jika tidak ada data agunan diisikan 0 |
+| NILAI_AGUNAN_SITAAN | Diisikan dengan nilai agunan yang diperhitungkan piutang dalam rupiah; format cell Accounting tanpa simbol mata uang; jika tidak ada data agunan diisikan 0 |
+| MATA UANG VALAS | Diisikan dengan 3 digit kode mata uang yang digunakan (bisa dilihat di menu **Administrasi > Umum > Kurs > Mata Uang** dengan login user Admin); format Cell General |
+| NILAI VALAS | Diisikan dengan nilai piutang dalam valas; format Cell Accounting tanpa simbol mata uang; jika piutang dalam rupiah diisikan 1 |
+| KODE_AGUNAN | Diisikan dengan kode jenis agunan jika ada agunan; format Cell General; kode jenis agunan: JENIS_AGUNAN_1 = Surat Berharga dan logam mulia; JENIS_AGUNAN_2 = Tanah (SHM) dan Bangunan (SHGB); JENIS_AGUNAN_3 = Tanah (SHM) dan Bangunan (SHGB) atau hak pakai tidak diikat dengan hak tanggungan; JENIS_AGUNAN_4 = Tanah dengan surat Girik (Letter C) atau bukti kepemilikan non sertifikat lainnya; JENIS_AGUNAN_5 = Pesawat udara dan kapal laut dengan isi kotor paling sedikit 20m3; JENIS_AGUNAN_6 = Kendaraan bermotor; JENIS_AGUNAN_7 = Pesawat udara, kapal laut, dan kendaraan bermotor yang tidak … (kalimat pada gambar sumber terpotong) |
+
+<Aside type="caution" title="Perlu verifikasi">
+Label menu "Upload Data Piutang" pada halaman sumber tidak punya
+padanan persis di daftar menu SAKTI; jalur menu di atas memakai
+simpul induk **Pencatatan**. Petunjuk kolom KODE_AGUNAN pada
+gambar sumber terpotong di JENIS_AGUNAN_7 — periksa file excel
+format pada tautan di bagian Sumber untuk keterangan lengkap.
+</Aside>
+
+## Terkait
+
+- [Mencatat Piutang/Tagihan](/piutang/pengelolaan-piutang/pencatatan/pencatatan-piutang-tagihan/)
+- [Mengunggah Data Transaksi Piutang](/piutang/pengelolaan-piutang/upload/)
+
+## Sumber
+
+<SumberAsli />

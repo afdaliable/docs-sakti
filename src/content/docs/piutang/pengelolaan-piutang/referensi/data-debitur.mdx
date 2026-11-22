@@ -1,0 +1,119 @@
+---
+title: Mengelola Data Debitur
+description: Merekam referensi debitur piutang baru dan mengunggah data debitur lewat file excel.
+modul: piutang
+menu_sakti: "Piutang > Pengelolaan Piutang > Referensi > Debitur"
+peran: [satker]
+jenis: juknis
+kata_kunci: [debitur, referensi debitur, data debitur, upload debitur]
+status: review
+sumber:
+  - judul: "SAKTI PELAPORAN - Data Debitur"
+    url: "https://sites.google.com/view/saktipelaporan/piutang/pengelolaan-piutang/referensi/data-debitur"
+    jenis: google-sites
+    diambil: 2026-11-21
+    id_manifest: C-piutang-pengelolaan-piutang-referensi-data-debitur
+  - judul: "SAKTI PELAPORAN - Referensi Debitur"
+    url: "https://sites.google.com/view/saktipelaporan/piutang/pengelolaan-piutang/referensi"
+    jenis: google-sites
+    diambil: 2026-11-21
+    id_manifest: C-piutang-pengelolaan-piutang-referensi
+  - judul: "JUKNIS SAKTI-Modul Piutang web_30122020"
+    url: "https://drive.google.com/file/d/1heaiMUcDJHnf97xK2LL76bUzZgpkRo4H/view"
+    jenis: pdf
+    diambil: 2026-11-21
+    id_manifest: C-dok-130
+  - judul: "format_uploaddebitur.xls"
+    url: "https://docs.google.com/spreadsheets/d/1SnqsunYpfUGF_xobvjV52WgeqjsniK6s/"
+    jenis: sheets
+    diambil: 2026-11-21
+    id_manifest: C-dok-133
+  - judul: "Pencatatan Debitur-2"
+    url: "https://drive.google.com/file/d/1ZR5PZPKJJkpnFt0N51UtQWdPhqOzD87F/view"
+    jenis: video
+    diambil: 2026-11-21
+    id_manifest: C-dok-131
+  - judul: "Perekaman Referensi Debitur"
+    url: "https://docs.google.com/presentation/d/17yDrZTzsrvg51h4NCIIOtNcjMYM1Po7TQKQaa1UQRMk/"
+    jenis: google-slides
+    diambil: 2026-11-21
+    id_manifest: C-dok-132
+sidebar:
+  order: 2
+---
+
+import { Steps } from '@astrojs/starlight/components';
+import MenuSakti from '~/components/MenuSakti.astro';
+import SumberAsli from '~/components/SumberAsli.astro';
+
+Menu Referensi Debitur Piutang digunakan untuk merekam data
+referensi debitur piutang yang baru. Referensi debitur dapat
+digunakan oleh semua satker; referensi yang dibuat oleh satu
+satker dapat digunakan satker lain apabila memiliki debitur
+yang sama.
+
+Fitur unggah disediakan untuk mempermudah penginputan data
+referensi debitur terutama jika datanya banyak: operator tidak
+perlu menginput satu per satu, melainkan mengisi data pada excel
+untuk kemudian diunggah melalui tombol **Excel** pada menu ini.
+
+<MenuSakti />
+
+## Prasyarat
+
+- Dokumen sumber: data debitur.
+
+## Langkah
+
+<Steps>
+
+1. Pilih menu **Piutang > Pengelolaan Piutang > Referensi >
+   Debitur**, lalu klik **Rekam**.
+2. Isikan Nama Debitur.
+3. Isikan NPWP Debitur.
+4. Isikan Nomor Identitas Debitur; bisa berupa NIK untuk
+   Perorangan, Nomor Akta Perusahaan untuk debitur Perusahaan,
+   atau nomor identitas lain yang sah.
+5. Isikan nomor telepon Debitur (bila ada).
+6. Isikan nomor Handphone Debitur.
+7. Isikan Alamat Debitur.
+8. Isikan Provinsi sesuai dengan alamat yang ada.
+9. Isikan Kabupaten sesuai dengan alamat yang ada.
+10. Isikan Kecamatan sesuai dengan alamat yang ada.
+11. Isikan Kode Pos sesuai dengan alamat yang ada.
+12. Isikan Email Debitur (bila ada).
+13. Isikan Website Debitur (bila ada).
+14. Klik **Simpan**.
+
+</Steps>
+
+## Ketentuan
+
+- Nama, nomor telepon/HP, dan alamat wajib diisi; pada slide
+  juknis, NID juga wajib diisi dan alamat wajib diisi hingga
+  tingkat Kecamatan.
+- NPWP tidak wajib diinput; apabila tidak diinput, akan diisi
+  secara otomatis oleh sistem.
+- Kolom Non Aktif tidak perlu dicentang; kolom ini digunakan
+  saat data debitur sudah tidak digunakan lagi pada modul
+  piutang.
+- Untuk mengunggah lewat excel, file harus berisi kolom berikut
+  dan seluruh kolom harus terisi.
+
+| Kolom | Keterangan/format |
+|---|---|
+| KODE_SATKER | Diisikan dengan kode satker; format Cell General |
+| NAMA_DEBITUR | Diisikan dengan nama debitur; format Cell General |
+| NIK | Diisikan dengan nomor identitas debitur, bisa berupa NIK atau NIP untuk perorangan atau NIB untuk perusahaan; format Cell General; berikan tanda kutip satu (') di depan angka |
+| NO_HP | Diisikan dengan nomor HP debitur; format Cell General; berikan tanda kutip satu (') di depan angka |
+| NPWP | Diisikan dengan NPWP debitur; format Cell Number; berikan tanda kutip satu (') di depan angka; diinput nomornya saja tanpa titik (.) |
+| ALAMAT | Diisikan dengan alamat debitur; format Cell General |
+| KODE_KELURAHAN | Diisikan dengan kode kelurahan alamat debitur; format Cell General; format pengisian kode provinsi.kode kota/kab.kode kecamatan.kode kelurahan; referensi kode kelurahan dapat dilihat pada aplikasi SAKTI modul admin pada menu **Administrasi > Umum > Lokasi > Kode Kelurahan**, atau pada aplikasi MonSAKTI pada menu Referensi > Kelurahan |
+
+## Terkait
+
+- [Mencatat Piutang/Tagihan](/piutang/pengelolaan-piutang/pencatatan/pencatatan-piutang-tagihan/)
+
+## Sumber
+
+<SumberAsli />

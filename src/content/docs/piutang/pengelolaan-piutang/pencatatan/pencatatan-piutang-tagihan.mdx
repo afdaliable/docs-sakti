@@ -1,0 +1,146 @@
+---
+title: Mencatat Piutang/Tagihan
+description: Merekam piutang baru, saldo awal piutang, dan piutang dari hapus buku.
+modul: piutang
+menu_sakti: "Piutang > Pengelolaan Piutang > Pencatatan > Pencatatan Piutang/Tagihan"
+peran: [satker]
+jenis: juknis
+kata_kunci: [pencatatan piutang, tagihan, piutang baru, saldo awal piutang, hapus buku]
+status: review
+sumber:
+  - judul: "SAKTI PELAPORAN - Pencatatan Piutang / Tagihan"
+    url: "https://sites.google.com/view/saktipelaporan/piutang/pengelolaan-piutang/pencatatan/pencatatan-piutang-tagihan"
+    jenis: google-sites
+    diambil: 2026-11-21
+    id_manifest: C-piutang-pengelolaan-piutang-pencatatan-pencatatan-piutang-tagihan
+  - judul: "JUKNIS SAKTI-Modul Piutang web_30122020"
+    url: "https://drive.google.com/file/d/1heaiMUcDJHnf97xK2LL76bUzZgpkRo4H/view"
+    jenis: pdf
+    diambil: 2026-11-21
+    id_manifest: C-dok-130
+  - judul: "Pencatatan Piutang-3"
+    url: "https://drive.google.com/file/d/1RZTrUmdwFQqxgDYH879puwnYVC3Ljuji/view"
+    jenis: video
+    diambil: 2026-11-21
+    id_manifest: C-dok-134
+  - judul: "Pencatatan Piutang Saldo Awal"
+    url: "https://docs.google.com/presentation/d/18k4r0928Nhd3T1VIZ6BRAo7irWjSktsEODRdATDKqLQ/"
+    jenis: google-slides
+    diambil: 2026-11-21
+    id_manifest: C-dok-135
+  - judul: "Pencatatan Piutang Baru"
+    url: "https://docs.google.com/presentation/d/1aAfTlx07ZHZ2Irk-majejVpV6uyBiJKjeB7QPksIhCA/"
+    jenis: google-slides
+    diambil: 2026-11-21
+    id_manifest: C-dok-136
+sidebar:
+  order: 2
+---
+
+import { Steps } from '@astrojs/starlight/components';
+import MenuSakti from '~/components/MenuSakti.astro';
+import SumberAsli from '~/components/SumberAsli.astro';
+
+Menu Pencatatan Piutang/Tagihan digunakan untuk merekam data
+piutang yang bersumber dari piutang baru, saldo awal piutang,
+dan piutang dari hapus buku.
+
+- **Piutang baru**: mencatat piutang yang baru ditetapkan pada
+  periode berjalan.
+- **Saldo awal piutang**: mencatat piutang tahun-tahun
+  sebelumnya yang belum dicatat di aplikasi SAKTI; menu ini juga
+  digunakan saat pertama kali menggunakan aplikasi SAKTI.
+- **Piutang dari hapus buku**: mencatat piutang yang setelah
+  dihapusbukukan terjadi pembayaran oleh debitur; piutang yang
+  dicatat sesuai jumlah pembayaran yang dilakukan.
+
+<MenuSakti />
+
+## Prasyarat
+
+- Dokumen sumber: SK Penetapan Piutang, Surat Penagihan Piutang.
+- Modul dan transaksi terkait: GLP.
+
+## Langkah
+
+<Steps>
+
+1. Pilih menu **Piutang > Pengelolaan Piutang > Pencatatan >
+   Pencatatan Piutang/Tagihan**, lalu klik **Rekam**.
+2. Isikan sumber pencatatan piutang: Piutang Baru, Saldo Awal
+   Piutang, atau Piutang dari Hapus Buku.
+3. Pilih debitur piutang dengan klik tombol lookup pada
+   Identitas; debitur yang muncul adalah semua debitur piutang
+   pada aplikasi SAKTI, baik yang direkam satker bersangkutan
+   maupun satker lain.
+4. Isikan tanggal mulai dan tanggal jatuh tempo piutang sesuai
+   dokumen sumber.
+5. Isikan Jenis Piutang dengan pilihan Perorangan atau
+   Coorporate (untuk perusahaan).
+6. Isikan nilai piutang sesuai yang telah ditetapkan; isian
+   keterangan piutang bisa diisi penjelasan atas piutang atau
+   cukup tanda "-" bila tidak ada.
+7. Isikan informasi agunan berupa nilai agunan, keterangan
+   agunan, nilai agunan yang diperhitungkan, serta bentuk agunan
+   bila ada.
+8. Isikan akun pendapatan atas piutang yang ditagihkan.
+9. Isikan tanggal pembukuan pada periode yang masih terbuka.
+10. Isikan nomor dan tanggal Surat Penagihan bila ada, atau
+    kosongkan apabila tidak ada.
+11. Isikan nomor dan tanggal dokumen sesuai dokumen sumber
+    penetapan piutang, bisa berupa SK atau surat penetapan
+    lainnya.
+12. Klik **Simpan**.
+
+</Steps>
+
+## Ketentuan
+
+- Pilihan sumber pencatatan memengaruhi isian: pada Piutang Baru
+  kualitas piutang terisi Lancar dan tidak dapat diubah serta
+  nilai penyisihan kosong dan tidak dapat diubah; pada Saldo
+  Awal Piutang dan Piutang dari Hapus Buku kualitas piutang
+  dapat diubah dan nilai penyisihan wajib diisi.
+- Untuk perekaman saldo awal piutang: isikan kualitas piutang
+  dengan pilihan Lancar, Kurang Lancar, Ragu-ragu, dan Macet,
+  serta nilai penyisihan sesuai saldo penyisihan pada periode
+  pelaporan sebelumnya. Khusus piutang bukan rupiah, mata uang
+  diubah sesuai valasnya lalu isikan nilai valasnya.
+- Untuk perekaman piutang dari hapus buku: isikan No. Piutang
+  Lama sesuai data piutang yang sudah dihapusbukukan.
+- Tanggal buku harus lebih dari sama dengan tanggal mulai dan
+  tanggal SK; piutang baru dan piutang dari hapus buku memiliki
+  tanggal SK pada periode tahun berjalan.
+- Apabila terdapat kesalahan perekaman, menu ubah dan hapus
+  masih bisa digunakan apabila belum tutup buku atau belum ada
+  transaksi lanjutan; apabila sudah tutup buku atau ada
+  transaksi lanjutan, perbaikannya melalui menu koreksi.
+
+## Jurnal transaksi
+
+Piutang baru:
+
+- D. 152111/115211
+- K. 42XXXX
+
+Saldo awal piutang:
+
+- D. 152111/115211
+- K. 391111
+- D. 391111
+- K. 116211/156311
+
+Piutang dari hapus buku:
+
+- D. 152111/115211
+- K. 594211
+
+## Terkait
+
+- [Mengunggah Data Piutang](/piutang/pengelolaan-piutang/pencatatan/upload-data-piutang/)
+- [Mengelola Data Debitur](/piutang/pengelolaan-piutang/referensi/data-debitur/)
+- [Mengoreksi Piutang](/piutang/pengelolaan-piutang/koreksi/koreksi-piutang/)
+
+## Sumber
+
+<SumberAsli />
