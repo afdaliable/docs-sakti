@@ -109,7 +109,7 @@ Status Gerbang 4 (22 Nov 2026): semua modul dalam urutan Fase 4 sudah didraf dan
   - 23 Nov 2026: `src/lib/cari/` (varian kueri, gabungan Pagefind, fallback MiniSearch pada `/search-lite.json`), kamus `src/data/kata-kueri.json` (K61); dipakai `BigSearch` dan `/cari/`.
 - [ ] 5.2 `scripts/search/build-embeddings.ts` + `/api/search` (Opsi sesuai K7) + fusion RRF di BigSearch + fallback.
 - [ ] 5.3 `pnpm search:eval` untuk Level 1 dan hybrid; hit@3 hybrid ≥ 0,80.
-  - 23 Nov 2026: Level 1 selesai (`scripts/search/eval.ts`, K62): 143 kueri, hit@1 0,804, hit@3 0,979, MRR 0,885 (Pagefind polos sebelum 5.1: 0,664 / 0,713 / 0,688). Tiga kueri belum masuk 3 teratas: "transfer keluar bmn ke satker lain", "input kontrak", "penghapusan piutng". Belum dicentang: bagian hybrid menunggu 5.2.
+  - 23 Nov 2026: Level 1 selesai (`scripts/search/eval.ts`, K62): 143 kueri, hit@1 0,811, hit@3 0,979, MRR 0,889 pada build `main` 99ca29c (Pagefind polos sebelum 5.1: 0,664 / 0,713 / 0,688). Tiga kueri belum masuk 3 teratas: "transfer keluar bmn ke satker lain", "input kontrak", "penghapusan piutng". Belum dicentang: bagian hybrid menunggu 5.2.
 - [ ] 5.4 Keystatic GitHub mode di `/keystatic` (`06-kontributor-admin.md`).
 - [x] 5.5 CODEOWNERS, template PR/issue, label, branch protection (dokumentasikan langkah manual yang harus dilakukan pemilik repo di `docs/setup-github.md`).
   - 23 Nov 2026: berkas dibuat (K63); pengaturan repo (label, kolaborator, branch protection) belum dijalankan: langkah manual pemilik di `docs/setup-github.md`. Pemilik modul menunggu K5.
@@ -119,12 +119,14 @@ Status Gerbang 4 (22 Nov 2026): semua modul dalam urutan Fase 4 sudah didraf dan
 
 **Gerbang 5:** search eval lolos ambang; editor uji bisa membuat PR lewat Keystatic dari awal sampai merge.
 
+Status Gerbang 5 (23 Nov 2026): 5.1, 5.5, 5.6 selesai; 5.3 selesai untuk Level 1 (lolos ambang 0,80). Ditunda: 5.2 (kredensial Cloudflare, K7), 5.4 (GitHub App Keystatic), 5.7 (K8). Gerbang belum lolos: bagian hybrid dan Keystatic belum ada.
+
 ---
 
 ## Fase 6 — Rilis & pemeliharaan
 
 - [ ] 6.1 CI lengkap (`07-deploy-ops.md`), preview per PR.
-  - 23 Nov 2026: workflow CI dibuat tanpa deploy dan tanpa secret (K65). Belum dicentang: preview per PR menunggu hosting (K3), dan workflow belum pernah berjalan di GitHub.
+  - 23 Nov 2026: workflow CI dibuat tanpa deploy dan tanpa secret (K65). Run pertama di GitHub (push 99ca29c) lolos semua langkah dalam ±3 menit. Belum dicentang: preview per PR menunggu hosting (K3).
 - [ ] 6.2 Deploy produksi + domain (K3).
 - [ ] 6.3 Analitik + widget feedback + logging query tanpa hasil.
 - [ ] 6.4 Workflow mingguan `cek-sumber.yml` dan laporan bulanan.
