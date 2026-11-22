@@ -1,0 +1,129 @@
+---
+title: Merekam Hibah Masuk Persediaan
+description: Merekam perolehan persediaan dari hibah pihak ketiga di luar Pemerintah Pusat berdasarkan BAST Hibah modul Komitmen.
+modul: persediaan
+menu_sakti: "Persediaan > Transaksi Masuk > Hibah Masuk"
+peran: [satker]
+jenis: juknis
+kata_kunci: [hibah masuk, bast hibah, mphl-bjs, pendetilan hibah]
+status: review
+perlu_review: true
+sumber:
+  - judul: "Hibah Masuk"
+    url: "https://sites.google.com/view/saktipelaporan/persediaan/transaksi-masuk/hibah-masuk"
+    jenis: google-sites
+    diambil: 2026-11-21
+    id_manifest: C-persediaan-transaksi-masuk-hibah-masuk
+  - judul: "74. Hibah masuk"
+    url: "https://drive.google.com/file/d/1uGTrrd93h8rHcMgyvgffGDVnyCJuCWay/view"
+    jenis: pptx
+    diambil: 2026-11-21
+    id_manifest: C-dok-011
+  - judul: "9-Hibah Masuk"
+    url: "https://drive.google.com/file/d/1Bl3MaSGn5_4c5cMDfePzcJfQ85yGhwmR/view"
+    jenis: lainnya
+    diambil: 2026-11-21
+    id_manifest: C-dok-010
+  - judul: "JUKNIS SAKTI WEB-Persediaan_30122020"
+    url: "https://drive.google.com/file/d/1p_-rUAu_on0H0d_TKFEE2vmpDXCPDzy5/view"
+    jenis: pdf
+    diambil: 2026-11-21
+    id_manifest: C-dok-001
+sidebar:
+  order: 3
+---
+
+import { Steps, Aside } from '@astrojs/starlight/components';
+import MenuSakti from '~/components/MenuSakti.astro';
+import SumberAsli from '~/components/SumberAsli.astro';
+
+Menu Hibah Masuk (kode transaksi M04) digunakan untuk mencatat
+perolehan persediaan yang bersumber dari hibah dan diterima dari
+pihak ketiga di luar Pemerintah Pusat, misalnya dari pemerintah
+daerah maupun dari swasta. Pencatatan transaksi ini didahului dengan
+transaksi BAST Hibah Masuk dari modul Komitmen, pendetilan di modul
+Persediaan, dan penerbitan Memo Pencatatan Hibah Langsung Bentuk
+Barang/Jasa/Surat Berharga (MPHL-BJS) di modul Pembayaran untuk
+mendapatkan pengesahan dari KPPN. Semua jurnal transaksi dibentuk
+secara otomatis oleh sistem tanpa melakukan jurnal manual.
+
+<MenuSakti />
+
+## Prasyarat
+
+- Role yang dibutuhkan: OPR dan APR; menurut juknis, pengguna sebagai
+  Operator UAKPB.
+- Dokumen sumber: BAST Hibah Barang; menurut juknis berupa BAST hibah B/J/S
+  modul Komitmen.
+- Modul dan transaksi terkait: GLP dan Komitmen — modul Komitmen
+  terlebih dahulu merekam BAST Hibah Barang/Jasa dan memilih barang
+  persediaan (kode 1xxxxxxxxx); perekaman BAST hibah B/J/S di modul
+  Komitmen.
+- Modul Komitmen harus sudah merekam BAST Hibah Barang/Jasa.
+- BAST harus memilih kode barang persediaan (kode 1xxxxxxxxx).
+- Validasi urutan tanggal transaksi atas barang yang sejenis (tidak
+  bisa sisip tanggal transaksi).
+- Sudah tutup buku modul Persediaan periode sebelumnya.
+
+## Langkah
+
+<Steps>
+
+1. Login menggunakan user operator Persediaan, kemudian pilih menu
+   **Persediaan > Transaksi Masuk > Hibah Masuk** dan klik tombol
+   **Rekam**.
+2. Pilih dokumen Hibah Masuk yang ingin didetilkan.
+3. Pilih dari dokumen sumber (dokumen BAST Hibah) mana yang akan
+   didetilkan dan klik dokumen sumber yang dimaksud.
+4. Klik kode sub-sub kelompok barang yang sudah dipilih oleh operator
+   bendahara dan/atau operator komitmen untuk didetilkan oleh
+   operator persediaan, lalu klik tombol **Simpan** — data sudah siap
+   dilakukan persetujuan oleh user approver.
+
+</Steps>
+
+## Hasil yang diharapkan
+
+Data perekaman hibah masuk siap disetujui oleh approver dan masuk ke
+semua laporan pada modul Persediaan.
+
+## Ketentuan
+
+- Pilih BAST hibah barang yang telah direkam oleh modul Komitmen.
+- Tanggal buku yang diisi pada modul Persediaan adalah tanggal BAST.
+- Pencatatan (input) pada modul Persediaan tidak perlu menunggu
+  terbitnya Register Hibah dan Pengesahan Hibah (MPHL-BJS).
+- Pencatatan transaksi ini dilakukan berdasarkan BAST hibah langsung;
+  apabila dalam BAST Hibah Langsung tidak mencantumkan harga, maka
+  Kuasa Pengguna Barang melakukan estimasi nilai wajar dari
+  persediaan tersebut.
+
+## Jurnal transaksi
+
+Menurut teks halaman situs:
+
+- D. Persediaan
+- K. Persediaan Yang Belum Diregister
+
+Menurut tabel overview pada halaman situs:
+
+- (D) Barang Persediaan
+- (K) Persediaan Belum Diregister
+
+## Ilustrasi transaksi
+
+Ketika satker menerima hibah barang persediaan, operator komitmen
+harus merekam BAST MPHL BJS seperti merekam BAST pembelian barang
+persediaan dengan memilih kode barang 1XXXXXXXXX. Setelah ada BAST
+MPHL BJS, operator persediaan melakukan pendetilan. (Bagian akhir
+ilustrasi terpotong pada gambar sumber.)
+
+<Aside type="caution" title="Perlu verifikasi">
+Halaman situs memuat dua rumusan jurnal transaksi yang berbeda
+(teks halaman dan tabel overview); keduanya dituliskan di bagian
+Jurnal transaksi.
+</Aside>
+
+## Sumber
+
+<SumberAsli />

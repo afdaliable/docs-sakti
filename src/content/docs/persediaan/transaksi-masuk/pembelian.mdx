@@ -1,0 +1,137 @@
+---
+title: Merekam Pembelian Persediaan
+description: Merekam pendetilan pembelian persediaan tahun anggaran berjalan dari dokumen penerimaan barang dan BAST modul Komitmen.
+modul: persediaan
+menu_sakti: "Persediaan > Transaksi Masuk > Pembelian"
+peran: [satker]
+jenis: juknis
+kata_kunci: [pembelian persediaan, pendetilan pembelian, kode barang, bast pembelian]
+status: review
+perlu_review: false
+sumber:
+  - judul: "Pembelian"
+    url: "https://sites.google.com/view/saktipelaporan/persediaan/transaksi-masuk/pembelian"
+    jenis: google-sites
+    diambil: 2026-11-21
+    id_manifest: C-persediaan-transaksi-masuk-pembelian
+  - judul: "11. Pembelian Persediaan.pptx"
+    url: "https://docs.google.com/presentation/d/1npFciJ-5gfUVroqmv05wA34TXMIjiMsm/"
+    jenis: google-slides
+    diambil: 2026-11-21
+    id_manifest: C-dok-005
+  - judul: "010_Pembelian sakti satu siklus dari BAST"
+    url: "https://drive.google.com/file/d/1Uistd8xI0x3NrOuqmA4CwsIlFmEHj1Lk/view"
+    jenis: lainnya
+    diambil: 2026-11-21
+    id_manifest: C-dok-003
+  - judul: "001_Pembelian Persediaan"
+    url: "https://drive.google.com/file/d/1Ic099BM72eYVbNTYoSGEiIJ-xkuvY6EQ/view"
+    jenis: lainnya
+    diambil: 2026-11-21
+    id_manifest: C-dok-004
+  - judul: "JUKNIS SAKTI WEB-Persediaan_30122020"
+    url: "https://drive.google.com/file/d/1p_-rUAu_on0H0d_TKFEE2vmpDXCPDzy5/view"
+    jenis: pdf
+    diambil: 2026-11-21
+    id_manifest: C-dok-001
+sidebar:
+  order: 2
+---
+
+import { Steps } from '@astrojs/starlight/components';
+import MenuSakti from '~/components/MenuSakti.astro';
+import SumberAsli from '~/components/SumberAsli.astro';
+
+Menu Pembelian (kode transaksi M02) digunakan untuk menginput
+pembelian persediaan tahun anggaran berjalan yang didahului oleh
+transaksi pencatatan penerimaan barang dan pencatatan BAST di modul
+Komitmen. Pemilihan sub-sub kelompok barang di modul Komitmen sangat
+menentukan pendetilan pada modul Persediaan, sehingga diperlukan
+sinergi antara modul Komitmen dan Persediaan agar pembukuan transaksi
+pembelian menjadi tepat.
+
+<MenuSakti />
+
+## Prasyarat
+
+- Role yang dibutuhkan: OPR dan APR (Operator Persediaan). Menurut
+  juknis 2020, transaksi ini dapat dilakukan oleh pengguna sebagai
+  Operator UAKPB atau Operator UAPKPB.
+- Dokumen sumber: pencatatan penerimaan barang, BAST Kontraktual, dan
+  BAST non Kontraktual.
+- Modul dan transaksi terkait: GLP dan Komitmen; transaksi yang
+  terkait adalah pencatatan penerimaan barang, perekaman BAST, dan
+  pendetilan pembelian persediaan.
+- Harus sudah ada transaksi pembelian persediaan pada modul Komitmen.
+- Pada penerimaan barang dan BAST harus dipilih kode barang
+  persediaan.
+- Validasi urutan tanggal transaksi atas barang yang sejenis (tidak
+  bisa sisip tanggal transaksi).
+
+## Langkah
+
+<Steps>
+
+1. Login menggunakan user operator Persediaan, kemudian pilih menu
+   **Persediaan > Transaksi Masuk > Pembelian** dan klik tombol
+   **Tambah**.
+2. Pilih dokumen pembelian yang ingin didetilkan. Menurut juknis
+   2020, akan muncul pilihan dari dokumen sumber mana pembelian yang
+   akan didetilkan — dalam hal ini terdapat 3 (tiga) pilihan, di
+   antaranya **Komitmen** dan **Non-Kontraktual**.
+3. Isikan tanggal pembukuan.
+4. Pilih kode barang yang ingin didetilkan dari daftar — kode sub-sub
+   kelompok barang yang sudah dipilih oleh operator bendahara dan
+   atau operator komitmen.
+5. Klik tombol (+) di kanan untuk menambahkan kode barang per sub-sub
+   kelompok dan mengisikan satuan serta harga satuan, lalu klik
+   **Simpan**.
+6. Jika ingin menambah detil kode barang lagi, klik tombol (+) di
+   kanan lalu isikan jumlah dan harga satuan.
+7. Setelah selesai semua, klik **Simpan** yang ada di bawah untuk
+   menyelesaikan perekaman satu dokumen pembelian.
+
+</Steps>
+
+## Hasil yang diharapkan
+
+Dokumen pembelian persediaan terekam dan masuk ke semua laporan pada
+modul Persediaan.
+
+## Ketentuan
+
+- Segera melakukan pendetilan persediaan setelah terdapat pencatatan
+  penerimaan barang atau BAST barang pada modul Komitmen.
+- Tanggal pembukuan di periode yang sama dengan tanggal dokumen
+  sumber untuk menghindari saldo akun Persediaan Yang Belum
+  Diregister (117911).
+- Pendetilan persediaan tidak perlu menunggu SP2D terbit.
+- Memperhatikan Harga Satuan Sebelumnya untuk menghindari selisih
+  harga yang berbeda jauh; membuat referensi kode barang yang baru
+  jika secara satuan berbeda, kualitas barang berbeda, merek berbeda,
+  dan harga satuan berbeda jauh.
+- Memastikan kode sub-sub kelompok barang yang dipilih di Komitmen
+  adalah **1xxxxxxxxx** (Golongan Persediaan).
+- Jika terdapat kesalahan pemilihan kode barang pada modul Komitmen,
+  segera memberitahukan untuk dilakukan ubah kode barang pada
+  pencatatan penerimaan barang dan BAST; sepanjang belum dilakukan
+  validasi SPP oleh PPK masih dapat dilakukan ubah kode barang pada
+  modul Komitmen. Jika telah divalidasi SPP oleh PPK dan telah terbit
+  SP2D, maka dilakukan dengan cara koreksi.
+- Syarat perekaman transaksi persediaan adalah harus dilakukan Tutup
+  Buku periode sebelumnya.
+
+## Jurnal transaksi
+
+- D. Persediaan (Barang Komsumsi/Amunisi/Bahan Untuk Pemeliharaan
+  dll)
+- K. Persediaan Yang Belum Diregister (117911)
+
+## Terkait
+
+- [Merekam BAST Kontraktual](/komitmen/ruh/pencatatan-bast/bast-kontraktual/)
+- [Merekam BAST Non Kontraktual](/komitmen/ruh/pencatatan-bast/bast-non-kontraktual/)
+
+## Sumber
+
+<SumberAsli />

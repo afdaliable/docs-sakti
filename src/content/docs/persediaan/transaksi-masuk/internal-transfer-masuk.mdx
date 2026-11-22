@@ -1,0 +1,58 @@
+---
+title: Merekam Internal Transfer Masuk Persediaan
+description: Merekam transfer masuk barang persediaan yang diterima dari entitas dalam satu unit yang sama.
+modul: persediaan
+menu_sakti: "Persediaan > Transaksi Masuk > Internal Transfer Masuk"
+peran: [satker]
+jenis: juknis
+kata_kunci: [internal transfer masuk, transfer antar uakpb, transfer masuk persediaan]
+status: review
+perlu_review: false
+sumber:
+  - judul: "InternalTransfer Masuk"
+    url: "https://sites.google.com/view/saktipelaporan/persediaan/transaksi-masuk/internal-transfer-masuk"
+    jenis: google-sites
+    diambil: 2026-11-21
+    id_manifest: C-persediaan-transaksi-masuk-internal-transfer-masuk
+sidebar:
+  order: 10
+---
+
+import { Steps } from '@astrojs/starlight/components';
+import MenuSakti from '~/components/MenuSakti.astro';
+import SumberAsli from '~/components/SumberAsli.astro';
+
+Menu Internal Transfer Masuk digunakan untuk mencatat transfer masuk
+barang yang diterima dari entitas dalam satu unit yang sama.
+
+<MenuSakti />
+
+## Prasyarat
+
+- Dokumen sumber: SK atau dokumen lain yang dapat dipersamakan.
+- Validasi: tidak dimuat pada sumber ("-").
+
+## Langkah
+
+<Steps>
+
+1. Pada menu **Persediaan > Transaksi Masuk > Internal Transfer
+   Masuk**, klik **Rekam**, kemudian pilih dokumen yang telah
+   ditransfer keluar oleh UAKPB asal.
+2. Klik **OK** untuk melanjutkan.
+
+</Steps>
+
+## Ketentuan
+
+- UAKPB asal harus sudah merekam transaksi transfer keluar terlebih
+  dahulu.
+
+## Jurnal transaksi
+
+- [D]: Persediaan
+- [K]: Transfer masuk
+
+## Sumber
+
+<SumberAsli />

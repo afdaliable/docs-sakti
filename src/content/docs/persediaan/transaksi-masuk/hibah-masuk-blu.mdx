@@ -1,0 +1,87 @@
+---
+title: Merekam Hibah Masuk BLU Persediaan
+description: Merekam perolehan persediaan dari hibah yang diterima oleh Badan Layanan Umum berdasarkan BAST hibah modul Komitmen.
+modul: persediaan
+menu_sakti: "Persediaan > Transaksi Masuk > Hibah Masuk BLU"
+peran: [satker]
+jenis: juknis
+kata_kunci: [hibah masuk blu, hibah blu, bast hibah barang, mphl-bjs]
+status: review
+perlu_review: true
+sumber:
+  - judul: "Hibah Masuk BLU"
+    url: "https://sites.google.com/view/saktipelaporan/persediaan/transaksi-masuk/hibah-masuk-blu"
+    jenis: google-sites
+    diambil: 2026-11-21
+    id_manifest: C-persediaan-transaksi-masuk-hibah-masuk-blu
+  - judul: "74. Hibah masuk"
+    url: "https://drive.google.com/file/d/1uGTrrd93h8rHcMgyvgffGDVnyCJuCWay/view"
+    jenis: pptx
+    diambil: 2026-11-21
+    id_manifest: C-dok-011
+  - judul: "9-Hibah Masuk"
+    url: "https://drive.google.com/file/d/1Bl3MaSGn5_4c5cMDfePzcJfQ85yGhwmR/view"
+    jenis: lainnya
+    diambil: 2026-11-21
+    id_manifest: C-dok-010
+sidebar:
+  order: 8
+---
+
+import { Aside } from '@astrojs/starlight/components';
+import MenuSakti from '~/components/MenuSakti.astro';
+import SumberAsli from '~/components/SumberAsli.astro';
+
+Menu Hibah Masuk BLU digunakan oleh BLU untuk mencatat penerimaan
+hibah persediaan dari instansi lain pada tahun berjalan — perolehan
+persediaan yang bersumber dari hibah dan diterima oleh Badan Layanan
+Umum, misalnya dari pemerintah daerah maupun dari swasta. Pencatatan
+transaksi ini didahului dengan transaksi BAST Hibah Masuk dari modul
+Komitmen, pendetilan di modul Persediaan, dan penerbitan Memo
+Pencatatan Hibah Langsung Bentuk Barang/Jasa/Surat Berharga
+(MPHL-BJS) di modul Pembayaran untuk mendapatkan pengesahan dari
+KPPN. Semua jurnal transaksi dibentuk secara otomatis oleh sistem
+tanpa melakukan jurnal manual.
+
+<MenuSakti />
+
+## Prasyarat
+
+- Dokumen sumber: BAST hibah barang.
+- Modul dan transaksi terkait: modul Komitmen (untuk merekam BAST)
+  dan aset tetap.
+- Modul Komitmen terlebih dahulu merekam BAST hibah.
+- BAST harus menggunakan kode barang persediaan.
+- Validasi urutan tanggal transaksi atas barang yang sejenis (tidak
+  bisa sisip transaksi).
+- Sudah tutup buku modul Persediaan periode sebelumnya.
+
+## Jurnal transaksi
+
+Menurut teks halaman situs (dengan judul "Jurnal Transaksi Hibah
+Masuk"):
+
+- Debit: Barang Persediaan
+- Kredit: Pendapatan Hibah
+
+Menurut tabel overview pada halaman situs:
+
+- [Debit]: Barang Persediaan
+- [Kredit]: Persediaan belum diregister
+
+<Aside type="caution" title="Perlu verifikasi">
+Halaman situs menu ini tidak memuat tata cara perekaman (isian "-")
+dan menautkan juknis menu Hibah Masuk — lihat [Merekam Hibah Masuk
+Persediaan](/persediaan/transaksi-masuk/hibah-masuk/). Halaman situs
+juga memuat dua rumusan jurnal yang berbeda (teks halaman: kredit
+Pendapatan Hibah; tabel overview: kredit Persediaan belum
+diregister).
+</Aside>
+
+## Terkait
+
+- [Merekam Hibah Masuk Persediaan](/persediaan/transaksi-masuk/hibah-masuk/)
+
+## Sumber
+
+<SumberAsli />

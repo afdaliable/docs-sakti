@@ -1,0 +1,71 @@
+---
+title: Merekam Rampasan Persediaan
+description: Merekam perolehan persediaan dari rampasan negara berdasarkan putusan pengadilan yang berkekuatan hukum tetap.
+modul: persediaan
+menu_sakti: "Persediaan > Transaksi Masuk > Rampasan"
+peran: [satker]
+jenis: juknis
+kata_kunci: [rampasan, persediaan rampasan, putusan pengadilan, penetapan hakim]
+status: review
+perlu_review: true
+sumber:
+  - judul: "Rampasan"
+    url: "https://sites.google.com/view/saktipelaporan/persediaan/transaksi-masuk/rampasan"
+    jenis: google-sites
+    diambil: 2026-11-21
+    id_manifest: C-persediaan-transaksi-masuk-rampasan
+  - judul: "JUKNIS SAKTI WEB-Persediaan_30122020"
+    url: "https://drive.google.com/file/d/1p_-rUAu_on0H0d_TKFEE2vmpDXCPDzy5/view"
+    jenis: pdf
+    diambil: 2026-11-21
+    id_manifest: C-dok-001
+sidebar:
+  order: 4
+---
+
+import { Steps, Aside } from '@astrojs/starlight/components';
+import MenuSakti from '~/components/MenuSakti.astro';
+import SumberAsli from '~/components/SumberAsli.astro';
+
+Submenu transaksi Rampasan digunakan untuk mencatat perolehan
+persediaan yang berasal dari hasil rampasan negara berdasarkan
+putusan pengadilan yang telah memperoleh kekuatan hukum tetap, atau
+berdasarkan penetapan hakim.
+
+<MenuSakti />
+
+## Prasyarat
+
+- Role yang dibutuhkan: menurut juknis 2020, OPR dan APR (pengguna
+  sebagai Operator UAKPB).
+- Dokumen sumber: keputusan pengadilan atau dokumen lain yang
+  sejenis; menurut juknis 2020: BAST Serah Terima Barang.
+- Modul lain yang terkait: GLP.
+- Validasi urutan tanggal transaksi atas barang yang sejenis.
+
+## Langkah
+
+<Steps>
+
+1. Buka menu **Persediaan > Transaksi Masuk > Rampasan**, lalu
+   masukkan nomor dan tanggal dokumen yang menjadi dasar pencatatan.
+2. Klik tombol (+) di bagian bawah untuk memasukkan keterangan barang
+   (jumlah, harga, dan sebagainya).
+3. Klik **Simpan & Selesai**.
+
+</Steps>
+
+## Hasil yang diharapkan
+
+Perekaman transaksi rampasan tersimpan; menurut juknis 2020,
+perekaman siap untuk disetujui oleh approver.
+
+<Aside type="caution" title="Perlu verifikasi">
+Dokumen sumber berbeda antar sumber: halaman situs menyebut
+"keputusan pengadilan atau dokumen lain yang sejenis", sedangkan
+juknis modul Persediaan 2020 menyebut "BAST Serah Terima Barang".
+</Aside>
+
+## Sumber
+
+<SumberAsli />

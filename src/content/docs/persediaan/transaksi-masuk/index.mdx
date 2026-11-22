@@ -9,4 +9,71 @@ sidebar:
   order: 0
 ---
 
-Panduan untuk menu **Transaksi Masuk** sedang disiapkan.
+import { CardGrid, LinkCard } from '@astrojs/starlight/components';
+
+Menu Transaksi Masuk mencakup perekaman perolehan persediaan dari
+saldo awal, pembelian, hibah, rampasan, perolehan lainnya,
+reklasifikasi, dan transfer masuk.
+
+<CardGrid>
+	<LinkCard
+		title="Merekam Saldo Awal Persediaan"
+		description="Merekam persediaan yang diperoleh sebelum tahun anggaran berjalan dan belum dibukukan."
+		href="/persediaan/transaksi-masuk/saldo-awal/"
+	/>
+	<LinkCard
+		title="Merekam Pembelian Persediaan"
+		description="Pendetilan pembelian persediaan dari dokumen penerimaan barang dan BAST modul Komitmen."
+		href="/persediaan/transaksi-masuk/pembelian/"
+	/>
+	<LinkCard
+		title="Merekam Hibah Masuk Persediaan"
+		description="Pendetilan perolehan persediaan dari hibah berdasarkan BAST Hibah modul Komitmen."
+		href="/persediaan/transaksi-masuk/hibah-masuk/"
+	/>
+	<LinkCard
+		title="Merekam Rampasan Persediaan"
+		description="Pencatatan perolehan persediaan dari rampasan negara berdasarkan putusan pengadilan."
+		href="/persediaan/transaksi-masuk/rampasan/"
+	/>
+	<LinkCard
+		title="Merekam Perolehan Lainnya Persediaan"
+		description="Pencatatan perolehan persediaan di luar saldo awal, pembelian, transfer, hibah, rampasan, dan reklasifikasi."
+		href="/persediaan/transaksi-masuk/perolehan-lainnya/"
+	/>
+	<LinkCard
+		title="Merekam Reklasifikasi dari Aset"
+		description="Mengubah klasifikasi barang dari aset tetap menjadi barang persediaan."
+		href="/persediaan/transaksi-masuk/reklasifikasi-dari-aset/"
+	/>
+	<LinkCard
+		title="Merekam Reklasifikasi Masuk Persediaan"
+		description="Mengubah jenis atau kode barang persediaan lama menjadi kode barang persediaan baru."
+		href="/persediaan/transaksi-masuk/reklasifikasi-masuk/"
+	/>
+	<LinkCard
+		title="Merekam Hibah Masuk BLU Persediaan"
+		description="Pencatatan perolehan persediaan dari hibah yang diterima oleh Badan Layanan Umum."
+		href="/persediaan/transaksi-masuk/hibah-masuk-blu/"
+	/>
+	<LinkCard
+		title="Merekam Transfer Masuk Online (Sesama SAKTI) Persediaan"
+		description="Penerimaan transfer persediaan dari anak satker sesama pengguna SAKTI."
+		href="/persediaan/transaksi-masuk/transfer-masuk-online-sesama-sakti/"
+	/>
+	<LinkCard
+		title="Merekam Internal Transfer Masuk Persediaan"
+		description="Pencatatan transfer masuk barang dari entitas dalam satu unit yang sama."
+		href="/persediaan/transaksi-masuk/internal-transfer-masuk/"
+	/>
+	<LinkCard
+		title="Merekam Internal Transfer Masuk Non-Aktif Pembantu Persediaan"
+		description="Penerimaan transfer masuk dari anak satker yang dilikuidasi."
+		href="/persediaan/transaksi-masuk/transfer-masuk-nonaktif-pembantu/"
+	/>
+	<LinkCard
+		title="Merekam Transfer Masuk Manual Persediaan"
+		description="Perekaman transfer masuk dari satker lain yang belum menggunakan SAKTI."
+		href="/persediaan/transaksi-masuk/transfer-masuk-manual/"
+	/>
+</CardGrid>

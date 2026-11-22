@@ -1,0 +1,121 @@
+---
+title: Merekam Transfer Masuk Manual Persediaan
+description: Merekam penerimaan transfer barang persediaan dari satker lain yang belum menggunakan aplikasi SAKTI berdasarkan BAST.
+modul: persediaan
+menu_sakti: "Persediaan > Transaksi Masuk"
+peran: [satker]
+jenis: juknis
+kata_kunci: [transfer masuk manual, satker belum sakti, bast serah terima, transfer persediaan]
+status: review
+perlu_review: true
+sumber:
+  - judul: "Transfer Masuk Manual"
+    url: "https://sites.google.com/view/saktipelaporan/persediaan/transaksi-masuk/transfer-masuk-manual"
+    jenis: google-sites
+    diambil: 2026-11-21
+    id_manifest: C-persediaan-transaksi-masuk-transfer-masuk-manual
+  - judul: "78. transfer masuk manual"
+    url: "https://drive.google.com/file/d/1utwazLWr3AaMoFDV6rBlqlzPv3qtxYDD/view"
+    jenis: pptx
+    diambil: 2026-11-21
+    id_manifest: C-dok-009
+  - judul: "7-Transfer Masuk Manual"
+    url: "https://drive.google.com/file/d/1fAmlOgS00yVY0JK75hTHNlkK90tqN1yr/view"
+    jenis: lainnya
+    diambil: 2026-11-21
+    id_manifest: C-dok-008
+  - judul: "JUKNIS SAKTI WEB-Persediaan_30122020"
+    url: "https://drive.google.com/file/d/1p_-rUAu_on0H0d_TKFEE2vmpDXCPDzy5/view"
+    jenis: pdf
+    diambil: 2026-11-21
+    id_manifest: C-dok-001
+sidebar:
+  order: 12
+---
+
+import { Steps, Aside } from '@astrojs/starlight/components';
+import MenuSakti from '~/components/MenuSakti.astro';
+import SumberAsli from '~/components/SumberAsli.astro';
+
+Menu Transfer Masuk Manual (kode transaksi M03) digunakan untuk
+menginput data persediaan dari hasil kiriman (transfer) satker
+lainnya dalam lingkup Pemerintah Pusat yang masih belum menggunakan
+SAKTI. Pencatatan transaksi ini dilakukan berdasarkan BAST satker
+pemberi dan satker penerima persediaan.
+
+<MenuSakti />
+
+## Prasyarat
+
+- Role yang dibutuhkan: OPR dan APR; menurut juknis, pengguna sebagai
+  Operator UAKPB.
+- Dokumen sumber: BAST; menurut juknis berupa BAST Serah Terima Barang.
+- Modul lain yang terkait: GLP.
+- Harus dipilih kode satker pengirim barang persediaan yang belum
+  menggunakan aplikasi SAKTI.
+- Kode barang persediaan harus dipilih sesuai dengan referensi yang
+  ada pada satker penerima transfer masuk, karena untuk barang
+  persediaan yang sama, kemungkinan setiap satker memiliki kode
+  barang persediaan yang berbeda antara satu satker dengan satker
+  yang lainnya.
+- Validasi urutan tanggal transaksi atas barang yang sejenis (tidak
+  bisa sisip tanggal transaksi).
+- Sudah tutup buku modul Persediaan periode sebelumnya.
+
+## Langkah
+
+<Steps>
+
+1. Login menggunakan user operator Persediaan, kemudian pilih menu
+   **Persediaan > Transaksi Masuk > Transfer Masuk Manual** dan klik
+   tombol **Rekam**.
+2. Pada form detil perekaman, isi parameter perekaman dan klik tombol
+   **Tambah** di sebelah kanan untuk mengisikan detil barang
+   persediaan yang akan direkam.
+3. Klik **Simpan** pada tombol di bawah — perekaman transaksi sudah
+   siap untuk disetujui oleh approver.
+
+</Steps>
+
+## Hasil yang diharapkan
+
+Perekaman transaksi transfer masuk manual siap untuk disetujui oleh
+approver dan masuk ke semua laporan pada modul Persediaan.
+
+## Ketentuan
+
+- Pilih kode satker yang melakukan pengiriman barang persediaan yang
+  belum menggunakan aplikasi SAKTI.
+- Pilih kode barang persediaan sesuai dengan referensi barang yang
+  ada pada satker penerima.
+- Apabila pada referensi barang persediaan belum tersedia, operator
+  harus terlebih dahulu melakukan perekaman referensi barang
+  persediaan melalui menu **Persediaan > Referensi > Mengelola Barang
+  Persediaan**.
+- Perlu diperhatikan perekaman kode/nama, satuan, harga satuan barang
+  persediaan, dan tanggal-tanggal agar disesuaikan dengan dokumen
+  sumber dan dicocokkan dengan kenyataan barang persediaan yang
+  diterima, karena perekaman dilakukan secara manual.
+
+## Jurnal transaksi
+
+- (D) Barang Persediaan
+- (K) Transfer Masuk
+
+## Ilustrasi transaksi
+
+Satker di bawah Kementerian Agama yang masih belum menggunakan SAKTI
+melakukan transfer keluar persediaan ke satker di bawah Kementerian
+Keuangan yang telah menggunakan SAKTI; satker di bawah Kementerian
+Keuangan menginput pada menu Transfer Masuk Manual.
+
+<Aside type="caution" title="Perlu verifikasi">
+Menu Transfer Masuk Manual tidak ada padanan persis pada daftar
+menu aplikasi; jalur di atas memakai simpul induk. Menurut sumber,
+nama menu adalah **Persediaan > Transaksi Masuk > Transfer Masuk
+Manual**.
+</Aside>
+
+## Sumber
+
+<SumberAsli />

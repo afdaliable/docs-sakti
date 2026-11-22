@@ -1,0 +1,131 @@
+---
+title: Merekam Perolehan Lainnya Persediaan
+description: Merekam perolehan persediaan tahun anggaran berjalan yang tidak berasal dari saldo awal, pembelian, transfer, hibah, rampasan, atau reklasifikasi.
+modul: persediaan
+menu_sakti: "Persediaan > Transaksi Masuk > Perolehan Lainnya"
+peran: [satker]
+jenis: juknis
+kata_kunci: [perolehan lainnya, gratifikasi, hadiah undian, aset biologis, jurnal manual]
+status: review
+perlu_review: true
+sumber:
+  - judul: "Perolehan Lainnya"
+    url: "https://sites.google.com/view/saktipelaporan/persediaan/transaksi-masuk/perolehan-lainnya"
+    jenis: google-sites
+    diambil: 2026-11-21
+    id_manifest: C-persediaan-transaksi-masuk-perolehan-lainnya
+  - judul: "77. Perolehan lainnya"
+    url: "https://drive.google.com/file/d/1ucgNKVxz09WkmzRIotgJ3dmLqRLb5kAY/view"
+    jenis: pptx
+    diambil: 2026-11-21
+    id_manifest: C-dok-013
+  - judul: "13-Perolehan Lainnya"
+    url: "https://drive.google.com/file/d/1JZEPo064wT-oJLk1mHhlK7bcQ22GO3Gp/view"
+    jenis: lainnya
+    diambil: 2026-11-21
+    id_manifest: C-dok-012
+  - judul: "JUKNIS SAKTI WEB-Persediaan_30122020"
+    url: "https://drive.google.com/file/d/1p_-rUAu_on0H0d_TKFEE2vmpDXCPDzy5/view"
+    jenis: pdf
+    diambil: 2026-11-21
+    id_manifest: C-dok-001
+sidebar:
+  order: 5
+---
+
+import { Steps, Aside } from '@astrojs/starlight/components';
+import MenuSakti from '~/components/MenuSakti.astro';
+import SumberAsli from '~/components/SumberAsli.astro';
+
+Menu Perolehan Lainnya (kode transaksi M06) digunakan untuk mencatat
+persediaan tahun anggaran berjalan yang tidak berasal dari Saldo
+Awal, Pembelian APBN, Transfer Masuk, Hibah, Rampasan, dan
+Reklasifikasi Masuk. Menu ini tidak perlu didahului kuitansi/BAST,
+dan dapat digunakan juga untuk melakukan koreksi transaksi tertentu
+yang tidak tersedia menunya di Persediaan Masuk dengan penanganan
+jurnal manual.
+
+<MenuSakti />
+
+## Prasyarat
+
+- Role yang dibutuhkan: OPR dan APR; menurut juknis, pengguna sebagai
+  Operator UAKPB.
+- Dokumen sumber: menurut dokumen tertaut, BAST Rampasan; pada tabel
+  overview halaman situs isian dokumen sumber tidak dimuat.
+- Validasi urutan tanggal transaksi atas barang yang sejenis (tidak
+  bisa sisip tanggal transaksi).
+- Sudah tutup buku modul Persediaan periode sebelumnya.
+
+## Langkah
+
+<Steps>
+
+1. Login menggunakan user operator Persediaan, kemudian pilih menu
+   **Persediaan > Transaksi Masuk > Perolehan Lainnya** dan klik
+   tombol **Rekam**.
+2. Pada form detil perekaman, isikan parameter perekaman, kemudian
+   klik tombol **Tambah** di sebelah kanan untuk mengisikan detil
+   barang persediaan yang akan direkam.
+3. Klik **Simpan** — perekaman transaksi sudah siap untuk disetujui
+   oleh approver.
+
+</Steps>
+
+## Hasil yang diharapkan
+
+Perekaman transaksi perolehan lainnya siap untuk disetujui oleh
+approver dan masuk ke semua laporan pada modul Persediaan.
+
+## Ketentuan
+
+- Tanggal buku diisi sesuai dengan dokumen sumber.
+- Contoh pemakaian menu ini secara umum:
+  1. Pencatatan aset biologis seperti hewan, ikan, dan tanaman untuk
+     dijual/diserahkan ke masyarakat/Pemda hasil pengembangbiakan.
+  2. Barang-barang hasil gratifikasi yang sudah dilaporkan/diserahkan
+     ke Komisi Pemberantasan Korupsi (KPK) dan ditetapkan akan
+     dijual.
+  3. Perolehan barang persediaan dari hadiah/undian berhadiah.
+- Contoh pemakaian menu ini untuk kebutuhan koreksi administrasi:
+  transaksi pembelian tahun anggaran berjalan yang secara substansi
+  seharusnya menghasilkan persediaan namun saat membuat
+  kuitansi/BAST tidak memilih kode barang.
+- Penggunaan menu Perolehan Lainnya di luar yang seharusnya sesuai
+  contoh di atas, misalnya karena kesalahan memilih jasa pada saat
+  merekam kuitansi atau BAST, akan membentuk saldo akun Pendapatan
+  Perolehan Aset Lainnya dan perlu dilakukan jurnal manual dengan
+  berpedoman pada petunjuk teknis koreksi.
+
+## Jurnal transaksi
+
+Menurut teks halaman situs (pada halaman tertulis dengan judul
+"Jurnal Transaksi Rampasan"):
+
+- D. 117111 Persediaan Lainnya
+- K. 491429 Pendapatan Perolehan Aset Lainnya
+
+Menurut tabel overview pada halaman situs:
+
+- (D) Barang Persediaan
+- (K) Pendapatan Perolehan Aset Lainnya
+
+## Ilustrasi transaksi
+
+Menu ini digunakan untuk menginput perolehan barang persediaan selain
+dari pembelian, transfer, hibah, dan rampasan — biasanya untuk
+menginput transaksi yang berasal dari hadiah atau terkait dengan
+koreksi atas kesalahan tidak memilih barang persediaan di
+kuitansi/BAST.
+
+<Aside type="caution" title="Perlu verifikasi">
+Halaman situs memuat dua rumusan jurnal transaksi yang berbeda
+(teks halaman dengan nomor akun, dan tabel overview); judul jurnal
+pada teks halaman juga tertulis "Jurnal Transaksi Rampasan".
+Dokumen sumber berbeda: dokumen tertaut menyebut BAST Rampasan,
+sedangkan tabel overview halaman situs tidak mengisinya.
+</Aside>
+
+## Sumber
+
+<SumberAsli />

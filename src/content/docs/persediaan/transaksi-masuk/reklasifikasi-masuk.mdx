@@ -1,0 +1,114 @@
+---
+title: Merekam Reklasifikasi Masuk Persediaan
+description: Merekam perolehan persediaan dari penggantian jenis atau kode barang persediaan, pasangan transaksi Reklasifikasi Keluar.
+modul: persediaan
+menu_sakti: "Persediaan > Transaksi Masuk > Reklasifikasi Masuk"
+peran: [satker]
+jenis: juknis
+kata_kunci: [reklasifikasi masuk, reklas kode barang, ganti kode barang persediaan, bast reklasifikasi]
+status: review
+perlu_review: false
+sumber:
+  - judul: "Reklasifikasi Masuk"
+    url: "https://sites.google.com/view/saktipelaporan/persediaan/transaksi-masuk/reklasifikasi-masuk"
+    jenis: google-sites
+    diambil: 2026-11-21
+    id_manifest: C-persediaan-transaksi-masuk-reklasifikasi-masuk
+  - judul: "16. reklas masuk"
+    url: "https://drive.google.com/file/d/1uoU4BAWdeba18792Vz1xCpkgs594xi9m/view"
+    jenis: pptx
+    diambil: 2026-11-21
+    id_manifest: C-dok-015
+  - judul: "10-Reklasifikasi Masuk"
+    url: "https://drive.google.com/file/d/1i__iovDGboVqmiRVVExx4gJI5TzxMLxg/view"
+    jenis: lainnya
+    diambil: 2026-11-21
+    id_manifest: C-dok-014
+  - judul: "JUKNIS SAKTI WEB-Persediaan_30122020"
+    url: "https://drive.google.com/file/d/1p_-rUAu_on0H0d_TKFEE2vmpDXCPDzy5/view"
+    jenis: pdf
+    diambil: 2026-11-21
+    id_manifest: C-dok-001
+sidebar:
+  order: 7
+---
+
+import { Steps } from '@astrojs/starlight/components';
+import MenuSakti from '~/components/MenuSakti.astro';
+import SumberAsli from '~/components/SumberAsli.astro';
+
+Submenu transaksi Reklasifikasi Masuk (kode transaksi M10) digunakan
+untuk mengubah klasifikasi barang yang sebelumnya sudah terlanjur
+diklasifikasikan (didetilkan) sebagai barang persediaan tertentu
+menjadi klasifikasi barang persediaan yang lain. Menu ini harus
+digunakan secara bersamaan dengan menu reklasifikasi keluarnya ke
+persediaan dalam periode yang sama.
+
+<MenuSakti />
+
+## Prasyarat
+
+- Role yang dibutuhkan: OPR dan APR.
+- Dokumen sumber: BAST Reklasifikasi.
+- Modul dan transaksi terkait: GLP; transaksi reklasifikasi masuk
+  sesama barang persediaan — modul Persediaan harus telah melakukan
+  persetujuan transaksi Reklasifikasi Keluar.
+- Harus sudah dilakukan persetujuan atas transaksi Reklasifikasi
+  Keluar.
+- Transaksi Reklasifikasi Keluar dan Reklasifikasi Masuk harus
+  dibukukan dalam bulan yang sama.
+- Tutup buku bulan bersangkutan tidak dapat dilakukan apabila sudah
+  direkam/disetujui transaksi Reklasifikasi Keluar, tetapi belum
+  disetujui transaksi Reklasifikasi Masuk.
+- Validasi urutan tanggal transaksi atas barang yang sejenis (tidak
+  bisa sisip tanggal transaksi).
+- Sudah tutup buku modul Persediaan periode sebelumnya.
+
+## Langkah
+
+<Steps>
+
+1. Login menggunakan user operator Persediaan, kemudian pilih menu
+   **Persediaan > Transaksi Masuk > Reklasifikasi Masuk** dan klik
+   tombol **Rekam**.
+2. Pilih dokumen Reklasifikasi Masuk yang ingin didetilkan.
+3. Pada form detil perekaman, isikan parameter perekaman dan klik
+   tombol **Tambah** di sebelah kanan untuk mengisikan detil barang
+   persediaan yang akan direkam.
+4. Klik **Simpan** pada tombol di bawah — perekaman transaksi sudah
+   siap untuk disetujui oleh approver.
+
+</Steps>
+
+## Hasil yang diharapkan
+
+Perekaman transaksi reklasifikasi masuk siap untuk disetujui oleh
+approver dan masuk ke semua laporan pada modul Persediaan.
+
+## Ketentuan
+
+- Pilih transaksi Reklasifikasi Keluar yang telah disetujui.
+- Tanggal buku diisikan pada bulan yang sama dengan tanggal buku
+  transaksi Reklasifikasi Keluar.
+- Transaksi Reklasifikasi Masuk merupakan pasangan dari transaksi
+  Reklasifikasi Keluar, sehingga apabila terdapat transaksi
+  Reklasifikasi Keluar, maka harus direkam transaksi Reklasifikasi
+  Masuk pada bulan yang sama.
+- Demikian juga, untuk dapat merekam transaksi Reklasifikasi Masuk,
+  diperlukan terlebih dahulu persetujuan atas transaksi
+  Reklasifikasi Keluar.
+
+## Jurnal transaksi
+
+- (D) Barang Persediaan
+- (K) Pendapatan Penyesuaian Barang Persediaan
+
+## Ilustrasi transaksi
+
+Jika satker sempat salah memilih kode barang, dapat diperbaiki dengan
+cara mengubah kode barang dengan merekam transaksi reklas keluar dan
+reklas masuk kode barang yang benar.
+
+## Sumber
+
+<SumberAsli />

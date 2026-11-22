@@ -1,0 +1,117 @@
+---
+title: Merekam Saldo Awal Persediaan
+description: Merekam persediaan yang diperoleh sebelum tahun anggaran berjalan dan belum dibukukan pada tahun anggaran yang lalu.
+modul: persediaan
+menu_sakti: "Persediaan > Transaksi Masuk > Saldo Awal"
+peran: [satker]
+jenis: juknis
+kata_kunci: [saldo awal, persediaan tahun lalu, pembukuan tahun anggaran, berita acara saldo awal]
+status: review
+perlu_review: true
+sumber:
+  - judul: "SAKTI PELAPORAN - Saldo Awal"
+    url: "https://sites.google.com/view/saktipelaporan/persediaan/transaksi-masuk/saldo-awal"
+    jenis: google-sites
+    diambil: 2026-11-21
+    id_manifest: C-persediaan-transaksi-masuk-saldo-awal
+  - judul: "004_JUKNIS SAKTI-Persediaan_saldo awal"
+    url: "https://drive.google.com/file/d/1I-XHYKjeupOikyR1irxeB2hWC8xE-N5t/view"
+    jenis: pdf
+    diambil: 2026-11-21
+    id_manifest: C-dok-002
+  - judul: "JUKNIS SAKTI WEB-Persediaan_30122020"
+    url: "https://drive.google.com/file/d/1p_-rUAu_on0H0d_TKFEE2vmpDXCPDzy5/view"
+    jenis: pdf
+    diambil: 2026-11-21
+    id_manifest: C-dok-001
+sidebar:
+  order: 1
+---
+
+import { Steps, Aside } from '@astrojs/starlight/components';
+import MenuSakti from '~/components/MenuSakti.astro';
+import SumberAsli from '~/components/SumberAsli.astro';
+
+Menu Saldo Awal (kode transaksi M01) digunakan untuk merekam
+transaksi persediaan yang diperoleh sebelum tahun anggaran berjalan,
+yang belum sempat dibukukan pada tahun anggaran yang lalu dikarenakan
+alasan tertentu. Tanggal perolehan saldo awal adalah tahun sebelumnya;
+pencatatan dibuktikan dengan dokumen sumber persediaan masuk bertanggal
+dokumen tahun anggaran yang lalu dan tanggal buku tahun anggaran
+berjalan.
+
+<MenuSakti />
+
+## Prasyarat
+
+- Role yang dibutuhkan: OPR dan APR; menurut juknis, pengguna sebagai
+  Operator UAKPB.
+- Dokumen sumber: kuitansi, BAST Kontraktual dan Non Kontraktual, dan
+  berita acara perekaman saldo awal; menurut juknis 2019: Berita Acara
+  Pencatatan Saldo Awal.
+- Modul lain yang terkait: GLP.
+- Tanggal perolehan adalah sebelum tahun anggaran berjalan; menurut
+  juknis, tanggal dokumen harus pada tahun anggaran sebelumnya.
+- Validasi urutan tanggal transaksi atas barang yang sejenis (tidak
+  bisa sisip tanggal transaksi).
+- Sudah tutup buku modul Persediaan periode sebelumnya; menurut
+  juknis, periode persediaan harus belum ditutup.
+
+## Langkah
+
+<Steps>
+
+1. Pilih menu **Persediaan > Transaksi Masuk > Saldo Awal**.
+2. Pada form pilihan perekaman yang muncul, klik tombol **Rekam**
+   untuk mengisikan detil perekaman.
+3. Pada form detil perekaman, isikan parameter perekaman dan klik
+   tombol **Tambah** di sebelah kanan untuk mengisikan detil barang
+   persediaan yang akan direkam.
+4. Klik **Simpan** pada tombol di bawah — perekaman transaksi sudah
+   siap untuk disetujui oleh approver.
+
+</Steps>
+
+## Hasil yang diharapkan
+
+Perekaman transaksi saldo awal siap untuk disetujui oleh approver.
+
+## Ketentuan
+
+- Tanggal dokumen diisi sesuai dengan dokumen sumber, yaitu sebelum
+  tahun anggaran berjalan.
+- Tanggal buku diisi harus lebih besar dari tanggal transaksi
+  sebelumnya untuk barang persediaan yang sama.
+- Harga satuan harus dalam satuan rupiah penuh (tidak terdapat
+  bilangan desimal, satuan sen, atau tanda koma).
+- Perekaman transaksi harus dilakukan secara urut berdasarkan
+  kronologis urutan kejadian dan tidak dapat dilakukan sisip tanggal
+  transaksi.
+
+## Jurnal transaksi
+
+- (D) Barang Persediaan
+- (K) Koreksi Nilai Aset tetap non revaluasi
+
+## Ilustrasi transaksi
+
+Terdapat pembelian kertas HVS tahun anggaran yang lalu pada tanggal 1
+Desember 2018; karena suatu hal transaksi tersebut belum dicatat pada
+tahun 2018, maka pada modul Persediaan dibukukan pada menu Saldo Awal
+dengan tanggal dokumen perolehan 1 Desember 2018 dan tanggal buku
+tahun anggaran berjalan 2019.
+
+Terhadap pembelian barang persediaan pada tahun lalu yang hingga akhir
+tahun belum terinput di modul Persediaan, pada tahun anggaran
+berikutnya dapat diinput ke modul Persediaan melalui mekanisme saldo
+awal.
+
+<Aside type="caution" title="Perlu verifikasi">
+Langkah perekaman di atas hanya dimuat dalam juknis 2019
+(perekaman saldo awal) dan juknis modul Persediaan 2020; halaman
+situs menu ini tidak memuat langkah klik.
+</Aside>
+
+## Sumber
+
+<SumberAsli />

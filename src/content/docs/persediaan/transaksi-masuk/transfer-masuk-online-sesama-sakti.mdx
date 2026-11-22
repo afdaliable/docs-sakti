@@ -1,0 +1,148 @@
+---
+title: Merekam Transfer Masuk Online (Sesama SAKTI) Persediaan
+description: Merekam penerimaan transfer barang persediaan dari anak satker ke induk satker sesama pengguna aplikasi SAKTI.
+modul: persediaan
+menu_sakti: "Persediaan > Transaksi Masuk > Transfer Masuk Online (Sesama SAKTI)"
+peran: [satker]
+jenis: juknis
+kata_kunci: [transfer masuk online, tm online, transfer keluar online, bast transfer, sesama sakti]
+status: review
+perlu_review: false
+sumber:
+  - judul: "Transfer Masuk Online (Sesama SAKTI)"
+    url: "https://sites.google.com/view/saktipelaporan/persediaan/transaksi-masuk/transfer-masuk-online-sesama-sakti"
+    jenis: google-sites
+    diambil: 2026-11-21
+    id_manifest: C-persediaan-transaksi-masuk-transfer-masuk-online-sesama-sakti
+  - judul: "79. transfer masuk online"
+    url: "https://drive.google.com/file/d/1ux81g-CnbpjFmucNqNgxO3xgyeuc3JfX/view"
+    jenis: pptx
+    diambil: 2026-11-21
+    id_manifest: C-dok-007
+  - judul: "004_TM Online (per menu)"
+    url: "https://drive.google.com/file/d/1zckn6qWkkmVa9O7mKjnhku4ADn43UMdN/view"
+    jenis: lainnya
+    diambil: 2026-11-21
+    id_manifest: C-dok-006
+  - judul: "JUKNIS SAKTI WEB-Persediaan_30122020"
+    url: "https://drive.google.com/file/d/1p_-rUAu_on0H0d_TKFEE2vmpDXCPDzy5/view"
+    jenis: pdf
+    diambil: 2026-11-21
+    id_manifest: C-dok-001
+sidebar:
+  order: 9
+---
+
+import { Steps } from '@astrojs/starlight/components';
+import MenuSakti from '~/components/MenuSakti.astro';
+import SumberAsli from '~/components/SumberAsli.astro';
+
+Transaksi Transfer Masuk Online (kode transaksi M03) digunakan untuk
+menginput transaksi persediaan masuk yang berasal dari anak satker ke
+induk satker sesama pengguna aplikasi SAKTI. Dokumen sumber yang
+dapat digunakan untuk merekam transaksi ini adalah Berita Acara
+Transfer. Syaratnya, harus sudah ada transaksi internal transfer
+keluar online dari satker pengirim.
+
+<MenuSakti />
+
+## Prasyarat
+
+- Role yang dibutuhkan: OPR dan APR.
+- Dokumen sumber: BAST; menurut juknis berupa BAST Serah Terima Barang.
+- Satker pengirim harus sudah melakukan persetujuan atas transaksi
+  Transfer Keluar Online (Sesama SAKTI).
+- TK Online dan TM Online dibukukan menggunakan tanggal buku dalam
+  periode bulan yang sama; menurut juknis, transaksi Transfer Keluar
+  dan Transfer Masuk Online hanya dapat dilakukan dalam satu periode
+  tahun anggaran — setiap transaksi Transfer Masuk Online hanya dapat
+  direkam pada satker penerima maksimal pada tanggal 31 Desember pada
+  tahun Transfer Keluar Online dibukukan, dan sangat dianjurkan TKTM
+  online dibukukan pada bulan/periode yang sama untuk menghindari
+  adanya selisih TKTM.
+- Kode barang persediaan harus diubah disesuaikan dengan referensi
+  yang ada pada satker penerima transfer masuk, karena untuk barang
+  persediaan yang sama, kemungkinan setiap satker memiliki kode
+  barang persediaan yang berbeda antara satu satker dengan satker
+  lainnya.
+- Validasi urutan tanggal transaksi atas barang yang sejenis (tidak
+  bisa sisip tanggal transaksi).
+- Sudah tutup buku modul Persediaan periode sebelumnya.
+- Apabila Transfer Masuk Online belum direkam di satker penerima dan
+  telah melewati periode bulan dokumen Transfer Keluar Online
+  dibukukan oleh satker pengirim, akan muncul peringatan yang
+  bersifat informatif pada saat tutup periode di satker pengirim dan
+  penerima, namun tutup buku masih dapat dilakukan.
+
+## Langkah
+
+<Steps>
+
+1. Login menggunakan user operator Persediaan, kemudian pilih menu
+   **Persediaan > Transaksi Masuk > Transfer Masuk Online (Sesama
+   SAKTI)** dan klik tombol **Rekam**.
+2. Pilih data yang akan direkam — dokumen internal transfer keluar
+   online yang sudah direkam dan telah disetujui oleh satker
+   pengirim. Karena kode barang persediaan pada setiap satker
+   bersifat unik, pada bagian bawah jendela terdapat pilihan
+   suggest/saran pencocokan menurut **Nama Barang** atau **Kode
+   Barang**; pilihan suggest menentukan pemasangan referensi kode
+   barang dari satker pengirim dengan referensi kode barang di satker
+   tujuan.
+3. Setelah dokumen dan suggest dipilih, akan muncul form
+   pendetilan/perekaman Internal Transfer Masuk Online.
+4. Apabila pencocokan referensi kode barang dianggap tidak sesuai,
+   lakukan ubah kode referensi barang persediaan yang cocok dengan
+   menekan tombol **Ubah**.
+5. Barang persediaan yang tidak memiliki suggest tidak dapat dipilih
+   untuk disimpan.
+6. Pilih setiap barang persediaan yang akan direkam dengan mencentang
+   kotak pilihan pada bagian paling kanan form — apabila pada kolom
+   pilihan tidak dicentang, barang persediaan tidak akan tersimpan ke
+   dalam data barang persediaan satker penerima dan dapat dilakukan
+   pembatalan oleh satker pengirim.
+
+</Steps>
+
+## Hasil yang diharapkan
+
+Transaksi transfer masuk online terekam dan masuk ke semua laporan
+pada modul Persediaan.
+
+## Ketentuan
+
+- Modul Persediaan memberikan fitur suggest/saran kode barang dan
+  nama barang yang diterima; apabila diperlukan, operator dapat
+  melakukan ubah kode atau nama barang persediaan agar sesuai dengan
+  referensi barang yang ada pada satker penerima.
+- Apabila pada referensi barang persediaan belum tersedia atau
+  berbeda satuan atau harga satuan, operator harus terlebih dahulu
+  melakukan perekaman referensi barang persediaan melalui menu
+  **Persediaan > Referensi > Mengelola Barang Persediaan**.
+- Operator modul Persediaan wajib memperhatikan selisih harga satuan
+  barang persediaan yang ditransfer masuk dengan harga satuan barang
+  yang di satker penerima.
+- Operator juga perlu memperhatikan kesamaan satuan barang persediaan
+  yang diterima agar tidak menimbulkan selisih harga satuan yang
+  menimbulkan akun beban/pendapatan penyesuaian persediaan yang
+  signifikan.
+- Apabila di satker tujuan tidak memiliki referensi barang yang sama
+  dengan referensi dari satker pengirim, dokumen dapat disimpan
+  terlebih dahulu, lalu kemudian merekam referensi kode barang yang
+  sesuai pada menu **Persediaan > Referensi > Mengelola Barang
+  Persediaan**.
+
+## Jurnal transaksi
+
+- (D) Barang Persediaan
+- (K) Transfer Masuk
+
+## Ilustrasi transaksi
+
+Sebagai satker penerima TM barang persediaan, ketika satker pemberi
+sudah melakukan approve TK, saat itu juga akan muncul kode-kode
+barang yang masuk ke satker penerima.
+
+## Sumber
+
+<SumberAsli />

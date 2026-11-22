@@ -1,0 +1,92 @@
+---
+title: Merekam Internal Transfer Masuk Non-Aktif Pembantu Persediaan
+description: Merekam transfer masuk barang persediaan dari anak satker yang dilikuidasi sesama pengguna SAKTI.
+modul: persediaan
+menu_sakti: "Persediaan > Transaksi Masuk > Internal Transfer Masuk Non Aktif Pembantu"
+peran: [satker]
+jenis: juknis
+kata_kunci: [internal transfer non aktif pembantu, transfer masuk pembantu, likuidasi anak satker]
+status: review
+perlu_review: false
+sumber:
+  - judul: "Internal Transfer Masuk Non-Aktif Pembantu"
+    url: "https://sites.google.com/view/saktipelaporan/persediaan/transaksi-masuk/internal-transfer-masuk-non-aktif-pembantu"
+    jenis: google-sites
+    diambil: 2026-11-21
+    id_manifest: C-persediaan-transaksi-masuk-internal-transfer-masuk-non-aktif-pembantu
+  - judul: "JUKNIS SAKTI WEB-Persediaan_30122020"
+    url: "https://drive.google.com/file/d/1p_-rUAu_on0H0d_TKFEE2vmpDXCPDzy5/view"
+    jenis: pdf
+    diambil: 2026-11-21
+    id_manifest: C-dok-001
+sidebar:
+  order: 11
+---
+
+import { Steps } from '@astrojs/starlight/components';
+import MenuSakti from '~/components/MenuSakti.astro';
+import SumberAsli from '~/components/SumberAsli.astro';
+
+Menu Internal Transfer Masuk Non-Aktif Pembantu digunakan untuk
+mencatat transfer masuk barang yang diterima dari entitas dalam satu
+unit yang sama — menurut juknis 2020, transaksi persediaan masuk yang
+berasal dari anak satker ke induk satker sesama pengguna aplikasi
+SAKTI dengan kondisi adanya likuidasi di anak satker.
+
+<MenuSakti />
+
+## Prasyarat
+
+- Role yang dibutuhkan: menurut juknis 2020, OPR dan APR.
+- Dokumen sumber: SK atau dokumen lain yang dapat dipersamakan;
+  menurut juknis 2020: BAST Serah Terima Barang (Berita Acara
+  Transfer).
+- Syarat perekaman: harus sudah ada transaksi internal transfer
+  keluar non aktif dari anak satker.
+- Validasi urutan tanggal transaksi atas barang yang sejenis.
+
+## Langkah
+
+<Steps>
+
+1. Pada menu **Persediaan > Transaksi Masuk > Internal Transfer Masuk
+   Non Aktif Pembantu**, klik **Rekam**, kemudian pilih dokumen yang
+   telah ditransfer keluar oleh UAKPB asal.
+2. Klik **OK** untuk melanjutkan.
+
+</Steps>
+
+Menurut juknis 2020, tampilan form transaksi ini berbeda dengan
+tampilan menu Transfer Masuk biasa: terdapat jendela lookup pemilihan
+dokumen internal transfer keluar online yang sudah dibuat dan
+disetujui oleh satker pengirim, dan pada bagian bawah jendela
+terdapat pilihan suggest/saran pencocokan menurut nama barang atau
+kode barang yang menentukan pemasangan referensi kode barang dari
+satker pengirim dengan referensi kode barang di satker tujuan. Setelah
+dokumen dan suggest dipilih, muncul form pendetilan/perekaman.
+
+## Ketentuan
+
+- UAKPB asal harus sudah merekam transaksi transfer keluar terlebih
+  dahulu.
+- Menurut juknis 2020: barang persediaan yang tidak memiliki suggest
+  tidak dapat dipilih untuk disimpan; setiap barang persediaan yang
+  akan direkam harus dipilih dengan mencentang kotak pilihan pada
+  bagian paling kanan form — apabila pada kolom pilihan tidak
+  dicentang, barang persediaan tidak akan tersimpan ke dalam data
+  barang persediaan satker penerima dan dapat dilakukan pembatalan
+  oleh satker pengirim.
+- Menurut juknis 2020: apabila di satker tujuan tidak memiliki
+  referensi barang yang sama dengan referensi dari satker pengirim,
+  dokumen dapat disimpan terlebih dahulu, lalu kemudian merekam
+  referensi kode barang yang sesuai pada menu **Persediaan >
+  Referensi > Mengelola Barang Persediaan**.
+
+## Jurnal transaksi
+
+- [D]: Persediaan
+- [K]: Transfer masuk
+
+## Sumber
+
+<SumberAsli />

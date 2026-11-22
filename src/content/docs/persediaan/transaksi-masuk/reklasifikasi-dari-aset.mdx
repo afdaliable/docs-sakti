@@ -1,0 +1,122 @@
+---
+title: Merekam Reklasifikasi dari Aset
+description: Merekam perolehan persediaan dari barang yang semula dikodifikasikan sebagai aset tetap, pasangan transaksi Reklas Keluar modul Aset.
+modul: persediaan
+menu_sakti: "Persediaan > Transaksi Masuk > Reklasifikasi Dari Aset"
+peran: [satker]
+jenis: juknis
+kata_kunci: [reklasifikasi dari aset, reklas masuk aset, aset tetap ke persediaan, bast reklasifikasi]
+status: review
+perlu_review: false
+sumber:
+  - judul: "Reklasifikasi dari Aset"
+    url: "https://sites.google.com/view/saktipelaporan/persediaan/transaksi-masuk/reklasifikasi-dari-aset"
+    jenis: google-sites
+    diambil: 2026-11-21
+    id_manifest: C-persediaan-transaksi-masuk-reklasifikasi-dari-aset
+  - judul: "18. Reklas dari aset.pptx"
+    url: "https://docs.google.com/presentation/d/1uRm7MoDpU-jpZSYJG6vyJ4WLPoyqEorz/"
+    jenis: google-slides
+    diambil: 2026-11-21
+    id_manifest: C-dok-018
+  - judul: "006_Reklas dari aset ke persediaan (satu siklus)"
+    url: "https://drive.google.com/file/d/1l-xxuZr8dd4gx_9f1ptLqqG00jDAu4u9/view"
+    jenis: lainnya
+    diambil: 2026-11-21
+    id_manifest: C-dok-016
+  - judul: "005_Reklas dari aset ke persediaan (satu siklus)"
+    url: "https://drive.google.com/file/d/11VWYsaetIq4tnoUN_2ws3tnDSh9Fb0tZ/view"
+    jenis: lainnya
+    diambil: 2026-11-21
+    id_manifest: C-dok-017
+  - judul: "JUKNIS SAKTI WEB-Persediaan_30122020"
+    url: "https://drive.google.com/file/d/1p_-rUAu_on0H0d_TKFEE2vmpDXCPDzy5/view"
+    jenis: pdf
+    diambil: 2026-11-21
+    id_manifest: C-dok-001
+sidebar:
+  order: 6
+---
+
+import { Steps } from '@astrojs/starlight/components';
+import MenuSakti from '~/components/MenuSakti.astro';
+import SumberAsli from '~/components/SumberAsli.astro';
+
+Submenu transaksi Reklasifikasi dari Aset digunakan untuk mengubah
+klasifikasi barang yang sebelumnya sudah terlanjur diklasifikasikan
+(didetilkan) sebagai aset tetap menjadi klasifikasi barang
+persediaan. Menu ini harus digunakan secara bersamaan dengan menu
+reklasifikasi aset tetap ke persediaan dalam periode yang sama.
+
+<MenuSakti />
+
+## Prasyarat
+
+- Role yang dibutuhkan: OPR dan APR.
+- Dokumen sumber: BAST Reklasifikasi.
+- Modul dan transaksi terkait: GLP dan modul Aset Tetap — modul Aset
+  harus telah melakukan persetujuan atas transaksi Reklas Keluar
+  Persediaan.
+- Modul Aset harus sudah melakukan persetujuan atas transaksi Reklas
+  Keluar Persediaan.
+- Transaksi Reklas Keluar Persediaan (di modul Aset) dan
+  Reklasifikasi Dari Aset (di modul Persediaan) harus dibukukan dalam
+  bulan yang sama.
+- Tutup buku bulan bersangkutan tidak dapat dilakukan apabila sudah
+  direkam/disetujui transaksi Reklas Keluar Persediaan tetapi belum
+  disetujui transaksi Reklasifikasi Dari Aset.
+- Validasi urutan tanggal transaksi atas barang yang sejenis (tidak
+  bisa sisip tanggal transaksi).
+- Sudah tutup buku modul Persediaan periode sebelumnya.
+
+## Langkah
+
+<Steps>
+
+1. Login menggunakan user operator Persediaan, kemudian pilih menu
+   **Persediaan > Transaksi Masuk > Reklasifikasi Dari Aset** dan klik
+   tombol **Rekam**.
+2. Pilih dokumen Reklasifikasi Dari Aset yang ingin didetilkan.
+3. Pilih barang yang akan direklasifikasi ke persediaan dari modul
+   Aset Tetap.
+4. Pada form detil perekaman, isi parameter perekaman dan klik tombol
+   **Tambah** di sebelah kanan untuk mengisi detil barang persediaan
+   yang akan direkam.
+5. Klik **Simpan** pada tombol di bawah — perekaman transaksi sudah
+   siap untuk disetujui oleh approver.
+
+</Steps>
+
+## Hasil yang diharapkan
+
+Perekaman transaksi reklasifikasi dari aset siap untuk disetujui oleh
+approver dan masuk ke semua laporan pada modul Persediaan.
+
+## Ketentuan
+
+- Pilih transaksi Reklas Keluar Persediaan yang telah disetujui.
+- Tanggal buku diisikan pada bulan yang sama dengan tanggal buku
+  transaksi Reklas Keluar Persediaan.
+- Transaksi Reklas Keluar Persediaan merupakan pasangan dari
+  transaksi Reklasifikasi Keluar, sehingga apabila terdapat transaksi
+  Reklasifikasi Keluar, maka harus direkam transaksi Reklasifikasi
+  Masuk pada bulan yang sama.
+- Demikian juga, untuk dapat merekam transaksi Reklasifikasi Masuk,
+  diperlukan terlebih dahulu persetujuan atas transaksi Reklas Keluar
+  Persediaan.
+
+## Jurnal transaksi
+
+- (D) Barang Persediaan
+- (K) Pendapatan Penyesuaian Barang Persediaan
+
+## Ilustrasi transaksi
+
+Jika satker sempat salah memilih kode barang ke aset tetap, dapat
+diperbaiki dengan cara mengubah kode barang dengan merekam transaksi
+reklas keluar ke persediaan, dan operator persediaan merekam reklas
+masuk dari aset tetap.
+
+## Sumber
+
+<SumberAsli />
