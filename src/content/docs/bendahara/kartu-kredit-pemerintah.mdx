@@ -1,0 +1,280 @@
+---
+title: Merekam Transaksi Kartu Kredit Pemerintah (KKP)
+description: Siklus transaksi KKP dari perekaman supplier rekanan transaksi KKP, penerimaan barang/jasa KKP, SPP-SPM GUP KKP, pembayaran tagihan ke bank, sampai pungutan dan setoran pajak.
+modul: bendahara
+peran: [satker]
+jenis: juknis
+kata_kunci: [kkp, kartu kredit pemerintah, gup kkp, tagihan kkp, rekanan kkp, proporsi kkp]
+status: review
+perlu_review: true
+sumber:
+  - judul: "2024- Juknis Kartu Kredit Pemerintah (KKP) - R1"
+    url: "https://drive.google.com/file/d/1BJlYEDoDl-a_wimSr4hwqo4zdBx15gcD/view"
+    jenis: pdf
+    diambil: 2026-11-21
+    id_manifest: B-ben-007
+  - judul: "2021- Juknis Kartu Kredit Pemerintah (KKP) (versi lama, digantikan)"
+    url: "https://drive.google.com/file/d/1rZcbtlIXTuPPI0dbZ-Hk6GsrnCmUppMv/view"
+    jenis: pdf
+    diambil: 2026-11-21
+    id_manifest: B-ben-001
+---
+
+import { Steps, Aside } from '@astrojs/starlight/components';
+import SumberAsli from '~/components/SumberAsli.astro';
+
+Dokumen ini menjelaskan siklus transaksi Kartu Kredit Pemerintah
+(KKP): dari perekaman supplier rekanan transaksi KKP, pencatatan
+penerimaan barang/jasa KKP, pencetakan perintah bayar/kuitansi/DPT
+KKP, SPP–SPM GUP KKP, pencatatan SP2D KKP, pembayaran tagihan KKP ke
+pihak perbankan, sampai perekaman pungutan dan setoran pajak KKP.
+
+## Prasyarat
+
+- Role: operator bendahara pengeluaran, operator komitmen, operator
+  pembayaran, PPK, dan PPSPM.
+- Plafon UP KKP telah tersedia melalui perekaman usulan UP tunai dan
+  KKP pada modul Bendahara serta pengajuan SPM UP ke KPPN.
+- Nomor surat persetujuan UP KKP dari KPPN telah direkam pada modul
+  Bendahara.
+
+## Alur proses
+
+1. Merekam supplier/penerima barang jasa KKP pada referensi wajib
+   pajak.
+2. Merekam nomor surat persetujuan UP KKP dan pencatatan penerimaan
+   barang/jasa KKP oleh operator Komitmen.
+3. Mencetak perintah bayar, kuitansi, dan DPT KKP.
+4. Merekam SPP–SPM GUP KKP pada modul Pembayaran.
+5. Mencatat SP2D KKP oleh bendahara pengeluaran.
+6. Mencatat pembayaran tagihan KKP ke pihak perbankan.
+7. Merekam transaksi pajak KKP.
+8. Merekam setoran pajak KKP.
+
+## Langkah
+
+### Merekam supplier/penerima barang jasa KKP (Operator Bendahara)
+
+Sebelum bertransaksi KKP, satker wajib merekam rekanan/supplier —
+NPWP yang diinput harus valid karena digunakan Direktorat Jenderal
+Pajak sebagai data sumber. Langkah ini cukup dilakukan sekali per
+rekanan.
+
+<Steps>
+
+1. Login user operator bendahara pengeluaran, buka menu **Bendahara
+   > Referensi > Referensi Wajib Pajak / Wajib Bayar**, klik tombol
+   **Tambah**.
+2. Pilih jenis wajib pajak/wajib bayar **Rekanan Transaksi KKP**.
+3. Lengkapi isian nama wajib pajak/wajib setor, NPWP yang valid,
+   NIK, nomor rekening, bank, cabang bank, nomor telepon, dan nomor
+   HP (dapat diisi tanda "-" bila tidak ada).
+4. Isikan kolom alamat kantor dan lengkapi pilihan provinsi,
+   kabupaten, kecamatan, dan kode pos; isikan email dan website
+   (boleh dikosongkan atau diberi tanda "-").
+5. Klik **Simpan**.
+
+</Steps>
+
+Lihat juga [Merekam Referensi Wajib Pajak/Wajib Bayar](/bendahara/referensi-wajib-pajak/).
+
+### Merekam nomor surat persetujuan UP KKP (Operator Bendahara)
+
+Apabila saat mengakses menu penerimaan barang/jasa KKP muncul
+notifikasi peringatan, umumnya nomor surat persetujuan UP KKP belum
+direkam pada modul Bendahara.
+
+<Steps>
+
+1. Login user bendahara pengeluaran, buka menu **Bendahara >
+   Membuat Usulan > Menghitung Usul UP**.
+2. Klik usulan UP yang telah direkam.
+3. Klik tombol **Ubah Proporsi Tunai & KKP** (bukan tombol Ubah).
+4. Isikan nomor dan tanggal Surat Persetujuan KKP dari KPPN —
+   apabila besaran UP KKP tidak sesuai proporsi (selain 40
+   persen), isikan nomor Surat Dispensasi Proporsi KKP dari Kanwil
+   DJPb.
+5. Klik **Simpan** — user operator Komitmen dapat melanjutkan
+   perekaman penerimaan barang/jasa KKP.
+
+</Steps>
+
+### Mencatat penerimaan barang/jasa KKP (Operator Komitmen)
+
+Output perekaman ini adalah cetakan SPBy dan kuitansi KKP.
+
+<Steps>
+
+1. Login user operator komitmen, buka menu **Komitmen > RUH >
+   BAST/BAKP/BAPP/DYD > Penerimaan Barang/Jasa UP KKP**, klik
+   tombol **Tambah**.
+2. Nomor dokumen terisi otomatis; isikan tanggal dokumen sumber
+   pembelian, uraian dokumen, dan nama penerima; mata uang terisi
+   otomatis apabila satker hanya mengelola UP RM.
+3. Pada informasi supplier, klik **Cari Supplier** dan pilih
+   supplier tipe 1/satker (otomatis apabila hanya ada satu).
+4. Klik **Cari Wajib Pajak/Wajib setor**, pilih NPWP wajib pajak
+   yang sesuai, klik **Pilih**.
+5. Pilih program, aktivitas, KRO, akun, KPPN, sumber dana, cara
+   penarikan, dan nomor register — kolom COA, IntraCo, cadangan,
+   dan kode COA terisi otomatis.
+6. Klik **Pendetilan COA**, klik **Tambah**, klik ikon kaca
+   pembesar untuk memilih detail COA sesuai akun belanja, klik
+   **OK**, isikan nilai belanja total, klik **Simpan** lalu
+   **Keluar**.
+7. Pilih jenis kas UP atau TUP sesuai sumber dana, lalu klik
+   **Rincian Barang** — klik **Rekam**, pilih kategori barang
+   (persediaan, atau aset apabila menghasilkan aset tetap), pilih
+   kode barang dengan kaca pembesar, isikan jumlah dan harga satuan
+   (harga total terisi otomatis). Ulangi apabila lebih dari satu
+   jenis barang — barang yang sama dengan harga berbeda diinput
+   kembali dengan kode yang sama — lalu klik **Simpan**.
+8. Pastikan total belanja pada kolom nilai sudah sesuai, lalu klik
+   **Simpan** — muncul notifikasi yang mengingatkan agar
+   penginputan BAST menggunakan nilai bruto/sudah termasuk pajak
+   (bila ada); data tersimpan dan dapat dilanjutkan ke pencetakan
+   perintah bayar, kuitansi, dan DPT KKP.
+
+</Steps>
+
+### Mencetak perintah bayar, kuitansi, dan DPT KKP
+
+<Steps>
+
+1. Masih pada menu **Penerimaan Barang/Jasa UP KKP** di modul
+   Komitmen, pilih data penerimaan yang telah direkam.
+2. Klik dropdown cetak di bagian bawah, lalu pilih dokumen yang
+   akan dicetak: **DPT KKP**, **SPBy**, atau **kuitansi**.
+3. Klik **OK** — muncul lembar cetakan DPT/kuitansi/SPBy KKP.
+
+</Steps>
+
+### Merekam SPP–SPM GUP KKP (Operator Pembayaran)
+
+<Steps>
+
+1. Login user operator pembayaran, buka menu **Pembayaran > RUH
+   Pembayaran > Catat/Ubah SPP**.
+2. Pilih jenis SPP GUP KKP (kode SPP 317), lalu klik **Tambah**.
+3. Pada dialog ambil data, pilih kode KPPN, nomor register, cara
+   penarikan, dan sumber dana, klik **Cari**, centang data yang
+   dipilih, lalu klik **Pilih**.
+4. Klik **Tambah** pada kolom dasar pembayaran, pilih dasar
+   pembayaran yang berlaku, isikan uraian keterangan, pilih
+   supplier, cek detail COA dengan tombol Lihat Detail, lalu klik
+   **Simpan**.
+5. Lanjutkan pencetakan SPP, validasi SPP oleh PPK, pengiriman ADK
+   SPP OTP, pencetakan SPM, upload dokumen pendukung, dan validasi
+   SPM serta pengiriman ADK SPM oleh PPSPM dengan langkah yang sama
+   seperti pembuatan SPP/SPM lainnya — lihat [Merekam Siklus
+   Transaksi GUP](/bendahara/siklus-gup/).
+
+</Steps>
+
+### Mencatat SP2D KKP (Operator Bendahara)
+
+Setelah pencatatan SP2D pada modul Pembayaran, catat SP2D pada modul
+Bendahara.
+
+<Steps>
+
+1. Login user bendahara pengeluaran, buka menu **Bendahara >
+   Pemindahan Kas > Kas Bank Bendahara Pengeluaran**, klik tombol
+   **Rekam**.
+2. Tanggal dokumen terisi otomatis mengikuti tanggal SP2D; pilih
+   jenis aktivitas **Terima SP2D**.
+3. Klik **Cari** — muncul daftar SP2D GUP KKP yang belum dicatat
+   satker; pilih nomor SP2D atas jenis SPP GUP KKP (kode SPP 317),
+   klik **OK** — tanggal, nomor SP2D, jenis SP2D, jumlah, sumber
+   dana, dan rekening bank terisi otomatis; isikan uraian
+   transaksi.
+4. Klik **Simpan** lalu **OK** — transaksi muncul pada grid; cek
+   saldo dengan **Saldo Detail** dan pastikan saldo kas bank
+   kategori GUP KKP telah bertambah.
+
+</Steps>
+
+### Mencatat pembayaran tagihan KKP (Operator Bendahara)
+
+Setelah dana GUP KKP masuk ke rekening bendahara pengeluaran, bayarkan
+tagihan KKP kepada pihak perbankan melalui mekanisme
+transfer/non tunai.
+
+<Steps>
+
+1. Login user bendahara pengeluaran, buka menu **Bendahara >
+   Pemindahan Kas > Kas Bank Bendahara Pengeluaran**, klik tombol
+   **Rekam**.
+2. Isikan tanggal pembayaran tagihan sesuai rekening koran dan
+   pilih jenis aktivitas **Transfer Keluar (UM/Kas
+   Lainnya/KKP)**.
+3. Isikan jumlah pembayaran tagihan KKP sebesar tagihan dari pihak
+   perbankan tanpa pajak; isikan uraian keterangan.
+4. Klik **Simpan** — cek saldo dengan **Saldo Detail**: saldo kas
+   bank kategori UP KKP berkurang sejumlah nilai yang dibukukan dan
+   masih bersisa sejumlah nilai pajak; sisa saldo KKP ini divalidasi
+   saat merekam pungutan pajak KKP.
+
+</Steps>
+
+### Merekam transaksi pajak KKP (Operator Bendahara)
+
+Apabila dalam pembelanjaan menggunakan KKP terdapat pajak (misalnya
+PPh Pasal 23), rekam pungutan pajak pada modul Bendahara.
+
+<Steps>
+
+1. Login user bendahara, buka menu **Bendahara > Transaksi >
+   Mencatat Pungutan Pajak**, klik **Tambah**.
+2. Pada kolom tanggal pungut, isikan tanggal saat pungutan pajak
+   dilakukan dan pilih dasar pungutan **GUP KKP** — sistem membaca
+   saldo atas SP2D GUP KKP yang telah dicatat pada pemindahan kas
+   bank bendahara pengeluaran.
+3. Lengkapi isian pungutan pajak sesuai ketentuan umum perekaman
+   pungutan (identitas wajib pajak, akun potongan, keterangan, dan
+   jenis pemindahan kas).
+4. Klik **Simpan** — data muncul pada grid daftar bukti pungut.
+
+</Steps>
+
+### Merekam setoran pajak KKP (Operator Bendahara)
+
+<Steps>
+
+1. Buka menu **Bendahara > Setoran > Setoran Pajak**, klik
+   **Tambah**.
+2. Pilih akun pajak dan NPWP yang sesuai, pilih cara penyetoran,
+   centang pungutan pajak yang disetorkan, lalu lengkapi isian
+   ketetapan, masa pajak, tanggal setoran sesuai BPN, objek pajak,
+   jenis setoran, dan keterangan.
+3. Isikan pengesahan setoran: tanggal diterima bank, NTPN 16 digit,
+   NTB/NTP, bank penyetoran, dan ID billing 15 digit.
+4. Klik **Simpan** — cek setoran pada grid daftar setoran pajak.
+
+</Steps>
+
+## Hasil yang diharapkan
+
+Seluruh belanja KKP tercatat sampai pembayaran tagihan kepada pihak
+perbankan, dan kewajiban perpajakan atas transaksi KKP dipungut serta
+disetorkan sesuai ketentuan.
+
+<Aside type="caution" title="Perlu verifikasi">
+- Juknis menulis jalur "Komitmen > RUH > Pencatatan Penerimaan
+  Barang/Jasa KKP"; jalur baku aplikasi saat ini adalah **Komitmen >
+  RUH > BAST/BAKP/BAPP/DYD > Penerimaan Barang/Jasa UP KKP**.
+- Juknis ini adalah versi 2024 (R1); juknis versi 2021 yang digantikan
+  hanya memuat perbedaan redaksional — butir daftar isinya untuk
+  usulan UP KKP, usulan TUP KKP, SPP/SPM PTUP KKP, dan SP2D
+  GUP/PTUP KKP tidak disertai isi langkah pada dokumen tersebut.
+</Aside>
+
+## Terkait
+
+- [Merekam Referensi Wajib Pajak/Wajib Bayar](/bendahara/referensi-wajib-pajak/)
+- [Merekam Siklus Transaksi GUP](/bendahara/siklus-gup/)
+- [Merekam Siklus Transaksi TUP](/bendahara/siklus-tup/)
+
+## Sumber
+
+<SumberAsli />

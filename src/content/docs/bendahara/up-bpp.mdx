@@ -1,0 +1,275 @@
+---
+title: Merekam UP untuk BPP
+description: Siklus UP untuk Bendahara Pengeluaran Pembantu (UP BPP) dari persiapan unit teknis, alokasi uang muka, pemindahan kas, transaksi, sampai pengembalian.
+modul: bendahara
+peran: [satker]
+jenis: juknis
+kata_kunci: [up bpp, upbpp, bendahara pembantu, uang muka bpp, alokasi bpp, pengembalian uang muka]
+status: review
+perlu_review: true
+sumber:
+  - judul: "Juknis Perekaman UP BPP - RSPP"
+    url: "https://drive.google.com/file/d/1FTS_VwNN0Vd7W1jSry5oNB_LVArDgXZ4/view"
+    jenis: pdf
+    diambil: 2026-11-21
+    id_manifest: B-ben-012
+---
+
+import { Steps, Aside } from '@astrojs/starlight/components';
+import SumberAsli from '~/components/SumberAsli.astro';
+
+Dokumen ini menjelaskan siklus transaksi UP untuk Bendahara
+Pengeluaran Pembantu (UP BPP): persiapan kode unit teknis dan user
+BPP, perekaman alokasi UP ke BPP, transaksi kas, perintah bayar,
+kuitansi, DRPP, sampai pengembalian uang muka BPP.
+
+Konsep UP BPP merupakan penyempurnaan mekanisme penyaluran alokasi UP
+BPP sebelumnya yang memakai konsep Uang Muka — dahulu BPP harus
+menyetor sisa uang muka yang dikelolanya ke bendahara pengeluaran
+setiap kali akan melakukan revolving; dengan konsep ini BPP tidak
+perlu lagi mengembalikan sisa dana UP untuk mengajukan revolving ke
+bendahara pengeluaran.
+
+## Prasyarat
+
+- Role: administrator lokal, operator bendahara pengeluaran, dan user
+  operator BPP; modul terkait Komitmen dan Pembayaran.
+- Kode unit teknis BPP telah dibuat oleh administrator lokal.
+- Transaksi terkait: pencatatan uang muka, perintah bayar, kuitansi,
+  DRPP, pungutan/setoran pajak, dan LPJ bendahara pengeluaran.
+
+## Alur proses
+
+1. Persiapan: perekaman kode unit teknis, pengajuan dan penetapan
+   user BPP, dan perekaman referensi bendaharawan.
+2. Perekaman alokasi UP ke BPP oleh bendahara pengeluaran.
+3. Pencatatan pemindahan kas BPP (kas bank dan kas tunai).
+4. Pencatatan perintah bayar dan validasi.
+5. Pembuatan kuitansi dan DRPP atas transaksi BPP.
+6. Pengembalian uang muka BPP pada akhir periode/tahun.
+
+## Langkah
+
+### Persiapan aplikasi bendahara pengeluaran pembantu (Administrator)
+
+Sebelum BPP dapat bertransaksi, administrator menyiapkan kode unit
+teknis, user BPP, dan referensi bendaharawan.
+
+<Steps>
+
+1. Buat kode unit teknis pada menu **Referensi > Bendahara > Unit
+   Teknis**: klik **Rekam**, pilih jenis unit teknis **BPP**,
+   lengkapi isian kode unit teknis, nama satker, dan deskripsi unit
+   teknis, lalu klik **Simpan**.
+2. Setelah unit teknis dibuat, administrator mengajukan pembuatan
+   user operator bendahara pengeluaran pembantu melalui portal HAI
+   Kemenkeu, lalu menetapkan kode unit teknis pada user BPP melalui
+   pengelolaan pengguna satker.
+3. Rekam referensi bendaharawan pada menu **Referensi > Bendahara >
+   Bendaharawan**: klik **Rekam**, lengkapi isian pangkat, NIP,
+   tampil cetak NIP, nama, jabatan, dan NPWP, lalu klik **Simpan**.
+
+</Steps>
+
+Lihat juga [Merekam Referensi Bendaharawan](/referensi/bendahara/bendaharawan/).
+
+### Merekam alokasi UP ke BPP (Operator Bendahara Pengeluaran)
+
+Sebelum bertransaksi, bendahara pengeluaran merekam uang muka kepada
+BPP memakai kode unit teknis yang telah dibuat. Untuk setiap kode
+unit teknis BPP terdapat satu nomor uang muka yang dapat direvolving.
+
+<Steps>
+
+1. Buka menu **Bendahara > Transaksi > Merekam Uang Muka dan Alokasi
+   BPP**, lalu klik **Rekam**.
+2. Lengkapi isian: nomor DIPA (tanggal DIPA revisi terakhir terisi
+   mengikuti nomor DIPA); nomor uang muka di-*generate* otomatis
+   dengan format nomor urut/ID form/kode satker/tahun anggaran;
+   tanggal uang muka dan tanggal jatuh tempo (terisi tanggal sistem
+   secara bawaan); jangka waktu (selisih tanggal jatuh tempo dan
+   tanggal uang muka ditambah satu hari); jenis uang muka
+   (UP/TUP/LS/UPKP); sumber dana — menentukan program, kegiatan,
+   output, dan akun DIPA yang boleh digunakan; jumlah yang diminta —
+   akumulasi seluruh akun pada grid Detail Akun; dan keterangan.
+3. Pilih cara pembayaran UP BPP — apabila non tunai, pilih rekening
+   bendahara pengeluaran yang digunakan.
+4. Pilih kode unit teknis BPP dan lengkapi isian NIP, nama, jabatan,
+   alamat, nomor telepon, dan nomor HP unit teknis.
+5. Klik **Simpan**.
+
+</Steps>
+
+### Mencatat pemindahan kas bank BPP (User BPP)
+
+Form ini mencatat transaksi kas bank BPP: penarikan/penyetoran bank,
+penerimaan jasa giro, dan pengembalian sisa uang muka. Opsi **Terima
+SP2D** tersedia pada form namun dinonaktifkan untuk user BPP.
+
+<Steps>
+
+1. Buka menu **Bendahara > Pemindahan Kas > Kas Bank Bendahara
+   Pengeluaran**, klik **Tambah** — tanggal terisi tanggal sistem.
+2. Pilih jenis aktivitas:
+   - **Terima Transfer Masuk (UM/Dropping)** — untuk dana kas masuk
+     dari bendahara ke BPP; pilih kategori kas UP, TUP, LS, UPKP,
+     atau Lainnya (Dropping); isi jumlah (terisi otomatis untuk UP
+     atau TUP yang telah dipilih nomor uang mukanya); untuk
+     pengembalian uang muka, pilih nomor uang muka — jika tidak,
+     cukup isi jumlah.
+   - **Transfer Keluar** — untuk dana kas dari BPP ke bendahara;
+     kategori kas hanya tersedia Lainnya (Dropping); isi jumlah.
+3. Isi keterangan, lalu klik **Simpan** — atau **Batal** untuk
+   membatalkan.
+
+</Steps>
+
+### Mencatat pemindahan kas tunai BPP (User BPP)
+
+<Steps>
+
+1. Buka menu **Bendahara > Pemindahan Kas > Kas Tunai Bendahara
+   Pengeluaran**, klik **Tambah** — tanggal terisi tanggal sistem.
+2. Pilih jenis aktivitas:
+   - **Penyetoran ke Bank** — pemindahan kas dari tunai ke bank;
+     pilih kategori kas UP, TUP, UPKP, LS, atau Lainnya (Dropping);
+     isi jumlah dan sumber dana.
+   - **Penarikan dari Bank** — pemindahan kas dari bank ke tunai;
+     pilih kategori kas dan isi jumlah serta sumber dana.
+   - **Kas Tunai Masuk** — dana masuk ke kas tunai dari pengembalian
+     uang muka atau dana dropping; kategori kas UP, TUP, atau
+     Lainnya (Dropping); jumlah terisi otomatis untuk UP/TUP yang
+     telah dipilih nomor uang mukanya; untuk pengembalian uang
+     muka, pilih nomor uang muka — jika tidak, cukup isi jumlah.
+   - **Kas Tunai Keluar** — penyerahan dana dropping ke yang
+     berhak; kategori kas hanya tersedia Lainnya (Dropping).
+3. Isi keterangan, lalu klik **Simpan**.
+
+</Steps>
+
+### Mencatat perintah bayar oleh BPP
+
+<Steps>
+
+1. Buka menu **Pembayaran > RUH Pembayaran > Mencatat Perintah
+   Bayar**, klik tombol **Tambah**.
+2. Lengkapi form detail perintah bayar (tanggal perintah bayar,
+   referensi kuitansi supplier, jenis perintah bayar, PPK, dan
+   NPWP).
+3. Pada kolom Detail Akun Belanja, klik **Tambah** untuk
+   mendetilkan COA — klik ikon kaca pembesar, pilih detail COA,
+   klik **OK**, isi nilai sesuai nominal belanja SPBy, lalu
+   **Simpan**.
+4. Transaksi kembali ke form pendetailan COA — pastikan kolom
+   Detail Akun Belanja telah terisi.
+5. Isi uraian SPBy, lengkapi akun potongan (jika ada), lalu klik
+   **Simpan**.
+
+</Steps>
+
+Untuk belanja aset/persediaan, BPP terlebih dahulu merekam BAST UP
+pada menu **Komitmen > RUH > BAST/BAKP/BAPP/DYD > Penerimaan
+Barang/Jasa UP Tunai**: lengkapi info dokumen (tanggal, uraian, mata
+uang, nama penerima), cari supplier tipe 1/satker, pilih program,
+aktivitas, KRO, akun, KPPN, sumber dana, cara penarikan, dan nomor
+register; lakukan pendetailan COA — pastikan kolom kode COA, kode RO,
+kode komponen, kode sub komponen, item, dan sisa pagu terisi —
+simpan; lalu pilih kategori belanja dan jenis kas (UP/TUP) serta
+kategori barang sesuai akun, isi harga satuan (harga total harus
+sama dengan nilai pendetailan COA). Pada SPBy, aktifkan opsi "Klik,
+jika ada BAST", pilih nomor BAST UP pada kolom Lampiran BAST — detail
+akun dan nominal BAST tertampil otomatis.
+
+### Membuat kuitansi dan DRPP
+
+<Steps>
+
+1. Buka menu **Bendahara > Transaksi > Membuat Kuitansi**, klik
+   **Tambah**.
+2. Isi tanggal kuitansi dan tanggal dibayar; klik tombol **Cari**
+   lalu pilih SPBy yang akan diteruskan menjadi kuitansi.
+3. Isi nama penerima dan jumlah penerima uang, kolom keterangan, dan
+   cara pembayaran — kolom jumlah, PKO, akun, jenis kuitansi, dan
+   sumber dana terisi otomatis oleh sistem.
+4. Gunakan tombol **Detail COA** untuk mengecek kembali pendetailan
+   COA — detail COA tidak dapat diubah pada menu kuitansi; untuk
+   perubahan lakukan batal validasi SPBy → ubah SPBy (belanja jasa)
+   atau batal validasi SPBy → hapus SPBy → ubah BAST UP (belanja
+   aset/persediaan).
+5. Klik **Simpan** dan lanjutkan ke perekaman DRPP.
+
+</Steps>
+
+<Steps>
+
+1. Buka menu **Bendahara > Membuat Usulan > Membuat DRPP**.
+2. Lengkapi kolom PPK, sumber dana, KPPN, cara penarikan, dan nomor
+   register; pilih jenis kuitansi yang dipertanggungjawabkan.
+3. Klik tombol **Cari PKO**, pilih program, kegiatan, dan output,
+   klik **Pilih** — nomor DIPA, tanggal DIPA, fungsi, sub fungsi,
+   dan PKO terisi otomatis.
+4. Centang/pilih semua pada kolom DRPP Detail (Akun) dan kolom
+   Kuitansi yang Dipertanggungjawabkan — kotak jumlah terisi;
+   lihat detail COA dengan ikon kaca pembesar **Lihat**.
+5. Klik **Simpan**.
+
+</Steps>
+
+Sama seperti kuitansi, perubahan detail COA pada DRPP dilakukan
+dengan pembatalan mundur: hapus DRPP → hapus kuitansi → batal
+validasi SPBy → ubah SPBy (belanja jasa) atau → hapus SPBy → ubah
+BAST UP (belanja aset/persediaan).
+
+### Mencatat pengembalian uang muka BPP
+
+Pengembalian uang muka BPP dilakukan ketika terdapat kelebihan uang
+muka yang tidak digunakan BPP pada akhir periode/tahun dan akan
+dikembalikan kepada bendahara pengeluaran.
+
+<Steps>
+
+1. Buka menu **Bendahara > Pemindahan Kas > Kas Bank Bendahara
+   Pengeluaran** (non tunai) atau **Kas Tunai Bendahara
+   Pengeluaran** (tunai), klik **Tambah**.
+2. Tentukan tanggal transaksi, lalu pilih jenis aktivitas —
+   **Transfer Keluar (UM/Dropping)** untuk non tunai, atau **Kas
+   Tunai Keluar (UM BPP/Kas Lainnya)** untuk tunai.
+3. Pilih kategori kas UP, TUP, LS, UPKP, atau Lainnya (Dropping);
+   isi jumlah — terisi otomatis untuk UP atau TUP yang telah
+   dipilih nomor uang mukanya; isi keterangan.
+4. Klik **Simpan** — atau **Batal** untuk membatalkan.
+
+</Steps>
+
+## Hasil yang diharapkan
+
+Alokasi UP BPP tercatat dan direvolving, seluruh transaksi kas dan
+pertanggungjawaban BPP tercatat sampai DRPP, serta kelebihan uang
+muka BPP dikembalikan ke bendahara pengeluaran pada akhir periode.
+
+<Aside type="caution" title="Perlu verifikasi">
+- Juknis menulis jalur "Administrasi > Bendahara > Unit Teknis" dan
+  "Administrasi > Bendahara > Bendaharawan"; jalur baku aplikasi
+  saat ini adalah **Referensi > Bendahara > Unit Teknis** dan
+  **Referensi > Bendahara > Bendaharawan**.
+- Juknis menulis "Bendahara > Transaksi > Merekam Uang Muka dan
+  Alokasi BPP BARU"; jalur baku aplikasi saat ini adalah **Bendahara
+  > Transaksi > Merekam Uang Muka dan Alokasi BPP**.
+- Juknis menulis jalur "Pembayaran > RUH SPP dan Renkas > Mencatat
+  Perintah Bayar"; jalur baku aplikasi saat ini adalah **Pembayaran
+  > RUH Pembayaran > Mencatat Perintah Bayar**.
+- Juknis menulis "Komitmen > RUH > Pencatatan Penerimaan
+  barang/Jasa UP Tunai"; jalur baku aplikasi saat ini adalah
+  **Komitmen > RUH > BAST/BAKP/BAPP/DYD > Penerimaan Barang/Jasa UP
+  Tunai**.
+</Aside>
+
+## Terkait
+
+- [Merekam Referensi Bendaharawan](/referensi/bendahara/bendaharawan/)
+- [Merekam Siklus Transaksi GUP](/bendahara/siklus-gup/)
+- [Merekam Siklus UP Awal](/bendahara/siklus-up-awal/)
+
+## Sumber
+
+<SumberAsli />

@@ -1,0 +1,247 @@
+---
+title: Merekam Siklus UP Awal
+description: Siklus perekaman usulan UP dari referensi kelompok akun, validasi KPA, sampai persetujuan KPPN dan SPP UP.
+modul: bendahara
+peran: [satker, kppn-kanwil]
+jenis: juknis
+kata_kunci: [uang persediaan, up awal, usulan up, up kkp, dispensasi up, persetujuan kppn]
+status: review
+perlu_review: true
+sumber:
+  - judul: "SATKER - Juknis Perekaman UP TA 2022"
+    url: "https://drive.google.com/file/d/1HJUQLq_wSSqAh8p9SUUadrmnCQNl8r6s/view"
+    jenis: pdf
+    diambil: 2026-11-21
+    id_manifest: B-ben-020
+  - judul: "Juknis Siklus Perekaman UP Awal (versi lama, digantikan)"
+    url: "https://drive.google.com/file/d/10SCgjGvNrgoEMVxMV2OuYlu5Bq_iOmHP/view"
+    jenis: pdf
+    diambil: 2026-11-21
+    id_manifest: B-ben-018
+---
+
+import { Steps, Aside } from '@astrojs/starlight/components';
+import SumberAsli from '~/components/SumberAsli.astro';
+
+Uang Persediaan (UP) membiayai kegiatan operasional satker
+sehari-hari, dikelola bendahara dan dapat dibantu BPP — berupa UP
+Tunai (uang tunai melalui rekening bendahara pengeluaran) dan UP KKP
+(limit kartu kredit pemerintah). Juknis ini menjelaskan siklus
+perekaman usulan UP dari sisi satker; proses validasi sampai
+persetujuan UP di KPPN dijelaskan pada juknis tersendiri.
+
+## Prasyarat
+
+- Role yang dibutuhkan: operator modul bendahara pengeluaran, KPA
+  satker, dan operator modul pembayaran.
+- Login pada aplikasi SAKTI web dengan tahun anggaran berjalan.
+
+## Alur proses
+
+1. Merekam Referensi Kelompok Akun UP.
+2. Merekam usulan UP senilai total UU APBN, lalu mengubah proporsi
+   UP Tunai/KKP.
+3. Mengunduh cetakan usulan UP (.rtf) untuk dibubuhi kop surat,
+   penomoran, dan tanda tangan KPA.
+4. Validasi usulan UP oleh KPA satker.
+5. Mengunggah surat pernyataan usulan UP bertanda tangan KPA (PDF).
+6. KPPN melakukan persetujuan dan mengunggah surat persetujuan UP —
+   satker mengunduhnya pada menu Menghitung Usul UP.
+7. Satker melanjutkan pembuatan SPP UP sampai penerbitan SP2D oleh
+   KPPN.
+
+## Langkah
+
+### Merekam Referensi Kelompok Akun UP
+
+Referensi kelompok akun UP adalah kelompok akun yang akan dipakai
+pada pencatatan SPBy dan kuitansi — wajib direkam karena akun yang
+tidak ditambahkan tidak dapat dipilih saat perekaman SPBy. Cukup
+direkam sekali dan tidak terikat tahun anggaran.
+
+<Steps>
+
+1. Buka menu **Bendahara > Referensi > Referensi Kelompok Akun UP**,
+   lalu klik tombol **Tambah**.
+2. Pada kolom kelompok akun, klik **Pilih Kelompok Akun** dan pilih
+   salah satu dari daftar.
+3. Klik tombol **Simpan** — ulangi sampai seluruh kelompok akun UP
+   satker tersimpan.
+
+</Steps>
+
+### Merekam usulan UP tanpa dispensasi
+
+Usulan UP direkam sebagai penetapan besaran UP yang diajukan satker
+dan dasar penyusunan surat persetujuan UP.
+
+<Steps>
+
+1. Buka menu **Bendahara > Membuat Usulan > Menghitung Usul UP**,
+   lalu klik tombol **Rekam** — apabila masih ada UP sebelumnya,
+   usulan baru hanya dapat direkam setelah UP sebelumnya dinihilkan
+   atau dikembalikan.
+2. Pastikan nomor DIPA terisi otomatis; pada kolom sumber dana pilih
+   **Non PNBP**, dan mata uang **IDR** — seluruh akun dari Referensi
+   Kelompok Akun UP muncul pada kolom Kelompok Akun.
+3. Sistem otomatis menampilkan total pagu dan estimasi UP — total
+   pagu dari jumlah pagu DIPA satker, besaran estimasi UP mengikuti
+   PMK 178/PMK.05/2018.
+4. Isikan kolom total UP (jumlah UP tunai + UP KKP).
+5. Pada kolom persentase KKP, isikan besaran persentase UP KKP —
+   kolom UP Tunai dan UP KKP menampilkan nominal masing-masing; klik
+   **Simpan**.
+
+</Steps>
+
+### Merekam usulan UP dengan dispensasi
+
+<Steps>
+
+1. Pada menu yang sama, klik **Rekam**, pilih nomor DIPA dan sumber
+   dana (Non PNBP) — aplikasi otomatis menghitung total pagu dan
+   estimasi UP.
+2. Pada kolom total UP, isikan jumlah UP sesuai besaran yang
+   disetujui pada surat penetapan dispensasi UP dari Kanwil DJPb,
+   lalu klik **Simpan**.
+3. Pada popup konfirmasi, klik **Yes** — lengkapi kolom Referensi
+   Dispensasi UP: nomor surat, tanggal surat, nama penandatangan,
+   dan jabatan penandatangan sesuai surat dispensasi; klik
+   **Simpan**.
+4. Apabila satker juga memiliki dispensasi besaran UP KKP: klik
+   nomor usulan UP yang tersimpan, klik tombol **Ubah Proporsi Tunai
+   & KKP**, ubah persentase UP KKP sesuai surat dispensasi Kanwil
+   DJPb (besaran default sesuai PMK 196/PMK.05/2018 adalah 40%),
+   lengkapi nomor dan tanggal surat dispensasi KKP, lalu klik
+   **Simpan**.
+
+</Steps>
+
+### Mengunduh dan menandatangani cetakan usulan UP
+
+<Steps>
+
+1. Pada kolom nomor usulan UP, klik usulan yang tersimpan hingga
+   tersorot biru — tabel Status UP menampilkan progres (status awal
+   "Baru" berarti sudah direkam operator dan belum divalidasi KPA).
+2. Klik tombol **Unduh Usulan UP rtf** — terunduh dokumen Permohonan
+   Persetujuan UP KKP dan Surat Pernyataan Uang Persediaan format
+   .rtf.
+3. Buka dokumen: ganti bagian "Ganti dengan Kop Surat Satker disini"
+   dengan kop surat satker; periksa proporsi persentase UP Tunai/KKP;
+   cetak, bubuhkan nomor surat, dan tandatangani oleh KPA (tanda
+   tangan basah), lalu pindai kembali menjadi PDF — lakukan hal yang
+   sama untuk Surat Pernyataan Uang Persediaan.
+
+</Steps>
+
+Dokumen PDF hasil pindai berfungsi sebagai bukti legalitas bagi KPPN
+untuk validasi sampai persetujuan UP.
+
+### Validasi usulan UP oleh KPA satker
+
+<Steps>
+
+1. Login sebagai user KPA, buka menu **Bendahara > Validasi >
+   Validasi Usulan UP KPA**.
+2. Klik nomor usulan UP hingga tersorot biru — kolom status di kanan
+   sama fungsinya dengan pada Menghitung Usul UP.
+3. Pada kolom Validasi Usulan UP, lengkapi nomor surat usulan UP,
+   tanggal surat, status validasi (**Divalidasi** untuk menyetujui
+   atau **Ditolak** untuk batal validasi), tanggal validasi, dan
+   keterangan — tanggal validasi tidak boleh kurang dari tanggal
+   surat usulan UP.
+4. Klik **Simpan** — status usulan UP berubah menjadi "Divalidasi
+   KPA"; usulan yang ditolak kembali ke operator dengan status
+   "Ditolak KPA" untuk diperbaiki pada Menghitung Usul UP lalu
+   divalidasi ulang.
+
+</Steps>
+
+### Mengunggah dokumen persetujuan UP dan memantau status
+
+<Steps>
+
+1. Login sebagai operator bendahara, buka menu **Bendahara > Upload >
+   Upload Dok persetujuan UP**.
+2. Klik data usulan UP yang sudah divalidasi pada kolom Kode UP
+   hingga tersorot biru.
+3. Pada kolom Upload Usulan UP, klik **Choose** dan pilih dokumen
+   Surat Pernyataan Uang Persediaan dan Permohonan Persetujuan UP KKP
+   hasil pindai bertanda tangan KPA (format PDF), lalu klik
+   **Upload** — status UP berubah menjadi "Usulan UP Diupload".
+4. Pantau status berkala pada menu **Bendahara > Membuat Usulan >
+   Menghitung Usul UP**: "Divalidasi Staf KPPN" (lolos validasi staf
+   MSKI), "Divalidasi kasi KPPN" (divalidasi kepala seksi pencairan
+   dana/PDMS), "Divalidasi kepala KPPN" (approval kepala KPPN),
+   hingga "Diupload Persetujuan KPPN".
+5. Setelah status "Diupload Persetujuan KPPN", klik tombol **Unduh
+   Persetujuan UP KPPN** untuk mengunduh surat persetujuan UP (PDF)
+   — nomor dan tanggal surat persetujuan UP juga terisi otomatis
+   (dapat dicek via **Ubah Proporsi Tunai & KKP**); lanjutkan
+   perekaman SPP UP sampai SP2D.
+
+</Steps>
+
+### Melanjutkan ke SPP UP (juknis versi lama)
+
+Tahap perekaman SPP UP diuraikan pada juknis versi lama:
+
+<Steps>
+
+1. Sebelumnya, juknis versi lama mencatat juga perekaman Referensi
+   Variabel UP pada **Bendahara > Referensi > Referensi Variabel UP**
+   (jalur menurut juknis) — variabel ini menjadi dasar estimasi
+   besaran UP maksimal yang dapat diajukan.
+2. Login operator pembayaran, buka **Pembayaran > RUH Pembayaran >
+   Catat/Ubah SPP**, pilih jenis SPP **300 – UP dan TUP**, **310 – UP
+   dan GUP**, atau **311 - UP**, lalu klik **Tambah**.
+3. Pada form Ambil Data UP, pilih usulan UP yang direkam bendahara,
+   pastikan nilai benar, klik **Pilih**, klik **Tambah** dan pilih
+   dasar pembayaran — uraian pembayaran terisi otomatis; pastikan
+   nomor dan tanggal ketetapan UP KKP sesuai dokumen persetujuan.
+4. Klik **Cari Supplier** dan pilih supplier tipe 1 (satker); pada
+   kolom Detail COA klik **Lihat Detail** untuk mengecek COA, lalu
+   simpan.
+5. Cetak SPP pada **Pembayaran > Cetak > Mencetak SPP**: pilih SPP,
+   pilih PPK penandatangan (pemilihan NIP mengarahkan PPK yang
+   menyetujui), klik **Unduh**.
+6. Lanjutkan seperti perekaman SPP lainnya: unggah dokumen pendukung,
+   validasi dan buat ADK SPP dengan OTP oleh PPK, cetak SPM,
+   validasi dan buat ADK SPM dengan OTP oleh PPSPM, pengajuan ke
+   KPPN sampai SP2D, lalu catat SP2D otomatis pada **Pembayaran >
+   Catat/Upload > Mencatat/Upload SP2D**.
+
+</Steps>
+
+## Hasil yang diharapkan
+
+Usulan UP disetujui sampai penerbitan surat persetujuan UP oleh
+kepala KPPN, dan satker dapat melanjutkan pembuatan SPP UP sampai
+SP2D.
+
+## Ketentuan
+
+- Usulan UP yang ditolak KPPN kembali dengan status "Ditolak KPPN" —
+  operator memperbaiki pada Menghitung Usul UP sesuai keterangan
+  tolakan, lalu validasi dan unggah ulang oleh KPA.
+- Pengajuan surat menggunakan tanda tangan basah KPA (format .rtf
+  dapat disunting sebelum dicetak).
+
+<Aside type="caution" title="Perlu verifikasi">
+- Jalur "Referensi Variabel UP" pada juknis versi lama tidak
+  ditemukan pada daftar menu aplikasi saat ini sehingga ditulis
+  "(jalur menurut juknis)".
+- Juknis sumber ditulis untuk perekaman UP tahun anggaran 2022;
+  bagian SPP UP berasal dari juknis versi lama yang lebih rinci.
+</Aside>
+
+## Terkait
+
+- [Merekam Siklus Transaksi GUP](/bendahara/siklus-gup/)
+- [Merekam Penihilan GUP](/bendahara/penihilan-gup/)
+- [Merekam UP untuk BPP](/bendahara/up-bpp/)
+
+## Sumber
+
+<SumberAsli />

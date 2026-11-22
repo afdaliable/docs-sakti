@@ -1,0 +1,132 @@
+---
+title: Merekam Penihilan GUP
+description: Siklus penihilan saldo GUP melalui setoran sisa UP atau SPM GUP Nihil pada akhir tahun anggaran.
+modul: bendahara
+peran: [satker]
+jenis: juknis
+kata_kunci: [penihilan gup, gup nihil, spm 313, setoran sisa up, drpp, akhir tahun]
+status: review
+perlu_review: true
+sumber:
+  - judul: "Juknis Penihilan GUP"
+    url: "https://drive.google.com/file/d/1TdjUx6UzCSuU0cLPFx-VzVvwucD9P5fx/view"
+    jenis: pdf
+    diambil: 2026-11-21
+    id_manifest: B-ben-010
+---
+
+import { Steps, Aside } from '@astrojs/starlight/components';
+import SumberAsli from '~/components/SumberAsli.astro';
+
+Penihilan GUP biasanya dilakukan bendahara pengeluaran di akhir tahun
+anggaran melalui dua cara: penyetoran sisa GUP atau pembuatan SPM GUP
+Nihil. Siklusnya sama dengan penihilan TUP (PTUP) — perbedaannya pada
+jenis SPM yang dipilih: GUP Nihil (kode SPM 313) atau TUP/PTUP Nihil
+(kode SPM 322), dan jenis setoran "TUP" pada form setoran sisa
+UP/TUP/PNBP.
+
+## Prasyarat
+
+- Role yang dibutuhkan: operator modul bendahara dan operator modul
+  pembayaran.
+- Dokumen input: kuitansi/bukti pembelian serta data SP2D GUP Nihil.
+
+## Langkah
+
+### Penihilan GUP dengan metode setoran
+
+<Steps>
+
+1. Buka menu **Bendahara > Setoran > Setoran UP/TUP/PNBP Bendahara
+   Pengeluaran**, lalu klik tombol **Rekam**.
+2. Pada kolom jenis pengembalian/setoran, pilih **UP/UPKP** — untuk
+   menihilkan sisa TUP pilih **TUP**.
+3. Pilih sumber dana sesuai dropdown, lalu pada kolom NPWP wajib
+   setor pilih NPWP satker/bendahara pengeluaran.
+4. Isikan tanggal SSBP sesuai tanggal setor riil.
+5. Pilih jenis UP/TUP rupiah atau valas, lalu pilih cara penyetoran
+   tunai/non tunai.
+6. Isikan kolom keterangan, jumlah sisa UP yang disetorkan, dan akun
+   penyetoran sisa UP — 815111 apabila disetorkan di tahun anggaran
+   berjalan.
+7. Lengkapi kolom Pengesahan Setoran: tanggal penyetoran, NTPN, kode
+   billing, NTB/NTP, dan nama bank/pos sesuai transaksi riil, lalu
+   klik **Simpan**.
+
+</Steps>
+
+### Penihilan GUP dengan SPM GUP Nihil — membuat DRPP
+
+<Steps>
+
+1. Pada modul bendahara, pastikan kuitansi yang akan dipertanggung-
+   jawabkan telah direkam melalui **Bendahara > Transaksi > Membuat
+   Kuitansi** — sesuaikan jumlah saldo/nominal kuitansi yang akan
+   dilakukan penihilan.
+2. Buka menu **Bendahara > Membuat Usulan > Membuat DRPP**, lalu klik
+   tombol **Tambah**.
+3. Pastikan kolom nomor DIPA sudah terisi; pilih PPK, sumber dana,
+   KPPN, cara penarikan, dan nomor register.
+4. Pilih tanggal DRPP dan jenis kuitansi **UP**.
+5. Klik tombol **Cari PKO** — pada popup, pilih program, kegiatan,
+   dan output sesuai yang direkam pada kuitansi, lalu klik **Pilih**.
+6. Pada kolom DRPP Detail (Akun), ceklis kotak di sebelah kiri akun
+   — data kuitansi muncul pada kolom Kuitansi yang
+   Dipertanggungjawabkan; ceklis kuitansi yang akan disimpan sebagai
+   DRPP, lalu klik **Simpan**.
+
+</Steps>
+
+### Perekaman SPP GUP Nihil sampai SP2D (Operator Pembayaran/PPK)
+
+<Steps>
+
+1. Pada modul Pembayaran, buka menu **Pembayaran > RUH Pembayaran >
+   Catat/Ubah SPP**.
+2. Pada kolom jenis SPP, pilih jenis SPP **313 (GUP Nihil)**.
+3. Klik tombol **Tambah** — pada popup, pilih DRPP dengan
+   mencentang kotak di sebelah kanan jumlah, lalu klik **Pilih**;
+   isikan form SPP sesuai ketentuan yang berlaku (tata cara
+   perekaman SPP mengikuti juknis modul pembayaran).
+4. Lanjutkan perekaman sampai menjadi SP2D dan pencatatan nomor
+   SP2D otomatis pada menu **Pembayaran > Catat/Upload >
+   Mencatat/Upload SP2D**.
+
+</Steps>
+
+### Pencatatan SP2D GUP Nihil di bendahara (Operator Bendahara)
+
+<Steps>
+
+1. Setelah operator pembayaran mencatat nomor SP2D GUP Nihil, buka
+   menu **Bendahara > Pemindahan Kas > Kas Bank Bendahara
+   Pengeluaran**.
+2. Klik tombol **Rekam**, isikan tanggal sesuai tanggal SP2D GUP
+   Nihil tercatat di rekening BPG; pada jenis aktivitas pilih
+   **Terima SP2D** dan kategori kas **UP/GUP/GUP NIHIL**.
+3. Klik tombol **Cari**, pilih nomor SP2D GUP Nihil, pastikan kolom
+   jenis SP2D dan jumlah terisi otomatis, lalu klik **Simpan**.
+
+</Steps>
+
+## Hasil yang diharapkan
+
+Saldo UP/GUP menjadi nihil — dapat dicek pada menu **Bendahara >
+Pemindahan Kas > Kas Bank Bendahara Pengeluaran** atau Kas Tunai
+dengan klik tombol **Saldo Detail** (tampilan Informasi Sisa Saldo
+Kas Detail).
+
+<Aside type="caution" title="Perlu verifikasi">
+Juknis menulis jalur "modul pembayaran → Mencatat/Upload Nomor
+SP2D"; jalur baku aplikasi saat ini adalah **Pembayaran >
+Catat/Upload > Mencatat/Upload SP2D**.
+</Aside>
+
+## Terkait
+
+- [Merekam Siklus Transaksi GUP](/bendahara/siklus-gup/)
+- [Merekam Siklus UP Awal](/bendahara/siklus-up-awal/)
+
+## Sumber
+
+<SumberAsli />

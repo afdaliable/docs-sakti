@@ -1,0 +1,443 @@
+---
+title: Merekam Siklus Transaksi GUP
+description: Siklus lengkap transaksi GUP dari pencatatan SP2D UP, perintah bayar, kuitansi, pajak, DRPP, sampai SPP/SPM dan SP2D.
+modul: bendahara
+peran: [satker]
+jenis: juknis
+kata_kunci: [gup, siklus gup, drpp, spp gup, spm gup, perintah bayar, kuitansi, penarikan uang]
+status: review
+perlu_review: true
+sumber:
+  - judul: "2021-Juknis Siklus Perekaman Transaksi GUP"
+    url: "https://drive.google.com/file/d/15Lwz8wlqqOEt-ffGATsYh5_tlnVKN-Cf/view"
+    jenis: pdf
+    diambil: 2026-11-21
+    id_manifest: B-ben-005
+---
+
+import { Steps, Aside } from '@astrojs/starlight/components';
+import SumberAsli from '~/components/SumberAsli.astro';
+
+Dokumen ini menjelaskan siklus transaksi GU (Ganti Uang Persediaan)
+pada SAKTI: dari pencatatan penerimaan SP2D UP, penarikan tunai,
+belanja, sampai pertanggungjawaban melalui DRPP, SPP, SPM, dan SP2D.
+
+## Prasyarat
+
+- Role: operator bendahara pengeluaran, operator komitmen, operator
+  pembayaran, PPK (validator), PPSPM (approver); mapping operator–PPK
+  telah diatur pada Administrasi.
+- Referensi yang dibutuhkan: wajib pajak/wajib bayar, detail
+  rekening, dan kelompok akun UP telah direkam.
+- Modul terkait: Komitmen (penerimaan barang/jasa UP tunai/bank) dan
+  Pembayaran (perintah bayar, SPP, SPM GUP).
+
+## Alur proses
+
+1. Mencatat penerimaan SP2D UP pada kas bank bendahara pengeluaran.
+2. Melakukan pengambilan uang tunai dari kas bank bendahara
+   pengeluaran.
+3. Input penerimaan barang/jasa UP tunai/bank oleh operator
+   Komitmen.
+4. Mencatat perintah bayar oleh operator Pembayaran.
+5. Validasi perintah bayar oleh PPK.
+6. Membuat kuitansi oleh bendahara pengeluaran.
+7. Merekam pungutan pajak oleh bendahara pengeluaran.
+8. Merekam setoran pajak oleh bendahara pengeluaran.
+9. Membuat DRPP oleh bendahara pengeluaran.
+10. Merekam dan mencetak SPP oleh operator Pembayaran.
+11. Validasi SPP oleh PPK.
+12. Mencetak SPM GUP oleh operator Pembayaran.
+13. Upload dokumen pendukung oleh operator Pembayaran.
+14. Validasi SPM dan pengiriman ADK SPM oleh PPSPM.
+
+## Langkah
+
+### Mencatat penerimaan SP2D UP pada kas bank (Operator Bendahara)
+
+<Steps>
+
+1. Login dengan user bendahara pengeluaran, buka menu **Bendahara >
+   Pemindahan Kas > Kas Bank Bendahara Pengeluaran**, lalu klik
+   tombol **Rekam**.
+2. Tanggal dokumen terisi otomatis mengikuti tanggal SP2D; pilih
+   jenis aktivitas **Terima SP2D** dan kategori kas **UP/GUP/GUP
+   Nihil**.
+3. Klik tombol **Cari** — muncul daftar SP2D UP/GUP/GUP Nihil yang
+   belum dicatat satker; pilih nomor SP2D atas jenis SPP UP (kode
+   SPP 311) lalu klik **OK** — isian tanggal, nomor SP2D, jenis
+   SP2D, jumlah, sumber dana, dan rekening bank terisi otomatis;
+   isikan uraian transaksi.
+4. Klik **Simpan** lalu **OK** — transaksi muncul pada grid daftar
+   transaksi; cek saldo dengan tombol **Saldo Detail** dan pastikan
+   saldo kas bank telah bertambah.
+
+</Steps>
+
+### Penarikan uang dari bank (Operator Bendahara)
+
+<Steps>
+
+1. Buka menu **Bendahara > Pemindahan Kas > Kas Tunai Bendahara
+   Pengeluaran**, klik tombol **Tambah**.
+2. Isikan tanggal transaksi sesuai tanggal pada cek/dokumen sumber;
+   pilih jenis aktivitas **Penarikan Uang dari Bank** dan kategori
+   kas **UP/GUP/GUP Nihil**; isikan jumlah penarikan riil — kolom
+   nomor uang muka nonaktif apabila tidak ada transaksi uang muka;
+   sumber dana RM terisi otomatis; rekening bank otomatis apabila
+   hanya ada satu referensi detail rekening BPG (bila lebih dari
+   satu, pilih sesuai kebutuhan); isikan uraian transaksi.
+3. Klik **Simpan** — cek informasi sisa saldo kas tunai pada tombol
+   **Saldo Detail**.
+
+</Steps>
+
+### Mencatat penerimaan barang/jasa UP tunai/bank (Operator Komitmen)
+
+Tahap ini untuk belanja yang menghasilkan aset/persediaan dengan
+mekanisme GUP — dapat dilewati apabila belanja tidak memakai akun
+yang menghasilkan aset/persediaan (5218xx/53xxxx).
+
+<Steps>
+
+1. Login dengan user operator komitmen, buka menu **Komitmen > RUH >
+   BAST/BAKP/BAPP/DYD > Penerimaan Barang/Jasa UP Tunai** — apabila
+   muncul notifikasi belum ada mapping operator–PPK, lakukan mapping
+   terlebih dahulu dari user Admin pada menu **Administrasi >
+   Mapping > Mapping Opr. Pelaksanaan dan PPK**.
+2. Klik **Tambah** — nomor dokumen terisi otomatis; isikan tanggal
+   dokumen sumber pembelian, uraian dokumen, dan nama penerima;
+   mata uang terisi otomatis apabila satker hanya mengelola UP RM.
+3. Pada informasi supplier, klik **Cari Supplier** dan pilih
+   supplier tipe 1/satker (otomatis apabila hanya ada satu).
+4. Klik **Cari Wajib Pajak/Wajib setor** — pilih NPWP dari daftar
+   wajib pajak yang telah direkam, klik **Pilih**.
+5. Pilih program, aktivitas, KRO, akun, KPPN, sumber dana, cara
+   penarikan, dan nomor register — kolom COA, IntraCo, cadangan,
+   dan kode COA terisi otomatis.
+6. Klik **Pendetilan COA**, klik **Tambah**, klik ikon kaca
+   pembesar untuk memilih detail COA sesuai akun belanja, klik
+   **OK**, isikan nilai belanja total, klik **Simpan** lalu
+   **Keluar**.
+7. Pilih jenis kas UP atau TUP sesuai sumber dana, lalu klik
+   **Rincian Barang** — klik **Rekam**, pilih kategori barang
+   (misalnya persediaan), pilih kode barang dengan kaca pembesar,
+   isikan jumlah dan harga satuan (harga total terisi otomatis),
+   klik **Simpan**.
+8. Klik **Simpan** pada form — BAST UP tersimpan dan dapat
+   dilanjutkan ke pencatatan perintah bayar.
+
+</Steps>
+
+### Mencatat perintah bayar (Operator Pembayaran)
+
+<Steps>
+
+1. Login operator pembayaran, buka menu **Pembayaran > RUH
+   Pembayaran > Mencatat Perintah Bayar**, klik **Tambah**.
+2. Isikan data detail perintah bayar: tanggal perintah bayar sesuai
+   tanggal transaksi riil; referensi kuitansi supplier (isi "-"
+   apabila tidak ada); jenis perintah bayar sesuai sumber dana
+   (UP/TUP/Hibah — untuk Hibah pilih juga tahun anggaran
+   TAB/TAYL); PPK sesuai mapping; lalu klik kaca pembesar pada
+   pilihan NPWP dan pilih NPWP yang sama dengan NPWP supplier pada
+   BAST UP — apabila berbeda, data penerimaan barang/jasa tidak
+   muncul pada form SPBy (untuk belanja non-aset, NPWP dapat dipilih
+   bebas sesuai dokumen sumber).
+3. Pada kolom **Ada BAST?** klik kotak "Klik, jika ada BAST" —
+   sumber dana, program, kegiatan, output, dan akun belanja terisi
+   otomatis; tanpa BAST, pilih manual. Dengan BAST UP, pendetailan
+   COA hanya tersedia tombol Lihat — untuk memperbaiki detail COA,
+   hapus/batalkan SPBy lalu ubah BAST UP dengan tombol **Ubah**.
+4. Isikan uraian transaksi.
+5. Untuk transaksi tanpa BAST UP, pada Detail Akun Belanja klik
+   **Tambah**, pilih akun belanja, klik **Pendetailan**, klik
+   **Tambah**, klik kaca pembesar pada kode COA, pilih detail COA,
+   klik **OK**, isikan nilai tagihan, klik **Simpan** — kolom jumlah
+   terisi sesuai pendetailan; klik **Simpan** lagi; gunakan tombol
+   **Lihat** pada kolom Detail COA untuk mengecek ulang.
+6. Klik **Tambah** untuk menambah detail akun potongan pajak (jika
+   ada), lanjutkan perekaman akun dan jumlahnya, lalu **Simpan**.
+7. Klik **Simpan** pada bagian bawah form — perintah bayar muncul
+   pada grid Cari Perintah Bayar; klik **Unduh** untuk mengunduh
+   dokumen perintah bayar.
+
+</Steps>
+
+### Validasi perintah bayar (PPK)
+
+Menu ini hanya dapat diakses PPK; daftar yang tampil adalah SPBy dari
+operator dengan mapping PPK yang sama.
+
+<Steps>
+
+1. Login sebagai user PPK (validator), buka menu **Pembayaran >
+   Validasi > Validasi Perintah Bayar**.
+2. Klik **Cari** untuk memfilter perintah bayar per status
+   validasinya.
+3. Centang perintah bayar yang akan divalidasi (satu per satu atau
+   semua), lalu pilih status validasi:
+   - **Disetujui** — SPBy dapat dilanjutkan ke perekaman kuitansi.
+   - **Ditolak** — SPBy kembali ke operator untuk diubah/dihapus
+     dengan alasan penolakan.
+   - **Batal Persetujuan** — SPBy yang telah disetujui dibatalkan
+     dengan alasan pada kolom keterangan, lalu kembali ke operator.
+4. Isikan tanggal dan keterangan — data tidak dapat disimpan tanpa
+   keterangan; klik **Simpan**.
+5. Klik **Unduh** untuk mengunduh memo dan surat perintah bayar.
+
+</Steps>
+
+Validasi perintah bayar merupakan salah satu titik realisasi dan
+pembentukan jurnal pada transaksi GUP — SPBy yang sudah divalidasi
+namun tidak dilanjutkan (tidak dibuat kuitansi) harus dihapus agar
+tidak mengurangi nilai FA satker.
+
+### Membuat kuitansi (Operator Bendahara)
+
+<Steps>
+
+1. Login user bendahara, buka menu **Bendahara > Transaksi > Membuat
+   Kuitansi**, klik **Tambah**.
+2. Isikan tanggal kuitansi sesuai dokumen dan tanggal dibayar
+   (tanggal aliran kas keluar dari bendahara).
+3. Klik kaca pembesar pada kategori nomor perintah bayar, pilih
+   perintah bayar, klik **Simpan** — program, kegiatan, output,
+   jenis kuitansi, sumber dana, supplier, jumlah, dan keterangan
+   terisi otomatis dari perintah bayar.
+4. Isikan nama penerima uang dan jabatan sesuai dokumen sumber, dan
+   uraian kuitansi.
+5. Pilih cara pembayaran tunai (kolom saldo menampilkan sisa kas
+   tunai) atau non tunai (pilihan rekening bank aktif dan terisi
+   rekening BPG dari referensi detail rekening beserta saldonya).
+6. Detail COA pada kuitansi tidak dapat diubah — untuk perubahan
+   lakukan batal validasi SPBy lalu ubah SPBy (belanja jasa), atau
+   batal validasi SPBy, hapus SPBy, lalu ubah BAST UP (belanja
+   aset/persediaan).
+7. Klik **Simpan** — kuitansi muncul pada grid daftar kuitansi;
+   periksa kembali, lalu klik **Unduh** untuk cetakan kuitansi.
+
+</Steps>
+
+### Mencatat pungutan pajak (Operator Bendahara)
+
+Dilakukan apabila pada perekaman SPBy terdapat akun potongan pajak —
+lewati tahap ini apabila tidak ada.
+
+<Steps>
+
+1. Login user bendahara, buka menu **Bendahara > Transaksi >
+   Mencatat Pungutan Pajak**, klik **Tambah**.
+2. Isikan tanggal pungutan dan dasar pungutan pajak — perintah
+   bayar (potongan pajak atas perhitungan PPK), lain-lain (pungutan
+   tidak dicatatkan pada perintah bayar), GUP KKP, atau PTUP KKP.
+3. Klik tombol titik (…) pada nomor perintah bayar, pilih perintah
+   bayar, klik **OK** — NPWP dan akun potongan pajak terisi
+   otomatis; tanpa perintah bayar, isian identitas wajib bayar dan
+   akun potongan pajak diisi manual via tombol (…) dan **Tambah**.
+4. Isikan uraian keterangan pungutan pajak; pilih jenis pemindahan
+   kas tunai (apabila kuitansi dibayar tunai) atau non tunai (menu
+   rekening bank aktif).
+5. Klik **Simpan** — data muncul pada grid daftar bukti pungut.
+
+</Steps>
+
+### Mencatat setoran pajak (Operator Bendahara)
+
+Dilakukan apabila terdapat pungutan pajak sebelumnya — lewati apabila
+tidak ada.
+
+<Steps>
+
+1. Login user bendahara, buka menu **Bendahara > Setoran > Setoran
+   Pajak**, klik **Tambah**.
+2. Pada menu akun pajak, klik dropdown dan pilih akun pajak yang
+   dicatat pungutannya; pilih NPWP supplier dari dropdown.
+3. Pilih cara penyetoran tunai (isian rekening bank nonaktif) atau
+   non tunai (rekening bank aktif) — muncul data pungutan pajak
+   yang telah direkam sesuai parameter NPWP dan akun pajak.
+4. Centang pungutan pajak yang akan disetorkan — jumlah setoran
+   terisi otomatis; pastikan pungutan tercentang agar tidak galat.
+5. Isian NPWP, nama, dan alamat wajib pajak terisi otomatis;
+   lengkapi nomor ketetapan pajak (isi "--" apabila tidak ada),
+   masa pajak, tanggal setoran sesuai cetakan BPN, nomor objek
+   pajak, alamat objek pajak, jenis setoran sesuai billing/BPN,
+   dan keterangan.
+6. Isikan pengesahan setoran: tanggal diterima bank sesuai BPN,
+   NTPN 16 digit, NTB/NTP, bank penyetoran, dan ID billing 15
+   digit.
+7. Klik **Simpan** — cek setoran pada grid daftar setoran pajak.
+
+</Steps>
+
+### Membuat DRPP (Operator Bendahara)
+
+DRPP direkam sebagai dasar penyusunan SPP GUP.
+
+<Steps>
+
+1. Login user bendahara, buka menu **Bendahara > Membuat Usulan >
+   Membuat DRPP**, klik **Tambah**.
+2. Pilih jenis kuitansi yang dipertanggungjawabkan — dapat bersumber
+   dari UP/TUP/UP-KP/TUP-KP.
+3. Isian PPK terisi otomatis apabila hanya ada satu PPK; isikan
+   sumber dana, KPPN, cara penarikan, dan nomor register sebagai
+   trigger pemilihan PKO.
+4. Klik **Cari PKO**, pilih program, kegiatan, dan output, klik
+   **Pilih** — nomor DIPA, tanggal DIPA, fungsi, sub fungsi, dan PKO
+   terisi otomatis.
+5. Centang kolom DRPP Detail (Akun) atau gunakan tombol **pilih
+   semua**; centang kolom Kuitansi yang Dipertanggungjawabkan —
+   kolom jumlah terisi; cek detail COA dengan ikon kaca pembesar
+   **Lihat**.
+6. Klik **Simpan**, cek grid daftar DRPP, lalu klik **Unduh** untuk
+   cetakan DRPP (PDF).
+
+</Steps>
+
+Detail COA tidak dapat diubah pada menu DRPP — perubahan pendetailan
+COA dilakukan dengan pembatalan mundur: hapus DRPP → hapus kuitansi →
+batal validasi SPBy → ubah SPBy (belanja jasa) atau → hapus SPBy →
+ubah BAST UP (belanja aset/persediaan).
+
+### Merekam SPP GUP (Operator Pembayaran)
+
+<Steps>
+
+1. Login operator pembayaran, buka menu **Pembayaran > RUH
+   Pembayaran > Catat/Ubah SPP**.
+2. Pilih jenis SPP **300 – UP dan TUP**, **310 – UP dan GUP**, atau
+   **312 – GUP**, lalu klik **Tambah**.
+3. Pada dialog Ambil data DRPP, pilih kode KPPN, nomor register,
+   cara penarikan, dan sumber dana, klik **Cari**, centang DRPP yang
+   dipilih, lalu klik **Pilih**.
+4. Klik **Tambah** pada dasar pembayaran dan pilih dasar pembayaran
+   yang berlaku; isikan uraian keterangan SPP GUP.
+5. Klik **Cari Supplier** dan pilih supplier tipe 1/satker; klik
+   **Lihat Detail** untuk mengecek detail COA akun pengeluaran, lalu
+   klik **Simpan**.
+
+</Steps>
+
+### Mencetak SPP (Operator Pembayaran)
+
+<Steps>
+
+1. Buka menu **Pembayaran > Cetak > Mencetak SPP**.
+2. Pilih SPP GUP yang direkam; pilih PPK penandatangan (pemilihan
+   NIP mengarahkan PPK yang menyetujui apabila operator di-assign ke
+   lebih dari satu PPK).
+3. Klik **Unduh** untuk mengunduh cetakan SPP dan lampiran detail
+   COA (PDF) — lampiran detail COA bersifat laporan manajerial dan
+   tidak dilampirkan sebagai data dukung pengajuan SPM ke KPPN.
+
+</Steps>
+
+### Validasi SPP dan pengiriman ADK SPP (PPK)
+
+<Steps>
+
+1. Login user validator pembayaran (PPK), buka menu **Pembayaran >
+   Validasi > Validasi SPP**.
+2. Pilih nomor SPP pada grid Pilih Resume Tagihan — hanya SPP
+   berstatus "Cetak SPP" yang dapat divalidasi; kolom persetujuan
+   menampilkan NIP dan nama PPK yang bertanggung jawab.
+3. Klik **Setuju** — status SPP menjadi "Setuju SPP".
+4. Buka menu **Pembayaran > ADK > ADK SPP OTP** — hanya SPP
+   berstatus "Setuju SPP" yang ditampilkan; centang SPP, klik
+   **Proses**.
+5. Pada dialog kode OTP, klik **Req OTP via SMS**, isikan kode OTP
+   yang masuk ke nomor handphone PPK yang didaftarkan, lalu klik
+   **Proses** — notifikasi "Sukses Membuat ADK" dan nomor SPP
+   hilang dari grid.
+
+</Steps>
+
+### Mencetak SPM GUP (Operator Pembayaran)
+
+<Steps>
+
+1. Login operator pembayaran, buka menu **Pembayaran > Cetak >
+   Mencetak SPM**.
+2. Pilih SPM yang akan dicetak dengan status "Upload NTT".
+3. Klik **Unduh** untuk mengunduh cetakan SPM dan lampiran detail
+   COA (PDF) — bersifat laporan manajerial, bukan data dukung KPPN.
+
+</Steps>
+
+### Mengunggah dokumen pendukung (Operator Pembayaran)
+
+<Steps>
+
+1. Buka menu **Pembayaran > Catat/Upload > Upload Dokumen
+   Pendukung**.
+2. Pilih nomor SPM, pilih jenis dokumen yang diunggah (antara lain
+   SKTJM, surat pernyataan UP, surat pernyataan TUP, daftar
+   perhitungan MP PNBP, bank garansi, SPM, surat penetapan register
+   hibah, MPHLBJS, SP3HL, surat dispensasi, surat pernyataan telah
+   menerima hibah langsung, BAST hibah, surat setoran pajak,
+   cetakan resume supplier/kontrak, ADK PPNPN hasil aplikasi SAS,
+   atau lainnya).
+3. Klik **Choose** untuk memilih file dari direktori lokal, lalu
+   klik **Upload**; gunakan **Hapus** untuk menghapus dan **View**
+   untuk melihat dokumen terunggah; klik **Keluar** untuk keluar
+   form.
+
+</Steps>
+
+### Validasi SPM dan pengiriman ADK SPM (PPSPM)
+
+<Steps>
+
+1. Login user approver pembayaran (PPSPM), buka menu **Pembayaran >
+   Validasi > Validasi SPM**.
+2. Pilih nomor SPM — hanya status "Cetak SPM" yang dapat
+   divalidasi; klik **Setuju** — status menjadi "Setuju SPM"; klik
+   **Keluar**.
+3. Buka menu **Pembayaran > ADK > ADK SPM OTP**, centang SPM yang
+   akan dibuat ADK (lebih dari satu SPM akan tergabung dalam satu
+   ADK SPM), klik **Proses ADK SPM**.
+4. Pada dialog kode OTP, klik **Req OTP via SMS**, isikan kode OTP
+   ke nomor handphone PPSPM, klik **Proses** — notifikasi "Sukses
+   Membuat ADK".
+5. Status pengiriman ADK SPM dapat dicek oleh operator pembayaran
+   atau PPSPM pada **Pembayaran > Monitoring > Monitoring ADK** —
+   ADK yang berhasil berstatus "Sukses Membuat ADK".
+
+</Steps>
+
+### Mencatat nomor SP2D (Operator Pembayaran)
+
+<Steps>
+
+1. Buka menu **Pembayaran > Catat/Upload > Mencatat/Upload SP2D**.
+2. Klik tombol **Catat SP2D Otomatis** — SPM yang berhasil dicatat
+   nomor SP2D-nya hilang dari grid.
+
+</Steps>
+
+## Hasil yang diharapkan
+
+Seluruh transaksi GUP terpertanggungjawabkan sampai penerbitan SPM
+GUP, pengiriman ADK SPM ke KPPN, dan pencatatan SP2D otomatis pada
+SAKTI.
+
+<Aside type="caution" title="Perlu verifikasi">
+- Juknis menulis jalur "Komitmen → RUH → RUH Penerimaan Barang/Jasa
+  UP Tunai/Bank"; jalur baku aplikasi saat ini adalah **Komitmen >
+  RUH > BAST/BAKP/BAPP/DYD > Penerimaan Barang/Jasa UP Tunai**.
+- Juknis menulis jalur "Administrasi > Umum > Jabatan > Mapping opr.
+  Pelaksanaan - PPK"; jalur baku aplikasi saat ini adalah
+  **Administrasi > Mapping > Mapping Opr. Pelaksanaan dan PPK**.
+</Aside>
+
+## Terkait
+
+- [Merekam Referensi Wajib Pajak/Wajib Bayar](/bendahara/referensi-wajib-pajak/)
+- [Mencatat Perintah Bayar](/pembayaran/ruh/mencatat-perintah-bayar/)
+- [Merekam Siklus Transaksi PTUP](/bendahara/siklus-ptup/)
+- [Merekam Penihilan GUP](/bendahara/penihilan-gup/)
+
+## Sumber
+
+<SumberAsli />

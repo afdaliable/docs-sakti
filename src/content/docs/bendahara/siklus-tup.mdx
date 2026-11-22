@@ -1,0 +1,171 @@
+---
+title: Merekam Siklus TUP
+description: Siklus perekaman rincian pembiayaan TUP dan SPM TUP dari usulan bendahara sampai pencatatan SP2D.
+modul: bendahara
+peran: [satker]
+jenis: juknis
+kata_kunci: [tup, tambahan uang persediaan, rincian pembiayaan tup, spm tup, spp 321]
+status: review
+perlu_review: true
+sumber:
+  - judul: "Juknis Siklus Perekaman TUP_2021"
+    url: "https://drive.google.com/file/d/1pN1dmTPHKlvTaFWgQ4SubATnpvwxVwzF/view"
+    jenis: pdf
+    diambil: 2026-11-21
+    id_manifest: B-ben-017
+---
+
+import { Steps, Aside } from '@astrojs/starlight/components';
+import SumberAsli from '~/components/SumberAsli.astro';
+
+Tambahan Uang Persediaan (TUP) diberikan kepada satker apabila sisa
+UP pada bendahara pengeluaran tidak cukup untuk membiayai kegiatan
+yang bersifat mendesak/tidak dapat ditunda — digunakan dan
+dipertanggungjawabkan paling lama satu bulan sejak tanggal SP2D
+diterbitkan, dan dapat dibantu oleh BPP.
+
+## Prasyarat
+
+- Role yang dibutuhkan: operator bendahara, operator pembayaran, PPK
+  (validator), dan PPSPM (approver) — role operator pembayaran dapat
+  digabung dengan role bendahara maupun orang berbeda.
+- Pada operator pembayaran telah dilakukan assign PPK sesuai pagu
+  DIPA yang dikelola.
+
+## Alur proses
+
+1. Operator bendahara — membuat usulan rincian pembiayaan TUP.
+2. Operator pembayaran — merekam dan mencetak SPP TUP.
+3. PPK — menyetujui SPP dan membuat ADK SPP.
+4. Operator pembayaran — mencetak SPM TUP dan mengunggah dokumen
+   pendukung.
+5. PPSPM — menyetujui SPM dan membuat ADK SPM.
+6. KPPN — memproses SPM menjadi SP2D sesuai SOP; operator pembayaran
+   mencatat SP2D.
+
+## Langkah
+
+### Merekam usulan rincian pembiayaan TUP (Operator Bendahara)
+
+<Steps>
+
+1. Login menggunakan user operator bendahara, buka menu Membuat
+   Usulan lalu sub menu **Bendahara > Membuat Usulan > Membuat
+   Rincian Pembiayaan TUP**.
+2. Klik **Tambah** untuk mengaktifkan isian header.
+3. Isikan mata uang, tanggal TUP, tanggal jatuh tempo, dan sumber
+   dana.
+4. Klik **Tambah** untuk mengisi detail COA — masukkan akun-akun
+   yang akan dimintakan TUP, program, kegiatan, output, dan jumlah
+   yang dimintakan, lalu klik **Simpan**.
+5. Untuk mencetak, klik **Unduh**.
+
+</Steps>
+
+### Merekam dan mencetak SPP TUP (Operator Pembayaran)
+
+<Steps>
+
+1. Login menggunakan user operator pembayaran, buka menu
+   **Pembayaran > RUH Pembayaran > Catat/Ubah SPP**.
+2. Pilih jenis SPP **300 – UP dan TUP**, **320 – TUP dan PTUP**,
+   atau **321 - TUP**, lalu klik **Tambah**.
+3. Pada form Ambil Data TUP, pilih nomor TUP yang direkam bendahara,
+   pastikan nilai TUP benar, klik **Pilih**.
+4. Klik **Tambah** dan pilih dasar pembayaran yang berlaku; pastikan
+   uraian pembayaran terisi benar.
+5. Klik **Cari Supplier** dan pilih supplier tipe 1, lalu klik
+   **Simpan**.
+6. Untuk mencetak, buka **Pembayaran > Cetak > Mencetak SPP**, pilih
+   SPP dan PPK penandatangan (pemilihan NIP mengarahkan PPK yang
+   menyetujui apabila operator di-assign ke lebih dari satu PPK),
+   lalu klik **Unduh** untuk mengunduh PDF.
+
+</Steps>
+
+### Menyetujui SPP dan membuat ADK SPP (PPK)
+
+<Steps>
+
+1. Login menggunakan user validator pembayaran (PPK), buka menu
+   **Pembayaran > Validasi > Validasi SPP**.
+2. Pilih SPP yang akan divalidasi — hanya SPP berstatus "Cetak SPP"
+   yang dapat divalidasi; klik **Unduh Pra Cetak** untuk memastikan
+   sebelum validasi.
+3. Klik **Setuju** — status SPP berubah menjadi "Setuju SPP".
+4. Buka menu **Pembayaran > ADK > ADK SPP OTP**, ceklis kolom pilih
+   pada SPP yang akan dibuat ADK (dapat lebih dari satu), klik
+   **Proses**.
+5. Klik tombol **Req OTP via SMS** untuk meminta kode OTP, input
+   pada kolom **Input OTP**, lalu klik **Proses**.
+
+</Steps>
+
+### Mencetak SPM TUP dan mengunggah dokumen pendukung (Operator Pembayaran)
+
+<Steps>
+
+1. Login operator pembayaran, buka menu **Pembayaran > Cetak >
+   Mencetak SPM**.
+2. Pilih SPM yang akan dicetak, pilih NIP PPSPM yang dituju, klik
+   **Unduh** untuk mengunduh file PDF.
+3. Untuk mengunggah dokumen pendukung, buka menu **Pembayaran >
+   Catat/Upload > Upload Dokumen Pendukung**, pilih SPM, pilih jenis
+   dokumen pendukung, klik **Choose** untuk memilih file, lalu klik
+   **Upload** — gunakan **View** untuk melihat dan **Hapus** untuk
+   menghapus file yang telah diunggah.
+
+</Steps>
+
+### Menyetujui SPM dan membuat ADK SPM (PPSPM)
+
+<Steps>
+
+1. Login menggunakan user approver pembayaran (PPSPM), buka menu
+   **Pembayaran > Validasi > Validasi SPM**.
+2. Pilih SPM yang akan disetujui — hanya SPM berstatus "Cetak SPM";
+   klik **Unduh Pra Cetak** untuk memastikan.
+3. Klik **Setuju** — status SPM berubah menjadi "Setuju SPM".
+4. Buka menu **Pembayaran > ADK > ADK SPM OTP**, pilih SPM yang
+   akan dibuat ADK (dapat lebih dari satu), klik **Proses ADK SPM**.
+5. Klik **Req OTP via SMS**, input kode OTP yang diterima pada kolom
+   **Input OTP**, lalu klik **Proses**.
+
+</Steps>
+
+### Proses KPPN dan pencatatan SP2D
+
+Proses di KPPN mengacu pada SOP pemrosesan SPM menjadi SP2D pada
+KPPN.
+
+<Steps>
+
+1. Login operator pembayaran, buka menu **Pembayaran > Catat/Upload
+   > Mencatat/Upload SP2D**.
+2. Pilih SPM yang akan dicatat nomor SP2D-nya.
+3. Klik tombol **Catat SP2D Otomatis**.
+
+</Steps>
+
+## Hasil yang diharapkan
+
+Rincian pembiayaan TUP direkam, SPM TUP terbit dan diproses KPPN
+menjadi SP2D yang kemudian tercatat otomatis pada SAKTI.
+
+<Aside type="caution" title="Perlu verifikasi">
+- Juknis menulis jalur "RUH Pembayaran → Validasi → Validasi" untuk
+  persetujuan SPP; jalur baku aplikasi saat ini adalah **Pembayaran >
+  Validasi > Validasi SPP**.
+- Juknis menulis "Catat/Upload SP2D"; jalur baku aplikasi saat ini
+  adalah **Pembayaran > Catat/Upload > Mencatat/Upload SP2D**.
+- Juknis sumber ditulis untuk tahun 2021.
+</Aside>
+
+## Terkait
+
+- [Merekam Siklus Transaksi PTUP](/bendahara/siklus-ptup/)
+- [Merekam Setoran UP/TUP Bendahara Pengeluaran](/bendahara/setoran-up-tup/)
+
+## Sumber
+
+<SumberAsli />
