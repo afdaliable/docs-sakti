@@ -1,0 +1,61 @@
+---
+title: Memantau Status Transaksi
+description: Melihat dan mengawasi semua transaksi berdasarkan status rekam, validasi, dan setuju.
+modul: aset-tetap
+menu_sakti: "Aset Tetap > Monitoring > Status Transaksi"
+peran: [satker]
+jenis: juknis
+kata_kunci: [status transaksi, monitoring, rekam validasi setuju]
+status: review
+sumber:
+  - judul: "SAKTI PELAPORAN - Status Transaksi"
+    url: "https://sites.google.com/view/saktipelaporan/aset-tetap/monitoring/status-transaksi"
+    jenis: google-sites
+    diambil: 2026-11-21
+    id_manifest: C-aset-tetap-monitoring-status-transaksi
+sidebar:
+  order: 1
+---
+
+import { Steps } from '@astrojs/starlight/components';
+import MenuSakti from '~/components/MenuSakti.astro';
+import SumberAsli from '~/components/SumberAsli.astro';
+
+Menu Status Transaksi digunakan untuk melihat dan melakukan
+pengawasan atas semua transaksi yang telah dibuat, baik
+statusnya baru rekam, sudah validasi, maupun sudah setuju.
+
+Transaksi yang telah direkam dan belum divalidasi (status
+rekam) masih akan muncul pada masing-masing menu asalnya. Akan
+tetapi apabila transaksi tersebut sudah divalidasi atau
+disetujui, maka transaksi tidak tampil lagi pada masing-masing
+menu asalnya. Untuk melihat kembali transaksi yang sudah
+dibuat, gunakan menu Monitoring Status Transaksi.
+
+<MenuSakti />
+
+## Langkah
+
+<Steps>
+
+1. Pilih menu **Aset Tetap > Monitoring > Status Transaksi**.
+2. Pilih salah satu status transaksi yang akan dicari, yaitu
+   ada tiga pilihan:
+   - **Status Rekam**: transaksi sudah direkam dan disimpan,
+     tetapi belum divalidasi oleh validator.
+   - **Status Validasi**: transaksi sudah divalidasi oleh
+     validator.
+   - **Status Setuju**: transaksi sudah disetujui oleh
+     approver.
+3. Pilih jenis transaksi yang dicari, yaitu ada dua pilihan:
+   - **Semua transaksi**: untuk menampilkan semua transaksi.
+   - **Salah satu transaksi** dengan klik titik tiga warna
+     biru: maka yang tampil hanya transaksi yang dipilih.
+4. Klik tombol **Lihat**, maka akan tampil transaksi sesuai
+   dengan filter transaksi yang telah dipilih.
+
+</Steps>
+
+## Sumber
+
+<SumberAsli />

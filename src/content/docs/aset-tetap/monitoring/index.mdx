@@ -1,12 +1,35 @@
 ---
 title: Monitoring
-description: Panduan menu Monitoring pada modul Aset Tetap.
+description: Memantau transaksi Modul Aset Tetap, termasuk status rekam, validasi, dan setuju.
 modul: aset-tetap
+menu_sakti: "Aset Tetap > Monitoring"
+peran: [satker]
 jenis: indeks
 status: terbit
+sumber:
+  - judul: "SAKTI PELAPORAN - Monitoring"
+    url: "https://sites.google.com/view/saktipelaporan/aset-tetap/monitoring"
+    jenis: google-sites
+    diambil: 2026-11-21
+    id_manifest: C-aset-tetap-monitoring
 sidebar:
   label: Ringkasan
   order: 0
 ---
 
-Panduan untuk menu **Monitoring** sedang disiapkan.
+import { LinkCard, CardGrid } from '@astrojs/starlight/components';
+import MenuSakti from '~/components/MenuSakti.astro';
+import SumberAsli from '~/components/SumberAsli.astro';
+
+Menu **Aset Tetap > Monitoring** memuat alat pemantauan
+transaksi Modul Aset Tetap.
+
+<MenuSakti />
+
+<CardGrid>
+  <LinkCard title="Status Transaksi" href="/aset-tetap/monitoring/status-transaksi/" description="Melihat dan mengawasi transaksi berdasarkan status rekam, validasi, dan setuju." />
+</CardGrid>
+
+## Sumber
+
+<SumberAsli />

@@ -1,0 +1,94 @@
+---
+title: Menindaklanjuti Normalisasi BMN
+description: Menindaklanjuti barang yang tidak normal dengan perolehan, koreksi, atau penghapusan normalisasi BMN.
+modul: aset-tetap
+menu_sakti: "Aset Tetap > Normalisasi > Tinjut Normalisasi BMN"
+peran: [satker]
+jenis: juknis
+kata_kunci: [tindak lanjut normalisasi bmn, tinjut normalisasi, normalisasi bmn]
+status: review
+sumber:
+  - judul: "SAKTI PELAPORAN - Tindak Lanjut Normalisasi BMN"
+    url: "https://sites.google.com/view/saktipelaporan/aset-tetap/normalisasi/tindak-lanjut-normalisasi-bmn"
+    jenis: google-sites
+    diambil: 2026-11-21
+    id_manifest: C-aset-tetap-normalisasi-tindak-lanjut-normalisasi-bmn
+sidebar:
+  order: 3
+---
+
+import { Steps } from '@astrojs/starlight/components';
+import MenuSakti from '~/components/MenuSakti.astro';
+import SumberAsli from '~/components/SumberAsli.astro';
+
+Menu Tinjut Normalisasi BMN digunakan untuk menindaklanjuti
+barang yang tidak normal dengan salah satu dari tiga cara:
+perolehan normalisasi BMN, koreksi atas normalisasi BMN, atau
+penghapusan normalisasi BMN.
+
+<MenuSakti />
+
+## Langkah
+
+### Perolehan Normalisasi BMN
+
+<Steps>
+
+1. Pilih BMN yang akan ditindaklanjuti.
+2. Pilih perolehan normalisasi BMN.
+3. Lanjutkan.
+4. Pilih tanggal pembukuan transaksi.
+5. Pilih tanggal perolehan sesuai perolehan awal BMN
+   bersangkutan.
+6. Isikan nilai satuan barang.
+7. Pilih kondisi barang.
+8. Isikan asal perolehan, nomor bukti perolehan, merk/tipe, dan
+   keterangan sebagai penjelasan atas pelaksanaan tindak lanjut
+   normalisasi BMN.
+9. Klik **Simpan**.
+
+</Steps>
+
+### Penghapusan Normalisasi BMN
+
+<Steps>
+
+1. Pilih BMN yang akan ditindaklanjuti.
+2. Pilih penghapusan normalisasi BMN.
+3. Lanjutkan.
+4. Pilih tanggal pembukuan transaksi.
+5. Isikan nomor SK sesuai nomor dokumen pelaksanaan tindak
+   lanjut normalisasi, misalnya surat keterangan kuasa pengguna
+   barang tetang tindak lanjut normalisasi BMN.
+6. Pilih tanggal SK sesuai dokumen tersebut.
+7. Isi keterangan.
+8. Klik **Simpan**.
+
+</Steps>
+
+### Koreksi Kuantitas
+
+<Steps>
+
+1. Pilih BMN yang akan ditindaklanjuti.
+2. Pilih koreksi kuantitas normalisasi BMN.
+3. Lanjutkan.
+4. Pilih tanggal pembukuan transaksi.
+5. Isi nilai perubahan kuantitas sebesar selisih antara
+   kuantitas semula dan seharusnya. Contoh: kuantitas tanah
+   tercatat -200 m², sedangkan seharusnya 400 m², maka selisih
+   = 600 m².
+6. Isi nomor dasar koreksi dan tanggal dasar koreksi sesuai
+   nomor dokumen pelaksanaan tindak lanjut normalisasi BMN.
+7. Klik **Simpan**.
+
+</Steps>
+
+## Terkait
+
+- [Menormalkan BMN](/aset-tetap/normalisasi/normalisasi-bmn/)
+- [Menindaklanjuti Normalisasi KDP](/aset-tetap/normalisasi/tindak-lanjut-normalisasi-kdp/)
+
+## Sumber
+
+<SumberAsli />
