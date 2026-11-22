@@ -1,6 +1,6 @@
 ---
 title: RUH
-description: Panduan menu RUH pada modul Aset Tetap.
+description: Panduan menu RUH (Register Umum Harian) pada modul Aset Tetap.
 modul: aset-tetap
 jenis: indeks
 status: terbit
@@ -9,4 +9,38 @@ sidebar:
   order: 0
 ---
 
-Panduan untuk menu **RUH** sedang disiapkan.
+import { LinkCard, CardGrid } from '@astrojs/starlight/components';
+
+Menu **RUH** pada modul Aset Tetap memuat pencatatan register
+umum harian atas transaksi BMN, KDP, aset tetap renovasi, BMN
+bersejarah, dan barang pihak ketiga.
+
+## Transaksi BMN
+
+<CardGrid>
+  <LinkCard title="Perolehan BMN" href="/aset-tetap/ruh/perolehan-bmn/" description="Pencatatan perolehan BMN dari pembelian, hibah, rampasan, pertukaran, dan perolehan lainnya." />
+  <LinkCard title="Perubahan BMN" href="/aset-tetap/ruh/perubahan-bmn/" description="Koreksi, perubahan kuantitas dan kondisi, serta pengembangan BMN." />
+  <LinkCard title="BMN Hilang" href="/aset-tetap/ruh/bmn-hilang/" description="Pencatatan BMN yang hilang dan pembatalannya." />
+  <LinkCard title="Penghentian Penggunaan" href="/aset-tetap/ruh/penghentian-penggunaan/" description="Penghentian BMN dari penggunaan dan penggunaan kembali." />
+  <LinkCard title="Usulan Penghapusan BMN" href="/aset-tetap/ruh/usulan-penghapusan-bmn/" description="Pencatatan usulan penghapusan BMN dan pembatalannya." />
+  <LinkCard title="Penghapusan" href="/aset-tetap/ruh/penghapusan/" description="Penghapusan, hibah keluar, transfer keluar, dan reklasifikasi keluar BMN." />
+  <LinkCard title="B P Y B D S" href="/aset-tetap/ruh/bpybds/" description="Bantuan Pemerintah Yang Belum Disahkan Statusnya." />
+  <LinkCard title="Aset Kemitraan" href="/aset-tetap/ruh/aset-kemitraan/" description="Perubahan klasifikasi antara BMN dan aset kemitraan." />
+  <LinkCard title="Transfer Internal" href="/aset-tetap/ruh/transfer-internal/" description="Pemindahan BMN antara satker induk dan satker pembantu." />
+  <LinkCard title="Aset Konsesi Jasa" href="/aset-tetap/ruh/aset-konsesi-jasa/" description="Perubahan klasifikasi antara BMN dan aset konsesi jasa." />
+  <LinkCard title="Properti Investasi" href="/aset-tetap/ruh/properti-investasi/" description="Reklasifikasi antara BMN dan properti investasi." />
+</CardGrid>
+
+Sub-menu **BMN Dalam Proses PMPP** (Penyertaan Modal Pemerintah
+Pusat) memuat reklasifikasi BMN ke BMN Dalam Proses PMPP,
+reklasifikasi BMN Dalam Proses PMPP ke BMN, dan penghapusan
+barang dalam proses PMPP.
+
+## Menu RUH lainnya
+
+<CardGrid>
+  <LinkCard title="ATR - Menambah Masa Manfaat" href="/aset-tetap/ruh/atr-menambah-masa-manfaat/" description="Pencatatan aset tetap renovasi yang menambah masa manfaat." />
+  <LinkCard title="Transaksi KDP" href="/aset-tetap/ruh/transaksi-kdp/" description="Transaksi Konstruksi Dalam Pengerjaan, dari saldo awal sampai penghapusan." />
+  <LinkCard title="Transaksi BMN Bersejarah" href="/aset-tetap/ruh/transaksi-bmn-bersejarah/" description="Pencatatan barang bersejarah berdasarkan kuantitas tanpa nilai." />
+  <LinkCard title="Transaksi Barang Pihak Ketiga" href="/aset-tetap/ruh/transaksi-barang-pihak-ketiga/" description="Pencatatan barang pihak ketiga yang dititipkan atau digunakan di satker." />
+</CardGrid>
