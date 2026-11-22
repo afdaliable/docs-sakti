@@ -55,7 +55,9 @@ Settings → Branches → Add rule (atau Rulesets), untuk `main`:
 - Wajib pull request sebelum merge.
 - Minimal 1 approval.
 - Wajib review dari Code Owners.
-- Wajib status check lolos — nama check: diisi setelah workflow CI ada (`.github/workflows/ci.yml`, tugas 6.1).
+- Wajib status check lolos — nama check: `Periksa konten, build, dan tes` (job `periksa` di
+  workflow `CI`, `.github/workflows/ci.yml`). Nama itu baru bisa dipilih di pengaturan setelah
+  workflow pernah berjalan sekali.
 - Larang force-push.
 
 ### Akibat yang perlu diketahui
@@ -88,7 +90,30 @@ hasil mengisi formulir secara otomatis.
 
 ## 7. GitHub Actions
 
-Diisi pada tugas 6.1 (workflow CI).
+Workflow `CI` (`.github/workflows/ci.yml`) berjalan pada setiap pull request dan push ke
+`main`. Job `periksa` menjalankan, berurutan:
+
+1. `pnpm install --frozen-lockfile`
+2. `pnpm check:content`
+3. `pnpm test`
+4. `pnpm build` (sekaligus indeks Pagefind)
+5. `pnpm check:links`
+6. `pnpm exec playwright install --with-deps chromium`
+7. `pnpm search:eval --level 1`
+8. `pnpm test:e2e`
+9. Lighthouse lewat `@lhci/cli` — hanya **peringatan** (`continue-on-error`), laporan disimpan
+   sebagai artifact `lighthouse` (retensi 14 hari).
+
+Yang perlu diketahui:
+
+- CI tidak memakai secret dan tidak men-deploy apa pun.
+- Izin workflow cukup baca (`permissions: contents: read`); di **Settings → Actions →
+  General → Workflow permissions** pilih "Read repository contents".
+- Semua action dipin ke SHA commit; pembaruan dilakukan lewat PR yang mengganti SHA-nya.
+- Mendorong perubahan di `.github/workflows/` butuh token/kredensial dengan scope `workflow`.
+
+Belum ada, menunggu keputusan/kredensial: preview per PR dan deploy (K3), `embeddings.yml`
+(5.2), `cek-sumber.yml` (6.4), Dependabot (6.5).
 
 ## 8. Belum diputuskan
 

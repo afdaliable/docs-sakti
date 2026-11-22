@@ -1,0 +1,72 @@
+name: CI
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: ${{ github.event_name == 'pull_request' }}
+
+jobs:
+  periksa:
+    name: Periksa konten, build, dan tes
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - name: Ambil kode
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          # Tanggal "terakhir diperbarui" dibaca dari riwayat git.
+          fetch-depth: 0
+          persist-credentials: false
+
+      - name: Pasang pnpm
+        uses: pnpm/action-setup@73e46992e05b19abd31f2f3c20e0e7370d762115 # v6.1.1
+
+      - name: Pasang Node.js
+        uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
+        with:
+          node-version-file: .nvmrc
+          cache: pnpm
+
+      - name: Pasang dependensi
+        run: pnpm install --frozen-lockfile
+
+      - name: Periksa konten
+        run: pnpm check:content
+
+      - name: Tes unit
+        run: pnpm test
+
+      - name: Build dan indeks Pagefind
+        run: pnpm build
+
+      - name: Validasi tautan
+        run: pnpm check:links
+
+      - name: Pasang Chromium untuk Playwright
+        run: pnpm exec playwright install --with-deps chromium
+
+      - name: Evaluasi pencarian Level 1
+        run: pnpm search:eval --level 1
+
+      - name: Tes e2e
+        run: pnpm test:e2e
+
+      - name: Lighthouse (peringatan saja)
+        continue-on-error: true
+        run: pnpm dlx @lhci/cli@0.16.1 autorun --config=lighthouserc.json
+
+      - name: Simpan laporan Lighthouse
+        if: always()
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
+        with:
+          name: lighthouse
+          path: .lighthouseci
+          if-no-files-found: ignore
+          retention-days: 14

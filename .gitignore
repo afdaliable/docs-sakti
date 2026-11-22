@@ -12,3 +12,4 @@ pnpm-debug.log*
 .DS_Store
 sources/raw/
 sources/extracted/
+.lighthouseci/

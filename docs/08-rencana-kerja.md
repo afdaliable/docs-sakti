@@ -124,6 +124,7 @@ Status Gerbang 4 (22 Nov 2026): semua modul dalam urutan Fase 4 sudah didraf dan
 ## Fase 6 — Rilis & pemeliharaan
 
 - [ ] 6.1 CI lengkap (`07-deploy-ops.md`), preview per PR.
+  - 23 Nov 2026: workflow CI dibuat tanpa deploy dan tanpa secret (K65). Belum dicentang: preview per PR menunggu hosting (K3), dan workflow belum pernah berjalan di GitHub.
 - [ ] 6.2 Deploy produksi + domain (K3).
 - [ ] 6.3 Analitik + widget feedback + logging query tanpa hasil.
 - [ ] 6.4 Workflow mingguan `cek-sumber.yml` dan laporan bulanan.
