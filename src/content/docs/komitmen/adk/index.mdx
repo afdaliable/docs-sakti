@@ -9,4 +9,20 @@ sidebar:
   order: 0
 ---
 
-Panduan untuk menu **ADK** sedang disiapkan.
+import { CardGrid, LinkCard } from '@astrojs/starlight/components';
+
+Menu ADK modul Komitmen mencakup pembentukan file ADK untuk pendaftaran
+dan perubahan data referensi ke KPPN.
+
+<CardGrid>
+	<LinkCard
+		title="Membuat ADK BCSU"
+		description="Mengubah data supplier yang sudah terdaftar dan membentuk ADK update."
+		href="/komitmen/adk/adk-bcsu/"
+	/>
+	<LinkCard
+		title="Membuat ADK Supplier Tipe 3 secara Manual"
+		description="Membentuk file ADK CSV/ZIP supplier pegawai secara manual lalu mengunggahnya."
+		href="/komitmen/adk/import-suplier-adk/"
+	/>
+</CardGrid>

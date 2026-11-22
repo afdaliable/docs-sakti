@@ -1,0 +1,174 @@
+---
+title: Membuat ADK Supplier Tipe 3 secara Manual
+description: Membentuk file ADK supplier tipe 3 secara manual (format CSV dan ZIP) lalu mengunggahnya ke SAKTI.
+modul: komitmen
+menu_sakti: "Komitmen > Upload / Import > Upload Data Pegawai"
+peran: [satker]
+jenis: juknis
+kata_kunci: [adk supplier manual, suppr, suppu, csv supplier tipe 3, upload data pegawai, kom csv]
+status: review
+perlu_review: true
+sumber:
+  - judul: "Juknis Mekanisme Pembuatan File ADK Supplier Tipe 3 Manual v.2"
+    url: "https://drive.google.com/file/d/1AQF3g2nH-6swVUbIKRS7sqVUfSZFzLN7/view"
+    jenis: pdf
+    diambil: 2026-11-21
+    id_manifest: B-kom-022
+sidebar:
+  order: 3
+---
+
+import { Steps, Aside } from '@astrojs/starlight/components';
+import MenuSakti from '~/components/MenuSakti.astro';
+import SumberAsli from '~/components/SumberAsli.astro';
+
+Perekaman supplier pegawai dapat dilakukan melalui unggah ADK (dari
+aplikasi gaji maupun yang dibentuk manual) dan/atau impor data pegawai.
+ADK manual hanya digunakan apabila rekening pegawai tidak dimungkinkan
+melalui mekanisme impor data aplikasi gaji. Apabila satker sudah
+menggunakan pembayaran gaji terpusat, perubahan data supplier pegawai
+agar dikoordinasikan dengan unit pengelola gaji eselon I terlebih
+dahulu karena perubahannya memengaruhi data pembayaran gaji pada
+eselon I.
+
+<MenuSakti />
+
+## Prasyarat
+
+- Sudah terdapat Supplier Header satker (lihat perekaman supplier tipe
+  1, 2, dan 7).
+- Sudah terdapat Supplier Address tipe 3 (pegawai).
+- File `.csv` dibentuk dengan separator pipeline (`|`). Untuk mengubah
+  separator pada Windows: Control Panel – Clock and Region – Region –
+  Additional Settings – kolom List Separator diisi `|` – Apply – Ok,
+  lalu restart perangkat (kembalikan dengan tombol Reset pada menu yang
+  sama setelah selesai).
+
+## Ketentuan penamaan file
+
+- File `.csv`: `KOM<6digitkodesatker><YYYYMMDD>`
+- File ADK `.zip`: `SUPPR<6digitkodesatker><YYYYMMDD>` untuk menambah
+  supplier pegawai (status Register) dan/atau
+  `SUPPU<6digitkodesatker><YYYYMMDD>` untuk mengupdate supplier pegawai
+  (status Ubah).
+
+## Kamus data ADK supplier tipe 3
+
+| No | Nama kolom | Tipe data | Keterangan | Mandatory/Optional |
+|---|---|---|---|---|
+| 1 | no | Number | Nomor urut sequensial | Mandatory |
+| 2 | kdsatker | Char(6) | 6 digit kode satker | Mandatory |
+| 3 | kdanak | Char(2) | 2 digit kode anak satker | Mandatory |
+| 4 | kdjns | Char(1) | 1 digit kode jenis pegawai (1-PNS Pusat, 2-Personil TNI, 3-Personil POLRI, 4-HAKIM, 5-PPPK, 6-PNS TNI, 7-PNS POLRI) | Mandatory |
+| 5 | nip | Char(18) | NIP/NRP | Mandatory |
+| 6 | nmpeg | Char(100) | Nama pegawai (maksimal 100 karakter) | Mandatory |
+| 7 | npwp | Char(15) | NPWP pegawai | Mandatory |
+| 8 | nmrek | Char(100) | Nama rekening (maksimal 100 karakter) | Mandatory |
+| 9 | kdbank | Char(12) | Kode bank, disesuaikan dengan kode bank yang dipakai SPAN | Mandatory |
+| 10 | nm_bank | Char(100) | Nama bank, disesuaikan dengan deskripsi bank yang dipakai SPAN | Mandatory |
+| 11 | rekening | Char(100) | Nomor rekening (maksimal 100 karakter) | Mandatory |
+| 12 | sitebank | Char(255) | Kode site bank, kombinasi kdbank_rekening | Mandatory |
+| 13 | sumberdata | Char | Sumber data — dikosongkan | Optional |
+| 14 | statuspegawai | Char | Status pegawai — dikosongkan | Optional |
+| 15 | periodeawal | Char | Periode awal — dikosongkan | Optional |
+| 16 | periodeakhir | Char | Periode akhir — dikosongkan | Optional |
+| 17 | kd_mata_uang | Char(3) | 3 digit kode mata uang yang digunakan | Mandatory |
+| 18 | kd_negara_asal_bank | Char(2) | 2 digit kode negara asal bank | Mandatory |
+| 19 | nama_cabang_bank | Char(100) | Nama cabang bank (maksimal 100 karakter) | Mandatory |
+
+Referensi kode dan nama bank dapat dilihat pada modul Administrasi –
+Admin – Umum – Bank; referensi kode mata uang pada modul Administrasi –
+Admin – Umum – Kurs – Mata Uang; dan referensi kode negara asal bank
+pada modul Komitmen – RUH – Pencatatan Supplier – Supplier Header –
+Supplier Address – Negara.
+
+## Langkah
+
+### Membentuk file ADK
+
+**Menggunakan aplikasi ADK CSV Tipe 3 Generator:**
+
+<Steps>
+
+1. Unduh aplikasi ADK CSV Tipe 3 Generator pada tautan yang tercantum
+   di juknis (bit.ly/CSVGeneratorTipe3), pastikan macro Excel sudah
+   diaktifkan (File → Option → Trust Center → Trust Center Setting →
+   Macro Setting → Enable Macro).
+
+2. Buat folder `C:/KOM_ADK/`; klik **Rekam** untuk merekam data
+   supplier tipe 3, lalu simpan (Ctrl+S); klik **Proses** untuk
+   membentuk ADK CSV.
+
+3. ADK CSV terbentuk pada folder `C:/KOM_ADK/`; edit nomor dokumen
+   dengan format `KOM[KODE_SATKER]YYYYMMDD.csv`.
+
+4. Bentuk ADK `.zip` atas file CSV dengan format nama
+   `SUPP[KODE_SATKER]YYYYMMDD.ZIP`, lalu rename menjadi `SUPPR…` untuk
+   menambah supplier (status Register) atau `SUPPU…` untuk update
+   supplier (status Ubah).
+
+</Steps>
+
+Membuat file ADK secara manual:
+
+<Steps>
+
+1. Buat file pada Excel dengan format sesuai kamus data di atas.
+
+2. Simpan sebagai file `.csv` dengan format nama
+   `KOM<6digitkodesatker><YYYYMMDD>`.
+
+3. Bentuk ADK `.zip` atas file CSV tersebut (juknis menyarankan
+   aplikasi 7-Zip, tidak menggunakan WinRAR) dengan format nama
+   `SUPP<6digitkodesatker><YYYYMMDD>`.
+
+</Steps>
+
+### Mengunggah ADK dan mencatat supplier pegawai
+
+<Steps>
+
+1. Masuk ke menu **Komitmen > Upload / Import > Upload Data Pegawai**,
+   klik tombol **+ Cari**, pilih ADK `.zip` yang telah dibentuk, klik
+   **Open**, lalu klik **Upload** — pastikan proses upload berhasil.
+
+2. Masuk ke menu **Komitmen > RUH > Supplier**, pilih Supplier Header
+   satker, pindah ke tab **Supplier Address**, pilih address tipe 3,
+   lalu pindah ke tab **Supplier Pegawai**.
+
+3. Klik tombol **Rekam**, klik tombol **…** di sebelah kolom NIP,
+   pilih supplier pegawai pada form Data Pegawai, lalu klik **Pilih** —
+   pastikan muncul notifikasi proses berhasil.
+
+4. Lanjutkan pembentukan ADK supplier (BCSR) oleh user PPK mengacu pada
+   petunjuk perekaman supplier tipe 1, 2, dan 7; atas ADK BCSR, KPPN
+   melakukan pendaftaran supplier pada SPAN mengacu pada SOP yang
+   berlaku.
+
+</Steps>
+
+## Ketentuan
+
+- Format dan isian kolom pada file `.csv` yang dibentuk manual harus
+  sesuai kamus data; penamaan file `.csv` dan ADK `.zip` harus sesuai
+  ketentuan.
+- Supplier yang dapat digunakan dalam perekaman transaksi adalah
+  supplier yang telah tercatat NRS.
+
+<Aside type="caution" title="Perlu verifikasi">
+Juknis ini menulis menu unggah ADK sebagai **Komitmen – ADK – ADK Data
+Pegawai**; juknis Supplier Tipe 3 tahun 2024 menulis unggah ADK
+pegawai/supplier tipe 3 pada **Komitmen > Upload / Import > Upload
+Data Pegawai** — artikel ini mengikuti padanan yang ditetapkan, perlu
+dipastikan. Contoh isian juknis yang memuat nama/NIP/NPWP/rekening
+sengaja tidak disalin.
+</Aside>
+
+## Terkait
+
+- [Merekam Supplier Tipe 3](/komitmen/ruh/pencatatan-suplier/suplier-tipe-3/)
+- [Merekam Supplier Tipe 1, 2, dan 7](/komitmen/ruh/pencatatan-suplier/suplier-tipe-1-2-7/)
+
+## Sumber
+
+<SumberAsli />

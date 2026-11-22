@@ -1,0 +1,126 @@
+---
+title: Membuat ADK BCSU
+description: Mengubah data supplier yang sudah terdaftar di SPAN dan membentuk file ADK BCSU (Budget Commitment Supplier Update) untuk didaftarkan ke KPPN.
+modul: komitmen
+menu_sakti: "Komitmen > RUH > Supplier"
+peran: [satker]
+jenis: juknis
+kata_kunci: [bcsu, ubah supplier, adk update supplier, supplier address, site bank]
+status: review
+perlu_review: true
+sumber:
+  - judul: "Juknis Mekanisme Pembuatan File BCSU (Ubah Data Supplier)"
+    url: "https://drive.google.com/file/d/1XNKNXw7Z-Wl1PW8l5nY5g0DlP2DWgqCc/view"
+    jenis: pdf
+    diambil: 2026-11-21
+    id_manifest: B-kom-021
+sidebar:
+  order: 2
+---
+
+import { Steps, Aside } from '@astrojs/starlight/components';
+import MenuSakti from '~/components/MenuSakti.astro';
+import SumberAsli from '~/components/SumberAsli.astro';
+
+Data supplier yang telah terdaftar di SPAN berasal dari pendaftaran
+supplier yang diinput manual, dari aplikasi SAS, maupun dari aplikasi
+SAKTI; data terdistribusi secara nasional dan data yang pertama kali
+masuk dijadikan referensi pada SPAN. Apabila data yang terdaftar di
+SPAN tidak sesuai dengan data sebenarnya, satker pengguna SAKTI dapat
+melakukan perubahan dengan membuat file **BCSU** (*Budget Commitment
+Supplier Update*) yang didaftarkan ke KPPN disertai dokumen/bukti
+pendukung yang kuat.
+
+<MenuSakti />
+
+## Prasyarat
+
+- Data supplier sudah mendapatkan NRS (Nomor Register Supplier) dan
+  sudah terdaftar pada site (kantor bayar) KPPN yang dituju.
+
+## Langkah
+
+### Mengubah data pada Supplier Address
+
+<Steps>
+
+1. Login menggunakan user operator komitmen, buka menu **Komitmen >
+   RUH > Supplier**, lalu pilih supplier yang akan diubah.
+
+2. Pindah ke tab **Supplier Address**, pilih address yang akan diubah
+   (apabila terdapat lebih dari satu).
+
+3. Tekan tombol **Ubah**, lakukan perubahan pada kolom-kolom informasi
+   yang tersedia, beri centang pada kotak **Ubah (BCSU)**, lalu simpan.
+
+</Steps>
+
+### Mengubah data pada Supplier Bank / Pegawai / Banyak Penerima
+
+<Steps>
+
+1. Login menggunakan user operator komitmen, buka menu **Komitmen >
+   RUH > Supplier**, pilih supplier yang akan diubah.
+
+2. Pindah ke tab **Supplier Address**, pilih address tempat site
+   Supplier Bank / Supplier Pegawai / Supplier Banyak Penerima yang
+   akan diubah tersimpan.
+
+3. Pindah ke tab **Supplier Bank / Supplier Pegawai / Supplier Banyak
+   Penerima**, pilih data yang akan diubah, tekan tombol **Ubah**,
+   lakukan perubahan pada kolom yang tersedia, beri centang pada kotak
+   **Ubah (BCSU)**, lalu simpan.
+
+</Steps>
+
+### Membentuk ADK BCSU (PPK)
+
+Setelah perubahan disimpan, bentuk ADK menggunakan user PPK: pilih
+supplier yang berstatus **Ubah**, lalu lakukan pembuatan ADK. File ADK
+yang dihasilkan adalah ADK BCSU.
+
+### Proses KPPN
+
+ADK BCSU yang dibentuk user PPK diproses oleh KPPN pada aplikasi SPAN
+dengan mengacu pada SOP yang berlaku.
+
+## Hasil yang diharapkan
+
+Resume supplier dapat dicetak dan data supplier hasil perubahan dapat
+digunakan untuk pembuatan SPP, perekaman data kontrak, dan pencatatan
+BAST non-kontraktual.
+
+## Ketentuan
+
+- Informasi data supplier yang dapat diubah adalah informasi selain
+  data primary key:
+  - primary key Supplier Address: kode tipe supplier dan kode pos;
+  - primary key Supplier Bank / Supplier Pegawai / Supplier Banyak
+    Penerima: Negara Asal Bank, Nama Bank, Kode Bank, dan Nomor
+    Rekening (bank dalam negeri); Negara Asal Bank, Nama Bank, Kode
+    Swift, dan Nomor Rekening (bank luar negeri).
+- Perubahan untuk level satker/KPPN terbatas pada informasi Supplier
+  Address dan Supplier Bank / Pegawai / Banyak Penerima; informasi pada
+  Supplier Header tidak dapat diubah, kecuali melalui pengajuan
+  penggabungan (merge) supplier yang hanya dapat dilakukan Tim
+  Pengelola Data Referensi SPAN DJPb.
+- Khusus perubahan informasi KPPN pada tab Supplier Address, kotak
+  **Ubah (BCSU)** **tidak** perlu dicentang agar file ADK yang
+  dihasilkan adalah ADK BCSR — karena supplier tersebut belum terdaftar
+  di KPPN mitra kerja dan pendaftaran awal harus memakai ADK BCSR.
+
+<Aside type="caution" title="Perlu verifikasi">
+Juknis menulis form supplier sebagai **Komitmen – RUH – Pencatatan
+Supplier**; menu aplikasi saat ini adalah **Komitmen > RUH > Supplier**.
+Juknis tidak menyebut nama menu pembentukan ADK pada user PPK, sehingga
+tidak dituliskan jalur menunya di sini.
+</Aside>
+
+## Terkait
+
+- [Merekam Supplier Tipe 1, 2, dan 7](/komitmen/ruh/pencatatan-suplier/suplier-tipe-1-2-7/)
+- [Merekam Supplier Tipe 6](/komitmen/ruh/pencatatan-suplier/suplier-tipe-6/)
+
+## Sumber
+
+<SumberAsli />
