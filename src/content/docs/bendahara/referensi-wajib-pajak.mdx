@@ -1,0 +1,169 @@
+---
+title: Merekam Referensi Wajib Pajak/Wajib Bayar
+description: Pencatatan referensi wajib pajak dan wajib bayar untuk bendahara pengeluaran, bendahara penerimaan, BPP, rekanan, dan pegawai.
+modul: bendahara
+menu_sakti: "Bendahara > Referensi > Referensi Wajib Pajak / Wajib Bayar"
+peran: [satker]
+jenis: juknis
+kata_kunci: [wajib pajak, wajib bayar, npwp bendahara, bpp, rekanan kkp, setoran pajak]
+status: review
+perlu_review: false
+sumber:
+  - judul: "Juknis Perekaman Referensi Wajib Pajak _ Wajib Bayar Bendahara"
+    url: "https://drive.google.com/file/d/1PLB43G4P9Dsi4Mz6c8J4sd10mpGdB3sT/view"
+    jenis: pdf
+    diambil: 2026-11-21
+    id_manifest: B-ben-011
+---
+
+import { Steps } from '@astrojs/starlight/components';
+import MenuSakti from '~/components/MenuSakti.astro';
+import SumberAsli from '~/components/SumberAsli.astro';
+
+Menu referensi wajib pajak/wajib bayar digunakan untuk mencatat data
+wajib pajak yang akan dipakai pada pencatatan kuitansi UP/TUP, SPBy,
+dan pencatatan penerimaan barang/jasa UP/TUP tunai. Referensi ini
+**berbeda dan tidak terhubung** dengan pencatatan supplier di modul
+Komitmen — operator bendahara tetap harus merekam ulang NPWP supplier
+di menu ini apabila akan dipakai untuk belanja dengan sumber dana
+UP/TUP/KKP; demikian pula NPWP bendahara pengeluaran, BPP, dan
+bendahara penerimaan.
+
+<MenuSakti />
+
+## Prasyarat
+
+- Role yang dibutuhkan: operator (OPR) modul Bendahara.
+- Data yang disiapkan: data resmi NPWP dan rekening sesuai jenis
+  wajib pajak/wajib bayar yang direkam.
+
+## Langkah
+
+### Merekam wajib pajak bendahara pengeluaran, penerimaan, dan BPP
+
+Jenis wajib pajak/wajib setor yang direkam pertama kali adalah
+**Bendahara Pengeluaran**, **Bendahara Penerimaan**, dan **Bendahara
+Pengeluaran Pembantu (BPP)** (jika ada).
+
+<Steps>
+
+1. Login sebagai operator modul bendahara pada aplikasi SAKTI web
+   (`sakti.kemenkeu.go.id`), lalu buka menu **Bendahara > Referensi >
+   Referensi Wajib Pajak / Wajib Bayar** dan klik tombol **Tambah**
+   pada bagian bawah layar.
+2. Pilih jenis wajib pajak/wajib setor **Bendahara Pengeluaran**.
+3. Lengkapi kolom nama wajib pajak/wajib setor, NPWP, NIK, nomor
+   rekening, bank, cabang, nomor telepon, dan nomor HP dengan data
+   resmi NPWP satker dan data rekening BPG.
+4. Isi kolom alamat dengan alamat kantor satker, lalu lengkapi kolom
+   provinsi, kabupaten, kecamatan, dan kodepos — seluruh kolom wajib
+   diisi data riil dan tidak boleh dikosongkan karena berdampak pada
+   kesalahan saat pencetakan SPBy dan kuitansi.
+5. Isikan email dan website satker — boleh dikosongkan atau diberi
+   tanda "-" jika tidak ada.
+6. Klik tombol **Simpan** — data wajib pajak bendahara pengeluaran
+   yang tersimpan muncul pada kolom Detail Wajib Pajak di bagian
+   bawah layar.
+7. Rekam pula jenis **Bendahara Penerimaan** dan **Bendahara
+   Pengeluaran Pembantu (BPP)** (jika ada) dengan langkah yang sama —
+   sesuaikan pilihan jenis wajib pajak/wajib setornya. Nomor NPWP
+   boleh sama karena berlakunya NPWP instansi/satker, tetapi data
+   lain seperti rekening disesuaikan dengan data riil BPP dan
+   bendahara penerimaan masing-masing.
+
+</Steps>
+
+Untuk wajib pajak/wajib bayar ranah transaksi BPP, pada saat
+perekaman pilih dropdown pada kolom **BPP** dan pilih BPP yang akan
+di-assign, lalu isi kelengkapan data wajib (nama dan NPWP), data
+komplementer (NIK, rekening, bank, cabang, telepon, HP), jenis
+**Bendahara Pengeluaran Pembantu (BPP)**, dan alamat lengkap sampai
+kodepos — wajib diisi untuk menghindari kesalahan saat pencetakan
+laporan atau setoran pajak.
+
+### Merekam rekanan/supplier bendahara
+
+Jenis ini diisi dengan NPWP supplier penyedia barang/jasa yang
+belanjanya dibayarkan melalui sumber dana GUP/TUP, dan akan dipakai
+pada menu pencatatan SPBy, kuitansi, penerimaan barang/jasa UP
+tunai/bank, serta pencatatan pungutan dan setoran pajak.
+
+<Steps>
+
+1. Masih pada menu Referensi Wajib Pajak/Wajib Bayar, klik **Tambah**
+   lalu pilih jenis **Rekanan/supplier bendahara**.
+2. Isi nama wajib pajak/wajib setor dan NPWP sesuai data NPWP resmi
+   supplier.
+3. Lengkapi isian NIK, nomor rekening, bank, cabang, nomor telepon,
+   dan nomor HP rekanan — kolom yang tidak diketahui informasinya
+   boleh dikosongkan.
+4. Lengkapi kolom alamat, provinsi, kabupaten, kecamatan, dan kode
+   pos sesuai data rekanan — kolom ini tidak boleh dikosongkan.
+5. Isikan email dan website jika ada; apabila tidak ada, kosongkan,
+   lalu klik **Simpan**. Ulangi langkah yang sama untuk setiap
+   rekanan yang akan ditambahkan.
+
+</Steps>
+
+### Merekam rekanan transaksi KKP
+
+Jenis ini diisi data supplier/rekanan khusus belanja menggunakan
+GUP/TUP KKP pada menu penerimaan barang/jasa KKP di modul Komitmen.
+
+<Steps>
+
+1. Pada menu Referensi Wajib Pajak/Wajib Bayar, klik **Tambah** lalu
+   pilih jenis **Rekanan transaksi KKP**.
+2. Isi kelengkapan data sesuai data riil rekanan transaksi KKP —
+   kolom NPWP wajib diisi NPWP resmi yang terdaftar, kolom lain boleh
+   dikosongkan sesuai ketersediaan data.
+3. Isi alamat, provinsi, kabupaten, kecamatan, dan kodepos sesuai
+   data riil rekanan (wajib diisi lengkap); kolom email dan website
+   tidak wajib. Klik **Simpan**.
+
+</Steps>
+
+### Merekam jenis Wajib Bayar
+
+Jenis **Wajib Bayar** umumnya dipakai pada transaksi SPBy dengan akun
+perjalanan dinas/uang lembur/honor lainnya ke pegawai perorangan yang
+memiliki potongan pajak.
+
+<Steps>
+
+1. Pada menu Referensi Wajib Pajak/Wajib Bayar, klik **Tambah** lalu
+   pilih jenis **Wajib Bayar**.
+2. Isi kelengkapan data sesuai data riil individu pegawai selaku
+   wajib bayar — kolom NPWP wajib diisi NPWP resmi, kolom lain boleh
+   dikosongkan sesuai ketersediaan data.
+3. Isi alamat, provinsi, kabupaten, kecamatan, dan kodepos sesuai
+   data riil wajib bayar (wajib diisi lengkap); kolom email dan
+   website tidak wajib. Klik **Simpan**.
+
+</Steps>
+
+## Hasil yang diharapkan
+
+Seluruh referensi wajib pajak/wajib bayar yang berhasil disimpan
+muncul pada kolom **Detail Wajib Pajak** di bagian bawah layar dan
+dapat dipakai pada pencatatan kuitansi, SPBy, penerimaan barang/jasa,
+serta pungutan dan setoran pajak.
+
+## Ketentuan
+
+- Data referensi yang sudah tidak aktif dapat dinonaktifkan: klik
+  data pada kolom Detail Wajib Pajak, klik tombol **Ubah**, centang
+  kolom **Non Aktif**, lalu klik **Simpan**.
+- Nomor NPWP yang sama dapat dipakai untuk jenis bendahara
+  pengeluaran, penerimaan, dan BPP karena telah berlaku NPWP
+  instansi/satker.
+
+## Terkait
+
+- [Merekam Siklus Transaksi GUP](/bendahara/siklus-gup/)
+- [Merekam Transaksi Kartu Kredit Pemerintah (KKP)](/bendahara/kartu-kredit-pemerintah/)
+- [Merekam Transaksi Bendahara Penerimaan](/bendahara/bendahara-penerimaan/)
+
+## Sumber
+
+<SumberAsli />

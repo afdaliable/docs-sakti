@@ -1,0 +1,117 @@
+---
+title: Merekam Referensi Detil Rekening
+description: Pencatatan rekening bendahara (BPG, BPN, BPP, RPL) untuk transaksi non tunai dan Laporan Daftar Rincian Kas.
+modul: bendahara
+menu_sakti: "Bendahara > Referensi > Referensi Detail Rekening"
+peran: [satker]
+jenis: juknis
+kata_kunci: [detail rekening, rekening bendahara, bpg, rpl, daftar rincian kas]
+status: review
+perlu_review: false
+sumber:
+  - judul: "2021-Juknis Perekaman Referensi Detil Rekening"
+    url: "https://drive.google.com/file/d/15t0o9xbaDGgw3AN7gY3dmjmYYUPROu5i/view"
+    jenis: pdf
+    diambil: 2026-11-21
+    id_manifest: B-ben-004
+---
+
+import { Steps } from '@astrojs/starlight/components';
+import MenuSakti from '~/components/MenuSakti.astro';
+import SumberAsli from '~/components/SumberAsli.astro';
+
+Referensi Detil Rekening Bendahara mencatat rekening bendahara
+pengeluaran (BPG), bendahara penerimaan (BPN), rekening bendahara
+pengeluaran pembantu (BPP), ataupun rekening pengelolaan lainnya
+(RPL) yang akan dipakai untuk perekaman transaksi non tunai di modul
+Bendahara.
+
+<MenuSakti />
+
+## Prasyarat
+
+- Role yang dibutuhkan: operator (OPR) modul Bendahara.
+- Dokumen input: data rekening.
+
+## Alur proses
+
+1. Operator bendahara — merekam referensi detail rekening.
+2. Referensi dipakai pada transaksi non tunai/pemindahan kas dan
+   membentuk saldo pada Laporan Daftar Rincian Kas.
+3. Operator bendahara — mencetak Laporan Daftar Rincian Kas sebagai
+   lampiran LPJ.
+
+## Langkah
+
+### Merekam referensi detail rekening
+
+<Steps>
+
+1. Login menggunakan user operator bendahara, lalu buka menu
+   **Bendahara > Referensi > Referensi Detail Rekening**.
+2. Klik tombol **Tambah**.
+3. Pilih jenis rekening yang akan direkam: **Bendahara Penerimaan**,
+   **Bendahara Pengeluaran**, **Bendahara Pengeluaran Pembantu**, atau
+   **Rekening Pemerintah Lainnya (RPL)**.
+4. Lengkapi isian detail rekening: nomor rekening, nama rekening,
+   nama cabang bank, nomor izin surat pembukaan rekening, dan tanggal
+   izin pembukaan rekening.
+5. Jenis pengguna terpilih otomatis setelah jenis rekening dipilih;
+   isian unit teknis BPP diisi apabila jenis rekeningnya BPP —
+   apabila non-BPP, tombolnya tidak aktif.
+6. Klik tombol **Simpan**.
+
+</Steps>
+
+### Transaksi non tunai dan Laporan Daftar Rincian Kas
+
+Semua transaksi berkategori non tunai yang memilih nomor rekening
+pada modul Bendahara — seperti mencatat pungutan pajak non tunai,
+mencatat pembayaran dana titipan non tunai, mencatat uang masuk
+bendahara penerimaan/pengeluaran non tunai, menerima kas hibah non
+tunai, merekam uang muka dan alokasi BPP non tunai, membuat kuitansi
+non tunai, setoran pendapatan negara non tunai, dan pemindahan kas
+debet/kredit non tunai — menjadi data pembentuk saldo pada Laporan
+Daftar Rincian Kas.
+
+<Steps>
+
+1. Login menggunakan user operator bendahara, buka menu **Bendahara
+   > Cetak Laporan > LPJ Bendahara Pengeluaran**.
+2. Pilih jenis laporan **Laporan Daftar Rincian Kas**.
+3. Pilih periode cetak.
+4. Klik tombol **Cetak** — cetakan digunakan sebagai lampiran
+   pendukung LPJ Bendahara yang disampaikan ke KPPN mitra kerja
+   satker.
+
+</Steps>
+
+## Hasil yang diharapkan
+
+Referensi rekening terekam dan dapat dipilih pada transaksi non
+tunai; posisi saldo rekening dapat dilaporkan melalui Laporan Daftar
+Rincian Kas.
+
+## Ketentuan
+
+- Referensi ini dibutuhkan pada transaksi pemindahan kas, catat uang
+  masuk bendahara, setoran pendapatan negara seperti PNBP SBS dan
+  PNBP Dana Pihak Ketiga, setoran perpajakan, serta migrasi saldo
+  awal bendahara.
+- Pelaporan saldo rekening ke KPPN dilakukan paling lambat tanggal 10
+  bulan berikutnya; apabila tanggal 10 jatuh pada hari libur,
+  penyampaian dilakukan pada hari kerja sebelumnya — umumnya
+  bersamaan dengan penyampaian LPJ Bendahara bulanan.
+- Dasar hukum izin rekening satuan kerja: PMK Nomor 182/PMK.05/2017
+  tanggal 29 November 2017 tentang Pengelolaan Rekening Milik Satuan
+  Kerja Lingkup Kementerian Negara/Lembaga.
+
+## Terkait
+
+- [Membuat LPJ Bendahara Pengeluaran](/bendahara/lpj-bendahara-pengeluaran/)
+- [Mencatat Pembayaran Dana Titipan](/bendahara/pembayaran-dana-titipan/)
+- [Menatausahakan Transaksi Hibah Kas](/bendahara/transaksi-hibah-kas/)
+
+## Sumber
+
+<SumberAsli />
