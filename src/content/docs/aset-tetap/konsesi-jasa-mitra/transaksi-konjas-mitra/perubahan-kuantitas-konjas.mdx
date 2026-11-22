@@ -1,0 +1,62 @@
+---
+title: Mengoreksi Kuantitas Konjas
+description: Mencatat koreksi kuantitas aset konsesi jasa.
+modul: aset-tetap
+menu_sakti: "Aset Tetap > Konsesi Jasa Mitra > Transaksi Konjas Mitra > Perubahan Kuantitas Konjas"
+peran: [satker]
+jenis: juknis
+kata_kunci: [perubahan kuantitas konjas, konsesi jasa, koreksi konjas]
+status: review
+sumber:
+  - judul: "SAKTI PELAPORAN - Perubahan Kuantitas Konjas"
+    url: "https://sites.google.com/view/saktipelaporan/aset-tetap/konsesi-jasa-mitra/transaksi-konjas-mitra/perubahan-kuantitas-konjas"
+    jenis: google-sites
+    diambil: 2026-11-21
+    id_manifest: C-aset-tetap-konsesi-jasa-mitra-transaksi-konjas-mitra-perubahan-kuantitas-konjas
+sidebar:
+  order: 7
+---
+
+import { Steps } from '@astrojs/starlight/components';
+import MenuSakti from '~/components/MenuSakti.astro';
+import SumberAsli from '~/components/SumberAsli.astro';
+
+Menu Perubahan Kuantitas Konjas digunakan untuk mencatat koreksi
+kuantitas aset konsesi jasa.
+
+<MenuSakti />
+
+## Prasyarat
+
+- Dokumen sumber: SK atau dokumen lain.
+- Modul dan transaksi terkait: GLP.
+
+## Langkah
+
+<Steps>
+
+1. Pilih menu **Aset Tetap > Konsesi Jasa Mitra > Transaksi
+   Konjas Mitra > Perubahan Kuantitas Konjas**, lalu klik
+   **Rekam**.
+2. Pilih kode barang.
+3. Isi jumlah, NUP, dan tanggal pembukuan.
+4. Masukkan rincian kapitalisasi (berkurang atau bertambah) dan
+   perubahan kuantitasnya.
+5. Masukkan nomor dan tanggal dasar koreksi.
+
+</Steps>
+
+## Ketentuan
+
+- Harus sudah ada aset konsesi jasa yang dicatat sebelumnya.
+  Jika belum ada, akan muncul pesan error bahwa aset konjas
+  (dengan NUP tertentu) belum ada.
+- Tidak ada jurnal yang terbentuk atas transaksi ini.
+
+## Terkait
+
+- [Mengoreksi Manual Konjas](/aset-tetap/konsesi-jasa-mitra/transaksi-konjas-mitra/koreksi-manual-konjas/)
+
+## Sumber
+
+<SumberAsli />

@@ -1,12 +1,55 @@
 ---
 title: Konsesi Jasa Mitra
-description: Panduan menu Konsesi Jasa Mitra pada modul Aset Tetap.
+description: Pengelolaan aset konsesi jasa mitra pada Modul Aset Tetap, dari referensi kontrak sampai transaksi.
 modul: aset-tetap
+menu_sakti: "Aset Tetap > Konsesi Jasa Mitra"
+peran: [satker]
 jenis: indeks
 status: terbit
+sumber:
+  - judul: "SAKTI PELAPORAN - Konsesi Jasa Mitra"
+    url: "https://sites.google.com/view/saktipelaporan/aset-tetap/konsesi-jasa-mitra"
+    jenis: google-sites
+    diambil: 2026-11-21
+    id_manifest: C-aset-tetap-konsesi-jasa-mitra
+  - judul: "SAKTI PELAPORAN - Referensi Konsesi Jasa Mitra"
+    url: "https://sites.google.com/view/saktipelaporan/aset-tetap/konsesi-jasa-mitra/referensi-konsesi-jasa-mitra"
+    jenis: google-sites
+    diambil: 2026-11-21
+    id_manifest: C-aset-tetap-konsesi-jasa-mitra-referensi-konsesi-jasa-mitra
+  - judul: "SAKTI PELAPORAN - Transaksi KDP Konjas Mitra"
+    url: "https://sites.google.com/view/saktipelaporan/aset-tetap/konsesi-jasa-mitra/transaksi-kdp-konjas-mitra"
+    jenis: google-sites
+    diambil: 2026-11-21
+    id_manifest: C-aset-tetap-konsesi-jasa-mitra-transaksi-kdp-konjas-mitra
 sidebar:
   label: Ringkasan
   order: 0
 ---
 
-Panduan untuk menu **Konsesi Jasa Mitra** sedang disiapkan.
+import { LinkCard, CardGrid } from '@astrojs/starlight/components';
+import MenuSakti from '~/components/MenuSakti.astro';
+import SumberAsli from '~/components/SumberAsli.astro';
+
+Menu **Aset Tetap > Konsesi Jasa Mitra** memuat pengelolaan aset
+konsesi jasa mitra.
+
+<MenuSakti />
+
+- **Referensi Konsesi Jasa Mitra**: digunakan untuk mencatat
+  data kontrak dan mitra konsesi jasa. Pencatatan tersebut wajib
+  dilakukan agar satker dapat mencatat transaksi terkait aset
+  konsesi jasa.
+- **Transaksi Konjas Mitra**: memuat transaksi atas aset
+  konsesi jasa.
+- **Transaksi KDP Konjas Mitra**: digunakan untuk mencatat
+  transaksi terkait dengan saldo awal KDP konjas, perolehan KDP
+  konjas, dan koreksi nilai KDP konjas.
+
+<CardGrid>
+  <LinkCard title="Transaksi Konjas Mitra" href="/aset-tetap/konsesi-jasa-mitra/transaksi-konjas-mitra/" description="Transaksi aset konsesi jasa, dari saldo awal sampai koreksi." />
+</CardGrid>
+
+## Sumber
+
+<SumberAsli />

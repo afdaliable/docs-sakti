@@ -1,0 +1,67 @@
+---
+title: Mengoreksi Manual Konjas
+description: Mencatat perubahan nilai aset dan nilai buku aset konsesi jasa.
+modul: aset-tetap
+menu_sakti: "Aset Tetap > Konsesi Jasa Mitra > Transaksi Konjas Mitra > Koreksi Manual Konjas"
+peran: [satker]
+jenis: juknis
+kata_kunci: [koreksi manual konjas, konsesi jasa, nilai buku]
+status: review
+sumber:
+  - judul: "SAKTI PELAPORAN - Koreksi Manual Konjas"
+    url: "https://sites.google.com/view/saktipelaporan/aset-tetap/konsesi-jasa-mitra/transaksi-konjas-mitra/koreksi-manual-konjas"
+    jenis: google-sites
+    diambil: 2026-11-21
+    id_manifest: C-aset-tetap-konsesi-jasa-mitra-transaksi-konjas-mitra-koreksi-manual-konjas
+sidebar:
+  order: 8
+---
+
+import { Steps } from '@astrojs/starlight/components';
+import MenuSakti from '~/components/MenuSakti.astro';
+import SumberAsli from '~/components/SumberAsli.astro';
+
+Menu Koreksi Manual Konjas digunakan untuk mencatat perubahan
+nilai aset dan nilai buku aset konjas.
+
+<MenuSakti />
+
+## Prasyarat
+
+- Dokumen sumber: SK atau dokumen lain.
+- Modul dan transaksi terkait: GLP.
+
+## Langkah
+
+<Steps>
+
+1. Pilih menu **Aset Tetap > Konsesi Jasa Mitra > Transaksi
+   Konjas Mitra > Koreksi Manual Konjas**, lalu klik **Rekam**.
+2. Pilih kode barang.
+3. Isi jumlah, NUP, dan tanggal pembukuan.
+4. Masukkan nomor dan tanggal dasar koreksi (berdasarkan dokumen
+   dasar koreksi).
+
+</Steps>
+
+## Ketentuan
+
+- Harus sudah ada aset konsesi jasa yang dicatat sebelumnya.
+  Jika belum ada, akan muncul pesan error bahwa aset konjas
+  (dengan NUP tertentu) belum ada.
+
+## Jurnal transaksi
+
+- D. Koreksi nilai aset tetap non-revaluasi
+- K. Aset konsesi jasa
+
+Jurnal ini bergantung pada perubahan nilai asetnya.
+
+## Terkait
+
+- [Mengoreksi Kuantitas Konjas](/aset-tetap/konsesi-jasa-mitra/transaksi-konjas-mitra/perubahan-kuantitas-konjas/)
+- [Mengoreksi Pencatatan Konjas](/aset-tetap/konsesi-jasa-mitra/transaksi-konjas-mitra/koreksi-pencatatan-konjas/)
+
+## Sumber
+
+<SumberAsli />
