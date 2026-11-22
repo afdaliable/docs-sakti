@@ -1,0 +1,113 @@
+---
+title: Melakukan Likuidasi Persediaan (GLP)
+description: Penyerahan semua barang persediaan ke UAKPB lain satu entitas pelaporan.
+modul: akuntansi-pelaporan
+menu_sakti: "Akuntansi dan Pelaporan > Likuidasi Satker"
+peran: [satker]
+jenis: juknis
+perlu_review: true
+kata_kunci: [likuidasi persediaan, transfer keluar likuidasi, transfer masuk likuidasi]
+status: review
+sumber:
+  - judul: "SAKTI PELAPORAN - Likuidasi Persediaan"
+    url: "https://sites.google.com/view/saktipelaporan/akuntansi-dan-pelaporan/likuidasi-satker/likuidasi-persediaan"
+    jenis: google-sites
+    diambil: 2026-11-21
+    id_manifest: C-akuntansi-dan-pelaporan-likuidasi-satker-likuidasi-persediaan
+  - judul: "Juknis Likudasi Persediaan Web"
+    url: "https://drive.google.com/file/d/12FOjusi0MOWIqGTycS1uiXdXGjSdGEBs/view"
+    jenis: pdf
+    diambil: 2026-11-21
+    id_manifest: C-dok-180
+---
+
+import { Aside, Steps, LinkCard } from '@astrojs/starlight/components';
+import MenuSakti from '../../../components/MenuSakti.astro';
+import SumberAsli from '../../../components/SumberAsli.astro';
+
+Menu ini mencatat penyerahan semua barang persediaan kepada
+UAKPB lain yang masih dalam satu entitas pelaporan akuntansi
+Pemerintah Pusat. Nama menu sumber: Persediaan >> Transaksi
+Keluar >> Transfer Keluar Likuidasi UAKPB dan Persediaan >>
+Transaksi Masuk >> Transfer Masuk Likuidasi UAKPB.
+
+<MenuSakti />
+
+## Prasyarat
+
+- Role yang dibutuhkan: operator Modul Persediaan dan
+  approval persediaan (dan user Admin untuk setup likuidasi).
+- Semua transaksi telah selesai direkam dan disetujui
+  approver; tidak ada transaksi yang belum didetailkan.
+- Tanggal buku dalam periode bulan yang sama dengan Setup
+  Likuidasi dan dalam rentang tanggal mulai–akhir setup.
+- Tidak ada transaksi Reklasifikasi Keluar menggantung, dan
+  semua Transfer Masuk sudah direkam dan disetujui.
+
+## Langkah
+
+### Setup likuidasi (user Admin)
+
+<Steps>
+
+1. Login menggunakan user Admin pada menu **Administrasi >
+   GL dan Pelaporan > Setup Likuidasi**, lalu klik **Rekam**
+   dan isi data setup likuidasi (Periode, Tanggal Mulai dan
+   Tanggal Akhir, Satker Asal, Satker Tujuan, UAKPB Tujuan,
+   Status Likuidasi, Keterangan).
+
+</Steps>
+
+### Likuidasi Keluar
+
+<Steps>
+
+1. Pada user operator persediaan, masuk ke menu **Persediaan
+   > Transaksi Keluar > Transfer Keluar Likuidasi UAKPB**
+   (jalur menurut juknis).
+2. Klik **Rekam**, isi No Bukti transaksi likuidasi (Surat
+   Ketetapan), periksa kesesuaian tanggal dokumen, tanggal
+   buku, dan kode UAKPB tujuan.
+3. Klik **Simpan** — transaksi tinggal menunggu persetujuan.
+4. Masuk menggunakan user approval persediaan untuk
+   melakukan proses persetujuan transaksi likuidasi keluar.
+
+</Steps>
+
+### Likuidasi Masuk
+
+<Steps>
+
+1. Pada user operator persediaan satker (UAKPB) tujuan,
+   masuk ke menu **Persediaan > Transaksi Masuk > Transfer
+   Masuk Likuidasi UAKPB** (jalur menurut juknis).
+2. Klik **Rekam**, pilih transaksi likuidasi dari kode
+   satker (UAKPB) yang sudah merekam transfer keluar
+   likuidasi.
+3. Klik tombol **suggest** berdasarkan nama barang — pastikan
+   referensi barang yang ditransfer keluar sudah direkam
+   terlebih dahulu di kode satker baru — ceklis semua
+   barang, klik **Simpan** (status belum disetujui).
+4. Masuk pada user approval persediaan untuk persetujuan
+   transaksi transfer masuk likuidasi.
+5. Lakukan pengecekan jumlah dan saldo barang pada laporan
+   persediaan, bandingkan dengan bukti transaksi transfer
+   keluar likuidasi dari satker asal.
+
+</Steps>
+
+<Aside type="caution" title="Perlu verifikasi">
+Tidak ada padanan persis di menu.json untuk "Likuidasi
+Persediaan" — `menu_sakti` memakai simpul induk Likuidasi
+Satker; prosedur ini berjalan di Modul Persediaan, bukan di
+GLP.
+</Aside>
+
+## Terkait
+
+<LinkCard title="Likuidasi Satker" href="/akuntansi-pelaporan/likuidasi-satker/" description="Ikhtisar menu likuidasi." />
+<LinkCard title="Likuidasi GLP" href="/akuntansi-pelaporan/likuidasi-satker/likuidasi-glp/" description="Likuidasi neraca di modul GLP." />
+
+## Sumber
+
+<SumberAsli />

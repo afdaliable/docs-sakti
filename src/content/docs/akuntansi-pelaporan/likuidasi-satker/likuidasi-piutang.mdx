@@ -1,0 +1,109 @@
+---
+title: Melakukan Likuidasi Piutang (GLP)
+description: Penyerahan semua piutang ke UAKPB lain satu entitas pelaporan.
+modul: akuntansi-pelaporan
+menu_sakti: "Akuntansi dan Pelaporan > Likuidasi Satker"
+peran: [satker]
+jenis: juknis
+perlu_review: true
+kata_kunci: [likuidasi piutang, likuidasi keluar piutang, likuidasi masuk piutang]
+status: review
+sumber:
+  - judul: "SAKTI PELAPORAN - Likuidasi Piutang"
+    url: "https://sites.google.com/view/saktipelaporan/akuntansi-dan-pelaporan/likuidasi-satker/likuidasi-piutang"
+    jenis: google-sites
+    diambil: 2026-11-21
+    id_manifest: C-akuntansi-dan-pelaporan-likuidasi-satker-likuidasi-piutang
+  - judul: "Juknis Likudasi Piutang Web"
+    url: "https://drive.google.com/file/d/1kvH4utcBz7M5DO0sGCCb4Pwb1uiw34I_/view"
+    jenis: pdf
+    diambil: 2026-11-21
+    id_manifest: C-dok-182
+---
+
+import { Aside, Steps, LinkCard } from '@astrojs/starlight/components';
+import MenuSakti from '../../../components/MenuSakti.astro';
+import SumberAsli from '../../../components/SumberAsli.astro';
+
+Menu Likuidasi Keluar digunakan untuk mencatat penyerahan
+semua Piutang kepada UAKPB lain yang masih dalam satu
+entitas pelaporan akuntansi Pemerintah Pusat; menu Likuidasi
+Masuk mencatat penerimaannya di satker tujuan. Nama menu
+sumber: Piutang >> Likuidasi >> Likuidasi Keluar dan Piutang
+>> Likuidasi >> Likuidasi Masuk.
+
+<MenuSakti />
+
+## Prasyarat
+
+- Role yang dibutuhkan: operator Modul Piutang (dan user
+  Admin untuk setup likuidasi).
+- Semua transaksi telah selesai direkam.
+- Tanggal buku Likuidasi Keluar dalam periode bulan yang
+  sama dengan Setup Likuidasi dan dalam rentang tanggal
+  mulai–akhir setup.
+- Tanggal pembukuan sama atau lebih besar dari tanggal
+  pembukuan transaksi terbesar yang pernah direkam.
+- Semua transaksi Transfer Masuk telah direkam.
+
+## Langkah
+
+### Setup likuidasi (user Admin)
+
+<Steps>
+
+1. Operator login menggunakan user Admin pada menu
+   **Administrasi > GL dan Pelaporan > Setup Likuidasi**,
+   lalu klik **Rekam** dan isi data setup (Periode, Tanggal
+   Mulai dan Tanggal Akhir, Satker Asal, Satker Tujuan,
+   UAKPB Tujuan, Status Likuidasi, Keterangan).
+
+</Steps>
+
+### Likuidasi Keluar
+
+<Steps>
+
+1. Operator login menggunakan user operator Modul Piutang,
+   pilih menu **Piutang > Likuidasi > Likuidasi Keluar**
+   (jalur menurut juknis), lalu klik **Rekam**.
+2. Isi kolom: Uraian kegiatan likuidasi; Satker asal (lookup
+   data setup likuidasi); Satker tujuan terisi otomatis;
+   Tanggal likuidasi sesuai dokumen sumber dan dalam rentang
+   setup — klik **Simpan**.
+3. Data piutang yang telah dilikuidasi muncul pada tabel;
+   lakukan pengecekan ulang untuk memastikan kebenaran data.
+
+</Steps>
+
+### Likuidasi Masuk
+
+<Steps>
+
+1. Pada user operator piutang satker (UAKPB) tujuan, masuk
+   ke menu **Piutang > Likuidasi > Likuidasi Masuk** (jalur
+   menurut juknis).
+2. Klik **Rekam** — muncul daftar piutang yang akan
+   dilikuidasi masuk.
+3. Klik tombol **Likuidasi Masuk** — data muncul pada tabel.
+4. Lakukan pengecekan terhadap data piutang yang dilikuidasi
+   masuk pada menu laporan, dibandingkan dengan bukti
+   transaksi transfer keluar likuidasi dari satker asal.
+
+</Steps>
+
+<Aside type="caution" title="Perlu verifikasi">
+Tidak ada padanan persis di menu.json untuk "Likuidasi
+Piutang" — `menu_sakti` memakai simpul induk Likuidasi
+Satker; prosedur ini berjalan di Modul Piutang, bukan di
+GLP.
+</Aside>
+
+## Terkait
+
+<LinkCard title="Likuidasi Satker" href="/akuntansi-pelaporan/likuidasi-satker/" description="Ikhtisar menu likuidasi." />
+<LinkCard title="Likuidasi GLP" href="/akuntansi-pelaporan/likuidasi-satker/likuidasi-glp/" description="Likuidasi neraca di modul GLP." />
+
+## Sumber
+
+<SumberAsli />

@@ -1,0 +1,99 @@
+---
+title: Melakukan Likuidasi GLP
+description: Likuidasi keluar dan likuidasi masuk neraca pada modul GLP.
+modul: akuntansi-pelaporan
+menu_sakti: "Akuntansi dan Pelaporan > Likuidasi Satker"
+peran: [satker]
+jenis: juknis
+perlu_review: true
+kata_kunci: [likuidasi glp, likuidasi keluar, likuidasi masuk, setup likuidasi]
+status: review
+sumber:
+  - judul: "SAKTI PELAPORAN - Likuidasi GLP"
+    url: "https://sites.google.com/view/saktipelaporan/akuntansi-dan-pelaporan/likuidasi-satker/likuidasi-glp"
+    jenis: google-sites
+    diambil: 2026-11-21
+    id_manifest: C-akuntansi-dan-pelaporan-likuidasi-satker-likuidasi-glp
+  - judul: "GLP likuidasi"
+    url: "https://drive.google.com/file/d/1diLwORlexoTrtxstRArDQygE7YOSjOTt/view"
+    jenis: pdf
+    diambil: 2026-11-21
+    id_manifest: C-dok-183
+---
+
+import { Aside, Steps, LinkCard } from '@astrojs/starlight/components';
+import MenuSakti from '../../../components/MenuSakti.astro';
+import SumberAsli from '../../../components/SumberAsli.astro';
+
+Menu Likuidasi Satker pada modul GLP digunakan untuk
+melakukan Likuidasi Keluar dan Likuidasi Masuk Neraca
+sebagai akibat pengakhiran/pembubaran Satker. Dokumen
+input: BA Likuidasi; output: Laporan Keuangan.
+
+<MenuSakti />
+
+## Prasyarat
+
+- Role yang dibutuhkan: OPR (dan user Admin untuk setup
+  likuidasi).
+- Modul Persediaan, Modul Aset Tetap, dan Modul Piutang
+  telah dilakukan likuidasi.
+
+## Langkah
+
+### Setup likuidasi (user Admin)
+
+<Steps>
+
+1. Login sebagai Admin pada menu **Administrasi > GL dan
+   Pelaporan > Setup Likuidasi**, lalu klik **Rekam**.
+2. Isi data setup likuidasi Satker: Periode (bulan saat
+   likuidasi keluar), Tanggal Mulai dan Tanggal Akhir
+   (rentang tanggal buku yang dapat dipilih), Satker Asal,
+   Satker Tujuan, UAKPB Tujuan, Status Likuidasi (pilih
+   **belum selesai**), dan Keterangan — lalu **Simpan**.
+
+</Steps>
+
+### Likuidasi Keluar
+
+<Steps>
+
+1. Login sebagai user operator GLP Satker yang dilikuidasi.
+2. Pilih menu **Akuntansi dan Pelaporan > Likuidasi Satker >
+   Likuidasi Keluar** (jalur menurut juknis), lalu klik
+   **Rekam**.
+3. Cari Satker asal, pilih Tanggal, kemudian **Simpan > Ya >
+   Oke**.
+
+</Steps>
+
+### Likuidasi Masuk
+
+Pastikan telah dilakukan Likuidasi Keluar Modul GLP Satker
+asal dan periode GLP Satker Likuidasi Masuk terbuka.
+
+<Steps>
+
+1. Login sebagai user operator GLP Satker Likuidasi Masuk.
+2. Pilih menu **Akuntansi dan Pelaporan > Likuidasi Satker >
+   Likuidasi Masuk** (jalur menurut juknis), lalu klik
+   **Rekam**.
+3. Proses Likuidasi Masuk — proses Modul GLP selesai.
+
+</Steps>
+
+<Aside type="caution" title="Perlu verifikasi">
+Menu.json hanya memuat "Likuidasi Keluar" dan "Likuidasi
+Masuk" di bawah Likuidasi Satker — `menu_sakti` memakai
+simpul induk.
+</Aside>
+
+## Terkait
+
+<LinkCard title="Likuidasi Satker" href="/akuntansi-pelaporan/likuidasi-satker/" description="Ikhtisar menu likuidasi." />
+<LinkCard title="Likuidasi Piutang" href="/akuntansi-pelaporan/likuidasi-satker/likuidasi-piutang/" description="Likuidasi piutang di modulnya." />
+
+## Sumber
+
+<SumberAsli />

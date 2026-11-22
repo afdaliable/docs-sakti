@@ -1,0 +1,122 @@
+---
+title: Melakukan Likuidasi Aset Tetap (GLP)
+description: Penyerahan semua aset tetap atau aset lainnya ke UAKPB lain satu entitas pelaporan.
+modul: akuntansi-pelaporan
+menu_sakti: "Akuntansi dan Pelaporan > Likuidasi Satker"
+peran: [satker]
+jenis: juknis
+perlu_review: true
+kata_kunci: [likuidasi aset tetap, likuidasi keluar, likuidasi masuk]
+status: review
+sumber:
+  - judul: "SAKTI PELAPORAN - Likuidasi Aset Tetap"
+    url: "https://sites.google.com/view/saktipelaporan/akuntansi-dan-pelaporan/likuidasi-satker/likuidasi-aset-tetap"
+    jenis: google-sites
+    diambil: 2026-11-21
+    id_manifest: C-akuntansi-dan-pelaporan-likuidasi-satker-likuidasi-aset-tetap
+  - judul: "Juknis Likudasi Aset Tetap Web 30012020"
+    url: "https://drive.google.com/file/d/1pt7b74pLi4vv2QAyLAkXDNnMqJ4tNWi_/view"
+    jenis: pdf
+    diambil: 2026-11-21
+    id_manifest: C-dok-181
+---
+
+import { Aside, Steps, LinkCard } from '@astrojs/starlight/components';
+import MenuSakti from '../../../components/MenuSakti.astro';
+import SumberAsli from '../../../components/SumberAsli.astro';
+
+Likuidasi Keluar (kode transaksi 311, 312, 313, 314, 515,
+608, 703) digunakan untuk mencatat penyerahan semua aset
+tetap atau aset lainnya kepada UAKPB lain yang masih dalam
+satu entitas pelaporan akuntansi Pemerintah Pusat. Nama menu
+sumber: Aset Tetap >> Likuidasi >> Likuidasi Keluar.
+
+Ilustrasi sumber: terjadi perubahan struktur organisasi —
+perubahan kode satker dari satker A menjadi satker B —
+sehingga perlu likuidasi keluar atas aset dari satker A ke
+satker B.
+
+<MenuSakti />
+
+## Prasyarat
+
+- Role yang dibutuhkan: operator Modul Aset Tetap (dan user
+  Admin untuk setup likuidasi).
+- Semua transaksi telah selesai direkam dan disetujui
+  approver.
+- Semua transaksi yang memerlukan pendetailan sudah
+  didetailkan.
+- Tanggal buku Likuidasi Keluar dalam periode bulan yang
+  sama dengan Setup Likuidasi dan dalam rentang tanggal
+  mulai–akhir setup.
+- Tanggal pembukuan sama atau lebih besar dari tanggal
+  pembukuan transaksi terbesar yang pernah direkam.
+- Semua transaksi Reklasifikasi Keluar telah ditindaklanjuti
+  Reklasifikasi Masuk sampai disetujui approver (tidak boleh
+  ada yang menggantung).
+- Semua transaksi Transfer Masuk telah direkam dan disetujui
+  approver.
+
+## Langkah
+
+### Setup likuidasi (user Admin)
+
+<Steps>
+
+1. Login menggunakan user Admin pada menu **Administrasi >
+   GL dan Pelaporan > Setup Likuidasi**, lalu klik **Rekam**.
+2. Isi kolom: Periode, Tanggal Mulai dan Tanggal Akhir,
+   Satker Asal, Satker Tujuan, UAKPB Tujuan, Status
+   Likuidasi (**Sudah Selesai** bila semua modul selesai,
+   **Belum Selesai** bila ada yang belum), dan Keterangan.
+
+</Steps>
+
+### Likuidasi Keluar
+
+<Steps>
+
+1. Login menggunakan user operator Modul Aset Tetap, pilih
+   menu **Aset Tetap > Likuidasi > Likuidasi Keluar** (jalur
+   menurut juknis), lalu klik **Rekam**.
+2. Isi kolom: Satker Tujuan (otomatis sesuai setup), Tanggal
+   Pembukuan, Nomor SK dan Tanggal SK (dokumen sumber,
+   misalnya BAST Likuidasi), Keterangan — lalu klik
+   **Simpan**.
+
+</Steps>
+
+### Likuidasi Masuk (kode transaksi 131, 132, 133, 134, 516, 609, 704)
+
+Mencatat penerimaan semua aset tetap atau aset lainnya hasil
+kiriman dari UAKPB lain. Nama menu sumber: Aset Tetap >>
+Likuidasi >> Likuidasi Masuk.
+
+<Steps>
+
+1. Login menggunakan user operator Modul Aset Tetap, pilih
+   menu **Aset Tetap > Likuidasi > Likuidasi Masuk** (jalur
+   menurut juknis), lalu klik **Rekam**.
+2. Pilih salah satu transaksi Likuidasi Masuk, lalu klik
+   **Likuidasi Masuk**.
+3. Tanggal pembukuan dipilihkan otomatis oleh sistem:
+   sama dengan tanggal Likuidasi Keluar bila periode masih
+   buka, atau ke bulan berikutnya dalam semester yang sama
+   bila bulan berkenaan sudah tutup.
+
+</Steps>
+
+<Aside type="caution" title="Perlu verifikasi">
+Tidak ada padanan persis di menu.json untuk "Likuidasi Aset
+Tetap" — `menu_sakti` memakai simpul induk Likuidasi Satker;
+prosedur ini berjalan di Modul Aset Tetap, bukan di GLP.
+</Aside>
+
+## Terkait
+
+<LinkCard title="Likuidasi Satker" href="/akuntansi-pelaporan/likuidasi-satker/" description="Ikhtisar menu likuidasi." />
+<LinkCard title="Likuidasi GLP" href="/akuntansi-pelaporan/likuidasi-satker/likuidasi-glp/" description="Likuidasi neraca di modul GLP." />
+
+## Sumber
+
+<SumberAsli />
