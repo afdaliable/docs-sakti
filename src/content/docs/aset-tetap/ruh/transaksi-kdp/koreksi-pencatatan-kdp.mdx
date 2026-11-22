@@ -3,6 +3,7 @@ title: Merekam Koreksi Pencatatan KDP
 description: Merekam penghapusan KDP yang disebabkan oleh kesalahan pencatatan kuantitas KDP.
 modul: aset-tetap
 peran: [satker]
+menu_sakti: "Aset Tetap > RUH > Transaksi KDP > Koreksi Pencatatan KDP"
 jenis: juknis
 kata_kunci: [koreksi pencatatan kdp, hapus kdp salah rekam, kode transaksi 517]
 status: review
@@ -18,6 +19,7 @@ sidebar:
 ---
 
 import { Steps, Aside } from '@astrojs/starlight/components';
+import MenuSakti from '~/components/MenuSakti.astro';
 import SumberAsli from '~/components/SumberAsli.astro';
 
 Menu Koreksi Pencatatan KDP (kode transaksi 517) digunakan untuk
@@ -27,6 +29,8 @@ kesalahan perekaman jumlah KDP yaitu seharusnya hanya 3 unit,
 tetapi dicatat sebanyak 4 unit, sehingga NUP KDP yang terakhir
 harus dilakukan koreksi pencatatan. Nilai KDP akan berkurang
 sebesar nilai buku aset bersangkutan.
+
+<MenuSakti />
 
 ## Prasyarat
 
@@ -63,8 +67,7 @@ tidak ada.
 <Aside type="caution" title="Perlu verifikasi">
 Seluruh isi artikel ini merupakan transkripsi gambar tabel
 juknis yang disematkan di halaman sumber; teks halaman sumber
-hanya memuat judul. Menu **Koreksi Pencatatan KDP** juga tidak
-tercantum pada daftar menu aplikasi yang menjadi acuan KB.
+hanya memuat judul.
 </Aside>
 
 ## Sumber
