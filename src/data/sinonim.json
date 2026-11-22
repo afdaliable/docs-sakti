@@ -506,5 +506,178 @@
     "sinonim": [
       "setoran pengembalian belanja"
     ]
+  },
+  {
+    "istilah": "SPP",
+    "panjang": "Surat Permintaan Pembayaran",
+    "sinonim": [
+      "surat permintaan pembayaran"
+    ]
+  },
+  {
+    "istilah": "RPD",
+    "panjang": "Rencana Penarikan Dana",
+    "sinonim": [
+      "rencana penarikan dana",
+      "rpd harian",
+      "rencana penarikan dana harian"
+    ]
+  },
+  {
+    "istilah": "Renkas",
+    "panjang": "",
+    "sinonim": [
+      "rencana kas",
+      "renkas harian"
+    ],
+    "perlu_verifikasi": true
+  },
+  {
+    "istilah": "SP3B",
+    "panjang": "Surat Perintah Pengesahan Pendapatan dan Belanja",
+    "sinonim": [
+      "surat perintah pengesahan pendapatan dan belanja",
+      "sp3b blu"
+    ]
+  },
+  {
+    "istilah": "BLU",
+    "panjang": "Badan Layanan Umum",
+    "sinonim": [
+      "badan layanan umum",
+      "satker blu"
+    ]
+  },
+  {
+    "istilah": "SPD",
+    "panjang": "",
+    "sinonim": [
+      "spd lc"
+    ],
+    "perlu_verifikasi": true
+  },
+  {
+    "istilah": "LC",
+    "panjang": "",
+    "sinonim": [
+      "letter of credit",
+      "spp-ls lc"
+    ],
+    "perlu_verifikasi": true
+  },
+  {
+    "istilah": "PPNPN",
+    "panjang": "Pegawai Pemerintah Non Pegawai Negeri",
+    "sinonim": [
+      "pegawai pemerintah non pegawai negeri",
+      "honorer"
+    ]
+  },
+  {
+    "istilah": "THR",
+    "panjang": "Tunjangan Hari Raya",
+    "sinonim": [
+      "tunjangan hari raya",
+      "thr"
+    ]
+  },
+  {
+    "istilah": "DAK Fisik",
+    "panjang": "Dana Alokasi Khusus Fisik",
+    "sinonim": [
+      "dak fisik",
+      "dana alokasi khusus"
+    ]
+  },
+  {
+    "istilah": "Dana BOS",
+    "panjang": "Bantuan Operasional Sekolah",
+    "sinonim": [
+      "bos",
+      "bantuan operasional sekolah",
+      "dana bos"
+    ]
+  },
+  {
+    "istilah": "Dana Desa",
+    "panjang": "",
+    "sinonim": [
+      "penyaluran dana desa",
+      "transfer dana desa"
+    ],
+    "perlu_verifikasi": true
+  },
+  {
+    "istilah": "SPMKC",
+    "panjang": "",
+    "sinonim": [
+      "kembali cukai",
+      "spm kembali cukai"
+    ],
+    "perlu_verifikasi": true
+  },
+  {
+    "istilah": "PNBP",
+    "panjang": "Penerimaan Negara Bukan Pajak",
+    "sinonim": [
+      "penerimaan negara bukan pajak",
+      "pnbp"
+    ]
+  },
+  {
+    "istilah": "SSP",
+    "panjang": "",
+    "sinonim": [
+      "surat setoran pajak",
+      "setoran pajak"
+    ],
+    "perlu_verifikasi": true
+  },
+  {
+    "istilah": "Perintah Bayar",
+    "panjang": "",
+    "sinonim": [
+      "spby",
+      "surat perintah bayar"
+    ],
+    "perlu_verifikasi": true
+  },
+  {
+    "istilah": "Void SP2D",
+    "panjang": "",
+    "sinonim": [
+      "void spm",
+      "pembatalan sp2d",
+      "batal sp2d"
+    ],
+    "perlu_verifikasi": true
+  },
+  {
+    "istilah": "Dispensasi RPD",
+    "panjang": "",
+    "sinonim": [
+      "dispensasi rpd harian",
+      "dispensasi renkas",
+      "dispensasi jatuh tempo"
+    ],
+    "perlu_verifikasi": true
+  },
+  {
+    "istilah": "Dokumen Pendukung",
+    "panjang": "",
+    "sinonim": [
+      "dokpend",
+      "dok pendukung",
+      "lampiran spm"
+    ],
+    "perlu_verifikasi": true
+  },
+  {
+    "istilah": "PPP",
+    "panjang": "Platform Pembayaran Pemerintah",
+    "sinonim": [
+      "platform pembayaran pemerintah",
+      "belanja operasional ppp"
+    ]
   }
 ]

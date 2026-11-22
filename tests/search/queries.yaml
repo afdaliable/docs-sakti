@@ -68,3 +68,31 @@
   harap: ["/komitmen/adk/adk-bcsu/"]
 - q: "import data gaji dari gpp kppn"
   harap: ["/komitmen/upload/import-gpp-terpusat/"]
+- q: "cara rekam spp gaji induk pns"
+  harap: ["/pembayaran/ruh/catat-ubah-spp/spm-211-gaji-induk/"]
+- q: "gaji kurang bayar kekurangan bulan lalu"
+  harap: ["/pembayaran/ruh/catat-ubah-spp/spm-222-kekurangan-gaji/"]
+- q: "input tunjangan kinerja tukin 27x"
+  harap: ["/pembayaran/ruh/catat-ubah-spp/spm-27x-tunjangan-kinerja/"]
+- q: "bayar thr dan gaji ke 13 pns"
+  harap: ["/pembayaran/ruh/catat-ubah-spp/spm-tunjangan-hari-raya/", "/pembayaran/ruh/catat-ubah-spp/spm-gaji-ke-13/"]
+- q: "spp 111 belanja non gaji kontraktual"
+  harap: ["/pembayaran/ruh/catat-ubah-spp/spm-111-non-gaji-kontraktual/"]
+- q: "spm 237 banyak penerima tanpa bast"
+  harap: ["/pembayaran/ruh/catat-ubah-spp/spm-237-penerima-non-bast/", "/pembayaran/ruh/catat-ubah-spp/spm-237-penerima-dengan-bast/"]
+- q: "koreksi spp salah akun coa"
+  harap: ["/pembayaran/ruh/catat-ubah-spp/spm-515-koreksi/", "/pembayaran/ruh/catat-ubah-spp/spm-516-koreksi-coa/"]
+- q: "pengembalian belanja sisa up sspb"
+  harap: ["/pembayaran/ruh/catat-ubah-spp/spp-611-pengembalian-belanja/"]
+- q: "mencatat perintah bayar spby belanja persediaan"
+  harap: ["/pembayaran/ruh/mencatat-perintah-bayar/belanja-aset-persediaan/", "/pembayaran/ruh/mencatat-perintah-bayar/belanja-non-aset-persediaan/"]
+- q: "input rpd harian jatuh tempo dispensasi"
+  harap: ["/pembayaran/ruh/proyeksi-belanja-bulanan/", "/pembayaran/ruh/dispensasi-rpd-harian/"]
+- q: "tanda tangan elektronik tte spp sakti"
+  harap: ["/pembayaran/ruh/tte-pada-sakti/"]
+- q: "void spm yang sudah dibatalkan span"
+  harap: ["/pembayaran/ruh/void-spm/"]
+- q: "sp3b blu upload xml sp2d"
+  harap: ["/pembayaran/catat-upload/mencatat-upload-blu/"]
+- q: "spp 171 rpata"
+  harap: ["/komitmen/ruh/rpata/"]

@@ -9,11 +9,23 @@ sidebar:
   order: 0
 ---
 
-SPP, SPM, catat/upload, dan monitoring pembayaran.
+import { CardGrid, LinkCard } from '@astrojs/starlight/components';
 
-Panduan modul ini sedang dimigrasikan dari sumber aslinya.
+Panduan modul Pembayaran mencakup perekaman SPP dan SPM, perintah
+bayar, RPD harian, tanda tangan elektronik, dan catat/upload
+transaksi.
 
 ## Sub-menu
 
-- [RUH Pembayaran](/pembayaran/ruh/)
-- [Catat/Upload](/pembayaran/catat-upload/)
+<CardGrid>
+	<LinkCard
+		title="RUH Pembayaran"
+		description="Catat/Ubah SPP, perintah bayar, proyeksi belanja, RPD harian, TTE, dan void SPM."
+		href="/pembayaran/ruh/"
+	/>
+	<LinkCard
+		title="Catat/Upload"
+		description="Pencatatan dan pengunggahan transaksi dari luar aplikasi SAKTI."
+		href="/pembayaran/catat-upload/"
+	/>
+</CardGrid>
