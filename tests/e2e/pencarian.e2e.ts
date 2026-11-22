@@ -9,9 +9,15 @@ if (!BASE_URL) {
 	({ server, url: BASE_URL } = await buatServer());
 }
 
+const galat: string[] = [];
+
 const browser = await chromium.launch();
 try {
 	const page = await browser.newPage();
+	page.on('pageerror', (e) => galat.push(`pageerror: ${e.message}`));
+	page.on('console', (m) => {
+		if (m.type() === 'error') galat.push(`console.error: ${m.text()}`);
+	});
 	const respons = await page.goto(`${BASE_URL}/`, { waitUntil: 'networkidle' });
 	assert.ok(respons?.ok(), `membuka / gagal: ${respons?.status()}`);
 
@@ -59,6 +65,83 @@ try {
 	await page.waitForURL(/\/cari\/\?q=kontrak/);
 	console.log('OK Enter tanpa opsi aktif menuju /cari/?q=kontrak');
 
+	await page.goto(`${BASE_URL}/`, { waitUntil: 'networkidle' });
+	await input.fill('cara bikin kontrak tahunan sakti');
+	await panel
+		.locator('a[href="/komitmen/ruh/pencatatan-kontrak/kontrak-tahunan/"]')
+		.first()
+		.waitFor();
+	console.log('OK Level 1: "cara bikin kontrak tahunan sakti" → kontrak-tahunan');
+
+	await page.goto(`${BASE_URL}/`, { waitUntil: 'networkidle' });
+	await input.fill('adendum kontrak multi year gimana');
+	await panel
+		.locator('a[href="/komitmen/ruh/pencatatan-kontrak/addendum-kontrak-multi-year/"]')
+		.first()
+		.waitFor();
+	console.log('OK Level 1: "adendum kontrak multi year gimana" → addendum-kontrak-multi-year');
+
+	await page.goto(`${BASE_URL}/`, { waitUntil: 'networkidle' });
+	await input.fill('pasword');
+	await panel
+		.locator('a[href="/mulai/akses-aplikasi/ubah-kata-sandi/"]')
+		.first()
+		.waitFor();
+	await page.waitForFunction(
+		() =>
+			(document.querySelector('sakti-cari [data-status]')?.textContent ?? '').includes(
+				'Tidak ada hasil persis',
+			),
+	);
+	console.log('OK Level 1: "pasword" → ubah-kata-sandi (hasil mirip)');
+
+	await page.goto(`${BASE_URL}/cari/?q=pasword`, { waitUntil: 'networkidle' });
+	const halamanCari = page.locator('.halaman-cari');
+	await halamanCari.waitFor({ state: 'attached' });
+	await page.locator('.halaman-cari[data-keadaan="selesai"]').waitFor();
+	assert.equal(
+		await halamanCari.getAttribute('data-jumlah-pagefind'),
+		'0',
+		'/cari/: data-jumlah-pagefind harus 0',
+	);
+	assert.ok(
+		parseInt((await halamanCari.getAttribute('data-jumlah')) ?? '0', 10) > 0,
+		'/cari/: data-jumlah harus > 0',
+	);
+	const hrefTiga = await page
+		.locator('#daftar-hasil a.judul')
+		.evaluateAll((els) => els.slice(0, 3).map((e) => e.getAttribute('href')));
+	assert.ok(
+		hrefTiga.includes('/mulai/akses-aplikasi/ubah-kata-sandi/'),
+		`/cari/: ubah-kata-sandi harus di 3 hasil pertama: ${JSON.stringify(hrefTiga)}`,
+	);
+	assert.match(
+		(await page.locator('#jumlah-hasil').textContent()) ?? '',
+		/mirip/,
+		'/cari/: #jumlah-hasil harus memuat "mirip"',
+	);
+	console.log('OK Level 1: /cari/?q=pasword menampilkan hasil mirip');
+
+	await page.goto(`${BASE_URL}/cari/?q=pasword&modul=persediaan`, {
+		waitUntil: 'networkidle',
+	});
+	await page.locator('.halaman-cari[data-keadaan="selesai"]').waitFor();
+	const hrefLuar = await page
+		.locator('#daftar-hasil a.judul')
+		.evaluateAll((els) =>
+			els
+				.map((e) => e.getAttribute('href') ?? '')
+				.filter((h) => h !== '' && !h.startsWith('/persediaan/')),
+		);
+	assert.deepEqual(hrefLuar, [], '/cari/: hasil di luar modul persediaan');
+	console.log('OK Level 1: filter modul=persediaan tidak membocorkan modul lain');
+
+	await page.goto(`${BASE_URL}/cari/?q=zzqqxx`, { waitUntil: 'networkidle' });
+	await page.locator('.halaman-cari[data-keadaan="selesai"]').waitFor();
+	await page.locator('#tanpa-hasil').waitFor({ state: 'visible' });
+	console.log('OK Level 1: /cari/?q=zzqqxx menampilkan tanpa-hasil');
+
+	assert.deepEqual(galat, [], `galat konsol/halaman: ${JSON.stringify(galat)}`);
 	console.log('e2e pencarian: semua pemeriksaan lolos');
 } finally {
 	await browser.close();

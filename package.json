@@ -25,6 +25,7 @@
   "dependencies": {
     "@astrojs/starlight": "0.43.1",
     "astro": "7.4.12",
+    "minisearch": "7.2.0",
     "sharp": "0.35.5",
     "yaml": "2.9.1"
   },

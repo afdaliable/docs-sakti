@@ -105,7 +105,8 @@ Status Gerbang 4 (22 Nov 2026): semua modul dalam urutan Fase 4 sudah didraf dan
 
 ## Fase 5 — Pencarian pintar & kontribusi
 
-- [ ] 5.1 Ekspansi sinonim + fuzzy fallback (Level 1 lengkap).
+- [x] 5.1 Ekspansi sinonim + fuzzy fallback (Level 1 lengkap).
+  - 23 Nov 2026: `src/lib/cari/` (varian kueri, gabungan Pagefind, fallback MiniSearch pada `/search-lite.json`), kamus `src/data/kata-kueri.json` (K61); dipakai `BigSearch` dan `/cari/`.
 - [ ] 5.2 `scripts/search/build-embeddings.ts` + `/api/search` (Opsi sesuai K7) + fusion RRF di BigSearch + fallback.
 - [ ] 5.3 `pnpm search:eval` untuk Level 1 dan hybrid; hit@3 hybrid ≥ 0,80.
 - [ ] 5.4 Keystatic GitHub mode di `/keystatic` (`06-kontributor-admin.md`).

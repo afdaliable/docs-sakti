@@ -3,7 +3,6 @@ import StarlightPage from '@astrojs/starlight/components/StarlightPage.astro';
 import { muatKonfigurasi } from '~/lib/modul.ts';
 import { JENIS_LABEL } from '~/lib/istilah.ts';
 import { REPO_URL } from '~/lib/situs.ts';
-import sinonim from '~/data/sinonim.json';
 
 const konfigurasi = muatKonfigurasi();
 const base = import.meta.env.BASE_URL;
@@ -85,30 +84,24 @@ const jenisDaftar = Object.entries(JENIS_LABEL).filter(([k]) => k !== 'indeks');
 			</p>
 		</noscript>
 	</div>
-	<script type="application/json" id="data-sinonim" set:html={JSON.stringify(sinonim)} />
 </StarlightPage>
 
 <script>
-	import { muatPagefind, type Pagefind } from '../lib/cari/pagefind';
 	import { navigate } from 'astro:transitions/client';
+	import { siapkanLevel1, muatSinonim } from '../lib/cari/klien';
+	import { cariLevel1 } from '../lib/cari/level1';
+	import type { ButirHasil, FilterCari, Ketergantungan } from '../lib/cari/level1';
+	import type { EntriSinonim } from '../lib/cari/kueri';
 
 	const PER_HALAMAN = 20;
 
-	interface Sinonim {
-		istilah: string;
-		panjang: string;
-		sinonim: string[];
-	}
-
-	let pagefind: Pagefind | null = null;
+	let dep: Ketergantungan | null = null;
 	let token = 0;
 
 	function pasang(root: HTMLElement) {
 		const base = root.dataset.base ?? '/';
 		const repo = root.dataset.repo ?? '';
-		const sinonim: Sinonim[] = JSON.parse(
-			document.getElementById('data-sinonim')!.textContent ?? '[]',
-		);
+		let sinonim: EntriSinonim[] = [];
 
 		const form = document.getElementById('form-cari') as HTMLFormElement;
 		const inputQ = document.getElementById('input-q') as HTMLInputElement;
@@ -122,7 +115,8 @@ const jenisDaftar = Object.entries(JENIS_LABEL).filter(([k]) => k !== 'indeks');
 		const usulkan = document.getElementById('usulkan-artikel') as HTMLAnchorElement;
 		const pesanGalat = document.getElementById('pesan-galat')!;
 
-		let hasil: { url: string; excerpt: string; meta: Record<string, unknown> }[] = [];
+		let hasil: ButirHasil[] = [];
+		let jumlahPagefind = 0;
 
 		function bacaUrl() {
 			const p = new URLSearchParams(location.search);
@@ -145,12 +139,12 @@ const jenisDaftar = Object.entries(JENIS_LABEL).filter(([k]) => k !== 'indeks');
 			(form.elements.namedItem('jenis') as HTMLSelectElement).value = s.jenis;
 		}
 
-		function filterDariForm() {
+		function filterDariForm(): FilterCari {
 			const modul = [...form.querySelectorAll<HTMLInputElement>('input[name="modul"]:checked')].map(
 				(c) => c.value,
 			);
-			const filter: Record<string, unknown> = {};
-			if (modul.length > 0) filter.modul = { any: modul };
+			const filter: FilterCari = {};
+			if (modul.length > 0) filter.modul = modul;
 			const peran = (form.elements.namedItem('peran') as HTMLSelectElement).value;
 			const jenis = (form.elements.namedItem('jenis') as HTMLSelectElement).value;
 			if (peran) filter.peran = peran;
@@ -178,24 +172,50 @@ const jenisDaftar = Object.entries(JENIS_LABEL).filter(([k]) => k !== 'indeks');
 			return [...cocok];
 		}
 
-		function tampilkanHalaman(hal: number) {
+		function setKeadaan(keadaan: string, q: string, total = 0, persis = 0) {
+			root.dataset.keadaan = keadaan;
+			root.dataset.kueri = q;
+			if (keadaan === 'selesai') {
+				root.dataset.jumlah = String(total);
+				root.dataset.jumlahPagefind = String(persis);
+			} else {
+				delete root.dataset.jumlah;
+				delete root.dataset.jumlahPagefind;
+			}
+		}
+
+		async function tampilkanHalaman(hal: number, tiket: number, q: string) {
 			const total = hasil.length;
 			const mulai = (hal - 1) * PER_HALAMAN;
 			const potongan = hasil.slice(mulai, mulai + PER_HALAMAN);
+			let data;
+			try {
+				data = await Promise.all(potongan.map((b) => b.data()));
+			} catch {
+				if (tiket !== token) return;
+				jumlahHasil.textContent = '';
+				pesanGalat.hidden = false;
+				setKeadaan('galat', q);
+				return;
+			}
+			if (tiket !== token) return;
 			daftarHasil.replaceChildren(
-				...potongan.map((r) => {
+				...data.map((r) => {
 					const li = document.createElement('li');
 					const a = document.createElement('a');
 					a.href = r.url;
 					a.className = 'judul';
-					a.textContent = String(r.meta.title ?? r.url);
+					a.textContent = r.judul;
 					const meta = document.createElement('span');
 					meta.className = 'meta-hasil';
-					meta.textContent = [r.meta.breadcrumb, r.meta.jenis].filter(Boolean).join(' · ');
-					const cuplikan = document.createElement('p');
-					cuplikan.className = 'cuplikan';
-					cuplikan.innerHTML = `…${r.excerpt}…`;
-					li.append(a, meta, cuplikan);
+					meta.textContent = [r.breadcrumb, r.jenis].filter(Boolean).join(' · ');
+					li.append(a, meta);
+					if (r.cuplikan) {
+						const cuplikan = document.createElement('p');
+						cuplikan.className = 'cuplikan';
+						cuplikan.innerHTML = r.cuplikan;
+						li.append(cuplikan);
+					}
 					return li;
 				}),
 			);
@@ -205,6 +225,7 @@ const jenisDaftar = Object.entries(JENIS_LABEL).filter(([k]) => k !== 'indeks');
 			navHalaman.querySelector<HTMLButtonElement>('[data-hal="sebelumnya"]')!.disabled = hal <= 1;
 			navHalaman.querySelector<HTMLButtonElement>('[data-hal="berikutnya"]')!.disabled =
 				hal >= halaman;
+			setKeadaan('selesai', q, total, jumlahPagefind);
 		}
 
 		function tampilkanTanpaHasil(q: string) {
@@ -231,44 +252,55 @@ const jenisDaftar = Object.entries(JENIS_LABEL).filter(([k]) => k !== 'indeks');
 			navHalaman.hidden = true;
 			tanpaHasil.hidden = true;
 			pesanGalat.hidden = true;
+			const tiket = ++token;
 			if (q.length < 2) {
 				jumlahHasil.textContent = 'Ketik minimal 2 karakter untuk mencari.';
+				setKeadaan('selesai', q);
 				return;
 			}
+			setKeadaan('mencari', q);
 			jumlahHasil.textContent = 'Mencari…';
-			const tiket = ++token;
 			try {
-				pagefind ??= await muatPagefind();
+				dep ??= await siapkanLevel1();
+				sinonim = await muatSinonim();
 			} catch {
-				pagefind = null;
+				dep = null;
 			}
 			if (tiket !== token) return;
-			if (!pagefind) {
+			if (!dep) {
 				jumlahHasil.textContent = '';
 				pesanGalat.hidden = false;
 				pesanGalat.textContent =
 					'Pencarian tersedia setelah pnpm build. Jalankan pnpm preview.';
+				setKeadaan('galat', q);
 				return;
 			}
 			let res;
 			try {
-				res = await pagefind.search(q, { filters: filterDariForm() });
+				res = await cariLevel1(q, filterDariForm(), dep);
 			} catch {
 				if (tiket !== token) return;
 				jumlahHasil.textContent = '';
 				pesanGalat.hidden = false;
+				setKeadaan('galat', q);
 				return;
 			}
 			if (tiket !== token) return;
-			hasil = await Promise.all(res.results.map((r) => r.data()));
-			if (tiket !== token) return;
+			hasil = res.butir;
+			jumlahPagefind = res.jumlahPagefind;
 			if (hasil.length === 0) {
 				jumlahHasil.textContent = '';
 				tampilkanTanpaHasil(q);
+				setKeadaan('selesai', q);
 				return;
 			}
-			jumlahHasil.textContent = `${hasil.length} hasil untuk "${q}".`;
-			tampilkanHalaman(s.hal);
+			jumlahHasil.textContent =
+				jumlahPagefind === 0
+					? `Tidak ada hasil persis untuk "${q}". Menampilkan ${hasil.length} hasil yang mirip.`
+					: hasil.length > jumlahPagefind
+						? `${hasil.length} hasil untuk "${q}", termasuk hasil yang mirip.`
+						: `${hasil.length} hasil untuk "${q}".`;
+			await tampilkanHalaman(s.hal, tiket, q);
 		}
 
 		function sinkronkanUrl() {

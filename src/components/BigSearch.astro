@@ -47,7 +47,9 @@ const inputId = `sakti-cari-${Math.random().toString(36).slice(2, 8)}`;
 </sakti-cari>
 
 <script>
-	import { muatPagefind, type Pagefind } from '../lib/cari/pagefind';
+	import { siapkanLevel1 } from '../lib/cari/klien';
+	import { cariLevel1 } from '../lib/cari/level1';
+	import type { DataHasil, HasilLevel1, Ketergantungan } from '../lib/cari/level1';
 
 	const MAKS_HASIL = 6;
 	const DEBOUNCE_MS = 150;
@@ -67,16 +69,16 @@ const inputId = `sakti-cari-${Math.random().toString(36).slice(2, 8)}`;
 		listbox!: HTMLUListElement;
 		statusPanel!: HTMLElement;
 		pengumuman!: HTMLElement;
-		pagefind: Pagefind | null = null;
-		pagefindGagal = false;
+		dep: Ketergantungan | null = null;
+		depGagal = false;
 		timer: ReturnType<typeof setTimeout> | undefined;
 		token = 0;
 		aktif = -1;
 		pemutus: AbortController | undefined;
 
-		get modulFilter(): Record<string, unknown> | undefined {
+		get modulFilter() {
 			const modul = this.dataset.modul;
-			return modul ? { modul } : undefined;
+			return { modul: modul ? [modul] : undefined };
 		}
 
 		connectedCallback() {
@@ -166,14 +168,14 @@ const inputId = `sakti-cari-${Math.random().toString(36).slice(2, 8)}`;
 			this.timer = setTimeout(() => this.cari(), DEBOUNCE_MS);
 		}
 
-		async muatIndeks(): Promise<Pagefind | null> {
-			if (this.pagefind) return this.pagefind;
-			if (this.pagefindGagal) return null;
+		async muatIndeks(): Promise<Ketergantungan | null> {
+			if (this.dep) return this.dep;
+			if (this.depGagal) return null;
 			try {
-				this.pagefind = await muatPagefind();
-				return this.pagefind;
+				this.dep = await siapkanLevel1();
+				return this.dep;
 			} catch {
-				this.pagefindGagal = true;
+				this.depGagal = true;
 				return null;
 			}
 		}
@@ -199,37 +201,40 @@ const inputId = `sakti-cari-${Math.random().toString(36).slice(2, 8)}`;
 				return;
 			}
 			const token = ++this.token;
-			const pf = await this.muatIndeks();
+			const dep = await this.muatIndeks();
 			if (token !== this.token) return;
-			if (!pf) {
+			if (!dep) {
 				this.tampilStatus('Pencarian tersedia setelah pnpm build. Jalankan pnpm preview.');
 				return;
 			}
 			this.tampilStatus('Mencari…');
-			let hasil;
+			let hasil: HasilLevel1;
 			try {
-				hasil = await pf.search(q, { filters: this.modulFilter });
+				hasil = await cariLevel1(q, this.modulFilter, dep);
 			} catch {
 				if (token !== this.token) return;
 				this.tampilStatus('Pencarian gagal dijalankan. Coba lagi.');
 				return;
 			}
 			if (token !== this.token) return;
-			const data = await Promise.all(hasil.results.map((r) => r.data()));
+			const data = await Promise.all(hasil.butir.slice(0, MAKS_HASIL).map((b) => b.data()));
 			if (token !== this.token) return;
-			this.renderHasil(q, data);
+			this.renderHasil(q, hasil, data);
 		}
 
-		renderHasil(q: string, data: { url: string; excerpt: string; meta: Record<string, unknown> }[]) {
+		renderHasil(q: string, hasil: HasilLevel1, data: DataHasil[]) {
 			this.aktif = -1;
 			this.statusPanel.textContent = '';
 			const base = this.dataset.base ?? '/';
-			if (data.length === 0) {
+			const total = hasil.butir.length;
+			const tanpaPersis = hasil.jumlahPagefind === 0 && total > 0;
+			const adaMirip = total > hasil.jumlahPagefind;
+			if (total === 0) {
 				this.tampilStatus(`Tidak ada hasil untuk "${q}". Coba kata lain.`);
 				return;
 			}
 			const frag = document.createDocumentFragment();
-			for (const [i, r] of data.slice(0, MAKS_HASIL).entries()) {
+			for (const [i, r] of data.entries()) {
 				const li = document.createElement('li');
 				li.setAttribute('role', 'option');
 				li.id = `${this.input.id}-opsi-${i}`;
@@ -237,46 +242,54 @@ const inputId = `sakti-cari-${Math.random().toString(36).slice(2, 8)}`;
 				a.href = r.url;
 				const judul = document.createElement('span');
 				judul.className = 'judul-hasil';
-				judul.textContent = String(r.meta.title ?? r.url);
+				judul.textContent = r.judul;
 				a.append(judul);
 				const baris = document.createElement('span');
 				baris.className = 'meta-hasil';
-				const breadcrumb = String(r.meta.breadcrumb ?? '');
-				if (breadcrumb) {
+				if (r.breadcrumb) {
 					const bc = document.createElement('span');
 					bc.className = 'breadcrumb-hasil';
-					bc.textContent = breadcrumb;
+					bc.textContent = r.breadcrumb;
 					baris.append(bc);
 				}
-				const jenis = String(r.meta.jenis ?? '');
-				if (jenis) {
+				if (r.jenis) {
 					const label = document.createElement('span');
 					label.className = 'jenis-hasil';
-					label.textContent = jenis;
+					label.textContent = r.jenis;
 					baris.append(label);
 				}
 				a.append(baris);
-				const cuplikan = document.createElement('span');
-				cuplikan.className = 'cuplikan-hasil';
-				cuplikan.innerHTML = `…${r.excerpt}…`;
-				a.append(cuplikan);
+				if (r.cuplikan) {
+					const cuplikan = document.createElement('span');
+					cuplikan.className = 'cuplikan-hasil';
+					cuplikan.innerHTML = r.cuplikan;
+					a.append(cuplikan);
+				}
 				li.append(a);
 				frag.append(li);
 			}
-			if (data.length > MAKS_HASIL) {
+			if (total > MAKS_HASIL) {
 				const li = document.createElement('li');
 				li.className = 'semua-hasil';
 				const a = document.createElement('a');
 				a.href = `${base}cari/?q=${encodeURIComponent(q)}`;
-				a.textContent = `Lihat semua hasil (${data.length})`;
+				a.textContent = `Lihat semua hasil (${total})`;
 				li.append(a);
 				frag.append(li);
 			}
 			this.listbox.replaceChildren(frag);
+			if (tanpaPersis) {
+				this.statusPanel.textContent = 'Tidak ada hasil persis. Menampilkan hasil yang mirip.';
+				this.pengumuman.textContent = `Tidak ada hasil persis untuk "${q}". ${total} hasil yang mirip.`;
+			} else if (adaMirip) {
+				this.statusPanel.textContent = 'Menampilkan juga hasil yang mirip.';
+				this.pengumuman.textContent = `${total} hasil untuk "${q}", termasuk hasil yang mirip.`;
+			} else {
+				this.pengumuman.textContent = `${total} hasil untuk "${q}".`;
+			}
 			this.panel.hidden = false;
 			this.input.setAttribute('aria-expanded', 'true');
 			this.input.setAttribute('aria-activedescendant', '');
-			this.pengumuman.textContent = `${data.length} hasil untuk "${q}".`;
 		}
 	}
 

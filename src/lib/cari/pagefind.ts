@@ -12,7 +12,7 @@ export interface DataPagefind {
 }
 
 export interface HasilPagefind {
-	results: { data(): Promise<DataPagefind> }[];
+	results: { id: string; score: number; data(): Promise<DataPagefind> }[];
 	unfilteredResultCount?: number;
 }
 

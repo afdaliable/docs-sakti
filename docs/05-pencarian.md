@@ -11,6 +11,7 @@ Dibangun bertahap. **Setiap level harus tetap berfungsi walau level di atasnya m
 - Bobot: judul (`data-pagefind-weight="10"`), `kata_kunci` (weight 7, dirender tersembunyi), heading (5), isi (1).
 - Filter Pagefind: `data-pagefind-filter="modul"`, `peran`, `jenis`.
 - **Ekspansi sinonim di sisi klien**: sebelum query dikirim, cocokkan token dengan `src/data/sinonim.json`; jalankan query asli + query hasil ekspansi, gabungkan hasil (dedup URL, ambil skor tertinggi).
+- Kata sehari-hari dan kata umum kueri ("gak" → "tidak", "cara", "sakti") diatur di `src/data/kata-kueri.json` (K61), terpisah dari glosarium.
 - **Toleransi typo**: jika Pagefind memberi < 3 hasil, jalankan pencocokan fuzzy (Fuse.js atau MiniSearch `fuzzy: 0.2`) terhadap index ringan berisi judul + kata_kunci + heading (`/search-lite.json`, dibuat saat build).
 
 ## Level 2 — Semantik / hybrid (target MVP)

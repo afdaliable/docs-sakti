@@ -181,6 +181,9 @@ importers:
       astro:
         specifier: 7.4.12
         version: 7.4.12(@types/node@26.6.6)(esbuild@0.28.2)(tsx@4.23.15)(yaml@2.9.1)
+      minisearch:
+        specifier: 7.2.0
+        version: 7.2.0
       sharp:
         specifier: 0.35.5
         version: 0.35.5(@types/node@26.6.6)
@@ -1602,6 +1605,9 @@ packages:
 
   micromark@4.0.3:
     resolution: {integrity: sha512-oGYfQzHSG5dOMovQcJ3fyTmZlWAWpi0XA0sJwJs+i6OT88o1+Jtw/8z0CmdowSLxGhhFK89rQ/oXph/wN02PNw==}
+
+  minisearch@7.2.0:
+    resolution: {integrity: sha512-dqT2XBYUOZOiC5t2HRnwADjhNS2cecp9u+TJRiJ1Qp/f5qjkeT5APcGPjHw+bz89Ms8Jp+cG4AlE+QZ/QnDglg==}
 
   mri@1.2.0:
     resolution: {integrity: sha512-tzzskb3bG8LvYGFF/mDTpq3jpI6Q9wc3LEmBaghu+DdCssd1FakN7Bc0hVNmEyGq1bq3RgfkCb3cmQLpNPOroA==}
@@ -3531,6 +3537,8 @@ snapshots:
       micromark-util-types: 2.0.3
     transitivePeerDependencies:
       - supports-color
+
+  minisearch@7.2.0: {}
 
   mri@1.2.0: {}
 
