@@ -3,12 +3,97 @@ title: KPPN
 description: Fungsi Kuasa BUN di SAKTI untuk KPPN dan Kanwil DJPb.
 modul: kppn-bun
 jenis: indeks
-status: terbit
+status: review
 sidebar:
   label: Ringkasan
   order: 0
+sumber:
+  - judul: "Juknis Fitur KPPN BUN Komitmen"
+    url: "https://drive.google.com/file/d/12nxKUIRnmHeAIOiiAK6w6JtSmSOb9fza/view"
+    jenis: pdf
+    diambil: 2026-11-21
+    id_manifest: B-bun-001
+  - judul: "Juknis Fitur KPPN BUN"
+    url: "https://drive.google.com/file/d/1T2QlxS2vGkkTdaFPj5y6h0ZJr1gQy9uZ/view"
+    jenis: pdf
+    diambil: 2026-11-21
+    id_manifest: B-bun-002
 ---
 
-Fungsi Kuasa BUN di SAKTI untuk KPPN dan Kanwil DJPb.
+import { CardGrid, LinkCard } from '@astrojs/starlight/components';
 
-Panduan modul ini sedang dimigrasikan dari sumber aslinya.
+Fitur KPPN pada aplikasi SAKTI memudahkan petugas Fo/Mo KPPN dalam
+memproses ADK SPM, Renkas Harian, dan Koreksi SPM Satker — mengadopsi
+aplikasi E-SPM yang sudah familiar bagi KPPN; modul Komitmennya
+dipakai untuk memroses ADK Supplier dan ADK Kontrak yang dibentuk
+dari modul komitmen.
+
+## Pencairan Dana
+
+<CardGrid>
+	<LinkCard
+		title="Menggunakan Fitur KPPN BUN"
+		description="Gambaran fitur KPPN untuk memproses ADK SPM, koreksi SPM, dan renkas harian satker."
+		href="/kppn-bun/fitur-kppn-bun/"
+	/>
+	<LinkCard
+		title="Memetakan Petugas Portal KPPN"
+		description="Perekaman mapping user portal KPPN oleh Kasi Pencairan Dana."
+		href="/kppn-bun/mapping-petugas-portal-kppn/"
+	/>
+	<LinkCard
+		title="Memproses ADK SPM di KPPN"
+		description="Pengujian ADK SPM oleh Fo, Validator, Reviewer, sampai persetujuan Kasi PD."
+		href="/kppn-bun/proses-adk-spm/"
+	/>
+	<LinkCard
+		title="Memantau Proses SPM di KPPN"
+		description="Pengecekan status pemrosesan ADK SPM oleh semua peran petugas KPPN dan satker."
+		href="/kppn-bun/monitoring-proses-spm/"
+	/>
+	<LinkCard
+		title="Memproses ADK SPM Koreksi di KPPN"
+		description="Pemrosesan ADK SPM Koreksi tanpa Reviewer, langsung ke Kasi PD."
+		href="/kppn-bun/proses-adk-spm-koreksi/"
+	/>
+	<LinkCard
+		title="Memproses Renkas Harian di KPPN"
+		description="Monitoring perencanaan kas harian satker dan input dispensasi renkas."
+		href="/kppn-bun/renkas-harian/"
+	/>
+	<LinkCard
+		title="Menguji SPM dengan TTE"
+		description="Pengujian SPM bertanda tangan elektronik tersertifikasi sampai approval Kasi PD."
+		href="/kppn-bun/pengujian-spm-tte/"
+	/>
+</CardGrid>
+
+## Komitmen
+
+<CardGrid>
+	<LinkCard
+		title="Menggunakan Fitur Komitmen untuk KPPN BUN"
+		description="Gambaran fitur SAKTI BUN modul Komitmen untuk ADK Supplier dan ADK Kontrak."
+		href="/kppn-bun/fitur-komitmen/"
+	/>
+	<LinkCard
+		title="Memproses ADK Supplier di KPPN"
+		description="Pemrosesan ADK Supplier oleh FO, MO, sampai persetujuan Kasi PD/PDMS."
+		href="/kppn-bun/proses-adk-supplier/"
+	/>
+	<LinkCard
+		title="Memproses ADK Kontrak di KPPN"
+		description="Pemrosesan ADK Kontrak oleh FO, MO, sampai persetujuan Kasi PD/PDMS."
+		href="/kppn-bun/proses-adk-kontrak/"
+	/>
+</CardGrid>
+
+## Manajemen Satker
+
+<CardGrid>
+	<LinkCard
+		title="Menyetujui UP di KPPN"
+		description="Mekanisme persetujuan usulan UP satker dari pengujian staf seksi sampai upload surat persetujuan."
+		href="/kppn-bun/persetujuan-up/"
+	/>
+</CardGrid>

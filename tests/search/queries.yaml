@@ -236,3 +236,21 @@
   harap: ["/akuntansi-pelaporan/mphl-bjs/", "/persediaan/transaksi-masuk/hibah-masuk/"]
 - q: "penerimaan dari potongan sp2d satker lain"
   harap: ["/akuntansi-pelaporan/proses/penerimaan-potongan-sp2d-satker-lain/"]
+- q: "mapping user portal kppn fo mo"
+  harap: ["/kppn-bun/mapping-petugas-portal-kppn/"]
+- q: "proses adk spm di kppn"
+  harap: ["/kppn-bun/proses-adk-spm/"]
+- q: "monitoring proses spm kppn"
+  harap: ["/kppn-bun/monitoring-proses-spm/"]
+- q: "adk spm koreksi kppn"
+  harap: ["/kppn-bun/proses-adk-spm-koreksi/"]
+- q: "renkas harian kppn"
+  harap: ["/kppn-bun/renkas-harian/"]
+- q: "proses adk supplier di kppn"
+  harap: ["/kppn-bun/proses-adk-supplier/"]
+- q: "proses adk kontrak di kppn"
+  harap: ["/kppn-bun/proses-adk-kontrak/"]
+- q: "pengujian spm tte oleh kppn"
+  harap: ["/kppn-bun/pengujian-spm-tte/"]
+- q: "persetujuan up oleh kppn"
+  harap: ["/kppn-bun/persetujuan-up/", "/bendahara/siklus-up-awal/"]

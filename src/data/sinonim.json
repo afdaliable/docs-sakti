@@ -1479,5 +1479,86 @@
       "intraco"
     ],
     "perlu_verifikasi": true
+  },
+  {
+    "istilah": "ADK PMRT",
+    "panjang": "",
+    "sinonim": [
+      "adk pmrt",
+      "pmrt"
+    ],
+    "perlu_verifikasi": true
+  },
+  {
+    "istilah": "Fo",
+    "panjang": "",
+    "sinonim": [
+      "fo kppn",
+      "front office"
+    ],
+    "perlu_verifikasi": true
+  },
+  {
+    "istilah": "Mo",
+    "panjang": "",
+    "sinonim": [
+      "mo kppn",
+      "middle office"
+    ],
+    "perlu_verifikasi": true
+  },
+  {
+    "istilah": "Fo_Validator",
+    "panjang": "",
+    "sinonim": [
+      "fo validator",
+      "fo dan validator"
+    ],
+    "perlu_verifikasi": true
+  },
+  {
+    "istilah": "Kasi PD",
+    "panjang": "Kepala Seksi Pencairan Dana",
+    "sinonim": [
+      "kasi pd",
+      "kepala seksi pencairan dana"
+    ],
+    "perlu_verifikasi": true
+  },
+  {
+    "istilah": "MSKI",
+    "panjang": "",
+    "sinonim": [
+      "mski",
+      "seksi mski"
+    ],
+    "perlu_verifikasi": true
+  },
+  {
+    "istilah": "PDMS",
+    "panjang": "",
+    "sinonim": [
+      "pdms",
+      "seksi pdms"
+    ],
+    "perlu_verifikasi": true
+  },
+  {
+    "istilah": "E-SPM",
+    "panjang": "",
+    "sinonim": [
+      "espm",
+      "e-spm"
+    ],
+    "perlu_verifikasi": true
+  },
+  {
+    "istilah": "Nadine",
+    "panjang": "",
+    "sinonim": [
+      "nadine",
+      "aplikasi persuratan"
+    ],
+    "perlu_verifikasi": true
   }
 ]
