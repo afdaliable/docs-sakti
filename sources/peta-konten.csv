@@ -411,8 +411,15 @@ akuntansi-pelaporan/tutup-buku,Tutup Buku,akuntansi-pelaporan,Akuntansi dan Pela
 akuntansi-pelaporan/tutup-buku/monitoring-tutup-transaksi,Memantau Tutup Transaksi,akuntansi-pelaporan,Akuntansi dan Pelaporan > Tutup Buku > Monitoring Tutup Transaksi,satker,juknis,C-akuntansi-dan-pelaporan-tutup-buku-monitoring-tutup-transaksi;C-dok-174;C-dok-161,
 akuntansi-pelaporan/tutup-buku/tutup-buku,Menutup Buku,akuntansi-pelaporan,Akuntansi dan Pelaporan > Tutup Buku > Tutup Buku,satker,juknis,C-akuntansi-dan-pelaporan-tutup-buku-tutup-buku;C-dok-173;C-dok-161;B-pem-041,
 kppn-bun/fitur-komitmen,Menggunakan Fitur Komitmen untuk KPPN BUN,kppn-bun,,kppn-kanwil,juknis,B-bun-001,
-kppn-bun/fitur-kppn-bun,Menggunakan Fitur KPPN BUN,kppn-bun,,kppn-kanwil,juknis,B-bun-002,kemungkinan dipecah per fitur saat migrasi
-kppn-bun/pengujian-spm-tte,Menguji SPM dengan TTE,kppn-bun,,kppn-kanwil,juknis,B-bun-003,
+kppn-bun/proses-adk-supplier,Memproses ADK Supplier di KPPN,kppn-bun,KPPN > Pencairan Dana > Proses > ADK Supplier,kppn-kanwil,juknis,B-bun-001,K56: pecahan B-bun-001 bagian C
+kppn-bun/proses-adk-kontrak,Memproses ADK Kontrak di KPPN,kppn-bun,KPPN > Pencairan Dana > Proses > ADK Kontrak,kppn-kanwil,juknis,B-bun-001,K56: pecahan B-bun-001 bagian D
+kppn-bun/fitur-kppn-bun,Menggunakan Fitur KPPN BUN,kppn-bun,,kppn-kanwil,juknis,B-bun-002,dipecah per tugas (K56)
+kppn-bun/mapping-petugas-portal-kppn,Memetakan Petugas Portal KPPN,kppn-bun,KPPN > Pencairan Dana > Mapping User Portal,kppn-kanwil,juknis,B-bun-002;B-bun-001,K56: pecahan B-bun-002 bagian D dan B-bun-001 bagian E
+kppn-bun/proses-adk-spm,Memproses ADK SPM di KPPN,kppn-bun,KPPN > Pencairan Dana > Proses > SPM,kppn-kanwil,juknis,B-bun-002,K56: pecahan B-bun-002 bagian E
+kppn-bun/monitoring-proses-spm,Memantau Proses SPM di KPPN,kppn-bun,KPPN > Pencairan Dana > Monitoring > Monitoring Proses SPM,kppn-kanwil,juknis,B-bun-002,K56: pecahan B-bun-002 bagian F
+kppn-bun/proses-adk-spm-koreksi,Memproses ADK SPM Koreksi di KPPN,kppn-bun,KPPN > Pencairan Dana > Proses > SPM Koreksi,kppn-kanwil,juknis,B-bun-002,K56: pecahan B-bun-002 bagian G
+kppn-bun/renkas-harian,Memproses Renkas Harian di KPPN,kppn-bun,KPPN > Pencairan Dana > Proses,kppn-kanwil,juknis,B-bun-002,"K56: pecahan B-bun-002 bagian H; label menu sumber ""Renkas Harian"" tidak ada padanan persis (terdekat Scheduled Payment Date)"
+kppn-bun/pengujian-spm-tte,Menguji SPM dengan TTE,kppn-bun,KPPN > Pencairan Dana > Proses > SPM,kppn-kanwil,juknis,B-bun-003,
 kppn-bun/persetujuan-up,Menyetujui UP di KPPN,kppn-bun,,kppn-kanwil,juknis,B-ben-019,berkas berada di folder Drive Bendahara
 peraturan,Peraturan,peraturan,,satker;kppn-kanwil;djpb-pusat;dja;djkn;bappenas;bpk;apip;widyaiswara,peraturan,A-peraturan;A-dok-056;A-dok-057;A-dok-058,
 faq,FAQ Umum,faq,,satker,faq,C-faq,dipecah per modul saat migrasi (docs/01)
