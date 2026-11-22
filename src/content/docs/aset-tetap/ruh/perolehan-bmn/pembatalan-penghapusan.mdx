@@ -1,0 +1,69 @@
+---
+title: Merekam Pembatalan Penghapusan BMN
+description: Merekam pembatalan atas penghapusan BMN yang sudah dilakukan.
+modul: aset-tetap
+menu_sakti: "Aset Tetap > RUH > Transaksi BMN > Perolehan > Pembatalan Penghapusan"
+peran: [satker]
+jenis: juknis
+kata_kunci: [pembatalan penghapusan, batal hapus bmn, sk pembatalan, penghapusan dibatalkan]
+status: review
+sumber:
+  - judul: "Pembatalan Penghapusan"
+    url: "https://sites.google.com/view/saktipelaporan/aset-tetap/ruh/transaksi-bmn/perolehan-bmn/pembatalan-penghapusan"
+    jenis: google-sites
+    diambil: 2026-11-21
+    id_manifest: C-aset-tetap-ruh-transaksi-bmn-perolehan-bmn-pembatalan-penghapusan
+  - judul: "106_Pembatalan Penghapusan-2"
+    url: "https://drive.google.com/file/d/1gsabB4ap7ob7iLUQdP4XLu48893JLl68/view"
+    jenis: lainnya
+    diambil: 2026-11-21
+    id_manifest: C-dok-059
+  - judul: "Juknis SAKTI 2021 Pembatalan Penghapusan"
+    url: "https://docs.google.com/presentation/d/15CNFxDEF9OpdLSPvNSJO9rSUqVjHDXgs4sc5uDMhWNw/"
+    jenis: google-slides
+    diambil: 2026-11-21
+    id_manifest: C-dok-060
+sidebar:
+  order: 9
+---
+
+import { Steps } from '@astrojs/starlight/components';
+import MenuSakti from '~/components/MenuSakti.astro';
+import SumberAsli from '~/components/SumberAsli.astro';
+
+Menu Pembatalan Penghapusan digunakan untuk mencatat transaksi
+pembatalan atas penghapusan BMN yang sudah dilakukan. Pada menu ini
+yang tampil hanya BMN yang sudah dihapuskan.
+
+<MenuSakti />
+
+## Prasyarat
+
+- Role: Operator Aset.
+- Dokumen sumber: Berita Acara; modul terkait: GLP (menurut juknis
+  slide).
+- Isikan nomor dan tanggal SK sebagai dasar pencatatan pembatalan
+  barang yang dibatalkan penghapusannya.
+
+## Langkah
+
+<Steps>
+
+1. Login sebagai operator Aset Tetap, pilih menu **Aset Tetap >
+   RUH > Transaksi BMN > Perolehan > Pembatalan Penghapusan**, lalu
+   klik **Rekam**.
+2. Pilih kode barang, yaitu BMN yang akan dilakukan batal
+   penghapusan — pada data ini yang tampil hanya BMN yang sudah
+   dihapuskan.
+3. NUP awal dan NUP akhir terisi sesuai dengan pemilihan yang sudah
+   dilakukan.
+4. Pilih tanggal pembukuan sesuai dengan dokumen sumber.
+5. Isikan nomor dan tanggal SK sebagai dasar pencatatan pembatalan
+   barang dibatalkan penghapusannya.
+6. Klik **Simpan**.
+
+</Steps>
+
+## Sumber
+
+<SumberAsli />

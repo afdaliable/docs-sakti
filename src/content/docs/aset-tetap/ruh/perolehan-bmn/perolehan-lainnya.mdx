@@ -1,0 +1,116 @@
+---
+title: Merekam Perolehan Lainnya BMN
+description: Merekam BMN tahun anggaran berjalan yang tidak berasal dari transaksi perolehan yang tersedia menunya.
+modul: aset-tetap
+menu_sakti: "Aset Tetap > RUH > Transaksi BMN > Perolehan > Perolehan Lainnya"
+peran: [satker]
+jenis: juknis
+kata_kunci: [perolehan lainnya, bmn tanpa kuitansi, koreksi administrasi, gratifikasi]
+status: review
+sumber:
+  - judul: "Perolehan Lainnya"
+    url: "https://sites.google.com/view/saktipelaporan/aset-tetap/ruh/transaksi-bmn/perolehan-bmn/perolehan-lainnya"
+    jenis: google-sites
+    diambil: 2026-11-21
+    id_manifest: C-aset-tetap-ruh-transaksi-bmn-perolehan-bmn-perolehan-lainnya
+  - judul: "112-Perolehan Lainnya-14"
+    url: "https://drive.google.com/file/d/1n_wHiJz3tACwVVkTqd2DXwoOzTrSHScB/view"
+    jenis: lainnya
+    diambil: 2026-11-21
+    id_manifest: C-dok-055
+  - judul: "Juknis SAKTI 2021 Perolehan Lainnya"
+    url: "https://docs.google.com/presentation/d/16Cj8M4nVgZrV3iymnqvBDbXcT2lt_lsHZR9X2Og68F8/"
+    jenis: google-slides
+    diambil: 2026-11-21
+    id_manifest: C-dok-056
+  - judul: "Juknis Lengkap MAT 2020 SAKTI Web_30122020"
+    url: "https://drive.google.com/file/d/1WYvNEpEKn7Jzddq1OhmX8kSY1ecEPOsW/view"
+    jenis: pdf
+    diambil: 2026-11-21
+    id_manifest: C-dok-040
+sidebar:
+  order: 14
+---
+
+import { Steps } from '@astrojs/starlight/components';
+import MenuSakti from '~/components/MenuSakti.astro';
+import SumberAsli from '~/components/SumberAsli.astro';
+
+Menu Perolehan Lainnya (kode transaksi 112) digunakan untuk merekam
+BMN yang diperoleh pada tahun anggaran berjalan yang berasal dari
+transaksi selain Pembelian, Transfer Masuk, Hibah (Masuk),
+Rampasan, Penyelesaian Pembangunan, Pembatalan Penghapusan,
+Reklasifikasi Masuk, Pertukaran, dan Perolehan dari Reklasifikasi
+BPYBDS. Menu ini tidak perlu didahului kuitansi/BAST dan dapat
+digunakan untuk koreksi transaksi tertentu yang tidak tersedia
+menunya pada Perolehan dengan penanganan jurnal manual. Modul
+terkait: GLP.
+
+Contoh pemakaian menu ini secara umum:
+
+- Barang-barang hasil gratifikasi yang sudah dilaporkan/diserahkan
+  ke Komisi Pemberantasan Korupsi (KPK).
+- Perolehan Aset Tetap/Lainnya dari hadiah/undian berhadiah.
+
+Contoh pemakaian untuk kebutuhan koreksi administrasi:
+
+- Transaksi pembelian Tahun Anggaran Berjalan yang secara substansi
+  seharusnya menghasilkan Aset Tetap/Lainnya namun saat membuat
+  kuitansi/BAST tidak memilih kode barang.
+
+<MenuSakti />
+
+## Langkah
+
+<Steps>
+
+1. Login sebagai operator Aset Tetap, pilih menu **Aset Tetap >
+   RUH > Transaksi BMN > Perolehan > Perolehan Lainnya**, lalu klik
+   **Rekam**.
+2. Pilih kode barang yang akan direkam perolehan lainnya.
+3. Masukkan jumlah item barang tersebut; NUP secara otomatis akan
+   menyesuaikan dengan posisi NUP terakhir.
+4. Pilih tanggal pembukuan sesuai dengan dokumen sumber atau pada
+   periode bulan yang masih buka.
+5. Pilih tanggal awal pemakaian aset (tanggal perolehan pertama
+   kali — tanggal pembelian maupun tanggal BAST dapat dijadikan
+   patokan).
+6. Isikan informasi Rincian Aset.
+7. Pilih tanggal perolehan sesuai dengan dokumen sumber (BAST atau
+   dokumen lain yang dipersamakan).
+8. Isikan nilai satuan dari aset.
+9. Pilih kondisi barang tersebut.
+10. Klik **Simpan**.
+
+</Steps>
+
+## Jurnal transaksi
+
+- D. (13xxxx) Aset Tetap/Lainnya
+- K. (491429) Pendapatan Perolehan Aset Lainnya
+
+## Ilustrasi transaksi
+
+- Bertambahnya tanaman langka yang dikembangbiakkan sendiri oleh
+  Kementerian Lingkungan Hidup dan Kehutanan.
+- Satker membeli laptop sebanyak 100 unit, maka toko memberikan
+  bonus berupa 5 unit printer; 5 unit printer tersebut dicatat
+  sebagai perolehan lainnya.
+- Contoh pemakaian untuk koreksi administrasi (gambar tabel
+  overview juknis): operator Modul Komitmen melakukan kesalahan
+  rekam kodefikasi BMN pada menu Pencatatan Penerimaan Barang dan
+  sudah terbit SP2D sehingga transaksi tidak dapat diubah atau
+  dihapus — pembayaran UP direkam dengan pilihan KDP Peralatan dan
+  Mesin Dalam Pengerjaan (kode 7xxxxxxxxx), padahal seharusnya
+  A.C Split (kode 3xxxxxxxxx), dan transaksi salah itu sudah
+  didetailkan di MAT serta disetujui approver. Koreksinya:
+  (1) melakukan transaksi Penghapusan/Penghentian KDP atas KDP
+  Peralatan dan Mesin Dalam Pengerjaan untuk menghapus KDP yang
+  salah rekam dari pelaporan BMN; (2) mencatat BMN yang seharusnya
+  yaitu A.C Split melalui menu Perolehan Lainnya; (3) operator
+  Modul GLP membuat jurnal manual: D. Pendapatan Perolehan Aset
+  Lainnya, K. Koreksi Aset Tetap Non Revaluasi.
+
+## Sumber
+
+<SumberAsli />

@@ -1,0 +1,81 @@
+---
+title: Merekam Bangun Serah Guna BMN
+description: Merekam BMN yang diperoleh dengan mekanisme bangun serah guna (BSG).
+modul: aset-tetap
+menu_sakti: "Aset Tetap > RUH > Transaksi BMN > Perolehan > Bangun Serah Guna"
+peran: [satker]
+jenis: juknis
+kata_kunci: [bangun serah guna, bsg, perolehan bmn swasta]
+status: review
+perlu_review: true
+sumber:
+  - judul: "Bangun Serah Guna"
+    url: "https://sites.google.com/view/saktipelaporan/aset-tetap/ruh/transaksi-bmn/perolehan-bmn/bangun-serah-guna"
+    jenis: google-sites
+    diambil: 2026-11-21
+    id_manifest: C-aset-tetap-ruh-transaksi-bmn-perolehan-bmn-bangun-serah-guna
+  - judul: "113_Penyelesaian Pembangunan Langsung-12"
+    url: "https://drive.google.com/file/d/1i-XyedKUKD3CGOZbXZVNwAVBOqQ8LM28/view"
+    jenis: lainnya
+    diambil: 2026-11-21
+    id_manifest: C-dok-050
+sidebar:
+  order: 11
+---
+
+import { Aside } from '@astrojs/starlight/components';
+import MenuSakti from '~/components/MenuSakti.astro';
+import SumberAsli from '~/components/SumberAsli.astro';
+
+Menu Bangun Serah Guna digunakan untuk menginput BMN yang diperoleh
+dengan mekanisme bangun serah guna (BSG), di mana aset dibangun
+oleh pihak swasta kemudian diserahkan kepada pemerintah. Contoh
+transaksi ini adalah pembangunan jalan tol oleh swasta yang
+kemudian diserahkan kepada pemerintah selaku pengelola.
+
+<MenuSakti />
+
+## Ketentuan
+
+- Menu ini hanya bisa digunakan sepanjang nilai transaksi memenuhi
+  syarat kapitalisasi BMN; jika tidak memenuhi, dianjurkan memilih
+  Jasa atau menggunakan akun Non 53xxxx (521111 atau Belanja
+  Pemeliharaan).
+- Tanggal pembukuan di periode yang sama dengan tanggal dokumen
+  sumber untuk menghindari saldo akun Aset Tetap/Lainnya Yang Belum
+  Diregister.
+- Pendetilan Aset Tetap/Lainnya tidak perlu menunggu SP2D terbit.
+- Memastikan kode sub-sub kelompok barang yang dipilih di Modul
+  Bendahara dan Komitmen saat membuat Kuitansi/BAST adalah
+  2xxxxxxxxx, 3xxxxxxxxx, 4xxxxxxxxx, 5xxxxxxxxx, 6xxxxxxxxx, dan
+  8xxxxxxxxx.
+- Jika terdapat kesalahan pemilihan kode barang di Modul Bendahara
+  dan Modul Komitmen, segera memberitahukan untuk dilakukan ubah
+  kode barang jika berasal dari BAST; jika berasal dari kuitansi,
+  sepanjang belum dilakukan validasi SPP oleh PPK masih dapat
+  dilakukan ubah kode barang pada kuitansi dengan sebelumnya
+  menghapus DRPP.
+
+## Jurnal transaksi
+
+**Jurnal Transaksi Penyelesaian Pembangunan BSG:**
+
+- D. Aset Tetap/Lainnya (Tanah, Peralatan dan Mesin, Gedung dan
+  Bangunan, JIJ, Aset Tetap Lainnya, ATB)
+- K. Aset Tetap/Lainnya Yang Belum Diregister
+
+<Aside type="caution" title="Perlu verifikasi">
+Halaman sumber tidak memuat tata cara perekaman, dan gambar tabel
+overview yang tersemat di sumber adalah tabel Penyelesaian
+Pembangunan Langsung (kode transaksi 113) — kemungkinan salah
+semat. Video yang ditautkan sumber juga berjudul Penyelesaian
+Pembangunan Langsung.
+</Aside>
+
+## Terkait
+
+- [Merekam Bangun Guna Serah BMN](/aset-tetap/ruh/perolehan-bmn/bangun-guna-serah/)
+
+## Sumber
+
+<SumberAsli />

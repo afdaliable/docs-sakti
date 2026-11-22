@@ -1,0 +1,120 @@
+---
+title: Merekam Penyelesaian Pembangunan dengan KDP
+description: Merekam BMN definitif yang diperoleh dari aset KDP yang telah selesai pembangunannya dengan pembayaran beberapa termin.
+modul: aset-tetap
+menu_sakti: "Aset Tetap > RUH > Transaksi BMN > Perolehan > Penyelesaian Pembangunan Dengan KDP"
+peran: [satker]
+jenis: juknis
+kata_kunci: [penyelesaian pembangunan kdp, bmn definitif, pembayaran termin, konstruksi dalam pengerjaan]
+status: review
+sumber:
+  - judul: "SAKTI PELAPORAN - Penyelesaian Pembangunan Dengan KDP"
+    url: "https://sites.google.com/view/saktipelaporan/aset-tetap/ruh/transaksi-bmn/perolehan-bmn/penyelesaian-pembangunan-dengan-kdp"
+    jenis: google-sites
+    diambil: 2026-11-21
+    id_manifest: C-aset-tetap-ruh-transaksi-bmn-perolehan-bmn-penyelesaian-pembangunan-dengan-kdp
+  - judul: "105_Penyelesaian Pembangunanan Dengan Kdp-13"
+    url: "https://drive.google.com/file/d/1aNpuu-c7yac_TAUb8R7KRW1kd9_f0yJh/view"
+    jenis: lainnya
+    diambil: 2026-11-21
+    id_manifest: C-dok-051
+  - judul: "Juknis SAKTI 2021 Penyelesaian Pembangunan dg KDP"
+    url: "https://docs.google.com/presentation/d/1cBrPfCCRJvYpOwidwVfjYJzSDqFwEoeBvl53rlGQwLM/"
+    jenis: google-slides
+    diambil: 2026-11-21
+    id_manifest: C-dok-052
+  - judul: "Juknis Lengkap MAT 2020 SAKTI Web_30122020"
+    url: "https://drive.google.com/file/d/1WYvNEpEKn7Jzddq1OhmX8kSY1ecEPOsW/view"
+    jenis: pdf
+    diambil: 2026-11-21
+    id_manifest: C-dok-040
+sidebar:
+  order: 8
+---
+
+import { Steps } from '@astrojs/starlight/components';
+import MenuSakti from '~/components/MenuSakti.astro';
+import SumberAsli from '~/components/SumberAsli.astro';
+
+Menu Penyelesaian Pembangunan Dengan KDP (kode transaksi 105)
+digunakan untuk merekam BMN baru yang diperoleh pada tahun anggaran
+berjalan dari aset yang telah selesai proses pembangunannya melalui
+mekanisme KDP (telah selesai 100% pekerjaan fisiknya); biasanya
+pencairan dananya melalui beberapa termin pembayaran. Pada menu
+ini, BMN yang tercatat sebagai aset KDP (misalnya Gedung dan
+Bangunan Dalam Pengerjaan) direklasifikasi menjadi Aset Tetap baru
+(misalnya Bangunan Gedung Kantor Permanen) — menambah NUP baru
+untuk BMN dimaksud; KDP akan berkurang dan menambah jumlah BMN
+definitifnya.
+
+<MenuSakti />
+
+## Prasyarat
+
+- Dokumen sumber: kuitansi, BAST Kontraktual dan Non Kontraktual;
+  modul terkait: GLP.
+- Harus ada saldo KDP yang sejenis, baik yang berasal dari
+  transaksi Saldo Awal KDP atau Perolehan KDP dan/atau Pengembangan
+  KDP atau Perolehan Lainnya KDP.
+- Satu Nomor KDP digunakan untuk perolehan 1 NUP BMN.
+
+## Langkah
+
+<Steps>
+
+1. Login sebagai operator Aset Tetap, pilih menu **Aset Tetap >
+   RUH > Transaksi BMN > Perolehan > Penyelesaian Pembangunan
+   Dengan KDP**, lalu klik **Rekam**.
+2. Pilih kode barang, yaitu BMN definitif yang telah selesai
+   pembangunannya/perakitannya.
+3. Isikan jumlah item barang, serta NUP awal dan NUP akhir barang
+   yang telah selesai dibangun/dirakit.
+4. Pilih tanggal pembukuan, tanggal awal pemakaian, dan tanggal
+   perolehan sesuai dengan dokumen sumber.
+5. Pilih kode KDP, yaitu KDP asal pembentuk sesuai dengan aset
+   definitifnya, dan isikan NUP awal serta NUP akhir KDP yang sudah
+   selesai menjadi BMN definitif.
+6. Isikan Rincian Aset Lainnya meliputi asal perolehan, nomor bukti
+   perolehan, merk/type, dan keterangan yang diperlukan.
+7. Klik **Simpan**.
+
+</Steps>
+
+## Ketentuan
+
+- Menu ini hanya bisa digunakan sepanjang saldo KDP (perolehan dan
+  pengembangan KDP) memenuhi syarat kapitalisasi BMN.
+- Menu ini digunakan untuk perolehan BMN yang pembayarannya
+  dilakukan secara bertahap/termin; untuk perolehan BMN yang sudah
+  jadi (tanpa proses membangun atau merakit) digunakan menu
+  Pembelian.
+
+## Jurnal transaksi
+
+- D. Aset Tetap/Lainnya (Tanah, Peralatan dan Mesin, Gedung dan
+  Bangunan, JIJ, Aset Tetap Lainnya, ATB)
+- K. Konstruksi Dalam Pengerjaan
+
+## Ilustrasi transaksi
+
+Satker KPPN Pekalongan membangun gedung kantor senilai
+Rp50.000.000,- dengan sistem pembayaran bertahap/termin, dengan
+rincian (menurut juknis 2020 beserta tanggal BAST-nya):
+
+| Pembayaran | Tgl BAST | Nilai | BMN di BAST | Transaksi di MAT |
+|---|---|---|---|---|
+| Ke-1: Uang Muka | 10-06-2020 | 10.000.000 | Gedung Bangunan Dalam Pengerjaan | Perolehan KDP |
+| Ke-2: Termin I | 20-06-2020 | 15.000.000 | Gedung Bangunan Dalam Pengerjaan | Pengembangan KDP |
+| Ke-3: Termin II | 22-06-2020 | 25.000.000 | Gedung Bangunan Dalam Pengerjaan | Pengembangan KDP |
+
+Setelah pekerjaan pembangunan gedung kantor selesai 100% dan telah
+ditandatangani BAST gedung baru, gedung baru tersebut dicatat
+sebagai Penyelesaian Pembangunan Dengan KDP.
+
+## Terkait
+
+- [Merekam Penyelesaian Pembangunan Langsung](/aset-tetap/ruh/perolehan-bmn/penyelesaian-pembangunan-langsung/)
+
+## Sumber
+
+<SumberAsli />

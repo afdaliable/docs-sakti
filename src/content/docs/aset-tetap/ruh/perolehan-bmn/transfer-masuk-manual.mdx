@@ -1,0 +1,139 @@
+---
+title: Merekam Transfer Masuk Manual BMN
+description: Merekam penerimaan BMN hasil transfer dari satker lain dalam lingkup Pemerintah Pusat yang belum menggunakan SAKTI.
+modul: aset-tetap
+menu_sakti: "Aset Tetap > RUH > Transaksi BMN > Perolehan > Transfer Masuk Manual"
+peran: [satker]
+jenis: juknis
+kata_kunci: [transfer masuk manual, bmn dari satker non sakti, simak bmn, bast transfer]
+status: review
+sumber:
+  - judul: "Transfer Masuk Manual"
+    url: "https://sites.google.com/view/saktipelaporan/aset-tetap/ruh/transaksi-bmn/perolehan-bmn/transfer-masuk-manual"
+    jenis: google-sites
+    diambil: 2026-11-21
+    id_manifest: C-aset-tetap-ruh-transaksi-bmn-perolehan-bmn-transfer-masuk-manual
+  - judul: "102B_Transfer Masuk Manual-22"
+    url: "https://drive.google.com/file/d/12KeVkuhexhY1MeUBor-F_MfKNaMMjPB4/view"
+    jenis: lainnya
+    diambil: 2026-11-21
+    id_manifest: C-dok-046
+  - judul: "Transfer Masuk Manual"
+    url: "https://docs.google.com/presentation/d/1vrQsFP2gPzrnnHB6pqptGE5qt7fBrXdTQMWTQTGcL1E/"
+    jenis: google-slides
+    diambil: 2026-11-21
+    id_manifest: C-dok-047
+  - judul: "Juknis Lengkap MAT 2020 SAKTI Web_30122020"
+    url: "https://drive.google.com/file/d/1WYvNEpEKn7Jzddq1OhmX8kSY1ecEPOsW/view"
+    jenis: pdf
+    diambil: 2026-11-21
+    id_manifest: C-dok-040
+sidebar:
+  order: 4
+---
+
+import { Steps } from '@astrojs/starlight/components';
+import MenuSakti from '~/components/MenuSakti.astro';
+import SumberAsli from '~/components/SumberAsli.astro';
+
+Menu Transfer Masuk Manual (kode transaksi 102) digunakan untuk
+merekam data BMN dari hasil kiriman (transfer) satker lain dalam
+lingkup Pemerintah Pusat yang satker pengirimnya belum menggunakan
+aplikasi SAKTI. Pencatatan transaksi ini dilakukan berdasarkan BAST
+satker pemberi dan satker penerima BMN. Transaksi transfer masuk
+sebaiknya dilakukan di periode bulan yang sama dengan transaksi
+transfer keluar satker pemberi untuk menghindari selisih TKTM.
+
+<MenuSakti />
+
+## Prasyarat
+
+- Dokumen sumber: BAST Transfer.
+- Modul terkait: GLP.
+- Nilai aset bruto dan nilai buku/neraca merupakan nilai yang
+  direkam secara manual (bukan penghitungan dari sistem), sehingga
+  perlu dilakukan penghitungan yang tepat sebelum perekaman.
+- Sebelum perekaman, siapkan data BMN minimal: nilai aset bruto,
+  nilai buku/nilai neraca, dan sisa masa manfaat — dapat diperoleh
+  dari history BMN di SIMAK BMN atau informasi dari satker
+  pengirim.
+- TM Manual agar dibukukan pada semester yang sama dengan transaksi
+  Transfer Keluar-nya.
+
+## Langkah
+
+<Steps>
+
+1. Login sebagai operator Aset Tetap, pilih menu **Aset Tetap >
+   RUH > Transaksi BMN > Perolehan > Transfer Masuk Manual**, lalu
+   klik **Rekam**.
+2. Pilih kode barang, yaitu BMN yang akan dilakukan transfer masuk.
+3. Isikan NUP awal dan NUP akhir dari BMN yang akan dilakukan
+   transfer masuk.
+4. Pilih tanggal pembukuan sesuai dengan dokumen sumber atau pada
+   periode bulan yang masih buka.
+5. Isi Rincian Perolehan.
+6. Pilih kondisi BMN.
+7. Pilih metode penyusutan.
+8. Klik **Simpan**.
+
+</Steps>
+
+## Ketentuan
+
+- Tanggal Pembukuan diisi dengan tanggal dokumen sumber.
+- Tanggal Awal Pemakaian diisi dengan tanggal awal pertama kali BMN
+  diperoleh — bisa tanggal pembelian atau perolehan pertama kali
+  oleh satker sebelum-sebelumnya.
+- Tanggal Perolehan diisi dengan tanggal BAST.
+- Nilai Per Satuan diisi dengan nilai total aset bruto sampai
+  dengan transaksi Transfer Masuk.
+- Nilai Buku/Neraca diisi dengan nilai buku aset, yaitu nilai aset
+  bruto dikurangi total akumulasi penyusutan sampai dengan
+  transaksi Transfer Masuk.
+- Sisa Masa Manfaat diisi dengan masa manfaat dikurangi umur aset
+  sampai dengan transaksi Transfer Masuk, dengan memperhitungkan
+  adanya tambah/kurang masa manfaat sampai dengan transaksi
+  Transfer Masuk.
+- Rincian Lain Aset diisi sesuai dengan dokumen sumber pendukungnya.
+
+## Jurnal transaksi
+
+Tanggal perolehan BMN di semester yang sama dengan pembukuan
+Transfer Masuk:
+
+- D. (13xxxx) Aset Tetap/Lainnya
+- K. (313221) Transfer Masuk
+
+Tanggal perolehan BMN tidak di semester yang sama dengan pembukuan
+Transfer Masuk:
+
+- D. (13xxxx) Aset Tetap/Lainnya
+- K. (313221) Transfer Masuk
+- D. (313221) Transfer Masuk
+- K. (137xxx) Akumulasi Penyusutan
+
+## Ilustrasi transaksi
+
+Satker Kantor Pusat Setjen Kementerian Agama (belum pengguna SAKTI)
+mengirimkan BMN kepada satker KPPN Pekalongan (pengguna SAKTI)
+berupa panci sebanyak 1 unit dengan data:
+
+1. Tanggal awal pemakaian: 14 Juni 2017
+2. Tanggal pembukuan dan tanggal perolehan: 10 Juni 2020
+3. Nilai aset bruto: Rp50.000.000,-
+4. Nilai total akumulasi penyusutan: Rp10.000.000,-
+5. Nilai buku/neraca: Rp40.000.000,-
+6. Sisa masa manfaat: 10 semester
+
+Maka, satker Kantor Pusat Setjen Kementerian Agama merekam
+transaksi Transfer Keluar, lalu KPPN Pekalongan merekam penerimaan
+kiriman tersebut melalui menu Transfer Masuk Manual.
+
+## Terkait
+
+- [Merekam Transfer Masuk Online BMN](/aset-tetap/ruh/perolehan-bmn/transfer-masuk-online/)
+
+## Sumber
+
+<SumberAsli />

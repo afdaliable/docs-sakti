@@ -1,0 +1,83 @@
+---
+title: Membatalkan Transfer Keluar Online BMN
+description: Membatalkan transaksi Transfer Keluar kepada sesama pengguna SAKTI yang telah disetujui sebelum satker tujuan merekam Transfer Masuk Online.
+modul: aset-tetap
+menu_sakti: "Aset Tetap > RUH > Transaksi BMN > Perolehan > Batal Transfer Keluar Online"
+peran: [satker]
+jenis: juknis
+kata_kunci: [batal transfer keluar online, pembatalan transfer keluar, kesalahan nup transfer]
+status: review
+perlu_review: true
+sumber:
+  - judul: "Batal Transfer Keluar Online"
+    url: "https://sites.google.com/view/saktipelaporan/aset-tetap/ruh/transaksi-bmn/perolehan-bmn/batal-transfer-keluar-online"
+    jenis: google-sites
+    diambil: 2026-11-21
+    id_manifest: C-aset-tetap-ruh-transaksi-bmn-perolehan-bmn-batal-transfer-keluar-online
+sidebar:
+  order: 17
+---
+
+import { Aside } from '@astrojs/starlight/components';
+import MenuSakti from '~/components/MenuSakti.astro';
+import SumberAsli from '~/components/SumberAsli.astro';
+
+Menu Batal Transfer Keluar Online (kode transaksi 193) digunakan
+untuk mencatat batal atas transaksi Transfer Keluar (baik TK Barang
+Aktif, TK Henti Guna, maupun TK ATR) kepada sesama pengguna
+Aplikasi SAKTI, yang transaksi Transfer Keluar dimaksud telah
+dilakukan persetujuan oleh approver, selama belum dilakukan
+transaksi rekam Transfer Masuk Online oleh satker tujuan/penerima
+BMN.
+
+<MenuSakti />
+
+## Prasyarat
+
+- Transaksi Transfer Keluar kepada satker sesama pengguna SAKTI
+  telah disetujui oleh approver.
+- Transaksi Transfer Keluar belum ditindaklanjuti dengan rekam
+  Transfer Masuk Online oleh satker tujuan/penerima BMN.
+- Apabila transaksi Transfer Keluar telah ditindaklanjuti dengan
+  rekam Transfer Masuk oleh satker tujuan/penerima BMN, tidak dapat
+  dilakukan batal transfer keluar; apabila tetap akan dilakukan
+  Batal Transfer Keluar, transaksi Transfer Masuk di satker tujuan
+  harus dihapus terlebih dahulu.
+
+## Ketentuan
+
+Tata cara perekaman menurut sumber:
+
+1. Pilih dan centang transaksi Transfer Keluar yang akan
+   dibatalkan.
+2. Klik **Batal Transfer**.
+
+## Jurnal transaksi
+
+- D. Aset Tetap
+- K. Transfer Keluar
+- D. Transfer Keluar
+- K. Akumulasi Penyusutan
+
+## Ilustrasi transaksi
+
+Operator MAT telah menyelesaikan transaksi Transfer Keluar (Barang
+Aktif) dan telah dilakukan persetujuan oleh approver. Setelah dicek
+kembali ternyata terdapat kesalahan NUP BMN yang telah direkam
+sebagai Transfer Keluar, sehingga perlu dilakukan pembatalan
+transaksi Transfer Keluar — operator dapat menggunakan menu Batal
+Transfer Keluar Online atas NUP yang salah tersebut.
+
+<Aside type="caution" title="Perlu verifikasi">
+Halaman sumber hanya memuat tabel ringkas overview juknis berupa
+gambar (ditranskripsi); tidak ada juknis lengkap lain untuk menu
+ini.
+</Aside>
+
+## Terkait
+
+- [Merekam Transfer Masuk Online BMN](/aset-tetap/ruh/perolehan-bmn/transfer-masuk-online/)
+
+## Sumber
+
+<SumberAsli />

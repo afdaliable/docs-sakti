@@ -1,0 +1,103 @@
+---
+title: Merekam Transfer Masuk Online BMN
+description: Merekam penerimaan BMN hasil transfer dari satker lain sesama pengguna SAKTI dalam lingkup Pemerintah Pusat.
+modul: aset-tetap
+menu_sakti: "Aset Tetap > RUH > Transaksi BMN > Perolehan > Transfer Masuk Online"
+peran: [satker]
+jenis: juknis
+kata_kunci: [transfer masuk online, bmn dari satker lain, sesama sakti, bast transfer]
+status: review
+sumber:
+  - judul: "Transfer Masuk Online"
+    url: "https://sites.google.com/view/saktipelaporan/aset-tetap/ruh/transaksi-bmn/perolehan-bmn/transfer-masuk-online"
+    jenis: google-sites
+    diambil: 2026-11-21
+    id_manifest: C-aset-tetap-ruh-transaksi-bmn-perolehan-bmn-transfer-masuk-online
+  - judul: "002_Transfer masuk online"
+    url: "https://drive.google.com/file/d/1G_sXwFX4TG-XWMzb4i-LjDzP-MjYrrT5/view"
+    jenis: lainnya
+    diambil: 2026-11-21
+    id_manifest: C-dok-044
+  - judul: "Juknis SAKTI 2021 Transfer Masuk Online"
+    url: "https://docs.google.com/presentation/d/1unoKdNsOSbETrYCJ79fHytZuc2o3xXLz1Rs67IFcobg/"
+    jenis: google-slides
+    diambil: 2026-11-21
+    id_manifest: C-dok-045
+  - judul: "Juknis Lengkap MAT 2020 SAKTI Web_30122020"
+    url: "https://drive.google.com/file/d/1WYvNEpEKn7Jzddq1OhmX8kSY1ecEPOsW/view"
+    jenis: pdf
+    diambil: 2026-11-21
+    id_manifest: C-dok-040
+sidebar:
+  order: 3
+---
+
+import { Steps } from '@astrojs/starlight/components';
+import MenuSakti from '~/components/MenuSakti.astro';
+import SumberAsli from '~/components/SumberAsli.astro';
+
+Menu Transfer Masuk Online (kode transaksi 102) digunakan untuk
+merekam data BMN dari hasil kiriman (transfer) satker lain sesama
+pengguna Aplikasi SAKTI dalam lingkup Pemerintah Pusat. Pencatatan
+transaksi ini dilakukan berdasarkan BAST satker pemberi dan satker
+penerima BMN, dan dapat dilakukan setelah satker pemberi melakukan
+approve transaksi Transfer Keluar Online. Transaksi transfer masuk
+sebaiknya dilakukan di periode bulan yang sama dengan transaksi
+transfer keluar satker pemberi untuk menghindari selisih TKTM.
+
+<MenuSakti />
+
+## Prasyarat
+
+- Dokumen sumber: BAST Transfer.
+- Satker pengirim telah melakukan persetujuan atas transaksi
+  Transfer Keluar Online.
+- TK Online dan TM Online dibukukan menggunakan tanggal buku dalam
+  periode semester yang sama.
+- Satker penerima BMN tidak dapat melakukan tutup buku bulan Juni
+  atau Desember apabila belum melakukan rekam dan persetujuan
+  transaksi Transfer Masuk Online dalam periode semester berkenaan.
+
+## Langkah
+
+<Steps>
+
+1. Login sebagai operator Aset Tetap, pilih menu **Aset Tetap >
+   RUH > Transaksi BMN > Perolehan > Transfer Masuk Online**, lalu
+   klik **Rekam**.
+2. Pada daftar Transaksi Masuk Online yang muncul, centang
+   transaksi Transfer Keluar dari satker pengirim — kode barang
+   yang akan dicatat sebagai Transfer Masuk Online — lalu klik
+   **Transfer Masuk** dan klik **Ya**.
+
+</Steps>
+
+## Jurnal transaksi
+
+- D. (13xxxx) Aset Tetap/Lainnya
+- K. (313221) Transfer Masuk
+- D. (313221) Transfer Masuk
+- K. (137xxx) Akumulasi Penyusutan Aset Tetap
+
+## Ilustrasi transaksi
+
+Satker Kanpus DJPb (pengguna SAKTI) mengirimkan P.C. Unit sebanyak
+5 unit senilai masing-masing Rp5.000.000,- kepada KPPN Pekalongan
+(pengguna SAKTI). Maka, satker Kanpus DJPb merekam dan menyetujui
+transaksi Transfer Keluar Online, lalu KPPN Pekalongan merekam
+penerimaan kiriman P.C. Unit tersebut melalui menu Transfer Masuk
+Online.
+
+Menurut juknis slide 2021, Satker Kantor Pusat DJPb (pengguna
+SAKTI) mengirimkan Sepeda Motor sebanyak 1 unit senilai
+Rp7.000.000,- kepada KPPN Pekalongan (pengguna SAKTI); juknis 2020
+menyebut penerima KPPN Palu.
+
+## Terkait
+
+- [Merekam Transfer Masuk Manual BMN](/aset-tetap/ruh/perolehan-bmn/transfer-masuk-manual/)
+- [Membatalkan Transfer Keluar Online BMN](/aset-tetap/ruh/perolehan-bmn/batal-transfer-keluar-online/)
+
+## Sumber
+
+<SumberAsli />

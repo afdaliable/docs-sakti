@@ -1,0 +1,194 @@
+---
+title: Merekam Pembelian BMN
+description: Merekam pendetilan pembelian BMN tahun anggaran berjalan tanpa melalui proses KDP dari dokumen BAST atau penerimaan barang.
+modul: aset-tetap
+menu_sakti: "Aset Tetap > RUH > Transaksi BMN > Perolehan > Pembelian"
+peran: [satker]
+jenis: juknis
+kata_kunci: [pembelian bmn, pendetilan aset tetap, kode barang, bast pembelian]
+status: review
+perlu_review: true
+sumber:
+  - judul: "Pembelian"
+    url: "https://sites.google.com/view/saktipelaporan/aset-tetap/ruh/transaksi-bmn/perolehan-bmn/pembelian"
+    jenis: google-sites
+    diambil: 2026-11-21
+    id_manifest: C-aset-tetap-ruh-transaksi-bmn-perolehan-bmn-pembelian
+  - judul: "001_Pembelian aset"
+    url: "https://drive.google.com/file/d/1vLffNEqVwshBC4n7XZDf1DnOZE_WVV7G/view"
+    jenis: lainnya
+    diambil: 2026-11-21
+    id_manifest: C-dok-042
+  - judul: "Pembelian Aset Tetap"
+    url: "https://docs.google.com/presentation/d/1mtCvaRTktG6O-1EHTzLX7pSmM0ftbUIXIV5gLtWKIxg/"
+    jenis: google-slides
+    diambil: 2026-11-21
+    id_manifest: C-dok-043
+  - judul: "Juknis Lengkap MAT 2020 SAKTI Web_30122020"
+    url: "https://drive.google.com/file/d/1WYvNEpEKn7Jzddq1OhmX8kSY1ecEPOsW/view"
+    jenis: pdf
+    diambil: 2026-11-21
+    id_manifest: C-dok-040
+  - judul: "Juknis SAKTI BLU"
+    url: "https://drive.google.com/file/d/1gt7ZitAXOh7tvJff1HFT4LTzni5X4yk5/view"
+    jenis: pdf
+    diambil: 2026-11-21
+    id_manifest: B-pem-041
+sidebar:
+  order: 2
+---
+
+import { Steps, Aside } from '@astrojs/starlight/components';
+import MenuSakti from '~/components/MenuSakti.astro';
+import SumberAsli from '~/components/SumberAsli.astro';
+
+Menu Pembelian (kode transaksi 101) digunakan untuk menginput BMN
+yang diperoleh dengan pembelian dari DIPA/APBN pada Tahun Anggaran
+Berjalan yang tanpa melalui proses Konstruksi dalam Pengerjaan
+(KDP), dengan sumber transaksi dari BAST/Penerimaan Barang.
+Pencatatan pada menu ini tidak perlu menunggu SP2D terbit.
+
+<MenuSakti />
+
+## Prasyarat
+
+- Dokumen sumber: Nota Pembelian, Kuitansi, BAST Kontraktual dan
+  Non Kontraktual.
+- Dasar pencatatan adalah transaksi Modul Komitmen yang dapat
+  terdiri dari: Pencatatan Berita Acara Serah Terima (BAST) baik
+  kontraktual maupun non kontraktual; Pencatatan BAST dari hibah
+  barang; Pencatatan penerimaan barang KKP; Pencatatan penerimaan
+  barang valas; Pencatatan penerimaan barang UP/TUP Tunai/Bank; dan
+  Pencatatan penerimaan barang hibah.
+- Pada saat pencatatan BAST/Penerimaan Barang di Modul Komitmen
+  harus dipilih kode aset, yaitu kode BMN selain kode 1xxxxxxxxx
+  dan 7xxxxxxxxx.
+- Seharusnya menggunakan akun Belanja Modal (53xxxx).
+- Penginputan pada saat BAST dapat dilakukan tanpa menunggu
+  terbitnya dokumen pembayaran/pengesahan (SPM/SP2D/SP3B-BLU/
+  SP2B-BLU/SP3/SP2HL/SPHL, dan lain-lain).
+
+## Langkah
+
+<Steps>
+
+1. Login sebagai operator Aset Tetap, pilih menu **Aset Tetap >
+   RUH > Transaksi BMN > Perolehan > Pembelian**, lalu klik
+   **Rekam**.
+2. Pada tampilan Daftar Komitmen, pilih jenis dokumen: **Kontrak**
+   atau **Non Kontrak/Penerimaan Barang**, lalu pilih nomor dokumen
+   yang akan didetailkan dan klik **Catat**.
+3. Pada tampilan Daftar Barang dalam Komitmen/Bendahara, pilih kode
+   barang/nama barang (BMN) yang akan didetailkan, lalu klik
+   **Catat**.
+4. Isikan tanggal pembukuan pada periode yang masih terbuka dan
+   isian rincian lain aset sesuai dokumen sumber, lalu klik
+   **Simpan**.
+
+</Steps>
+
+## Hasil yang diharapkan
+
+Perolehan BMN dari pembelian terekam dan terbentuk jurnal
+transaksinya.
+
+## Validasi dan persetujuan transaksi
+
+Juknis SAKTI untuk satker BLU memuat tahap validasi dan persetujuan
+setelah perekaman:
+
+**Validator:**
+
+<Steps>
+
+1. Masuk aplikasi SAKTI sebagai user validator.
+2. Pilih Modul Aset Tetap, masuk menu **Aset Tetap > Persetujuan >
+   Validasi**.
+3. Lakukan proses verifikasi apakah transaksi yang diinputkan ke
+   dalam sistem telah sama dengan dokumen sumber yang ada.
+4. Jika sudah sesuai, lakukan proses validasi; apabila belum
+   sesuai, kembalikan dokumen sumber beserta catatan hasil validasi.
+
+</Steps>
+
+**Approver:**
+
+<Steps>
+
+1. Masuk aplikasi SAKTI sebagai user approver.
+2. Pilih Modul Aset Tetap, masuk menu **Aset Tetap > Persetujuan >
+   Persetujuan Transaksi**.
+3. Lakukan proses persetujuan transaksi — transaksi yang disetujui
+   telah final dan tidak bisa dilakukan perbaikan. Setelah
+   persetujuan tersebut dilakukan, terbentuk penjurnalan pada Modul
+   GL dan Pelaporan.
+
+</Steps>
+
+## Ketentuan
+
+- Segera melakukan pendetilan Aset Tetap/Lainnya setelah pencatatan
+  penerimaan barang atau BAST barang.
+- Tanggal pembukuan di periode yang sama dengan tanggal dokumen
+  sumber untuk menghindari saldo akun Aset Tetap/Lainnya Yang Belum
+  Diregister.
+- Pendetilan Aset Tetap/Lainnya tidak perlu menunggu SP2D terbit.
+- Pembelian Aset Tetap/Lainnya yang tidak memenuhi syarat
+  kapitalisasi dibebankan pada akun 521252/521253/521254.
+- Pembelian Aset Tetap/Lainnya yang tidak memenuhi syarat
+  kapitalisasi tetap dicatat sebagai BMN ekstrakomtabel.
+- Memastikan kode sub-sub kelompok barang yang dipilih di Modul
+  Komitmen saat pencatatan penerimaan barang/BAST adalah
+  2xxxxxxxxx, 3xxxxxxxxx, 4xxxxxxxxx, 5xxxxxxxxx, 6xxxxxxxxx, dan
+  8xxxxxxxxx (selain golongan 1 dan 7).
+- Jika terdapat kesalahan pemilihan kode barang saat pencatatan
+  penerimaan barang/BAST, operator Aset Tetap segera memberitahukan
+  untuk dilakukan ubah kode barang sepanjang belum dilakukan
+  validasi SPP oleh PPK. Perubahan/perbaikan kode barang setelah
+  terbit SP2D menggunakan menu Reklasifikasi Keluar dan
+  Reklasifikasi Masuk.
+- Pembelian ATR tidak menambah masa manfaat diinput di menu ini.
+- Perolehan aset yang direkam di menu Pembelian adalah pembelian
+  aset yang dibayar melalui mekanisme pembayaran sekaligus 100%
+  (bukan pembayaran bertahap/termin); apabila pembayaran dilakukan
+  secara bertahap/termin, direkam menggunakan menu
+  Perolehan/Pengembangan KDP.
+
+## Jurnal transaksi
+
+**Jurnal Transaksi Pembelian (Intrakomptabel):**
+
+- D. Aset Tetap/Lainnya (Tanah, Peralatan dan Mesin, Gedung dan
+  Bangunan, JIJ, Aset Tetap Lainnya, ATB)
+- K. Aset Tetap/Lainnya Yang Belum Diregister
+
+**Jurnal Transaksi Pembelian (Ekstrakomptabel):**
+
+- Tidak ada jurnal
+
+## Ilustrasi transaksi
+
+1. Satker melakukan pembelian mobil dinas senilai Rp200 juta pada
+   tanggal 17 Agustus 2019 (juknis slide dan juknis 2020 menulis
+   17 Agustus 2020), menggunakan SPM LS Sekaligus. Maka, operator
+   Modul Komitmen merekam BAST dan pilih kode barang 3xxxxxxxxx
+   (mini bus), dan operator Modul Aset Tetap melakukan pendetailan
+   melalui menu Pembelian.
+2. Satker melakukan pembelian laptop senilai Rp10 juta pada
+   tanggal 17 Agustus 2019 (juknis slide dan juknis 2020 menulis
+   17 Agustus 2020) menggunakan kuitansi UP. Maka, Bendahara
+   merekam Pencatatan Penerimaan Barang dari UP/TUP memilih kode
+   aset 3xxxxxxxxx (Lap Top), lalu operator Modul Aset Tetap
+   melakukan pendetailan melalui menu Pembelian.
+
+<Aside type="caution" title="Perlu verifikasi">
+Halaman sumber menyebut pembelian yang tidak memenuhi syarat
+kapitalisasi dibebankan pada akun 521252/521253/521254; juknis
+slide menyebut akun 521111. Tahap validasi dan persetujuan di atas
+bersumber dari juknis SAKTI untuk satker BLU; sumber modul Aset
+Tetap tidak merinci kedua tahap itu.
+</Aside>
+
+## Sumber
+
+<SumberAsli />

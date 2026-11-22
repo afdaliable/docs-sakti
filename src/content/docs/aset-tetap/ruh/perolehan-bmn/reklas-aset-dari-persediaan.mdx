@@ -1,0 +1,106 @@
+---
+title: Merekam Reklas Aset Dari Persediaan
+description: Merekam BMN yang sebelumnya tercatat sebagai barang persediaan sebagai lanjutan Reklasifikasi ke Aset di modul Persediaan.
+modul: aset-tetap
+menu_sakti: "Aset Tetap > RUH > Transaksi BMN > Perolehan > Reklas Asset Dari Persediaan"
+peran: [satker]
+jenis: juknis
+kata_kunci: [reklas aset dari persediaan, reklasifikasi ke aset, kesalahan kode barang, persediaan jadi bmn]
+status: review
+sumber:
+  - judul: "Reklasifikasi Aset Dari Persediaan"
+    url: "https://sites.google.com/view/saktipelaporan/aset-tetap/ruh/transaksi-bmn/perolehan-bmn/reklas-aset-dari-persediaan"
+    jenis: google-sites
+    diambil: 2026-11-21
+    id_manifest: C-aset-tetap-ruh-transaksi-bmn-perolehan-bmn-reklas-aset-dari-persediaan
+  - judul: "Juknis Lengkap MAT 2020 SAKTI Web_30122020"
+    url: "https://drive.google.com/file/d/1WYvNEpEKn7Jzddq1OhmX8kSY1ecEPOsW/view"
+    jenis: pdf
+    diambil: 2026-11-21
+    id_manifest: C-dok-040
+sidebar:
+  order: 16
+---
+
+import { Steps } from '@astrojs/starlight/components';
+import MenuSakti from '~/components/MenuSakti.astro';
+import SumberAsli from '~/components/SumberAsli.astro';
+
+Menu Reklas Aset dari Persediaan (kode transaksi 115) digunakan
+untuk mencatat BMN yang berasal dari perubahan penggolongan atau
+kodefikasi BMN, yaitu yang sebelumnya telah dicatat sebagai barang
+persediaan (kode 1xxxxxxxxx) lalu diubah menjadi kodefikasi BMN
+(kode selain 1xxxxxxxxx). Menu ini merupakan transaksi lanjutan
+dari Reklasifikasi ke Aset di Modul Persediaan.
+
+<MenuSakti />
+
+## Prasyarat
+
+- Dokumen sumber: Surat Keterangan Perbaikan Pencatatan Laporan
+  Barang Milik Negara yang ditandatangani KPB.
+- Transaksi Reklasifikasi ke Aset di Modul Persediaan telah
+  dilakukan persetujuan oleh approver.
+- Total nilai bruto aset yang direklasifikasi aset dari persediaan
+  harus sama dengan nilai bruto yang direklasifikasi ke aset di
+  Modul Persediaan.
+- Transaksi Reklas Aset dari Persediaan (MAT) dengan Reklasifikasi
+  ke Aset (Modul Persediaan) dilaksanakan dalam periode semester
+  yang sama.
+
+## Langkah
+
+<Steps>
+
+1. Login sebagai operator Aset Tetap, pilih menu **Aset Tetap >
+   RUH > Transaksi BMN > Perolehan > Reklas Asset Dari
+   Persediaan**, lalu klik **Rekam**.
+2. Pada daftar Reklas Masuk dari Persediaan, pilih dan centang
+   salah satu kode barang persediaan yang akan direklasifikasi
+   menjadi BMN, lalu klik **Lanjutkan**.
+3. Pilih tanggal perolehan, tanggal pembukuan, dan tanggal awal
+   pemakaian sesuai dengan dokumen sumber atau pada periode bulan
+   yang masih buka.
+4. Pilih kodefikasi BMN, jumlah NUP, dan harga satuan BMN yang
+   seharusnya, lalu klik **Simpan Detail**.
+5. Terakhir, klik **Simpan** yang ada di bawah.
+
+</Steps>
+
+## Ketentuan
+
+- Perlakuan transaksi pada Aplikasi SAKTI: **Modul Persediaan >
+  Transaksi Keluar > Reklasifikasi ke Aset** untuk mengeluarkan
+  barang persediaan yang salah rekam, kemudian **Modul MAT > RUH >
+  Transaksi BMN > Perolehan > Reklas Aset dari Persediaan** untuk
+  merekam nama dan kodefikasi BMN yang benar.
+
+## Jurnal transaksi
+
+- D. Aset Tetap
+- K. 391151 Koreksi Atas Reklasifikasi Persediaan/Aset Tetap/Aset
+  Lainnya
+- D. 391151 Koreksi Atas Reklasifikasi Persediaan/Aset Tetap/Aset
+  Lainnya
+- K. Akumulasi Penyusutan
+- D. Beban Penyusutan
+- K. Akumulasi Penyusutan
+
+## Ilustrasi transaksi
+
+Operator Modul Persediaan terlanjur melakukan kesalahan perekaman
+jenis barang dan telah disetujui sebagai perekaman Keset (golongan
+persediaan, kode 1xxxxxxxxx), padahal seharusnya memilih kodefikasi
+BMN sebagai Keset Kaki (kode 3050206061). Atas kesalahan itu,
+operator Modul Persediaan membuat transaksi reklasifikasi ke aset
+atas barang keset; setelah disetujui approver, operator MAT melanjutkan
+dengan perekaman reklasifikasi aset dari persediaan dengan memilih
+jenis BMN yang seharusnya, yaitu Keset Kaki.
+
+## Terkait
+
+- [Merekam Reklasifikasi ke Aset](/persediaan/transaksi-keluar/reklasifikasi-ke-aset/)
+
+## Sumber
+
+<SumberAsli />

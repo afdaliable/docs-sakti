@@ -1,0 +1,85 @@
+---
+title: Merekam Saldo Awal BMN
+description: Merekam BMN yang diperoleh sebelum tahun anggaran berjalan dan belum dibukukan pada Aplikasi SAKTI.
+modul: aset-tetap
+menu_sakti: "Aset Tetap > RUH > Transaksi BMN > Perolehan > Saldo Awal"
+peran: [satker]
+jenis: juknis
+kata_kunci: [saldo awal bmn, aset tahun lalu, pembukuan tahun anggaran, belum dibukukan]
+status: review
+sumber:
+  - judul: "SAKTI PELAPORAN - Saldo Awal"
+    url: "https://sites.google.com/view/saktipelaporan/aset-tetap/ruh/transaksi-bmn/perolehan-bmn/saldo-awal"
+    jenis: google-sites
+    diambil: 2026-11-21
+    id_manifest: C-aset-tetap-ruh-transaksi-bmn-perolehan-bmn-saldo-awal
+  - judul: "100_Saldo Awal-21"
+    url: "https://drive.google.com/file/d/1atMOMbBN85SeFzMvM0eQ1u9ZQrtxR80z/view"
+    jenis: lainnya
+    diambil: 2026-11-21
+    id_manifest: C-dok-041
+  - judul: "Juknis Lengkap MAT 2020 SAKTI Web_30122020"
+    url: "https://drive.google.com/file/d/1WYvNEpEKn7Jzddq1OhmX8kSY1ecEPOsW/view"
+    jenis: pdf
+    diambil: 2026-11-21
+    id_manifest: C-dok-040
+sidebar:
+  order: 1
+---
+
+import { Steps } from '@astrojs/starlight/components';
+import MenuSakti from '~/components/MenuSakti.astro';
+import SumberAsli from '~/components/SumberAsli.astro';
+
+Menu Saldo Awal (kode transaksi 100) digunakan untuk menginput BMN
+yang diperoleh sebelum tahun anggaran berjalan dan belum dibukukan
+pada Aplikasi SAKTI, baik diperoleh dengan pembelian, hibah,
+transfer masuk, reklas masuk, atau perolehan lainnya yang sah.
+Menurut juknis 2020, menu ini juga merupakan saldo BMN pada awal
+tahun anggaran berjalan atau awal tahun mulai diimplementasikannya
+SAKTI yang merupakan akumulasi dari seluruh transaksi BMN tahun
+sebelumnya.
+
+<MenuSakti />
+
+## Prasyarat
+
+- Dokumen sumber: kuitansi, BAST Kontraktual dan Non Kontraktual.
+  Menurut juknis 2020, dokumen yang dipergunakan UAKPB pada proses
+  pemasukan saldo awal dapat diperoleh dari Buku Barang, Hasil
+  Opname Fisik Barang, atau Laporan Tahunan UAKPB.
+- Modul terkait: GLP.
+
+## Langkah
+
+<Steps>
+
+1. Login sebagai operator Aset Tetap, pilih menu **Aset Tetap >
+   RUH > Transaksi BMN > Perolehan > Saldo Awal**, lalu klik
+   **Rekam**.
+2. Pilih kode barang dan isikan jumlah barang.
+3. Tanggal pembukuan diisi pada periode bulan yang masih buka.
+4. Tanggal perolehan diisi sesuai dengan tanggal dokumen sumber,
+   yaitu sebelum tahun anggaran berjalan.
+
+</Steps>
+
+## Jurnal transaksi
+
+- D. Aset Tetap
+- K. (391116/8) Koreksi Nilai Aset Tetap/Lainnya Non Revaluasi
+- D. (391116/8) Koreksi Nilai Aset Tetap/Lainnya Non Revaluasi
+- K. (137xxx) Akumulasi Penyusutan Aset Tetap/Aset Lainnya
+
+## Ilustrasi transaksi
+
+Berdasarkan temuan BPK atas audit Laporan Keuangan Tahun 2019,
+ditemukan aset berupa peralatan mesin senilai Rp100.000.000,- yang
+diperoleh tanggal 15 Desember 2019, tetapi belum direkam di
+Aplikasi SAKTI di tahun 2019. Atas rekomendasi tersebut, operator
+Modul Aset Tetap menginput pada Modul Aset Tetap dengan tanggal
+buku 2 Januari 2020 menggunakan menu Saldo Awal.
+
+## Sumber
+
+<SumberAsli />

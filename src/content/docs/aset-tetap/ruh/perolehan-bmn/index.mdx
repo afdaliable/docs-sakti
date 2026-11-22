@@ -1,0 +1,105 @@
+---
+title: Perolehan BMN
+description: Panduan menu Perolehan pada Transaksi BMN modul Aset Tetap.
+modul: aset-tetap
+jenis: indeks
+status: terbit
+sidebar:
+  label: Ringkasan
+  order: 1
+---
+
+import { CardGrid, LinkCard } from '@astrojs/starlight/components';
+
+Menu Perolehan mencakup perekaman BMN dari saldo awal, pembelian,
+transfer masuk, hibah, rampasan, penyelesaian pembangunan,
+pembatalan penghapusan, reklasifikasi, bangun serah guna/guna
+serah, pertukaran, dan perolehan lainnya.
+
+<CardGrid>
+	<LinkCard
+		title="Merekam Saldo Awal BMN"
+		description="Merekam BMN yang diperoleh sebelum tahun anggaran berjalan dan belum dibukukan."
+		href="/aset-tetap/ruh/perolehan-bmn/saldo-awal/"
+	/>
+	<LinkCard
+		title="Merekam Pembelian BMN"
+		description="Pendetilan pembelian BMN tanpa proses KDP dari BAST atau penerimaan barang."
+		href="/aset-tetap/ruh/perolehan-bmn/pembelian/"
+	/>
+	<LinkCard
+		title="Merekam Transfer Masuk Online BMN"
+		description="Merekam penerimaan BMN hasil transfer dari satker lain sesama pengguna SAKTI."
+		href="/aset-tetap/ruh/perolehan-bmn/transfer-masuk-online/"
+	/>
+	<LinkCard
+		title="Merekam Transfer Masuk Manual BMN"
+		description="Merekam penerimaan BMN hasil transfer dari satker yang belum menggunakan SAKTI."
+		href="/aset-tetap/ruh/perolehan-bmn/transfer-masuk-manual/"
+	/>
+	<LinkCard
+		title="Merekam Hibah Masuk BMN"
+		description="Merekam perolehan BMN dari hibah berdasarkan BAST Hibah modul Komitmen."
+		href="/aset-tetap/ruh/perolehan-bmn/hibah-masuk/"
+	/>
+	<LinkCard
+		title="Merekam Rampasan BMN"
+		description="Merekam perolehan BMN hasil rampasan berdasarkan putusan pengadilan."
+		href="/aset-tetap/ruh/perolehan-bmn/rampasan/"
+	/>
+	<LinkCard
+		title="Merekam Penyelesaian Pembangunan Langsung"
+		description="Perolehan BMN dari pembangunan/perakitan dengan pembayaran sekaligus tanpa KDP."
+		href="/aset-tetap/ruh/perolehan-bmn/penyelesaian-pembangunan-langsung/"
+	/>
+	<LinkCard
+		title="Merekam Penyelesaian Pembangunan dengan KDP"
+		description="Perolehan BMN definitif dari aset KDP yang selesai dibangun dengan pembayaran termin."
+		href="/aset-tetap/ruh/perolehan-bmn/penyelesaian-pembangunan-dengan-kdp/"
+	/>
+	<LinkCard
+		title="Merekam Pembatalan Penghapusan BMN"
+		description="Merekam pembatalan atas penghapusan BMN yang sudah dilakukan."
+		href="/aset-tetap/ruh/perolehan-bmn/pembatalan-penghapusan/"
+	/>
+	<LinkCard
+		title="Merekam Reklasifikasi Masuk BMN"
+		description="Merekam BMN dengan kodefikasi yang benar setelah Reklasifikasi Keluar."
+		href="/aset-tetap/ruh/perolehan-bmn/reklasifikasi-masuk/"
+	/>
+	<LinkCard
+		title="Merekam Bangun Serah Guna BMN"
+		description="Merekam perolehan BMN dengan mekanisme bangun serah guna (BSG)."
+		href="/aset-tetap/ruh/perolehan-bmn/bangun-serah-guna/"
+	/>
+	<LinkCard
+		title="Merekam Bangun Guna Serah BMN"
+		description="Merekam perolehan BMN dengan mekanisme bangun guna serah (BGS)."
+		href="/aset-tetap/ruh/perolehan-bmn/bangun-guna-serah/"
+	/>
+	<LinkCard
+		title="Merekam Pertukaran BMN"
+		description="Merekam pertukaran BMN dengan pihak lain maupun sesama instansi pemerintah."
+		href="/aset-tetap/ruh/perolehan-bmn/pertukaran/"
+	/>
+	<LinkCard
+		title="Merekam Perolehan Lainnya BMN"
+		description="Merekam BMN yang tidak berasal dari transaksi perolehan yang tersedia menunya."
+		href="/aset-tetap/ruh/perolehan-bmn/perolehan-lainnya/"
+	/>
+	<LinkCard
+		title="Merekam Reklasifikasi dari BPYBDS BMN"
+		description="Merekam perolehan aset dari reklasifikasi BPYBDS."
+		href="/aset-tetap/ruh/perolehan-bmn/reklasifikasi-dari-bpybds/"
+	/>
+	<LinkCard
+		title="Merekam Reklas Aset Dari Persediaan"
+		description="Merekam BMN dari reklasifikasi barang persediaan sebagai lanjutan Reklasifikasi ke Aset."
+		href="/aset-tetap/ruh/perolehan-bmn/reklas-aset-dari-persediaan/"
+	/>
+	<LinkCard
+		title="Membatalkan Transfer Keluar Online BMN"
+		description="Membatalkan Transfer Keluar yang telah disetujui sebelum satker tujuan merekam Transfer Masuk."
+		href="/aset-tetap/ruh/perolehan-bmn/batal-transfer-keluar-online/"
+	/>
+</CardGrid>

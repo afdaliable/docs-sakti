@@ -1,0 +1,119 @@
+---
+title: Merekam Hibah Masuk BMN
+description: Merekam perolehan BMN yang bersumber dari hibah yang diterima dari entitas di luar Pemerintah Pusat.
+modul: aset-tetap
+menu_sakti: "Aset Tetap > RUH > Transaksi BMN > Perolehan > Hibah Masuk"
+peran: [satker]
+jenis: juknis
+kata_kunci: [hibah masuk bmn, bast hibah, mphlbjs, supplier tipe 8]
+status: review
+sumber:
+  - judul: "Hibah Masuk"
+    url: "https://sites.google.com/view/saktipelaporan/aset-tetap/ruh/transaksi-bmn/perolehan-bmn/hibah-masuk"
+    jenis: google-sites
+    diambil: 2026-11-21
+    id_manifest: C-aset-tetap-ruh-transaksi-bmn-perolehan-bmn-hibah-masuk
+  - judul: "103_Hibah Masuk"
+    url: "https://drive.google.com/file/d/15jDWsbg70TqCqcmENYmkaSNZ3uq3VeuQ/view"
+    jenis: lainnya
+    diambil: 2026-11-21
+    id_manifest: C-dok-048
+  - judul: "Hibah Masuk"
+    url: "https://docs.google.com/presentation/d/1fegqOK7WJEjS1dzY9tJuk3HgPB6_2se8fFWozA3N7lU/"
+    jenis: google-slides
+    diambil: 2026-11-21
+    id_manifest: C-dok-049
+  - judul: "Juknis Lengkap MAT 2020 SAKTI Web_30122020"
+    url: "https://drive.google.com/file/d/1WYvNEpEKn7Jzddq1OhmX8kSY1ecEPOsW/view"
+    jenis: pdf
+    diambil: 2026-11-21
+    id_manifest: C-dok-040
+sidebar:
+  order: 5
+---
+
+import { Steps } from '@astrojs/starlight/components';
+import MenuSakti from '~/components/MenuSakti.astro';
+import SumberAsli from '~/components/SumberAsli.astro';
+
+Menu Hibah Masuk (kode transaksi 103) digunakan untuk mencatat
+perolehan aset yang bersumber dari hibah, yaitu yang diterima dari
+entitas di luar Pemerintah Pusat — misalnya dari Pemerintah Daerah,
+perusahaan, perorangan, BUMN/D, maupun swasta. Pencatatan transaksi
+ini didahului dengan transaksi BAST Hibah Masuk di modul Komitmen,
+pendetilan di Modul Aset Tetap, dan penerbitan MPHLBJS di modul
+Pembayaran untuk mendapatkan pengesahan dari KPPN; semua jurnal
+transaksi dibentuk secara otomatis oleh sistem tanpa jurnal manual.
+
+<MenuSakti />
+
+## Prasyarat
+
+- Dokumen sumber: kuitansi, BAST Kontraktual dan Non Kontraktual.
+- Pendetilan hibah masuk harus di-trigger dari Modul Komitmen,
+  yaitu menu Pencatatan BAST Hibah Barang/Jasa/Surat Berharga —
+  BAST Hibah harus direkam terlebih dahulu di Modul Komitmen.
+- Ketika merekam Pencatatan BAST Hibah Barang/Jasa/Surat Berharga
+  di Modul Komitmen, harus dipilih kodefikasi BMN yang sesuai
+  dengan jenis BMN yang diterima.
+- BAST Hibah direkam menggunakan supplier tipe 8 (Hibah); supplier
+  tipe 8 harus direkam terlebih dahulu sebelum merekam BAST Hibah
+  Barang.
+
+## Langkah
+
+<Steps>
+
+1. Login sebagai operator Aset Tetap, pilih menu **Aset Tetap >
+   RUH > Transaksi BMN > Perolehan > Hibah Masuk**, lalu klik
+   **Rekam**.
+2. Pada tampilan Daftar BAST Hibah, pilih nomor dokumen BAST
+   Hibah, lalu klik **Catat**.
+3. Pada tampilan Daftar Barang dalam Hibah Masuk/Hibah, pilih
+   kodefikasi BMN dan jumlah BMN yang diterima dari hibah, lalu
+   klik **Catat**.
+4. Pilih tanggal pembukuan sesuai dokumen sumber atau pada periode
+   bulan yang masih buka, lalu klik **Simpan**.
+
+</Steps>
+
+## Ketentuan
+
+- Hibah BMN yang dicatat pada Aplikasi SAKTI merupakan hibah BMN
+  yang nantinya akan ditindaklanjuti dengan proses register ke
+  DJPPR dan pengesahan ke KPPN mitra kerja.
+- Pemberian dari pihak lain yang tidak ditindaklanjuti dengan
+  proses register ke DJPPR agar tidak dicatat sebagai hibah masuk.
+- Pencatatan aset sebagai BMN dilakukan berdasarkan BAST, tanpa
+  menunggu adanya register ke DJPPR dan pengesahan ke KPPN
+  (MPHL-BJS).
+
+## Jurnal transaksi
+
+**Jurnal Transaksi Hibah Masuk (Intrakomptabel) TAB:**
+
+- D. Aset Tetap/Lainnya (Tanah, Peralatan dan Mesin, Gedung dan
+  Bangunan, JIJ, Aset Tetap Lainnya, KDP, ATB)
+- K. Aset Tetap/Lainnya Yang Belum Diregister
+
+Menurut gambar tabel overview juknis di halaman sumber:
+
+- D. Aset Tetap
+- K. Koreksi Aset Tetap Non-Revaluasi
+- D. Koreksi Aset Tetap Non-Revaluasi
+- K. Akumulasi Penyusutan Aset Tetap
+
+**Jurnal Transaksi Hibah Masuk (Ekstrakomptabel) TAB:**
+
+- Tidak ada jurnal (jurnal transaksi terbentuk saat perekaman BAST
+  Hibah, Beban Ekstrakomptabel sesuai pemilihan kode barang).
+
+## Ilustrasi transaksi
+
+Satker KPPN Pekalongan menerima hibah BMN dari Pemerintah Kota
+Pekalongan berupa 10 unit Jeep senilai masing-masing
+Rp500.000.000,-.
+
+## Sumber
+
+<SumberAsli />

@@ -1,0 +1,132 @@
+---
+title: Merekam Penyelesaian Pembangunan Langsung
+description: Merekam perolehan BMN dari pembangunan gedung/bangunan atau perakitan BMN baru dengan pembayaran sekaligus tanpa proses KDP.
+modul: aset-tetap
+menu_sakti: "Aset Tetap > RUH > Transaksi BMN > Perolehan > Penyelesaian Pembangunan Langsung"
+peran: [satker]
+jenis: juknis
+kata_kunci: [penyelesaian pembangunan langsung, pembangunan gedung, pembayaran sekaligus, bmn baru]
+status: review
+sumber:
+  - judul: "Penyelesaian Pembangunan Langsung"
+    url: "https://sites.google.com/view/saktipelaporan/aset-tetap/ruh/transaksi-bmn/perolehan-bmn/penyelesaian-pembangunan-langsung"
+    jenis: google-sites
+    diambil: 2026-11-21
+    id_manifest: C-aset-tetap-ruh-transaksi-bmn-perolehan-bmn-penyelesaian-pembangunan-langsung
+  - judul: "113_Penyelesaian Pembangunan Langsung-12"
+    url: "https://drive.google.com/file/d/1i-XyedKUKD3CGOZbXZVNwAVBOqQ8LM28/view"
+    jenis: lainnya
+    diambil: 2026-11-21
+    id_manifest: C-dok-050
+  - judul: "Juknis Lengkap MAT 2020 SAKTI Web_30122020"
+    url: "https://drive.google.com/file/d/1WYvNEpEKn7Jzddq1OhmX8kSY1ecEPOsW/view"
+    jenis: pdf
+    diambil: 2026-11-21
+    id_manifest: C-dok-040
+sidebar:
+  order: 7
+---
+
+import { Steps } from '@astrojs/starlight/components';
+import MenuSakti from '~/components/MenuSakti.astro';
+import SumberAsli from '~/components/SumberAsli.astro';
+
+Menu Penyelesaian Pembangunan Langsung (kode transaksi 113)
+digunakan untuk merekam perolehan BMN melalui proses pembangunan
+gedung/bangunan atau perakitan BMN baru, dengan mekanisme
+pembayaran sekaligus (bukan pembayaran bertahap/termin) dan tanpa
+melalui proses KDP. Menurut juknis 2020, pembayaran sekaligus ini
+mencakup pembayaran Langsung (LS) maupun dari sumber dana
+UP/GUP/TUP dalam satu dokumen pembayaran (misal SP2D). Pencatatan
+pada menu ini tidak perlu menunggu SP2D terbit.
+
+<MenuSakti />
+
+## Prasyarat
+
+- Dokumen sumber: Nota Pembelian, Kuitansi, BAST Kontraktual dan
+  Non Kontraktual.
+- Dasar pencatatan adalah transaksi Modul Komitmen yang dapat
+  terdiri dari: Pencatatan Berita Acara Serah Terima (BAST) baik
+  kontraktual maupun non kontraktual; Pencatatan BAST dari hibah
+  barang; Pencatatan penerimaan barang KKP; Pencatatan penerimaan
+  barang valas; Pencatatan penerimaan barang UP/TUP Tunai/Bank; dan
+  Pencatatan penerimaan barang hibah.
+- Pada saat pencatatan BAST/Penerimaan Barang di Modul Komitmen
+  harus dipilih kode aset (selain kode 1xxxxxxxxx dan 7xxxxxxxxx).
+- Pendetailan aset dilakukan tidak menunggu terbitnya SPP/SPM/SP2D.
+
+## Langkah
+
+<Steps>
+
+1. Login sebagai operator Aset Tetap, pilih menu **Aset Tetap >
+   RUH > Transaksi BMN > Perolehan > Penyelesaian Pembangunan
+   Langsung**, lalu klik **Rekam**.
+2. Pada tampilan Daftar Komitmen, pilih jenis dokumen: **Kontrak**
+   atau **Non Kontrak/Penerimaan Barang**, dan pilih nomor dokumen
+   yang akan didetailkan, lalu klik **Catat**.
+3. Pada tampilan Daftar Barang dalam Komitmen/Bendahara, pilih BMN
+   yang akan didetailkan, lalu klik **Catat**.
+4. Isikan tanggal pembukuan sesuai dokumen sumber atau pada periode
+   bulan yang masih buka, lalu klik **Simpan**.
+
+</Steps>
+
+## Ketentuan
+
+- Menu ini hanya bisa digunakan sepanjang nilai transaksi memenuhi
+  syarat kapitalisasi BMN; jika tidak memenuhi, dianjurkan memilih
+  Jasa atau menggunakan akun Non 53xxxx (521111 atau Belanja
+  Pemeliharaan).
+- Menu ini digunakan untuk perolehan BMN dari kegiatan membangun
+  gedung dan bangunan atau proses merakit menjadi suatu BMN yang
+  sudah jadi; untuk perolehan BMN yang sudah jadi (tanpa proses
+  membangun atau merakit) digunakan menu Pembelian.
+- Tanggal pembukuan di periode yang sama dengan tanggal dokumen
+  sumber untuk menghindari saldo akun Aset Tetap/Lainnya Yang Belum
+  Diregister.
+- Memastikan kode sub-sub kelompok barang yang dipilih di Modul
+  Bendahara dan Komitmen saat membuat Kuitansi/BAST adalah
+  2xxxxxxxxx, 3xxxxxxxxx, 4xxxxxxxxx, 5xxxxxxxxx, 6xxxxxxxxx, dan
+  8xxxxxxxxx.
+- Jika terdapat kesalahan pemilihan kode barang di Modul Bendahara
+  dan Modul Komitmen, segera memberitahukan untuk dilakukan ubah
+  kode barang jika berasal dari BAST; jika berasal dari kuitansi,
+  sepanjang belum dilakukan validasi SPP oleh PPK masih dapat
+  dilakukan ubah kode barang pada kuitansi dengan sebelumnya
+  menghapus DRPP.
+
+## Jurnal transaksi
+
+**Jurnal Transaksi Penyelesaian Pembangunan Langsung (Pasti
+Intrakomptabel):**
+
+- D. Aset Tetap/Lainnya (Tanah, Peralatan dan Mesin, Gedung dan
+  Bangunan, JIJ, Aset Tetap Lainnya, ATB)
+- K. Aset Tetap/Lainnya Yang Belum Diregister
+
+## Ilustrasi transaksi
+
+Satker membangun sebuah bangunan pos satpam semi permanen senilai
+Rp25.000.000,-. Bangunan tersebut telah diserahterimakan dengan
+BAST tanggal 17 Agustus 2019. Pembayaran dilakukan sekaligus 100%
+kepada PT ABC melalui SPM yang terbit SP2D-nya tanggal 17 Agustus
+2019. Maka, operator Modul Komitmen merekam BAST dan memilih kode
+aset 4xxxxxxxxx, dan operator Modul Aset Tetap melakukan
+pendetailan melalui menu Penyelesaian Pembangunan Langsung.
+
+Menurut juknis 2020, Satker KPPN Pekalongan membangun pos satpam
+1 unit menggunakan metode pembayaran sekaligus 100% secara LS Non
+Kontraktual senilai Rp30.000.000,-; operator Modul Komitmen merekam
+BAST Non Kontraktual dengan memilih BMN Gedung Pos Jaga Permanen,
+lalu operator MAT melakukan pendetailan pada menu Penyelesaian
+Pembangunan Langsung.
+
+## Terkait
+
+- [Merekam Penyelesaian Pembangunan dengan KDP](/aset-tetap/ruh/perolehan-bmn/penyelesaian-pembangunan-dengan-kdp/)
+
+## Sumber
+
+<SumberAsli />

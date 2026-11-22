@@ -1,0 +1,172 @@
+---
+title: Merekam Reklasifikasi Masuk BMN
+description: Merekam BMN dengan kodefikasi yang benar sebagai lanjutan transaksi Reklasifikasi Keluar.
+modul: aset-tetap
+menu_sakti: "Aset Tetap > RUH > Transaksi BMN > Perolehan > Reklasifikasi Masuk"
+peran: [satker]
+jenis: juknis
+kata_kunci: [reklasifikasi masuk, salah kode barang, koreksi kodefikasi bmn, reklas keluar]
+status: review
+sumber:
+  - judul: "SAKTI PELAPORAN - Reklasifikasi Masuk"
+    url: "https://sites.google.com/view/saktipelaporan/aset-tetap/ruh/transaksi-bmn/perolehan-bmn/reklasifikasi-masuk"
+    jenis: google-sites
+    diambil: 2026-11-21
+    id_manifest: C-aset-tetap-ruh-transaksi-bmn-perolehan-bmn-reklasifikasi-masuk
+  - judul: "003_MAT_Reklas Keluar_Masuk_dispenser"
+    url: "https://drive.google.com/file/d/11iGPNIOgqVfVeVh5jLjdFVLfmfwwtDcH/view"
+    jenis: lainnya
+    diambil: 2026-11-21
+    id_manifest: C-dok-053
+  - judul: "Juknis SAKTI 2021 Reklasifikasi Masuk"
+    url: "https://docs.google.com/presentation/d/16k_6m-cZN0-UKv6isx_lr_0QMEa_B7q0dFeei_aMhq4/"
+    jenis: google-slides
+    diambil: 2026-11-21
+    id_manifest: C-dok-054
+  - judul: "Juknis Lengkap MAT 2020 SAKTI Web_30122020"
+    url: "https://drive.google.com/file/d/1WYvNEpEKn7Jzddq1OhmX8kSY1ecEPOsW/view"
+    jenis: pdf
+    diambil: 2026-11-21
+    id_manifest: C-dok-040
+sidebar:
+  order: 10
+---
+
+import { Steps } from '@astrojs/starlight/components';
+import MenuSakti from '~/components/MenuSakti.astro';
+import SumberAsli from '~/components/SumberAsli.astro';
+
+Menu Reklasifikasi Masuk (kode transaksi 107) digunakan untuk
+mencatat reklasifikasi Aset Tetap/Lainnya karena kesalahan
+pemilihan kodifikasi Aset Tetap/Lainnya pada masa lampau —
+perubahan penggolongan dan kodefikasi BMN yang sebelumnya telah
+dicatat dengan penggolongan dan kodefikasi BMN yang lain (Kode
+Barang terdiri dari golongan, bidang, kelompok, sub kelompok, dan
+sub-sub kelompok). Menurut juknis 2020, menu ini juga digunakan
+untuk mencatat perubahan transaksi BMN yang sebelumnya dicatat
+sebagai aset intrakomtabel menjadi aset ekstrakomtabel atau
+sebaliknya. Menu ini merupakan transaksi lanjutan dari
+Reklasifikasi Keluar.
+
+<MenuSakti />
+
+## Prasyarat
+
+- Dokumen sumber: Surat Keterangan Perbaikan Pencatatan Laporan
+  Barang Milik Negara yang ditandatangani KPB.
+- Transaksi Reklasifikasi Keluar atas BMN yang salah telah
+  dilakukan persetujuan oleh approver.
+- Total nilai bruto aset yang direklasifikasi masuk dengan yang
+  direklasifikasi keluar harus sama.
+- Transaksi Reklasifikasi Keluar dengan Reklasifikasi Masuk harus
+  dilaksanakan dalam periode bulan yang sama (menurut juknis 2020:
+  periode semester yang sama).
+
+## Langkah
+
+<Steps>
+
+1. Login sebagai operator Aset Tetap, pilih menu **Aset Tetap >
+   RUH > Transaksi BMN > Perolehan > Reklasifikasi Masuk**, lalu
+   klik **Rekam**.
+2. Pilih kode barang asal, yaitu BMN yang salah kodefikasi dan telah
+   disetujui transaksi Reklasifikasi Keluar-nya.
+3. Pilih kode barang tujuan, yaitu kodefikasi BMN yang seharusnya.
+4. Pilih tanggal pembukuan sesuai dengan dokumen sumber atau pada
+   periode bulan yang masih buka.
+5. Isikan Rincian Aset Lainnya meliputi asal perolehan, nomor bukti
+   perolehan, merk/type, dan keterangan.
+6. Klik **Simpan**.
+
+</Steps>
+
+## Ketentuan
+
+- Perlakuan transaksi pada Aplikasi SAKTI: menu **RUH > Transaksi
+  BMN > Penghapusan > Reklasifikasi Keluar** untuk mengeluarkan BMN
+  yang salah rekam, kemudian menu **RUH > Transaksi BMN >
+  Perolehan > Reklasifikasi Masuk** untuk merekam nama dan
+  kodefikasi BMN yang benar.
+- Dapat digunakan setelah transaksi Reklasifikasi Keluar dilakukan
+  persetujuan.
+
+## Jurnal transaksi
+
+**Jurnal Transaksi Reklasifikasi Masuk (Antar BMN
+Intrakomptabel):**
+
+- D. Aset Tetap/Lainnya (Tanah, Peralatan dan Mesin, Gedung dan
+  Bangunan, JIJ, Aset Tetap Lainnya, ATB)
+- K. (391151) Koreksi Atas Reklasifikasi Persediaan/Aset Tetap/Aset
+  Lainnya
+
+Menurut gambar tabel overview juknis di halaman sumber:
+
+- D. Aset Tetap
+- K. 391151 Koreksi Atas Reklasifikasi Persediaan/Aset Tetap/Aset
+  Lainnya
+- D. 391151 Koreksi Atas Reklasifikasi Persediaan/Aset Tetap/Aset
+  Lainnya
+- K. Akumulasi Penyusutan
+- D. Beban Penyusutan
+- K. Akumulasi Penyusutan
+
+**Jurnal Transaksi Reklasifikasi Masuk (Antar BMN
+Ekstrakomptabel):**
+
+- Tidak ada jurnal
+
+**Jurnal Transaksi Reklasifikasi Masuk (Intrakomptabel menjadi
+Ekstrakomptabel perolehan BMN TAB):**
+
+- Tidak ada jurnal
+
+Tindakan lanjutan jika memungkinkan koreksi SPM — koreksi SPM dari
+akun 53 menjadi 52, jurnal manual akrual GLP:
+
+- D. Akun belanja seharusnya 52
+- K. (391151) Koreksi Atas Reklasifikasi Persediaan/Aset Tetap/Aset
+  Lainnya
+
+**Jurnal Transaksi Reklasifikasi Masuk (Ekstrakomptabel menjadi
+Intrakomptabel perolehan BMN TAB):**
+
+- D. Aset Tetap/Lainnya (Tanah, Peralatan dan Mesin, Gedung dan
+  Bangunan, JIJ, Aset Tetap Lainnya, ATB)
+- K. (391151) Koreksi Atas Reklasifikasi Persediaan/Aset Tetap/Aset
+  Lainnya
+
+Tindakan lanjutan — jurnal manual akrual GLP:
+
+- D. (391151) Koreksi Atas Reklasifikasi Persediaan/Aset Tetap/Aset
+  Lainnya
+- K. Beban ekstra sesuai akun belanja/akun belanjanya
+
+**Jurnal Transaksi Reklasifikasi Masuk (Ekstrakomptabel menjadi
+Intrakomptabel BMN perolehan TAYL):**
+
+- D. Aset Tetap/Lainnya (Tanah, Peralatan dan Mesin, Gedung dan
+  Bangunan, JIJ, Aset Tetap Lainnya, ATB)
+- K. (391151) Koreksi Atas Reklasifikasi Persediaan/Aset Tetap/Aset
+  Lainnya
+- Tidak perlu membuat jurnal manual
+
+**Jurnal Transaksi Reklasifikasi Masuk (Intrakomptabel menjadi
+Ekstrakomptabel BMN perolehan TAYL):**
+
+- Tidak ada jurnal
+- Tidak perlu membuat jurnal manual
+
+## Ilustrasi transaksi
+
+Operator Modul Aset Tetap (MAT) terlanjur melakukan kesalahan
+perekaman kodefikasi BMN dan telah disetujui pendetailan BMN
+sebagai Sepeda Motor, padahal seharusnya dipilih kodefikasi BMN
+sebagai Scooter. Atas kesalahan itu, operator MAT membuat transaksi
+reklasifikasi keluar atas BMN Sepeda Motor; setelah disetujui
+approver, dilanjutkan dengan perekaman reklasifikasi masuk dengan
+memilih jenis BMN yang seharusnya, yaitu Scooter.
+
+## Sumber
+
+<SumberAsli />
