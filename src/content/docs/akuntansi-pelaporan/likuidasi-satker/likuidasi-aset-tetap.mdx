@@ -21,7 +21,7 @@ sumber:
     id_manifest: C-dok-181
 ---
 
-import { Aside, Steps, LinkCard } from '@astrojs/starlight/components';
+import { Aside, Steps } from '@astrojs/starlight/components';
 import MenuSakti from '~/components/MenuSakti.astro';
 import SumberAsli from '~/components/SumberAsli.astro';
 
@@ -107,15 +107,16 @@ Likuidasi >> Likuidasi Masuk.
 </Steps>
 
 <Aside type="caution" title="Perlu verifikasi">
-Tidak ada padanan persis di menu.json untuk "Likuidasi Aset
-Tetap" — `menu_sakti` memakai simpul induk Likuidasi Satker;
-prosedur ini berjalan di Modul Aset Tetap, bukan di GLP.
+Daftar menu SAKTI tidak memuat menu **Likuidasi Aset
+Tetap**; jalur menu pada artikel ini memakai simpul induk
+**Likuidasi Satker** — prosedur ini berjalan di Modul Aset
+Tetap, bukan di GLP.
 </Aside>
 
 ## Terkait
 
-<LinkCard title="Likuidasi Satker" href="/akuntansi-pelaporan/likuidasi-satker/" description="Ikhtisar menu likuidasi." />
-<LinkCard title="Likuidasi GLP" href="/akuntansi-pelaporan/likuidasi-satker/likuidasi-glp/" description="Likuidasi neraca di modul GLP." />
+- [Likuidasi Satker](/akuntansi-pelaporan/likuidasi-satker/)
+- [Melakukan Likuidasi GLP](/akuntansi-pelaporan/likuidasi-satker/likuidasi-glp/)
 
 ## Sumber
 

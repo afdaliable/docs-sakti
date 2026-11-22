@@ -36,7 +36,7 @@ sumber:
     id_manifest: B-pem-041
 ---
 
-import { Aside, Steps, LinkCard } from '@astrojs/starlight/components';
+import { Aside, Steps } from '@astrojs/starlight/components';
 import MenuSakti from '~/components/MenuSakti.astro';
 import SumberAsli from '~/components/SumberAsli.astro';
 
@@ -81,15 +81,16 @@ Output: LO, LPE, NERACA, LRA.
   keuangan.
 
 <Aside type="caution" title="Perlu verifikasi">
-Menu.json tidak memuat label daun "Posting Jurnal" di bawah
-Proses — jalur "GL dan Pelaporan >Proses>Posting Jurnal"
-pada langkah adalah jalur menurut juknis.
+Daftar menu SAKTI tidak memuat menu **Posting Jurnal** di
+bawah **Proses** — jalur "GL dan Pelaporan
+>Proses>Posting Jurnal" pada langkah adalah jalur menurut
+juknis.
 </Aside>
 
 ## Terkait
 
-<LinkCard title="Validasi Jurnal" href="/akuntansi-pelaporan/proses/validasi-jurnal/" description="Validasi sebelum posting." />
-<LinkCard title="Monitoring Jurnal" href="/akuntansi-pelaporan/proses/monitoring-jurnal/" description="Jurnal terposting tetap terlihat di sini." />
+- [Memvalidasi Jurnal](/akuntansi-pelaporan/proses/validasi-jurnal/)
+- [Memantau Jurnal](/akuntansi-pelaporan/proses/monitoring-jurnal/)
 
 ## Sumber
 

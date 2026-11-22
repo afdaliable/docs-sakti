@@ -21,7 +21,7 @@ sumber:
     id_manifest: C-dok-183
 ---
 
-import { Aside, Steps, LinkCard } from '@astrojs/starlight/components';
+import { Aside, Steps } from '@astrojs/starlight/components';
 import MenuSakti from '~/components/MenuSakti.astro';
 import SumberAsli from '~/components/SumberAsli.astro';
 
@@ -84,15 +84,15 @@ asal dan periode GLP Satker Likuidasi Masuk terbuka.
 </Steps>
 
 <Aside type="caution" title="Perlu verifikasi">
-Menu.json hanya memuat "Likuidasi Keluar" dan "Likuidasi
-Masuk" di bawah Likuidasi Satker — `menu_sakti` memakai
-simpul induk.
+Daftar menu SAKTI hanya memuat **Likuidasi Keluar** dan
+**Likuidasi Masuk** di bawah **Likuidasi Satker**; jalur menu
+pada artikel ini memakai simpul induk.
 </Aside>
 
 ## Terkait
 
-<LinkCard title="Likuidasi Satker" href="/akuntansi-pelaporan/likuidasi-satker/" description="Ikhtisar menu likuidasi." />
-<LinkCard title="Likuidasi Piutang" href="/akuntansi-pelaporan/likuidasi-satker/likuidasi-piutang/" description="Likuidasi piutang di modulnya." />
+- [Likuidasi Satker](/akuntansi-pelaporan/likuidasi-satker/)
+- [Melakukan Likuidasi Piutang (GLP)](/akuntansi-pelaporan/likuidasi-satker/likuidasi-piutang/)
 
 ## Sumber
 
