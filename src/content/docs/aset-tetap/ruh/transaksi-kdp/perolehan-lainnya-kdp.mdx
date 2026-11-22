@@ -1,0 +1,85 @@
+---
+title: Merekam Perolehan Lainnya KDP
+description: Merekam perolehan KDP tahun anggaran berjalan selain dari Perolehan, Transfer Masuk, dan Hibah Masuk KDP.
+modul: aset-tetap
+menu_sakti: "Aset Tetap > RUH > Transaksi KDP > Perolehan Lainnya KDP"
+peran: [satker]
+jenis: juknis
+kata_kunci: [perolehan lainnya kdp, kdp lainnya, kode transaksi 510]
+status: review
+sumber:
+  - judul: "SAKTI PELAPORAN - Perolehan Lainnya KDP"
+    url: "https://sites.google.com/view/saktipelaporan/aset-tetap/ruh/transaksi-kdp/perolehan-lainnya-kdp"
+    jenis: google-sites
+    diambil: 2026-11-21
+    id_manifest: C-aset-tetap-ruh-transaksi-kdp-perolehan-lainnya-kdp
+  - judul: "Juknis SAKTI 2021 Perolehan Lainnya KDP"
+    url: "https://docs.google.com/presentation/d/1DIa4DoiGV749Q7SKj0if6dpWsVo70FJA_64owDlItYw/"
+    jenis: google-slides
+    diambil: 2026-11-21
+    id_manifest: C-dok-119
+sidebar:
+  order: 14
+---
+
+import { Steps } from '@astrojs/starlight/components';
+import MenuSakti from '~/components/MenuSakti.astro';
+import SumberAsli from '~/components/SumberAsli.astro';
+
+Menu Perolehan Lainnya KDP (kode transaksi 510) digunakan untuk
+merekam transaksi perolehan KDP pada tahun anggaran berjalan,
+yang berasal selain dari transaksi Perolehan KDP, Transfer Masuk
+KDP dan Hibah Masuk KDP.
+
+<MenuSakti />
+
+## Prasyarat
+
+- Dokumen sumber: SK Penghapusan KDP.
+
+## Langkah
+
+<Steps>
+
+1. Pilih menu **Aset Tetap > RUH > Transaksi KDP > Perolehan
+   Lainnya KDP**, lalu klik **Rekam**.
+2. Pilih KDP dan jumlah KDP.
+3. Isikan tanggal pembukuan, cara pembangunan, dan persentase
+   penyelesaian.
+4. Isikan lokasi KDP sesuai dengan lokasi pelaksanaan KDP.
+5. Isikan nilai KDP.
+6. Klik tombol **Simpan**.
+
+</Steps>
+
+## Jurnal transaksi
+
+- D. Konstruksi Dalam Pengerjaan
+- K. Pendapatan Perolehan Aset Lainnya
+
+## Ilustrasi transaksi
+
+Contoh pemakaian menu Perolehan Lainnya untuk kebutuhan koreksi
+administrasi: operator Modul Komitmen melakukan kesalahan rekam
+kodefikasi BMN pada menu Pencatatan Penerimaan Barang dan sudah
+terbit SP2D sehingga tidak dapat diubah atau dihapus. Kesalahan
+perekaman yaitu pembayaran termin pertama direkam dengan kode
+Gedung Kantor Pemerintah (kode 4xxxxxxxxx), padahal harusnya
+Gedung dan Bangunan Dalam Pengerjaan (kode 7xxxxxxxxx), dan
+transaksi sudah disetujui approver. Maka dilakukan koreksi:
+
+1. Melakukan transaksi Koreksi Pencatatan atas BMN Gedung Kantor
+   Pemerintah untuk menghapus BMN yang salah rekam dari
+   pelaporan BMN.
+2. Mencatat KDP yang seharusnya melalui menu Perolehan Lainnya
+   KDP (karena berasal dari pembayaran pertama termin).
+3. Operator Modul GLP membuat jurnal manual: (D) Pendapatan
+   Perolehan Aset Lainnya; (K) Koreksi Aset Tetap Non Revaluasi.
+
+## Terkait
+
+- [Merekam Perolehan KDP](/aset-tetap/ruh/transaksi-kdp/perolehan-kdp/)
+
+## Sumber
+
+<SumberAsli />

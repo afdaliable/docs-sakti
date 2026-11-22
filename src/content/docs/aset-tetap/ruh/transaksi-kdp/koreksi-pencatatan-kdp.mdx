@@ -1,0 +1,72 @@
+---
+title: Merekam Koreksi Pencatatan KDP
+description: Merekam penghapusan KDP yang disebabkan oleh kesalahan pencatatan kuantitas KDP.
+modul: aset-tetap
+peran: [satker]
+jenis: juknis
+kata_kunci: [koreksi pencatatan kdp, hapus kdp salah rekam, kode transaksi 517]
+status: review
+perlu_review: true
+sumber:
+  - judul: "SAKTI PELAPORAN - Koreksi Pencatatan KDP"
+    url: "https://sites.google.com/view/saktipelaporan/aset-tetap/ruh/transaksi-kdp/koreksi-pencatatan-kdp"
+    jenis: google-sites
+    diambil: 2026-11-21
+    id_manifest: C-aset-tetap-ruh-transaksi-kdp-koreksi-pencatatan-kdp
+sidebar:
+  order: 18
+---
+
+import { Steps, Aside } from '@astrojs/starlight/components';
+import SumberAsli from '~/components/SumberAsli.astro';
+
+Menu Koreksi Pencatatan KDP (kode transaksi 517) digunakan untuk
+merekam penghapusan KDP yang disebabkan oleh kesalahan
+pencatatan kuantitas KDP pada perekaman sebelumnya. Contohnya
+kesalahan perekaman jumlah KDP yaitu seharusnya hanya 3 unit,
+tetapi dicatat sebanyak 4 unit, sehingga NUP KDP yang terakhir
+harus dilakukan koreksi pencatatan. Nilai KDP akan berkurang
+sebesar nilai buku aset bersangkutan.
+
+## Prasyarat
+
+- Dokumen sumber: Surat Keterangan Perbaikan Pencatatan Laporan
+  Barang Milik Negara yang ditandatangani KPB.
+
+## Langkah
+
+<Steps>
+
+1. Pilih menu **Aset Tetap > RUH > Transaksi KDP > Koreksi
+   Pencatatan KDP**, lalu klik **Rekam**.
+2. Pilih KDP dan NUP KDP yang salah dan akan dilakukan koreksi
+   pencatatan.
+3. Tanggal buku diisi sesuai dengan dokumen sumber atau pada
+   periode bulan yang masih buka.
+
+</Steps>
+
+## Jurnal transaksi
+
+- D. Koreksi Aset Tetap Non-Revaluasi
+- K. Konstruksi Dalam Pengerjaan
+
+## Ilustrasi transaksi
+
+Operator Modul Aset Tetap melakukan kesalahan perekaman yaitu
+seharusnya mencatat Gedung dan Bangunan Dalam Pengerjaan
+sebanyak 4 NUP yaitu NUP 7-10, tetapi dicatat sebanyak 5 unit
+NUP 7-11, sehingga NUP 11 harus dilakukan koreksi pencatatan
+karena secara substansi NUP 11 memang seharusnya dan sebenarnya
+tidak ada.
+
+<Aside type="caution" title="Perlu verifikasi">
+Seluruh isi artikel ini merupakan transkripsi gambar tabel
+juknis yang disematkan di halaman sumber; teks halaman sumber
+hanya memuat judul. Menu **Koreksi Pencatatan KDP** juga tidak
+tercantum pada daftar menu aplikasi yang menjadi acuan KB.
+</Aside>
+
+## Sumber
+
+<SumberAsli />

@@ -1,0 +1,77 @@
+---
+title: Merekam Hibah Masuk KDP
+description: Merekam transaksi penerimaan KDP dari entitas di luar lingkup Pemerintah Pusat.
+modul: aset-tetap
+menu_sakti: "Aset Tetap > RUH > Transaksi KDP > Hibah Masuk"
+peran: [satker]
+jenis: juknis
+kata_kunci: [hibah masuk kdp, hibah kdp, kode transaksi 508]
+status: review
+sumber:
+  - judul: "SAKTI PELAPORAN - Hibah Masuk KDP"
+    url: "https://sites.google.com/view/saktipelaporan/aset-tetap/ruh/transaksi-kdp/hibah-masuk-kdp"
+    jenis: google-sites
+    diambil: 2026-11-21
+    id_manifest: C-aset-tetap-ruh-transaksi-kdp-hibah-masuk-kdp
+  - judul: "Hibah Masuk KDP"
+    url: "https://docs.google.com/presentation/d/1BRhTIcyq0GkagrBKmDxF8EDM3QWyHUEVMdvVZUoR_b8/"
+    jenis: google-slides
+    diambil: 2026-11-21
+    id_manifest: C-dok-105
+sidebar:
+  order: 7
+---
+
+import { Steps } from '@astrojs/starlight/components';
+import MenuSakti from '~/components/MenuSakti.astro';
+import SumberAsli from '~/components/SumberAsli.astro';
+
+Menu Hibah Masuk KDP (kode transaksi 508) digunakan untuk
+merekam transaksi penerimaan KDP dari entitas di luar lingkup
+Pemerintah Pusat, misalnya dari Pemerintah Daerah, perorangan,
+perusahaan, BUMN, dan lain-lain.
+
+<MenuSakti />
+
+## Prasyarat
+
+- Dokumen sumber: BAST Hibah KDP.
+- Harus sudah dilakukan perekaman Pencatatan BAST Hibah
+  Barang/Jasa/Surat Berharga di Modul Komitmen dengan memilih
+  kode barang KDP yaitu kode 7xxxxxxxxx.
+- BAST Hibah direkam dengan menggunakan supplier tipe 8 (Hibah),
+  sehingga supplier tipe 8 harus sudah direkam terlebih dahulu.
+
+## Langkah
+
+<Steps>
+
+1. Pilih menu **Aset Tetap > RUH > Transaksi KDP > Hibah
+   Masuk**, lalu klik **Rekam**.
+2. Pada pop up Daftar BAST Hibah, pilih nomor dokumen dan klik
+   **Catat**.
+3. Pada pop up Daftar Barang dalam Hibah Masuk/Hibah, pilih
+   jenis KDP dan klik **Catat**.
+4. Isikan lokasi KDP.
+5. Tanggal buku diisi sesuai dengan dokumen sumber atau pada
+   periode bulan yang masih buka.
+
+</Steps>
+
+## Jurnal transaksi
+
+- D. Konstruksi Dalam Pengerjaan
+- K. Aset Tetap Belum Diregister
+
+## Ilustrasi transaksi
+
+Satker KPPN Pekalongan menerima KDP Gedung dan Bangunan Dalam
+Pengerjaan dari Pemerintah Kabupaten Pekalongan.
+
+## Terkait
+
+- [Merekam Hibah Masuk BMN](/aset-tetap/ruh/perolehan-bmn/hibah-masuk/)
+
+## Sumber
+
+<SumberAsli />

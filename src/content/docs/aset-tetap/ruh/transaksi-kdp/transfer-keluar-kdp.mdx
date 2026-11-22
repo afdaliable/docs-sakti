@@ -1,0 +1,82 @@
+---
+title: Merekam Transfer Keluar KDP
+description: Menginput KDP yang diserahkan kepada satker lain atau kementerian lain dalam lingkup Pemerintah Pusat.
+modul: aset-tetap
+menu_sakti: "Aset Tetap > RUH > Transaksi KDP > Transfer Keluar"
+peran: [satker]
+jenis: juknis
+kata_kunci: [transfer keluar kdp, serahkan kdp, kode transaksi 507]
+status: review
+sumber:
+  - judul: "SAKTI PELAPORAN - Transfer Keluar KDP"
+    url: "https://sites.google.com/view/saktipelaporan/aset-tetap/ruh/transaksi-kdp/transfer-keluar-kdp"
+    jenis: google-sites
+    diambil: 2026-11-21
+    id_manifest: C-aset-tetap-ruh-transaksi-kdp-transfer-keluar-kdp
+  - judul: "Juknis SAKTI 2021 Transfer Keluar KDP"
+    url: "https://docs.google.com/presentation/d/1sMyf_t1o41swKDjSZ_sKSzkzfsNjgXZFLiFsra_d0yk/"
+    jenis: google-slides
+    diambil: 2026-11-21
+    id_manifest: C-dok-113
+sidebar:
+  order: 11
+---
+
+import { Steps } from '@astrojs/starlight/components';
+import MenuSakti from '~/components/MenuSakti.astro';
+import SumberAsli from '~/components/SumberAsli.astro';
+
+Menu Transfer Keluar KDP (kode transaksi 507) digunakan untuk
+menginput KDP yang diserahkan ke Satker lain atau Kementerian
+Lain dalam lingkup Pemerintah Pusat. Transfer Keluar diinput ke
+dalam Aplikasi SAKTI apabila Berita Acara Serah Terima dari
+kedua belah pihak telah ditandatangani.
+
+<MenuSakti />
+
+## Prasyarat
+
+- Dokumen sumber: BAST KDP yang telah ditandatangani kedua
+  belah pihak.
+- Sebelumnya harus sudah ada saldo KDP.
+
+## Langkah
+
+<Steps>
+
+1. Pilih menu **Aset Tetap > RUH > Transaksi KDP > Transfer
+   Keluar**, lalu klik **Rekam**.
+2. Pilih KDP dan NUP KDP yang akan dilakukan transfer keluar.
+3. Pilih satker tujuan/penerima KDP.
+4. Isikan tanggal pembukuan, nomor dokumen keputusan, dan
+   tanggal dokumen keputusan sesuai dokumen sumber.
+5. Isikan satker tujuan apakah SAKTI atau non-SAKTI.
+6. Klik tombol **Simpan**.
+
+</Steps>
+
+## Ketentuan
+
+- Apabila transaksi Transfer Keluar KDP telah disetujui oleh
+  approver, maka dapat ditindaklanjuti dengan transaksi Transfer
+  Masuk KDP pada satker tujuan/penerima KDP.
+
+## Jurnal transaksi
+
+- D. Transfer Keluar
+- K. Konstruksi Dalam Pengerjaan
+
+## Ilustrasi transaksi
+
+KPPN Pekalongan menyerahkan KDP Gedung dan Bangunan Dalam
+Pengerjaan kepada Satker Kantor Kementerian Agama Kota
+Pekalongan sebesar Rp25.000.000,-.
+
+## Terkait
+
+- [Merekam Transfer Masuk KDP](/aset-tetap/ruh/transaksi-kdp/transfer-masuk-kdp/)
+- [Merekam Batal Transfer Keluar Online KDP](/aset-tetap/ruh/transaksi-kdp/batal-transfer-keluar-online/)
+
+## Sumber
+
+<SumberAsli />

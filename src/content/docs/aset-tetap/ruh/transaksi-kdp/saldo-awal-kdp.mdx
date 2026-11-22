@@ -1,0 +1,83 @@
+---
+title: Merekam Saldo Awal KDP
+description: Mencatat KDP yang telah diperoleh pada tahun anggaran sebelumnya dan baru dibukukan pada tahun anggaran berjalan.
+modul: aset-tetap
+menu_sakti: "Aset Tetap > RUH > Transaksi KDP > Saldo Awal"
+peran: [satker]
+jenis: juknis
+kata_kunci: [saldo awal kdp, kdp tahun lalu, kode transaksi 501]
+status: review
+sumber:
+  - judul: "SAKTI PELAPORAN - Saldo Awal KDP"
+    url: "https://sites.google.com/view/saktipelaporan/aset-tetap/ruh/transaksi-kdp/saldo-awal-kdp"
+    jenis: google-sites
+    diambil: 2026-11-21
+    id_manifest: C-aset-tetap-ruh-transaksi-kdp-saldo-awal-kdp
+  - judul: "Juknis SAKTI 2021 Saldo Awal KDP"
+    url: "https://docs.google.com/presentation/d/1OApme4WPE501QbpEl96Z5ku7PCPIQbyVaLmcfBq5HVU/"
+    jenis: google-slides
+    diambil: 2026-11-21
+    id_manifest: C-dok-099
+sidebar:
+  order: 4
+---
+
+import { Steps } from '@astrojs/starlight/components';
+import MenuSakti from '~/components/MenuSakti.astro';
+import SumberAsli from '~/components/SumberAsli.astro';
+
+Menu Saldo Awal KDP (kode transaksi 501) digunakan untuk
+mencatat KDP yang telah diperoleh pada tahun anggaran sebelumnya
+dan baru dibukukan pada tahun anggaran berjalan. Transaksi KDP
+tidak perlu dilakukan penyusutan.
+
+<MenuSakti />
+
+## Prasyarat
+
+- Dokumen sumber: Berita Acara / BAST.
+- Tanggal perolehan harus dipilih tahun anggaran sebelumnya;
+  tanggal dokumen harus tahun sebelumnya.
+
+## Langkah
+
+<Steps>
+
+1. Pilih menu **Aset Tetap > RUH > Transaksi KDP > Saldo Awal**,
+   lalu klik **Rekam**.
+2. Pilih **Kode Barang** yaitu KDP yang akan dilakukan pencatatan
+   saldo awal.
+3. Isikan **Jumlah Konstruksi**. NUP awal dan NUP akhir otomatis
+   terisi.
+4. Isikan tanggal perolehan KDP.
+5. Pilih tanggal pembukuan sesuai dengan dokumen sumber.
+6. Pada informasi Rincian Lain KDP, pilih **Cara Pembangunan**
+   lalu isikan presentase pengerjaan, Lokasi KDP dan nilai KDP.
+7. Pada Rincian kontrak, isikan **Nomor Kontrak**, Nama
+   Kontraktor, tanggal kontrak, dan nilai kontrak yang berisi
+   Nilai Rupiah, Mata Uang dan nilai valasnya untuk mata uang
+   selain rupiah.
+8. Klik tombol **Simpan**.
+
+</Steps>
+
+## Jurnal transaksi
+
+- D. Konstruksi Dalam Pengerjaan
+- K. Koreksi Aset Tetap Non-Revaluasi
+
+## Ilustrasi transaksi
+
+Berdasarkan rekomendasi BPK, terdapat temuan bahwa ada KDP
+Gedung dan Bangunan dalam Pengerjaan dari pembelian pada tahun
+anggaran 2019 yang belum dicatat pada Aplikasi SAKTI.
+Berdasarkan temuan tersebut, operator MAT mencatatnya sebagai
+saldo awal dan dibukukan pada tahun 2020.
+
+## Terkait
+
+- [Merekam Perolehan KDP](/aset-tetap/ruh/transaksi-kdp/perolehan-kdp/)
+
+## Sumber
+
+<SumberAsli />

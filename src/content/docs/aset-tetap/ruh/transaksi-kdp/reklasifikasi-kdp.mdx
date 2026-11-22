@@ -1,0 +1,100 @@
+---
+title: Merekam Reklasifikasi KDP
+description: Mencatat perubahan atas kesalahan pemilihan kodefikasi dari satu jenis KDP menjadi jenis KDP lain.
+modul: aset-tetap
+menu_sakti: "Aset Tetap > RUH > Transaksi KDP > Reklasifikasi KDP"
+peran: [satker]
+jenis: juknis
+kata_kunci: [reklasifikasi kdp, ubah kodefikasi kdp, kode transaksi 513]
+status: review
+sumber:
+  - judul: "SAKTI PELAPORAN - Reklasifikasi KDP"
+    url: "https://sites.google.com/view/saktipelaporan/aset-tetap/ruh/transaksi-kdp/reklasifikasi-kdp"
+    jenis: google-sites
+    diambil: 2026-11-21
+    id_manifest: C-aset-tetap-ruh-transaksi-kdp-reklasifikasi-kdp
+sidebar:
+  order: 15
+---
+
+import { Steps } from '@astrojs/starlight/components';
+import MenuSakti from '~/components/MenuSakti.astro';
+import SumberAsli from '~/components/SumberAsli.astro';
+
+Menu Reklasifikasi KDP (kode transaksi 513) digunakan untuk
+mencatat perubahan atas kesalahan pemilihan kodefikasi KDP, dari
+semula jenis KDP yang satu menjadi jenis KDP yang lain.
+
+<MenuSakti />
+
+## Prasyarat
+
+- Dokumen sumber: Surat Keterangan Perbaikan Pencatatan Laporan
+  Barang Milik Negara yang ditandatangani KPB.
+
+## Langkah
+
+<Steps>
+
+1. Pilih menu **Aset Tetap > RUH > Transaksi KDP > Reklasifikasi
+   KDP**, lalu klik **Rekam**.
+2. Pilih KDP dan NUP asal yang salah rekam dan akan diubah
+   menjadi KDP jenis lain.
+3. Pilih jenis KDP seharusnya dan isikan jumlah KDP seharusnya.
+4. Isikan persentase pekerjaan.
+5. Isikan dokumen sumber Reklasifikasi KDP dan tanggal dokumen
+   sumber.
+6. Pilih tanggal pembukuan, lalu klik **Simpan**.
+
+</Steps>
+
+## Ketentuan
+
+- Reklasifikasi KDP dapat digunakan untuk:
+  - reklasifikasi dari 1 NUP KDP menjadi 1 NUP KDP jenis yang
+    lain;
+  - reklasifikasi dari 1 NUP KDP menjadi banyak NUP KDP jenis
+    yang lain;
+  - reklasifikasi dari banyak NUP KDP menjadi 1 NUP KDP jenis
+    yang lain;
+  - reklasifikasi dari banyak NUP KDP menjadi banyak NUP KDP
+    jenis yang lain.
+- Nilai total KDP yang direklasifikasi harus sama dengan nilai
+  total KDP jenis yang baru.
+- Nilai satuan KDP yang baru akan otomatis muncul dengan besaran
+  dibagi rata proporsional sesuai dengan jumlah NUP KDP yang
+  baru.
+- Nilai satuan KDP yang baru harus tetap bulat (tidak boleh
+  nilai satuan menjadi desimal).
+
+## Jurnal transaksi
+
+- D. Koreksi Atas Reklasifikasi Persediaan/Aset Tetap/Aset
+  Lainnya
+- K. Konstruksi Dalam Pengerjaan/ATB Dalam Pengerjaan
+- D. Konstruksi Dalam Pengerjaan/ATB Dalam Pengerjaan
+- K. Koreksi Atas Reklasifikasi Persediaan/Aset Tetap/Aset
+  Lainnya
+
+## Ilustrasi transaksi
+
+Operator MAT melakukan kesalahan perekaman jenis KDP yaitu
+semula direkam KDP Gedung dan Bangunan dalam Pengerjaan sebanyak
+1 NUP yaitu NUP 18, padahal seharusnya KDP jenis Jalan, Irigasi
+dan Jembatan Dalam Pengerjaan sebanyak 4 NUP. Contoh ilustrasi
+reklasifikasi KDP antara lain:
+
+| KDP Asal | Jml NUP | Nilai Satuan | KDP Tujuan | Jml NUP | Nilai Satuan |
+|---|---|---|---|---|---|
+| KDP Gedung Bangunan | 1 | 10.000.000 | KDP Peralatan Mesin | 1 | 10.000.000 |
+| KDP Gedung Bangunan | 1 | 10.000.000 | KDP Peralatan Mesin | 5 | 2.000.000 |
+| KDP Gedung Bangunan | 5 | 10.000.000 | KDP Peralatan Mesin | 1 | 50.000.000 |
+| KDP Gedung Bangunan | 5 | 10.000.000 | KDP Peralatan Mesin | 2 | 25.000.000 |
+
+## Terkait
+
+- [Merekam Koreksi Rincian Aset](/aset-tetap/ruh/perubahan-bmn/koreksi-rincian-aset/)
+
+## Sumber
+
+<SumberAsli />

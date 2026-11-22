@@ -1,0 +1,121 @@
+---
+title: Merekam Perolehan KDP
+description: Mencatat perolehan KDP dari pembayaran pertama kali dalam rangka memperoleh aset tetap secara bertahap/termin.
+modul: aset-tetap
+menu_sakti: "Aset Tetap > RUH > Transaksi KDP > Perolehan"
+peran: [satker]
+jenis: juknis
+kata_kunci: [perolehan kdp, konstruksi dalam pengerjaan, pembayaran termin, kode transaksi 502]
+status: review
+sumber:
+  - judul: "SAKTI PELAPORAN - Perolehan KDP"
+    url: "https://sites.google.com/view/saktipelaporan/aset-tetap/ruh/transaksi-kdp/perolehan-kdp"
+    jenis: google-sites
+    diambil: 2026-11-21
+    id_manifest: C-aset-tetap-ruh-transaksi-kdp-perolehan-kdp
+  - judul: "Juknis SAKTI 2021 Perolehan KDP"
+    url: "https://docs.google.com/presentation/d/1WQI_kQ8-m8IF-3tZGgcBttzj0wPX7iA_k2eg9f0-At4/"
+    jenis: google-slides
+    diambil: 2026-11-21
+    id_manifest: C-dok-101
+sidebar:
+  order: 5
+---
+
+import { Steps } from '@astrojs/starlight/components';
+import MenuSakti from '~/components/MenuSakti.astro';
+import SumberAsli from '~/components/SumberAsli.astro';
+
+Menu Perolehan KDP (kode transaksi 502) digunakan untuk mencatat
+perolehan transaksi KDP yang mencakup tanah, peralatan dan
+mesin, gedung dan bangunan, jalan, irigasi dan jaringan, dan
+aset tetap lainnya yang proses perolehannya dan/atau
+pembangunannya membutuhkan periode waktu tertentu dan belum
+selesai; serta perekaman SPM/SP2D pertama kali untuk pembayaran
+pertama dalam rangka memperoleh aset tetap yang pembayarannya
+dilakukan per termin dan SPM/SP2D tersebut di tahun anggaran
+berjalan. Transaksi ini menambah jumlah NUP KDP baru; pembayaran
+kedua, ketiga dan seterusnya dalam rangka perolehan BMN yang
+sama dicatat sebagai
+[Pengembangan KDP](/aset-tetap/ruh/transaksi-kdp/pengembangan-kdp/).
+
+<MenuSakti />
+
+## Prasyarat
+
+- Dokumen sumber: Kuitansi, BAST.
+- Sebelumnya telah direkam BAST/Penerimaan Barang di Modul
+  Komitmen dengan memilih kategori Aset dengan kode aset yaitu
+  KDP sesuai dengan jenis BMN definitifnya (kode KDP
+  7xxxxxxxxx), agar dapat didetailkan pada menu Transaksi KDP.
+
+## Langkah
+
+<Steps>
+
+1. Pilih menu **Aset Tetap > RUH > Transaksi KDP > Perolehan**,
+   lalu klik tombol **Rekam**.
+2. Pada pop up Daftar Komitmen, pilih **Jenis Dokumen** yaitu
+   Kontrak atau Non Kontrak/Penerimaan Barang:
+   - Jenis Dokumen Kontrak: apabila berasal dari BAST
+     Kontraktual dan dibayarkan dengan SPM LS Kontraktual.
+   - Jenis Dokumen Non Kontrak/Penerimaan Barang: apabila
+     berasal dari BAST Non Kontraktual dan dibayarkan dengan SPM
+     LS Non Kontraktual, atau dari Pencatatan Penerimaan Barang
+     baik dari pembayaran menggunakan UP biasa maupun UP KKP.
+3. Pilih dokumen BAST atau Penerimaan Barang, lalu klik tombol
+   **Catat**.
+4. Pada pop up Daftar KDP Dalam Komitmen, pilih kode barang yang
+   sesuai, lalu klik tombol **Catat**.
+5. Pilih tanggal pembukuan sesuai dengan dokumen sumber.
+6. Isikan persentase pekerjaan.
+7. Isikan lokasi KDP.
+8. Klik tombol **Simpan**.
+
+</Steps>
+
+## Ketentuan
+
+- Perolehan KDP merupakan perolehan pertama atas KDP dari
+  pembayaran pertama kali yang biasanya terdiri atas uang muka
+  pekerjaan kepada penyedia barang/jasa; atau merupakan
+  pembayaran termin pertama atas pengadaan barang/jasa per
+  masing-masing jenis BMN ditambah PPN 10% tanpa uang muka
+  pekerjaan.
+- Nilai total KDP yaitu nilai Perolehan KDP ditambah dengan
+  nilai semua Pengembangan KDP, nantinya harus memenuhi nilai
+  minimum kapitalisasi. Artinya, nilai total pembayaran yang
+  dilakukan bertahap/termin tersebut harus memenuhi nilai
+  minimum kapitalisasi.
+
+## Jurnal transaksi
+
+- D. Konstruksi Dalam Pengerjaan
+- K. Aset Tetap Belum Diregister
+
+## Ilustrasi transaksi
+
+Satker KPPN Pekalongan membangun gedung kantor senilai
+Rp50.000.000,- dengan sistem pembayaran bertahap/termin, dengan
+rincian sebagai berikut:
+
+| Pembayaran | Nilai | BMN di BAST | Transaksi di MAT |
+|---|---|---|---|
+| Ke-1: Uang Muka | 10 juta | Gedung Bangunan Dalam Pengerjaan | Perolehan KDP |
+| Ke-2: Termin I | 15 juta | Gedung Bangunan Dalam Pengerjaan | Pengembangan KDP |
+| Ke-3: Termin II | 25 juta | Gedung Bangunan Dalam Pengerjaan | Pengembangan KDP |
+
+Berdasarkan tabel di atas, maka yang dicatat sebagai Perolehan
+KDP adalah pembayaran yang pertama kali dari beberapa tahap
+pembayaran/termin dalam rangka perolehan atau pengembangan suatu
+BMN. Sedangkan pembayaran kedua, ketiga, dan seterusnya, akan
+dicatat sebagai Pengembangan KDP.
+
+## Terkait
+
+- [Merekam Pengembangan KDP](/aset-tetap/ruh/transaksi-kdp/pengembangan-kdp/)
+- [Merekam Pengembangan Dengan KDP](/aset-tetap/ruh/perubahan-bmn/pengembangan-dengan-kdp/)
+
+## Sumber
+
+<SumberAsli />

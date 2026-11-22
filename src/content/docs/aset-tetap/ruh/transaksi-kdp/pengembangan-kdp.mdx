@@ -1,0 +1,96 @@
+---
+title: Merekam Pengembangan KDP
+description: Menginput penambahan nilai KDP setelah perolehan awal sampai KDP siap menjadi aset tetap definitif.
+modul: aset-tetap
+menu_sakti: "Aset Tetap > RUH > Transaksi KDP > Pengembangan"
+peran: [satker]
+jenis: juknis
+kata_kunci: [pengembangan kdp, termin kdp, kode transaksi 503]
+status: review
+sumber:
+  - judul: "SAKTI PELAPORAN - Pengembangan KDP"
+    url: "https://sites.google.com/view/saktipelaporan/aset-tetap/ruh/transaksi-kdp/pengembangan-kdp"
+    jenis: google-sites
+    diambil: 2026-11-21
+    id_manifest: C-aset-tetap-ruh-transaksi-kdp-pengembangan-kdp
+  - judul: "Juknis SAKTI 2021 Pengembangan KDP"
+    url: "https://docs.google.com/presentation/d/1ROheh_K5btHcyGwOmLH4Ueuaz2lICBjBuxRFFYkeSd0/"
+    jenis: google-slides
+    diambil: 2026-11-21
+    id_manifest: C-dok-107
+sidebar:
+  order: 8
+---
+
+import { Steps } from '@astrojs/starlight/components';
+import MenuSakti from '~/components/MenuSakti.astro';
+import SumberAsli from '~/components/SumberAsli.astro';
+
+Menu Pengembangan KDP (kode transaksi 503) digunakan untuk
+menginput penambahan nilai KDP setelah perolehan awal sampai
+dengan penambahan KDP terakhir dan siap dioperasikan untuk
+menjadi aset tetap yang definitif.
+
+<MenuSakti />
+
+## Prasyarat
+
+- Dokumen sumber: Kuitansi, BAST.
+- Sebelumnya telah dicatat BAST/Penerimaan Barang di Modul
+  Komitmen yang memilih kodefikasi KDP (kode 7xxxxxxxxx).
+- Sebelumnya harus sudah ada saldo KDP baik yang berasal dari
+  Saldo Awal KDP, Perolehan KDP, Perolehan Lainnya KDP atau
+  Transfer Masuk KDP.
+- Pencatatan Perolehan KDP dan Pengembangan KDP harus dilakukan
+  secara urut berdasarkan tanggal dokumen pada BAST/Penerimaan
+  Barang.
+
+## Langkah
+
+<Steps>
+
+1. Pilih menu **Aset Tetap > RUH > Transaksi KDP >
+   Pengembangan**, lalu klik **Rekam**.
+2. Pada pop up Daftar Komitmen, pilih **Jenis Dokumen** yaitu
+   Kontrak atau Non Kontrak/Penerimaan Barang dan pilih nomor
+   dokumen, lalu klik **Catat**.
+3. Pada pop up Daftar KDP dalam Komitmen, pilih kodefikasi KDP,
+   lalu klik **Catat**.
+4. Isikan NUP KDP yang akan dikembangkan, baik yang berasal dari
+   transaksi Saldo Awal KDP, Perolehan KDP, Perolehan Lainnya
+   KDP atau Transfer Masuk KDP.
+5. Isikan persentase pekerjaan.
+6. Tanggal buku diisi sesuai dengan dokumen sumber atau pada
+   periode bulan yang masih buka.
+
+</Steps>
+
+## Ketentuan
+
+- Nilai total KDP yaitu nilai Perolehan KDP ditambah dengan
+  nilai semua Pengembangan KDP, nantinya harus memenuhi nilai
+  minimum kapitalisasi.
+
+## Jurnal transaksi
+
+- D. Konstruksi Dalam Pengerjaan
+- K. Aset Tetap Belum Diregister
+
+## Ilustrasi transaksi
+
+Satker KPPN Pekalongan membangun gedung kantor senilai
+Rp50.000.000,- dengan sistem pembayaran bertahap/termin:
+pembayaran ke-1 (uang muka Rp10 juta) dicatat sebagai Perolehan
+KDP; pembayaran ke-2 (Termin I Rp15 juta) dan ke-3 (Termin II
+Rp25 juta) dicatat sebagai Pengembangan KDP. Pengembangan KDP
+adalah pencatatan penambahan KDP berdasarkan pembayaran kedua,
+ketiga dan seterusnya sampai dengan pembayaran terakhir, sampai
+BMN siap digunakan sebagai aset definitif.
+
+## Terkait
+
+- [Merekam Perolehan KDP](/aset-tetap/ruh/transaksi-kdp/perolehan-kdp/)
+
+## Sumber
+
+<SumberAsli />

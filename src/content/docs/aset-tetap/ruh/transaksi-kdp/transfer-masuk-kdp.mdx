@@ -1,0 +1,72 @@
+---
+title: Merekam Transfer Masuk KDP
+description: Merekam transaksi perolehan KDP yang bersumber dari kiriman KDP dari satker lain sesama Pemerintah Pusat.
+modul: aset-tetap
+menu_sakti: "Aset Tetap > RUH > Transaksi KDP > Transfer Masuk"
+peran: [satker]
+jenis: juknis
+kata_kunci: [transfer masuk kdp, terima kdp, kode transaksi 506]
+status: review
+sumber:
+  - judul: "SAKTI PELAPORAN - Transfer Masuk KDP"
+    url: "https://sites.google.com/view/saktipelaporan/aset-tetap/ruh/transaksi-kdp/transfer-masuk-kdp"
+    jenis: google-sites
+    diambil: 2026-11-21
+    id_manifest: C-aset-tetap-ruh-transaksi-kdp-transfer-masuk-kdp
+sidebar:
+  order: 6
+---
+
+import { Steps } from '@astrojs/starlight/components';
+import MenuSakti from '~/components/MenuSakti.astro';
+import SumberAsli from '~/components/SumberAsli.astro';
+
+Menu Transfer Masuk KDP (kode transaksi 506) digunakan untuk
+merekam transaksi perolehan KDP yang bersumber dari kiriman KDP
+dari satker lain yang sama-sama satker Pemerintah Pusat.
+Transaksi ini hanya satu kali saja pencatatannya ketika menerima
+transfer masuk KDP, selanjutnya akan dicatat pada menu
+pengembangan KDP sampai proses KDP selesai (jika proses KDP
+tersebut akan dilanjutkan oleh unit penerima transfer KDP).
+
+<MenuSakti />
+
+## Prasyarat
+
+- Dokumen sumber: BAST KDP.
+- Modul terkait: GLP.
+
+## Langkah
+
+<Steps>
+
+1. Pilih menu **Aset Tetap > RUH > Transaksi KDP > Transfer
+   Masuk**, lalu klik **Rekam**.
+2. Pilih KDP dan NUP yang telah diterima.
+3. Pilih satker asal pemberi KDP.
+4. Tanggal buku diisi sesuai dengan dokumen sumber atau pada
+   periode bulan yang masih buka.
+5. Klik tombol **Simpan**.
+
+</Steps>
+
+## Jurnal transaksi
+
+- D. Konstruksi Dalam Pengerjaan
+- K. Transfer Masuk
+
+## Ilustrasi transaksi
+
+Satker KPPN Pekalongan menerima KDP Jalan, Irigasi dan Jembatan
+Dalam Pengerjaan dari Satker Kantor Kementerian Agama Kota
+Pekalongan. BAST dibuat ketika KDP tersebut diterima oleh satker
+KPPN Pekalongan.
+
+## Terkait
+
+- [Merekam Transfer Keluar KDP](/aset-tetap/ruh/transaksi-kdp/transfer-keluar-kdp/)
+- [Merekam Transfer Masuk Online KDP](/aset-tetap/ruh/transaksi-kdp/transfer-masuk-online-kdp/)
+
+## Sumber
+
+<SumberAsli />

@@ -1,0 +1,36 @@
+---
+title: Transaksi KDP
+description: Transaksi Konstruksi Dalam Pengerjaan (KDP) pada Modul Aset Tetap, dari saldo awal sampai penghapusan.
+modul: aset-tetap
+jenis: indeks
+status: terbit
+sidebar:
+  label: Ringkasan
+  order: 1
+---
+
+import { LinkCard, CardGrid } from '@astrojs/starlight/components';
+
+Sub-menu **Aset Tetap > RUH > Transaksi KDP** memuat transaksi atas Konstruksi
+Dalam Pengerjaan (KDP): pencatatan saldo awal, perolehan, transfer, hibah,
+pengembangan, koreksi, reklasifikasi, sampai penghapusan/penghentian.
+
+<CardGrid>
+  <LinkCard title="Transfer Internal Keluar KDP" href="/aset-tetap/ruh/transaksi-kdp/transfer-internal-keluar-kdp/" description="Merekam transfer KDP dari satu satker kepada satker pembantunya." />
+  <LinkCard title="Transfer Internal Masuk KDP" href="/aset-tetap/ruh/transaksi-kdp/transfer-internal-masuk-kdp/" description="Merekam pemindahan KDP dari satker pembantu ke satker induk." />
+  <LinkCard title="Saldo Awal KDP" href="/aset-tetap/ruh/transaksi-kdp/saldo-awal-kdp/" description="Mencatat KDP yang diperoleh tahun anggaran sebelumnya." />
+  <LinkCard title="Perolehan KDP" href="/aset-tetap/ruh/transaksi-kdp/perolehan-kdp/" description="Mencatat pembayaran pertama per termin untuk memperoleh aset tetap." />
+  <LinkCard title="Transfer Masuk KDP" href="/aset-tetap/ruh/transaksi-kdp/transfer-masuk-kdp/" description="Mencatat perolehan KDP dari kiriman satker lain." />
+  <LinkCard title="Hibah Masuk KDP" href="/aset-tetap/ruh/transaksi-kdp/hibah-masuk-kdp/" description="Mencatat penerimaan KDP dari entitas di luar Pemerintah Pusat." />
+  <LinkCard title="Pengembangan KDP" href="/aset-tetap/ruh/transaksi-kdp/pengembangan-kdp/" description="Mencatat penambahan nilai KDP dari pembayaran termin berikutnya." />
+  <LinkCard title="Koreksi Perubahan Nilai Bertambah KDP" href="/aset-tetap/ruh/transaksi-kdp/koreksi-perubahan-nilai-bertambah-kdp/" description="Mengoreksi nilai transaksi KDP menjadi lebih besar." />
+  <LinkCard title="Koreksi Perubahan Nilai Berkurang KDP" href="/aset-tetap/ruh/transaksi-kdp/koreksi-perubahan-nilai-berkurang-kdp/" description="Mengoreksi nilai transaksi KDP menjadi lebih kecil." />
+  <LinkCard title="Transfer Keluar KDP" href="/aset-tetap/ruh/transaksi-kdp/transfer-keluar-kdp/" description="Menyerahkan KDP kepada satker atau kementerian lain." />
+  <LinkCard title="Hibah Keluar KDP" href="/aset-tetap/ruh/transaksi-kdp/hibah-keluar-kdp/" description="Menyerahkan KDP kepada entitas di luar Pemerintah Pusat." />
+  <LinkCard title="Penghapusan/Penghentian KDP" href="/aset-tetap/ruh/transaksi-kdp/penghapusan-penghentian-kdp/" description="Menghapuskan atau menghentikan pembangunan aset KDP." />
+  <LinkCard title="Perolehan Lainnya KDP" href="/aset-tetap/ruh/transaksi-kdp/perolehan-lainnya-kdp/" description="Mencatat perolehan KDP selain dari perolehan, transfer masuk, dan hibah masuk." />
+  <LinkCard title="Reklasifikasi KDP" href="/aset-tetap/ruh/transaksi-kdp/reklasifikasi-kdp/" description="Memperbaiki kesalahan pemilihan kodefikasi KDP." />
+  <LinkCard title="Koreksi Pencatatan KDP" href="/aset-tetap/ruh/transaksi-kdp/koreksi-pencatatan-kdp/" description="Menghapuskan KDP karena kesalahan pencatatan kuantitas." />
+  <LinkCard title="Transfer Masuk Online KDP" href="/aset-tetap/ruh/transaksi-kdp/transfer-masuk-online-kdp/" description="Mencatat penerimaan KDP dari transaksi transfer keluar KDP online." />
+  <LinkCard title="Batal Transfer Keluar Online KDP" href="/aset-tetap/ruh/transaksi-kdp/batal-transfer-keluar-online/" description="Membatalkan proses transfer keluar online KDP." />
+</CardGrid>

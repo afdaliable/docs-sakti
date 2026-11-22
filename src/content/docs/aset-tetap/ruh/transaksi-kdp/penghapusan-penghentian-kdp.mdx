@@ -1,0 +1,81 @@
+---
+title: Merekam Penghapusan/Penghentian KDP
+description: Mencatat penghapusan atau penghentian pembangunan aset KDP yang telah dicatat dan disetujui.
+modul: aset-tetap
+menu_sakti: "Aset Tetap > RUH > Transaksi KDP > Penghapusan KDP"
+peran: [satker]
+jenis: juknis
+kata_kunci: [penghapusan kdp, penghentian kdp, sk penghapusan kdp, kode transaksi 505]
+status: review
+sumber:
+  - judul: "SAKTI PELAPORAN - Penghapusan/Penghentian KDP"
+    url: "https://sites.google.com/view/saktipelaporan/aset-tetap/ruh/transaksi-kdp/penghapusanpenghentian-kdp"
+    jenis: google-sites
+    diambil: 2026-11-21
+    id_manifest: C-aset-tetap-ruh-transaksi-kdp-penghapusanpenghentian-kdp
+  - judul: "Juknis SAKTI 2021 Penghapusan KDP"
+    url: "https://docs.google.com/presentation/d/10uElxSjIfow4MYBl9Kk7NduU4bF8llszVO9bwAFR99s/"
+    jenis: google-slides
+    diambil: 2026-11-21
+    id_manifest: C-dok-117
+sidebar:
+  order: 13
+---
+
+import { Steps } from '@astrojs/starlight/components';
+import MenuSakti from '~/components/MenuSakti.astro';
+import SumberAsli from '~/components/SumberAsli.astro';
+
+Menu Penghapusan/Penghentian KDP (kode transaksi 505) digunakan
+untuk mencatat penghapusan/penghentian pembangunan aset-aset KDP
+yang sebelumnya telah dicatat dan disetujui. Dokumen sumber yang
+digunakan adalah surat keputusan penghapusan/penghentian atas
+KDP.
+
+<MenuSakti />
+
+## Prasyarat
+
+- Dokumen sumber: SK Penghapusan KDP.
+- Sebelumnya harus sudah ada saldo KDP, baik yang berasal dari
+  transaksi Saldo Awal KDP, Perolehan KDP, Perolehan Lainnya KDP
+  atau Transfer Masuk KDP.
+
+## Langkah
+
+<Steps>
+
+1. Pilih menu **Aset Tetap > RUH > Transaksi KDP > Penghapusan
+   KDP**, lalu klik **Rekam**.
+2. Pilih KDP dan NUP KDP yang akan dihapuskan/dihentikan.
+3. Isikan rentang NUP dan lokasi KDP, tanggal, serta dokumen
+   keputusan penghapusan/penghentian.
+4. Tanggal buku diisi sesuai dengan dokumen sumber atau pada
+   periode bulan yang masih buka.
+5. Klik tombol **Simpan**.
+
+</Steps>
+
+## Jurnal transaksi
+
+- D. Koreksi Aset Tetap Non-Revaluasi
+- K. Konstruksi Dalam Pengerjaan
+
+## Ilustrasi transaksi
+
+Kementerian Pemuda dan Olahraga memiliki aset KDP berupa
+Kompleks Olahraga yang pekerjaannya telah berhenti selama
+beberapa tahun. KDP ini dapat diusulkan untuk dihapuskan
+bilamana sesuai dengan berbagai aspek pertimbangan dari berbagai
+kalangan dan ahli bahwa tidak layak untuk dilanjutkan proses
+pengerjaannya. Atas dasar hal tersebut, maka dapat diterbitkan
+surat keputusan untuk menghentikan/menghapuskan KDP oleh
+Pengelola Barang.
+
+## Terkait
+
+- [Merekam Penghapusan BMN](/aset-tetap/ruh/penghapusan/penghapusan/)
+
+## Sumber
+
+<SumberAsli />

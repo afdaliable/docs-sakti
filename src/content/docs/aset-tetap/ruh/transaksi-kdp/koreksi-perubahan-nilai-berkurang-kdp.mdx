@@ -1,0 +1,77 @@
+---
+title: Merekam Koreksi Perubahan Nilai Berkurang KDP
+description: Mencatat koreksi nilai transaksi KDP menjadi lebih kecil daripada nilai sebelumnya.
+modul: aset-tetap
+menu_sakti: "Aset Tetap > RUH > Transaksi KDP > Koreksi Perubahan Nilai Berkurang"
+peran: [satker]
+jenis: juknis
+kata_kunci: [koreksi nilai berkurang kdp, koreksi kdp turun, kode transaksi 504]
+status: review
+sumber:
+  - judul: "SAKTI PELAPORAN - Koreksi Perubahan Nilai Berkurang KDP"
+    url: "https://sites.google.com/view/saktipelaporan/aset-tetap/ruh/transaksi-kdp/koreksi-perubahan-nilai-berkurang-kdp"
+    jenis: google-sites
+    diambil: 2026-11-21
+    id_manifest: C-aset-tetap-ruh-transaksi-kdp-koreksi-perubahan-nilai-berkurang-kdp
+  - judul: "KDP Koreksi Nilai Berkurang"
+    url: "https://docs.google.com/presentation/d/1WdhaUJ3U9AN6uY7Zjznk9siru9MBbmUrwCCCWT-xPA8/"
+    jenis: google-slides
+    diambil: 2026-11-21
+    id_manifest: C-dok-111
+sidebar:
+  order: 10
+---
+
+import { Steps } from '@astrojs/starlight/components';
+import MenuSakti from '~/components/MenuSakti.astro';
+import SumberAsli from '~/components/SumberAsli.astro';
+
+Menu Koreksi Perubahan Nilai Berkurang KDP (kode transaksi 504)
+digunakan untuk mencatat koreksi berupa perubahan nilai suatu
+transaksi KDP seharusnya menjadi lebih kecil daripada nilai
+sebelumnya. Yang dikoreksi adalah nilai atau saldo KDP yang
+sebelumnya sudah dicatat.
+
+<MenuSakti />
+
+## Prasyarat
+
+- Dokumen sumber: Surat Keterangan Perbaikan Pencatatan Laporan
+  Barang Milik Negara yang ditandatangani KPB.
+- Sebelumnya harus sudah ada saldo KDP.
+
+## Langkah
+
+<Steps>
+
+1. Pilih menu **Aset Tetap > RUH > Transaksi KDP > Koreksi
+   Perubahan Nilai Berkurang**, lalu klik **Rekam**.
+2. Pilih KDP dan NUP yang akan dilakukan koreksi.
+3. Isikan **Nilai Berkurang** dengan nilai pengurangan KDP
+   (bukan nilai KDP seharusnya). Misalnya NUP 18 semula
+   Rp15.000.000,- seharusnya Rp12.000.000,- maka diisi
+   Rp3.000.000,-.
+4. Tanggal buku diisi sesuai dengan dokumen sumber atau pada
+   periode bulan yang masih buka.
+
+</Steps>
+
+## Jurnal transaksi
+
+- D. Koreksi Aset Non Revaluasi
+- K. Konstruksi Dalam Pengerjaan
+
+## Ilustrasi transaksi
+
+Pemeriksaan BPK menemukan pembayaran tahap pertama Perolehan KDP
+Gedung dan Bangunan Dalam Pengerjaan NUP 18 sebesar
+Rp15.000.000,- melebihi standar; dilakukan setoran pengembalian
+Rp3.000.000,- sehingga nilai menjadi Rp12.000.000,-.
+
+## Terkait
+
+- [Merekam Koreksi Perubahan Nilai Bertambah KDP](/aset-tetap/ruh/transaksi-kdp/koreksi-perubahan-nilai-bertambah-kdp/)
+
+## Sumber
+
+<SumberAsli />
