@@ -1,0 +1,53 @@
+---
+title: Berkontribusi lewat GitHub
+description: Cara menyunting artikel knowledge base SAKTI langsung di GitHub atau lewat komputer sendiri.
+jenis: referensi
+status: review
+kata_kunci: [edit halaman, pull request, github, menyunting artikel]
+---
+
+import { Steps } from '@astrojs/starlight/components';
+
+Ada dua cara menyunting artikel lewat GitHub: perbaikan kecil langsung di browser, atau
+perubahan lebih besar di komputer sendiri.
+
+## Perbaikan kecil di browser
+
+<Steps>
+
+1. Buka artikel yang ingin diperbaiki, lalu klik **Edit halaman ini**.
+2. Bila Anda tidak punya akses tulis ke repo, GitHub meminta Anda membuat _fork_ (salinan
+   repo di akun Anda); setujui.
+3. Sunting berkas `.mdx` di editor GitHub.
+4. Ajukan **pull request**.
+5. Isi template PR: ringkasan, jenis perubahan, dan butir checklist penulis yang berlaku
+   untuk perubahan Anda.
+6. Tunggu review — pemeriksaan reviewer sama untuk semua jalur.
+
+</Steps>
+
+## Perubahan lebih besar di komputer
+
+Prasyarat: Node.js sesuai `.nvmrc` dan pnpm sesuai field `packageManager` di `package.json`.
+
+<Steps>
+
+1. Buat _fork_ repo (bila tidak punya akses tulis), _clone_ ke komputer, lalu jalankan `pnpm install`.
+2. Jalankan `pnpm dev` untuk melihat hasil suntingan di browser.
+3. Sunting atau tambah artikel di `src/content/docs/<modul>/…`, mulai dari `templates/`.
+4. Jalankan `pnpm check:content` untuk memeriksa frontmatter dan aturan konten.
+5. Jalankan `pnpm build` — sekaligus memeriksa seluruh tautan internal.
+6. Ajukan **pull request** dan isi template PR.
+
+</Steps>
+
+## Apa yang diperiksa reviewer
+
+- Langkah sesuai dengan SAKTI versi terbaru.
+- Nama menu/tombol persis seperti di aplikasi.
+- Tidak ada data pribadi di teks maupun gambar.
+- Sumber tercantum dan bisa dibuka.
+- `peran` dan `kata_kunci` tepat.
+- Jika lolos: `status` diubah menjadi `terbit` dan `terakhir_diverifikasi` diisi.
+
+Untuk gaya penulisan artikel, lihat [Panduan Menulis Artikel](/kontribusi/panduan-menulis/).

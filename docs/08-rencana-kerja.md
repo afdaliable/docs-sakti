@@ -113,7 +113,8 @@ Status Gerbang 4 (22 Nov 2026): semua modul dalam urutan Fase 4 sudah didraf dan
 - [ ] 5.4 Keystatic GitHub mode di `/keystatic` (`06-kontributor-admin.md`).
 - [x] 5.5 CODEOWNERS, template PR/issue, label, branch protection (dokumentasikan langkah manual yang harus dilakukan pemilik repo di `docs/setup-github.md`).
   - 23 Nov 2026: berkas dibuat (K63); pengaturan repo (label, kolaborator, branch protection) belum dijalankan: langkah manual pemilik di `docs/setup-github.md`. Pemilik modul menunggu K5.
-- [ ] 5.6 Halaman `/kontribusi/*`.
+- [x] 5.6 Halaman `/kontribusi/*`.
+  - 23 Nov 2026: indeks, `panduan-menulis`, `lewat-github`, `editor-keystatic` (K64); halaman Keystatic masih berupa keterangan "belum tersedia" sampai 5.4.
 - [ ] 5.7 (Opsional, jika K8 = ya) Tanya AI `/api/tanya` + UI.
 
 **Gerbang 5:** search eval lolos ambang; editor uji bisa membuat PR lewat Keystatic dari awal sampai merge.

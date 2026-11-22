@@ -1,0 +1,104 @@
+---
+title: Panduan Menulis Artikel
+description: Aturan gaya, struktur standar, isian frontmatter, dan contoh penulisan artikel knowledge base SAKTI.
+jenis: referensi
+status: review
+kata_kunci: [menulis artikel, gaya penulisan, frontmatter, struktur artikel, contoh artikel]
+---
+
+import { Steps, Aside } from '@astrojs/starlight/components';
+
+Halaman ini merangkum aturan penulisan artikel knowledge base SAKTI. Contoh prosedur diambil
+dari template artikel juknis (`templates/artikel-juknis.mdx`).
+
+## Aturan dasar
+
+### Bahasa dan istilah
+
+Gunakan bahasa Indonesia baku, kalimat aktif, dan langkah bernomor. Istilah menu SAKTI ditulis
+persis seperti di aplikasi, dicetak **tebal**: klik **Simpan**, buka menu
+**Komitmen > RUH > Pencatatan Kontrak**.
+
+### Setiap langkah berasal dari sumber
+
+Jangan mengarang prosedur SAKTI. Bila sumber ambigu atau tidak lengkap, set `status: draft`
+dan `perlu_review: true`, lalu tulis catatan di kotak `:::caution[Perlu verifikasi]`.
+
+### Wajib mencantumkan sumber
+
+Setiap artikel mengisi `sumber:` di frontmatter dengan tautan asli dan tanggal diambil.
+
+### Tanpa data pribadi dan rahasia
+
+NIK, NIP lengkap, nama pegawai, nomor HP pribadi, email pribadi, password, token, kode MFA,
+dan nomor rekening dilarang tampil. Tangkapan layar yang memuat data ini harus di-blur atau
+dipotong. Kontak resmi (HAI DJPb, email/hotline institusi) boleh.
+
+### Satu artikel = satu tugas
+
+Tulis satu artikel per tugas pengguna ("Cara mencatat kontrak"), bukan satu artikel per file
+sumber. Pecah file sumber besar menjadi beberapa artikel.
+
+### Pakai template dan struktur standar
+
+Mulai dari `templates/` (mis. `templates/artikel-juknis.mdx`, `templates/faq.mdx`) dengan
+urutan: Ringkasan → Prasyarat → Langkah → Hasil yang diharapkan → Masalah umum → Terkait →
+Sumber.
+
+### Gabungkan duplikat
+
+Konten yang sama di beberapa sumber digabung menjadi satu artikel; versi yang lebih baru
+menang. Versi yang digantikan dicatat di `sumber`.
+
+### Gambar
+
+- Format WebP, lebar maksimum 1600 px.
+- Simpan di `src/assets/<modul>/<slug>/`.
+- `alt` deskriptif (wajib — pemeriksaan otomatis gagal bila kosong).
+- Blur atau potong bagian yang memuat data pribadi.
+
+## Struktur standar artikel
+
+<Steps>
+
+1. **Ringkasan** — 1–2 kalimat: apa yang dicapai dan kapan tugas ini dilakukan.
+2. **Prasyarat** — role dan data yang harus sudah ada.
+3. **Langkah** — bernomor, satu tindakan per langkah.
+4. **Hasil yang diharapkan** — keadaan setelah langkah terakhir.
+5. **Masalah umum** — penyebab dan solusi sesuai sumber.
+6. **Terkait** — tautan artikel lain.
+7. **Sumber** — tautan sumber asli.
+
+</Steps>
+
+## Isian frontmatter
+
+| Isian | Isi | Wajib? |
+|---|---|---|
+| `title` | Judul artikel | Ya |
+| `description` | Satu kalimat untuk hasil pencarian | Disarankan |
+| `modul` | Slug modul sesuai folder artikel | Ya untuk artikel di folder modul (pemeriksaan otomatis gagal bila kosong/tidak cocok) |
+| `menu_sakti` | Jalur menu persis, mis. `"Komitmen > RUH > Pencatatan Kontrak"` | Bila artikel menjelaskan satu menu SAKTI; harus cocok dengan pohon menu aplikasi |
+| `peran` | Daftar slug peran, mis. `[satker]` | Ya untuk artikel (minimal satu) |
+| `jenis` | `juknis`, `faq`, `troubleshooting`, `referensi`, `konsep`, `peraturan`, `video`, atau `indeks` | Tidak (bawaan `juknis`) |
+| `kata_kunci` | Kata yang diketik pengguna, mis. `[input kontrak, rekam kontrak]` | Disarankan, 3–8 istilah (pemeriksaan otomatis memberi peringatan bila kosong) |
+| `status` | `draft`, `review`, atau `terbit` | Ya (`review` untuk artikel baru; `draft` tidak ikut terbit; `terbit` setelah lolos review) |
+| `perlu_review` | `true` bila ada bagian yang meragukan | Tidak (bawaan `false`) |
+| `terakhir_diverifikasi` | Tanggal verifikasi terakhir | Diisi saat lolos review |
+| `pemilik` | Penanggung jawab artikel | Tidak |
+| `sumber` | Daftar sumber: `judul`, `url`, `jenis`, `diambil` | Ya untuk artikel di folder modul (pemeriksaan otomatis gagal bila kosong) |
+| `sidebar.order` | Urutan di sidebar | Tidak |
+
+## Contoh kurang tepat → lebih baik
+
+| Kurang tepat | Lebih baik |
+|---|---|
+| Kontrak dicatat oleh operator di menu pencatatan kontrak. | Buka menu **Komitmen > RUH > Pencatatan Kontrak**, lalu klik **Tambah**. |
+| Klik menu pencatatan kontrak di komitmen lalu simpan. | Klik **Tambah**, isi kolom **Nomor Kontrak** dan **Tanggal Kontrak**, lalu klik **Simpan**. |
+| Satu paragraf panjang berisi lima langkah sekaligus. | Langkah bernomor, satu tindakan per langkah (lihat bagian **Langkah** di atas). |
+| Satu artikel "Modul Komitmen" berisi kontrak, BAST, dan supplier. | Artikel terpisah: Mencatat Kontrak, Mencatat BAST, Mencatat Supplier — satu tugas per artikel. |
+
+<Aside type="caution" title="Perlu verifikasi">
+Bila ragu pada suatu langkah, jangan dihapus dan jangan dikarang: tulis catatan di kotak seperti
+ini dan set `perlu_review: true` di frontmatter.
+</Aside>

@@ -1,8 +1,58 @@
 ---
 title: Cara Berkontribusi
-description: Panduan untuk admin dan kontributor knowledge base SAKTI.
+description: Tiga jalur untuk membantu melengkapi dan memperbaiki knowledge base SAKTI.
 jenis: indeks
-status: terbit
+status: review
+kata_kunci: [kontribusi, koreksi artikel, usulan artikel, edit halaman]
 ---
 
-Panduan kontribusi sedang disiapkan.
+Knowledge base ini disusun dari petunjuk teknis (juknis) SAKTI yang sudah ada. Koreksi
+terhadap artikel yang keliru maupun usulan panduan yang belum ada sama-sama diterima.
+
+## Tiga jalur kontribusi
+
+| Jalur | Untuk siapa | Yang dibutuhkan | Mulai dari |
+|---|---|---|---|
+| Laporkan kesalahan atau usulkan artikel | Semua pengguna | Akun GitHub | Tautan **Laporkan kesalahan** di bagian bawah setiap artikel, atau **Usulkan artikel** di halaman pencarian saat tidak ada hasil — keduanya membuka formulir issue GitHub |
+| Sunting lewat GitHub | Yang terbiasa GitHub | Akun GitHub | Tombol **Edit halaman ini** → pull request; lihat [Berkontribusi lewat GitHub](/kontribusi/lewat-github/) |
+| Editor Keystatic | Tim editor | Akses tulis ke repo | **Belum aktif** — lihat [Editor Keystatic](/kontribusi/editor-keystatic/) |
+
+## Setelah Anda mengirim
+
+Setiap perubahan ditinjau sebelum digabung. Reviewer memeriksa:
+
+- Langkah sesuai dengan SAKTI versi terbaru.
+- Nama menu/tombol persis seperti di aplikasi.
+- Tidak ada data pribadi di teks maupun gambar.
+- Sumber tercantum dan bisa dibuka.
+- `peran` dan `kata_kunci` tepat.
+- Jika lolos: `status` diubah menjadi `terbit` dan `terakhir_diverifikasi` diisi.
+
+Artikel yang belum selesai diverifikasi tampil dengan penanda **Sedang ditinjau**.
+
+## Etika
+
+- **Jangan menyertakan data pribadi atau rahasia** di teks maupun gambar: NIK, NIP lengkap,
+  nama pegawai, nomor HP pribadi, email pribadi, password, token, kode MFA, nomor rekening.
+  Kontak resmi (HAI DJPb, email/hotline institusi) boleh ditulis.
+- **Jangan mengarang prosedur SAKTI.** Setiap langkah harus berasal dari sumber; bagian yang
+  meragukan ditandai `perlu_review: true` dan kotak "Perlu verifikasi".
+- **Sertakan sumber.** Setiap artikel mencantumkan tautan sumber asli dan tanggal diambil.
+
+## Standar penulisan ringkas
+
+- Bahasa Indonesia baku, kalimat aktif, langkah bernomor.
+- Nama menu dan tombol SAKTI ditulis persis seperti di aplikasi, dicetak **tebal**.
+- Satu artikel menjawab satu tugas pengguna.
+- Duplikat antar sumber digabung; versi terbaru yang dipakai.
+- Gambar: WebP, lebar maksimum 1600 px, `alt` deskriptif, data pribadi di-blur atau dipotong.
+
+Selengkapnya di [Panduan Menulis Artikel](/kontribusi/panduan-menulis/).
+
+:::note[Belum ditetapkan]
+Pemilik tiap modul (sementara semua perubahan ditinjau admin repo), status resmi dan lisensi
+konten knowledge base, serta editor Keystatic belum ditetapkan.
+:::
+
+Kendala pada aplikasi SAKTI (transaksi, akun, galat) tidak disampaikan lewat jalur kontribusi —
+lihat [Bantuan & Kontak](/bantuan/).
