@@ -1,0 +1,55 @@
+---
+title: Memantau Proses SPM di KPPN
+description: Pengecekan status pemrosesan ADK SPM oleh semua peran petugas KPPN dan satker.
+modul: kppn-bun
+menu_sakti: "KPPN > Pencairan Dana > Monitoring > Monitoring Proses SPM"
+peran: [kppn-kanwil, satker]
+jenis: juknis
+kata_kunci: [monitoring proses spm, status adk spm, kppn]
+status: review
+sumber:
+  - judul: "Juknis Fitur KPPN BUN"
+    url: "https://drive.google.com/file/d/1T2QlxS2vGkkTdaFPj5y6h0ZJr1gQy9uZ/view"
+    jenis: pdf
+    diambil: 2026-11-21
+    id_manifest: B-bun-002
+---
+
+import { Steps } from '@astrojs/starlight/components';
+import MenuSakti from '~/components/MenuSakti.astro';
+import SumberAsli from '~/components/SumberAsli.astro';
+
+Menu **Monitoring Proses SPM** digunakan untuk melakukan pengecekan
+status ADK SPM sudah sampai mana. Semua peran petugas KPPN — Fo, Mo
+Validator, Reviewer, dan Approver — dapat mengakses menu ini; satker
+juga dapat melakukan pengecekan ini.
+
+<MenuSakti />
+
+## Prasyarat
+
+- Role yang dibutuhkan: petugas KPPN dengan peran Fo, Mo Validator,
+  Reviewer, atau Approver; satker juga dapat mengakses.
+
+## Langkah
+
+<Steps>
+
+1. Buka menu **KPPN > Pencairan Dana > Monitoring > Monitoring
+   Proses SPM**.
+2. Periksa status ADK SPM pada daftar — status yang muncul antara
+   lain **Belum Proses**, **Proses Fo**, **Siap Unggah**, **Proses
+   Validasi**, **Download ADK**, **Proses Review**, **Proses
+   Persetujuan**, **Disetujui**, **SP2D**, dan **Ditolak**.
+
+</Steps>
+
+## Terkait
+
+- [Memproses ADK SPM di KPPN](/kppn-bun/proses-adk-spm/)
+- [Memproses ADK SPM Koreksi di KPPN](/kppn-bun/proses-adk-spm-koreksi/)
+- [Menggunakan Fitur KPPN BUN](/kppn-bun/fitur-kppn-bun/)
+
+## Sumber
+
+<SumberAsli />

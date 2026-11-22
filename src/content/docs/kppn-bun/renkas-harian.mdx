@@ -1,0 +1,63 @@
+---
+title: Memproses Renkas Harian di KPPN
+description: Monitoring perencanaan kas harian satker dan input dispensasi renkas oleh petugas Fo KPPN.
+modul: kppn-bun
+menu_sakti: "KPPN > Pencairan Dana > Proses"
+peran: [kppn-kanwil]
+jenis: juknis
+kata_kunci: [renkas harian, dispensasi renkas, rpd, perencanaan kas, kppn]
+status: review
+perlu_review: true
+sumber:
+  - judul: "Juknis Fitur KPPN BUN"
+    url: "https://drive.google.com/file/d/1T2QlxS2vGkkTdaFPj5y6h0ZJr1gQy9uZ/view"
+    jenis: pdf
+    diambil: 2026-11-21
+    id_manifest: B-bun-002
+---
+
+import { Steps, Aside } from '@astrojs/starlight/components';
+import MenuSakti from '~/components/MenuSakti.astro';
+import SumberAsli from '~/components/SumberAsli.astro';
+
+Menu Renkas Harian digunakan petugas KPPN untuk memonitoring
+Perencanaan Kas Harian Satker, termasuk menginput dispensasi
+perencanaan kas dan menghapus renkas.
+
+<MenuSakti />
+
+## Prasyarat
+
+- Role yang dibutuhkan: petugas Fo KPPN.
+
+## Langkah
+
+<Steps>
+
+1. Buka menu **KPPN > Pencairan Dana > Proses > Renkas Harian**
+   (nama menu menurut juknis); petugas KPPN dapat memonitoring
+   Perencanaan Kas Harian Satker pada menu ini.
+2. Pada kolom **Tindakan Renkas**, petugas Fo KPPN dapat melakukan
+   penginputan Dispensasi perencanaan Kas untuk melakukan
+   update/geser tanggal renkas sesuai yang tercantum pada surat
+   dispensasi renkas; petugas KPPN juga dapat melakukan Hapus
+   Renkas.
+3. Jika terdapat ADK SPM yang memiliki Renkas Harian maka pada menu
+   proses SPM akan terlihat informasi tanggal Renkas Harian (RPD).
+
+</Steps>
+
+<Aside type="caution" title="Perlu verifikasi">
+Daftar menu SAKTI tidak memuat menu **Renkas Harian** di bawah
+**Proses** (padanan terdekat: **Scheduled Payment Date**) — jalur
+menu pada langkah ditulis menurut juknis.
+</Aside>
+
+## Terkait
+
+- [Menggunakan Fitur KPPN BUN](/kppn-bun/fitur-kppn-bun/)
+- [Memproses ADK SPM di KPPN](/kppn-bun/proses-adk-spm/)
+
+## Sumber
+
+<SumberAsli />

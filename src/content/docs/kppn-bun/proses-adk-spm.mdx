@@ -1,0 +1,195 @@
+---
+title: Memproses ADK SPM di KPPN
+description: Pengujian dan pemrosesan ADK SPM satker oleh Fo, Validator, Reviewer, sampai persetujuan Kasi Pencairan Dana.
+modul: kppn-bun
+menu_sakti: "KPPN > Pencairan Dana > Proses > SPM"
+peran: [kppn-kanwil]
+jenis: juknis
+kata_kunci: [proses adk spm, adk pmrt, fo kppn, validator kppn, reviewer, kasi pd]
+status: review
+sumber:
+  - judul: "Juknis Fitur KPPN BUN"
+    url: "https://drive.google.com/file/d/1T2QlxS2vGkkTdaFPj5y6h0ZJr1gQy9uZ/view"
+    jenis: pdf
+    diambil: 2026-11-21
+    id_manifest: B-bun-002
+---
+
+import { Steps } from '@astrojs/starlight/components';
+import MenuSakti from '~/components/MenuSakti.astro';
+import SumberAsli from '~/components/SumberAsli.astro';
+
+Menu **SPM** pada fitur KPPN digunakan untuk memproses ADK SPM yang
+masuk ke KPPN, mulai dari pemeriksaan oleh petugas Fo, validasi dan
+unggah ADK PMRT ke SPAN oleh Validator, pemeriksaan ulang oleh
+Reviewer, sampai persetujuan oleh Kasi Pencairan Dana.
+
+<MenuSakti />
+
+## Prasyarat
+
+- Role yang dibutuhkan: petugas portal SAKTI **Fo** (Fo Konversi)
+  atau **Fo_Validator**, **Validator**, **Reviewer**, dan **Kasi
+  Pencairan Dana** (Approver).
+- Perekaman peran dan mapping Validator–Reviewer sudah dilakukan —
+  lihat [Memetakan Petugas Portal KPPN](/kppn-bun/mapping-petugas-portal-kppn/).
+
+## Alur proses
+
+1. Fo — menerima, memfilter, dan menguji ADK SPM, lalu meneruskan ke
+   Validator.
+2. Validator — mengunduh ADK PMRT dan mengunggahnya ke SPAN.
+3. Reviewer (Mo) — mengunduh lampiran SPM dan memeriksa kembali.
+4. Kasi Pencairan Dana (Approver) — menyetujui atau menolak; status
+   akhir **Disetujui** lalu **SP2D**.
+
+## Langkah
+
+### Pemeriksaan ADK SPM oleh Fo
+
+<Steps>
+
+1. Untuk memproses ADK SPM yang masuk ke KPPN, login sebagai
+   petugas portal SAKTI Fo (Fo Konversi) atau Fo_Validator, masuk
+   ke menu **KPPN > Pencairan Dana > Proses > SPM**.
+2. Filter status ADK/SPM digunakan untuk pencarian data ADK PMRT
+   yang telah dikirim oleh Satker; setelah kolom filter diinput
+   klik **Filter** untuk pencarian, atau **Reset** mengembalikan
+   filter awal. Keterangan filter:
+
+   | Filter | Keterangan |
+   |---|---|
+   | KPPN | Kode dan Nama KPPN user Fo/Mo bertugas |
+   | Kode Satker | Kode satker mitra kerja KPPN pengirim ADK SPM |
+   | No SPM | Nomor SPM yang ada pada ADK PMRT |
+   | Jenis SPM | Jenis SPM yang ada pada ADK PMRT |
+   | Tanggal Upload | Tanggal Upload ADK SPM yang diupload satker |
+   | Petugas | Userid petugas Fo/Mo KPPN |
+   | Status | Belum Proses, Proses Fo, Siap Unggah, Proses Validasi, Download ADK, Proses Review, Proses Persetujuan, Disetujui, SP2D, dan Ditolak |
+
+3. Status awal adalah **Belum Proses**; klik tanda panah bagian
+   kiri untuk melihat detail SPM.
+4. Informasi SPM berupa No. SPM, Jenis SPM, Uraian SPM, Nilai
+   Pengeluaran, Potongan, dan Nilai SPM dapat dilihat pada detail
+   SPM/ADK PMRT.
+5. Fo melakukan pemrosesan SPM dengan mengklik tombol **Proses**;
+   status akan berubah menjadi **Proses Fo** dan kolom Aksi akan
+   muncul tombol **Download** dan **Unlock**, dan ADK SPM yang
+   diproses akan mengikat ke petugas Fo yang memprosesnya.
+6. Jika ADK PMRT telah diproses oleh salah satu petugas Fo, tombol
+   **Proses** akan hilang pada petugas Fo yang lain — dimaksudkan
+   untuk menghindari proses ADK PMRT lebih dari sekali. Terdapat
+   validasi jika pemrosesan telah dilakukan petugas Fo lain namun
+   halaman petugas Fo yang bersangkutan belum direfresh (status
+   **Belum Proses** namun melakukan proses ADK PMRT yang sama).
+7. Pada kolom Aksi, tombol download petugas Fo dapat mengunduh
+   tanda terima (Tanda Bukti Terima ADK SPM) dan lampiran SPM
+   berupa softcopy SPM dan lampiran dokumen pendukung lainnya, yang
+   kemudian dokumen-dokumen tersebut dilakukan pengujian secara
+   manual oleh Fo sebagaimana biasanya. Petugas Fo juga dapat
+   membatalkan **Proses Fo** dengan mengklik tombol **Unlock**;
+   status ADK akan kembali menjadi **Belum Proses** sehingga ADK
+   dapat diproses oleh petugas Fo lain.
+8. Ketika dilakukan pengujian SPM oleh Fo ditemukan kesalahan atau
+   dokumen pendukung yang kurang, lakukan penolakan dengan
+   menginputkan uraian penolakan pada kolom **Keterangan Tolakan**
+   dan upload file bukti penolakan pada tombol **Upload** bila
+   diperlukan. Untuk SPM yang sudah benar dapat dilanjutkan dengan
+   mencentang pada kolom **Proses** dan kemudian tekan tombol
+   **Lanjutkan Sebagian**.
+9. Setelah klik **Lanjutkan** maka akan muncul notif konfirmasi
+   jumlah SPM yang diproses; jika pilih **Ya** maka data akan
+   hilang di Fo dan berlanjut ke Validator.
+10. Jika yang melakukan pemrosesan adalah petugas Fo KPPN yang
+    merangkap sebagai Validator (Fo_Validator), status ADK akan
+    berubah menjadi **Proses Validasi** bukan **Proses Fo**, dan
+    file pada tombol download yang muncul adalah **ADK**.
+
+</Steps>
+
+### Pemrosesan oleh Validator
+
+<Steps>
+
+1. Proses pada validator dapat berasal dari beberapa petugas Fo,
+   karena petugas Fo tidak ada mapping baik ke validator maupun ke
+   reviewer. Jika validator melakukan aksi **Unlock** maka status
+   **Proses Validasi** akan kembali menjadi **Siap Unggah**
+   sehingga dapat diproses kembali oleh validator lain; sedangkan
+   validator yang merangkap (Fo_Validator) melakukan aksi
+   **Unlock**, status **Proses Validasi** akan kembali menjadi
+   **Belum Proses**.
+2. Dikarenakan Validator melakukan upload ADK PMRT ke SPAN,
+   terdapat fitur pengaman: ketika ADK belum didownload maka belum
+   bisa melanjutkan prosesnya ke Reviewer (kolom proses Inaktif).
+3. Ketika melakukan download ADK akan muncul popup informasi SPM
+   yang akan didownload; ADK yang pernah ditolak Fo sebelumnya
+   tidak akan muncul kembali pada menu tersebut. Selanjutnya
+   centang pada Nomor SPM yang akan diproses atau input penolakan
+   untuk No SPM yang akan ditolak, kemudian klik tombol **Simpan &
+   Download** untuk mendownload ADK PMRT.
+4. Setelah mengklik tombol **Simpan & Download** maka akan muncul
+   notif konfirmasi jumlah SPM yang diproses; jika pilih **Ya**
+   maka status akan berubah menjadi **Download ADK**. Petugas juga
+   dapat melakukan download ulang ADK yang sudah dipilih sebelumnya
+   pada tombol **Download > ADK**.
+5. Jika setelah mengunggah ADK PMRT ke SPAN terdapat penolakan ADK
+   PMRT — misalnya karena **supplier tidak ditemukan** dan
+   sebagainya — Validator dapat melakukan penolakan kembali dengan
+   menginputkan keterangan penolakan dan **Upload** file bukti
+   penolakan dari SPAN; selanjutnya lakukan proses simpan dengan
+   mengklik tombol **Lanjutkan** maka notif **Berhasil simpan**
+   akan muncul dan data yang diproses akan hilang. Proses pada user
+   Validator telah selesai dan proses selanjutnya adalah ke user
+   Reviewer.
+
+</Steps>
+
+### Pemeriksaan oleh Reviewer dan persetujuan Kasi PD
+
+<Steps>
+
+1. Pada menu user Reviewer sama dengan menu-menu sebelumnya; di
+   menu ini reviewer melakukan download lampiran SPM untuk dicek
+   kembali yang kemudian ADK dapat diproses atau ditolak apabila
+   ada kesalahan, dan kemudian proses **Lanjutkan** untuk
+   selanjutnya diproses ke Kasi PD.
+2. Pada menu user Kasi PD (Approval) sama dengan Reviewer; di menu
+   ini Kasi PD melakukan download lampiran SPM untuk disetujui atau
+   ditolak apabila ada kesalahan, dan kemudian proses **Lanjutkan**.
+3. Status ADK terakhir setelah Kasi PD melakukan persetujuan adalah
+   **Disetujui**; setiap malam SAKTI akan melakukan pengecekan ke
+   SPAN apakah SPM yang disetujui tersebut telah menjadi SP2D.
+   Apabila SPM yang disetujui tersebut telah menjadi SP2D maka
+   status ADK akan diupdate menjadi **SP2D**, dan ADK SPM tersebut
+   akan hilang dari menu Kasi PD namun masih dapat dilihat pada
+   menu Monitoring Proses SPM.
+
+</Steps>
+
+## Hasil yang diharapkan
+
+ADK PMRT dan dokumen pendukung terproses sampai status **Disetujui**
+oleh Kasi PD; setelah SPM menjadi SP2D di SPAN, status ADK menjadi
+**SP2D** dan masih dapat dilihat pada Monitoring Proses SPM.
+
+## Ketentuan
+
+- Apabila seluruh SPM dalam ADK tersebut diproses maka muncul tombol
+  **Lanjutkan**; apabila hanya sebagian SPM dalam ADK diproses maka
+  akan muncul tombol **Lanjutkan Sebagian**; apabila seluruh SPM
+  dalam ADK tidak diproses maka muncul tombol **Tolak**.
+- Apabila data ADK PMRT tidak muncul pada menu SPM, dimungkinkan
+  karena belum dilakukan perekaman peran atau mapping Validator dan
+  Reviewer.
+
+## Terkait
+
+- [Menggunakan Fitur KPPN BUN](/kppn-bun/fitur-kppn-bun/)
+- [Memetakan Petugas Portal KPPN](/kppn-bun/mapping-petugas-portal-kppn/)
+- [Memantau Proses SPM di KPPN](/kppn-bun/monitoring-proses-spm/)
+- [Memproses ADK SPM Koreksi di KPPN](/kppn-bun/proses-adk-spm-koreksi/)
+
+## Sumber
+
+<SumberAsli />

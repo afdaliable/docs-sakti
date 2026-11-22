@@ -1,0 +1,126 @@
+---
+title: Memetakan Petugas Portal KPPN
+description: Perekaman mapping user portal KPPN oleh Kasi Pencairan Dana untuk petugas Fo, Validator, Reviewer, dan MO.
+modul: kppn-bun
+menu_sakti: "KPPN > Pencairan Dana > Mapping User Portal"
+peran: [kppn-kanwil]
+jenis: juknis
+kata_kunci: [mapping user portal, petugas kppn, fo validator, reviewer, kasi pencairan dana]
+status: review
+perlu_review: true
+sumber:
+  - judul: "Juknis Fitur KPPN BUN"
+    url: "https://drive.google.com/file/d/1T2QlxS2vGkkTdaFPj5y6h0ZJr1gQy9uZ/view"
+    jenis: pdf
+    diambil: 2026-11-21
+    id_manifest: B-bun-002
+  - judul: "Juknis Fitur KPPN BUN Komitmen"
+    url: "https://drive.google.com/file/d/12nxKUIRnmHeAIOiiAK6w6JtSmSOb9fza/view"
+    jenis: pdf
+    diambil: 2026-11-21
+    id_manifest: B-bun-001
+---
+
+import { Steps, Aside } from '@astrojs/starlight/components';
+import MenuSakti from '~/components/MenuSakti.astro';
+import SumberAsli from '~/components/SumberAsli.astro';
+
+Mapping user portal dilakukan oleh Kasi Pencairan Dana agar ADK yang
+diproses petugas KPPN berjalan sesuai alur — terutama bagi KPPN yang
+memiliki lebih dari satu Fo/Mo. Tanpa mapping, user Fo maupun Mo
+tidak dapat meneruskan ADK ke tahapan selanjutnya. Dua juknis
+menuliskan tata cara yang berbeda dan keduanya dimuat di bawah.
+
+<MenuSakti />
+
+## Prasyarat
+
+- Role yang dibutuhkan: user Kasi Pencairan Dana (Approver,
+  `aprkppn_kdsatker_nip`).
+- Pengguna SAKTI level KPPN sudah didaftarkan ke Admin Pusat (SITP)
+  dan perekaman peran Fo/Mo sudah dilakukan oleh Kasi PD.
+
+## Langkah
+
+### Perekaman mapping petugas portal (juknis Fitur KPPN BUN)
+
+<Steps>
+
+1. Login aplikasi SAKTI menggunakan user Kasi Pencairan Dana.
+2. Lakukan perekaman peran Petugas KPPN dengan masuk ke fitur
+   **KPPN > Pencairan Dana > Mapping User Portal**, menu
+   **Referensi Mapping Petugas Portal SAKTI**, lalu klik **Rekam**.
+3. Pilih nama Petugas KPPN dengan peran sebagai **Fo**, **Fo &
+   Validator**, atau **Validator** saja.
+4. Lakukan mapping user Validator dan user Reviewer:
+
+   - petugas KPPN dengan peran Validator dimapping dengan petugas
+     user Reviewer (Mo);
+   - petugas KPPN dengan peran Reviewer dimapping dengan petugas
+     user Validator (Fo).
+
+5. Approver: Kepala Seksi Pencairan Dana.
+
+</Steps>
+
+### Mapping user FO dan MO (juknis Fitur KPPN BUN Komitmen)
+
+<Steps>
+
+1. Buka user Kasi, menu **KPPN > Pencairan Dana > Mapping User
+   Portal**.
+2. Klik **Rekam** pada form perekaman mapping user portal sehingga
+   form perekaman terbuka.
+3. Pilih petugas KPPN (petugas FO) yang akan dilakukan perekaman
+   mapping.
+4. Pilih peran petugas KPPN yang dipilih sebagai **FO & Validator**.
+5. Pilih petugas MO yang akan dimapping pada petugas FO terkait.
+6. Klik **Simpan**.
+
+</Steps>
+
+## Ketentuan
+
+Keterangan peran petugas menurut juknis:
+
+- **Fo** — hanya menerima, memeriksa SPM; jika sudah sesuai maka
+  melanjutkannya ke petugas Validator (berperan hanya sebagai
+  petugas Fo). Data yang diproses oleh Fo tidak mengikat validator
+  tertentu, sehingga petugas yang berperan sebagai validator bisa
+  mengambil data dari Fo mana pun.
+- **Fo & Validator** — menerima, memeriksa SPM sampai unggah ADK
+  PMRT ke SPAN, merangkap sebagai petugas Fo dan sebagai Validator;
+  ketika validator memproses maka akan masuk pada reviewer yang
+  dipasangkannya.
+- **Validator** — menerima data yang sudah diperiksa oleh Fo,
+  download ADK PMRT dan unggah ke SPAN, memiliki pasangan Reviewer.
+
+Ketentuan lain:
+
+- Mapping dilakukan hanya untuk user Validator dan Reviewer, dan
+  perekaman mapping pasangannya dilakukan secara manual.
+- Satu user portal tidak dapat direkam lebih dari satu kali pada
+  mapping user Portal.
+- Mapping cukup dilakukan satu kali hingga adanya penggantian user.
+- Apabila belum dilakukan mapping, saat operator FO melakukan proses
+  ADK akan muncul notifikasi; pada user MO yang belum dimapping, ADK
+  supplier maupun kontrak tidak dapat diteruskan ke user Kepala
+  Seksi.
+
+<Aside type="caution" title="Perlu verifikasi">
+Kedua juknis menuliskan tata cara mapping yang berbeda — juknis
+Fitur KPPN BUN memetakan Validator ke Reviewer, juknis Fitur KPPN
+BUN Komitmen memetakan FO ke MO dengan peran **FO & Validator**.
+Keduanya ditulis apa adanya dengan keterangan juknisnya.
+</Aside>
+
+## Terkait
+
+- [Menggunakan Fitur KPPN BUN](/kppn-bun/fitur-kppn-bun/)
+- [Menggunakan Fitur Komitmen untuk KPPN BUN](/kppn-bun/fitur-komitmen/)
+- [Memproses ADK SPM di KPPN](/kppn-bun/proses-adk-spm/)
+- [Memproses ADK Supplier di KPPN](/kppn-bun/proses-adk-supplier/)
+
+## Sumber
+
+<SumberAsli />

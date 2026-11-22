@@ -1,0 +1,84 @@
+---
+title: Menggunakan Fitur KPPN BUN
+description: Gambaran fitur KPPN untuk memproses ADK SPM, koreksi SPM, dan renkas harian satker di aplikasi SAKTI.
+modul: kppn-bun
+peran: [kppn-kanwil]
+jenis: konsep
+kata_kunci: [kppn bun, adk spm, adk pmrt, fo kppn, validator, reviewer]
+status: review
+sumber:
+  - judul: "Juknis Fitur KPPN BUN"
+    url: "https://drive.google.com/file/d/1T2QlxS2vGkkTdaFPj5y6h0ZJr1gQy9uZ/view"
+    jenis: pdf
+    diambil: 2026-11-21
+    id_manifest: B-bun-002
+---
+
+import SumberAsli from '~/components/SumberAsli.astro';
+
+Fitur KPPN pada aplikasi SAKTI memudahkan petugas Fo/Mo KPPN dalam
+memproses ADK SPM, Renkas Harian, dan Koreksi SPM Satker.
+Pengembangan fitur ini mengadopsi aplikasi yang sudah familiar bagi
+KPPN, yaitu aplikasi E-SPM.
+
+| Keterangan | Isi |
+|---|---|
+| Modul | Fitur KPPN (Portal SAKTI) |
+| Role User | Operator, Validator, Reviewer, Approver |
+| Modul lain terkait | PEM |
+| Transaksi yang terkait | PEM: Renkas Harian, ADK SPM, Koreksi SPM, Monitoring ADK SPM |
+| Dokumen input | SPP/SPM |
+| Output | ADK PMRT, Dokumen Pendukung |
+| Validasi | Pengiriman ADK SPM Satker |
+| Petunjuk teknis terkait | ADM – Pendaftaran User SAKTI; PEM – Perekaman SPM |
+
+## Prasyarat
+
+- Role yang dibutuhkan: Operator, Validator, Reviewer, dan
+  Approver (role user menurut juknis).
+
+## Alur proses
+
+1. **Proses ADK SPM** — ADK SPM yang dikirim satker diperiksa
+   petugas Fo, divalidasi petugas Validator (unggah ADK PMRT ke
+   SPAN), diperiksa kembali Reviewer (Mo), lalu disetujui Kasi
+   Pencairan Dana (Approver).
+2. **Proses ADK SPM Koreksi** — alurnya tidak melalui petugas
+   Mo/Reviewer; pemrosesan oleh Validator/Fo_Validator langsung ke
+   Kasi Pencairan Dana.
+
+## Ketentuan
+
+- Pendaftaran pengguna SAKTI level KPPN disampaikan ke Admin Pusat
+  (SITP).
+- Setelah mendaftarkan user SAKTI, lakukan perekaman peran pada Fo
+  maupun Mo oleh Kasi PD.
+- Mapping dilakukan oleh Kasi Pencairan Dana pada menu **Mapping
+  User Portal**.
+- Mapping dilakukan hanya untuk user Validator dan Reviewer.
+- Perekaman mapping pasangannya dilakukan secara manual.
+- Satu user portal tidak dapat direkam lebih dari satu kali pada
+  mapping user Portal.
+- Fo dan Validator berperan sebagai operator pada aplikasi SAKTI
+  (`oprkppn_kdsatker_nip`).
+- Reviewer berperan sebagai Validator pada aplikasi SAKTI
+  (`valkppn_kdsatker_nip`).
+- Kasi Pencairan Dana berperan sebagai Approver pada aplikasi SAKTI
+  (`aprkppn_kdsatker_nip`).
+- Apabila data ADK PMRT tidak muncul pada menu SPM, dimungkinkan
+  karena belum dilakukan perekaman peran atau mapping Validator dan
+  Reviewer.
+- Fitur KPPN saat ini baru tersedia untuk menu Proses ADK SPM,
+  Koreksi SPM, dan Renkas Harian.
+
+## Terkait
+
+- [Memetakan Petugas Portal KPPN](/kppn-bun/mapping-petugas-portal-kppn/)
+- [Memproses ADK SPM di KPPN](/kppn-bun/proses-adk-spm/)
+- [Memantau Proses SPM di KPPN](/kppn-bun/monitoring-proses-spm/)
+- [Memproses ADK SPM Koreksi di KPPN](/kppn-bun/proses-adk-spm-koreksi/)
+- [Memproses Renkas Harian di KPPN](/kppn-bun/renkas-harian/)
+
+## Sumber
+
+<SumberAsli />
