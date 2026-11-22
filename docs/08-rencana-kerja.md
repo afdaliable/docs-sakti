@@ -98,6 +98,8 @@ Status per modul:
 
 **Gerbang 4:** semua item manifest `dimigrasi` atau `ditolak`; ≥ 40 query uji; tidak ada artikel `draft` yang tersisa tanpa issue.
 
+Status Gerbang 4 (22 Nov 2026): semua modul dalam urutan Fase 4 sudah didraf dan di-merge ke `main`. Manifest: 602 `didraft`, 66 `ditolak`, 9 `gagal` (K29: 1 halaman unduhan SAKTI Admin, 5 dokumen Aset Tetap, 1 Piutang, 2 Akuntansi dan Pelaporan; menunggu berkas di `sources/raw/manual/`), 0 `diekstrak`. Belum ada item `dimigrasi` karena status itu diberikan setelah review pemilik modul (semua artikel masih `status: review`). Query uji: 134 (≥ 40). Artikel `draft`: 0. Gerbang belum dinyatakan lolos: menunggu review pemilik modul dan keputusan atas item `gagal`.
+
 ---
 
 ## Fase 5 — Pencarian pintar & kontribusi
