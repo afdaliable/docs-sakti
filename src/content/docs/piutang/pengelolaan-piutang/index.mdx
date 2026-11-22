@@ -1,7 +1,9 @@
 ---
 title: Pengelolaan Piutang
-description: Panduan menu Pengelolaan Piutang pada modul Piutang.
+description: Pengelolaan piutang satker, dari referensi debitur dan pencatatan sampai transaksi, koreksi, transfer, laporan, piutang jangka panjang, dan upload.
 modul: piutang
+menu_sakti: "Piutang > Pengelolaan Piutang"
+peran: [satker]
 jenis: indeks
 status: terbit
 sidebar:
@@ -9,4 +11,21 @@ sidebar:
   order: 0
 ---
 
-Panduan untuk menu **Pengelolaan Piutang** sedang disiapkan.
+import { LinkCard, CardGrid } from '@astrojs/starlight/components';
+import MenuSakti from '~/components/MenuSakti.astro';
+
+Sub-menu **Piutang > Pengelolaan Piutang** memuat seluruh
+pengelolaan piutang satuan kerja.
+
+<MenuSakti />
+
+<CardGrid>
+  <LinkCard title="Referensi" href="/piutang/pengelolaan-piutang/referensi/" description="Merekam referensi debitur piutang yang dapat dipakai semua satker." />
+  <LinkCard title="Pencatatan" href="/piutang/pengelolaan-piutang/pencatatan/" description="Merekam piutang baru, saldo awal, dan piutang dari hapus buku." />
+  <LinkCard title="Transaksi" href="/piutang/pengelolaan-piutang/transaksi/" description="Settlement, penyisihan, penghapusan, surat peringatan, restrukturisasi, dan pelimpahan." />
+  <LinkCard title="Koreksi" href="/piutang/pengelolaan-piutang/koreksi/" description="Memperbaiki kesalahan pencatatan piutang." />
+  <LinkCard title="Transfer" href="/piutang/pengelolaan-piutang/transfer/" description="Transfer keluar dan transfer masuk piutang antar satker secara online." />
+  <LinkCard title="Laporan" href="/piutang/pengelolaan-piutang/laporan/" description="Mencetak laporan kartu, rekap, dan penyisihan piutang." />
+  <LinkCard title="Piutang Jangka Panjang" href="/piutang/pengelolaan-piutang/piutang-jangka-panjang/" description="Mencatat bagian lancar piutang jangka panjang." />
+  <LinkCard title="Upload" href="/piutang/pengelolaan-piutang/upload/" description="Merekam transaksi bervolume besar lewat file ADK .csv." />
+</CardGrid>

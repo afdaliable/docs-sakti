@@ -1,0 +1,137 @@
+---
+title: Merekam Transfer Piutang
+description: Mencatat transfer keluar piutang oleh satker pemberi dan transfer masuk oleh satker penerima secara online.
+modul: piutang
+menu_sakti: "Piutang > Pengelolaan Piutang > Transfer"
+peran: [satker]
+jenis: juknis
+kata_kunci: [transfer piutang, transfer keluar, transfer masuk, TKTM]
+status: review
+sumber:
+  - judul: "SAKTI PELAPORAN - Transfer Piutang"
+    url: "https://sites.google.com/view/saktipelaporan/piutang/pengelolaan-piutang/transfer"
+    jenis: google-sites
+    diambil: 2026-11-21
+    id_manifest: C-piutang-pengelolaan-piutang-transfer
+  - judul: "JUKNIS SAKTI-Modul Piutang web_30122020"
+    url: "https://drive.google.com/file/d/1heaiMUcDJHnf97xK2LL76bUzZgpkRo4H/view"
+    jenis: pdf
+    diambil: 2026-11-21
+    id_manifest: C-dok-130
+  - judul: "Transfer Masuk-12"
+    url: "https://drive.google.com/file/d/1cPfRutqDzw2r0VxfDyQPWaWzTdIz1pZQ/view"
+    jenis: video
+    diambil: 2026-11-21
+    id_manifest: C-dok-151
+  - judul: "Transfer Keluar-11"
+    url: "https://drive.google.com/file/d/1O78XZSxmK1Wn5lgA6M2eR5D9iZr5b7G-/view"
+    jenis: video
+    diambil: 2026-11-21
+    id_manifest: C-dok-152
+  - judul: "Transfer Masuk Piutang"
+    url: "https://docs.google.com/presentation/d/1hU_UqAlj0c_w8Rl4KKPRmYvcdx86B_l4HHbfn-88EWI/"
+    jenis: google-slides
+    diambil: 2026-11-21
+    id_manifest: C-dok-153
+  - judul: "Transfer Keluar Piutang"
+    url: "https://docs.google.com/presentation/d/14lihf12qSsql49ZOclxcNLp2RziMd2QlphdskLCovA0/"
+    jenis: google-slides
+    diambil: 2026-11-21
+    id_manifest: C-dok-154
+sidebar:
+  order: 5
+---
+
+import { Steps } from '@astrojs/starlight/components';
+import MenuSakti from '~/components/MenuSakti.astro';
+import SumberAsli from '~/components/SumberAsli.astro';
+
+Menu Transaksi Transfer Keluar/Transfer Masuk Piutang digunakan
+untuk melakukan pencatatan transaksi transfer keluar piutang
+oleh satker pemberi dan pencatatan transaksi transfer masuk
+piutang oleh satker penerima secara online.
+
+<MenuSakti />
+
+## Prasyarat
+
+- Dokumen sumber: BAST Transfer/BAST Piutang.
+- Modul dan transaksi terkait: GLP.
+- Pencatatan transfer harus dilakukan terlebih dahulu oleh
+  satker pemberi dengan melakukan transfer keluar; setelah itu
+  satker penerima dapat melakukan perekaman transfer masuk
+  dengan mengambil data perekaman yang sudah dilakukan satker
+  pemberi.
+
+## Langkah
+
+### Transfer Keluar
+
+<Steps>
+
+1. Pilih menu **Piutang > Pengelolaan Piutang > Transfer >
+   Transfer Keluar**, lalu klik **Rekam**.
+2. Isikan tanggal transfer keluar piutang.
+3. Isikan uraian keterangan sebagai tambahan informasi yang
+   diperlukan.
+4. Pilih satker tujuan: isikan kode satker tujuan, klik Cari,
+   pilih satker yang muncul sesuai yang diinginkan, lalu klik
+   Pilih.
+5. Isikan Nomor Dokumen sesuai dengan nomor dokumen yang ada.
+6. Pilih No Piutang dengan mengklik tombol look up, pilih data
+   piutang yang dilakukan transfer keluar, lalu klik pilih;
+   setelah data piutang dipilih, kolom debitur dan nilai
+   transfer piutang terisi secara otomatis.
+7. Klik **Simpan**.
+
+</Steps>
+
+### Transfer Masuk
+
+<Steps>
+
+1. Pilih menu **Piutang > Pengelolaan Piutang > Transfer >
+   Transfer Masuk**, lalu klik **Rekam**; akan muncul data
+   Transfer Keluar yang sudah dilakukan perekaman oleh satker
+   pemberi.
+2. Pilih data transfer yang sudah ada berdasarkan pencatatan
+   transfer keluar yang dilakukan satker pemberi; data yang
+   dipilih bisa lebih dari satu dengan syarat tanggal transfer
+   pada periode semester yang sama.
+3. Isikan tanggal buku transfer masuk pada periode semester
+   yang sama dengan tanggal transfer keluar.
+4. Klik **Transfer masuk** untuk menyimpan data perekaman.
+
+</Steps>
+
+## Ketentuan
+
+- Tanggal transfer masuk harus lebih besar sama dengan transfer
+  keluar.
+- Periode semester transfer masuk harus sama dengan transfer
+  keluar.
+
+## Jurnal transaksi
+
+Satker pemberi:
+
+- D. 313211
+- K. 152111/115211
+- D. 116211/156311
+- K. 313211
+
+Satker penerima:
+
+- D. 152111/115211
+- K. 313221
+- D. 313221
+- K. 116211/156311
+
+## Terkait
+
+- [Mencatat Piutang/Tagihan](/piutang/pengelolaan-piutang/pencatatan/pencatatan-piutang-tagihan/)
+- [Melakukan Likuidasi Piutang](/piutang/likuidasi/)
+
+## Sumber
+
+<SumberAsli />

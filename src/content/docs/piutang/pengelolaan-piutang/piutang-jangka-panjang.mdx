@@ -1,0 +1,74 @@
+---
+title: Mengelola Piutang Jangka Panjang
+description: Mencatat bagian lancar piutang jangka panjang pada periode Desember dan Januari.
+modul: piutang
+menu_sakti: "Piutang > Pengelolaan Piutang > Piutang Jangka Panjang"
+peran: [satker]
+jenis: juknis
+kata_kunci: [piutang jangka panjang, bagian lancar, periode desember, periode januari]
+status: review
+sumber:
+  - judul: "SAKTI PELAPORAN - Piutang Jangka Panjang"
+    url: "https://sites.google.com/view/saktipelaporan/piutang/pengelolaan-piutang/piutang-jangka-panjang"
+    jenis: google-sites
+    diambil: 2026-11-21
+    id_manifest: C-piutang-pengelolaan-piutang-piutang-jangka-panjang
+  - judul: "JUKNIS SAKTI-Modul Piutang web_30122020"
+    url: "https://drive.google.com/file/d/1heaiMUcDJHnf97xK2LL76bUzZgpkRo4H/view"
+    jenis: pdf
+    diambil: 2026-11-21
+    id_manifest: C-dok-130
+sidebar:
+  order: 7
+---
+
+import MenuSakti from '~/components/MenuSakti.astro';
+import SumberAsli from '~/components/SumberAsli.astro';
+
+Menu **Piutang > Pengelolaan Piutang > Piutang Jangka Panjang**
+khusus digunakan untuk transaksi piutang jangka panjang.
+
+<MenuSakti />
+
+## Ketentuan
+
+- **Menghitung Bagian Lancar Periode Desember**: mencatat bagian
+  dari piutang jangka panjang yang termasuk sebagai bagian
+  lancar (jatuh tempo dalam 1 tahun).
+- **Update Bagian Lancar Periode Januari**: mencatat bagian dari
+  piutang jangka panjang yang termasuk sebagai bagian lancar
+  (jatuh tempo dalam 1 tahun).
+- Modul dan transaksi terkait: Modul Bendahara dan Modul GLP.
+- Pengguna hanya dapat melakukan rekam dan ubah data ketika
+  periode yang terbuka adalah Desember atau Januari tahun
+  bersangkutan.
+- Pencatatan saldo bagian lancar piutang tidak disediakan dalam
+  modul piutang, sehingga harus dicatat melalui jurnal pada
+  modul GLP sesuai dengan perhitungan yang sudah dilakukan.
+
+## Ilustrasi transaksi
+
+Piutang TGR memiliki kualitas Lancar sebesar Rp50.000.000 yang
+sudah dicatat pada modul piutang, sehingga otomatis terbentuk
+saldo: Saldo Piutang TGR (D) Rp50.000.000; Saldo Beban
+Penyisihan Piutang Tak Tertagih - TGR (D) Rp250.000; Saldo
+Penyisihan Piutang Tak Tertagih - TGR (K) Rp250.000. Ditentukan
+bahwa bagian lancarnya adalah Rp10.000.000, maka harus dilakukan
+jurnal pada modul GLP sebagai berikut:
+
+- D. Bagian Lancar Tagihan TGR — Rp10.000.000
+- K. Piutang TGR — Rp10.000.000
+- D. Beban Penyisihan Piutang Tak Tertagih - Bagian Lancar TGR —
+  Rp50.000
+- K. Beban Penyisihan Piutang Tak Tertagih - TGR — Rp50.000
+- D. Penyisihan Piutang Tak Tertagih - TGR — Rp50.000
+- K. Penyisihan Piutang Tak Tertagih - Bagian Lancar TGR —
+  Rp50.000
+
+## Terkait
+
+- [Merekam Penyisihan Piutang](/piutang/pengelolaan-piutang/transaksi/penyisihan-piutang/)
+
+## Sumber
+
+<SumberAsli />

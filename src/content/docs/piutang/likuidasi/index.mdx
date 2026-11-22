@@ -1,12 +1,48 @@
 ---
 title: Likuidasi
-description: Panduan menu Likuidasi pada modul Piutang.
+description: Menyerahkan dan menerima saldo piutang antar satuan kerja dalam rangka likuidasi.
 modul: piutang
-jenis: indeks
-status: terbit
+menu_sakti: "Piutang > Likuidasi"
+peran: [satker]
+jenis: juknis
+kata_kunci: [likuidasi piutang, likuidasi keluar, likuidasi masuk]
+status: review
+sumber:
+  - judul: "SAKTI PELAPORAN - Likuidasi"
+    url: "https://sites.google.com/view/saktipelaporan/piutang/likuidasi"
+    jenis: google-sites
+    diambil: 2026-11-21
+    id_manifest: C-piutang-likuidasi
 sidebar:
   label: Ringkasan
   order: 0
 ---
 
-Panduan untuk menu **Likuidasi** sedang disiapkan.
+import MenuSakti from '~/components/MenuSakti.astro';
+import SumberAsli from '~/components/SumberAsli.astro';
+
+Menu **Piutang > Likuidasi** digunakan dalam rangka likuidasi
+satuan kerja/entitas.
+
+<MenuSakti />
+
+## Ketentuan
+
+- **Likuidasi Keluar**: digunakan untuk mencatat penyerahan
+  saldo piutang kepada satuan kerja lain yang masih dalam satu
+  entitas pelaporan akuntansi pemerintah pusat dalam rangka
+  likuidasi satuan kerja/entitas.
+- **Likuidasi Masuk**: digunakan untuk mencatat penerimaan saldo
+  piutang dari satuan kerja lain yang masih dalam satu entitas
+  pelaporan akuntansi pemerintah pusat dalam rangka likuidasi
+  satuan kerja/entitas.
+- Jalur menu: **Piutang > Likuidasi > Likuidasi Masuk/Keluar**.
+- Modul terkait: GLP.
+
+## Terkait
+
+- [Merekam Transfer Piutang](/piutang/pengelolaan-piutang/transfer/)
+
+## Sumber
+
+<SumberAsli />

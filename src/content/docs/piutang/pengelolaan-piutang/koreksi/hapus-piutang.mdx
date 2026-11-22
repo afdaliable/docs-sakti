@@ -1,0 +1,77 @@
+---
+title: Menghapus Piutang (Koreksi Hapus)
+description: Menghapus piutang karena kesalahan pencatatan yang sudah tidak dapat dihapus melalui menu perekamannya.
+modul: piutang
+menu_sakti: "Piutang > Pengelolaan Piutang > Koreksi > Hapus Piutang"
+peran: [satker]
+jenis: juknis
+kata_kunci: [koreksi hapus, hapus piutang, kesalahan pencatatan]
+status: review
+sumber:
+  - judul: "SAKTI PELAPORAN - Koreksi Hapus"
+    url: "https://sites.google.com/view/saktipelaporan/piutang/pengelolaan-piutang/koreksi/hapus-piutang"
+    jenis: google-sites
+    diambil: 2026-11-21
+    id_manifest: C-piutang-pengelolaan-piutang-koreksi-hapus-piutang
+sidebar:
+  order: 3
+---
+
+import { Steps } from '@astrojs/starlight/components';
+import MenuSakti from '~/components/MenuSakti.astro';
+import SumberAsli from '~/components/SumberAsli.astro';
+
+Sub menu Transaksi Koreksi Hapus Piutang digunakan untuk
+melakukan penghapusan piutang karena kesalahan pencatatan
+piutang yang sudah tidak dapat dihapus melalui menu
+perekamannya.
+
+<MenuSakti />
+
+## Prasyarat
+
+- Dokumen sumber: dokumen koreksi piutang.
+- Modul dan transaksi terkait: GLP terkait jurnal yang terbentuk
+  atas transaksi ini.
+- Bisa diterapkan pada piutang yang sudah tidak bisa dihapus
+  pada menu perekaman.
+
+## Langkah
+
+<Steps>
+
+1. Pilih menu **Piutang > Pengelolaan Piutang > Koreksi >
+   Hapus Piutang**.
+2. Pilih data piutang yang akan dikoreksi hapus.
+3. Isikan data dokumen kelengkapan.
+
+</Steps>
+
+## Ketentuan
+
+- Piutang yang telah dikoreksi hapus tidak muncul lagi pada
+  laporan-laporan.
+- Piutang yang telah dikoreksi hapus tidak bisa ditransaksikan
+  lagi.
+- Jika ada kesalahan, data koreksi hapus dapat dihapuskan untuk
+  memunculkan kembali data piutangnya.
+
+## Jurnal transaksi
+
+- D. Koreksi Lainnya (391119)
+- K. Piutang (1xxxxx)
+
+Jika piutang tersebut sudah dihitung penyisihannya, maka timbul
+juga jurnal:
+
+- D. Penyisihan Piutang (1xxxxx)
+- K. Koreksi Lainnya (391119)
+
+## Terkait
+
+- [Mengoreksi Piutang](/piutang/pengelolaan-piutang/koreksi/koreksi-piutang/)
+- [Merekam Penghapusan Piutang](/piutang/pengelolaan-piutang/transaksi/penghapusan-piutang/)
+
+## Sumber
+
+<SumberAsli />

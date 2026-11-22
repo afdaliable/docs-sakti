@@ -1,0 +1,118 @@
+---
+title: Mengoreksi Piutang
+description: Mencatat perbaikan atas kesalahan pencatatan piutang yang telah tutup buku atau sudah ada transaksi lanjutannya.
+modul: piutang
+menu_sakti: "Piutang > Pengelolaan Piutang > Koreksi > Koreksi Piutang"
+peran: [satker]
+jenis: juknis
+kata_kunci: [koreksi piutang, koreksi normal, koreksi kualitas, selisih kurs]
+status: review
+sumber:
+  - judul: "SAKTI PELAPORAN - Koreksi Piutang"
+    url: "https://sites.google.com/view/saktipelaporan/piutang/pengelolaan-piutang/koreksi/koreksi-piutang"
+    jenis: google-sites
+    diambil: 2026-11-21
+    id_manifest: C-piutang-pengelolaan-piutang-koreksi-koreksi-piutang
+  - judul: "JUKNIS SAKTI-Modul Piutang web_30122020"
+    url: "https://drive.google.com/file/d/1heaiMUcDJHnf97xK2LL76bUzZgpkRo4H/view"
+    jenis: pdf
+    diambil: 2026-11-21
+    id_manifest: C-dok-130
+  - judul: "Koreksi Piutang-1"
+    url: "https://drive.google.com/file/d/1swf7HAPkilGdmytdAmZ1cJlw2QKBEJQo/view"
+    jenis: video
+    diambil: 2026-11-21
+    id_manifest: C-dok-148
+  - judul: "Koreksi Kualitas"
+    url: "https://docs.google.com/presentation/d/1lR5WPX--cyNLrDZooO_2D9N2FMOaaIQRzEGDqsqHnEI/"
+    jenis: google-slides
+    diambil: 2026-11-21
+    id_manifest: C-dok-149
+  - judul: "Koreksi Normal"
+    url: "https://docs.google.com/presentation/d/1FpsrTdnbJ0RaBnTmnEmw9apL2sh27Ht_k6jegJwSci0/"
+    jenis: google-slides
+    diambil: 2026-11-21
+    id_manifest: C-dok-150
+sidebar:
+  order: 2
+---
+
+import { Steps } from '@astrojs/starlight/components';
+import MenuSakti from '~/components/MenuSakti.astro';
+import SumberAsli from '~/components/SumberAsli.astro';
+
+Menu Transaksi Koreksi Piutang digunakan untuk melakukan
+pencatatan perbaikan atas kesalahan pencatatan piutang yang
+telah dilakukan tutup buku atau sudah ada transaksi lanjutannya.
+Submenu ini juga bisa digunakan untuk melakukan koreksi nilai
+piutang atas adanya pembayaran tahun sebelumnya yang belum
+dilakukan settlement piutang.
+
+<MenuSakti />
+
+## Prasyarat
+
+- Dokumen sumber: dokumen koreksi piutang.
+- Modul dan transaksi terkait: GLP.
+- Koreksi hanya bisa digunakan untuk data yang sudah dilakukan
+  tutup buku atau terdapat transaksi lanjutan.
+
+## Langkah
+
+<Steps>
+
+1. Pilih menu **Piutang > Pengelolaan Piutang > Koreksi >
+   Koreksi Piutang**, lalu klik **Rekam**.
+2. Pilih No Piutang dengan mengklik tombol look up, pilih data
+   piutang yang dilakukan koreksi, lalu klik pilih; setelah data
+   piutang dipilih, kolom informasi piutang terisi secara
+   otomatis.
+3. Isikan tanggal koreksi piutang.
+4. Isikan uraian keterangan sebagai tambahan informasi yang
+   diperlukan.
+5. Isikan Nomor Dokumen sesuai dengan nomor dokumen koreksi
+   yang ada.
+6. Berikan centang pada Kualitas Piutang hanya apabila koreksi
+   piutang yang akan dilakukan hanya untuk mengubah kualitas
+   piutangnya.
+7. Pilih Jenis Koreksi yang akan dilakukan: Normal untuk
+   melakukan koreksi biasa pada piutang, atau Selisih Kurs untuk
+   koreksi akibat perubahan kurs pada piutang valas.
+8. Isikan nilai koreksi piutang yang benar sehingga pada kolom
+   Nilai Jurnal otomatis terisi nilai perubahannya.
+9. Klik **Simpan**.
+
+</Steps>
+
+## Ketentuan
+
+- Koreksi terhadap status piutang hanya bisa dilakukan atas
+  kesalahan pencatatan saldo awal piutang.
+- Koreksi nilai penyisihan piutang hanya bisa dilakukan atas
+  kesalahan pencatatan saldo awal piutang; nilai koreksi
+  penyisihan juga dapat dikoreksi apabila terdapat kesalahan,
+  apabila tidak ada maka tidak perlu dilakukan perubahan
+  nilainya.
+- Setelah mengisi nilai koreksi, perhatikan nilai
+  bertambah/berkurang untuk memastikan kebenaran perekaman.
+
+## Jurnal transaksi
+
+Piutang berkurang:
+
+- D. 391111/42xxxx
+- K. 152111/115211
+
+Piutang bertambah:
+
+- D. 152111/115211
+- K. 391111/42xxxx
+
+## Terkait
+
+- [Mencatat Piutang/Tagihan](/piutang/pengelolaan-piutang/pencatatan/pencatatan-piutang-tagihan/)
+- [Menghapus Piutang (Koreksi Hapus)](/piutang/pengelolaan-piutang/koreksi/hapus-piutang/)
+
+## Sumber
+
+<SumberAsli />

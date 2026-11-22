@@ -1,0 +1,115 @@
+---
+title: Mengunggah Data Transaksi Piutang
+description: Merekam transaksi piutang bervolume besar lewat file ADK .csv.
+modul: piutang
+menu_sakti: "Piutang > Pengelolaan Piutang > Upload"
+peran: [satker]
+jenis: juknis
+kata_kunci: [upload transaksi piutang, ADK, csv, settlement, koreksi, SP]
+status: review
+sumber:
+  - judul: "SAKTI PELAPORAN - Upload"
+    url: "https://sites.google.com/view/saktipelaporan/piutang/pengelolaan-piutang/upload"
+    jenis: google-sites
+    diambil: 2026-11-21
+    id_manifest: C-piutang-pengelolaan-piutang-upload
+  - judul: "Upload Piutang"
+    url: "https://drive.google.com/drive/folders/16921HOjLnFJVCN6X7niBBLxZDPy-HPkg"
+    jenis: google-drive
+    diambil: 2026-11-21
+    id_manifest: C-dok-155
+  - judul: "uploadkoreksinormal"
+    url: "https://drive.google.com/file/d/1jbQVmMd9Hm8EhQzWHyDpdgtcTlWOlj_v/view"
+    jenis: lainnya
+    diambil: 2026-11-21
+    id_manifest: C-dok-156
+  - judul: "uploadKoreksiSelKurs"
+    url: "https://drive.google.com/file/d/1OutguFsew_GYJ8Dlplew2cT0W4JyuX1K/view"
+    jenis: lainnya
+    diambil: 2026-11-21
+    id_manifest: C-dok-157
+  - judul: "uploadkoreksiTAB"
+    url: "https://drive.google.com/file/d/1M2JaNPvyomXD1kQJ5s0Do2wSCJAH5Uk4/view"
+    jenis: lainnya
+    diambil: 2026-11-21
+    id_manifest: C-dok-158
+  - judul: "uploadsettlement"
+    url: "https://drive.google.com/file/d/1v7ZmhN_dZyifHj6c_ahomLJOCBeCYOnD/view"
+    jenis: lainnya
+    diambil: 2026-11-21
+    id_manifest: C-dok-159
+  - judul: "uploadSP"
+    url: "https://drive.google.com/file/d/15KREB6AAtr0XwV4V4NdwbhJN9mkY_PWZ/view"
+    jenis: lainnya
+    diambil: 2026-11-21
+    id_manifest: C-dok-160
+sidebar:
+  order: 8
+---
+
+import { Steps } from '@astrojs/starlight/components';
+import MenuSakti from '~/components/MenuSakti.astro';
+import SumberAsli from '~/components/SumberAsli.astro';
+
+Menu Upload digunakan untuk memudahkan perekaman transaksi
+dengan volume besar dalam satu waktu tertentu.
+
+<MenuSakti />
+
+## Langkah
+
+<Steps>
+
+1. Pilih menu **Piutang > Pengelolaan Piutang > Upload >
+   Upload**.
+2. Unggah file ADK .csv transaksi yang sudah diisi sesuai format
+   masing-masing jenis transaksi.
+
+</Steps>
+
+## Ketentuan
+
+- Transaksi yang dapat direkam menggunakan fitur upload ini
+  adalah: Settlement SBS dan via Data Upload, Koreksi TAB,
+  Surat Peringatan (SP), Koreksi Normal, dan Koreksi Selisih
+  Kurs.
+- File unggah menggunakan ADK .csv dengan pemisah kolom
+  menggunakan tanda "|"; format file dapat diunduh pada tautan
+  di bagian Sumber.
+- Jurnal yang terbentuk sama dengan jurnal dari masing-masing
+  transaksi jika direkam secara manual.
+
+Format kolom tiap jenis file ADK:
+
+| Jenis file | Kolom |
+|---|---|
+| Koreksi Normal | kode_satker, no_piutang, jumlah_koreksi, no_dok, tgl_koreksi, nilai penyisihan, jenis_koreksi, uraian |
+| Koreksi Selisih Kurs | kode_satker, no_piutang, jumlah, no_dokumen, tgl_dokumen, nilai_penyisihan, jenis_koreksi, uraian |
+| Koreksi TAB | kode_satker, no_piutang, jumlah_koreksi, no_dok, tgl_settlement, jenis_koreksi, uraian |
+| Settlement | kode_satker, no_piutang, no_dok_settlement, tgl_settlement, nilai_settlement, sumber_data, nilai_valas |
+| Surat Peringatan (SP) | kode_satker, no_piutang, SP Ke, no_dokumen, tgl_dokumen, Uraian |
+
+Petunjuk pengisian kolom jenis koreksi:
+
+| Kode Jenis Koreksi | Deskripsi Jenis Koreksi |
+|---|---|
+| 0 | Koreksi Normal |
+| 1 | Koreksi Selisih Kurs |
+| 3 | Koreksi TAB |
+
+Petunjuk pengisian kolom jenis settlement:
+
+| Kode Jenis Settlement | Deskripsi Jenis Settlement |
+|---|---|
+| 2 | Settlement via Data Upload |
+| 3 | Settlement SBS |
+
+## Terkait
+
+- [Mencatat Pembayaran Piutang (Settlement)](/piutang/pengelolaan-piutang/transaksi/settlement/)
+- [Mengoreksi Piutang](/piutang/pengelolaan-piutang/koreksi/koreksi-piutang/)
+- [Mengunggah Data Piutang](/piutang/pengelolaan-piutang/pencatatan/upload-data-piutang/)
+
+## Sumber
+
+<SumberAsli />
