@@ -1,0 +1,108 @@
+---
+title: Merekam Penerimaan Aset dari Pengembangan Aset Renovasi
+description: Mencatat penambahan nilai BMN yang disewa/dipinjam setelah penyewa atau peminjam menyelesaikan renovasi.
+modul: aset-tetap
+menu_sakti: "Aset Tetap > RUH > Transaksi BMN > Perubahan > Penerimaan Aset dari Pengembangan Aset Renovasi"
+peran: [satker]
+jenis: juknis
+kata_kunci: [penerimaan atr, aset tetap renovasi, pengembangan aset renovasi, kode transaksi 206]
+status: terbit
+sumber:
+  - judul: "SAKTI PELAPORAN - Penerimaan Aset dari Pengembangan Aset Renovasi"
+    url: "https://sites.google.com/view/saktipelaporan/aset-tetap/ruh/transaksi-bmn/perubahan-bmn/penerimaan-aset-dari-pengembangan-aset-renovasi"
+    jenis: google-sites
+    diambil: 2026-11-21
+    id_manifest: C-aset-tetap-ruh-transaksi-bmn-perubahan-bmn-penerimaan-aset-dari-pengembangan-aset-renovasi
+  - judul: "Juknis Lengkap MAT 2020 SAKTI Web_30122020"
+    url: "https://drive.google.com/file/d/1WYvNEpEKn7Jzddq1OhmX8kSY1ecEPOsW/view"
+    jenis: pdf
+    diambil: 2026-11-21
+    id_manifest: C-dok-040
+sidebar:
+  order: 8
+---
+
+import { Steps } from '@astrojs/starlight/components';
+import MenuSakti from '~/components/MenuSakti.astro';
+import SumberAsli from '~/components/SumberAsli.astro';
+
+Menu Penerimaan Aset dari Pengembangan Aset Renovasi (kode
+transaksi 206) digunakan untuk mencatat penambahan nilai BMN yang
+disewa/dipinjam oleh pihak lain karena penyewa/peminjam BMN telah
+menyelesaikan pekerjaan renovasi atas BMN yang disewa/dipinjam
+tersebut. Transaksi ini harus didahului transaksi Transfer Keluar
+(ATR) pada satker penyewa/peminjam.
+
+<MenuSakti />
+
+## Prasyarat
+
+- Dokumen sumber: BAST ATR.
+- Untuk penerimaan ATR dari satker pengguna Aplikasi SAKTI, harus
+  sudah dilakukan persetujuan atas transaksi Transfer Keluar
+  (ATR) pada satker pengirim ATR.
+- Nilai ATR harus memenuhi nilai minimum kapitalisasi.
+
+## Langkah
+
+<Steps>
+
+1. Pilih menu **Aset Tetap > RUH > Transaksi BMN > Perubahan >
+   Penerimaan Aset dari Pengembangan Aset Renovasi**, lalu klik
+   **Rekam**.
+2. Pilih jenis transaksi:
+   - **Penerimaan ATR Manual**: apabila satker penyewa/peminjam
+     BMN yang menyerahkan ATR merupakan satker bukan pengguna
+     Aplikasi SAKTI.
+   - **Penerimaan Masuk ATR**: apabila satker penyewa/peminjam
+     BMN yang menyerahkan ATR merupakan satker pengguna Aplikasi
+     SAKTI.
+3. Pilih BMN dan NUP yang akan dikembangkan nilainya.
+4. Pilih atau isikan ATR yang diterima dari satker
+   penyewa/peminjam. Untuk jenis transaksi Penerimaan Masuk ATR,
+   rincian ATR akan muncul otomatis.
+5. Tanggal buku diisi sesuai dengan dokumen sumber atau pada
+   periode bulan yang masih buka.
+
+</Steps>
+
+:::note[Perlakuan transaksi pada Aplikasi SAKTI]
+1. Menu **RUH > Transaksi BMN > Penghapusan > Transfer Keluar
+   (ATR)**: untuk mengeluarkan ATR dari satker penyewa/peminjam
+   dan diserahkan kepada satker pemilik BMN.
+2. Menu **RUH > Transaksi BMN > Perubahan > Penerimaan Aset dari
+   Pengembangan Aset Renovasi**: untuk merekam pengembangan BMN
+   yang disewa/dipinjam oleh satker lain.
+
+Aset Tetap Renovasi (ATR) merupakan renovasi atas BMN yang
+dilakukan oleh penyewa/peminjam (bukan pemilik BMN) terhadap aset
+yang disewa/dipinjam. Pada saat masa sewa BMN tersebut berakhir
+dan diserah terimakan, tambahan nilai tersebut harus dicatat
+sebagai penambah nilai aset.
+:::
+
+Jurnal yang terbentuk: (D) Aset Tetap; (K) Koreksi Aset Tetap
+Non-Revaluasi; (D) Koreksi Aset Tetap Non-Revaluasi; (K)
+Akumulasi Penyusutan Aset Tetap; (D) Beban Penyusutan; (K)
+Akumulasi Penyusutan Aset Tetap.
+
+## Ilustrasi
+
+Satker KPP Semarang menyewa gedung kantor milik satker GKN
+Semarang. Lalu, KPP Semarang melakukan renovasi gedung kantor
+tersebut dan menghabiskan biaya renovasi sebesar
+Rp250.000.000,- dan sudah dicatat sebagai Gedung dan Bangunan
+dalam Renovasi NUP 1.
+
+Setelah pekerjaan renovasi selesai, maka ATR berupa Gedung dan
+Bangunan dalam Renovasi NUP 1 harus diserahkan dari KPP Semarang
+kepada GKN Semarang melalui menu Transfer Keluar (ATR).
+Nantinya, GKN Semarang akan menerima kiriman ATR tersebut, dan
+akan dicatat pada menu Penerimaan Aset dari Pengembangan Aset
+Renovasi.
+
+## Terkait
+
+- [Merekam Transfer Keluar (ATR)](/aset-tetap/ruh/penghapusan/transfer-keluar-atr/)
+
+<SumberAsli />

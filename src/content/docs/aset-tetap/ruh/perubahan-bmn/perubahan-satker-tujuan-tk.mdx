@@ -1,0 +1,86 @@
+---
+title: Merekam Perubahan Satker Tujuan TK
+description: Memperbaiki kesalahan pemilihan satker tujuan pada transaksi Transfer Keluar yang telah disetujui.
+modul: aset-tetap
+menu_sakti: "Aset Tetap > RUH > Transaksi BMN > Perubahan > Perubahan Satker Tujuan TK"
+peran: [satker]
+jenis: juknis
+kata_kunci: [perubahan satker tujuan tk, koreksi satker tujuan transfer keluar]
+status: review
+perlu_review: true
+sumber:
+  - judul: "SAKTI PELAPORAN - Perubahan Satker Tujuan TK"
+    url: "https://sites.google.com/view/saktipelaporan/aset-tetap/ruh/transaksi-bmn/perubahan-bmn/perubahan-satker-tujuan-tk"
+    jenis: google-sites
+    diambil: 2026-11-21
+    id_manifest: C-aset-tetap-ruh-transaksi-bmn-perubahan-bmn-perubahan-satker-tujuan-tk
+sidebar:
+  order: 12
+---
+
+import { Steps } from '@astrojs/starlight/components';
+import MenuSakti from '~/components/MenuSakti.astro';
+import SumberAsli from '~/components/SumberAsli.astro';
+
+Menu Perubahan Satker Tujuan TK digunakan untuk melakukan
+koreksi/perbaikan atas kesalahan pemilihan satker tujuan Transfer
+Keluar, sedangkan transaksi Transfer Keluar telah dilakukan
+persetujuan oleh approver dan **belum** dilakukan posting jurnal
+atas transaksi Transfer Keluar. Perubahan satker tujuan TK ini
+dapat dilakukan atas TK baik kepada satker sesama pengguna
+Aplikasi SAKTI maupun satker belum menggunakan Aplikasi SAKTI.
+
+<MenuSakti />
+
+:::caution[Perlu verifikasi]
+Isi artikel ini ditranskripsi dari gambar tabel ikhtisar pada
+halaman sumber (teks halaman tidak memuat materi). Seluruh
+uraian, tata cara, dan jurnal di bawah berasal dari tabel
+tersebut.
+:::
+
+## Prasyarat
+
+- Transaksi TK telah dilakukan persetujuan oleh approver.
+- Transaksi TK belum dilanjutkan dengan perekaman Transfer Masuk
+  oleh satker tujuan/penerima BMN.
+- Transaksi TK belum dilakukan posting jurnal di Modul GLP.
+
+Apabila transaksi Transfer Keluar telah dilakukan validasi dan
+posting jurnal, maka tidak dapat dilakukan perubahan satker
+tujuan TK dan perlu menyampaikan permohonan kepada HAI-DJPb
+untuk terlebih dahulu dilakukan *unposting* atas transaksi bulan
+berkenaan.
+
+## Langkah
+
+<Steps>
+
+1. Pilih menu **Aset Tetap > RUH > Transaksi BMN > Perubahan >
+   Perubahan Satker Tujuan TK**.
+2. Pilih transaksi TK yang akan diubah satker tujuannya dan klik
+   **Ubah**.
+3. Pilih kembali satker tujuan TK yang seharusnya sesuai dengan
+   dokumen sumber, lalu klik **Simpan**.
+
+</Steps>
+
+:::note
+Tidak terbentuk jurnal, hanya terjadi perubahan kode satker
+*intraco* pada COA.
+:::
+
+## Ilustrasi
+
+Operator MAT pada Satker KPPN Pekalongan melakukan kesalahan
+pemilihan satker tujuan Transfer Keluar, yaitu tertulis kode
+satker tujuan 123456, seharusnya kode satker 654321 dan transaksi
+Transfer Keluar telah dilakukan persetujuan oleh approver. Maka
+operator MAT dapat menggunakan menu Perubahan Satker Tujuan TK,
+yaitu mengubah dari satker tujuan 123456 menjadi 654321.
+
+## Terkait
+
+- [Merekam Transfer Keluar (Barang Aktif)](/aset-tetap/ruh/penghapusan/transfer-keluar-barang-aktif/)
+
+<SumberAsli />

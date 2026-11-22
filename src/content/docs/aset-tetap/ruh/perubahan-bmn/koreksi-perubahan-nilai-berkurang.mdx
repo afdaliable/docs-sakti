@@ -1,0 +1,119 @@
+---
+title: Merekam Koreksi Perubahan Nilai Berkurang
+description: Mengoreksi nilai suatu transaksi BMN menjadi lebih kecil daripada nilai sebelumnya.
+modul: aset-tetap
+menu_sakti: "Aset Tetap > RUH > Transaksi BMN > Perubahan > Koreksi Perubahan Nilai Berkurang"
+peran: [satker]
+jenis: juknis
+kata_kunci: [koreksi perubahan nilai berkurang, koreksi nilai bmn, kode transaksi 264]
+status: terbit
+sumber:
+  - judul: "SAKTI PELAPORAN - Koreksi Perubahan Nilai Berkurang"
+    url: "https://sites.google.com/view/saktipelaporan/aset-tetap/ruh/transaksi-bmn/perubahan-bmn/koreksi-perubahan-nilai-berkurang"
+    jenis: google-sites
+    diambil: 2026-11-21
+    id_manifest: C-aset-tetap-ruh-transaksi-bmn-perubahan-bmn-koreksi-perubahan-nilai-berkurang
+  - judul: "Juknis SAKTI 2021 Koreksi Perubahan Nilai Berkurang"
+    url: "https://docs.google.com/presentation/d/107OpaSadsnwFSXy2JmEfy85P7Xj36jintypJwIG4fBY/"
+    jenis: google-slides
+    diambil: 2026-11-21
+    id_manifest: C-dok-071
+  - judul: "Juknis Lengkap MAT 2020 SAKTI Web_30122020"
+    url: "https://drive.google.com/file/d/1WYvNEpEKn7Jzddq1OhmX8kSY1ecEPOsW/view"
+    jenis: pdf
+    diambil: 2026-11-21
+    id_manifest: C-dok-040
+sidebar:
+  order: 7
+---
+
+import { Steps } from '@astrojs/starlight/components';
+import MenuSakti from '~/components/MenuSakti.astro';
+import SumberAsli from '~/components/SumberAsli.astro';
+
+Menu Koreksi Perubahan Nilai Berkurang (kode transaksi 264)
+digunakan untuk mencatat koreksi berupa perubahan nilai suatu
+transaksi BMN seharusnya menjadi lebih kecil daripada nilai
+sebelumnya, yang disebabkan oleh kesalahan dalam penginputan
+dan/atau penyesuaian. Hal yang dikoreksi adalah nilai dari
+transaksinya, bukan nilai BMN-nya.
+
+<MenuSakti />
+
+## Prasyarat
+
+- Dokumen sumber: Surat Keputusan/Keterangan tentang perubahan
+  nilai BMN.
+- Transaksi terakhir (selain 931) dalam history BMN **bukan** 209
+  (Koreksi Manual) atau 205/265 (Revaluasi BMN) atau Koreksi
+  Revaluasi BMN.
+
+## Langkah
+
+<Steps>
+
+1. Pilih menu **Aset Tetap > RUH > Transaksi BMN > Perubahan >
+   Koreksi Perubahan Nilai Berkurang**, lalu klik **Rekam**.
+2. Pilih **Kode Barang** yaitu BMN yang akan dikoreksi nilainya.
+3. Isikan **NUP awal** dan **NUP akhir** dari BMN yang akan
+   dikoreksi nilainya.
+4. Pilih tanggal pembukuan sesuai dengan dokumen sumber.
+5. Klik **Pilih transaksi**, lalu pilih transaksi pada BMN yang
+   dikoreksi nilainya.
+6. Isikan jumlah nilai berkurang.
+7. Isikan nomor dan tanggal dasar koreksi.
+8. Klik tombol **Simpan**.
+
+</Steps>
+
+:::caution[Perlu diperhatikan]
+- Kolom **Nilai Berkurang** diisi dengan nilai sebesar
+  pengurangan BMN (bukan nilai BMN seharusnya). Misalnya nilai
+  BMN Rumah Adat semula direkam dengan nilai Rp70.000.000,-
+  padahal seharusnya Rp50.000.000,-, maka kolom Nilai Berkurang
+  diisi dengan nilai pengurangannya yaitu sebesar
+  Rp20.000.000,-.
+- Semua transaksi dapat dilakukan koreksi nilai berkurang,
+  **kecuali** transaksi 209 (Koreksi Manual) atau 205/265
+  (Revaluasi BMN) atau Koreksi Revaluasi BMN.
+- Apabila transaksi terakhir (selain 931) dalam history BMN
+  adalah 209 (Koreksi Manual) atau 205/265 (Revaluasi BMN) atau
+  Koreksi Revaluasi BMN, maka transaksi sebelumnya tidak dapat
+  dilakukan Koreksi Perubahan Nilai Berkurang; untuk melakukan
+  koreksi nilai aset dan nilai buku BMN dapat menggunakan menu
+  [Koreksi Manual](/aset-tetap/ruh/perubahan-bmn/koreksi-manual/).
+- Koreksi Perubahan Nilai Berkurang atas transaksi Pengembangan
+  Langsung (202), Pengembangan dengan KDP (208) dan Penerimaan
+  Aset dari Pengembangan Aset Renovasi (206) tidak boleh
+  menyebabkan nilai pengembangan menjadi di bawah minimum
+  kapitalisasi.
+:::
+
+Jurnal yang terbentuk: (D) Koreksi Aset Tetap Non-Revaluasi; (K)
+Aset Tetap; (D) Akumulasi Penyusutan Aset Tetap; (K) Koreksi Aset
+Tetap Non-Revaluasi; (D) Akumulasi Penyusutan Aset Tetap; (K)
+Beban Penyusutan.
+
+## Ilustrasi
+
+Berdasarkan hasil pemeriksaan BPK, diketahui bahwa harga
+pembelian suatu BMN melebihi standar yang telah ditetapkan dan
+harus dilakukan setoran pengembalian belanja modal ke kas
+negara. Maka nilai BMN yang dibeli juga harus dilakukan koreksi
+nilai berkurang.
+
+Misal: Satker KPPN Pekalongan telah melakukan pembelian Rumah
+Adat NUP 2 dengan harga Rp70.000.000,-. Berdasarkan hasil
+pemeriksaan BPK, harga beli tersebut melebihi standar dan harus
+dilakukan setoran pengembalian belanja modal ke kas negara
+sebesar Rp20.000.000,-. Setelah dilakukan setoran pengembalian ke
+kas negara, maka operator BMN harus melakukan koreksi nilai
+berkurang atas BMN Rumah Adat NUP 2 sebesar Rp20.000.000,-.
+Sehingga nilai BMN Rumah Adat NUP 2 menjadi Rp50.000.000,-.
+
+## Terkait
+
+- [Merekam Koreksi Perubahan Nilai Bertambah](/aset-tetap/ruh/perubahan-bmn/koreksi-perubahan-nilai-bertambah/)
+- [Merekam Koreksi Manual](/aset-tetap/ruh/perubahan-bmn/koreksi-manual/)
+
+<SumberAsli />

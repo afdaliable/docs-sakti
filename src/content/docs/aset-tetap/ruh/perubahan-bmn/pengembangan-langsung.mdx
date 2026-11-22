@@ -1,0 +1,110 @@
+---
+title: Merekam Pengembangan Langsung BMN
+description: Merekam pengembangan nilai atas BMN yang sudah tercatat dengan pembayaran sekaligus 100%.
+modul: aset-tetap
+menu_sakti: "Aset Tetap > RUH > Transaksi BMN > Perubahan > Pengembangan Langsung"
+peran: [satker]
+jenis: juknis
+kata_kunci: [pengembangan langsung, renovasi bmn, kode transaksi 202, pengembangan bmn]
+status: terbit
+sumber:
+  - judul: "SAKTI PELAPORAN - Pengembangan Langsung"
+    url: "https://sites.google.com/view/saktipelaporan/aset-tetap/ruh/transaksi-bmn/perubahan-bmn/pengembangan-langsung"
+    jenis: google-sites
+    diambil: 2026-11-21
+    id_manifest: C-aset-tetap-ruh-transaksi-bmn-perubahan-bmn-pengembangan-langsung
+  - judul: "Juknis Lengkap MAT 2020 SAKTI Web_30122020"
+    url: "https://drive.google.com/file/d/1WYvNEpEKn7Jzddq1OhmX8kSY1ecEPOsW/view"
+    jenis: pdf
+    diambil: 2026-11-21
+    id_manifest: C-dok-040
+sidebar:
+  order: 3
+---
+
+import { Steps } from '@astrojs/starlight/components';
+import MenuSakti from '~/components/MenuSakti.astro';
+import SumberAsli from '~/components/SumberAsli.astro';
+
+Menu Pengembangan Langsung (kode transaksi 202) digunakan untuk
+merekam pengembangan nilai atas suatu BMN yang sudah dimiliki
+(sudah tercatat pada Aplikasi SAKTI) sampai dengan tahun anggaran
+berjalan. Dasar pencatatan untuk transaksi ini adalah transaksi
+Modul Komitmen, yang dapat terdiri dari:
+
+1. Pencatatan Berita Acara Serah Terima (BAST) baik kontraktual
+   maupun non kontraktual.
+2. Pencatatan BAST dari hibah barang.
+3. Pencatatan penerimaan barang KKP.
+4. Pencatatan penerimaan barang valas.
+5. Pencatatan penerimaan barang UP/TUP Tunai/Bank.
+6. Pencatatan penerimaan barang hibah.
+
+<MenuSakti />
+
+## Prasyarat
+
+- Dokumen sumber: Nota pembelian, kuitansi, BAST Kontraktual dan
+  Non Kontraktual.
+- Pencatatan BAST/Penerimaan Barang telah direkam dengan memilih
+  kode aset (yaitu kode BMN selain kode 1xxxxxxxxx dan
+  7xxxxxxxxx).
+- Untuk dapat dicatat sebagai Pengembangan Langsung harus
+  memenuhi syarat yaitu:
+  1. Nilai pengembangan harus memenuhi syarat/ketentuan untuk
+     dapat dikapitalisasi.
+  2. Pembayaran menggunakan metode pembayaran sekaligus 100%
+     langsung selesai (bukan pembayaran bertahap/termin).
+     Apabila pembayaran dilakukan secara bertahap/termin, maka
+     direkam menggunakan menu Perolehan/Pengembangan KDP.
+- Pendetailan aset dilakukan tidak menunggu terbitnya
+  SPP/SPM/SP2D.
+
+## Langkah
+
+<Steps>
+
+1. Pilih menu **Aset Tetap > RUH > Transaksi BMN > Perubahan >
+   Pengembangan Langsung**, lalu klik **Rekam**.
+2. Pada Daftar Komitmen, pilih **Jenis Dokumen**: Kontrak atau
+   Non Kontrak/Penerimaan Barang, lalu pilih nomor dokumen dan
+   klik **Catat**.
+3. Pada Daftar Barang Dalam Komitmen/Bendahara, pilih kode BMN
+   dan klik **Catat**.
+4. Pilih BMN dan NUP BMN yang akan dikembangkan dan pilih tanggal
+   pembukuan sesuai dengan tanggal dokumen sumber, lalu klik
+   **Simpan**.
+
+</Steps>
+
+:::caution[Perlu diperhatikan]
+- Ketika merekam BAST atau penerimaan barang pada Modul
+  Komitmen, harus memilih BMN sesuai dengan BMN yang akan
+  dikembangkan, misalnya apabila hendak pengembangan Bangunan
+  Gedung Kantor Permanen, maka ketika merekam BAST atau
+  Penerimaan Barang harus memilih BMN kode Bangunan Gedung
+  Kantor Permanen juga.
+- Untuk pengisian **Ubah Masa Manfaat** agar melakukan konsultasi
+  dengan Direktorat Jenderal Kekayaan Negara (DJKN atau KPKNL
+  terdekat), walaupun secara umum transaksi pengembangan BMN
+  tidak menambah masa manfaat.
+:::
+
+Jurnal yang terbentuk: (D) Aset Tetap; (K) Aset Tetap Belum
+Diregister.
+
+## Ilustrasi
+
+Satker KPPN Pekalongan memiliki sebuah bangunan gedung kantor
+permanen yang dibangun pada tahun 1982. Pada tahun 2020, gedung
+kantor tersebut direnovasi dan diserahterimakan dengan BAST pada
+tanggal 20 Juni 2020 dengan menggunakan metode pembayaran
+sekaligus 100% (tidak bertahap/termin) dengan nilai SPM/SP2D
+Rp45.000.000,-.
+
+## Terkait
+
+- [Merekam Pengembangan Dengan KDP](/aset-tetap/ruh/perubahan-bmn/pengembangan-dengan-kdp/)
+- [Merekam Penyelesaian Pembangunan Langsung](/aset-tetap/ruh/perolehan-bmn/penyelesaian-pembangunan-langsung/)
+
+<SumberAsli />

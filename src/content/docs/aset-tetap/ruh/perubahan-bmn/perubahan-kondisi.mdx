@@ -1,0 +1,78 @@
+---
+title: Merekam Perubahan Kondisi BMN
+description: Mencatat perubahan kondisi BMN menjadi Baik, Rusak Ringan, atau Rusak Berat.
+modul: aset-tetap
+menu_sakti: "Aset Tetap > RUH > Transaksi BMN > Perubahan > Perubahan Kondisi"
+peran: [satker]
+jenis: juknis
+kata_kunci: [perubahan kondisi, kondisi rusak berat, kondisi rusak ringan, kode transaksi 203]
+status: terbit
+sumber:
+  - judul: "SAKTI PELAPORAN - Perubahan Kondisi"
+    url: "https://sites.google.com/view/saktipelaporan/aset-tetap/ruh/transaksi-bmn/perubahan-bmn/perubahan-kondisi"
+    jenis: google-sites
+    diambil: 2026-11-21
+    id_manifest: C-aset-tetap-ruh-transaksi-bmn-perubahan-bmn-perubahan-kondisi
+  - judul: "Juknis SAKTI 2021 Perubahan Kondisi"
+    url: "https://docs.google.com/presentation/d/1DeW58kCgvE9Y-OUVATVsVq7Ca7nDetKBPS20JtMcN3A/"
+    jenis: google-slides
+    diambil: 2026-11-21
+    id_manifest: C-dok-067
+  - judul: "Juknis Lengkap MAT 2020 SAKTI Web_30122020"
+    url: "https://drive.google.com/file/d/1WYvNEpEKn7Jzddq1OhmX8kSY1ecEPOsW/view"
+    jenis: pdf
+    diambil: 2026-11-21
+    id_manifest: C-dok-040
+sidebar:
+  order: 5
+---
+
+import { Steps } from '@astrojs/starlight/components';
+import MenuSakti from '~/components/MenuSakti.astro';
+import SumberAsli from '~/components/SumberAsli.astro';
+
+Menu Perubahan Kondisi (kode transaksi 203) digunakan untuk
+melakukan pencatatan perubahan kondisi BMN. Perubahan kondisi BMN
+dilakukan agar terdapat kesesuaian antara pencatatan pada
+aplikasi SAKTI dengan kondisi fisik BMN yang sebenarnya. Kondisi
+BMN dibedakan menjadi 3 kriteria, yakni Baik (B), Rusak Ringan
+(RR), dan Rusak Berat (RB).
+
+<MenuSakti />
+
+## Prasyarat
+
+- Dokumen sumber: Surat Kepurusan/Keterangan tentang perubahan
+  kondisi.
+- Harus memilih kondisi barang yang berbeda dengan kondisi
+  semula, misalnya dari kondisi Baik menjadi Rusak Berat.
+
+## Langkah
+
+<Steps>
+
+1. Pilih menu **Aset Tetap > RUH > Transaksi BMN > Perubahan >
+   Perubahan Kondisi**, lalu klik **Rekam**.
+2. Pilih **Kode Barang** yang akan diubah kondisinya.
+3. Isikan **NUP awal** dan **NUP akhir** BMN yang akan diubah
+   kondisinya.
+4. Pilih tanggal pembukuan sesuai dengan dokumen sumber.
+5. Pilih salah satu kondisi barang yang berbeda dari kondisi
+   sebelumnya.
+6. Isikan dan pilih nomor dan tanggal dasar koreksi.
+7. Klik tombol **Simpan**.
+
+</Steps>
+
+:::note
+Tidak ada jurnal yang terbentuk atas perubahan kondisi ini.
+:::
+
+## Ilustrasi
+
+Berdasarkan sensus BMN, terdapat 5 buah AC Split NUP 1-5 yang
+sudah tidak dapat digunakan lagi karena rusak berat, sehingga
+ditetapkan perubahan kondisi menjadi Rusak Berat dengan dokumen
+sumber keterangan perubahan kondisi tanggal 10 Juni 2020.
+
+<SumberAsli />

@@ -1,0 +1,106 @@
+---
+title: Merekam Koreksi Manual BMN
+description: Mengoreksi nilai aset, nilai buku, dan sisa masa manfaat BMN secara manual.
+modul: aset-tetap
+menu_sakti: "Aset Tetap > RUH > Transaksi BMN > Perubahan > Koreksi Manual"
+peran: [satker]
+jenis: juknis
+kata_kunci: [koreksi manual, koreksi nilai aset, koreksi nilai buku, sisa masa manfaat, kode transaksi 209]
+status: terbit
+sumber:
+  - judul: "SAKTI PELAPORAN - Koreksi Manual"
+    url: "https://sites.google.com/view/saktipelaporan/aset-tetap/ruh/transaksi-bmn/perubahan-bmn/koreksi-manual"
+    jenis: google-sites
+    diambil: 2026-11-21
+    id_manifest: C-aset-tetap-ruh-transaksi-bmn-perubahan-bmn-koreksi-manual
+  - judul: "Juknis SAKTI 2021 Koreksi Manual"
+    url: "https://docs.google.com/presentation/d/14WXvnFK1S7xLZfa_UMhWe5wAMfMC9YCVg8UWrJ6zsdM/"
+    jenis: google-slides
+    diambil: 2026-11-21
+    id_manifest: C-dok-074
+  - judul: "Juknis Lengkap MAT 2020 SAKTI Web_30122020"
+    url: "https://drive.google.com/file/d/1WYvNEpEKn7Jzddq1OhmX8kSY1ecEPOsW/view"
+    jenis: pdf
+    diambil: 2026-11-21
+    id_manifest: C-dok-040
+sidebar:
+  order: 10
+---
+
+import { Steps } from '@astrojs/starlight/components';
+import MenuSakti from '~/components/MenuSakti.astro';
+import SumberAsli from '~/components/SumberAsli.astro';
+
+Menu Koreksi Manual (kode transaksi 209) digunakan untuk
+melakukan koreksi nilai BMN meliputi: nilai aset, nilai
+buku/nilai neraca dan sisa masa manfaat. Sebelum dilakukan
+perekaman Koreksi Manual, perlu dilakukan perhitungan manual
+untuk mendapatkan nilai aset, nilai buku atau sisa manfaat yang
+seharusnya.
+
+<MenuSakti />
+
+## Prasyarat
+
+- Dokumen sumber: Surat Keterangan Perbaikan Pencatatan Laporan
+  Barang Milik Negara yang ditandatangani KPB.
+
+## Langkah
+
+<Steps>
+
+1. Pilih menu **Aset Tetap > RUH > Transaksi BMN > Perubahan >
+   Koreksi Manual**, lalu klik **Rekam**.
+2. Pilih **Kode Barang** yang akan dilakukan koreksi manual.
+3. Isikan **NUP awal** dan **NUP akhir** BMN yang akan dilakukan
+   koreksi manual.
+4. Pilih tanggal pembukuan sesuai dengan dokumen sumber.
+5. Isikan dan pilih nomor dan tanggal dasar koreksi.
+6. Isikan nilai aset yang seharusnya berdasarkan penghitungan
+   manual yang telah dilakukan (nilai aset bruto yang baru atau
+   nilai menjadinya).
+7. Isikan nilai buku yang seharusnya berdasarkan penghitungan
+   manual yang telah dilakukan. Nilai buku merupakan nilai bruto
+   dikurangi dengan nilai total akumulasi penyusutan.
+8. Apabila ada perubahan sisa masa manfaat, klik tombol **Ubah**,
+   lalu isikan sisa masa manfaat yang seharusnya berdasarkan
+   penghitungan manual yang telah dilakukan.
+9. Klik tombol **Simpan**.
+
+</Steps>
+
+:::caution[Perlu diperhatikan]
+- Menu koreksi manual harus dilakukan dengan benar, penuh
+  perhitungan, penuh kehati-hatian dan *prudent*, karena akibat
+  dari transaksi ini akan membentuk nilai baru dengan
+  penghitungan baru sesuai dengan nilai-nilai yang telah diisikan
+  pada transaksi, sehingga transaksi ini bersifat mengabaikan
+  penghitungan pada history transaksi sebelumnya.
+- Apabila belum terlalu yakin dan jelas mengenai penggunaan menu
+  ini, disarankan agar melakukan konsultasi terlebih dahulu
+  kepada unit pengelola BMN level lebih tinggi, misal pengelola
+  BMN level wilayah, eselon 1 atau level Kementerian
+  Negara/Lembaga (Biro Keuangan yang menangani BMN).
+- Sebelum melakukan transaksi koreksi manual ini, agar terlebih
+  dahulu melakukan konsultasi kepada HAI DJPb dengan
+  menyampaikan penjelasan yang terang dan memadai.
+:::
+
+Jurnal yang terbentuk: (D) Aset Tetap; (K) Koreksi Aset Tetap
+Non-Revaluasi; (D) Koreksi Aset Tetap Non-Revaluasi; (K)
+Akumulasi Penyusutan Aset Tetap; (D) Beban Penyusutan; (K)
+Akumulasi Penyusutan Aset Tetap.
+
+## Ilustrasi
+
+Berdasarkan temuan pemeriksa intern, operator KPPN Pekalongan
+perlu melakukan koreksi total secara manual untuk nilai aset,
+nilai buku dan sisa masa manfaat karena terdapat kesalahan nilai
+dan perhitungan sejak tahun-tahun sebelumnya.
+
+## Terkait
+
+- [Merekam Koreksi Perubahan Nilai Bertambah](/aset-tetap/ruh/perubahan-bmn/koreksi-perubahan-nilai-bertambah/)
+- [Merekam Koreksi Perubahan Nilai Berkurang](/aset-tetap/ruh/perubahan-bmn/koreksi-perubahan-nilai-berkurang/)
+
+<SumberAsli />

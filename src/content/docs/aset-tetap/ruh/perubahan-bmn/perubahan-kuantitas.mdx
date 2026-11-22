@@ -1,0 +1,91 @@
+---
+title: Merekam Perubahan Kuantitas BMN
+description: Mengoreksi kesalahan perekaman kuantitas BMN tertentu seperti luas tanah, jalan, dan jembatan.
+modul: aset-tetap
+menu_sakti: "Aset Tetap > RUH > Transaksi BMN > Perubahan > Perubahan Kuantitas"
+peran: [satker]
+jenis: juknis
+kata_kunci: [perubahan kuantitas, koreksi luas tanah, koreksi luas gedung, kode transaksi 201]
+status: terbit
+sumber:
+  - judul: "SAKTI PELAPORAN - Perubahan Kuantitas"
+    url: "https://sites.google.com/view/saktipelaporan/aset-tetap/ruh/transaksi-bmn/perubahan-bmn/perubahan-kuantitas"
+    jenis: google-sites
+    diambil: 2026-11-21
+    id_manifest: C-aset-tetap-ruh-transaksi-bmn-perubahan-bmn-perubahan-kuantitas
+  - judul: "Juknis SAKTI 2021 Perubahan Kuantitas"
+    url: "https://docs.google.com/presentation/d/1rRjBNyFpbuQReFxzciWJzOiQ0hf6qr-KanNHcG-D8ak/"
+    jenis: google-slides
+    diambil: 2026-11-21
+    id_manifest: C-dok-062
+  - judul: "Juknis Lengkap MAT 2020 SAKTI Web_30122020"
+    url: "https://drive.google.com/file/d/1WYvNEpEKn7Jzddq1OhmX8kSY1ecEPOsW/view"
+    jenis: pdf
+    diambil: 2026-11-21
+    id_manifest: C-dok-040
+sidebar:
+  order: 2
+---
+
+import { Steps } from '@astrojs/starlight/components';
+import MenuSakti from '~/components/MenuSakti.astro';
+import SumberAsli from '~/components/SumberAsli.astro';
+
+Menu Perubahan Kuantitas (kode transaksi 201) digunakan untuk
+melakukan koreksi/perubahan atas kesalahan perekaman kuantitas
+(dalam hal ini luas) BMN tertentu. BMN tertentu yang dapat
+dilakukan transaksi Perubahan Kuantitas adalah Tanah (kode
+golongan 2), Jalan (kode kelompok 50101) dan Jembatan (kode
+kelompok 50102). Menu ini tidak dapat digunakan untuk melakukan
+koreksi/perubahan jumlah NUP BMN, tetapi melakukan koreksi
+kuantitas satuan BMN, misalnya luasnya.
+
+<MenuSakti />
+
+## Prasyarat
+
+- Dokumen sumber: Surat Keterangan Perbaikan Pencatatan Laporan
+  Barang Milik Negara yang ditandatangani KPB.
+- Menu ini tidak dapat diterapkan pada semua kodefikasi BMN,
+  tetapi hanya dapat digunakan untuk BMN tertentu, yaitu tanah,
+  jalan dan jembatan.
+
+## Langkah
+
+<Steps>
+
+1. Pilih menu **Aset Tetap > RUH > Transaksi BMN > Perubahan >
+   Perubahan Kuantitas**, lalu klik **Rekam**.
+2. Pilih **Kode Barang** yang akan dilakukan perubahan kuantitas.
+3. Isikan **NUP awal** dan **NUP akhir** BMN yang akan dilakukan
+   perubahan kuantitas.
+4. Pilih tanggal pembukuan sesuai dengan dokumen sumber.
+5. Pada Rincian Kapitalisasi, pilih salah satu pilihan yaitu
+   **Berkurang** atau **Bertambah**:
+   - Pilih **Berkurang** apabila nilai seharusnya lebih kecil
+     daripada nilai semula.
+   - Pilih **Bertambah** apabila nilai seharusnya lebih besar
+     daripada nilai semula.
+6. Isikan kolom **Perubahan Kuantitas** sebesar penambahan atau
+   pengurangan kuantitas (bukan sebesar kuantitas menjadinya),
+   misalnya semula luas tanah 3.500 M2 padahal seharusnya 4.000
+   M2, maka kolom Perubahan diisi sebesar penambahan yaitu 500 M2.
+7. Isikan dan pilih nomor dan tanggal dasar koreksi.
+8. Klik tombol **Simpan**.
+
+</Steps>
+
+:::note
+Tanggal perolehan dan pembukuan diisi sesuai dengan dokumen
+sumber atau pada periode bulan yang masih buka. Tidak ada jurnal
+yang terbentuk atas transaksi ini.
+:::
+
+## Ilustrasi
+
+Operator MAT pada Satker KPPN Pekalongan salah merekam luas
+tanah bangunan kantor, semula dicatat luas tanah 3.500 M2,
+padahal seharusnya luas tanah adalah 4.000 M2. Maka perlu
+dilakukan koreksi pencatatan sebesar penambahannya yaitu 500 M2.
+
+<SumberAsli />

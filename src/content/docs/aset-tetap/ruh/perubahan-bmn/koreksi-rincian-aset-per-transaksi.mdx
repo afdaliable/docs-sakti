@@ -1,0 +1,82 @@
+---
+title: Merekam Koreksi Rincian Aset per Transaksi
+description: Memperbaiki nomor SK, tanggal SK, dan keterangan pada Rincian Dokumen Pendukung transaksi yang telah disetujui.
+modul: aset-tetap
+menu_sakti: "Aset Tetap > RUH > Transaksi BMN > Perubahan > Koreksi Rincian Aset per Transaksi"
+peran: [satker]
+jenis: juknis
+kata_kunci: [koreksi rincian aset per transaksi, koreksi nomor sk, rincian dokumen pendukung]
+status: review
+perlu_review: true
+sumber:
+  - judul: "SAKTI PELAPORAN - Koreksi Rincian Aset Per Transaksi"
+    url: "https://sites.google.com/view/saktipelaporan/aset-tetap/ruh/transaksi-bmn/perubahan-bmn/koreksi-rincian-aset-per-transaksi"
+    jenis: google-sites
+    diambil: 2026-11-21
+    id_manifest: C-aset-tetap-ruh-transaksi-bmn-perubahan-bmn-koreksi-rincian-aset-per-transaksi
+sidebar:
+  order: 11
+---
+
+import { Steps } from '@astrojs/starlight/components';
+import MenuSakti from '~/components/MenuSakti.astro';
+import SumberAsli from '~/components/SumberAsli.astro';
+
+Menu Koreksi Rincian Aset Per Transaksi digunakan untuk melakukan
+koreksi/perbaikan atas kesalahan perekaman transaksi pada Rincian
+Dokumen Pendukung meliputi nomor SK, tanggal SK dan keterangan.
+Menu ini digunakan apabila kesalahan perekaman Rincian Dokumen
+Pendukung diketahui setelah transaksi dimaksud telah dilakukan
+persetujuan oleh approver, sehingga perbaikannya tidak harus
+dilakukan batal persetujuan. Adapun kesalahan perekaman yang
+diketahui sebelum dilakukan persetujuan oleh approver masih dapat
+dilakukan ubah atau perbaikan oleh operator Modul Aset Tetap pada
+masing-masing menu transaksi. Untuk transaksi dengan kode
+transaksi 3xx dan 9xx, hanya dapat melakukan perbaikan nomor SK
+dan keterangan (tanggal SK di-*disable*).
+
+<MenuSakti />
+
+:::caution[Perlu verifikasi]
+Isi artikel ini ditranskripsi dari gambar tabel ikhtisar pada
+halaman sumber (teks halaman tidak memuat materi). Seluruh
+uraian, tata cara, dan jurnal di bawah berasal dari tabel
+tersebut.
+:::
+
+## Prasyarat
+
+- Transaksi yang dapat dilakukan koreksi/perbaikan nomor SK atau
+  tanggal SK atau keterangan adalah transaksi yang telah
+  disetujui oleh approver.
+- Menu ini terkait Transaksi Perubahan BMN, Penghapusan BMN, dan
+  Usulan Penghapusan.
+
+## Langkah
+
+<Steps>
+
+1. Pilih menu **Aset Tetap > RUH > Transaksi BMN > Perubahan >
+   Koreksi Rincian Aset per Transaksi**.
+2. Pilih transaksi yang akan dilakukan perbaikan Rincian Dokumen
+   Pendukung, lalu klik **Ubah**.
+3. Isikan kembali dan perbaiki nomor SK atau tanggal SK atau
+   keterangan yang seharusnya pada Rincian Dokumen Pendukung,
+   lalu klik **Simpan**.
+
+</Steps>
+
+:::note
+Tidak ada jurnal yang terbentuk atas transaksi ini.
+:::
+
+## Ilustrasi
+
+Operator MAT pada Satker KPPN Pekalongan melakukan kesalahan
+perekaman nomor SK ketika merekam transaksi penghapusan (kode
+transaksi 301). Yaitu operator merekam SK Penghapusan dengan
+nomor: SK-010/Kemenkeu/2020, sedangkan nomor SK Penghapusan yang
+benar adalah SK-011/Kemenkeu/2020, dan transaksi penghapusan
+dimaksud telah dilakukan persetujuan oleh approver.
+
+<SumberAsli />

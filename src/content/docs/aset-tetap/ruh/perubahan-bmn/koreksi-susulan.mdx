@@ -1,0 +1,115 @@
+---
+title: Merekam Koreksi Susulan BMN
+description: Mengoreksi nilai BMN untuk transaksi yang seharusnya mempengaruhi nilai BMN tetapi belum dicatat.
+modul: aset-tetap
+menu_sakti: "Aset Tetap > RUH > Transaksi BMN > Perubahan > Koreksi Susulan"
+peran: [satker]
+jenis: juknis
+kata_kunci: [koreksi susulan, koreksi nilai bmn susulan, kode transaksi 214]
+status: review
+perlu_review: true
+sumber:
+  - judul: "SAKTI PELAPORAN - Koreksi Susulan"
+    url: "https://sites.google.com/view/saktipelaporan/aset-tetap/ruh/transaksi-bmn/perubahan-bmn/koreksi-susulan"
+    jenis: google-sites
+    diambil: 2026-11-21
+    id_manifest: C-aset-tetap-ruh-transaksi-bmn-perubahan-bmn-koreksi-susulan
+sidebar:
+  order: 13
+---
+
+import { Steps } from '@astrojs/starlight/components';
+import MenuSakti from '~/components/MenuSakti.astro';
+import SumberAsli from '~/components/SumberAsli.astro';
+
+Menu Koreksi Susulan (kode transaksi 214) digunakan untuk
+melakukan koreksi nilai BMN yang disebabkan karena transaksi yang
+seharusnya mempengaruhi nilai BMN untuk NUP (nomor aset) yang
+bersangkutan belum dilakukan pencatatan. Seperti transaksi yang
+seharusnya dicatat sebagai pengembangan/penambahan nilai BMN
+tapi sebelumnya tidak dilakukan pencatatan transaksi
+pengembangan/penambahan nilainya, atau transaksi yang seharusnya
+mengurangi nilai BMN tapi tidak dicatat pengurangan BMN-nya.
+
+<MenuSakti />
+
+:::caution[Perlu verifikasi]
+Isi artikel ini ditranskripsi dari gambar tabel ikhtisar pada
+halaman sumber (teks halaman tidak memuat materi). Seluruh
+uraian, tata cara, dan jurnal di bawah berasal dari tabel
+tersebut.
+:::
+
+## Prasyarat
+
+- Dokumen sumber: Surat Keputusan/Keterangan tentang perubahan
+  nilai BMN.
+- Apabila memilih jenis koreksi **Bertambah – Pengembangan**,
+  nilai perubahan harus memenuhi minimum kapitalisasi.
+- Tanggal dokumen dasar koreksi tidak boleh kurang daripada
+  tanggal buku transaksi Koreksi Manual (kode 209) atau
+  Revaluasi/Koreksi Revaluasi BMN (205/265/225/255).
+
+## Langkah
+
+<Steps>
+
+1. Pilih menu **Aset Tetap > RUH > Transaksi BMN > Perubahan >
+   Koreksi Susulan**.
+2. Pilih kode barang dan isikan NUP awal BMN yang akan dikoreksi.
+3. Pilih tanggal pembukuan: tanggal transaksi dibukukan di
+   periode masih buka.
+4. Isikan dan pilih:
+   - **Nilai Perubahan**: nilai penambahan atau pengurangan nilai
+     aset yaitu selisih antara nilai aset semula dan nilai
+     seharusnya.
+   - **Bertambah**: jika nilai aset seharusnya lebih besar
+     daripada nilai aset semula.
+   - **Berkurang**: jika nilai aset seharusnya lebih kecil
+     daripada nilai aset semula.
+   - **Pengembangan**: jika penambahan nilai aset berasal dari
+     pekerjaan pengembangan aset, misalnya renovasi gedung atau
+     upgrade peralatan mesin.
+   - **Koreksi**: jika merupakan transaksi koreksi nilai biasa.
+5. Isikan nomor SK atau Surat Keterangan koreksi dan pilih
+   tanggal dokumen dasar koreksi.
+
+</Steps>
+
+:::note
+- Tanggal dokumen dasar koreksi harus kurang dari atau sama
+  dengan tanggal pembukuan.
+- Dasar perhitungan penyusutan aset berdasarkan tanggal dasar
+  koreksi.
+:::
+
+Jurnal yang terbentuk: (D) Aset Tetap; (K) Koreksi Aset Tetap
+Non-Revaluasi; (D) Koreksi Aset Tetap Non-Revaluasi; (K)
+Akumulasi Penyusutan Aset Tetap; (D) Beban Penyusutan; (K)
+Akumulasi Penyusutan Aset Tetap.
+
+## Ilustrasi
+
+1. Terdapat pekerjaan renovasi gedung kantor senilai
+   Rp50.000.000,-. Akan tetapi operator Modul Komitmen melakukan
+   kesalahan dengan membuat BAST menggunakan akun 523111 dan
+   memilih kategori jasa, padahal seharusnya membuat BAST yang
+   menggunakan akun 533121 dan memilih kode barang gedung kantor.
+   Dampaknya adalah tidak dapat dilakukan pencatatan transaksi
+   Pengembangan Langsung atas gedung kantor dimaksud. Maka untuk
+   mencatat penambahan nilai dari pekerjaan renovasi tersebut,
+   operator Modul Aset Tetap melakukan transaksi Koreksi Susulan
+   dengan memilih jenis koreksi Bertambah – Pengembangan.
+2. Pada tanggal 10 Januari 2020 seharusnya perlu dilakukan
+   koreksi nilai atas suatu BMN, tetapi sampai dengan akhir 2020
+   belum dilakukan transaksi koreksi dimaksud, dan baru akan
+   dicatat koreksinya pada bulan Februari 2021. Maka operator
+   merekam Koreksi Susulan dengan tanggal pembukuan Februari 2021
+   dan tanggal dokumen dasar koreksi adalah 10 Januari 2021.
+
+## Terkait
+
+- [Merekam Koreksi Manual](/aset-tetap/ruh/perubahan-bmn/koreksi-manual/)
+- [Merekam Pengembangan Langsung](/aset-tetap/ruh/perubahan-bmn/pengembangan-langsung/)
+
+<SumberAsli />

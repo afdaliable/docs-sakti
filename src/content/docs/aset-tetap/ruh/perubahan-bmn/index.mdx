@@ -1,0 +1,32 @@
+---
+title: Perubahan BMN
+description: Transaksi perubahan dan koreksi atas BMN yang sudah tercatat pada Modul Aset Tetap.
+modul: aset-tetap
+jenis: indeks
+status: terbit
+sidebar:
+  label: Ringkasan
+  order: 1
+---
+
+import { LinkCard, CardGrid } from '@astrojs/starlight/components';
+
+Sub-menu **Aset Tetap > RUH > Transaksi BMN > Perubahan** memuat transaksi
+perubahan dan koreksi atas Barang Milik Negara (BMN) yang sudah tercatat,
+meliputi perubahan kuantitas, pengembangan, perubahan kondisi, dan berbagai
+transaksi koreksi nilai.
+
+<CardGrid>
+  <LinkCard title="Perubahan Kuantitas" href="/aset-tetap/ruh/perubahan-bmn/perubahan-kuantitas/" description="Mengoreksi kesalahan perekaman kuantitas BMN tertentu seperti luas tanah, jalan, dan jembatan." />
+  <LinkCard title="Pengembangan Langsung" href="/aset-tetap/ruh/perubahan-bmn/pengembangan-langsung/" description="Merekam pengembangan nilai BMN dengan pembayaran sekaligus 100%." />
+  <LinkCard title="Pengembangan Dengan KDP" href="/aset-tetap/ruh/perubahan-bmn/pengembangan-dengan-kdp/" description="Merekam pengembangan nilai BMN dari penyelesaian pekerjaan melalui tahapan KDP." />
+  <LinkCard title="Perubahan Kondisi" href="/aset-tetap/ruh/perubahan-bmn/perubahan-kondisi/" description="Mencatat perubahan kondisi BMN menjadi Baik, Rusak Ringan, atau Rusak Berat." />
+  <LinkCard title="Koreksi Perubahan Nilai Bertambah" href="/aset-tetap/ruh/perubahan-bmn/koreksi-perubahan-nilai-bertambah/" description="Mengoreksi nilai transaksi BMN menjadi lebih besar dari nilai sebelumnya." />
+  <LinkCard title="Koreksi Perubahan Nilai Berkurang" href="/aset-tetap/ruh/perubahan-bmn/koreksi-perubahan-nilai-berkurang/" description="Mengoreksi nilai transaksi BMN menjadi lebih kecil dari nilai sebelumnya." />
+  <LinkCard title="Penerimaan Aset dari Pengembangan Aset Renovasi" href="/aset-tetap/ruh/perubahan-bmn/penerimaan-aset-dari-pengembangan-aset-renovasi/" description="Mencatat penambahan nilai BMN yang disewa/dipinjam setelah penyewa menyelesaikan renovasi." />
+  <LinkCard title="Koreksi Rincian Aset" href="/aset-tetap/ruh/perubahan-bmn/koreksi-rincian-aset/" description="Memperbaiki kesalahan perekaman pada Rincian Aset Lain per NUP BMN." />
+  <LinkCard title="Koreksi Manual" href="/aset-tetap/ruh/perubahan-bmn/koreksi-manual/" description="Mengoreksi nilai aset, nilai buku, dan sisa masa manfaat BMN secara manual." />
+  <LinkCard title="Koreksi Rincian Aset per Transaksi" href="/aset-tetap/ruh/perubahan-bmn/koreksi-rincian-aset-per-transaksi/" description="Memperbaiki nomor SK, tanggal SK, dan keterangan pada Rincian Dokumen Pendukung." />
+  <LinkCard title="Perubahan Satker Tujuan TK" href="/aset-tetap/ruh/perubahan-bmn/perubahan-satker-tujuan-tk/" description="Memperbaiki kesalahan pemilihan satker tujuan pada transaksi Transfer Keluar." />
+  <LinkCard title="Koreksi Susulan" href="/aset-tetap/ruh/perubahan-bmn/koreksi-susulan/" description="Mengoreksi nilai BMN untuk transaksi yang belum sempat dicatat." />
+</CardGrid>
