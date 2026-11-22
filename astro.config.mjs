@@ -14,6 +14,7 @@ export default defineConfig({
 			customCss: ['./src/styles/kustom.css'],
 			components: {
 				Footer: './src/components/overrides/Footer.astro',
+				Head: './src/components/overrides/Head.astro',
 				Hero: './src/components/overrides/Hero.astro',
 				PageTitle: './src/components/overrides/PageTitle.astro',
 				Search: './src/components/overrides/Search.astro',

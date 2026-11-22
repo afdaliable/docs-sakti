@@ -72,6 +72,7 @@ const inputId = `sakti-cari-${Math.random().toString(36).slice(2, 8)}`;
 		timer: ReturnType<typeof setTimeout> | undefined;
 		token = 0;
 		aktif = -1;
+		pemutus: AbortController | undefined;
 
 		get modulFilter(): Record<string, unknown> | undefined {
 			const modul = this.dataset.modul;
@@ -79,21 +80,27 @@ const inputId = `sakti-cari-${Math.random().toString(36).slice(2, 8)}`;
 		}
 
 		connectedCallback() {
+			this.pemutus?.abort();
+			const { signal } = (this.pemutus = new AbortController());
 			this.input = this.querySelector('input[type="search"]')!;
 			this.panel = this.querySelector('.panel-cari')!;
 			this.listbox = this.querySelector('ul[role="listbox"]')!;
 			this.statusPanel = this.querySelector('[data-status]')!;
 			this.pengumuman = this.querySelector('[data-pengumuman]')!;
 
-			this.input.addEventListener('input', () => this.jadwalkanCari());
-			this.input.addEventListener('keydown', (e) => this.tombolInput(e));
-			this.input.addEventListener('blur', () => {
-				setTimeout(() => {
-					if (!this.contains(document.activeElement)) this.tutup();
-				}, 120);
-			});
-			this.listbox.addEventListener('mousedown', (e) => e.preventDefault());
-			document.addEventListener('keydown', (e) => this.pintasan(e));
+			this.input.addEventListener('input', () => this.jadwalkanCari(), { signal });
+			this.input.addEventListener('keydown', (e) => this.tombolInput(e), { signal });
+			this.input.addEventListener(
+				'blur',
+				() => {
+					setTimeout(() => {
+						if (!this.contains(document.activeElement)) this.tutup();
+					}, 120);
+				},
+				{ signal },
+			);
+			this.listbox.addEventListener('mousedown', (e) => e.preventDefault(), { signal });
+			document.addEventListener('keydown', (e) => this.pintasan(e), { signal });
 
 			if (
 				this.dataset.autofocus !== undefined &&
@@ -101,6 +108,12 @@ const inputId = `sakti-cari-${Math.random().toString(36).slice(2, 8)}`;
 			) {
 				this.input.focus();
 			}
+		}
+
+		disconnectedCallback() {
+			this.pemutus?.abort();
+			clearTimeout(this.timer);
+			this.token++;
 		}
 
 		pintasan(e: KeyboardEvent) {

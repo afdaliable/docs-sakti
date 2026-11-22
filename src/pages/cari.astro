@@ -90,6 +90,7 @@ const jenisDaftar = Object.entries(JENIS_LABEL).filter(([k]) => k !== 'indeks');
 
 <script>
 	import { muatPagefind, type Pagefind } from '../lib/cari/pagefind';
+	import { navigate } from 'astro:transitions/client';
 
 	const PER_HALAMAN = 20;
 
@@ -99,218 +100,224 @@ const jenisDaftar = Object.entries(JENIS_LABEL).filter(([k]) => k !== 'indeks');
 		sinonim: string[];
 	}
 
-	const root = document.querySelector('.halaman-cari') as HTMLElement;
-	const base = root.dataset.base ?? '/';
-	const repo = root.dataset.repo ?? '';
-	const sinonim: Sinonim[] = JSON.parse(
-		document.getElementById('data-sinonim')!.textContent ?? '[]',
-	);
-
-	const form = document.getElementById('form-cari') as HTMLFormElement;
-	const inputQ = document.getElementById('input-q') as HTMLInputElement;
-	const daftarHasil = document.getElementById('daftar-hasil')!;
-	const jumlahHasil = document.getElementById('jumlah-hasil')!;
-	const navHalaman = document.getElementById('nav-halaman')!;
-	const infoHalaman = document.getElementById('info-halaman')!;
-	const tanpaHasil = document.getElementById('tanpa-hasil')!;
-	const pesanTanpaHasil = document.getElementById('pesan-tanpa-hasil')!;
-	const saranIstilah = document.getElementById('saran-istilah')!;
-	const usulkan = document.getElementById('usulkan-artikel') as HTMLAnchorElement;
-	const pesanGalat = document.getElementById('pesan-galat')!;
-
 	let pagefind: Pagefind | null = null;
-	let hasil: { url: string; excerpt: string; meta: Record<string, unknown> }[] = [];
 	let token = 0;
 
-	function bacaUrl() {
-		const p = new URLSearchParams(location.search);
-		return {
-			q: p.get('q') ?? '',
-			modul: p.getAll('modul'),
-			peran: p.get('peran') ?? '',
-			jenis: p.get('jenis') ?? '',
-			hal: Math.max(1, parseInt(p.get('hal') ?? '1', 10) || 1),
-		};
-	}
-
-	function terapkanKeForm() {
-		const s = bacaUrl();
-		inputQ.value = s.q;
-		for (const c of form.querySelectorAll<HTMLInputElement>('input[name="modul"]')) {
-			c.checked = s.modul.includes(c.value);
-		}
-		(form.elements.namedItem('peran') as HTMLSelectElement).value = s.peran;
-		(form.elements.namedItem('jenis') as HTMLSelectElement).value = s.jenis;
-	}
-
-	function filterDariForm() {
-		const modul = [...form.querySelectorAll<HTMLInputElement>('input[name="modul"]:checked')].map(
-			(c) => c.value,
+	function pasang(root: HTMLElement) {
+		const base = root.dataset.base ?? '/';
+		const repo = root.dataset.repo ?? '';
+		const sinonim: Sinonim[] = JSON.parse(
+			document.getElementById('data-sinonim')!.textContent ?? '[]',
 		);
-		const filter: Record<string, unknown> = {};
-		if (modul.length > 0) filter.modul = { any: modul };
-		const peran = (form.elements.namedItem('peran') as HTMLSelectElement).value;
-		const jenis = (form.elements.namedItem('jenis') as HTMLSelectElement).value;
-		if (peran) filter.peran = peran;
-		if (jenis) filter.jenis = jenis;
-		return filter;
-	}
 
-	function saranDariSinonim(q: string): string[] {
-		const token = q
-			.toLowerCase()
-			.split(/[^\p{L}\p{N}]+/u)
-			.filter((t) => t.length >= 2);
-		const cocok = new Set<string>();
-		for (const entri of sinonim) {
-			const istilah = [entri.istilah, ...entri.sinonim].map((s) => s.toLowerCase());
-			if (
-				token.some(
-					(t) => istilah.some((s) => s.includes(t)) || t.includes(entri.istilah.toLowerCase()),
-				)
-			) {
-				cocok.add(entri.istilah);
+		const form = document.getElementById('form-cari') as HTMLFormElement;
+		const inputQ = document.getElementById('input-q') as HTMLInputElement;
+		const daftarHasil = document.getElementById('daftar-hasil')!;
+		const jumlahHasil = document.getElementById('jumlah-hasil')!;
+		const navHalaman = document.getElementById('nav-halaman')!;
+		const infoHalaman = document.getElementById('info-halaman')!;
+		const tanpaHasil = document.getElementById('tanpa-hasil')!;
+		const pesanTanpaHasil = document.getElementById('pesan-tanpa-hasil')!;
+		const saranIstilah = document.getElementById('saran-istilah')!;
+		const usulkan = document.getElementById('usulkan-artikel') as HTMLAnchorElement;
+		const pesanGalat = document.getElementById('pesan-galat')!;
+
+		let hasil: { url: string; excerpt: string; meta: Record<string, unknown> }[] = [];
+
+		function bacaUrl() {
+			const p = new URLSearchParams(location.search);
+			return {
+				q: p.get('q') ?? '',
+				modul: p.getAll('modul'),
+				peran: p.get('peran') ?? '',
+				jenis: p.get('jenis') ?? '',
+				hal: Math.max(1, parseInt(p.get('hal') ?? '1', 10) || 1),
+			};
+		}
+
+		function terapkanKeForm() {
+			const s = bacaUrl();
+			inputQ.value = s.q;
+			for (const c of form.querySelectorAll<HTMLInputElement>('input[name="modul"]')) {
+				c.checked = s.modul.includes(c.value);
 			}
-			if (cocok.size >= 3) break;
+			(form.elements.namedItem('peran') as HTMLSelectElement).value = s.peran;
+			(form.elements.namedItem('jenis') as HTMLSelectElement).value = s.jenis;
 		}
-		return [...cocok];
-	}
 
-	function tampilkanHalaman(hal: number) {
-		const total = hasil.length;
-		const mulai = (hal - 1) * PER_HALAMAN;
-		const potongan = hasil.slice(mulai, mulai + PER_HALAMAN);
-		daftarHasil.replaceChildren(
-			...potongan.map((r) => {
-				const li = document.createElement('li');
-				const a = document.createElement('a');
-				a.href = r.url;
-				a.className = 'judul';
-				a.textContent = String(r.meta.title ?? r.url);
-				const meta = document.createElement('span');
-				meta.className = 'meta-hasil';
-				meta.textContent = [r.meta.breadcrumb, r.meta.jenis].filter(Boolean).join(' · ');
-				const cuplikan = document.createElement('p');
-				cuplikan.className = 'cuplikan';
-				cuplikan.innerHTML = `…${r.excerpt}…`;
-				li.append(a, meta, cuplikan);
-				return li;
-			}),
-		);
-		const halaman = Math.max(1, Math.ceil(total / PER_HALAMAN));
-		navHalaman.hidden = halaman <= 1;
-		infoHalaman.textContent = `Halaman ${hal} dari ${halaman}`;
-		navHalaman.querySelector<HTMLButtonElement>('[data-hal="sebelumnya"]')!.disabled = hal <= 1;
-		navHalaman.querySelector<HTMLButtonElement>('[data-hal="berikutnya"]')!.disabled =
-			hal >= halaman;
-	}
-
-	function tampilkanTanpaHasil(q: string) {
-		pesanTanpaHasil.textContent = `Tidak ada hasil untuk "${q}". Coba kata lain atau saran istilah di bawah.`;
-		saranIstilah.replaceChildren(
-			...saranDariSinonim(q).map((istilah) => {
-				const li = document.createElement('li');
-				const a = document.createElement('a');
-				a.href = `${location.pathname}?q=${encodeURIComponent(istilah)}`;
-				a.textContent = istilah;
-				li.append(a);
-				return li;
-			}),
-		);
-		usulkan.href = `${repo}/issues/new?title=${encodeURIComponent(`Usulan artikel: ${q}`)}`;
-		tanpaHasil.hidden = false;
-	}
-
-	async function jalankanCari() {
-		const s = bacaUrl();
-		const q = s.q.trim();
-		jumlahHasil.textContent = '';
-		daftarHasil.replaceChildren();
-		navHalaman.hidden = true;
-		tanpaHasil.hidden = true;
-		pesanGalat.hidden = true;
-		if (q.length < 2) {
-			jumlahHasil.textContent = 'Ketik minimal 2 karakter untuk mencari.';
-			return;
+		function filterDariForm() {
+			const modul = [...form.querySelectorAll<HTMLInputElement>('input[name="modul"]:checked')].map(
+				(c) => c.value,
+			);
+			const filter: Record<string, unknown> = {};
+			if (modul.length > 0) filter.modul = { any: modul };
+			const peran = (form.elements.namedItem('peran') as HTMLSelectElement).value;
+			const jenis = (form.elements.namedItem('jenis') as HTMLSelectElement).value;
+			if (peran) filter.peran = peran;
+			if (jenis) filter.jenis = jenis;
+			return filter;
 		}
-		jumlahHasil.textContent = 'Mencari…';
-		const tiket = ++token;
-		try {
-			pagefind ??= await muatPagefind();
-		} catch {
-			pagefind = null;
+
+		function saranDariSinonim(q: string): string[] {
+			const token = q
+				.toLowerCase()
+				.split(/[^\p{L}\p{N}]+/u)
+				.filter((t) => t.length >= 2);
+			const cocok = new Set<string>();
+			for (const entri of sinonim) {
+				const istilah = [entri.istilah, ...entri.sinonim].map((s) => s.toLowerCase());
+				if (
+					token.some(
+						(t) => istilah.some((s) => s.includes(t)) || t.includes(entri.istilah.toLowerCase()),
+					)
+				) {
+					cocok.add(entri.istilah);
+				}
+				if (cocok.size >= 3) break;
+			}
+			return [...cocok];
 		}
-		if (tiket !== token) return;
-		if (!pagefind) {
+
+		function tampilkanHalaman(hal: number) {
+			const total = hasil.length;
+			const mulai = (hal - 1) * PER_HALAMAN;
+			const potongan = hasil.slice(mulai, mulai + PER_HALAMAN);
+			daftarHasil.replaceChildren(
+				...potongan.map((r) => {
+					const li = document.createElement('li');
+					const a = document.createElement('a');
+					a.href = r.url;
+					a.className = 'judul';
+					a.textContent = String(r.meta.title ?? r.url);
+					const meta = document.createElement('span');
+					meta.className = 'meta-hasil';
+					meta.textContent = [r.meta.breadcrumb, r.meta.jenis].filter(Boolean).join(' · ');
+					const cuplikan = document.createElement('p');
+					cuplikan.className = 'cuplikan';
+					cuplikan.innerHTML = `…${r.excerpt}…`;
+					li.append(a, meta, cuplikan);
+					return li;
+				}),
+			);
+			const halaman = Math.max(1, Math.ceil(total / PER_HALAMAN));
+			navHalaman.hidden = halaman <= 1;
+			infoHalaman.textContent = `Halaman ${hal} dari ${halaman}`;
+			navHalaman.querySelector<HTMLButtonElement>('[data-hal="sebelumnya"]')!.disabled = hal <= 1;
+			navHalaman.querySelector<HTMLButtonElement>('[data-hal="berikutnya"]')!.disabled =
+				hal >= halaman;
+		}
+
+		function tampilkanTanpaHasil(q: string) {
+			pesanTanpaHasil.textContent = `Tidak ada hasil untuk "${q}". Coba kata lain atau saran istilah di bawah.`;
+			saranIstilah.replaceChildren(
+				...saranDariSinonim(q).map((istilah) => {
+					const li = document.createElement('li');
+					const a = document.createElement('a');
+					a.href = `${location.pathname}?q=${encodeURIComponent(istilah)}`;
+					a.textContent = istilah;
+					li.append(a);
+					return li;
+				}),
+			);
+			usulkan.href = `${repo}/issues/new?title=${encodeURIComponent(`Usulan artikel: ${q}`)}`;
+			tanpaHasil.hidden = false;
+		}
+
+		async function jalankanCari() {
+			const s = bacaUrl();
+			const q = s.q.trim();
 			jumlahHasil.textContent = '';
-			pesanGalat.hidden = false;
-			pesanGalat.textContent =
-				'Pencarian tersedia setelah pnpm build. Jalankan pnpm preview.';
-			return;
-		}
-		let res;
-		try {
-			res = await pagefind.search(q, { filters: filterDariForm() });
-		} catch {
+			daftarHasil.replaceChildren();
+			navHalaman.hidden = true;
+			tanpaHasil.hidden = true;
+			pesanGalat.hidden = true;
+			if (q.length < 2) {
+				jumlahHasil.textContent = 'Ketik minimal 2 karakter untuk mencari.';
+				return;
+			}
+			jumlahHasil.textContent = 'Mencari…';
+			const tiket = ++token;
+			try {
+				pagefind ??= await muatPagefind();
+			} catch {
+				pagefind = null;
+			}
 			if (tiket !== token) return;
-			jumlahHasil.textContent = '';
-			pesanGalat.hidden = false;
-			return;
+			if (!pagefind) {
+				jumlahHasil.textContent = '';
+				pesanGalat.hidden = false;
+				pesanGalat.textContent =
+					'Pencarian tersedia setelah pnpm build. Jalankan pnpm preview.';
+				return;
+			}
+			let res;
+			try {
+				res = await pagefind.search(q, { filters: filterDariForm() });
+			} catch {
+				if (tiket !== token) return;
+				jumlahHasil.textContent = '';
+				pesanGalat.hidden = false;
+				return;
+			}
+			if (tiket !== token) return;
+			hasil = await Promise.all(res.results.map((r) => r.data()));
+			if (tiket !== token) return;
+			if (hasil.length === 0) {
+				jumlahHasil.textContent = '';
+				tampilkanTanpaHasil(q);
+				return;
+			}
+			jumlahHasil.textContent = `${hasil.length} hasil untuk "${q}".`;
+			tampilkanHalaman(s.hal);
 		}
-		if (tiket !== token) return;
-		hasil = await Promise.all(res.results.map((r) => r.data()));
-		if (tiket !== token) return;
-		if (hasil.length === 0) {
-			jumlahHasil.textContent = '';
-			tampilkanTanpaHasil(q);
-			return;
+
+		function sinkronkanUrl() {
+			const q = inputQ.value.trim();
+			const p = new URLSearchParams();
+			if (q) p.set('q', q);
+			for (const c of form.querySelectorAll<HTMLInputElement>('input[name="modul"]:checked'))
+				p.append('modul', c.value);
+			const peran = (form.elements.namedItem('peran') as HTMLSelectElement).value;
+			const jenis = (form.elements.namedItem('jenis') as HTMLSelectElement).value;
+			if (peran) p.set('peran', peran);
+			if (jenis) p.set('jenis', jenis);
+			history.replaceState(history.state, '', `${location.pathname}${p.size ? `?${p}` : ''}`);
 		}
-		jumlahHasil.textContent = `${hasil.length} hasil untuk "${q}".`;
-		tampilkanHalaman(s.hal);
-	}
 
-	function sinkronkanUrl() {
-		const q = inputQ.value.trim();
-		const p = new URLSearchParams();
-		if (q) p.set('q', q);
-		for (const c of form.querySelectorAll<HTMLInputElement>('input[name="modul"]:checked'))
-			p.append('modul', c.value);
-		const peran = (form.elements.namedItem('peran') as HTMLSelectElement).value;
-		const jenis = (form.elements.namedItem('jenis') as HTMLSelectElement).value;
-		if (peran) p.set('peran', peran);
-		if (jenis) p.set('jenis', jenis);
-		history.replaceState(null, '', `${location.pathname}${p.size ? `?${p}` : ''}`);
-	}
-
-	form.addEventListener('submit', (e) => {
-		e.preventDefault();
-		sinkronkanUrl();
-		jalankanCari();
-	});
-	form.addEventListener('change', (e) => {
-		if ((e.target as HTMLElement).tagName === 'SELECT' || (e.target as HTMLInputElement).type === 'checkbox') {
+		form.addEventListener('submit', (e) => {
+			e.preventDefault();
 			sinkronkanUrl();
 			jalankanCari();
-		}
-	});
-	navHalaman.addEventListener('click', (e) => {
-		const tombol = (e.target as HTMLElement).closest('button[data-hal]');
-		if (!tombol) return;
-		const s = bacaUrl();
-		const hal = s.hal + (tombol.getAttribute('data-hal') === 'berikutnya' ? 1 : -1);
-		const p = new URLSearchParams(location.search);
-		p.set('hal', String(hal));
-		history.pushState(null, '', `${location.pathname}?${p}`);
-		tampilkanHalaman(hal);
-		window.scrollTo({ top: 0 });
-	});
-	window.addEventListener('popstate', () => {
+		});
+		form.addEventListener('change', (e) => {
+			if ((e.target as HTMLElement).tagName === 'SELECT' || (e.target as HTMLInputElement).type === 'checkbox') {
+				sinkronkanUrl();
+				jalankanCari();
+			}
+		});
+		navHalaman.addEventListener('click', (e) => {
+			const tombol = (e.target as HTMLElement).closest('button[data-hal]');
+			if (!tombol) return;
+			const s = bacaUrl();
+			const hal = s.hal + (tombol.getAttribute('data-hal') === 'berikutnya' ? 1 : -1);
+			const p = new URLSearchParams(location.search);
+			p.set('hal', String(hal));
+			navigate(`${location.pathname}?${p}`);
+		});
+
 		terapkanKeForm();
 		jalankanCari();
-	});
+	}
 
-	terapkanKeForm();
-	jalankanCari();
+	function pasangBilaPerlu() {
+		const root = document.querySelector<HTMLElement>('.halaman-cari');
+		if (!root || root.dataset.terpasang !== undefined) return;
+		root.dataset.terpasang = '';
+		pasang(root);
+	}
+
+	document.addEventListener('astro:page-load', pasangBilaPerlu);
+	pasangBilaPerlu();
 </script>
 
 <style>

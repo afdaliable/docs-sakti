@@ -39,3 +39,11 @@
 	color: var(--sl-color-gray-3);
 	text-align: center;
 }
+
+@media (prefers-reduced-motion: reduce) {
+	::view-transition-group(*),
+	::view-transition-old(*),
+	::view-transition-new(*) {
+		animation: none;
+	}
+}

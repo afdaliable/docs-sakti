@@ -66,6 +66,15 @@ Layout docs Starlight standar (sidebar, daftar isi kanan) ditambah:
 
 Dibuat dengan route dinamis Astro (`src/pages/peran/[slug].astro` memakai `StarlightPage`), mengelompokkan artikel per modul berdasarkan frontmatter `peran`.
 
+## Navigasi antarhalaman
+
+Pindah halaman tidak memuat ulang dokumen (`<ClientRouter />` Astro, dipasang lewat override `Head`; K60). Hanya area konten yang
+diganti (`src/lib/navigasi.ts`): sidebar beserta posisi gulir dan lipatannya, tombol menu HP, dan pencarian header memakai node
+yang sama. Penanda halaman aktif di sidebar pindah dan grup induknya dibuka; tidak ada grup yang ditutup otomatis. Tema
+terang/gelap ikut terbawa, menu HP tertutup setelah pindah, dan animasi transisi mati bila `prefers-reduced-motion` aktif.
+Skrip komponen baru harus aman dipasang berkali-kali: pakai custom element yang melepas listener global di
+`disconnectedCallback`, atau pasang ulang di event `astro:page-load`.
+
 ## Branding & aksesibilitas
 
 - Warna aksen, logo, favicon: tunggu keputusan K4 (`09-keputusan-terbuka.md`). Sementara pakai warna netral biru tua dan teks "SAKTI Knowledge Base".

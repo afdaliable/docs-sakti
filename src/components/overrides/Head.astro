@@ -1,0 +1,11 @@
+---
+import HeadBawaan from '@astrojs/starlight/components/Head.astro';
+import { ClientRouter } from 'astro:transitions';
+---
+
+<HeadBawaan {...Astro.props} />
+<ClientRouter />
+
+<script>
+	import '../../lib/navigasi';
+</script>

@@ -58,6 +58,7 @@ Kerjakan berurutan. Centang `[x]` saat selesai. Setiap fase diakhiri **gerbang**
 - [x] 3.5 Override komponen artikel: breadcrumb `menu_sakti`, badge, kotak "Menu di SAKTI", footer sumber + feedback.
 - [x] 3.6 Komponen MDX: `MenuSakti`, `SumberAsli`.
 - [x] 3.7 Cek tampilan mobile (360px) dan dark mode; Lighthouse ≥ 90/95.
+  - 22 Nov 2026: atas permintaan pemilik, pindah halaman tanpa muat ulang (`<ClientRouter />` + swap area konten, K60); uji `tests/e2e/navigasi.e2e.ts`.
 
 **Gerbang 3:** landing page sesuai wireframe; BigSearch menampilkan hasil inline untuk halaman indeks yang ada.
 

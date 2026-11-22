@@ -20,7 +20,7 @@ const MIME: Record<string, string> = {
 };
 
 export function buatServer(): Promise<{ server: http.Server; url: string }> {
-	const root = path.resolve(process.cwd(), 'dist');
+	const root = path.resolve(process.cwd(), process.env.E2E_DIST ?? 'dist');
 	if (!fs.existsSync(path.join(root, 'pagefind', 'pagefind.js'))) {
 		console.error('Jalankan pnpm build dulu.');
 		process.exit(1);
