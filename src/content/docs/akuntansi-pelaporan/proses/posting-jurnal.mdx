@@ -1,0 +1,96 @@
+---
+title: Memposting Jurnal
+description: Memposting jurnal yang telah divalidasi ke neraca saldo.
+modul: akuntansi-pelaporan
+menu_sakti: "Akuntansi dan Pelaporan > Proses"
+peran: [satker]
+jenis: juknis
+perlu_review: true
+kata_kunci: [posting jurnal, neraca saldo, trial balance]
+status: review
+sumber:
+  - judul: "SAKTI PELAPORAN - Posting Jurnal"
+    url: "https://sites.google.com/view/saktipelaporan/akuntansi-dan-pelaporan/proses/posting-jurnal"
+    jenis: google-sites
+    diambil: 2026-11-21
+    id_manifest: C-akuntansi-dan-pelaporan-proses-posting-jurnal
+  - judul: "Posting Jurnal-3"
+    url: "https://drive.google.com/file/d/1Y1uWgv-yg-CdiMrZXn_xdUJ1WlEknY4g/view"
+    jenis: lainnya
+    diambil: 2026-11-21
+    id_manifest: C-dok-166
+  - judul: "Posting Jurnal"
+    url: "https://docs.google.com/presentation/d/1m5Pn7Q8agzQOtprzunoUgr88N1mCr2kWYXDkqBkJo54/"
+    jenis: google-slides
+    diambil: 2026-11-21
+    id_manifest: C-dok-167
+  - judul: "Juknis SAKTI Web - GLP_30122020"
+    url: "https://drive.google.com/file/d/1Z8R3bR_pYK-God0fQSBy5twxtJDASqaa/view"
+    jenis: pdf
+    diambil: 2026-11-21
+    id_manifest: C-dok-161
+  - judul: "Juknis SAKTI Satker BLU"
+    url: "https://drive.google.com/file/d/1gt7ZitAXOh7tvJff1HFT4LTzni5X4yk5/view"
+    jenis: pdf
+    diambil: 2026-11-21
+    id_manifest: B-pem-041
+---
+
+import { Aside, Steps, LinkCard } from '@astrojs/starlight/components';
+import MenuSakti from '../../../components/MenuSakti.astro';
+import SumberAsli from '../../../components/SumberAsli.astro';
+
+Posting jurnal dilakukan otomasi secara terjadwal; namun jika
+operator ingin mencetak laporan keuangan lebih cepat dapat
+dilakukan posting jurnal secara mandiri yang didahului dengan
+validasi jurnal. Data jurnal yang telah diposting ke Neraca
+Saldo (Trial Balance) dan Neraca Percobaan akan menjadi data
+acuan dalam proses pembuatan laporan.
+
+Output: LO, LPE, NERACA, LRA.
+
+<MenuSakti />
+
+## Prasyarat
+
+- Role yang dibutuhkan: Operator.
+- Jurnal yang bisa diposting hanya jurnal yang sudah
+  tervalidasi.
+
+## Langkah
+
+<Steps>
+
+1. Login menggunakan user operator GLP pada menu **Akuntansi
+   dan Pelaporan > Proses > Posting Jurnal** (jalur menurut
+   juknis).
+2. Pilih semua.
+3. Pilih semua halaman.
+4. Klik **Proses**; pada notifikasi klik **Ya**, proses
+   berhasil klik **OK**.
+
+</Steps>
+
+## Ketentuan
+
+- Jurnal yang bisa diposting hanya jurnal yang sudah
+  tervalidasi (menurut juknis satker BLU).
+- Jurnal yang telah diposting hilang dari daftar posting
+  jurnal namun tetap ada di form monitoring jurnal.
+- Jurnal yang telah diposting masuk ke dalam laporan
+  keuangan.
+
+<Aside type="caution" title="Perlu verifikasi">
+Menu.json tidak memuat label daun "Posting Jurnal" di bawah
+Proses — jalur "GL dan Pelaporan >Proses>Posting Jurnal"
+pada langkah adalah jalur menurut juknis.
+</Aside>
+
+## Terkait
+
+<LinkCard title="Validasi Jurnal" href="/akuntansi-pelaporan/proses/validasi-jurnal/" description="Validasi sebelum posting." />
+<LinkCard title="Monitoring Jurnal" href="/akuntansi-pelaporan/proses/monitoring-jurnal/" description="Jurnal terposting tetap terlihat di sini." />
+
+## Sumber
+
+<SumberAsli />

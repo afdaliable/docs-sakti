@@ -1,0 +1,78 @@
+---
+title: Jurnal Penyesuaian Khusus
+description: Jurnal penyesuaian berbasis akrual dengan pasangan akun otomatis.
+modul: akuntansi-pelaporan
+menu_sakti: "Akuntansi dan Pelaporan > Proses > Jurnal Penyesuaian Khusus"
+peran: [satker]
+jenis: juknis
+kata_kunci: [jurnal penyesuaian khusus, jurnal akrual, pasangan jurnal]
+status: review
+sidebar:
+  label: Ringkasan
+  order: 2
+sumber:
+  - judul: "SAKTI PELAPORAN - Jurnal Penyesuaian Khusus"
+    url: "https://sites.google.com/view/saktipelaporan/akuntansi-dan-pelaporan/proses/jurnal-penyesuaian-khusus"
+    jenis: google-sites
+    diambil: 2026-11-21
+    id_manifest: C-akuntansi-dan-pelaporan-proses-jurnal-penyesuaian-khusus
+  - judul: "Jurnal Penyesuaian Khusus-2"
+    url: "https://drive.google.com/file/d/1WClZQOU664cnCvlHZDJY4czruLJxp1a9/view"
+    jenis: lainnya
+    diambil: 2026-11-21
+    id_manifest: C-dok-168
+  - judul: "Juknis SAKTI Web - GLP_30122020"
+    url: "https://drive.google.com/file/d/1Z8R3bR_pYK-God0fQSBy5twxtJDASqaa/view"
+    jenis: pdf
+    diambil: 2026-11-21
+    id_manifest: C-dok-161
+---
+
+import { Steps, LinkCard } from '@astrojs/starlight/components';
+import MenuSakti from '../../../../components/MenuSakti.astro';
+import SumberAsli from '../../../../components/SumberAsli.astro';
+
+Fitur ini digunakan untuk mempermudah pengguna dalam
+melakukan jurnal penyesuaian. Jurnal penyesuaian khusus akan
+memberikan pasangan jurnal secara otomatis sesuai dengan
+referensi pasangan jurnal yang sudah dipastikan. Jurnal yang
+terbentuk adalah berbasis akrual.
+
+<MenuSakti />
+
+## Prasyarat
+
+- Role yang dibutuhkan: OPR GLP.
+- Akun jurnal telah disediakan pasangannya.
+- Nilai jurnal harus seimbang Debet dan Kredit.
+- Periode buku harus terbuka.
+
+## Langkah
+
+<Steps>
+
+1. Login menggunakan user operator GLP pada menu **Akuntansi
+   dan Pelaporan > Proses > Jurnal Penyesuaian Khusus**.
+2. Pilih periode yang akan dijurnal, isi No. Dokumen kemudian
+   **Rekam**.
+3. Isikan Data Dokumen dan Data Akun secara berurutan.
+4. Klik **Simpan** (kanan bawah).
+5. Data jurnal masuk ke Buku Besar dengan status belum
+   validasi dan posting; lakukan Validasi Jurnal dan Posting
+   Jurnal.
+
+</Steps>
+
+## Ketentuan
+
+- Dokumen sumber: Memo Jurnal.
+- Output: Laporan Keuangan.
+
+## Terkait
+
+<LinkCard title="Jurnal Balik" href="/akuntansi-pelaporan/proses/jurnal-penyesuaian-khusus/jurnal-balik/" description="Membalik jurnal penyesuaian pada awal periode." />
+<LinkCard title="Jurnal Manual" href="/akuntansi-pelaporan/proses/jurnal-manual/" description="Jurnal yang tidak terdapat di menu ini." />
+
+## Sumber
+
+<SumberAsli />

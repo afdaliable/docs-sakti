@@ -1,0 +1,63 @@
+---
+title: Merekam Jurnal Manual Korolari BLU
+description: Jurnal manual kas untuk memasukkan akun neraca pada LAK dan LPSAL satker BLU.
+modul: akuntansi-pelaporan
+menu_sakti: "Akuntansi dan Pelaporan > Proses > Jurnal Manual"
+peran: [satker]
+jenis: juknis
+kata_kunci: [jurnal korolari, jurnal manual blu, lak, lpsal]
+status: review
+sumber:
+  - judul: "SAKTI PELAPORAN - Jurnal Manual Korolari BLU"
+    url: "https://sites.google.com/view/saktipelaporan/akuntansi-dan-pelaporan/proses/jurnal-manual/jurnal-manual-korolari-blu"
+    jenis: google-sites
+    diambil: 2026-11-21
+    id_manifest: C-akuntansi-dan-pelaporan-proses-jurnal-manual-jurnal-manual-korolari-blu
+  - judul: "Jurnal Manual Korolari BLU"
+    url: "https://drive.google.com/file/d/1z8c6SIHC9fEq6mcNRFFquOKuuV_DNiyT/view"
+    jenis: pdf
+    diambil: 2026-11-21
+    id_manifest: C-dok-163
+---
+
+import { Steps, LinkCard } from '@astrojs/starlight/components';
+import MenuSakti from '../../../../components/MenuSakti.astro';
+import SumberAsli from '../../../../components/SumberAsli.astro';
+
+Jurnal Manual Kas Korolari BLU digunakan untuk memasukkan
+akun Neraca yang ingin dimasukkan pada LAK dan LPSAL Satker
+BLU. Dokumen inputnya Memo Jurnal; keluarannya LAK dan LPSAL
+(BLU). Validasi hanya jurnal kas.
+
+Akun LAK: 11573x, 121631, 122231, 1213xx, 121411, 121911,
+dan 221511.
+
+<MenuSakti />
+
+## Prasyarat
+
+- Role yang dibutuhkan: OPR (BLU).
+
+## Langkah
+
+<Steps>
+
+1. Login Aplikasi SAKTI menggunakan user operator GLP pada
+   menu **Akuntansi dan Pelaporan > Proses > Jurnal Manual**,
+   pilih periode jurnal yang akan dibukukan, lalu **Rekam**.
+2. Klik **Tambah Akun**.
+3. Rekam Data Dokumen dan Akun kemudian **Simpan**; tambah
+   akun sisi Kredit dan **Simpan**.
+4. Jurnal tersimpan di Daftar Jurnal, kemudian **Simpan**.
+5. Lakukan validasi dan posting sebelum mencetak laporan.
+
+</Steps>
+
+## Terkait
+
+<LinkCard title="Jurnal Manual" href="/akuntansi-pelaporan/proses/jurnal-manual/" description="Fasilitas jurnal manual GLP." />
+<LinkCard title="Validasi Jurnal" href="/akuntansi-pelaporan/proses/validasi-jurnal/" description="Memvalidasi jurnal sebelum diposting." />
+
+## Sumber
+
+<SumberAsli />

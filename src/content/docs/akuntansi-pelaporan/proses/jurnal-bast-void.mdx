@@ -1,0 +1,180 @@
+---
+title: Memahami Jurnal BAST Void
+description: Pemulihan FA atas BAST yang sudah didetailkan di Modul Aset Tetap/Persediaan.
+modul: akuntansi-pelaporan
+menu_sakti: "Akuntansi dan Pelaporan > Proses > Jurnal BAST Void"
+peran: [satker]
+jenis: juknis
+kata_kunci: [void bast, pemulihan fa, jurnal void, sptjm]
+status: review
+sumber:
+  - judul: "SAKTI PELAPORAN - Jurnal BAST Void"
+    url: "https://sites.google.com/view/saktipelaporan/akuntansi-dan-pelaporan/proses/jurnal-bast-void"
+    jenis: google-sites
+    diambil: 2026-11-21
+    id_manifest: C-akuntansi-dan-pelaporan-proses-jurnal-bast-void
+  - judul: "Draft Juknis Fitur Void BAST v 2.2.1"
+    url: "https://drive.google.com/file/d/1LbNBrUKxu36eX6Tmko4JJ7oj-Xa10zXQ/view"
+    jenis: pdf
+    diambil: 2026-11-21
+    id_manifest: C-dok-172
+---
+
+import { Steps, LinkCard } from '@astrojs/starlight/components';
+import MenuSakti from '../../../components/MenuSakti.astro';
+import SumberAsli from '../../../components/SumberAsli.astro';
+
+Fitur Void BAST melakukan pemulihan FA atas BAST yang sudah
+didetailkan pada Modul Aset Tetap/Persediaan namun tidak jadi
+digunakan. Kondisi yang melatarinya:
+
+- Terdapat transaksi BAST yang belum dibayarkan, tetapi sudah
+  ada transaksi lanjutan berupa pendetailan pada modul aset
+  tetap/persediaan.
+- Satker hendak melakukan perubahan dan/atau penghapusan atas
+  BAST tersebut namun tidak dimungkinkan karena sudah
+  didetailkan.
+- Pendetailan tidak bisa dilakukan karena sudah ada transaksi
+  pemakaian atau telah dilakukan tutup buku permanen pada
+  periode BAST tersebut.
+- Diperlukan pemulihan FA atas BAST untuk digunakan pada
+  transaksi BAST yang baru.
+
+Dokumen input: seluruh data BAST pada Modul Komitmen kecuali
+BAST Hibah Kas dan BAST Hibah B/J/S. Output: status Void
+BAST, jurnal Void BAST, dan pemulihan FA BAST.
+
+<MenuSakti />
+
+## Prasyarat
+
+- Role yang dibutuhkan: Opr Modul Komitmen, Opr Modul GL dan
+  Pelaporan, Operator SAKTI-BUN, dan Validator SAKTI-BUN.
+- BAST yang dapat diajukan void adalah BAST yang tidak
+  terikat transaksi pembayaran namun sudah didetailkan pada
+  Modul Aset Tetap/Persediaan.
+- BAST hanya dapat divoid bila belum digunakan pada
+  SPP/SPBy.
+
+## Alur proses
+
+### Operator Modul Komitmen (satker)
+
+<Steps>
+
+1. Masuk pada Modul **Komitmen > RUH > Void BAST**; pilih
+   jenis BAST yang akan diusulkan void.
+2. Pada grid Daftar BAST, pilih data BAST yang akan
+   diusulkan void.
+3. Klik **Usulan Void** — status void berubah menjadi 0 –
+   Siap Diusulkan (kesalahan pemilihan dapat dibatalkan
+   dengan **Batal Void**, status menjadi 9 – Batal Void).
+4. Pilih data BAST berstatus 0 – Siap Diusulkan, pilih Jenis
+   Dokumen Pendukung – SPTJM, klik **Choose** untuk memilih
+   dokumen lalu **Upload**.
+5. Pada grid Dokumen Pendukung, pilih SPTJM yang sudah
+   di-upload lalu klik **Kirim** — status berubah menjadi 1 –
+   Pengecekan GLP (usulan yang diteruskan kembali setelah
+   ditolak berstatus 6 – Perbaikan SPTJM Satker).
+
+</Steps>
+
+### Operator Modul Akuntansi dan Pelaporan (satker)
+
+<Steps>
+
+1. Pastikan BMN/Persediaan pada BAST yang diusulkan telah
+   dilakukan koreksi.
+2. Masuk pada menu Jurnal BAST Void, pilih informasi Jenis
+   BAST, dan pada Status Void pilih **Non Final**.
+3. Pada grid Daftar BAST Siap di Void, pilih BAST berstatus
+   1 – Pengecekan GLP, klik **Proses** untuk merekam jurnal
+   manual; klik **Tolak** bila belum dapat diproses (status
+   menjadi 2 – Ditolak GLP).
+4. Pilih periode minimal sama dengan periode BAST dan masih
+   terbuka, klik **Rekam**.
+5. Isi tanggal dokumen dan tanggal jurnal (minimal periode
+   BAST, periode terbuka), isi Deskripsi, pilih Subkelompok
+   Jurnal sesuai jenis satker BLU/Non BLU dan jenis aset
+   (117911 Persediaan, 139111 Aset Tetap, 166411 Aset
+   Lainnya), isi nilai jurnal dan Akun Pasangan sesuai kasus
+   (lihat tabel di bawah), klik **Simpan Akun** lalu
+   **Simpan** — status menjadi 3 – Usulan Terkirim ke
+   OprBUN.
+6. Teruskan usulan void ke KPPN mitra kerja.
+
+</Steps>
+
+### Operator Verifikasi dan Akuntansi (KPPN)
+
+<Steps>
+
+1. Masuk pada Menu KPPN > Void BAST, pilih jenis BAST, dan
+   pada grid Daftar BAST pilih data berstatus 3 – Usulan
+   Terkirim ke OprBUN.
+2. Pada grid Dokumen Pendukung, pilih SPTJM yang di-upload
+   satker dan klik **View**.
+3. Klik **Kirim** untuk menyetujui (status 11 – Void
+   Terkirim ke ValBUN) atau **Tolak Void** untuk menolak
+   (status 4 – Ditolak OprBUN).
+
+</Steps>
+
+### Validator Verifikasi dan Akuntansi (KPPN)
+
+<Steps>
+
+1. Masuk pada Menu KPPN > Void BAST, pilih jenis BAST, dan
+   pilih data berstatus 11 – Void Terkirim ke ValBUN.
+2. Periksa SPTJM pada Dokumen Pendukung, lakukan validasi
+   usulan void — tanggal validasi hanya dapat dilakukan pada
+   periode pelaporan yang terbuka — klik **Simpan** (status
+   5 – Void Diproses ValBUN; penolakan berstatus 12 –
+   Ditolak ValBUN dan kembali ke Operator GLP satker).
+3. Pada grid Daftar BAST, pilih data berstatus 5 – Void
+   Diproses ValBUN, klik **Proses** untuk melakukan
+   pemulihan FA dan jurnal balik atas BAST tersebut — status
+   akhir 10 – Void Berhasil.
+
+</Steps>
+
+## Ketentuan
+
+- Jurnal manual void yang telah direkam tidak dapat diubah
+  jika usulan void sudah disampaikan ke KPPN.
+- Data BAST yang sudah divoid tidak dapat digunakan pada
+  transaksi pembayaran dan tidak dapat dimintakan pembatalan
+  void; BAST yang divoid tetap tidak dapat diubah/dihapus —
+  user perlu merekam BAST baru.
+- KPPN Mitra Kerja hanya dapat memproses usulan void BAST
+  dengan status 3 – Usulan Terkirim.
+- Dokumen SPTJM minimal memuat: nomor SPTJM; tanda tangan
+  sah Pejabat Satker (PPK/KPA) yang berwenang; kode satker;
+  nomor dan tanggal BAST sesuai rekam di SAKTI; kode COA
+  yang digunakan pada BAST; pernyataan bertanggung jawab
+  sepenuhnya secara hukum atas permintaan pemulihan FA BAST.
+- Koreksi kategori jurnal BAST Void dilakukan melalui menu
+  Jurnal Penyesuaian Khusus kategori GLP0120-KOREKSI JURNAL
+  BAST VOID.
+
+Tabel I — pilihan jurnal BAST Void Modul Akuntansi dan
+Pelaporan:
+
+| Jenis Aset | Transaksi Koreksi | Akun Debet Void | Akun Kredit Void |
+|---|---|---|---|
+| Persediaan | Koreksi Jumlah/Nilai | 117911 | 593311 |
+| Persediaan | Habis Pakai | 117911 | 5931xx |
+| Persediaan | Keluar Lainnya | 117911 | 596111 |
+| Persediaan | Reklas Keluar | 117911 | 391151 |
+| Persediaan | Transfer Keluar | 117911 | 313211 |
+| Aset Tetap | Koreksi Pencatatan / Koreksi Nilai Berkurang | 139111 | 391116 |
+| Aset Lainnya | Koreksi Pencatatan / Koreksi Nilai Berkurang | 166411 | 391118 |
+
+## Terkait
+
+<LinkCard title="Jurnal Manual" href="/akuntansi-pelaporan/proses/jurnal-manual/" description="Jurnal manual void direkam lewat fasilitas ini." />
+<LinkCard title="Jurnal Penyesuaian Khusus" href="/akuntansi-pelaporan/proses/jurnal-penyesuaian-khusus/" description="Koreksi kategori lewat kode GLP0120." />
+
+## Sumber
+
+<SumberAsli />

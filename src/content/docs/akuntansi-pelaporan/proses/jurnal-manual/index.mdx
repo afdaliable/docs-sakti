@@ -1,0 +1,108 @@
+---
+title: Jurnal Manual
+description: Fasilitas GLP untuk mencatat jurnal manual yang tidak terkait aturan peta jurnal.
+modul: akuntansi-pelaporan
+menu_sakti: "Akuntansi dan Pelaporan > Proses > Jurnal Manual"
+peran: [satker]
+jenis: juknis
+kata_kunci: [jurnal manual, buku besar, memo jurnal, debet kredit]
+status: review
+sidebar:
+  label: Ringkasan
+  order: 1
+sumber:
+  - judul: "SAKTI PELAPORAN - Jurnal Manual"
+    url: "https://sites.google.com/view/saktipelaporan/akuntansi-dan-pelaporan/proses/jurnal-manual"
+    jenis: google-sites
+    diambil: 2026-11-21
+    id_manifest: C-akuntansi-dan-pelaporan-proses-jurnal-manual
+  - judul: "Jurnal Manual-1"
+    url: "https://drive.google.com/file/d/1F75Z2dHoagCoaEAfgWbaluDdc3wu38qU/view"
+    jenis: lainnya
+    diambil: 2026-11-21
+    id_manifest: C-dok-162
+  - judul: "Juknis SAKTI Web - GLP_30122020"
+    url: "https://drive.google.com/file/d/1Z8R3bR_pYK-God0fQSBy5twxtJDASqaa/view"
+    jenis: pdf
+    diambil: 2026-11-21
+    id_manifest: C-dok-161
+  - judul: "Juknis SAKTI Satker BLU"
+    url: "https://drive.google.com/file/d/1gt7ZitAXOh7tvJff1HFT4LTzni5X4yk5/view"
+    jenis: pdf
+    diambil: 2026-11-21
+    id_manifest: B-pem-041
+---
+
+import { Steps, LinkCard } from '@astrojs/starlight/components';
+import MenuSakti from '../../../../components/MenuSakti.astro';
+import SumberAsli from '../../../../components/SumberAsli.astro';
+
+Jurnal Manual adalah fasilitas yang disediakan oleh modul GLP
+untuk mencatat jurnal manual melalui modul GL yang tidak
+terkait dan tidak mengikuti aturan di peta jurnal. Fasilitas
+ini dapat digunakan untuk membuat semua jurnal yang tidak
+terdapat pada menu Jurnal Penyesuaian Khusus.
+
+Dokumen sumbernya adalah Memo Jurnal; keluarannya adalah
+Laporan Keuangan.
+
+<MenuSakti />
+
+## Prasyarat
+
+- Role yang dibutuhkan: OPR GLP.
+- Nilai jurnal harus seimbang Debet dan Kredit.
+- Periode buku harus terbuka.
+- Nilai Debet dan Kredit harus diperhatikan.
+
+## Langkah
+
+<Steps>
+
+1. Login menggunakan user operator GLP pada menu **Akuntansi
+   dan Pelaporan > Proses > Jurnal Manual**.
+2. Pilih periode Jurnal Manual yang diinginkan.
+3. Klik **Rekam**.
+4. Klik **Tambah Akun**.
+5. Pilih tanggal dokumen, tanggal transaksi, isi No. Dokumen,
+   isi deskripsi, cari akun, posisi akun Debet (default),
+   isikan Nominal, dan simpan.
+6. Untuk sisi kredit, klik **Tambah Akun** kembali: sisi Data
+   Dokumen tidak perlu diubah, ubah akun dan posisi akun ke
+   Kredit dengan nominal sama dengan sisi Debet, kemudian
+   **Simpan Akun**.
+7. Setelah akun debet dan kredit tersimpan, klik **Simpan**;
+   jika berhasil jurnal masuk ke Buku Besar.
+8. Lakukan Validasi dan Posting Jurnal agar jurnal masuk di
+   Laporan.
+
+</Steps>
+
+## Ketentuan
+
+- Jurnal bisa berbasis akrual atau kas (menurut juknis satker
+  BLU).
+- Jurnal Manual tidak bisa menginput nilai negatif. Jika nilai
+  pada Jurnal Umum negatif, ayat jurnal yang diinput di SAKTI
+  harus dibalik posisi Debet-Kreditnya (menurut juknis satker
+  BLU).
+- Jurnal Manual dilakukan dengan tanggal dokumen 30 Juni dan
+  31 Desember dengan menginput nilai positif; jurnal pembalik
+  dilakukan dengan tanggal dokumen 1 Januari dan 1 Juli dengan
+  ayat jurnal yang dibalik posisinya (menurut juknis satker
+  BLU).
+- Kelompok jurnal yang bisa diinput menurut juknis satker BLU:
+  pendapatan diterima di muka, pendapatan yang masih harus
+  diterima, beban dibayar di muka, beban yang masih harus
+  dibayar, penyisihan piutang, dan penghapusan piutang.
+
+## Terkait
+
+<LinkCard title="Jurnal Manual Korolari BLU" href="/akuntansi-pelaporan/proses/jurnal-manual/jurnal-manual-korolari-blu/" description="Varian kas untuk akun LAK dan LPSAL satker BLU." />
+<LinkCard title="Jurnal Penyesuaian Khusus" href="/akuntansi-pelaporan/proses/jurnal-penyesuaian-khusus/" description="Jurnal penyesuaian dengan pasangan akun otomatis." />
+<LinkCard title="Validasi Jurnal" href="/akuntansi-pelaporan/proses/validasi-jurnal/" description="Memvalidasi jurnal sebelum diposting." />
+<LinkCard title="Posting Jurnal" href="/akuntansi-pelaporan/proses/posting-jurnal/" description="Memposting jurnal ke neraca saldo." />
+
+## Sumber
+
+<SumberAsli />

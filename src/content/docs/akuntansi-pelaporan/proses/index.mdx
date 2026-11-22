@@ -1,12 +1,28 @@
 ---
 title: Proses
-description: Panduan menu Proses pada modul Akuntansi dan Pelaporan.
+description: Jurnal manual, jurnal penyesuaian khusus, validasi, posting, monitoring jurnal, dan jurnal BAST void.
 modul: akuntansi-pelaporan
 jenis: indeks
 status: terbit
 sidebar:
   label: Ringkasan
-  order: 0
+  order: 1
 ---
 
-Panduan untuk menu **Proses** sedang disiapkan.
+import { LinkCard, CardGrid } from '@astrojs/starlight/components';
+
+Sub-menu **Akuntansi dan Pelaporan > Proses** memuat fitur
+pencatatan dan pemrosesan jurnal: jurnal manual, jurnal
+penyesuaian khusus, validasi, posting, dan monitoring jurnal.
+
+<CardGrid>
+  <LinkCard title="Jurnal Manual" href="/akuntansi-pelaporan/proses/jurnal-manual/" description="Mencatat jurnal manual yang tidak dibentuk peta jurnal." />
+  <LinkCard title="Jurnal Manual Korolari BLU" href="/akuntansi-pelaporan/proses/jurnal-manual/jurnal-manual-korolari-blu/" description="Jurnal manual kas untuk akun LAK dan LPSAL satker BLU." />
+  <LinkCard title="Jurnal Penyesuaian Khusus" href="/akuntansi-pelaporan/proses/jurnal-penyesuaian-khusus/" description="Jurnal penyesuaian dengan pasangan akun otomatis." />
+  <LinkCard title="Jurnal Balik" href="/akuntansi-pelaporan/proses/jurnal-penyesuaian-khusus/jurnal-balik/" description="Membalik jurnal penyesuaian pada awal periode." />
+  <LinkCard title="Validasi Jurnal" href="/akuntansi-pelaporan/proses/validasi-jurnal/" description="Memvalidasi jurnal sebelum diposting." />
+  <LinkCard title="Posting Jurnal" href="/akuntansi-pelaporan/proses/posting-jurnal/" description="Memposting jurnal ke neraca saldo." />
+  <LinkCard title="Monitoring Jurnal" href="/akuntansi-pelaporan/proses/monitoring-jurnal/" description="Memantau dan menelusuri data jurnal ke dokumen sumber." />
+  <LinkCard title="Jurnal BAST Void" href="/akuntansi-pelaporan/proses/jurnal-bast-void/" description="Pemulihan FA atas BAST yang sudah didetailkan." />
+  <LinkCard title="Penerimaan dari Potongan SP2D Satker Lain" href="/akuntansi-pelaporan/proses/penerimaan-potongan-sp2d-satker-lain/" description="Mencatat potongan pada SPM terpusat." />
+</CardGrid>
