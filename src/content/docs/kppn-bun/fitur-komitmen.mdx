@@ -1,0 +1,74 @@
+---
+title: Menggunakan Fitur Komitmen untuk KPPN BUN
+description: Gambaran fitur SAKTI BUN modul Komitmen untuk memproses ADK Supplier dan ADK Kontrak di KPPN.
+modul: kppn-bun
+peran: [kppn-kanwil]
+jenis: konsep
+kata_kunci: [sakti bun, modul komitmen, adk supplier, adk kontrak, fo mo kppn]
+status: review
+sumber:
+  - judul: "Juknis Fitur KPPN BUN Komitmen"
+    url: "https://drive.google.com/file/d/12nxKUIRnmHeAIOiiAK6w6JtSmSOb9fza/view"
+    jenis: pdf
+    diambil: 2026-11-21
+    id_manifest: B-bun-001
+---
+
+import SumberAsli from '~/components/SumberAsli.astro';
+
+Petunjuk teknis ini diperuntukkan bagi Direktorat Jenderal
+Perbendaharaan, khususnya pengguna SAKTI BUN (KPPN), untuk melakukan
+proses ADK yang dibentuk dari modul komitmen (ADK Supplier dan ADK
+Kontrak). Fitur ini mempermudah petugas FO/MO KPPN dalam memroses
+ADK Supplier dan Kontrak; pengembangannya berdasarkan fitur
+penyampaian SPM yang sudah diterapkan sebelumnya sehingga petugas
+KPPN lebih familiar dengan penggunaannya.
+
+| Keterangan | Isi |
+|---|---|
+| Kode Juknis | SAKTI BUN/KPPN |
+| Modul | KPPN |
+| Role User | OPR (SAKTI BUN), APR (SAKTI BUN) |
+| Modul lain yang terkait | KOM |
+| Transaksi yang terkait | Pemrosesan ADK Supplier dan ADK Kontrak |
+| Validasi | Sarana penyampaian ADK Supplier dan ADK Kontrak beserta lampirannya |
+
+## Prasyarat
+
+- Role yang dibutuhkan: OPR (SAKTI BUN) dan APR (SAKTI BUN).
+- Mapping user FO dan MO sudah dilakukan oleh user Kasi — lihat
+  [Memetakan Petugas Portal KPPN](/kppn-bun/mapping-petugas-portal-kppn/).
+
+## Alur proses
+
+1. Petugas FO — mengunduh dan memeriksa ADK Supplier/Kontrak yang
+   dikirim satker, lalu meneruskannya ke user MO atau menolaknya.
+2. User MO — memverifikasi ADK yang diteruskan FO, lalu meneruskan
+   ke user Kasi PD/PDMS (Approver) atau menolaknya.
+3. User Kasi PD/PDMS — menyetujui (**Setujui ADK**) atau menolak
+   ADK.
+
+## Ketentuan
+
+- Satker tidak dapat melakukan pengiriman ulang atas ADK Supplier
+  dan Kontrak sebelum adanya informasi persetujuan/penolakan ADK
+  terkait yang diinput oleh KPPN pada aplikasi SAKTI.
+- Atas penolakan ADK Supplier dan Kontrak yang diinput oleh
+  FO/MO/Kasi, dapat ditampilkan pada user satker menu **Komitmen >
+  Monitoring > Monitoring ADK Kontrak dan Supplier**.
+- Dalam hal terjadi kesalahan penolakan, status tolak dapat diubah
+  oleh user yang melakukan penolakan pada aplikasi SAKTI BUN.
+- Rekap atas ADK Supplier dan Kontrak yang dikirimkan oleh satker
+  mitra kerja dapat diunduh dalam bentuk excel ataupun hanya
+  ditampilkan dalam bentuk pop up; rekap dapat didownload pada menu
+  ADK Supplier maupun Kontrak dengan klik tombol **Rekap**.
+
+## Terkait
+
+- [Memproses ADK Supplier di KPPN](/kppn-bun/proses-adk-supplier/)
+- [Memproses ADK Kontrak di KPPN](/kppn-bun/proses-adk-kontrak/)
+- [Memetakan Petugas Portal KPPN](/kppn-bun/mapping-petugas-portal-kppn/)
+
+## Sumber
+
+<SumberAsli />

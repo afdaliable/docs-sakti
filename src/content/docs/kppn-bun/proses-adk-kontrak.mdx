@@ -1,0 +1,136 @@
+---
+title: Memproses ADK Kontrak di KPPN
+description: Pemrosesan ADK Kontrak dari satker oleh petugas FO, MO, sampai persetujuan Kasi PD/PDMS.
+modul: kppn-bun
+menu_sakti: "KPPN > Pencairan Dana > Proses > ADK Kontrak"
+peran: [kppn-kanwil]
+jenis: juknis
+kata_kunci: [adk kontrak, proses adk, fo mo kppn, kasi pd, teruskan ke mo]
+status: review
+sumber:
+  - judul: "Juknis Fitur KPPN BUN Komitmen"
+    url: "https://drive.google.com/file/d/12nxKUIRnmHeAIOiiAK6w6JtSmSOb9fza/view"
+    jenis: pdf
+    diambil: 2026-11-21
+    id_manifest: B-bun-001
+---
+
+import { Steps } from '@astrojs/starlight/components';
+import MenuSakti from '~/components/MenuSakti.astro';
+import SumberAsli from '~/components/SumberAsli.astro';
+
+Menu **ADK Kontrak** pada fitur KPPN digunakan untuk memproses ADK
+Kontrak yang sudah masuk ke KPPN, mulai dari unduh dan pemeriksaan
+oleh petugas FO, verifikasi oleh user MO, sampai persetujuan oleh
+user Kasi PD/PDMS.
+
+<MenuSakti />
+
+## Prasyarat
+
+- Role yang dibutuhkan: petugas FO, user MO, dan user Kasi PD/PDMS
+  (Approver).
+- Mapping user FO dan MO sudah dilakukan — lihat [Memetakan Petugas
+  Portal KPPN](/kppn-bun/mapping-petugas-portal-kppn/).
+
+## Alur proses
+
+1. Petugas FO — mengunduh ADK Kontrak beserta dokumen pendukung,
+   lalu meneruskan ke user MO atau menolaknya.
+2. User MO — mengunduh dan memverifikasi ADK, lalu meneruskan ke
+   user Kasi PD/PDMS atau menolaknya.
+3. User Kasi PD/PDMS — menyetujui atau menolak ADK.
+
+## Langkah
+
+### Pemrosesan oleh petugas FO
+
+<Steps>
+
+1. Untuk melakukan proses ADK Kontrak yang sudah masuk ke KPPN,
+   login menggunakan user petugas FO.
+2. Masuk ke menu **KPPN > Pencairan Dana > Proses > ADK Kontrak**.
+3. Filter digunakan untuk melakukan pencarian ADK Kontrak yang
+   telah dikirim oleh satker; setelah melakukan pengisian kolom
+   filter, klik tombol **Filter** untuk melanjutkan pencarian atau
+   klik tombol **Reset** untuk mengembalikan ke filter awal.
+   Keterangan filter:
+
+   | Filter | Keterangan |
+   |---|---|
+   | KPPN | Kode dan Nama KPPN user FO/MO/Kasi bertugas |
+   | Kode Satker | Kode satker mitra kerja KPPN pengirim ADK Kontrak |
+   | Nama ADK | Nama ADK Kontrak yang dikirimkan oleh satker mitra kerja |
+   | Tanggal Upload | Tanggal Upload ADK Kontrak yang diupload oleh satker mitra kerja |
+   | Petugas | User ID petugas FO/MO/Kasi |
+
+4. Status awal adalah **Belum Proses**; klik tombol download untuk
+   mengunduh ADK Kontrak beserta dokumen pendukungnya. Apabila akan
+   melakukan download ADK Kontrak atau dokumen pendukung saja, klik
+   tanda panah ke bawah untuk menampilkan opsi data yang akan
+   diunduh.
+5. Setelah FO melakukan download baik ADK maupun dokumen pendukung,
+   status ADK akan berubah menjadi **Proses ADK**, posisi ADK akan
+   terisi **FO Validator**. Pada kolom petugas akan muncul nama
+   petugas FO yang melakukan unduh ADK. Pada bagian kanan, di
+   bagian bawah tombol Download, akan muncul 2 tombol tambahan —
+   untuk meneruskan ADK ke user MO dan untuk melakukan penolakan
+   ADK di user FO.
+6. Apabila ADK disetujui oleh FO, klik tombol **Teruskan ke MO**
+   untuk melanjutkan ADK ke user staff MO. Dalam hal adanya
+   penolakan baik secara manual ataupun karena validasi SPAN, klik
+   tombol **Tolak ADK** dan akan muncul form isi keterangan tolak
+   ADK; pada form tersebut isikan keterangan penolakan dan lampiran
+   penolakan (opsional).
+
+</Steps>
+
+### Pemrosesan oleh user MO
+
+<Steps>
+
+1. Pada user MO akan ditampilkan seluruh ADK Kontrak yang
+   dikirimkan oleh satker mitra kerja; namun ADK Kontrak yang dapat
+   diproses oleh MO adalah ADK yang sudah diteruskan oleh FO ke MO
+   dengan posisi ADK **MO Verifikator**.
+2. User MO dapat melakukan download ADK Kontrak maupun dokumen
+   pendukung untuk melakukan verifikasi kesesuaian data kontrak
+   yang diproses. Data yang dapat didownload oleh user MO adalah
+   data kontrak yang sudah didownload oleh user FO.
+3. Dalam hal data kontrak disetujui, lanjutkan dengan klik tombol
+   **Teruskan ke APR** agar data tersebut muncul di user Kasi
+   PD/PDMS. Apabila terjadi penolakan, user MO menekan tombol
+   **Tolak ADK** dan mengisikan informasi penolakan pada form **Isi
+   Keterangan Tolak ADK**.
+4. User MO akan tercantum pada kolom Petugas setelah klik tombol
+   **Teruskan ke APR** dan posisi ADK akan berubah menjadi
+   **Approver**.
+
+</Steps>
+
+### Persetujuan oleh user Kasi PD/PDMS
+
+<Steps>
+
+1. Pada user Kasi PD/PDMS akan ditampilkan semua ADK yang
+   dikirimkan oleh satker mitra kerja; namun yang dapat diproses
+   lebih lanjut oleh user Kasi adalah ADK dengan posisi ADK
+   **Approver**.
+2. User Kasi dapat melakukan download ADK kontrak maupun dokumen
+   pendukungnya untuk memastikan kesesuaian data ADK Kontrak yang
+   diproses. Dalam hal ADK Kontrak berhasil diproses, klik tombol
+   **Setujui ADK**. Dalam hal terdapat penolakan, klik tombol
+   **Tolak ADK** dan lanjutkan dengan mengisi form **Isi Keterangan
+   Tolak ADK**.
+
+</Steps>
+
+## Terkait
+
+- [Menggunakan Fitur Komitmen untuk KPPN BUN](/kppn-bun/fitur-komitmen/)
+- [Memproses ADK Supplier di KPPN](/kppn-bun/proses-adk-supplier/)
+- [Memetakan Petugas Portal KPPN](/kppn-bun/mapping-petugas-portal-kppn/)
+
+## Sumber
+
+<SumberAsli />
