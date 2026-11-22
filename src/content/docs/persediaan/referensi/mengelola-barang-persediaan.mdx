@@ -1,0 +1,84 @@
+---
+title: Mengelola Referensi Barang Persediaan
+description: Merekam, mengubah, atau menghapus referensi kode dan nama barang persediaan.
+modul: persediaan
+menu_sakti: "Persediaan > Referensi > Mengelola Barang Persediaan"
+peran: [satker]
+jenis: juknis
+kata_kunci: [referensi barang persediaan, kode barang, tambah barang baru]
+status: review
+perlu_review: true
+sumber:
+  - judul: "Mengelola Barang Persediaan"
+    url: "https://sites.google.com/view/saktipelaporan/persediaan/referensi/mengelola-barang-persediaan"
+    jenis: google-sites
+    diambil: 2026-11-21
+    id_manifest: C-persediaan-referensi-mengelola-barang-persediaan
+sidebar:
+  order: 3
+---
+
+import { Aside } from '@astrojs/starlight/components';
+import MenuSakti from '~/components/MenuSakti.astro';
+import SumberAsli from '~/components/SumberAsli.astro';
+
+Menu Mengelola Barang Persediaan digunakan untuk mengelola barang
+persediaan, yaitu merekam, mengubah, atau menghapus referensi kode
+dan nama barang persediaan.
+
+<MenuSakti />
+
+## Prasyarat
+
+- Perekaman barang persediaan hanya dilakukan oleh satker induk
+  (UAKPB); referensi barang persediaan pada satker anak (UAKPBP)
+  menggunakan referensi yang telah direkam oleh satker induk.
+- Referensi barang persediaan yang telah digunakan untuk transaksi
+  tidak dapat dihapus.
+- Referensi jenis barang (6 digit terakhir) dapat dilakukan
+  perubahan oleh user jika akan disesuaikan dengan urutan jenis
+  barang di satker tersebut atau untuk membedakan jenis barang
+  antara satker induk dan satker pembantu.
+
+## Ketentuan
+
+- Pilih sub-sub kelompok yang sesuai dan rekam deskripsi yang
+  jelas.
+- Lakukan perekaman satuan sesuai dengan kondisi seharusnya.
+- Untuk jenis barang persediaan yang sama tetapi memiliki satuan
+  yang berbeda, agar dilakukan perekaman referensi barang
+  persediaan tersendiri.
+- Untuk jenis barang persediaan yang sama tetapi memiliki harga
+  satuan yang berbeda cukup signifikan, agar dilakukan perekaman
+  referensi barang persediaan tersendiri.
+- Untuk jenis barang persediaan yang sama tetapi memiliki kualitas
+  yang berbeda, agar dilakukan perekaman referensi barang
+  persediaan tersendiri.
+- Untuk jenis barang persediaan yang sama antara satker induk dan
+  satker pembantu, agar dibedakan referensi jenis barangnya (6
+  digit terakhir).
+
+## Jurnal transaksi
+
+Tidak ada jurnal.
+
+## Ilustrasi transaksi
+
+Perekaman referensi barang persediaan dilakukan jika ada kode
+barang persediaan baru yang belum pernah diinput di modul
+Persediaan SAKTI.
+
+<Aside type="caution" title="Perlu verifikasi">
+Sumber hanya memuat tabel overview ringkas tanpa langkah klik,
+sehingga bagian Langkah tidak ditulis; tata cara perekaman pada
+sumber berupa ketentuan pengisian, bukan urutan langkah.
+</Aside>
+
+## Terkait
+
+- [Mengatur Metode Penilaian Persediaan](/persediaan/referensi/metode-penilaian-persediaan/)
+- [Menyelesaikan Persediaan dalam Proses](/persediaan/persediaan-dalam-proses/penyelesaian-persediaan-dalam-proses/)
+
+## Sumber
+
+<SumberAsli />
