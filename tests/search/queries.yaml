@@ -258,3 +258,11 @@
   harap: ["/peraturan/pmk-171-pmk05-2021/", "/peraturan/"]
 - q: "peraturan hak akses pengguna sakti"
   harap: ["/peraturan/per-16-pb-2020/", "/peraturan/"]
+- q: "kenapa ada saldo persediaan belum diregister di neraca"
+  harap: ["/persediaan/faq/"]
+- q: "pendapatan penyesuaian nilai persediaan 491511 tidak wajar"
+  harap: ["/persediaan/faq/"]
+- q: "aset tetap belum diregister di neraca"
+  harap: ["/aset-tetap/faq/"]
+- q: "saldo beban aset ekstrakomptabel"
+  harap: ["/aset-tetap/faq/"]
