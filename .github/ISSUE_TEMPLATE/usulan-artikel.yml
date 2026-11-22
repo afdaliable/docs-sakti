@@ -1,0 +1,69 @@
+name: Usulkan artikel
+description: Usulkan panduan yang belum ada di knowledge base.
+title: "[Usulan] "
+labels: ["jenis:baru"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Terima kasih sudah membantu melengkapi knowledge base SAKTI.
+
+        **Jangan menyertakan data pribadi atau rahasia** (NIK, NIP, nama pegawai, nomor HP atau email pribadi, password, token, kode OTP/MFA, nomor rekening).
+  - type: input
+    id: kueri
+    attributes:
+      label: Apa yang Anda cari?
+      description: Kata yang Anda ketik di pencarian, atau tugas yang ingin Anda selesaikan di SAKTI.
+    validations:
+      required: true
+  - type: dropdown
+    id: modul
+    attributes:
+      label: Modul
+      options:
+        - Belum tahu
+        - Mulai Menggunakan SAKTI
+        - Administrasi
+        - Referensi
+        - Sinkronisasi Renja-RKA
+        - Penganggaran
+        - Komitmen
+        - Bendahara Valas
+        - Bendahara
+        - Komitmen Valas
+        - Pembayaran
+        - Persediaan
+        - Aset Tetap
+        - Piutang
+        - Akuntansi dan Pelaporan
+        - Bendahara Umum BLU
+        - KPJM
+        - KPPN
+        - Laporan
+        - Transfer ke Daerah
+    validations:
+      required: false
+  - type: dropdown
+    id: peran
+    attributes:
+      label: Peran Anda
+      options:
+        - Belum tahu
+        - Satker K/L
+        - KPPN & Kanwil DJPb
+        - DJPb Kantor Pusat
+        - DJA (Penelaah)
+        - DJKN (Pembina)
+        - Bappenas (Penelaah)
+        - BPK (Auditor)
+        - APIP
+        - Widyaiswara Kemenkeu
+    validations:
+      required: false
+  - type: textarea
+    id: sumber
+    attributes:
+      label: Sumber yang Anda ketahui (opsional)
+      description: Tautan juknis, peraturan, atau materi resmi yang bisa dijadikan sumber artikel.
+    validations:
+      required: false

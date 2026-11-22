@@ -1,0 +1,35 @@
+# Dibangkitkan oleh `pnpm build:github` dari config/modul.yaml. Jangan disunting langsung.
+# Aturan terakhir yang cocok yang berlaku.
+# Pemilik modul belum ditetapkan (K5 di docs/09-keputusan-terbuka.md). Baris modul di bawah
+# masih berupa komentar; sampai `pemilik` diisi, semua berkas ditinjau admin.
+
+*  @afdaliable
+
+# Modul SAKTI
+# /src/content/docs/mulai/  PEMILIK-BELUM-DITETAPKAN
+# /src/content/docs/admin/  PEMILIK-BELUM-DITETAPKAN
+# /src/content/docs/referensi/  PEMILIK-BELUM-DITETAPKAN
+# /src/content/docs/sinkronisasi-renja-rka/  PEMILIK-BELUM-DITETAPKAN
+# /src/content/docs/penganggaran/  PEMILIK-BELUM-DITETAPKAN
+# /src/content/docs/komitmen/  PEMILIK-BELUM-DITETAPKAN
+# /src/content/docs/bendahara-valas/  PEMILIK-BELUM-DITETAPKAN
+# /src/content/docs/bendahara/  PEMILIK-BELUM-DITETAPKAN
+# /src/content/docs/komitmen-valas/  PEMILIK-BELUM-DITETAPKAN
+# /src/content/docs/pembayaran/  PEMILIK-BELUM-DITETAPKAN
+# /src/content/docs/persediaan/  PEMILIK-BELUM-DITETAPKAN
+# /src/content/docs/aset-tetap/  PEMILIK-BELUM-DITETAPKAN
+# /src/content/docs/piutang/  PEMILIK-BELUM-DITETAPKAN
+# /src/content/docs/akuntansi-pelaporan/  PEMILIK-BELUM-DITETAPKAN
+# /src/content/docs/bendahara-umum-blu/  PEMILIK-BELUM-DITETAPKAN
+# /src/content/docs/kpjm/  PEMILIK-BELUM-DITETAPKAN
+# /src/content/docs/kppn-bun/  PEMILIK-BELUM-DITETAPKAN
+# /src/content/docs/laporan/  PEMILIK-BELUM-DITETAPKAN
+# /src/content/docs/transfer-ke-daerah/  PEMILIK-BELUM-DITETAPKAN
+
+# Bagian lintas
+# /src/content/docs/peran/  PEMILIK-BELUM-DITETAPKAN
+# /src/content/docs/peraturan/  PEMILIK-BELUM-DITETAPKAN
+# /src/content/docs/faq/  PEMILIK-BELUM-DITETAPKAN
+# /src/content/docs/glosarium/  PEMILIK-BELUM-DITETAPKAN
+# /src/content/docs/bantuan/  PEMILIK-BELUM-DITETAPKAN
+# /src/content/docs/kontribusi/  PEMILIK-BELUM-DITETAPKAN

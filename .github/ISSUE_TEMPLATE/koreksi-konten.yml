@@ -1,0 +1,49 @@
+name: Laporkan kesalahan konten
+description: Laporkan langkah, nama menu, atau informasi yang salah atau usang pada sebuah artikel.
+title: "[Koreksi] "
+labels: ["jenis:koreksi", "perlu-review"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Terima kasih sudah membantu memperbaiki knowledge base SAKTI.
+
+        **Jangan menyertakan data pribadi atau rahasia**: NIK, NIP, nama pegawai, nomor HP atau email pribadi, password, token, kode OTP/MFA, nomor rekening. Tutup (blur) atau potong bagian itu pada tangkapan layar sebelum diunggah.
+
+        Formulir ini untuk kesalahan isi knowledge base. Kendala pada aplikasi SAKTI disampaikan ke HAI DJPb (https://hai.kemenkeu.go.id/).
+  - type: input
+    id: url
+    attributes:
+      label: URL halaman
+      description: Alamat halaman artikel yang salah.
+      placeholder: https://…/komitmen/ruh/…/
+    validations:
+      required: true
+  - type: textarea
+    id: masalah
+    attributes:
+      label: Apa yang salah?
+      description: Sebutkan bagian atau langkah yang salah dan, bila tahu, yang seharusnya.
+    validations:
+      required: true
+  - type: input
+    id: versi-sakti
+    attributes:
+      label: Versi SAKTI
+      description: Versi aplikasi saat Anda menemukan perbedaan, bila diketahui.
+    validations:
+      required: false
+  - type: textarea
+    id: tangkapan-layar
+    attributes:
+      label: Tangkapan layar (opsional)
+      description: Pastikan data pribadi sudah ditutup (blur) atau dipotong.
+    validations:
+      required: false
+  - type: checkboxes
+    id: pernyataan
+    attributes:
+      label: Pernyataan
+      options:
+        - label: Laporan dan lampiran ini tidak memuat data pribadi atau rahasia.
+          required: true

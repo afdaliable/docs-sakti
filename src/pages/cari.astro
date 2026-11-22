@@ -2,7 +2,6 @@
 import StarlightPage from '@astrojs/starlight/components/StarlightPage.astro';
 import { muatKonfigurasi } from '~/lib/modul.ts';
 import { JENIS_LABEL } from '~/lib/istilah.ts';
-import { REPO_URL } from '~/lib/situs.ts';
 
 const konfigurasi = muatKonfigurasi();
 const base = import.meta.env.BASE_URL;
@@ -12,7 +11,7 @@ const jenisDaftar = Object.entries(JENIS_LABEL).filter(([k]) => k !== 'indeks');
 <StarlightPage
 	frontmatter={{ title: 'Hasil pencarian', template: 'splash', pagefind: false }}
 >
-	<div class="halaman-cari" data-base={base} data-repo={REPO_URL}>
+	<div class="halaman-cari" data-base={base}>
 		<form id="form-cari" role="search" method="get">
 			<label class="sr-only" for="input-q">Cari panduan SAKTI</label>
 			<div class="baris-cari">
@@ -92,6 +91,7 @@ const jenisDaftar = Object.entries(JENIS_LABEL).filter(([k]) => k !== 'indeks');
 	import { cariLevel1 } from '../lib/cari/level1';
 	import type { ButirHasil, FilterCari, Ketergantungan } from '../lib/cari/level1';
 	import type { EntriSinonim } from '../lib/cari/kueri';
+	import { tautanUsulan } from '../lib/situs';
 
 	const PER_HALAMAN = 20;
 
@@ -100,7 +100,6 @@ const jenisDaftar = Object.entries(JENIS_LABEL).filter(([k]) => k !== 'indeks');
 
 	function pasang(root: HTMLElement) {
 		const base = root.dataset.base ?? '/';
-		const repo = root.dataset.repo ?? '';
 		let sinonim: EntriSinonim[] = [];
 
 		const form = document.getElementById('form-cari') as HTMLFormElement;
@@ -240,7 +239,7 @@ const jenisDaftar = Object.entries(JENIS_LABEL).filter(([k]) => k !== 'indeks');
 					return li;
 				}),
 			);
-			usulkan.href = `${repo}/issues/new?title=${encodeURIComponent(`Usulan artikel: ${q}`)}`;
+			usulkan.href = tautanUsulan(q);
 			tanpaHasil.hidden = false;
 		}
 

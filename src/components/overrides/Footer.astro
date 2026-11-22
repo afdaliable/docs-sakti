@@ -3,6 +3,7 @@ import FooterBawaan from '@astrojs/starlight/components/Footer.astro';
 import { Icon } from '@astrojs/starlight/components';
 import { formatTanggal } from '~/lib/tanggal.ts';
 import { adalahEntriKonten } from '~/lib/artikel.ts';
+import { tautanKoreksi } from '~/lib/situs.ts';
 
 const { entry } = Astro.locals.starlightRoute;
 const data = entry.data;
@@ -36,6 +37,11 @@ const url = Astro.url.pathname;
 					Terima kasih atas masukannya.
 				</p>
 			</sakti-feedback>
+			<a
+				class="lapor-kesalahan"
+				href={tautanKoreksi(data.title, new URL(Astro.url.pathname, Astro.site).href)}
+				>Laporkan kesalahan</a
+			>
 		</div>
 	)
 }
@@ -124,5 +130,9 @@ const url = Astro.url.pathname;
 		margin: 0;
 		font-size: var(--sl-text-sm);
 		color: var(--sl-color-gray-2);
+	}
+	.lapor-kesalahan {
+		font-size: var(--sl-text-sm);
+		color: var(--sl-color-text-accent);
 	}
 </style>

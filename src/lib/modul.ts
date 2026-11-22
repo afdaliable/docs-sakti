@@ -23,11 +23,13 @@ export interface Modul {
 	ringkasan: string;
 	sumber: ('A' | 'B' | 'C')[];
 	sub: SubMenu[];
+	pemilik: string[];
 }
 
 export interface Lintas {
 	slug: string;
 	nama: string;
+	pemilik: string[];
 }
 
 export interface Peran {
@@ -36,6 +38,7 @@ export interface Peran {
 }
 
 export interface KonfigurasiModul {
+	admin: string[];
 	kelompok: Kelompok[];
 	modul: Modul[];
 	lintas: Lintas[];
@@ -60,8 +63,20 @@ const subSchema = z
 			: { slug: sub.slug, nama: sub.nama ?? labelDariSlug(sub.slug), kode: sub.kode },
 	);
 
+export const SKEMA_PEMILIK = z
+	.array(
+		z
+			.string()
+			.regex(
+				/^@[A-Za-z0-9](?:[A-Za-z0-9-]*[A-Za-z0-9])?(?:\/[A-Za-z0-9._-]+)?$/,
+				'handle GitHub harus diawali "@" (user atau @org/tim)',
+			),
+	)
+	.default([]);
+
 const konfigurasiSchema = z
 	.object({
+		admin: SKEMA_PEMILIK,
 		kelompok: z.array(z.object({ id: z.string(), nama: z.string() })),
 		modul: z.array(
 			z.object({
@@ -73,9 +88,12 @@ const konfigurasiSchema = z
 				ringkasan: z.string(),
 				sumber: z.array(z.enum(['A', 'B', 'C'])),
 				sub: z.array(subSchema),
+				pemilik: SKEMA_PEMILIK,
 			}),
 		),
-		lintas: z.array(z.object({ slug: z.string(), nama: z.string() })),
+		lintas: z.array(
+			z.object({ slug: z.string(), nama: z.string(), pemilik: SKEMA_PEMILIK }),
+		),
 		peran: z.array(z.object({ slug: z.string(), nama: z.string() })),
 	})
 	.superRefine((konfigurasi, ctx) => {

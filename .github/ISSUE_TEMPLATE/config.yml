@@ -1,0 +1,5 @@
+blank_issues_enabled: true
+contact_links:
+  - name: Kendala pada aplikasi SAKTI
+    url: https://hai.kemenkeu.go.id/
+    about: Masalah transaksi, akun, atau galat aplikasi disampaikan ke HAI DJPb, bukan ke repo ini.

@@ -17,7 +17,13 @@
 #   sub         : sub-menu tingkat 1 (urutan sidebar): semua anak simpul modul di menu.json,
 #                 lalu sub khusus KB (tanpa `kode`). Halaman indeks sub-menu hanya dibuat
 #                 bila ada artikel di bawahnya. Tingkat berikutnya dibentuk dari folder.
+#   pemilik     : (opsional) handle GitHub pemilik modul/lintas untuk CODEOWNERS.
 
+# Pengelola repo (docs/06-kontributor-admin.md §3). Username GitHub diawali "@".
+# `admin` = pemilik semua berkas (baris `*` di .github/CODEOWNERS).
+# `pemilik` per modul/bagian lintas (opsional) belum diisi: menunggu K5 di docs/09-keputusan-terbuka.md.
+# Setelah mengubah, jalankan `pnpm build:github`.
+admin: ["@afdaliable"]
 
 kelompok:
   - id: umum
