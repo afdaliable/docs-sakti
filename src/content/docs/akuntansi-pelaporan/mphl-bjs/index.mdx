@@ -1,12 +1,180 @@
 ---
-title: Juknis MPHL-BJS SAKTI
-description: Panduan menu Juknis MPHL-BJS SAKTI pada modul Akuntansi dan Pelaporan.
+title: Mencatat Transaksi MPHL-BJS
+description: Pengesahan dan pelaporan hibah langsung barang, jasa, dan surat berharga di satker Non BLU.
 modul: akuntansi-pelaporan
-jenis: indeks
-status: terbit
+peran: [satker]
+jenis: juknis
+perlu_review: true
+kata_kunci: [mphl-bjs, hibah langsung, pengesahan hibah, spp 513]
+status: review
 sidebar:
   label: Ringkasan
   order: 0
+sumber:
+  - judul: "SAKTI PELAPORAN - JUKNIS MPHL-BJS SAKTI"
+    url: "https://sites.google.com/view/saktipelaporan/akuntansi-dan-pelaporan/juknis-mphl-bjs-sakti"
+    jenis: google-sites
+    diambil: 2026-11-21
+    id_manifest: C-akuntansi-dan-pelaporan-juknis-mphl-bjs-sakti
+  - judul: "Petunjuk Teknis Transaksi MPHL (SAKTI)"
+    url: "https://drive.google.com/file/d/14kB9xqG5_FehMXLEnizSSAZM8Bqk9DJY/view"
+    jenis: pdf
+    diambil: 2026-11-21
+    id_manifest: C-dok-178
 ---
 
-Panduan untuk menu **Juknis MPHL-BJS SAKTI** sedang disiapkan.
+import { Aside, Steps, LinkCard } from '@astrojs/starlight/components';
+import SumberAsli from '../../../components/SumberAsli.astro';
+
+Petunjuk teknis ini memandu operator aplikasi SAKTI dalam
+penatausahaan (pengesahan dan pelaporan) transaksi Hibah
+Langsung Barang Jasa Surat Berharga pada Satker Non BLU.
+Untuk Satker BLU, transaksi Hibah Langsung Barang hanya
+dicatat pada Modul Aset Tetap dengan menu Hibah Masuk
+(tanpa mekanisme pengesahan MPHLBJS).
+
+## Alur proses
+
+### I. Pencatatan Supplier Tipe 8-Hibah (Modul Komitmen)
+
+Merekam informasi pihak pemberi hibah, baik berupa jasa
+maupun barang.
+
+<Steps>
+
+1. Login sebagai operator **Komitmen > RUH**, klik rekam
+   supplier.
+2. Pilih jenis supplier **Lainnya Badan Usaha**, isi nama
+   supplier dan nomor NPWP, kemudian simpan.
+3. Klik supplier di grid, pilih tab **Supplier Address**,
+   rekam form alamat supplier — pastikan memilih tipe
+   supplier **8-Hibah** — kemudian simpan.
+4. Pencatatan supplier hibah cukup sampai simpan supplier
+   address; tidak perlu diregister ke SPAN untuk Nomor
+   Register Supplier (NRS).
+
+</Steps>
+
+### II. Pencatatan BAST Hibah (Modul Komitmen)
+
+Perekaman serah terima hibah berdasarkan dokumen sumber BAST
+yang telah dibuat satker.
+
+<Steps>
+
+1. Login sebagai operator **Komitmen > RUH > Pencatatan BAST
+   Hibah**, klik rekam.
+2. Lengkapi isian Info Dokumen Hibah, pilih kategori Barang,
+   Jasa, atau Surat Berharga (surat berharga menunggu
+   ketentuan lebih lanjut).
+3. Untuk hibah barang: pilih barang, pilih sumber dana dalam
+   negeri atau luar negeri, isikan nilai, pilih rincian
+   barang — pilih kode barang, jumlah, dan harga satuan —
+   lalu simpan rincian.
+4. Kembali ke form BAST, klik **Simpan** — proses ini
+   membentuk jurnal.
+5. Untuk hibah jasa: pilih Jasa, Kode Akun, Sumber Dana,
+   isikan nilai, lalu simpan — proses ini membentuk jurnal.
+
+</Steps>
+
+### III. Pendetailan Hibah Masuk Bentuk Barang (Modul Aset Tetap / Persediaan)
+
+Pendetailan meregister barang atau persediaan untuk
+mendapatkan NUP di modul aset atau pendetailan jenis
+persediaan.
+
+<Steps>
+
+1. Hibah barang berupa Persediaan: catat di menu
+   **Persediaan > Transaksi Masuk > Hibah Masuk**, lakukan
+   pendetailan seperti biasa.
+2. Hibah barang berupa Aset Tetap/Aset Lainnya: catat di
+   menu **Aset Tetap > RUH > Transaksi BMN > Perolehan >
+   Hibah Masuk**, lakukan pendetailan seperti biasa.
+
+</Steps>
+
+### IV. Membuat SPP/MPHL-BJS (Modul Pembayaran)
+
+MPHL-BJS adalah dokumen pengesahan atas penerimaan hibah
+langsung bentuk barang/jasa. Pastikan satker sudah
+melakukan register hibah ke DJPPR melalui Kanwil Ditjen
+Perbendaharaan.
+
+<Steps>
+
+1. Login sebagai operator pembayaran, pilih **Pembayaran >
+   RUH SPP**, pilih jenis SPP **513**, klik rekam.
+2. Pilih BAST Tahun Berjalan atau BAST TAYL sesuai tahun
+   BAST, pilih BAST yang akan dilakukan pengesahan.
+3. Pada form SPP Pengesahan MPHL-BJS isikan: Nomor Register
+   HIBAH, Dasar Pembayaran, Informasi DIPA, Informasi
+   SPP/MPHL-BJS, dan Informasi SP3HL-BJS (Informasi Supplier
+   dan Informasi BAST terisi otomatis) — klik simpan; SPP
+   berstatus "Baru".
+4. Masuk ke menu **Pembayaran > Cetak > Mencetak SPM**,
+   pilih SPP (MPHL-BJS) tersebut kemudian cetak — status SPP
+   naik menjadi "Cetak SPM".
+5. Upload dokumen pendukung pada menu **Pembayaran >
+   Catat/Upload > Upload Dokumen Pendukung** (PDF maks 5
+   MB): pilih SPP, pilih direktori file, pilih jenis dokumen
+   pendukung, klik upload. Dokumen pendukung: SPNRH (Surat
+   Penetapan Nomor Register Hibah), SPTMHL (Surat Pernyataan
+   Telah Menerima Hibah Langsung), dan BAST Hibah.
+   Monitoring di **Pembayaran > Monitoring > Monitoring
+   Dokumen Pendukung**.
+
+</Steps>
+
+### V. Kirim MPHL-BJS ke KPPN (Modul Pembayaran)
+
+Pengiriman ADK transaksi MPHL-BJS dilakukan secara online
+dari data SAKTI ke SPAN di KPPN, untuk data yang telah
+disetujui.
+
+<Steps>
+
+1. Login sebagai KPA, pilih menu **Pembayaran > Validasi >
+   Validasi SPM**, pilih SPM (MPHL-BJS) yang akan divalidasi
+   kemudian klik proses — status naik menjadi "Setuju SPM".
+2. Pilih menu **Pembayaran > ADK > Kirim MPHLBJS ke KPPN**,
+   beri tanda centang dan klik proses — status SPP naik
+   menjadi "ADK SPM".
+
+</Steps>
+
+### VI. Mencatat Nomor Persetujuan MPHL-BJS
+
+Dapat dilakukan setelah mendapat persetujuan KPPN dengan
+Status Persetujuan Sudah Disetujui.
+
+<Steps>
+
+1. Login sebagai operator pembayaran, pilih menu
+   **Pembayaran > Catat/Upload > Mencatat Nomor
+   Persetujuan**.
+2. Jika status persetujuan **Sudah Disetujui**: pilih
+   MPHL-BJS yang ingin dicatat kemudian klik proses — status
+   SPP naik menjadi "Upload SP2D" dan terbentuk jurnal.
+3. Jika status persetujuan **Tidak Disetujui** (ditolak
+   SPAN): pilih dan hapus, lalu lakukan pembuatan SPP
+   ulang.
+
+</Steps>
+
+<Aside type="caution" title="Perlu verifikasi">
+Artikel ini mencakup prosedur lintas modul (Komitmen, Aset
+Tetap/Persediaan, Pembayaran) — tidak ada padanan satu menu
+di menu.json (K30).
+</Aside>
+
+
+## Terkait
+
+<LinkCard title="Hibah Masuk (Aset Tetap)" href="/aset-tetap/ruh/perolehan-bmn/hibah-masuk/" description="Pendetailan hibah di Modul Aset Tetap." />
+<LinkCard title="Hibah Masuk (Persediaan)" href="/persediaan/transaksi-masuk/hibah-masuk/" description="Pendetailan hibah berupa persediaan." />
+
+## Sumber
+
+<SumberAsli />

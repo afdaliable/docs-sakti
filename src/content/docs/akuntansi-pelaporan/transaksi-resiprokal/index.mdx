@@ -1,12 +1,121 @@
 ---
-title: Transaksi Resiprokal
-description: Panduan menu Transaksi Resiprokal pada modul Akuntansi dan Pelaporan.
+title: Merekam Transaksi Resiprokal
+description: Transaksi resiprokal pendapatan dan belanja antara satker BLU/Non BLU.
 modul: akuntansi-pelaporan
-jenis: indeks
-status: terbit
+menu_sakti: "Akuntansi dan Pelaporan > Transaksi Resiprokal"
+peran: [satker]
+jenis: juknis
+kata_kunci: [transaksi resiprokal, resiprokal pendapatan, resiprokal belanja, satker blu]
+status: review
 sidebar:
   label: Ringkasan
   order: 0
+sumber:
+  - judul: "SAKTI PELAPORAN - Transaksi Resiprokal"
+    url: "https://sites.google.com/view/saktipelaporan/akuntansi-dan-pelaporan/transaksi-resiprokal"
+    jenis: google-sites
+    diambil: 2026-11-21
+    id_manifest: C-akuntansi-dan-pelaporan-transaksi-resiprokal
+  - judul: "Transaksi Resiprokal Pendapatan (Satker BLU) dan Belanja (bisa BLU/Non BLU)"
+    url: "https://docs.google.com/presentation/d/1aHX3ZGr3zmBt0KT9j8EcQe2JzGt3kgH2WrtPsxvi04Q/"
+    jenis: google-slides
+    diambil: 2026-11-21
+    id_manifest: C-dok-176
+  - judul: "Juknis SAKTI Web - GLP_30122020"
+    url: "https://drive.google.com/file/d/1Z8R3bR_pYK-God0fQSBy5twxtJDASqaa/view"
+    jenis: pdf
+    diambil: 2026-11-21
+    id_manifest: C-dok-161
+  - judul: "Juknis SAKTI Satker BLU"
+    url: "https://drive.google.com/file/d/1gt7ZitAXOh7tvJff1HFT4LTzni5X4yk5/view"
+    jenis: pdf
+    diambil: 2026-11-21
+    id_manifest: B-pem-041
 ---
 
-Panduan untuk menu **Transaksi Resiprokal** sedang disiapkan.
+import { Steps } from '@astrojs/starlight/components';
+import MenuSakti from '../../../components/MenuSakti.astro';
+import SumberAsli from '../../../components/SumberAsli.astro';
+
+Menu Transaksi Resiprokal digunakan oleh satker BLU/Non BLU
+Pemberi Kerja ke Satker BLU dan satker BLU Penerima Kerja
+yang menerima Pendapatan dari Satker Lain. Terdiri dari:
+
+- Transaksi Resiprokal Pendapatan — digunakan oleh Satker
+  BLU penerima kerja atas belanja dari satker BLU/Non BLU.
+- Transaksi Resiprokal Belanja — digunakan oleh Satker Non
+  BLU/BLU pemberi kerja Satker BLU (lain).
+
+Dokumen input: SP2D, SP3B. Output: Daftar Resiprokal
+Pendapatan dan Belanja.
+
+<MenuSakti />
+
+## Prasyarat
+
+- Role yang dibutuhkan: Operator (khusus Satker BLU).
+
+## Langkah
+
+### Resiprokal Pendapatan
+
+<Steps>
+
+1. Login menggunakan user operator GLP (khusus Satker BLU)
+   pada menu **Akuntansi dan Pelaporan > Transaksi
+   Resiprokal > Pendapatan**.
+2. Klik **Rekam**.
+3. Pilih SP2D/SP3B, pilih tanggal transaksi, pilih Satker
+   intraco, isi uraian, kemudian **Simpan**; klik **Oke** —
+   data ditampilkan di grid Cari Data Pendapatan BLU/SP3BLU.
+
+</Steps>
+
+### Resiprokal Belanja
+
+<Steps>
+
+1. Login menggunakan user operator GLP (khusus Satker BLU)
+   pada menu **Akuntansi dan Pelaporan > Transaksi
+   Resiprokal > Belanja**.
+2. Klik **Rekam**.
+3. Pilih SP2D/SP3B, pilih tanggal transaksi, pilih Satker
+   intraco, isi uraian, kemudian **Simpan**; klik **Oke** —
+   data ditampilkan di grid Cari Data Belanja (SP2D).
+
+</Steps>
+
+### Cetak Daftar Resiprokal
+
+<Steps>
+
+1. Login menggunakan user operator GLP (khusus Satker BLU)
+   pada menu **Akuntansi dan Pelaporan > Transaksi
+   Resiprokal > Cetak Daftar Resiprokal**.
+2. Pilih tahun, Jenis pilih Pendapatan atau Belanja,
+   kemudian cetak.
+
+</Steps>
+
+## Ketentuan
+
+- Transaksi Resiprokal adalah transaksi antara satker
+  BLU/Non BLU Pemberi Kerja dan Satker BLU Penerima Kerja
+  yang menggunakan dana APBN sehingga harus dieliminasi di
+  tingkat LKKL dan LKPP (menurut juknis satker BLU).
+- Satker BLU Penerima Kerja mencatat penerimaan kas dengan
+  akun khusus Pendapatan dari Pelayanan BLU bersumber dari
+  Entitas Pemerintah Pusat dan wajib merekam informasi
+  Satker Pemberi Kerja (menurut juknis satker BLU).
+- Satker Pemberi Kerja merespons konfirmasi/data rekonsiliasi
+  pada menu Monitoring Lainnya aplikasi e-Rekon&LK dengan
+  mengidentifikasi SP3B/SP2B-BLU yang terindikasi pembayaran
+  ke Satker BLU Penerima Kerja, lalu merekam pendetailan
+  informasi Satker BLU Penerima Kerja; bila data bukan
+  miliknya atau bukan resiprokal, Satker Pemberi Kerja dapat
+  meminta Satker BLU Penerima Kerja ralat/menghapus data di
+  e-Rekon&LK (menurut juknis satker BLU).
+
+## Sumber
+
+<SumberAsli />

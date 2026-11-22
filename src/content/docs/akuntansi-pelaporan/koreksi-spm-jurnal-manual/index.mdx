@@ -1,12 +1,100 @@
 ---
-title: Koreksi SPM yang Memerlukan Jurnal Manual
-description: Panduan menu Koreksi SPM yang Memerlukan Jurnal Manual pada modul Akuntansi dan Pelaporan.
+title: Mengoreksi SPM yang Memerlukan Jurnal Manual
+description: Jurnal penyesuaian ralat/koreksi akun SPM/SP2D yang didahului BAST Jasa atau BMN ekstrakomtabel.
 modul: akuntansi-pelaporan
-jenis: indeks
-status: terbit
+peran: [satker]
+jenis: juknis
+perlu_review: true
+kata_kunci: [koreksi spm, jurnal penyesuaian, ralat spm, jurnal manual]
+status: review
 sidebar:
   label: Ringkasan
   order: 0
+sumber:
+  - judul: "SAKTI PELAPORAN - Tata Cara Koreksi"
+    url: "https://sites.google.com/view/saktipelaporan/koreksi"
+    jenis: google-sites
+    diambil: 2026-11-21
+    id_manifest: C-koreksi
+  - judul: "SAKTI PELAPORAN - Juknis Koreksi SPM yang memerlukan Jurnal Manual"
+    url: "https://sites.google.com/view/saktipelaporan/koreksi/juknis-koreksi-spm-yang-memerlukan-jurnal-manual"
+    jenis: google-sites
+    diambil: 2026-11-21
+    id_manifest: C-koreksi-juknis-koreksi-spm-yang-memerlukan-jurnal-manual
+  - judul: "Jurnal Penyesuaian Ralat atau Koreksi SPM_040421a"
+    url: "https://drive.google.com/file/d/1c3wv-GZ-a70E-MYZxV9pcpfjaopA8T3s/view"
+    jenis: pdf
+    diambil: 2026-11-21
+    id_manifest: C-dok-186
 ---
 
-Panduan untuk menu **Koreksi SPM yang Memerlukan Jurnal Manual** sedang disiapkan.
+import { Aside, Steps, LinkCard } from '@astrojs/starlight/components';
+import SumberAsli from '../../../components/SumberAsli.astro';
+
+Jurnal Manual yang harus dibuat karena koreksi SPM tidak
+otomatis membalik jurnal akrual untuk SP2D yang didahului
+oleh pencatatan BAST Jasa/ BMN Ekstrakomtabel dari
+Komitmen/SPBy. Fungsinya melakukan penjurnalan antar beban
+karena kesalahan penggunaan akun jasa yang sudah terlanjur
+SP2D.
+
+Dokumen sumber: Ralat SPM/SP2D dan Memo Penyesuaian (MP).
+Nama menu sumber: GL dan Pelaporan >> Proses >> Jurnal
+Manual.
+
+## Prasyarat
+
+- Role yang dibutuhkan: operator GLP.
+- Jurnal manual ini hanya dilakukan untuk koreksi akun
+  terhadap SP2D yang didahului oleh pencatatan BAST Jasa/
+  BMN Ekstrakomtabel dari Komitmen/SPBy.
+
+## Langkah
+
+Contoh sumber: Belanja Barang Operasional Lainnya (521119)
+dikoreksi SPM/SP2D menjadi Belanja Barang
+Operasional-Penanganan Pandemi COVID-19 (521131).
+
+<Steps>
+
+1. Login menggunakan user operator GLP pada menu **Akuntansi
+   dan Pelaporan > Proses > Jurnal Manual** (jalur menurut
+   juknis).
+2. Pilih periode Jurnal Manual yang diinginkan.
+3. Klik **Rekam**.
+4. Klik **Tambah Akun**.
+5. Pastikan pilih **Akrual**, lalu rekam jurnal manual
+   akrual antar beban sesuai contoh: akun 521131 (Debet,
+   Akrual) dan akun 521119 (Kredit, Akrual).
+
+</Steps>
+
+## Ketentuan
+
+Alur tindak lanjut koreksi SPM menurut flowchart sumber:
+
+- Koreksi SPM/SP2D yang menghasilkan Aset Tetap/Persediaan:
+  aset dicatat pada Modul Aset Tetap/Modul Persediaan —
+  tidak perlu jurnal penyesuaian antar beban; bila tidak
+  dicatat, lakukan perbaikan dan/atau jurnal sesuai kasus.
+- Koreksi SPM/SP2D yang tidak menghasilkan aset:
+  - UP/TUP → lakukan jurnal penyesuaian antar beban sesuai
+    koreksi SPM/SP2D.
+  - LS BAST → lakukan jurnal penyesuaian antar beban.
+  - LS NON BAST → tidak membutuhkan jurnal penyesuaian
+    antar beban.
+
+<Aside type="caution" title="Perlu verifikasi">
+Topik ini bukan satu menu aplikasi — tidak ada padanan di
+menu.json (K30); jalur menu pada langkah adalah jalur
+menurut juknis.
+</Aside>
+
+
+## Terkait
+
+<LinkCard title="Jurnal Manual" href="/akuntansi-pelaporan/proses/jurnal-manual/" description="Fasilitas yang dipakai untuk jurnal koreksi ini." />
+
+## Sumber
+
+<SumberAsli />
