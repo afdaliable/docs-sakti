@@ -1,0 +1,271 @@
+---
+title: Merekam SPM 515 Koreksi
+description: Mengkoreksi SPM yang sudah menjadi SP2D melalui jenis SPP 515, dari pencatatan SPP koreksi sampai pencatatan tanggal SP2D koreksi.
+modul: pembayaran
+menu_sakti: "Pembayaran > RUH Pembayaran > Catat/Ubah SPP"
+peran: [satker]
+jenis: juknis
+kata_kunci: [spm 515, koreksi, koreksi spm, sp2d koreksi, detail coa]
+status: review
+perlu_review: true
+sumber:
+  - judul: "Juknis Perekaman SPM 515 - Koreksi"
+    url: "https://drive.google.com/file/d/1xswW5Vb5Vz53JJwOWHvPHPKghzwL1SNF/view"
+    jenis: pdf
+    diambil: 2026-11-21
+    id_manifest: B-pem-033
+sidebar:
+  order: 29
+---
+
+import { Steps, Aside } from '@astrojs/starlight/components';
+import MenuSakti from '~/components/MenuSakti.astro';
+import SumberAsli from '~/components/SumberAsli.astro';
+
+SPM 515 digunakan untuk mengkoreksi SPM yang telah menjadi SP2D.
+Koreksi data adalah proses memperbaiki data transaksi tanpa mengubah
+data awal, dan hasil koreksi membentuk history.
+
+<MenuSakti />
+
+## Prasyarat
+
+- Role yang dibutuhkan: operator (OPR), validator/PPK (VAL), dan
+  approver/PPSPM (APR) pada modul Pembayaran.
+- SPM yang dapat dikoreksi adalah SPM yang sudah menjadi SP2D dan
+  sudah dilakukan pencatatan nomor SP2D.
+- Dokumen input: data elektronik dari OMSPAN.
+- Untuk koreksi hanya pada level detail COA segmen 15/16, gunakan
+  jenis SPP 516 — lihat
+  [Merekam SPM 516 Koreksi COA 16 Segmen](/pembayaran/ruh/catat-ubah-spp/spm-516-koreksi-coa/).
+
+## Alur proses
+
+1. Operator — pencatatan SPP koreksi dan perekaman akun/pendetailan
+   segmen 15/16 COA.
+2. Operator — cetak SPP.
+3. PPK — setuju SPP.
+4. PPK — buat ADK SPP.
+5. Operator — cetak SPM.
+6. Operator — upload dokumen pendukung.
+7. PPSPM — setuju SPM.
+8. PPSPM — buat ADK SPM.
+9. KPPN — memproses SPM koreksi.
+10. Operator — catat tanggal SP2D koreksi.
+
+## Langkah
+
+### Pencatatan SPP (Operator)
+
+Login sebagai pengguna dengan kewenangan operator pada modul
+Pembayaran.
+
+<Steps>
+
+1. Buka menu **Pembayaran > RUH Pembayaran > Catat/Ubah SPP**.
+2. Pilih jenis SPP **515 - Koreksi**.
+3. Klik tombol **Tambah**.
+4. Pilih SP2D yang akan dibuatkan koreksi — SPP yang belum memiliki
+   nomor SP2D tidak akan muncul pada form tersebut.
+5. Klik **Pilih** — muncul halaman perekaman (Catat/Ubah) SPP; isian
+   yang bisa diubah adalah jenis isian yang diperbolehkan untuk
+   dikoreksi sesuai ketentuan yang berlaku.
+
+</Steps>
+
+### Perekaman akun dan pendetailan segmen 15/16 COA
+
+<Steps>
+
+1. Pada bagian Distribusi COA, klik **RUH Akun** untuk melakukan
+   perubahan pada akun keluaran/potongan — khusus akun keluaran,
+   koreksi dilakukan sampai detail COA segmen 15/16.
+2. Pilih akun yang akan dikoreksi.
+3. Klik tombol **Rekam/Ubah/Hapus** sesuai kebutuhan koreksi.
+4. Apabila memilih **Rekam/Ubah**, lakukan pemilihan/penyesuaian
+   struktur COA yang dibutuhkan.
+5. Klik tombol **Detail COA** untuk mengisi/mengubah detail COA serta
+   mengisi/mengubah nilai pada akun yang dipilih.
+6. Apabila diperlukan penghapusan/pengubahan detail, pilih detail
+   yang telah ada.
+7. Klik tombol **Rekam/Ubah/Hapus** sesuai kebutuhan.
+8. Klik tombol **Kaca Pembesar** untuk memilih detail COA.
+9. Isikan nilai untuk detail yang dipilih — nilai ini akan digunakan
+   untuk mengisi nilai akun pada form sebelumnya.
+10. Klik **Simpan** untuk menyimpan perubahan.
+11. Lakukan langkah 6–10 untuk pengubahan/perekaman detail COA
+    lainnya, lalu klik **Keluar** untuk keluar dari form Pendetailan
+    COA.
+12. Apabila semuanya telah sesuai, klik **Simpan** untuk menyimpan
+    perubahan.
+13. Ulangi langkah 2–12 untuk akun lainnya apabila diperlukan.
+14. Klik **Keluar** untuk kembali ke halaman depan Catat/Ubah SPP,
+    lalu klik **Simpan** untuk menyimpan SPP koreksi yang telah
+    dibuat.
+
+</Steps>
+
+### Cetak SPP (Operator)
+
+<Steps>
+
+1. Buka menu **Pembayaran > Cetak > Mencetak SPP**.
+2. Pilih SPP yang ingin dicetak.
+3. Pilih PPK.
+4. Klik tombol **Unduh** untuk mencetak SPP.
+
+</Steps>
+
+Menu ini menghasilkan dua dokumen: (1) SPP Koreksi dan (2) lampiran
+SPP Koreksi berupa matriks perubahan (semula – menjadi) atas koreksi
+SPP.
+
+### Setuju SPP (PPK)
+
+Login sebagai pengguna PPK selaku validator pada modul Pembayaran.
+
+<Steps>
+
+1. Buka menu **Pembayaran > Validasi > Validasi SPP**.
+2. Pilih SPP yang ingin divalidasi.
+3. Klik tombol **Unduh Pra Cetak** untuk mencetak SPP yang akan
+   divalidasi.
+4. Klik tombol **Setuju**.
+5. Klik tombol **Batal** apabila ingin membatalkan validasi atas SPP
+   yang sudah divalidasi.
+
+</Steps>
+
+### Buat ADK SPP (PPK)
+
+Login sebagai pengguna PPK selaku validator pada modul Pembayaran.
+
+<Steps>
+
+1. Buka menu **Pembayaran > ADK > ADK SPP OTP**.
+2. Pilih SPP yang ingin dibuat ADK SPP dengan melakukan ceklis pada
+   kolom pilih.
+3. Klik tombol **Proses**.
+4. Pastikan data pejabat sesuai.
+5. Klik tombol **Req OTP via SMS** untuk meminta kode OTP.
+6. Setelah menerima kode OTP, input pada kolom **Input OTP**.
+7. Klik tombol **Proses**.
+
+</Steps>
+
+### Cetak SPM (Operator)
+
+<Steps>
+
+1. Buka menu **Pembayaran > Cetak > Mencetak SPM**.
+2. Pilih SPM yang ingin dicetak.
+3. Klik tombol **Unduh** untuk mencetak SPM.
+
+</Steps>
+
+Menu ini menghasilkan dua dokumen: (1) SPM Koreksi dan (2) lampiran
+SPM Koreksi berupa matriks perubahan (semula – menjadi) atas koreksi
+SPM.
+
+### Upload dokumen pendukung (Operator)
+
+<Steps>
+
+1. Buka menu **Pembayaran > Catat/Upload > Upload Dokumen
+   Pendukung**.
+2. Pilih SPM yang akan diunggah dokumen pendukungnya.
+3. Pilih jenis dokumen pendukung.
+4. Klik tombol **Choose** untuk memilih file yang akan diunggah.
+5. Klik tombol **Upload**.
+6. Klik tombol **View** untuk melihat file yang telah diunggah.
+
+</Steps>
+
+### Setuju SPM (PPSPM)
+
+Login sebagai pengguna PPSPM selaku approver pada modul Pembayaran.
+
+<Steps>
+
+1. Buka menu **Pembayaran > Validasi > Validasi SPM**.
+2. Pilih SPM yang ingin divalidasi.
+3. Klik tombol **Unduh Pra Cetak** untuk mencetak SPM yang akan
+   divalidasi.
+4. Klik tombol **Setuju**.
+
+</Steps>
+
+### Buat ADK SPM (PPSPM)
+
+Login sebagai pengguna PPSPM selaku approver pada modul Pembayaran.
+
+<Steps>
+
+1. Buka menu **Pembayaran > ADK > ADK SPM OTP**.
+2. Pilih SPM yang ingin dibuat ADK SPM dengan melakukan ceklis pada
+   kolom pilih.
+3. Klik tombol **Proses**.
+4. Pastikan data pejabat sesuai.
+5. Klik tombol **Req OTP via SMS** untuk meminta kode OTP.
+6. Setelah menerima kode OTP, input pada kolom **Input OTP**.
+7. Klik tombol **Proses**.
+
+</Steps>
+
+### Catat tanggal SP2D koreksi (Operator)
+
+<Steps>
+
+1. Buka menu **Pembayaran > Catat/Upload > Mencatat Persetujuan SP2D
+   Koreksi**.
+2. Pilih SPM koreksi yang akan dicatat SP2D koreksinya.
+3. Klik tombol **Cari** — data SP2D akan tayang apabila SPM koreksi
+   telah selesai diproses di KPPN.
+4. Pilih data SP2D yang ada.
+5. Klik tombol **Simpan**.
+6. Pastikan tanggal SP2D koreksi sudah terisi.
+7. Klik tombol **Simpan** untuk mengakhiri proses — setelah itu
+   status SPM menjadi **Upload SP2D**.
+
+</Steps>
+
+## Hasil yang diharapkan
+
+Data elektronik dari OMSPAN diproses menjadi SPM Koreksi 515 beserta
+SP2D koreksi yang dicatat tanggalnya — nomor SP2D yang dicatat tidak
+berubah (masih menggunakan SP2D awal).
+
+## Ketentuan
+
+- Tata cara koreksi data transaksi keuangan diatur dalam Peraturan
+  Direktur Jenderal Perbendaharaan Nomor PER-16/PB/2014 tanggal 11
+  Juni 2014; satker yang mengubah/mengoreksi SPM yang telah
+  diterbitkan SP2D-nya oleh KPPN wajib berpedoman pada peraturan
+  tersebut.
+- Koreksi data transaksi pengeluaran dilakukan terhadap: (a) BAS,
+  sepanjang tidak mengakibatkan perubahan jumlah uang dan sisa pagu
+  anggaran pada DIPA menjadi minus — semua segmen BAS dapat diubah
+  kecuali segmen 1 dan 2 (kode satker dan kode KPPN); (b) pembebanan
+  rekening khusus, terhadap SP2D sebelum pembebanan pada rekening
+  khusus berkenaan; (c) deskripsi/uraian pengeluaran.
+- SPM koreksi tidak boleh mengubah nilai netto.
+- SPM Koreksi 515 memerlukan pencatatan tanggal SP2D koreksi setelah
+  KPPN selesai memproses; SP2D yang dicatat tidak berubah (masih
+  menggunakan SP2D awal).
+- Untuk koreksi hanya pada level detail COA segmen 15/16, gunakan
+  jenis SPP 516.
+
+<Aside type="caution" title="Perlu verifikasi">
+Juknis menulis jalur "Pembayaran → RUH SPP → Catat/Ubah SPP" dan
+"Catat/Upload → Mencatat Tanggal SP2D Koreksi"; jalur baku aplikasi
+saat ini adalah **Pembayaran > RUH Pembayaran > Catat/Ubah SPP** dan
+**Pembayaran > Catat/Upload > Mencatat Persetujuan SP2D Koreksi**.
+</Aside>
+
+## Terkait
+
+- [Merekam SPM 516 Koreksi COA 16 Segmen](/pembayaran/ruh/catat-ubah-spp/spm-516-koreksi-coa/)
+
+## Sumber
+
+<SumberAsli />

@@ -1,0 +1,224 @@
+---
+title: Merekam SPM 239 LS Rekening Penyalur (Affiliated Supplier)
+description: Merekam SPM penyaluran bansos/subsidi via affiliated supplier sampai SP2D.
+modul: pembayaran
+menu_sakti: "Pembayaran > RUH Pembayaran > Catat/Ubah SPP"
+peran: [satker]
+jenis: juknis
+kata_kunci: [spm 239, affiliated supplier, bansos, subsidi, rekening penyalur, kode referral]
+status: review
+perlu_review: false
+sumber:
+  - judul: "Juknis Perekaman SPM 239 - LS Rekening Penyalur - Affiliated Supplier"
+    url: "https://drive.google.com/file/d/1YQRI38m6_7gps5VO06lnCRQoaVm22Yg0/view"
+    jenis: pdf
+    diambil: 2026-11-21
+    id_manifest: B-pem-023
+sidebar:
+  order: 19
+---
+
+import { Steps } from '@astrojs/starlight/components';
+import MenuSakti from '~/components/MenuSakti.astro';
+import SumberAsli from '~/components/SumberAsli.astro';
+
+SPM 239 LS Rekening Penyalur dengan jenis penyaluran affiliated
+supplier digunakan untuk penyaluran bansos/subsidi — proses bisnis
+pengelompokan banyak rekening penerima yang telah divalidasi dalam
+suatu kode referral. Data salur tersedia pada layanan penyedia data
+Pusat melalui interkoneksi, sehingga penarikan data penyalur dan
+perekaman SPM dapat dilakukan pada aplikasi SAKTI.
+
+<MenuSakti />
+
+## Prasyarat
+
+- Role yang dibutuhkan: **Operator SPP** dan **Operator SPM**
+  (Operator Pembayaran), **PPK**, **PPSPM**.
+- Data rekening penyalur telah diinput/diunggah dan data salur
+  tersedia pada layanan penyedia data Pusat melalui interkoneksi.
+- Kode referral diperoleh dari penyedia data Pusat.
+- Dokumen input: ADK rekening penyalur; output: SPM Bansos/Subsidi.
+
+## Alur proses
+
+1. Operator Pembayaran — mengunggah ADK rekening penyalur dengan
+   kode referral.
+2. Operator Pembayaran — perekaman SPP jenis 239 dari data penyalur.
+3. Operator Pembayaran — cetak SPP/SPM.
+4. PPK dan PPSPM — langkah lanjutan seperti pembuatan SPM pada
+   umumnya: validasi SPP, ADK OTP, cetak SPM, validasi SPM, dan ADK
+   OTP SPM.
+
+## Langkah
+
+### Mengunggah ADK rekening penyalur (Operator Pembayaran)
+
+Login sebagai user modul Pembayaran (Operator SPP atau Operator
+SPM), lalu buka menu **Pembayaran > Catat/Upload > ADK Rekening
+Penyalur**.
+
+Pada monitoring ADK Rekening Penyalur, data rekening penyalur terdiri
+dari:
+
+| Kolom | Keterangan |
+|---|---|
+| Nama File ADK | Nama file ADK Penyalur |
+| Jenis | Jenis penyaluran |
+| Status | Status data ADK Rekening Penyalur, status awal "Upload" |
+| Tahap | Tahap penyaluran |
+| Bank | Nama bank penerima rekening penyalur |
+| Jumlah Penerima | Jumlah penerima bansos/subsidi |
+| Nilai Penyaluran | Nilai rupiah yang disalurkan |
+| No. SPP | Nomor Surat Perintah Pembayaran (SPP) yang terbentuk |
+| Keterangan | Tombol unduh pada kolom Keterangan jika terdapat penolakan |
+
+<Steps>
+
+1. Pilih jenis ADK **AFFILIATED SUPPLIER**.
+2. Input **Kode Referral** yang diperoleh dari penyedia data Pusat
+   — muncul pop-up data referral.
+3. Pilih data yang akan diproses, lalu klik tombol **Pilih** untuk
+   memilih atau tombol **Keluar**.
+4. Pada konfirmasi data file, klik tombol **Ya** untuk menggunakan
+   data file yang dipilih dan memproses simpan, atau klik tombol
+   **Tidak** untuk batal dan keluar dari pop-up.
+5. Gunakan tombol **Hapus** untuk menghapus data penyalur yang telah
+   diinput, **Refresh** untuk memuat ulang data yang belum muncul,
+   dan **Keluar** untuk keluar dari menu monitoring ADK rekening
+   penyalur.
+
+</Steps>
+
+### Merekam SPP (Operator Pembayaran)
+
+Buka menu **Pembayaran > RUH Pembayaran > Catat/Ubah SPP**.
+
+<Steps>
+
+1. Pilih jenis SPP **239 - LS Rekening Penyalur**.
+2. Klik tombol **Tambah** untuk masuk ke form SPP.
+3. Pada Ambil Data Penyalur — data diambil dari hasil upload ADK
+   Penyalur — pilih data penyalur yang akan dibuat SPP/SPM, lalu
+   klik tombol **Pilih** untuk masuk ke form RUH SPP.
+4. Pada form RUH SPP: pilih **Dasar Pembayaran** (klik Tambah atau
+   UU APBN untuk default APBN); input **Uraian Pembayaran** sesuai
+   ketentuan; pilih Cara Bayar **7 - STA**.
+5. Klik **Cari Supplier** untuk memilih supplier penerima, dan
+   pastikan informasi detail penyaluran sesuai dengan ADK yang
+   diunggah.
+6. Klik **RUH Akun** untuk merekam akun pengeluaran sampai dengan
+   item.
+7. Klik **Simpan** untuk menyimpan SPP penyaluran bansos/subsidi.
+
+</Steps>
+
+### Cetak SPP/SPM (Operator Pembayaran)
+
+<Steps>
+
+1. Buka menu **Pembayaran > Cetak > Mencetak SPP** atau
+   **Pembayaran > Cetak > Mencetak SPM**.
+2. Pilih data SPP/SPM yang akan dicetak, kemudian pilih PPK dan klik
+   tombol **Unduh**.
+
+</Steps>
+
+Langkah selanjutnya seperti pembuatan SPM pada umumnya: validasi
+SPP, ADK OTP, cetak SPM, validasi SPM, dan ADK OTP SPM.
+
+## Mekanisme pembayaran affiliated supplier
+
+Menurut lampiran panduan juknis, mekanisme pembayaran dengan
+affiliated supplier adalah sebagai berikut.
+
+### Validasi rekening dan penerbitan kode referral
+
+1. K/L menyiapkan data calon pembayaran sesuai format berkas .txt
+   dengan delimiter (pemisah antar kolom) karakter pipeline `|`:
+
+   | No | Nama Field | Tipe Data | Keterangan |
+   |---|---|---|---|
+   | A | Nomor Urut Penerima | Numeric tanpa desimal | Nomor/sequence mulai nomor 1 |
+   | B | Nama Bank/Lembaga Keuangan | Varchar 30 digit | Misal BRI, MANDIRI, BNI, BTN |
+   | C | Jenis Rekening/Akun | Varchar 3 digit | 1A BSA Overb.; 1B BSA Bank Lain; 2 VA; 3 E-Wallet |
+   | D | Nomor Rekening/Akun | Varchar 50 digit | Nomor rekening/akun penerima |
+   | E | Nama | Varchar 150 digit | Nama penerima |
+   | F | NIK | Varchar 16 digit | NIK penerima |
+   | G | Nilai | Numeric tanpa desimal | Nilai penerima |
+   | H | Kode Lokasi | Varchar 10 digit | Kode lokasi Dukcapil |
+   | I | Opsional1 | Varchar 150 digit | Bebas, konsisten |
+   | J | Opsional2 | Varchar 150 digit | Bebas, konsisten |
+
+2. Satker mengunggah data calon pembayaran ke OMSPAN.
+3. Tunggu proses hingga selesai mendapatkan respons dari bank.
+4. Bank melakukan proses validasi rekening:
+   - status 100% valid: bank memberikan status per rekening penerima
+     dan kode referral;
+   - terdapat data tidak valid: bank hanya memberikan status per
+     rekening penerima.
+5. Satker mengunduh data status hasil validasi dari bank dan kode
+   referral dari OMSPAN.
+
+### Penerbitan SPM–SP2D
+
+1. Satker membuat SPP/SPM melalui aplikasi SAKTI dengan jenis
+   dokumen 239 dan menginput kode referral.
+2. KPPN memproses SPM menjadi SP2D melalui aplikasi SPAN.
+3. Bank mengeksekusi pembayaran SP2D dengan menerjemahkan kode
+   referral menjadi detail data penerima sesuai data yang diajukan
+   pada proses validasi rekening di awal.
+4. Apabila ada kesalahan kode referral dan/atau nilai pada SP2D
+   sehingga tidak sesuai data yang disimpan bank pada proses
+   validasi rekening di awal, bank melakukan proses void
+   (pembatalan) SP2D.
+5. Apabila kode referral berhasil diterjemahkan menjadi data detail
+   penerima, bank mengeksekusi pembayaran/penyaluran ke rekening
+   penerima.
+6. Apabila dalam proses eksekusi pembayaran terdapat kegagalan, bank
+   memprosesnya menjadi transaksi retur SP2D.
+
+### Void (pembatalan) SP2D
+
+1. Bank melakukan void dengan kondisi: kode referral tidak
+   ditemukan, atau nilai SP2D tidak sesuai dengan nilai pada kode
+   referral yang disimpan bank.
+2. Bank memberitahukan Kemenkeu terkait SP2D yang di-void.
+3. Admin SITP melakukan proses void SP2D.
+4. KPPN melanjutkan proses dengan membatalkan invoice SPM.
+5. Satker membatalkan SPP/SPM dan membuat SPP/SPM baru dengan kode
+   referral dan nilai yang benar.
+
+### Retur
+
+1. Bank menjumlahkan nilai atas transaksi penyaluran SP2D yang gagal
+   dan mengembalikannya ke Rekening Retur (RR) RPKBUNP dengan kode
+   penerimaan nomor SP2D 21 digit (document number) dari XML SP2D.
+2. KPPN melanjutkan proses retur sesuai ketentuan yang berlaku.
+
+## Hasil yang diharapkan
+
+ADK rekening penyalur diproses menjadi SPM dan SP2D Bansos/Subsidi
+melalui affiliated supplier.
+
+## Ketentuan
+
+- SPM Bansos/Subsidi merupakan belanja bansos/subsidi yang diajukan
+  oleh satuan kerja.
+- Penyampaian SPM LS ke KPPN selaku Kuasa BUN Daerah harus disertai
+  daftar lampiran penerima bansos/subsidi dalam bentuk ADK dan/atau
+  bentuk lain.
+- Besaran jumlah bansos/subsidi yang diterima adalah angka final
+  hasil verifikasi dan validasi yang dilakukan oleh PPK.
+- PPK bertanggung jawab secara formal dan material atas kebenaran
+  penerima dan jumlah bansos/subsidi yang dibayarkan kepada
+  masing-masing penerima.
+
+## Terkait
+
+- [Supplier](/komitmen/ruh/pencatatan-suplier/)
+- [Merekam SPM 239 Bansos Non Affiliated Supplier](/pembayaran/ruh/catat-ubah-spp/spm-239-penyalur-non-affiliated/)
+
+## Sumber
+
+<SumberAsli />

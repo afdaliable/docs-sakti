@@ -1,0 +1,292 @@
+---
+title: Merekam SPM 217 Penghasilan PPNPN Induk
+description: Merekam SPP dan SPM 217 untuk pembayaran penghasilan PPNPN induk, dari pembuatan data sampai pencatatan SP2D.
+modul: pembayaran
+menu_sakti: "Pembayaran > RUH Pembayaran > Catat/Ubah SPP"
+peran: [satker]
+jenis: juknis
+kata_kunci: [spm 217, pnpn induk, penghasilan ppnpn, import gpp]
+status: review
+perlu_review: true
+sumber:
+  - judul: "Juknis Perekaman SPM 217 - Penghasilan PPNPN Induk"
+    url: "https://drive.google.com/file/d/1Ndp1e5hjQquJpKF2ebzXOGqWOXwHLTEK/view"
+    jenis: pdf
+    diambil: 2026-11-21
+    id_manifest: B-pem-009
+sidebar:
+  order: 5
+---
+
+import { Steps, Aside } from '@astrojs/starlight/components';
+import MenuSakti from '~/components/MenuSakti.astro';
+import SumberAsli from '~/components/SumberAsli.astro';
+
+SPM 217 Penghasilan PPNPN Induk digunakan untuk pembayaran belanja
+pegawai bagi Pegawai Pemerintah Non Pegawai Negeri (PPNPN) yang
+dibebankan pada APBN. Penghasilan PPNPN dibayarkan pada bulan
+berikutnya, atau pada bulan berkenaan setelah mendapat persetujuan
+KPPN.
+
+<MenuSakti />
+
+## Prasyarat
+
+- Role yang dibutuhkan: **Operator Komitmen** (impor data gaji),
+  **Operator Pembayaran** (perekaman dan cetak), **PPK** (validasi SPP
+  dan ADK SPP), **PPSPM** (validasi SPM dan ADK SPM).
+- Supplier PPNPN sebagai penerima pembayaran telah direkam pada
+  pencatatan data supplier di modul Komitmen — lihat
+  [Supplier](/komitmen/ruh/pencatatan-suplier/).
+- Satker telah mengirim ADK / melakukan rekonsiliasi data penghasilan
+  PPNPN dengan KPPN; tanpa itu satker tidak dapat merekam SPP
+  penghasilan PPNPN induk.
+- Satker telah melakukan mapping COA SPM PPNPN sebelum perekaman SPP,
+  menggunakan user operator Pembayaran pada menu **Pembayaran >
+  Referensi > Mapping COA SPM**: klik tab **PPNPN**, pilih kode COA
+  yang akan digunakan sebagai COA pembayaran PPNPN (dapat memanfaatkan
+  kolom pencarian); data yang dipilih muncul pada tabel **List
+  Assigned COA PPNPN**.
+- Dokumen input: SPP SPM Penghasilan PPNPN Induk.
+
+## Alur proses
+
+1. Satker — pembuatan data PPNPN dan data pembayaran pada aplikasi
+   PPNPN yang terpisah dari SAKTI.
+2. Operator — input supplier, mengacu pada juknis perekaman supplier.
+3. Operator Komitmen — impor data gaji PPNPN dari GPP Terpusat.
+4. Operator Pembayaran — pencatatan SPP.
+5. Operator Pembayaran — cetak SPP.
+6. PPK — setuju SPP.
+7. PPK — membuat ADK SPP.
+8. Operator Pembayaran — cetak SPM.
+9. Operator Pembayaran — upload dokumen pendukung.
+10. PPSPM — setuju SPM.
+11. PPSPM — membuat ADK SPM.
+12. KPPN — memproses SPM menjadi SP2D.
+13. Operator Pembayaran — mencatat SP2D.
+
+## Langkah
+
+### Mengimpor data gaji PPNPN (Operator Komitmen)
+
+Login sebagai pengguna dengan kewenangan operator pada modul Komitmen.
+
+<Steps>
+
+1. Buka menu **Komitmen > Upload / Import > Import GPP Terpusat**.
+2. Pilih jenis pegawai **PPNPN** — setelah itu muncul tombol **Cari
+   Supplier**; pilih supplier PPNPN yang akan digunakan.
+3. Pilih jenis data **Data Gaji**.
+4. Input informasi: tahun bulan gaji; nomor gaji; kode anak satker
+   (terisi otomatis); kode jenis gaji (terisi otomatis).
+5. Klik **Import**.
+
+</Steps>
+
+### Pencatatan SPP (Operator Pembayaran)
+
+Login sebagai pengguna dengan kewenangan operator pada modul
+Pembayaran.
+
+<Steps>
+
+1. Buka menu **Pembayaran > RUH Pembayaran > Catat/Ubah SPP**.
+2. Pilih jenis SPP **217 SPM Penghasilan PPNPN Induk**.
+3. Klik tombol **Tambah** — selanjutnya diarahkan ke form pemilihan
+   data gaji yang akan direkam SPP-nya.
+4. Pilih jenis pegawai **PPNPN**.
+5. Isikan bulan gaji, tahun, dan nomor gaji PPNPN — nomor gaji PPNPN
+   hanya bisa dipilih satu (satu nomor gaji, satu SPM).
+6. Setelah dipilih, lanjutkan perekaman dengan klik **Rekam SPP**.
+
+</Steps>
+
+### Perekaman pendetailan segmen COA
+
+Setelah masuk ke halaman perekaman SPP, muncul jendela pendetailan
+segmen COA terlebih dahulu sebelum melanjutkan perekaman SPP.
+
+<Steps>
+
+1. Pilih detail akun yang akan diisi nilai pendetailannya.
+2. Klik tombol **Ubah**.
+3. Masukkan nilai yang akan dibebankan pada detail segmen COA
+   tersebut.
+4. Klik tombol **Simpan**.
+5. Setelah seluruh detail segmen direkam, klik tombol **Keluar**.
+6. Apabila terdapat detail segmen COA yang tidak digunakan/bernilai
+   0, hapus dengan memilih detail segmen tersebut lalu klik tombol
+   **Hapus**.
+
+</Steps>
+
+### Pencatatan SPP lanjutan
+
+<Steps>
+
+1. **Dasar pembayaran** terisi UU APBN secara otomatis.
+2. **Uraian pembayaran** terisi secara otomatis; apabila diperlukan
+   penyesuaian, lakukan perubahan pada bagian uraian.
+3. Pastikan jumlah penerima dan nilai yang diterima masing-masing
+   pegawai telah sesuai.
+4. Pastikan nilai total atas nilai bersih yang diterima pegawai telah
+   terisi dan sesuai.
+5. Lakukan pengecekan kembali atas akun pengeluaran dan akun
+   potongan/penerimaan — akun pengeluaran terisi berdasarkan
+   pendetailan segmen COA di awal perekaman; akun potongan terisi
+   otomatis berdasarkan data dari aplikasi PPNPN.
+6. Pastikan nilai bersih total pada bagian informasi supplier telah
+   sama dengan nilai total pembayaran.
+7. Apabila seluruh data telah sesuai, simpan SPP dengan tombol
+   **Simpan**.
+
+</Steps>
+
+### Cetak SPP (Operator Pembayaran)
+
+<Steps>
+
+1. Buka menu **Pembayaran > Cetak > Mencetak SPP**.
+2. Pilih SPP yang ingin dicetak.
+3. Pilih PPK.
+4. Pastikan tempat dan tanggal telah sesuai.
+5. Klik tombol **Unduh** untuk mencetak SPP.
+6. Klik tombol **SSP** apabila ingin mencetak SSP.
+
+</Steps>
+
+### Setuju SPP (PPK)
+
+Login sebagai pengguna PPK selaku validator pada modul Pembayaran.
+
+<Steps>
+
+1. Buka menu **Pembayaran > Validasi > Validasi SPP**.
+2. Pilih SPP yang ingin divalidasi.
+3. Klik tombol **Unduh Pra Cetak** untuk mencetak SPP yang akan
+   divalidasi.
+4. Klik tombol **Setuju**.
+5. Klik tombol **Batal** apabila ingin membatalkan validasi atas SPP
+   yang sudah divalidasi.
+
+</Steps>
+
+### Membuat ADK SPP (PPK)
+
+<Steps>
+
+1. Buka menu **Pembayaran > ADK > ADK SPP OTP**.
+2. Pilih SPP yang ingin dibuat ADK SPP dengan menceklis kolom pilih;
+   dapat memilih lebih dari satu SPP sekaligus apabila diperlukan.
+3. Klik tombol **Proses**.
+4. Klik tombol **Req OTP via SMS** untuk meminta kode OTP.
+5. Setelah menerima kode OTP, input pada kolom **Input OTP**.
+6. Klik tombol **Proses**.
+
+</Steps>
+
+### Cetak SPM (Operator Pembayaran)
+
+<Steps>
+
+1. Buka menu **Pembayaran > Cetak > Mencetak SPM**.
+2. Pilih SPM yang ingin dicetak.
+3. Klik tombol **Unduh**.
+
+</Steps>
+
+### Upload dokumen pendukung (Operator Pembayaran)
+
+<Steps>
+
+1. Buka menu **Pembayaran > Catat/Upload > Upload Dokumen Pendukung**.
+2. Pilih SPM yang akan diunggah dokumen pendukungnya.
+3. Pilih jenis dokumen pendukung.
+4. Klik tombol **Pilih** untuk memilih berkas yang akan diunggah.
+5. Klik tombol **Upload**.
+6. Berkas yang diunggah akan muncul.
+7. Klik tombol **View** untuk melihat berkas yang telah diunggah.
+8. Klik tombol **Hapus** untuk menghapus berkas yang telah diunggah
+   sebelumnya.
+
+</Steps>
+
+### Setuju SPM (PPSPM)
+
+Login sebagai pengguna PPSPM selaku approver pada modul Pembayaran.
+
+<Steps>
+
+1. Buka menu **Pembayaran > Validasi > Validasi SPM**.
+2. Pilih SPM yang ingin divalidasi.
+3. Klik tombol **Unduh Pra Cetak** untuk mencetak SPM yang akan
+   divalidasi.
+4. Klik tombol **Setuju**.
+5. Klik tombol **Batal SPM** apabila ingin membatalkan validasi atas
+   SPM yang sudah divalidasi; klik tombol **Batal Dokumen Pendukung**
+   apabila ingin membatalkan dokumen pendukung yang telah diunggah
+   sebelumnya.
+
+</Steps>
+
+### Membuat ADK SPM (PPSPM)
+
+<Steps>
+
+1. Buka menu **Pembayaran > ADK > ADK SPM OTP**.
+2. Pilih SPM yang ingin dibuat ADK SPM; dapat memilih lebih dari satu
+   sekaligus apabila diperlukan.
+3. Klik tombol **Proses ADK SPM**.
+4. Klik tombol **Req OTP via SMS** untuk meminta kode OTP.
+5. Setelah menerima kode OTP, input pada kolom **Input OTP**.
+6. Klik tombol **Proses**.
+
+</Steps>
+
+### Proses KPPN
+
+Proses di KPPN mengacu pada Standar Operasional Prosedur pemrosesan
+SPM menjadi SP2D pada KPPN.
+
+### Mencatat SP2D (Operator Pembayaran)
+
+<Steps>
+
+1. Buka menu **Pembayaran > Catat/Upload > Mencatat/Upload SP2D**.
+2. Pilih SPM yang ingin dicatat nomor SP2D-nya.
+3. Klik tombol **Catat SP2D Otomatis**.
+
+</Steps>
+
+## Hasil yang diharapkan
+
+Dokumen input SPP SPM Penghasilan PPNPN Induk diproses menjadi SP2D
+Penghasilan PPNPN Induk setelah seluruh tahap selesai.
+
+## Ketentuan
+
+- Supplier sebagai penerima pembayaran penghasilan PPNPN induk harus
+  sudah terekam pada pencatatan data supplier di modul Komitmen.
+- Satker wajib mengirim ADK / melakukan rekonsiliasi data penghasilan
+  PPNPN dengan KPPN sebelum perekaman SPP.
+- Mapping COA SPM PPNPN wajib dilakukan sebelum perekaman SPP.
+
+<Aside type="caution" title="Perlu verifikasi">
+Juknis menulis jalur "Komitmen → ADK → Import GPP Terpusat"; jalur
+baku aplikasi saat ini adalah **Komitmen > Upload / Import > Import
+GPP Terpusat**. Jalur juknis
+"Pembayaran → RUH SPP → Catat/Ubah SPP" dan "Catat/Upload →
+Catat/Upload SP2D" dipetakan ke **Pembayaran > RUH Pembayaran >
+Catat/Ubah SPP** dan **Pembayaran > Catat/Upload > Mencatat/Upload
+SP2D**.
+</Aside>
+
+## Terkait
+
+- [Supplier](/komitmen/ruh/pencatatan-suplier/)
+- [Merekam SPM 227 Penghasilan PPNPN Susulan](/pembayaran/ruh/catat-ubah-spp/spm-227-ppnpn-susulan/)
+
+## Sumber
+
+<SumberAsli />

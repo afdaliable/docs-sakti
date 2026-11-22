@@ -1,0 +1,258 @@
+---
+title: Merekam SPM 111 Non Gaji Kontraktual
+description: Merekam SPP dan SPM 111 untuk pembayaran tagihan kontraktual, dari input SPP sampai pencatatan SP2D.
+modul: pembayaran
+menu_sakti: "Pembayaran > RUH Pembayaran > Catat/Ubah SPP"
+peran: [satker]
+jenis: juknis
+kata_kunci: [spm 111, non gaji kontraktual, spp kontraktual, bast kontraktual]
+status: review
+perlu_review: true
+sumber:
+  - judul: "Juknis Perekaman SPM 111 -  Non Gaji Kontraktual"
+    url: "https://drive.google.com/file/d/1tYpyYw59jT-jKwWlDN1CUSnJxRrcY8DO/view"
+    jenis: pdf
+    diambil: 2026-11-21
+    id_manifest: B-pem-005
+sidebar:
+  order: 1
+---
+
+import { Steps, Aside } from '@astrojs/starlight/components';
+import MenuSakti from '~/components/MenuSakti.astro';
+import SumberAsli from '~/components/SumberAsli.astro';
+
+SPM Kontraktual 111 digunakan untuk membayar tagihan yang sifatnya
+kontraktual.
+
+<MenuSakti />
+
+## Prasyarat
+
+- Role yang dibutuhkan: **Operator Pembayaran** (perekaman dan cetak),
+  **PPK** (validasi SPP dan ADK SPP), **PPSPM** (validasi SPM dan ADK
+  SPM).
+- Sebelum merekam SPP, pastikan BAST Kontraktual telah direkam
+  sebelumnya pada modul Komitmen — lihat
+  [Merekam BAST Kontraktual](/komitmen/ruh/pencatatan-bast/bast-kontraktual/).
+- Supplier tipe 2 dan tipe 6 telah direkam — lihat
+  [Supplier](/komitmen/ruh/pencatatan-suplier/).
+- Kontrak telah direkam — lihat
+  [Kontrak](/komitmen/ruh/pencatatan-kontrak/).
+- RPD telah direkam (dipakai untuk nilai SPM melebihi Rp1 miliar).
+
+## Alur proses
+
+1. Operator — input supplier, mengacu pada juknis perekaman supplier.
+2. Operator — input kontrak, mengacu pada juknis perekaman kontrak.
+3. Operator — input BAST Kontraktual, mengacu pada juknis perekaman
+   BAST Kontraktual.
+4. Operator Pembayaran — input SPP.
+5. Operator Pembayaran — cetak SPP.
+6. PPK — setuju SPP.
+7. PPK — membuat ADK SPP.
+8. Operator Pembayaran — cetak SPM.
+9. Operator Pembayaran — upload dokumen pendukung.
+10. PPSPM — setuju SPM.
+11. PPSPM — membuat ADK SPM.
+12. KPPN — memproses SPM menjadi SP2D sesuai SOP KPPN.
+13. Operator Pembayaran — mencatat SP2D.
+
+## Langkah
+
+### Merekam SPP (Operator Pembayaran)
+
+Login menggunakan user operator SPP/SPM.
+
+<Steps>
+
+1. Buka menu **Pembayaran > RUH Pembayaran > Catat/Ubah SPP**.
+2. Pilih jenis SPP **111 NON GAJI KONTRAKTUAL**.
+3. Klik tombol **Tambah**.
+4. Pilih **BAST Kontraktual**.
+5. Klik tombol **Pilih**.
+6. Pada form perekaman SPP, pilih **Dasar Pembayaran**.
+7. Isi **Uraian Pembayaran** — terisi otomatis saat BAST Kontraktual
+   dipilih; apabila perlu disesuaikan, perbaiki langsung pada kolom
+   Uraian Pembayaran.
+8. Pilih **RPD** yang telah dibuat sebelumnya apabila nilai SPM melebihi
+   Rp1 miliar (sesuai PMK Nomor 197/PMK.05/2017 tentang Rencana
+   Penarikan Dana, Rencana Penerimaan Dana, dan Perencanaan Kas);
+   lewati (tidak perlu memilih RPD) apabila nilai SPM kurang dari Rp1
+   miliar.
+9. Periksa informasi supplier — terisi otomatis saat BAST Kontraktual
+   dipilih.
+10. Klik tombol **Cari BAST**, pilih BAST Kontraktual yang ingin
+    dibayar — Akun Pengeluaran terisi otomatis sesuai saat merekam BAST
+    Kontraktual — lalu pilih BAST Kontraktual yang akan dibuat
+    SPP-nya.
+11. Klik tombol **Rekam SPP**.
+12. Input Akun Potongan apabila ada potongan.
+13. Klik tombol **Simpan**.
+
+</Steps>
+
+### Mencetak SPP (Operator Pembayaran)
+
+Login menggunakan user operator pembayaran.
+
+<Steps>
+
+1. Buka menu **Pembayaran > Cetak > Mencetak SPP**.
+2. Pilih SPP yang ingin dicetak.
+3. Pilih PPK.
+4. Pastikan tempat dan tanggal telah sesuai.
+5. Klik tombol **Unduh** untuk mencetak SPP.
+6. Klik tombol **SSP** apabila ingin mencetak SSP.
+
+</Steps>
+
+### Menyetujui SPP (PPK)
+
+Login menggunakan user PPK.
+
+<Steps>
+
+1. Buka menu **Pembayaran > Validasi > Validasi SPP**.
+2. Pilih SPP yang ingin divalidasi.
+3. Klik tombol **Unduh Pra Cetak** untuk mencetak SPP yang akan
+   divalidasi.
+4. Klik tombol **Setuju** untuk menyetujui SPP.
+5. Klik tombol **Batal** apabila ingin membatalkan validasi atas SPP
+   yang sudah divalidasi.
+
+</Steps>
+
+### Membuat ADK SPP (PPK)
+
+Login menggunakan user PPK.
+
+<Steps>
+
+1. Buka menu **Pembayaran > ADK > ADK SPP OTP**.
+2. Pilih SPP yang ingin dibuat ADK SPP dengan menceklis kolom pilih;
+   dapat memilih lebih dari satu SPP sekaligus apabila diperlukan.
+3. Klik tombol **Proses**.
+4. Klik tombol **Req OTP via SMS** untuk meminta kode OTP.
+5. Setelah menerima kode OTP, input pada kolom **Input OTP**.
+6. Klik tombol **Proses**.
+
+</Steps>
+
+### Mencetak SPM (Operator Pembayaran)
+
+Login menggunakan user operator pembayaran.
+
+<Steps>
+
+1. Buka menu **Pembayaran > Cetak > Mencetak SPM**.
+2. Pilih SPM yang ingin dicetak.
+3. Klik tombol **Unduh**.
+
+</Steps>
+
+### Mengunggah dokumen pendukung (Operator Pembayaran)
+
+Login menggunakan user operator pembayaran.
+
+<Steps>
+
+1. Buka menu **Pembayaran > Catat/Upload > Upload Dokumen Pendukung**.
+2. Pilih SPM yang ingin diunggah dokumen pendukungnya.
+3. Pilih jenis dokumen pendukung.
+4. Klik tombol **Pilih** untuk memilih berkas yang akan diunggah.
+5. Klik tombol **Upload**.
+6. Berkas yang diunggah akan muncul.
+7. Klik tombol **View** apabila ingin melihat berkas yang telah
+   diunggah.
+8. Klik tombol **Hapus** apabila ingin menghapus berkas yang telah
+   diunggah.
+
+</Steps>
+
+### Menyetujui SPM (PPSPM)
+
+Login menggunakan user PPSPM.
+
+<Steps>
+
+1. Buka menu **Pembayaran > Validasi > Validasi SPM**.
+2. Pilih SPM yang ingin divalidasi.
+3. Klik tombol **Unduh Pra Cetak** untuk mencetak SPM yang akan
+   divalidasi.
+4. Klik tombol **Setuju**.
+5. Klik tombol **Batal SPM** apabila ingin membatalkan validasi atas
+   SPM yang sudah divalidasi; klik tombol **Batal Dokumen Pendukung**
+   apabila ingin membatalkan dokumen pendukung yang telah diunggah
+   sebelumnya.
+
+</Steps>
+
+### Membuat ADK SPM (PPSPM)
+
+Login menggunakan user PPSPM.
+
+<Steps>
+
+1. Buka menu **Pembayaran > ADK > ADK SPM OTP**.
+2. Pilih SPM yang ingin dibuat ADK SPM; dapat memilih lebih dari satu
+   sekaligus apabila diperlukan.
+3. Klik tombol **Proses ADK SPM**.
+4. Klik tombol **Req OTP via SMS** untuk meminta kode OTP.
+5. Setelah menerima kode OTP, input pada kolom **Input OTP**.
+6. Klik tombol **Proses**.
+
+</Steps>
+
+### Proses KPPN
+
+Proses di KPPN mengacu pada Standar Operasional Prosedur pemrosesan
+SPM menjadi SP2D pada KPPN.
+
+### Mencatat SP2D (Operator Pembayaran)
+
+Login menggunakan user operator pembayaran.
+
+<Steps>
+
+1. Buka menu **Pembayaran > Catat/Upload > Mencatat/Upload SP2D**.
+2. Pilih SPM yang ingin dicatat nomor SP2D-nya.
+3. Klik tombol **Catat SP2D Otomatis**.
+
+</Steps>
+
+## Hasil yang diharapkan
+
+Dokumen input SPP SPM Kontraktual telah diproses menjadi SP2D SPM
+Kontraktual setelah seluruh tahap selesai.
+
+## Ketentuan
+
+- SPM Kontraktual 111 diperuntukkan untuk tagihan kontraktual.
+- Sebelum merekam SPP, satker harus merekam kontrak dan BAST
+  Kontraktual terlebih dahulu.
+- Perekaman BAST Kontraktual mengakomodasi penginputan kode barang,
+  baik persediaan maupun aset.
+- Saat memilih jenis SPP Kontraktual 111, jangan lupa memilih BAST
+  Kontraktual yang telah dibuat sebelumnya.
+- Modul lain terkait: Komitmen — pembuatan supplier tipe 2 dan tipe 6,
+  pembuatan kontrak, pembuatan BAST Kontraktual; Pembayaran —
+  perekaman RPD.
+
+<Aside type="caution" title="Perlu verifikasi">
+Juknis menulis jalur "Pembayaran → RUH SPP → Catat/Ubah SPP" dan
+"Catat/Upload → Catat/Upload SP2D"; jalur baku aplikasi saat ini
+adalah **Pembayaran > RUH Pembayaran > Catat/Ubah SPP** dan
+**Pembayaran > Catat/Upload > Mencatat/Upload SP2D**.
+</Aside>
+
+## Terkait
+
+- [Merekam BAST Kontraktual](/komitmen/ruh/pencatatan-bast/bast-kontraktual/)
+- [Kontrak](/komitmen/ruh/pencatatan-kontrak/)
+
+- [Merekam Proyeksi Pengeluaran Bulanan dan RPD Harian](/pembayaran/ruh/proyeksi-belanja-bulanan/)
+
+## Sumber
+
+<SumberAsli />

@@ -1,0 +1,221 @@
+---
+title: Merekam SPM 27x Tunjangan Kinerja
+description: Merekam SPP dan SPM tunjangan kinerja pegawai/Polri/TNI, dari impor data sampai pencatatan SP2D, dengan atau tanpa interkoneksi gaji.
+modul: pembayaran
+menu_sakti: "Pembayaran > RUH Pembayaran > Catat/Ubah SPP"
+peran: [satker]
+jenis: juknis
+kata_kunci: [tunjangan kinerja, spm 271, spm 272, spm 273, tunkin, tanpa data gaji]
+status: review
+perlu_review: true
+sumber:
+  - judul: "Juknis Perekaman SPM 27x - Tunjangan Kinerja"
+    url: "https://drive.google.com/file/d/1pNcOXYXZUsQpo4-AYjes9ASs_U3JZvFy/view"
+    jenis: pdf
+    diambil: 2026-11-21
+    id_manifest: B-pem-025
+sidebar:
+  order: 21
+---
+
+import { Steps, Aside } from '@astrojs/starlight/components';
+import MenuSakti from '~/components/MenuSakti.astro';
+import SumberAsli from '~/components/SumberAsli.astro';
+
+SPM Tunjangan Kinerja digunakan untuk pembayaran tunjangan kinerja
+pegawai/Polri/TNI, dengan data dari aplikasi gaji (interkoneksi)
+atau tanpa data gaji sesuai ketentuan.
+
+<MenuSakti />
+
+## Prasyarat
+
+- Role yang dibutuhkan: **Operator Komitmen** (impor data
+  interkoneksi), **Operator Pembayaran**, **Validator** (PPK),
+  **Approver** (PPSPM).
+- Supplier pegawai tipe 3 telah direkam pada modul Komitmen — lihat
+  [Supplier](/komitmen/ruh/pencatatan-suplier/).
+- Dokumen input: perhitungan tunjangan kinerja pegawai.
+- Untuk perekaman tanpa interkoneksi aplikasi gaji, siapkan lampiran
+  Surat Pernyataan Pembayaran Tunjangan Kinerja Tanpa Melalui
+  Interkoneksi Dengan Aplikasi Gaji.
+
+## Kebijakan jenis SPM tunjangan kinerja
+
+Pengajuan SPM tunjangan kinerja bulanan diatur untuk tiga kondisi:
+
+| Kondisi | Jenis dokumen | Tanggal SP2D / jatuh tempo | Batas pengajuan ke KPPN |
+|---|---|---|---|
+| Tanggal 1 hari libur | SPM 271 - Tunjangan Kinerja Bulanan | SP2D tanggal 1 hari libur; jatuh tempo setiap tanggal 1 bulan berikutnya | Paling lambat hari kerja kedua terakhir (HK-2) sebelum tanggal 1 bulan pembayaran |
+| Tanggal 1 hari kerja | SPM 271 - Tunjangan Kinerja Bulanan | SP2D tanggal 1 hari kerja; jatuh tempo immediately (segera) | Paling lambat hari kerja terakhir (HK-1) sebelum tanggal 1 bulan pembayaran |
+| Tanggal 2 dan selanjutnya | SPM 272 - Tunjangan Kinerja Susulan | SP2D tanggal 2 s.d. seterusnya; jatuh tempo immediately (segera) | Sesuai rencana satker |
+
+Untuk tunjangan kinerja susulan dan kekurangan tunjangan kinerja:
+
+| Jenis | Dokumen | Jatuh tempo | Uraian SPM |
+|---|---|---|---|
+| Susulan | SPM 272 - Tunjangan Kinerja Susulan | Immediately (segera) | "Pembayaran tunjangan kinerja susulan bulan …. tahun …. untuk …. Pegawai/Anggota Polri/Prajurit TNI." |
+| Kekurangan | SPM 273 - Kekurangan Tunjangan Kinerja | Immediately (segera) | "Pembayaran kekurangan tunjangan kinerja bulan …. tahun …. untuk …. Pegawai/Anggota Polri/Prajurit TNI." |
+
+Dasar pembayaran yang dicantumkan pada SPM tunjangan kinerja adalah
+UU APBN tahun pembayaran dan DIPA satker berkenaan; untuk jenis 271
+uraian yang dipakai adalah "Pembayaran tunjangan kinerja bulan ….
+tahun …. untuk …. Pegawai/Anggota Polri/Prajurit TNI.".
+
+## Alur proses
+
+1. Operator Komitmen — impor data tunjangan kinerja (interkoneksi);
+   dapat dilewati apabila pembayaran tidak bersumber dari aplikasi
+   gaji.
+2. Operator Pembayaran — perekaman SPP (dengan data interkoneksi
+   atau tanpa data gaji).
+3. Operator Pembayaran — cetak SPP dan cetak potongan SPM.
+4. Validator — validasi SPP dan pembuatan ADK SPP.
+5. Operator Pembayaran — cetak SPM dan upload dokumen pendukung.
+6. Approver — validasi SPM dan pembuatan ADK SPM.
+7. Operator Pembayaran — mencatat SP2D.
+
+## Langkah
+
+### Mengimpor data tunjangan kinerja (Operator Komitmen)
+
+Tahap ini dilewati apabila pembayaran tunjangan kinerja tidak
+bersumber dari aplikasi gaji sesuai ketentuan yang berlaku.
+
+<Steps>
+
+1. Login pada aplikasi SAKTI menggunakan user operator Komitmen.
+2. Buka menu **Komitmen > Upload / Import > Import GPP Terpusat**.
+3. Pilih jenis pegawai, jenis data (tunjangan kinerja), dan data
+   gaji tunjangan kinerja yang akan dibayarkan.
+4. Apabila data tunjangan kinerja sudah muncul dan sesuai, klik
+   tombol **Impor Data Gaji**.
+
+</Steps>
+
+### Merekam SPP (Operator Pembayaran)
+
+<Steps>
+
+1. Login menggunakan user operator Pembayaran.
+2. Buka menu **Pembayaran > RUH Pembayaran > Catat/Ubah SPP**.
+3. Pilih jenis SPP: **271 - Tunjangan Kinerja Bulanan**, **272 -
+   Tunjangan Kinerja Susulan**, atau **273 - Kekurangan Tunjangan
+   Kinerja**.
+4. Klik **Tambah** — muncul form pemilihan detail jenis pegawai,
+   bulan gaji, dan nomor gaji. Untuk perekaman tanpa interkoneksi
+   data gaji, pilih jenis pegawai **Tanpa Data Gaji** — jenis ini
+   digunakan secara selektif hanya untuk transaksi yang telah
+   diatur sesuai ketentuan yang berlaku.
+5. Klik tombol **Rekam SPP**.
+
+</Steps>
+
+Tahapan selanjutnya berbeda antara perekaman dengan data tunjangan
+kinerja interkoneksi dan pembayaran tanpa data gaji.
+
+### Perekaman dengan data tunjangan kinerja interkoneksi
+
+Pada tahap ini diarahkan ke halaman perekaman SPP seperti pada umumnya,
+dengan pop-up perekaman data COA untuk mempermudah perekaman data
+pembebanan anggaran atas pembayaran tunjangan kinerja.
+
+<Steps>
+
+1. Pilih kode COA dengan klik tombol logo **kaca pembesar**.
+2. Pilih detail COA yang hendak digunakan, lalu klik tombol **OK**
+   untuk kembali ke halaman sebelumnya.
+3. Apabila sudah sesuai, klik tombol **Simpan**.
+4. Lakukan pendetailan untuk seluruh data akun pembayaran pada data
+   tunjangan kinerja.
+5. Setelah selesai, lengkapi dasar pembayaran, uraian pembayaran,
+   dan supplier yang digunakan pada halaman utama perekaman SPP.
+6. Apabila seluruh data SPP sudah sesuai, klik tombol **Simpan**,
+   lalu lanjutkan cetak SPP, cetak potongan SPM, validasi SPP, ADK
+   SPP, cetak SPM, upload dokumen pendukung, validasi SPM, ADK SPM,
+   dan catat SP2D.
+
+</Steps>
+
+### Perekaman tanpa data tunjangan kinerja interkoneksi
+
+<Steps>
+
+1. Pilih **Dasar Pembayaran**, yaitu UU APBN tahun pembayaran dan
+   DIPA satker berkenaan.
+2. Cara bayar terisi **2 - SP2D** secara otomatis.
+3. Isi uraian pembayaran.
+4. Pada informasi supplier: klik **Supplier Header**, pilih supplier
+   tipe 3 (pegawai).
+5. Klik **Tambah**, pilih nama-nama penerima.
+6. Input nilai bersih masing-masing penerima pada kolom **Nilai
+   bersih**; apabila jumlah penerima banyak, gunakan tombol
+   **Upload File CSV**.
+7. Pada form Distribusi COA pilih tab **Akun Pengeluaran**, klik
+   **RUH Akun**: pilih akun belanja pegawai (tunjangan
+   khusus/kegiatan/kinerja), lakukan pendetailan pada tombol
+   **Detail COA**, kemudian klik **Simpan**.
+8. Pada form Distribusi COA pilih tab **Akun
+   Potongan/Penerimaan**, klik **RUH Akun**: pilih akun
+   potongan/pendapatan, input nilai potongan, kemudian klik
+   **Simpan** dan **Keluar**.
+9. Pastikan nilai bersih pada form supplier sama dengan nilai pada
+   **Total Pembayaran**, kemudian klik **Simpan**.
+10. Lanjutkan cetak SPP, cetak potongan SPM, validasi SPP, ADK SPP,
+    cetak SPM, upload dokumen pendukung, validasi SPM, ADK SPM, dan
+    catat SP2D.
+
+</Steps>
+
+## Hasil yang diharapkan
+
+Perhitungan tunjangan kinerja pegawai diproses menjadi cetakan SPP
+dan SPM serta ADK PMRT sampai SP2D diterbitkan.
+
+## Ketentuan
+
+- Tunjangan kinerja diberikan kepada pegawai sesuai Peraturan
+  Presiden tentang tunjangan kinerja pegawai pada masing-masing K/L,
+  dengan pembayaran berdasarkan alokasi dana pada DIPA dan
+  memperhitungkan capaian kinerja pegawai setiap bulan sesuai
+  peraturan perundang-undangan.
+- Pembayaran dilakukan dengan mekanisme pembayaran langsung ke
+  rekening pegawai; apabila mekanisme itu tidak dapat dilakukan,
+  tunjangan kinerja dapat dibayarkan melalui Bendahara Pengeluaran
+  setelah mendapat persetujuan kepala KPPN.
+- Pembayaran dilaksanakan pada hari pertama atau hari kerja pertama
+  setiap bulan; pelaksanaannya dapat dikecualikan dengan
+  mempertimbangkan kesiapan tata cara perhitungan dan pembayaran
+  pada masing-masing satker; satker dapat membayar secara terpusat
+  dengan sentralisasi pagu DIPA tunjangan kinerja.
+- Landasan: PMK Nomor 80/PMK.05/2017 tentang Tata Cara Pembayaran
+  Tunjangan Kinerja Pegawai pada Kementerian Negara/Lembaga
+  sebagaimana diubah dengan PMK Nomor 20 Tahun 2023.
+- SPM tunjangan kinerja yang dibuat tanpa interkoneksi aplikasi gaji
+  wajib melampirkan Surat Pernyataan Pembayaran Tunjangan Kinerja
+  Tanpa Melalui Interkoneksi Dengan Aplikasi Gaji pada lampiran
+  SPP/SPM.
+- Pada SAKTI KPPN terdapat label **Interkoneksi Tukin** untuk SPM
+  tunjangan kinerja yang direkam dengan mekanisme interkoneksi,
+  untuk memudahkan KPPN mengidentifikasi mekanisme perekaman.
+- Output berupa cetakan SPP dan SPM serta ADK PMRT; validasi
+  menggunakan tanggal jatuh tempo.
+
+<Aside type="caution" title="Perlu verifikasi">
+Juknis menulis jalur "Pembayaran → RUH SPP → Catat/Ubah SPP" dan
+"Komitmen >> Upload/Import >> Import GPP Terpusat"; jalur baku
+aplikasi saat ini adalah **Pembayaran > RUH Pembayaran > Catat/Ubah
+SPP** dan **Komitmen > Upload / Import > Import GPP Terpusat**.
+Juknis menyebut dasar pembayaran "UU APBN 2023" untuk jenis 272 —
+ditulis sebagai UU APBN tahun pembayaran sesuai rumusan umum
+juknis.
+</Aside>
+
+## Terkait
+
+- [Supplier](/komitmen/ruh/pencatatan-suplier/)
+- [Merekam SPM 211 Gaji Induk](/pembayaran/ruh/catat-ubah-spp/spm-211-gaji-induk/)
+
+## Sumber
+
+<SumberAsli />

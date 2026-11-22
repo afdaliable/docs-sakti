@@ -1,0 +1,124 @@
+---
+title: Merekam SPP 611 Pengembalian Belanja
+description: Merekam SPP 611 untuk menyesuaikan pagu atas pengembalian belanja yang telah disetor ke Kas Negara dan disesuaikan KPPN.
+modul: pembayaran
+menu_sakti: "Pembayaran > RUH Pembayaran > Catat/Ubah SPP"
+peran: [satker]
+jenis: juknis
+kata_kunci: [spp 611, pengembalian belanja, sspb, pemulihan pagu]
+status: review
+perlu_review: false
+sumber:
+  - judul: "Juknis Perekaman SPP 611 - Pengembalian Belanja"
+    url: "https://drive.google.com/file/d/1XMSfqTvUgO4MtDRGOFEy2qCVIhaQlmAV/view"
+    jenis: pdf
+    diambil: 2026-11-21
+    id_manifest: B-pem-039
+sidebar:
+  order: 34
+---
+
+import { Steps } from '@astrojs/starlight/components';
+import MenuSakti from '~/components/MenuSakti.astro';
+import SumberAsli from '~/components/SumberAsli.astro';
+
+SPP Pengembalian Belanja (611) digunakan untuk menyesuaikan pagu atas
+pengembalian belanja tahun anggaran berjalan yang telah disetorkan ke
+Kas Negara dan telah menerima Berita Acara Penyesuaian Pagu dari KPPN.
+Proses ini dilakukan apabila penyesuaian pagu di KPPN telah selesai.
+
+<MenuSakti />
+
+## Prasyarat
+
+- Role yang dibutuhkan: **Operator Pembayaran** (perekaman dan cetak
+  SPP), **KPA** (validator SPP).
+- Satker telah melakukan input SSPB pada aplikasi SAKTI modul
+  Bendahara, telah mengajukan permohonan penyesuaian pagu ke KPPN, dan
+  telah mendapatkan Berita Acara Penyesuaian Pagu dari KPPN.
+
+## Alur proses
+
+1. Bendahara/Satker — penyetoran pengembalian belanja dan perekaman
+   SSPB pada modul Bendahara.
+2. KPA — permohonan pemulihan pagu ke KPPN.
+3. KPPN — verifikasi permohonan dan penyesuaian sisa pagu DIPA.
+4. Operator Pembayaran — pencatatan SPP.
+5. Operator Pembayaran — cetak SPP.
+6. KPA — setuju SPP.
+
+## Langkah
+
+### Perekaman SSPB dan permohonan (Bendahara — KPA — KPPN)
+
+1. Bendahara/Satker melakukan penyetoran atas pengembalian belanja,
+   kemudian operator modul Bendahara merekam setoran pengembalian
+   belanja pada aplikasi SAKTI — proses lebih lanjut mengacu pada
+   juknis setoran pengembalian belanja.
+2. KPA mengajukan permohonan pemulihan pagu ke KPPN sesuai ketentuan
+   penyesuaian sisa pagu atas setoran pengembalian belanja.
+3. KPPN memverifikasi permohonan pemulihan/penyesuaian sisa pagu
+   DIPA; apabila permohonan diterima lengkap dan sesuai, KPPN
+   menyesuaikan sisa pagu DIPA dan menyampaikan Berita Acara
+   penyesuaian sisa pagu DIPA kepada satker.
+
+### Pencatatan SPP (Operator Pembayaran)
+
+Login sebagai pengguna dengan kewenangan operator pada modul
+Pembayaran.
+
+<Steps>
+
+1. Buka menu **Pembayaran > RUH Pembayaran > Catat/Ubah SPP**.
+2. Pilih jenis SPP **611 – Pengembalian Belanja**.
+3. Klik tombol **Tambah** — muncul pop-up untuk memilih data SSPB.
+4. Pilih data SSPB yang akan digunakan.
+5. Klik tombol **Pilih**.
+6. Isikan dasar pembayaran.
+7. Isikan uraian pembayaran.
+8. Isikan supplier tipe 1 dengan mengklik tombol **Cari Supplier**.
+9. Setelah data terisi benar dan lengkap, klik tombol **Simpan**.
+
+</Steps>
+
+### Cetak SPP (Operator Pembayaran)
+
+Login sebagai pengguna dengan kewenangan operator pada modul
+Pembayaran.
+
+<Steps>
+
+1. Buka menu **Pembayaran > Cetak > Mencetak SPP**.
+2. Pilih SPP yang ingin dicetak.
+3. Pilih PPK.
+4. Pastikan tempat dan tanggal telah sesuai.
+5. Klik tombol **Unduh** untuk mencetak SPP.
+6. Klik tombol **SSP** apabila ingin mencetak SSP.
+
+</Steps>
+
+### Setuju SPP (KPA)
+
+Login sebagai pengguna KPA selaku validator atas SPP Pengembalian
+Belanja (611).
+
+<Steps>
+
+1. Buka menu **Pembayaran > Validasi > Validasi SPP**.
+2. Pilih SPP yang ingin divalidasi.
+3. Klik tombol **Setuju** untuk menyetujui SPP.
+
+</Steps>
+
+## Hasil yang diharapkan
+
+Dokumen input SPP Pengembalian Belanja diproses sampai disetujui KPA;
+hasilnya adalah pemulihan pagu pada aplikasi SAKTI.
+
+## Terkait
+
+- [Supplier](/komitmen/ruh/pencatatan-suplier/)
+
+## Sumber
+
+<SumberAsli />

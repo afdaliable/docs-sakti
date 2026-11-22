@@ -1,0 +1,157 @@
+---
+title: Merekam SPM 516 Koreksi COA 16 Segmen
+description: Mengkoreksi detail COA segmen 13 sampai 16 (RO, komponen, sub komponen, item) pada SPM melalui jenis SPP 516.
+modul: pembayaran
+menu_sakti: "Pembayaran > RUH Pembayaran > Catat/Ubah SPP"
+peran: [satker]
+jenis: juknis
+kata_kunci: [spm 516, koreksi coa, segmen 15 16, detail coa, ro komponen]
+status: review
+perlu_review: true
+sumber:
+  - judul: "Juknis Perekaman SPM 516 - Koreksi COA 16 Segmen"
+    url: "https://drive.google.com/file/d/1ket6_YJmqVQjMGUpP88O9skCLEjeKxpM/view"
+    jenis: pdf
+    diambil: 2026-11-21
+    id_manifest: B-pem-034
+sidebar:
+  order: 30
+---
+
+import { Steps, Aside } from '@astrojs/starlight/components';
+import MenuSakti from '~/components/MenuSakti.astro';
+import SumberAsli from '~/components/SumberAsli.astro';
+
+Jenis SPP 516 - Koreksi COA 15/16 Segmen digunakan untuk koreksi SPM
+pada detail COA level 13 sampai 16 segmen (RO, komponen, sub
+komponen, item). Karena hanya mengubah COA segmen 13–16, koreksi ini
+tidak perlu disampaikan ke KPPN.
+
+<MenuSakti />
+
+## Prasyarat
+
+- Role yang dibutuhkan: operator (OPR) dan validator/PPK (VAL)
+  pada modul Pembayaran.
+- Dokumen input: semua SPM yang memiliki pagu dan COA detail.
+- Pastikan data yang akan dikoreksi memiliki pagu (bukan akun 4
+  dan/atau 8) serta memiliki COA detail segmen 15/16.
+- Untuk koreksi 12 segmen seperti program, kegiatan, KRO, dan akun,
+  gunakan jenis SPP 515 - Koreksi yang disampaikan ke KPPN — lihat
+  [Merekam SPM 515 Koreksi](/pembayaran/ruh/catat-ubah-spp/spm-515-koreksi/).
+
+## Alur proses
+
+1. Operator — pencatatan SPP (pilih SP2D yang akan dikoreksi).
+2. Operator — perekaman pendetailan segmen 15/16 COA.
+3. Operator — cetak SPP.
+4. PPK — setuju SPP; proses koreksi selesai.
+
+## Langkah
+
+### Pencatatan SPP (Operator)
+
+Login sebagai pengguna dengan kewenangan operator pada modul
+Pembayaran.
+
+<Steps>
+
+1. Buka menu **Pembayaran > RUH Pembayaran > Catat/Ubah SPP**.
+2. Pilih jenis SPP **516 - Koreksi COA 15/16 Segmen**.
+3. Klik tombol **Tambah**.
+4. Pilih SP2D yang akan dibuatkan koreksi — SPP yang belum memiliki
+   nomor SP2D tidak akan muncul pada form tersebut.
+5. Klik **Pilih** — muncul halaman perekaman (Catat/Ubah) SPP; hanya
+   Distribusi COA yang bisa diubah (untuk mengubah detail COA).
+6. Klik **RUH Akun** untuk melakukan koreksi detail.
+
+</Steps>
+
+### Perekaman pendetailan segmen 15/16 COA (Operator)
+
+<Steps>
+
+1. Pilih akun yang hendak dilakukan pendetailan.
+2. Klik tombol **Ubah**.
+3. Klik tombol **Detail COA**.
+4. Pilih detail yang akan diubah atau dihapus.
+5. Klik tombol **Tambah** untuk melakukan perekaman pendetailan,
+   atau klik **Ubah**/**Hapus** untuk mengubah/menghapus — ubah
+   detail hanya untuk mengubah nilai; apabila ingin mengganti
+   detail, hapus terlebih dahulu lalu rekam ulang dengan detail yang
+   baru.
+6. Klik tombol **Kaca Pembesar** untuk memilih detail segmen 15/16,
+   pilih detail segmen yang akan digunakan, lalu klik **OK**.
+7. Kolom nilai akan terisi sesuai isian pada tahap sebelumnya.
+8. Setelah Rekam/Ubah/Hapus selesai dilakukan, klik tombol
+   **Simpan**.
+9. Klik tombol **Keluar** untuk kembali ke halaman sebelumnya.
+10. Klik tombol **Simpan** untuk menyimpan perekaman pendetailan
+    segmen COA 15/16 atas akun tersebut.
+11. Ulangi langkah 1–10 untuk pengubahan detail lainnya apabila
+    diperlukan.
+12. Apabila sudah selesai, klik tombol **Keluar** untuk melanjutkan
+    perekaman SPP.
+13. Klik tombol **Simpan** apabila perekaman SPP telah selesai.
+
+</Steps>
+
+### Cetak SPP (Operator)
+
+<Steps>
+
+1. Buka menu **Pembayaran > Cetak > Mencetak SPP**.
+2. Pilih SPP yang ingin dicetak.
+3. Pilih PPK.
+4. Pastikan tempat dan tanggal telah sesuai.
+5. Klik tombol **Unduh** untuk mencetak SPP.
+
+</Steps>
+
+SPP yang tercetak memiliki format tersendiri yang berbeda dengan SPP
+lainnya — berisi informasi umum terkait SPP koreksi beserta matriks
+perubahan (semula – menjadi) atas detail COA yang dikoreksi.
+
+### Setuju SPP (PPK)
+
+Login sebagai pengguna PPK selaku validator pada modul Pembayaran.
+
+<Steps>
+
+1. Buka menu **Pembayaran > Validasi > Validasi SPP**.
+2. Pilih SPP yang ingin divalidasi.
+3. Klik tombol **Unduh Pra Cetak** untuk mencetak SPP yang akan
+   divalidasi.
+4. Klik tombol **Setuju** — pada tahap ini status SPP menjadi
+   **Catat SP2D** dan proses koreksi detail COA telah selesai
+   dilakukan.
+
+</Steps>
+
+## Hasil yang diharapkan
+
+Koreksi COA segmen 15/16 pada SPM yang memiliki pagu selesai tanpa
+perlu disampaikan ke KPPN.
+
+## Ketentuan
+
+- Koreksi COA 15/16 Segmen diperuntukkan untuk koreksi COA pada
+  segmen RO, komponen, sub komponen, dan item (segmen 13–16).
+- Koreksi ini hanya mengubah COA segmen 13–16, sehingga tidak perlu
+  disampaikan ke KPPN.
+- Untuk koreksi 12 segmen (program, kegiatan, KRO, akun), gunakan
+  jenis SPP 515 - Koreksi yang disampaikan ke KPPN.
+
+<Aside type="caution" title="Perlu verifikasi">
+Juknis menulis jalur "Pembayaran → RUH SPP → Catat/Ubah SPP"; jalur
+baku aplikasi saat ini adalah **Pembayaran > RUH Pembayaran >
+Catat/Ubah SPP**.
+</Aside>
+
+## Terkait
+
+- [Merekam SPM 515 Koreksi](/pembayaran/ruh/catat-ubah-spp/spm-515-koreksi/)
+
+## Sumber
+
+<SumberAsli />

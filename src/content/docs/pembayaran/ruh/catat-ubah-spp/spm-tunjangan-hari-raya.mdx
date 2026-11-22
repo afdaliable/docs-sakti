@@ -1,0 +1,236 @@
+---
+title: Merekam SPM Tunjangan Hari Raya (THR)
+description: Merekam SPP dan SPM Tunjangan Hari Raya untuk semua jenis pegawai sampai SP2D.
+modul: pembayaran
+menu_sakti: "Pembayaran > RUH Pembayaran > Catat/Ubah SPP"
+peran: [satker]
+jenis: juknis
+kata_kunci: [thr, tunjangan hari raya, spm 251, spm 252, spm 253, spm 254, spm 259]
+status: review
+perlu_review: true
+sumber:
+  - judul: "Juknis Perekaman SPM Tunjangan Hari Raya (THR)"
+    url: "https://drive.google.com/file/d/1tgCKDhErxrkoAWgsmc3RxoH55jGj4V09/view"
+    jenis: pdf
+    diambil: 2026-11-21
+    id_manifest: B-pem-037
+sidebar:
+  order: 33
+---
+
+import { Steps, Aside } from '@astrojs/starlight/components';
+import MenuSakti from '~/components/MenuSakti.astro';
+import SumberAsli from '~/components/SumberAsli.astro';
+
+SPP dan SPM Tunjangan Hari Raya (THR) direkam per jenis pegawai
+dengan jenis SPP 251, 252, 253, 254, dan 259, dimulai dari impor data
+gaji THR pada modul Komitmen sampai pencatatan SP2D.
+
+<MenuSakti />
+
+## Prasyarat
+
+- Role yang dibutuhkan: **Operator**, **Validator**, dan **Approver**
+  modul Pembayaran, serta operator Komitmen untuk supplier pegawai,
+  Import GPP Terpusat, dan Monitoring ADK GPP.
+- Data supplier pegawai telah tersedia — lihat
+  [Supplier](/komitmen/ruh/pencatatan-suplier/).
+- Dokumen input: rekap dan lampiran perhitungan THR.
+- Pembayaran THR mengikuti aturan THR tahun berkenaan; tanggal jatuh
+  tempo SPM THR diatur sesuai ketentuan pada aturan THR tahun
+  berkenaan.
+- Untuk SPM THR yang menggunakan aplikasi GPP, PPNPN, dan PPPK,
+  lakukan rekonsiliasi gaji THR ke KPPN terlebih dahulu agar data
+  gaji THR dapat diimpor ke aplikasi SAKTI.
+
+## Jenis SPM THR
+
+- **251 - THR Gaji PNS/TNI/Polri** — pembayaran THR komponen gaji
+  pokok, tunjangan keluarga, tunjangan pangan, dan/atau tunjangan
+  jabatan atau tunjangan umum.
+- **252 - THR PPPK** — pembayaran THR bagi PPPK (Pegawai Pemerintah
+  dengan Perjanjian Kerja).
+- **253 - THR Pejabat Negara** — pembayaran THR bagi Pejabat Negara.
+- **254 - THR PPNPN** — pembayaran THR bagi pegawai non-ASN dan THR
+  keagamaan bagi satpam, pengemudi, petugas kebersihan, dan
+  pramubakti.
+- **259 - THR Tukin** — pembayaran THR komponen tunjangan kinerja.
+
+## Alur proses
+
+1. Operator Komitmen — impor data gaji dan monitoring ADK gaji.
+2. Operator Pembayaran — perekaman SPP per jenis SPM.
+3. Operator Pembayaran — cetak SPP.
+4. Validator — validasi SPP dan pembuatan ADK SPP.
+5. Operator Pembayaran — cetak SPM dan upload dokumen pendukung.
+6. Approver — validasi SPM dan pembuatan ADK SPM.
+7. Operator Pembayaran — mencatat SP2D.
+
+## Langkah
+
+### Mengimpor data gaji (Operator Komitmen)
+
+<Steps>
+
+1. Login aplikasi SAKTI menggunakan user operator Komitmen.
+2. Buka menu **Komitmen > Upload / Import > Import GPP Terpusat**: pilih jenis
+   pegawai sesuai kebutuhan; pilih jenis data (gaji/tunjangan
+   kinerja); pilih bulan tahun gaji sesuai data yang diajukan;
+   pilih nomor gaji yang akan diimpor; pastikan bagian nomor gaji
+   sudah memuat informasi Tunjangan Hari Raya; klik **Impor Data
+   Gaji** dan pastikan seluruh data berhasil diimpor.
+3. Cek Monitoring ADK Gaji di menu **Komitmen > Monitoring > ADK
+   GPP** — pilih bulan **Bulan 14 (THR)** — pastikan jumlah gaji
+   kotor, potongan, dan gaji bersih sesuai rekap gaji dan lampiran.
+
+</Steps>
+
+### Merekam SPM 251 - THR PNS/TNI/Polri
+
+<Steps>
+
+1. Buka menu **Pembayaran > RUH Pembayaran > Catat/Ubah SPP**, pilih
+   jenis SPP **251 - THR Gaji PNS/TNI/Polri**, klik **Tambah**.
+2. Pada form depan, input: jenis pegawai (PNS
+   Pusat/Personil TNI/Anggota Polri/PNS TNI/PNS Polri); bulan
+   **THR**; nomor gaji THR yang dibuat — lalu klik **Rekam SPP**.
+3. Lakukan pendetailan COA hingga sub komponen/item untuk THR
+   (Gaji-14): klik **Pencarian COA**, pilih COA, simpan dan keluar;
+   ulangi untuk akun lainnya sampai selesai.
+4. Pilih **Dasar Pembayaran** sesuai aturan THR tahun berkenaan
+   dan isi uraian pembayaran sesuai ketentuan.
+5. Distribusi COA terinput otomatis sesuai langkah pendetailan
+   sebelumnya; cari supplier tipe **3 - Pegawai**; klik **RUH Akun**
+   apabila masih ada akun/COA yang perlu disesuaikan; klik
+   **Simpan**.
+6. Lanjutkan cetak SPP, validasi SPP, ADK SPP, cetak SPM, upload
+   dokumen pendukung, validasi SPM, ADK SPM, dan catat SP2D.
+
+</Steps>
+
+### Merekam SPM 252 - THR PPPK
+
+<Steps>
+
+1. Pilih jenis SPP **252 - THR PPPK**, klik **Tambah**.
+2. Input: jenis pegawai **PPPK**; bulan **THR**; nomor gaji THR yang
+   dibuat — klik **Rekam SPP**.
+3. Lakukan pendetailan COA hingga sub komponen/item untuk THR
+   (Gaji-14): klik **Pencarian COA**, simpan dan keluar; ulangi
+   sampai selesai.
+4. Pilih **Dasar Pembayaran** sesuai aturan THR tahun berkenaan dan
+   isi uraian.
+5. Distribusi COA terinput otomatis sesuai langkah pendetailan
+   sebelumnya; cari supplier tipe **3 - Pegawai**; klik **RUH Akun**
+   apabila perlu; klik **Simpan**.
+6. Lanjutkan cetak SPP, validasi SPP, ADK SPP, cetak SPM, upload
+   dokumen pendukung, validasi SPM, ADK SPM, dan catat SP2D.
+
+</Steps>
+
+### Merekam SPM 253 - THR Pejabat Negara
+
+<Steps>
+
+1. Pilih jenis SPP **253 - THR Pejabat Negara**, klik **Tambah**.
+2. Pilih **Dasar Pembayaran** sesuai aturan THR tahun berkenaan dan
+   isi uraian pembayaran sesuai ketentuan.
+3. Pada supplier dan distribusi COA: pilih **Supplier Header** yang
+   akan digunakan; klik **Tambah**, pilih penerima yang akan dibayar
+   THR dan input nilai bersih masing-masing penerima — apabila
+   jumlah penerima banyak, gunakan tombol **Upload File CSV**;
+   pilih **RUH Akun**, rekam akun THR lalu simpan dan keluar dari
+   form RUH Akun.
+4. Klik **Simpan**, lalu lanjutkan cetak SPP, validasi SPP, ADK SPP,
+   cetak SPM, upload dokumen pendukung, validasi SPM, ADK SPM, dan
+   catat SP2D.
+
+</Steps>
+
+### Merekam SPM 254 - THR PPNPN
+
+<Steps>
+
+1. Impor data THR PPNPN pada menu **Komitmen > Upload / Import >
+   Import GPP Terpusat**: pilih jenis pegawai **PPNPN**; jenis data **Gaji**;
+   cari supplier PPNPN yang akan digunakan; pilih bulan tahun gaji;
+   pilih nomor gaji yang akan diimpor; pastikan kode jenis gaji
+   sudah memuat informasi Tunjangan Hari Raya; klik **Impor Data
+   Gaji** dan pastikan semua data berhasil diimpor.
+2. Cek Monitoring ADK Gaji di **Komitmen > Monitoring > ADK
+   GPP**: pilih tab **PPNPN**, bulan dan tahun yang sesuai, dan
+   pastikan jumlah gaji kotor, potongan, dan gaji bersih sesuai
+   rekap gaji dan lampiran.
+3. Buka **Pembayaran > Referensi > Mapping COA SPM** untuk
+   memetakan akun belanja PPNPN — abaikan apabila pada tahun
+   anggaran berjalan mapping COA SPM PPNPN sudah pernah dilakukan.
+4. Pilih jenis SPP **254 - THR PPNPN**, klik **Tambah**.
+5. Input: jenis pegawai **PPNPN**; bulan **THR**; nomor gaji THR
+   yang dibuat — klik **Rekam SPP**.
+6. Pada pendetailan: pilih COA lalu klik **Ubah**, input nilai bruto
+   per item yang dipilih, klik **Simpan** dan **Keluar**.
+7. Pilih **Dasar Pembayaran** sesuai aturan THR tahun berkenaan
+   dan isi uraian.
+8. Supplier otomatis terinput beserta nilai rupiah per masing-masing
+   pegawai; pilih **RUH Akun** apabila akun pengeluaran perlu
+   disesuaikan; akun potongan terinput otomatis (dapat diedit manual
+   apabila perlu disesuaikan); pastikan total nilai bersih penerima
+   dan total pembayaran sama; klik **Simpan**.
+9. Lanjutkan cetak SPP, validasi SPP, ADK SPP, cetak SPM, upload
+   dokumen pendukung, validasi SPM, ADK SPM, dan catat SP2D.
+
+</Steps>
+
+### Merekam SPM 259 - THR Tukin
+
+<Steps>
+
+1. Pilih jenis SPP **259 - THR Tukin**, klik **Tambah**.
+2. Pilih **Dasar Pembayaran** sesuai aturan THR tahun berkenaan dan
+   isi uraian pembayaran sesuai ketentuan.
+3. Pada supplier dan distribusi COA: pilih **Supplier Header** yang
+   akan digunakan; klik **Tambah**, pilih penerima yang akan dibayar
+   THR dan input nilai bersih masing-masing penerima — apabila
+   jumlah penerima banyak, gunakan tombol **Upload File CSV**;
+   pilih **RUH Akun**, rekam akun THR lalu simpan dan keluar dari
+   form RUH Akun.
+4. Klik **Simpan**, lalu lanjutkan cetak SPP, validasi SPP, ADK SPP,
+   cetak SPM, upload dokumen pendukung, validasi SPM, ADK SPM, dan
+   catat SP2D.
+
+</Steps>
+
+## Hasil yang diharapkan
+
+Rekap dan lampiran perhitungan THR diproses menjadi cetakan SPP
+dan SPM, ADK SPM, beserta dokumen pendukung sampai SP2D terbit —
+validasi menggunakan jatuh tempo pengiriman ADK SPM.
+
+## Ketentuan
+
+- Pembayaran THR mengikuti aturan THR tahun berkenaan; dasar
+  pembayaran dipilih sesuai aturan tahun berkenaan; tanggal jatuh
+  tempo SPM THR mengikuti ketentuan aturan THR tahun berkenaan.
+- Data supplier pegawai harus tersedia sebelum perekaman SPM.
+- Monitoring ADK Gaji untuk THR menggunakan pilihan bulan **Bulan
+  14**.
+
+<Aside type="caution" title="Perlu verifikasi">
+Juknis menulis jalur "Pembayaran → RUH SPP → Catat/Ubah SPP",
+"Komitmen → ADK → Import GPP Terpusat", dan "Komitmen → Monitoring →
+Monitoring ADK Gaji"; jalur baku aplikasi saat ini adalah **Pembayaran
+> RUH Pembayaran > Catat/Ubah SPP**, **Komitmen > Upload / Import >
+Import GPP Terpusat**, dan **Komitmen > Monitoring > ADK GPP** (tabel
+informasi juknis sendiri menyebutnya "Monitoring ADK GPP"). Ketentuan tahun di
+juknis mengikuti aturan THR tahun berkenaan; juknis ini terbit
+untuk THR 2025.
+</Aside>
+
+## Terkait
+
+- [Supplier](/komitmen/ruh/pencatatan-suplier/)
+- [Merekam SPM Gaji Ke-13](/pembayaran/ruh/catat-ubah-spp/spm-gaji-ke-13/)
+
+## Sumber
+
+<SumberAsli />

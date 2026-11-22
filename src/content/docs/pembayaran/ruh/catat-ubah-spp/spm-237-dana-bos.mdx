@@ -1,0 +1,250 @@
+---
+title: Merekam SPM 237 Penyaluran Dana BOS
+description: Merekam SPP dan SPM 237 LS Banyak Penerima untuk penyaluran Dana BOS oleh KPPN selaku KPA penyalur, dari input SPP sampai SP2D.
+modul: pembayaran
+menu_sakti: "Pembayaran > RUH Pembayaran > Catat/Ubah SPP"
+peran: [satker, kppn-kanwil]
+jenis: juknis
+kata_kunci: [spm 237, dana bos, penyaluran bos, ls banyak penerima, omspan]
+status: review
+perlu_review: true
+sumber:
+  - judul: "Juknis Perekaman SPM 237 - Penyaluran DANA BOS"
+    url: "https://drive.google.com/file/d/1hTjAX80SxhO7dt08oHZVnwTWSSX0uIux/view"
+    jenis: pdf
+    diambil: 2026-11-21
+    id_manifest: B-pem-022
+sidebar:
+  order: 18
+---
+
+import { Steps, Aside } from '@astrojs/starlight/components';
+import MenuSakti from '~/components/MenuSakti.astro';
+import SumberAsli from '~/components/SumberAsli.astro';
+
+SPM 237 LS Banyak Penerima digunakan oleh KPPN selaku KPA penyalur
+untuk penyaluran Dana BOS — Bantuan Operasional Sekolah, yaitu bantuan
+pendidikan berbentuk dana yang diberikan kepada sekolah dan madrasah
+untuk kepentingan nonpersonalia berdasarkan jumlah siswa.
+
+<MenuSakti />
+
+## Prasyarat
+
+- Role yang dibutuhkan: **Operator SPP/SPM** dan **Operator
+  Pembayaran** (perekaman dan cetak), **PPK** (validasi SPP dan ADK
+  SPP), **KPA** (validasi SPM dan ADK SPM) — seluruhnya user KPPN
+  selaku KPA penyalur.
+- Supplier tipe 6 telah diimpor dari data OMSPAN ke aplikasi SAKTI
+  dengan nama supplier header "Penyaluran Dana BOS"; data supplier
+  sekolah sudah terekam pada aplikasi SPAN dan SAKTI.
+- Perubahan supplier dilaksanakan oleh KPPN selaku KPA penyalur.
+- Pengajuan tagihan telah dilakukan dari OMSPAN (mengacu pada user
+  manual OMSPAN).
+- Dokumen input: data elektronik dari aplikasi OMSPAN.
+
+## Alur proses
+
+1. Operator — import supplier tipe 6, mengacu pada juknis import
+   supplier.
+2. Satker/OMSPAN — pengajuan tagihan dari OMSPAN (juknis merujuk
+   petunjuk teknis pengajuan dana BOS pada user manual OMSPAN).
+3. Operator SPP/SPM — input SPP.
+4. Operator Pembayaran — cetak SPP.
+5. PPK — setuju SPP.
+6. PPK — membuat ADK SPP.
+7. Operator Pembayaran — cetak SPM.
+8. Operator Pembayaran — upload dokumen pendukung.
+9. KPA — setuju SPM.
+10. KPA — membuat ADK SPM.
+11. KPPN — memproses SPM menjadi SP2D.
+12. Operator Pembayaran — mencatat SP2D.
+
+## Langkah
+
+### Merekam SPP (Operator SPP/SPM)
+
+Login menggunakan user operator SPP/SPM.
+
+<Steps>
+
+1. Buka menu **Pembayaran > RUH Pembayaran > Catat/Ubah SPP**.
+2. Pilih jenis SPP **237 - LS BANYAK PENERIMA**.
+3. Klik tombol **Tambah**.
+4. Pilih jenis dana **BOS**.
+5. Cari data transaksi pada baris data lokasi, tahap, dan nilai pada
+   form.
+6. Klik tombol **Pilih**.
+7. Pilih **Dasar Pembayaran**.
+8. Pilih **RPD** yang telah dibuat sebelumnya apabila nilai SPM
+   melebihi Rp1 miliar (sesuai PMK Nomor 197/PMK.05/2017 tentang
+   Rencana Penarikan Dana, Rencana Penerimaan Dana, dan Perencanaan
+   Kas); lewati apabila nilai SPM kurang dari Rp1 miliar.
+9. **Uraian pembayaran** terisi secara otomatis.
+10. **Informasi supplier** terisi secara otomatis.
+11. **Distribusi COA** terisi secara otomatis — klik **Lihat Detail**
+    untuk melihat detail COA.
+12. Klik tombol **Simpan**.
+
+</Steps>
+
+### Cetak SPP (Operator Pembayaran)
+
+<Steps>
+
+1. Buka menu **Pembayaran > Cetak > Mencetak SPP**.
+2. Pilih SPP yang ingin dicetak.
+3. Pilih penandatangan PPK.
+4. Klik tombol **Unduh**.
+
+</Steps>
+
+### Setuju SPP (PPK)
+
+Login menggunakan user PPK.
+
+<Steps>
+
+1. Buka menu **Pembayaran > Validasi > Validasi SPP**.
+2. Pilih SPP yang ingin divalidasi.
+3. Klik tombol **Unduh Pra Cetak** untuk mencetak SPP yang akan
+   divalidasi.
+4. Klik tombol **Setuju**.
+5. Klik tombol **Batal** apabila ingin membatalkan validasi atas SPP
+   yang sudah divalidasi.
+
+</Steps>
+
+### Membuat ADK SPP (PPK)
+
+<Steps>
+
+1. Buka menu **Pembayaran > ADK > ADK SPP OTP**.
+2. Pilih SPP yang ingin dibuat ADK SPP.
+3. Klik tombol **Proses**.
+4. Klik tombol **Req OTP via SMS** untuk meminta kode OTP.
+5. Input OTP pejabat PPK.
+6. Klik tombol **Proses**.
+
+</Steps>
+
+### Cetak SPM (Operator Pembayaran)
+
+<Steps>
+
+1. Buka menu **Pembayaran > Cetak > Mencetak SPM**.
+2. Pilih SPM yang ingin dicetak.
+3. Klik tombol **Unduh**.
+
+</Steps>
+
+### Upload dokumen pendukung (Operator Pembayaran)
+
+<Steps>
+
+1. Buka menu **Pembayaran > Catat/Upload > Upload Dokumen Pendukung**.
+2. Pilih SPM yang akan diunggah dokumen pendukungnya.
+3. Pilih jenis dokumen pendukung.
+4. Klik tombol **Pilih** untuk memilih berkas yang akan diunggah.
+5. Klik tombol **Upload**.
+6. Berkas yang diunggah akan muncul.
+7. Klik tombol **View** untuk melihat berkas yang telah diunggah.
+8. Klik tombol **Hapus** untuk menghapus berkas yang telah diunggah
+   sebelumnya.
+
+</Steps>
+
+### Setuju SPM (KPA)
+
+Login menggunakan user KPA.
+
+<Steps>
+
+1. Buka menu **Pembayaran > Validasi > Validasi SPM**.
+2. Pilih SPM yang ingin divalidasi.
+3. Klik tombol **Unduh Pra Cetak** untuk mencetak SPM yang akan
+   divalidasi.
+4. Klik tombol **Setuju**.
+5. Klik tombol **Batal** apabila ingin membatalkan validasi atas SPM
+   yang sudah divalidasi.
+6. Klik tombol **Batal Dokumen Pendukung** apabila ingin membatalkan
+   dokumen pendukung yang sudah diunggah.
+
+</Steps>
+
+### Membuat ADK SPM (KPA)
+
+Login menggunakan user KPA.
+
+<Steps>
+
+1. Buka menu **Pembayaran > ADK > ADK SPM OTP**.
+2. Pilih SPP yang ingin dibuat ADK SPM.
+3. Klik tombol **Proses ADK SPM**.
+4. Klik tombol **Req OTP via SMS** untuk meminta kode OTP.
+5. Input OTP pejabat KPA.
+6. Klik tombol **Proses**.
+
+</Steps>
+
+### Proses KPPN
+
+Proses di KPPN mengacu pada Standar Operasional Prosedur pemrosesan
+SPM menjadi SP2D pada KPPN.
+
+### Mencatat SP2D (Operator Pembayaran)
+
+<Steps>
+
+1. Buka menu **Pembayaran > Catat/Upload > Mencatat/Upload SP2D**.
+2. Pilih SPM yang ingin dicatat nomor SP2D-nya.
+3. Klik tombol **Catat SP2D Otomatis**.
+
+</Steps>
+
+## Hasil yang diharapkan
+
+Data elektronik dari aplikasi OMSPAN diproses menjadi SP2D SPM
+penyaluran Dana BOS setelah seluruh tahap selesai.
+
+## Ketentuan
+
+- Penyaluran Dana BOS menggunakan data supplier sekolah yang telah
+  terekam pada aplikasi SPAN dan SAKTI — supplier tipe 6 yang diimpor
+  dari data OMSPAN dengan nama supplier header "Penyaluran Dana BOS";
+  perubahan supplier dilaksanakan oleh KPPN selaku KPA penyalur.
+- Jenis SPP 237 LS Banyak Penerima penyaluran Dana BOS mengambil
+  data interkoneksi dari aplikasi OMSPAN, menggunakan supplier tipe
+  6 dengan sisi pengeluaran memakai akun 654311 tanpa adanya
+  potongan.
+- SPM dibuat per bank (4 bank Himbara dan 1 bank non-Himbara) sesuai
+  permohonan penyaluran pada OMSPAN.
+- Terkait renkas harian, SPM penyaluran Dana BOS berpedoman pada
+  PMK Nomor 197/PMK.05/2017 dengan ketentuan:
+  - **Rekam renkas harian**: untuk mengubah tanggal jatuh tempo
+    renkas harian, ajukan surat dispensasi perubahan tanggal jatuh
+    tempo ke KPPN; setelah KPPN mengubahnya, rekam SPP dengan memilih
+    renkas harian yang jatuh temponya telah diperbarui.
+  - **Renkas otomatis**: setelah KPPN mengubah tanggal jatuh tempo
+    renkas harian, seksi bank menyesuaikan tanggal PPR sesuai tanggal
+    renkas harian yang telah diperbarui.
+- Dana BOS merupakan pelaksanaan Dana Alokasi Khusus; juknis merujuk
+  Permendikbud Nomor 8 Tahun 2020 tentang Petunjuk Teknis Bantuan
+  Operasional Sekolah Reguler.
+
+<Aside type="caution" title="Perlu verifikasi">
+Juknis menulis jalur "Pembayaran → RUH SPP → Catat/Ubah SPP" dan
+"Catat/Upload → Catat/Upload SP2D"; jalur baku aplikasi saat ini
+adalah **Pembayaran > RUH Pembayaran > Catat/Ubah SPP** dan
+**Pembayaran > Catat/Upload > Mencatat/Upload SP2D**.
+</Aside>
+
+## Terkait
+
+- [Merekam SPM 237 Penyaluran DAK Fisik](/pembayaran/ruh/catat-ubah-spp/spm-237-dak-fisik/)
+
+- [Merekam Proyeksi Pengeluaran Bulanan dan RPD Harian](/pembayaran/ruh/proyeksi-belanja-bulanan/)
+
+## Sumber
+
+<SumberAsli />

@@ -1,0 +1,258 @@
+---
+title: Merekam SPM 523/524 Pemotongan dan Penyaluran Dana Desa
+description: Merekam SPM 523 pemotongan dan SPM 524 penyaluran dana transfer untuk penyaluran Dana Desa secara berpasangan sampai SP2D.
+modul: pembayaran
+menu_sakti: "Pembayaran > RUH Pembayaran > Catat/Ubah SPP"
+peran: [satker, kppn-kanwil]
+jenis: juknis
+kata_kunci: [spm 523, spm 524, dana desa, pemotongan dana transfer, penyaluran]
+status: review
+perlu_review: true
+sumber:
+  - judul: "Juknis Perekaman SPM 523 524 - Pemotongan dan Penyaluran Dana Desa"
+    url: "https://drive.google.com/file/d/1g0pXqg9WKunplnBLxIyjB_QpSE5oNtcc/view"
+    jenis: pdf
+    diambil: 2026-11-21
+    id_manifest: B-pem-035
+sidebar:
+  order: 31
+---
+
+import { Steps, Aside } from '@astrojs/starlight/components';
+import MenuSakti from '~/components/MenuSakti.astro';
+import SumberAsli from '~/components/SumberAsli.astro';
+
+SPM 523 - Pemotongan Dana Transfer dan SPM 524 - Penyaluran Dana
+Transfer digunakan untuk membayar tagihan yang terkait penyaluran
+Dana Desa. Kedua SPM dibuat per Pemda sesuai permohonan penyaluran
+pada OMSPAN dan diajukan secara berpasangan.
+
+<MenuSakti />
+
+## Prasyarat
+
+- Role yang dibutuhkan: operator (OPR), validator/PPK (VAL), dan
+  approver/PPSPM (APR); perubahan supplier dilaksanakan oleh KPPN
+  selaku KPA penyalur.
+- Data supplier telah terekam di SPAN dan SAKTI: supplier Pemda
+  (tipe 5, header "Transfer Dana Desa") dan supplier Desa (tipe 6,
+  diimpor dari OMSPAN dengan header "Penyaluran Dana Desa" — NPWP
+  header Penyaluran Dana Desa disamakan dengan NPWP supplier
+  Transfer Dana Desa).
+- Dokumen input: data elektronik pada aplikasi OMSPAN; pengajuan
+  tagihan dari OMSPAN mengikuti user manual OMSPAN.
+
+## Alur proses
+
+1. KPPN selaku KPA penyalur — input supplier (mengacu juknis input
+   supplier).
+2. Satker/KPPN — pengajuan tagihan dari OMSPAN.
+3. Operator SPP/SPM — input jenis SPP 523 Pemotongan Dana Transfer.
+4. Operator SPP/SPM — input jenis SPP 524 Penyaluran Dana Transfer.
+5. Operator Pembayaran — cetak SPP.
+6. PPK — setuju SPP dan membuat ADK SPP (523 & 524 berpasangan).
+7. Operator Pembayaran — cetak SPM dan upload dokumen pendukung.
+8. PPSPM — setuju SPM dan membuat ADK SPM (523 & 524 berpasangan).
+9. KPPN — memproses SPM menjadi SP2D.
+10. Operator Pembayaran — mencatat SP2D.
+
+## Langkah
+
+### Input jenis SPP 523 Pemotongan Dana Transfer (Operator SPP/SPM)
+
+<Steps>
+
+1. Buka menu **Pembayaran > RUH Pembayaran > Catat/Ubah SPP**.
+2. Pilih jenis SPP **523 - Pemotongan Dana Transfer**.
+3. Klik tombol **Tambah**.
+4. Cari data transaksi pada baris data lokasi, tahap, dan nilai pada
+   form.
+5. Klik tombol **Pilih**.
+6. Pilih **Dasar Pembayaran**.
+7. Uraian pembayaran terisi secara otomatis.
+8. Klik tombol **Supplier Header** untuk memilih supplier header.
+9. Klik tombol **Tambah** untuk memilih supplier.
+10. Distribusi COA terisi secara otomatis — klik **Lihat Detail**
+    untuk melihat detail COA.
+11. Klik tombol **Simpan**.
+
+</Steps>
+
+### Input jenis SPP 524 Penyaluran Dana Transfer (Operator SPP/SPM)
+
+<Steps>
+
+1. Buka menu **Pembayaran > RUH Pembayaran > Catat/Ubah SPP**.
+2. Pilih jenis SPP **524 - Penyaluran Dana Transfer**.
+3. Klik tombol **Tambah**.
+4. Ambil data SPP Pemotongan Dana Desa.
+5. Klik tombol **Pilih**.
+6. Pilih **Dasar Pembayaran**.
+7. Pilih RPD yang telah dibuat sebelumnya apabila nilai SPM melebihi
+   Rp1 miliar (sesuai PMK Nomor 197/PMK.05/2017); lewati apabila
+   nilai SPM kurang dari Rp1 miliar.
+8. Uraian pembayaran terisi secara otomatis.
+9. Informasi supplier terisi secara otomatis.
+10. Distribusi COA terisi secara otomatis — klik **Lihat Detail**
+    untuk melihat detail COA.
+11. Klik tombol **Simpan**.
+
+</Steps>
+
+### Cetak SPP (Operator Pembayaran)
+
+<Steps>
+
+1. Buka menu **Pembayaran > Cetak > Mencetak SPP**.
+2. Pilih SPP yang ingin dicetak.
+3. Pilih penandatangan PPK.
+4. Klik tombol **Unduh**.
+
+</Steps>
+
+### Setuju SPP (PPK)
+
+<Steps>
+
+1. Buka menu **Pembayaran > Validasi > Validasi SPP**.
+2. Pilih SPP yang ingin divalidasi.
+3. Klik tombol **Unduh Pra Cetak** untuk mencetak SPP yang akan
+   divalidasi.
+4. Klik tombol **Setuju**.
+
+</Steps>
+
+### Membuat ADK SPP (PPK)
+
+<Steps>
+
+1. Buka menu **Pembayaran > ADK > ADK SPP OTP**.
+2. Pilih SPP yang ingin dibuat ADK SPP — wajib memilih jenis SPP 523
+   dan 524 secara berpasangan, tidak bisa membuat ADK SPP hanya
+   untuk salah satu jenis SPP.
+3. Klik tombol **Proses**.
+4. Klik tombol **Req OTP via SMS**.
+5. Input OTP pejabat PPK.
+6. Klik tombol **Proses**.
+
+</Steps>
+
+### Cetak SPM (Operator Pembayaran)
+
+<Steps>
+
+1. Buka menu **Pembayaran > Cetak > Mencetak SPM**.
+2. Pilih SPM yang ingin dicetak.
+3. Klik tombol **Unduh**.
+
+</Steps>
+
+### Upload dokumen pendukung (Operator Pembayaran)
+
+<Steps>
+
+1. Buka menu **Pembayaran > Catat/Upload > Upload Dokumen
+   Pendukung**.
+2. Pilih SPM yang ingin diunggah dokumen pendukungnya.
+3. Pilih jenis dokumen pendukung.
+4. Klik tombol **Pilih** untuk memilih file yang akan diunggah.
+5. Klik tombol **Upload**.
+6. File yang diunggah akan muncul.
+7. Klik tombol **View** untuk melihat file yang telah diunggah.
+8. Klik tombol **Hapus** untuk menghapus file yang telah diunggah
+   sebelumnya.
+
+</Steps>
+
+### Setuju SPM (PPSPM)
+
+<Steps>
+
+1. Buka menu **Pembayaran > Validasi > Validasi SPM**.
+2. Pilih SPM yang ingin divalidasi.
+3. Klik tombol **Unduh Pra Cetak** untuk mencetak SPM yang akan
+   divalidasi.
+4. Klik tombol **Setuju**.
+5. Klik tombol **Batal** apabila ingin membatalkan validasi atas SPM
+   yang sudah divalidasi.
+6. Klik tombol **Batal Dokumen Pendukung** apabila ingin membatalkan
+   dokumen pendukung yang sudah diunggah.
+
+</Steps>
+
+### Membuat ADK SPM (PPSPM)
+
+<Steps>
+
+1. Buka menu **Pembayaran > ADK > ADK SPM OTP**.
+2. Pilih SPM yang ingin dibuat ADK SPM — wajib memilih jenis SPM 523
+   dan 524 secara berpasangan, tidak bisa membuat ADK SPM hanya
+   untuk salah satu jenis SPM.
+3. Klik tombol **Proses ADK SPM**.
+4. Klik tombol **Req OTP via SMS**.
+5. Input OTP pejabat PPSPM.
+6. Klik tombol **Proses**.
+
+</Steps>
+
+### Proses KPPN
+
+Proses di KPPN mengacu pada Standar Operasional Prosedur pemrosesan
+SPM menjadi SP2D pada KPPN.
+
+### Mencatat SP2D (Operator Pembayaran)
+
+<Steps>
+
+1. Buka menu **Pembayaran > Catat/Upload > Mencatat/Upload SP2D**.
+2. Pilih SPM yang ingin dicatat nomor SP2D-nya.
+3. Klik tombol **Catat SP2D Otomatis**.
+
+</Steps>
+
+## Hasil yang diharapkan
+
+Data elektronik dari OMSPAN diproses menjadi SPM 523 - Pemotongan
+Dana Transfer dan SPM 524 - Penyaluran Dana Transfer beserta
+SP2D-nya.
+
+## Ketentuan
+
+- Jenis SPP 523 mengambil data interkoneksi dari aplikasi OMSPAN,
+  menggunakan supplier tipe 5 dengan sisi pengeluaran akun 662111
+  dan sisi potongan akun 817717.
+- Jenis SPP 524 menggunakan supplier tipe 6 dengan sisi pengeluaran
+  akun 827717 tanpa adanya potongan.
+- SPM 524 dibuat setelah SPM 523 diinput; SPM 523 tidak dapat diubah
+  atau dihapus apabila terdapat SPM 524 yang masih melekat padanya.
+- SPM 523 dan 524 diajukan secara bersamaan oleh PPSPM saat membuat
+  ADK SPM ke KPPN (inject PIN PPSPM); apabila salah satu ditolak
+  KPPN, kedua SPM harus ditolak.
+- Untuk SPM 524 yang mempunyai perencanaan kas, tanggal jatuh tempo
+  ADK SPM (PMRT) 523 diperbarui sesuai tanggal jatuh tempo SPM 524,
+  walaupun cetakan SPM 523 bertanggal jatuh tempo segera; SPM 523
+  dan 524 dapat diajukan sebelum jatuh tempo perencanaan kas.
+- Renkas harian berpedoman pada PMK Nomor 197/PMK.05/2017: untuk
+  mengubah tanggal jatuh tempo renkas harian, ajukan surat
+  dispensasi perubahan tanggal jatuh tempo ke KPPN — pada rekam
+  renkas harian, satker merekam SPP dengan renkas yang jatuh
+  temponya telah diperbarui KPPN; pada renkas otomatis, seksi bank
+  menyesuaikan tanggal PPR sesuai tanggal renkas harian yang
+  diperbarui.
+
+<Aside type="caution" title="Perlu verifikasi">
+Juknis menulis jalur "Pembayaran → RUH Pembayaran → Catat/Ubah SPP"
+(sesuai jalur baku) namun "Catat/Upload → Catat/Upload SP2D"; jalur
+baku aplikasi saat ini adalah **Pembayaran > Catat/Upload >
+Mencatat/Upload SP2D**.
+</Aside>
+
+## Terkait
+
+- [Supplier](/komitmen/ruh/pencatatan-suplier/)
+
+- [Merekam Proyeksi Pengeluaran Bulanan dan RPD Harian](/pembayaran/ruh/proyeksi-belanja-bulanan/)
+
+## Sumber
+
+<SumberAsli />

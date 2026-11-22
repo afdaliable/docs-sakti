@@ -1,0 +1,294 @@
+---
+title: Merekam SPM 227 Penghasilan PPNPN Susulan
+description: Merekam SPP dan SPM 227 untuk pembayaran penghasilan PPNPN susulan, dari input SPP sampai pencatatan SP2D.
+modul: pembayaran
+menu_sakti: "Pembayaran > RUH Pembayaran > Catat/Ubah SPP"
+peran: [satker]
+jenis: juknis
+kata_kunci: [spm 227, ppnpn susulan, penghasilan ppnpn, supplier header]
+status: review
+perlu_review: true
+sumber:
+  - judul: "Juknis Perekaman SPM 227 - Penghasilan PPNPN Susulan"
+    url: "https://drive.google.com/file/d/1rGUhiixQzVkWG_UbxjduOoVwffq7r5WH/view"
+    jenis: pdf
+    diambil: 2026-11-21
+    id_manifest: B-pem-013
+sidebar:
+  order: 9
+---
+
+import { Steps, Aside } from '@astrojs/starlight/components';
+import MenuSakti from '~/components/MenuSakti.astro';
+import SumberAsli from '~/components/SumberAsli.astro';
+
+SPM 227 Penghasilan PPNPN Susulan digunakan untuk pembayaran belanja
+pegawai bagi PPNPN yang penyampaian SPM-nya susulan. Satker
+menyampaikan SPM ke KPPN pada tanggal 21 s.d. 26 bulan berkenaan agar
+pembayaran penghasilan PPNPN dapat dibayar pada hari pertama bulan
+berikutnya.
+
+<MenuSakti />
+
+## Prasyarat
+
+- Role yang dibutuhkan: **Operator Pembayaran** (perekaman dan
+  cetak), **PPK** (validasi SPP dan ADK SPP), **PPSPM** (validasi SPM
+  dan ADK SPM).
+- Supplier tipe 6 sebagai penerima pembayaran penghasilan PPNPN
+  susulan telah direkam pada pencatatan data supplier di modul
+  Komitmen — lihat
+  [Supplier](/komitmen/ruh/pencatatan-suplier/).
+- User wajib memilih **Header Supplier** atas data supplier tipe 6
+  sebelum menginput penerima pembayaran pada kolom informasi
+  supplier.
+- Dokumen input: SPP SPM Penghasilan PPNPN Susulan.
+
+## Alur proses
+
+1. Operator — input supplier tipe 6, mengacu pada juknis perekaman
+   supplier.
+2. Operator Pembayaran — input SPP.
+3. Operator Pembayaran — cetak SPP.
+4. PPK — setuju SPP.
+5. PPK — membuat ADK SPP.
+6. Operator Pembayaran — cetak SPM.
+7. Operator Pembayaran — upload dokumen pendukung.
+8. PPSPM — setuju SPM.
+9. PPSPM — membuat ADK SPM.
+10. KPPN — memproses SPM menjadi SP2D.
+11. Operator Pembayaran — mencatat SP2D.
+
+## Langkah
+
+### Merekam SPP (Operator Pembayaran)
+
+Login sebagai pengguna dengan kewenangan operator pada modul
+Pembayaran.
+
+<Steps>
+
+1. Buka menu **Pembayaran > RUH Pembayaran > Catat/Ubah SPP**.
+2. Pilih jenis SPP **227 SPM Penghasilan PPNPN Susulan**.
+3. Klik tombol **Tambah**.
+4. Pilih **Dasar Pembayaran**.
+5. Isi **Uraian Pembayaran** sesuai jenis SPP-SPM yang dipilih.
+6. Pilih **RPD** yang telah dibuat sebelumnya apabila nilai SPM
+   melebihi Rp1 miliar (sesuai PMK Nomor 197/PMK.05/2017 tentang
+   Rencana Penarikan Dana, Rencana Penerimaan Dana, dan Perencanaan
+   Kas); lewati apabila nilai SPM kurang dari Rp1 miliar.
+7. Klik tombol **Supplier Header** untuk memilih supplier header;
+   pilih data supplier tipe 6 atas supplier header untuk pembayaran
+   penghasilan PPNPN susulan, dengan deskripsi "Para PPNPN …".
+8. Klik tombol **Tambah** untuk menginput manual penerima dan nilai
+   bersih pembayaran — lewati langkah ini apabila satker memanfaatkan
+   fitur unggah file CSV.
+9. Klik tombol **Upload File CSV** untuk mengunggah file ADK CSV
+   berisi nama penerima dan perhitungan pembayaran yang dihasilkan
+   dari Aplikasi SAS — pastikan nama supplier header dalam file ADK
+   CSV sama dengan supplier header yang dipilih; lewati apabila
+   perekaman dilakukan manual.
+10. Kolom nilai bersih pada informasi supplier — baik dari unggah CSV
+    maupun input manual — diisi dengan nilai bersih yang diterima
+    penerima/PPNPN (setelah dikurangi potongan 811141 Penerimaan PFK
+    Iuran Jaminan Kesehatan Pegawai Pemerintah Non PNS dari APBN).
+11. Klik tombol **RUH Akun** untuk menginput akun pengeluaran dan
+    akun potongan.
+
+</Steps>
+
+### Perekaman akun dan pendetailan segmen 15/16
+
+<Steps>
+
+1. Klik tombol **Rekam** untuk menambah akun.
+2. Pilih akun yang akan digunakan.
+3. Klik tombol **Detail COA**.
+4. Klik tombol **Tambah**.
+5. Klik tombol **Kaca Pembesar** untuk mencari segmen 15/16, lalu
+   pilih segmen tersebut.
+6. Masukkan nilai per detail segmen tersebut.
+7. Klik tombol **Simpan** — apabila dalam akun yang sama terdapat
+   lebih dari satu segmen 15/16, ulangi langkah 4–7.
+8. Klik tombol **Keluar** untuk kembali ke halaman sebelumnya.
+9. Klik tombol **Simpan** untuk menyimpan nilai akun yang digunakan;
+   apabila terdapat lebih dari satu akun, ulangi langkah 1–9.
+10. Klik tombol **Keluar** untuk kembali ke perekaman SPP.
+
+</Steps>
+
+### Perekaman akun potongan dan penyimpanan SPP
+
+<Steps>
+
+1. Klik tab **Akun Potongan/Penerimaan** untuk merekam potongan SPM;
+   apabila tidak ada potongan, langsung simpan SPP dengan tombol
+   **Simpan**.
+2. Klik tombol **RUH Akun**.
+3. Klik tombol **Tambah** untuk menambah akun potongan/penerimaan.
+4. Cari akun yang akan digunakan: untuk akun berawalan 4xx dan 8xx
+   klik tombol **4xx & 8xx**; untuk akun berawalan 5xx klik tombol
+   **5xx**.
+5. Untuk akun 4xx atau 8xx, isikan nilai potongan SPM pada kolom
+   Nilai; untuk akun 5xx, klik tombol **Detail COA** untuk merekam
+   nilai potongan atas akun tersebut.
+6. Setelah selesai klik tombol **Simpan**; untuk menambah akun lain,
+   ulangi perekaman akun potongan.
+7. Klik tombol **Keluar** untuk melanjutkan perekaman SPP.
+8. Klik tombol **Simpan** apabila perekaman SPP telah selesai.
+
+</Steps>
+
+### Cetak SPP (Operator Pembayaran)
+
+<Steps>
+
+1. Buka menu **Pembayaran > Cetak > Mencetak SPP**.
+2. Pilih SPP yang ingin dicetak.
+3. Pilih PPK.
+4. Pastikan tempat dan tanggal telah sesuai.
+5. Klik tombol **Unduh** untuk mencetak SPP.
+6. Klik tombol **SSP** apabila ingin mencetak SSP.
+
+</Steps>
+
+### Setuju SPP (PPK)
+
+Login sebagai pengguna PPK selaku validator pada modul Pembayaran.
+
+<Steps>
+
+1. Buka menu **Pembayaran > Validasi > Validasi SPP**.
+2. Pilih SPP yang ingin divalidasi.
+3. Klik tombol **Unduh Pra Cetak** untuk mencetak SPP yang akan
+   divalidasi.
+4. Klik tombol **Setuju**.
+5. Klik tombol **Batal** apabila ingin membatalkan validasi atas SPP
+   yang sudah divalidasi.
+
+</Steps>
+
+### Membuat ADK SPP (PPK)
+
+<Steps>
+
+1. Buka menu **Pembayaran > ADK > ADK SPP OTP**.
+2. Pilih SPP yang ingin dibuat ADK SPP dengan menceklis kolom pilih;
+   dapat memilih lebih dari satu SPP sekaligus apabila diperlukan.
+3. Klik tombol **Proses**.
+4. Klik tombol **Req OTP via SMS** untuk meminta kode OTP.
+5. Setelah menerima kode OTP, input pada kolom **Input OTP**.
+6. Klik tombol **Proses**.
+
+</Steps>
+
+### Cetak SPM (Operator Pembayaran)
+
+<Steps>
+
+1. Buka menu **Pembayaran > Cetak > Mencetak SPM**.
+2. Pilih SPM yang ingin dicetak.
+3. Klik tombol **Unduh**.
+
+</Steps>
+
+### Upload dokumen pendukung (Operator Pembayaran)
+
+<Steps>
+
+1. Buka menu **Pembayaran > Catat/Upload > Upload Dokumen Pendukung**.
+2. Pilih SPM yang akan diunggah dokumen pendukungnya.
+3. Pilih jenis dokumen pendukung.
+4. Klik tombol **Pilih** untuk memilih berkas yang akan diunggah.
+5. Klik tombol **Upload**.
+6. Berkas yang diunggah akan muncul.
+7. Klik tombol **View** untuk melihat berkas yang telah diunggah.
+8. Klik tombol **Hapus** untuk menghapus berkas yang telah diunggah
+   sebelumnya.
+
+</Steps>
+
+### Setuju SPM (PPSPM)
+
+Login sebagai pengguna PPSPM selaku approver pada modul Pembayaran.
+
+<Steps>
+
+1. Buka menu **Pembayaran > Validasi > Validasi SPM**.
+2. Pilih SPM yang ingin divalidasi.
+3. Klik tombol **Unduh Pra Cetak** untuk mencetak SPM yang akan
+   divalidasi.
+4. Klik tombol **Setuju**.
+5. Klik tombol **Batal SPM** apabila ingin membatalkan validasi atas
+   SPM yang sudah divalidasi; klik tombol **Batal Dokumen Pendukung**
+   apabila ingin membatalkan dokumen pendukung yang telah diunggah
+   sebelumnya.
+
+</Steps>
+
+### Membuat ADK SPM (PPSPM)
+
+<Steps>
+
+1. Buka menu **Pembayaran > ADK > ADK SPM OTP**.
+2. Pilih SPM yang ingin dibuat ADK SPM; dapat memilih lebih dari satu
+   sekaligus apabila diperlukan.
+3. Klik tombol **Proses ADK SPM**.
+4. Klik tombol **Req OTP via SMS** untuk meminta kode OTP.
+5. Setelah menerima kode OTP, input pada kolom **Input OTP**.
+6. Klik tombol **Proses**.
+
+</Steps>
+
+### Proses KPPN
+
+Proses di KPPN mengacu pada Standar Operasional Prosedur pemrosesan
+SPM menjadi SP2D pada KPPN.
+
+### Mencatat SP2D (Operator Pembayaran)
+
+<Steps>
+
+1. Buka menu **Pembayaran > Catat/Upload > Mencatat/Upload SP2D**.
+2. Pilih SPM yang ingin dicatat nomor SP2D-nya.
+3. Klik tombol **Catat SP2D Otomatis**.
+
+</Steps>
+
+## Hasil yang diharapkan
+
+Dokumen input SPP SPM Penghasilan PPNPN Susulan diproses menjadi
+SP2D Penghasilan PPNPN Susulan setelah seluruh tahap selesai.
+
+## Ketentuan
+
+- Supplier tipe 6 sebagai penerima pembayaran penghasilan PPNPN
+  susulan harus sudah terekam pada pencatatan data supplier di modul
+  Komitmen.
+- User wajib memilih Header Supplier atas data supplier tipe 6
+  sebelum menginput penerima pembayaran pada kolom informasi
+  supplier.
+- Input penerima pada kolom informasi supplier dapat dilakukan dengan
+  dua mekanisme: unggah file perhitungan pembayaran format .csv dari
+  Aplikasi SAS, atau tambah manual penerima dan nilai bersih.
+
+<Aside type="caution" title="Perlu verifikasi">
+Juknis menulis jalur "Pembayaran → RUH SPP → Catat/Ubah SPP"; jalur
+baku aplikasi saat ini adalah **Pembayaran > RUH Pembayaran >
+Catat/Ubah SPP**. Jalur juknis
+"Pembayaran → RUH SPP → Catat/Ubah SPP" dan "Catat/Upload →
+Catat/Upload SP2D" dipetakan ke **Pembayaran > RUH Pembayaran >
+Catat/Ubah SPP** dan **Pembayaran > Catat/Upload > Mencatat/Upload
+SP2D**.
+</Aside>
+
+## Terkait
+
+- [Supplier](/komitmen/ruh/pencatatan-suplier/)
+- [Merekam SPM 217 Penghasilan PPNPN Induk](/pembayaran/ruh/catat-ubah-spp/spm-217-ppnpn-induk/)
+
+- [Merekam Proyeksi Pengeluaran Bulanan dan RPD Harian](/pembayaran/ruh/proyeksi-belanja-bulanan/)
+
+## Sumber
+
+<SumberAsli />

@@ -1,0 +1,150 @@
+---
+title: Merekam SPM 239 LS Rekening Penyalur (Non Affiliated Supplier)
+description: Merekam SPM penyaluran bansos non affiliated supplier, dari unggah ADK rekening penyalur sampai SP2D.
+modul: pembayaran
+menu_sakti: "Pembayaran > RUH Pembayaran > Catat/Ubah SPP"
+peran: [satker]
+jenis: juknis
+kata_kunci: [spm 239, non affiliated supplier, bansos, rekening penyalur, adk penyalur]
+status: review
+perlu_review: false
+sumber:
+  - judul: "Juknis Perekaman SPM 239 - LS Rekening Penyalur - Non Affiliated Supplier"
+    url: "https://drive.google.com/file/d/1tO8qCeBtW6qoxmIA0qtXkxV90hfOk8wL/view"
+    jenis: pdf
+    diambil: 2026-11-21
+    id_manifest: B-pem-024
+sidebar:
+  order: 20
+---
+
+import { Steps } from '@astrojs/starlight/components';
+import MenuSakti from '~/components/MenuSakti.astro';
+import SumberAsli from '~/components/SumberAsli.astro';
+
+SPM 239 LS Rekening Penyalur dengan jenis penyaluran non affiliated
+supplier digunakan untuk penyaluran bansos — file ADK penyalur yang
+berisi data penerima diunggah langsung pada menu ADK Rekening
+Penyalur, lalu diproses menjadi SPP/SPM.
+
+<MenuSakti />
+
+## Prasyarat
+
+- Role yang dibutuhkan: **Operator SPP** dan **Operator SPM**
+  (Operator Pembayaran), **PPK**, **PPSPM**.
+- Data rekening penyalur telah diinput/diunggah; file ADK penyalur
+  tersedia untuk diunggah.
+- Dokumen input: ADK rekening penyalur; output: SPM Bansos/Subsidi.
+
+## Alur proses
+
+1. Operator Pembayaran — mengunggah file ADK rekening penyalur.
+2. Operator Pembayaran — perekaman SPP jenis 239 dari data penyalur.
+3. Operator Pembayaran — cetak SPP/SPM.
+4. PPK dan PPSPM — langkah lanjutan seperti pembuatan SPM pada
+   umumnya: validasi SPP, ADK OTP, cetak SPM, validasi SPM, dan ADK
+   OTP SPM.
+
+## Langkah
+
+### Mengunggah ADK rekening penyalur (Operator Pembayaran)
+
+Login sebagai user modul Pembayaran (Operator SPP atau Operator
+SPM), lalu buka menu **Pembayaran > Catat/Upload > ADK Rekening
+Penyalur**.
+
+Pada monitoring ADK Rekening Penyalur, data rekening penyalur terdiri
+dari:
+
+| Kolom | Keterangan |
+|---|---|
+| Nama File | Nama file ADK Penyalur |
+| Jenis | Jenis penyaluran |
+| Status | Status data ADK Rekening Penyalur: ADK telah diupload = "Upload"; ADK siap rekam SPP = "Sukses"; ADK telah dibuat SPP = "SPP" |
+| Tahap | Tahap penyaluran |
+| Bank | Nama bank penerima rekening penyalur |
+| Jumlah Penerima | Jumlah penerima bansos/subsidi |
+| Nilai Penyaluran | Nilai rupiah yang disalurkan |
+| No. SPP | Nomor Surat Perintah Pembayaran (SPP) yang terbentuk |
+| Keterangan | Tombol unduh pada kolom Keterangan jika terdapat penolakan |
+
+<Steps>
+
+1. Pilih jenis ADK — misal **PKH**.
+2. Klik tombol **Choose**, kemudian pilih file/ADK yang akan
+   diunggah.
+3. Pilih ADK/file yang akan diproses, lalu klik **Open**.
+4. Klik tombol **Upload** untuk mengunggah file/ADK yang telah
+   dipilih — data penyalur tampil pada tabel.
+5. Untuk melanjutkan perekaman SPP, pastikan status ADK **Sukses**.
+6. Gunakan tombol **Hapus** untuk menghapus data penyalur yang telah
+   diinput, **Refresh** untuk memuat ulang data yang belum muncul,
+   dan **Keluar** untuk keluar dari menu monitoring ADK rekening
+   penyalur.
+
+</Steps>
+
+### Merekam SPP (Operator Pembayaran)
+
+Buka menu **Pembayaran > RUH Pembayaran > Catat/Ubah SPP**.
+
+<Steps>
+
+1. Pilih jenis SPP **239 - LS Rekening Penyalur**.
+2. Klik tombol **Tambah** untuk masuk ke form SPP.
+3. Pada Ambil Data Penyalur — data diambil dari hasil upload ADK
+   Penyalur — pilih data penyalur yang akan dibuat SPP/SPM, lalu
+   klik tombol **Pilih** untuk masuk ke form RUH SPP.
+4. Pada form RUH SPP: pilih **Dasar Pembayaran** (klik Tambah atau
+   UU APBN untuk default APBN); input **Uraian Pembayaran** sesuai
+   ketentuan; pilih Cara Bayar **2 - SP2D**.
+5. Klik **Cari Supplier** untuk memilih supplier penerima, dan
+   pastikan informasi detail penyaluran sesuai dengan ADK yang
+   diunggah.
+6. Klik **RUH Akun** untuk merekam akun pengeluaran sampai dengan
+   item.
+7. Klik **Simpan** untuk menyimpan SPP penyaluran bansos/subsidi.
+
+</Steps>
+
+### Cetak SPP/SPM (Operator Pembayaran)
+
+<Steps>
+
+1. Buka menu **Pembayaran > Cetak > Mencetak SPP** atau
+   **Pembayaran > Cetak > Mencetak SPM**.
+2. Pilih data SPP/SPM yang akan dicetak, kemudian pilih PPK dan klik
+   tombol **Unduh**.
+
+</Steps>
+
+Langkah selanjutnya seperti pembuatan SPM pada umumnya: validasi
+SPP, ADK OTP, cetak SPM, validasi SPM, dan ADK OTP SPM.
+
+## Hasil yang diharapkan
+
+File ADK rekening penyalur diproses menjadi SPM dan SP2D penyaluran
+bansos non affiliated supplier.
+
+## Ketentuan
+
+- SPM Bansos/Subsidi merupakan belanja bansos/subsidi yang diajukan
+  oleh satuan kerja.
+- Penyampaian SPM LS ke KPPN selaku Kuasa BUN Daerah harus disertai
+  daftar lampiran penerima bansos/subsidi dalam bentuk ADK dan/atau
+  bentuk lain.
+- Besaran jumlah bansos/subsidi yang diterima adalah angka final
+  hasil verifikasi dan validasi yang dilakukan oleh PPK.
+- PPK bertanggung jawab secara formal dan material atas kebenaran
+  penerima dan jumlah bansos/subsidi yang dibayarkan kepada
+  masing-masing penerima.
+
+## Terkait
+
+- [Supplier](/komitmen/ruh/pencatatan-suplier/)
+- [Merekam SPM 239 Bansos/Subsidi (Affiliated Supplier)](/pembayaran/ruh/catat-ubah-spp/spm-239-penyalur-affiliated/)
+
+## Sumber
+
+<SumberAsli />

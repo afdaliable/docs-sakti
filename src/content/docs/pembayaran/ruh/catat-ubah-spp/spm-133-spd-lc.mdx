@@ -1,0 +1,238 @@
+---
+title: Merekam SPM 133 SPD LC
+description: Merekam kontrak LC, BAST kontraktual LC, dan pencatatan SP3-LC (SPD-LC) untuk pembayaran cara penarikan Letter of Credit.
+modul: pembayaran
+menu_sakti: "Pembayaran > RUH Pembayaran > Catat/Ubah SPP"
+peran: [satker]
+jenis: juknis
+kata_kunci: [spm 133, spd lc, surat perintah debit, letter of credit, sp3 lc]
+status: review
+perlu_review: true
+sumber:
+  - judul: "Juknis Perekaman SPM 133 - SPD LC"
+    url: "https://drive.google.com/file/d/1TNStg8cpZnpw_CtYk4XbBUXXa84LRydV/view"
+    jenis: pdf
+    diambil: 2026-11-21
+    id_manifest: B-pem-006
+sidebar:
+  order: 2
+---
+
+import { Steps, Aside } from '@astrojs/starlight/components';
+import MenuSakti from '~/components/MenuSakti.astro';
+import SumberAsli from '~/components/SumberAsli.astro';
+
+Pembayaran SPD-LC (Surat Perintah Debit Letter of Credit) dilakukan
+melalui tiga proses pada aplikasi SAKTI: perekaman kontrak LC pada
+modul Komitmen, perekaman BAST Kontraktual LC, lalu pencatatan SP3-LC
+pada modul Pembayaran dengan jenis SPP 133 SPD LC.
+
+<MenuSakti />
+
+## Prasyarat
+
+- Role yang dibutuhkan: **Operator Komitmen** (kontrak dan BAST),
+  **PPK** (pembentukan ADK kontrak/BCKA), **Operator Pembayaran**
+  (pencatatan SP3-LC), **PPK** dan **PPSPM** (penandatangan SPD-LC).
+- Satker memiliki data FA (ketersediaan dana) dengan kode Cara
+  Penarikan **4 – LC**, dapat dilihat pada laporan FA di aplikasi
+  SAKTI.
+- SPAN telah menerbitkan SP3-LC dan nomor SP3-LC telah ada pada
+  OMSPAN.
+- Distribusi COA memakai Cara Penarikan 4 – LC dan Kategori Line
+  Kontrak LC.
+- Pejabat penandatangan telah direkam pada referensi pejabat dan
+  referensi penandatangan di menu administrator.
+
+## Alur proses
+
+1. Operator Komitmen — login dan merekam kontrak LC (header,
+   contract line, jadwal pembayaran, distribusi COA).
+2. PPK — membentuk ADK kontrak (BCKA) dan mengirimkan ke Portal SPAN;
+   KPPN mendaftarkan data kontrak pada SPAN sampai mendapat nomor
+   CAN/NRK.
+3. Operator Komitmen — merekam BAST Kontraktual LC.
+4. Operator Pembayaran — mencatat SP3-LC (pilih kontrak, pilih SP3,
+   pilih penandatangan).
+5. Operator — memonitor data SPD-LC pada monitoring SPP.
+
+## Langkah
+
+### Merekam kontrak LC (Operator Komitmen)
+
+Login aplikasi SAKTI dengan responsibility **Operator Komitmen**,
+buka menu **Komitmen > RUH > Kontrak** — **Rekam**.
+
+<Steps>
+
+1. Lengkapi isian pada tab **Header Kontrak** — untuk kontrak tahunan
+   berisikan: tipe kontrak (Annual Year); tipe komitmen (Kontrak);
+   supplier yang sudah mendapatkan NRS; nomor kontrak dan tanggal
+   kontrak diinput manual; nilai kontrak dengan 4 digit di belakang
+   koma; kode KPPN sebagai kantor bayar; mata uang yang digunakan;
+   nilai rate/kurs saat kontrak dibuat dengan 4 digit di belakang
+   koma — mata uang kontrak yang berbeda walaupun satu kontrak harus
+   direkam sebagai kontrak tersendiri; data pinjaman atau hibah luar
+   negeri (apabila sumber dana dari Loan/Hibah); uraian
+   kontrak/pekerjaan; jangka waktu pelaksanaan (tanggal mulai dan
+   berakhirnya kontrak dalam satu tahun anggaran yang sama); jangka
+   waktu pemeliharaan (untuk sementara belum digunakan); uraian
+   ketentuan dan sanksi (free text, wajib diisi, hindari penggunaan
+   simbol kode ASCII seperti %, ‰, dan lain-lain); cara pembayaran
+   (sekaligus atau bertahap); hal-hal yang menyangkut uang muka dan
+   retensi (untuk sementara belum digunakan). Tekan tombol **Simpan**
+   apabila data yang dibutuhkan sudah terisi semua.
+
+2. Tekan tombol **Rekam** untuk merekam rencana pembayaran (Contract
+   Line) — tab aktif setelah header tersimpan. Contract Line hanya
+   berisi satu baris apabila kontrak hanya membebani satu jenis
+   kombinasi COA, dan bisa lebih dari satu baris apabila membebani
+   lebih dari satu kombinasi COA (beda akun, output, kegiatan, cara
+   tarik, sumber dana, dst.); total nominal seluruh Contract Line
+   harus sama dengan nilai kontrak. Lengkapi isian pada tab
+   **Rencana Pembayaran**: nomor line (urutan sesuai jumlah line),
+   tipe belanja — Belanja/Biaya (default), deskripsi line, kategori
+   line (Cara Tarik → LC); kolom uang muka dan retensi untuk
+   sementara belum digunakan. Tekan tombol **Simpan**.
+
+3. Tekan tombol **Rekam** untuk merekam jadwal pembayaran (Payment
+   Schedule/termin): jumlah nominal seluruh termin harus sama dengan
+   nominal line contract induknya; apabila terdapat perbedaan
+   kombinasi COA, termin direkam pada contract line yang berbeda;
+   uang muka dan retensi masih menggunakan metode netto dan direkam
+   sebagai termin. Lengkapi isian pada tab **Jadwal Pembayaran**:
+   nilai line (nominal line induknya), nomor jadwal pembayaran
+   (termin), deskripsi pembayaran (uraian termin, misal uang muka,
+   termin 1), uang muka (sementara tidak digunakan), tanggal
+   pembayaran (pembayaran pertama harus sama atau lebih dari tanggal
+   kontrak; pembayaran terakhir boleh melebihi tanggal berakhirnya
+   kontrak namun masih dalam tahun anggaran yang sama), nilai
+   pembayaran. Untuk lebih dari satu termin, rekam kembali termin
+   berikutnya lalu tekan tombol **Simpan**.
+
+4. Rekam distribusi COA: tiap termin/jadwal pembayaran hanya berisi
+   satu distribusi COA dan nilainya harus sama dengan nilai termin.
+   Pilih termin yang akan direkam distribusi COA-nya, tekan tombol
+   **Rekam**, lalu lengkapi tab **Struktur COA** — pilih kombinasi
+   segmen COA (Kode Satker, Kementerian, Eselon I, Program, Kegiatan,
+   Output, Akun, Segmen Dana, dst.); sumber dana pilih **B - PLN**,
+   Cara Penarikan **4 – LC**, dan pilih nomor register yang telah
+   terdaftar; lengkapi pendetailan COA sampai level item (16 segmen).
+   Tekan tombol **Simpan**.
+
+</Steps>
+
+Perekaman kontrak pada responsibility Operator selesai dan dapat
+dilanjutkan pencetakan karwas kontrak.
+
+### Membentuk ADK kontrak/BCKA (PPK)
+
+Login dengan responsibility **Pejabat Pembuat Komitmen**.
+
+<Steps>
+
+1. Buka menu **Komitmen > ADK > ADK Kontrak Interkoneksi OTP**.
+2. Pilih kontrak yang akan dibentuk ADK-nya, tekan tombol **Proses**
+   — muncul kotak dialog Validasi ADK.
+3. Input PIN pada kolom yang tersedia, klik tombol **Proses**.
+
+</Steps>
+
+Atas ADK BCKA yang dibentuk, KPPN mendaftarkan data kontrak pada
+SPAN mengacu SOP yang berlaku; setelah mendapat persetujuan SPAN,
+data kontrak mendapatkan nomor CAN (Commitment Application Number)
+atau NRK (Nomor Register Kontrak).
+
+### Merekam BAST Kontraktual LC (Operator Komitmen)
+
+Login dengan kewenangan **Operator Komitmen**, buka **Komitmen > RUH
+> BAST/BAKP/BAPP/DYD** (juknis menulis "Pencatatan BAST/BG").
+
+<Steps>
+
+1. Klik tombol **Rekam** untuk merekam BAST Kontraktual baru.
+2. Klik tombol **Cari Kontrak** — muncul Pop Up Box, klik tombol
+   **Cari Data Kontrak** untuk melihat daftar kontrak yang dapat
+   digunakan.
+3. Pilih kontrak yang digunakan, klik tombol **Pilih**.
+4. Pada form Data BAST, input manual **Nomor BAST**.
+5. Pada kolom **Progress Pekerjaan**, input progress atas pembayaran
+   BAST tersebut.
+6. Input nilai kurs saat BAST dibuat — kurs dapat berbeda dari kurs
+   kontrak sehingga dimungkinkan terjadi selisih kurs.
+7. Pilih **Kategori** untuk menentukan BAST menghasilkan BMN atau
+   tidak.
+8. Klik **Rincian Barang** untuk memilih aset yang dihasilkan.
+9. Klik tombol **Simpan** untuk menyimpan BAST Kontraktual.
+
+</Steps>
+
+### Mencatat SP3-LC (Operator Pembayaran)
+
+Buka menu **Pembayaran > Catat/Upload > Mencatat SP3 LC**. Pastikan
+nomor SP3-LC telah ada pada OMSPAN.
+
+<Steps>
+
+1. Klik tombol **Cari Kontrak** — kontrak LC dengan cara penarikan
+   LC harus sudah tersedia dan telah dibuatkan BAST.
+2. Pada Pop Up Box, pilih data kontrak LC yang akan dicatat SP3-LC,
+   klik **Pilih** — data BAST muncul pada grid.
+3. Klik tombol **Cari SP3**, pilih salah satu nomor SP3 pada Pop Up
+   Box, klik **Pilih** — nomor dan tanggal SP3 muncul pada form
+   mencatat SP3 LC. Kurs pada SP3-LC dapat berbeda dari kurs kontrak
+   dan BAST.
+4. Pilih pejabat penandatangan sebagai **PPK** — nama PPK muncul di
+   sebelah kanan.
+5. Pilih pejabat penandatangan sebagai **PPSPM** — nama PPSPM muncul
+   di sebelah kanan.
+6. Klik tombol **Simpan** — pencatatan SP3-LC selesai.
+
+</Steps>
+
+### Memonitor data SPD-LC
+
+Pada menu **Pembayaran > Monitoring > Monitoring SPP**, data SPD-LC
+dapat dilihat apabila pencatatan SP3-LC telah dilakukan: jenis tagihan
+**133 – APD LC** dan status **Upload SP2D**.
+Apabila data banyak, gunakan form pencarian dengan tombol **Cari**.
+
+## Hasil yang diharapkan
+
+SP3-LC tercatat pada aplikasi SAKTI dan data SPD-LC tampil pada
+monitoring SPP dengan status Upload SP2D, siap diproses lebih
+lanjut menjadi SP2D.
+
+## Ketentuan
+
+- Sebelum transaksi SPD-LC, pastikan data FA dengan Cara Penarikan
+  4 – LC tersedia.
+- Pencatatan SP3-LC hanya dapat dilakukan apabila data SP3-LC telah
+  ada pada OMSPAN.
+- Kurs pada kontrak, BAST, dan SP3-LC dapat berbeda sehingga
+  dimungkinkan terjadi selisih kurs karena perbedaan waktu transaksi.
+- Satu kontrak dapat dibuat beberapa BAST, dan pencatatan SP3-LC dapat
+  memilih banyak BAST.
+- Petunjuk teknis terkait menurut juknis adalah juknis perekaman
+  supplier (Komitmen) dan OTP pejabat (administrator).
+
+<Aside type="caution" title="Perlu verifikasi">
+Juknis menulis jalur "Komitmen – ADK – ADK Kontrak Interkoneksi",
+"Komitmen – RUH – Pencatatan BAST/BG", "Pembayaran – Catat/Upload –
+Mencatat SP3 LC", dan "Pembayaran → Monitoring → Monitoring SPP".
+Padanan baku aplikasi saat ini: **Komitmen > ADK > ADK Kontrak
+Interkoneksi OTP**, **Komitmen > RUH > Kontrak**, **Komitmen > RUH >
+BAST/BAKP/BAPP/DYD**, **Pembayaran > Catat/Upload > Mencatat SP3 LC**,
+dan **Pembayaran > Monitoring > Monitoring SPP** — semuanya ada di
+aplikasi.
+</Aside>
+
+## Terkait
+
+- [Merekam BAST Kontraktual](/komitmen/ruh/pencatatan-bast/bast-kontraktual/)
+- [Kontrak](/komitmen/ruh/pencatatan-kontrak/)
+- [Supplier](/komitmen/ruh/pencatatan-suplier/)
+
+## Sumber
+
+<SumberAsli />

@@ -1,0 +1,177 @@
+---
+title: Merekam SPM 233 SPM-IB Pajak
+description: Merekam SPP dan SPM IB Pajak untuk pembayaran tagihan imbalan bunga pajak, dari input SPP sampai pencatatan SP2D.
+modul: pembayaran
+menu_sakti: "Pembayaran > RUH Pembayaran > Catat/Ubah SPP"
+peran: [satker]
+jenis: juknis
+kata_kunci: [spm 233, imbalan bunga pajak, ib pajak, skppib]
+status: review
+perlu_review: true
+sumber:
+  - judul: "Juknis Perekaman SPM 233 - SPM-IB-PAJAK"
+    url: "https://drive.google.com/file/d/1mHq7LvlHlxUDI5v0R2XuGhcn-QfekdZz/view"
+    jenis: pdf
+    diambil: 2026-11-21
+    id_manifest: B-pem-017
+sidebar:
+  order: 13
+---
+
+import { Steps, Aside } from '@astrojs/starlight/components';
+import MenuSakti from '~/components/MenuSakti.astro';
+import SumberAsli from '~/components/SumberAsli.astro';
+
+SPM IB Pajak digunakan untuk membayar tagihan imbalan bunga pajak.
+SPM ini disetujui dan dibuat ADK-nya oleh user KPA.
+
+<MenuSakti />
+
+## Prasyarat
+
+- Role yang dibutuhkan: **Operator SPP/SPM** dan **Operator
+  Pembayaran** (perekaman dan cetak), **KPA** (persetujuan SPM dan
+  pembuatan ADK SPM).
+- SPM IB Pajak menggunakan supplier tipe 2, 6, dan 7 yang telah
+  direkam pada modul Komitmen — lihat
+  [Supplier](/komitmen/ruh/pencatatan-suplier/).
+- RPD telah dibuat pada modul Pembayaran apabila nilai SPM melebihi
+  Rp1 miliar.
+- Dokumen input: SPP SPM IB Pajak.
+
+## Alur proses
+
+1. Operator — input supplier, mengacu pada juknis input supplier.
+2. Operator SPP/SPM — input SPP.
+3. Operator Pembayaran — cetak SPM.
+4. Operator Pembayaran — upload dokumen pendukung.
+5. KPA — setuju SPM.
+6. KPA — membuat ADK SPM.
+7. KPPN — memproses SPM menjadi SP2D.
+8. Operator Pembayaran — mencatat SP2D.
+
+## Langkah
+
+### Merekam SPP (Operator SPP/SPM)
+
+Login menggunakan user operator SPP/SPM.
+
+<Steps>
+
+1. Buka menu **Pembayaran > RUH Pembayaran > Catat/Ubah SPP**.
+2. Pilih jenis SPP **233 SPM-IB-PAJAK**.
+3. Klik tombol **Tambah**.
+4. Pilih **Dasar Pembayaran**.
+5. Pilih **RPD** yang telah dibuat sebelumnya apabila nilai SPM
+   melebihi Rp1 miliar (sesuai PMK Nomor 197/PMK.05/2017 tentang
+   Rencana Penarikan Dana, Rencana Penerimaan Dana, dan Perencanaan
+   Kas); lewati apabila nilai SPM kurang dari Rp1 miliar.
+6. Input: uraian pembayaran; nomor SKPPIB; tanggal SKPPIB.
+7. Klik tombol **Cari Supplier** untuk memilih supplier.
+8. Input informasi kompensasi pajak: tahun pajak; akun pengeluaran;
+   kompensasi melalui potongan dan kompensasi melalui transfer
+   (apabila ada).
+9. Klik tombol **Simpan**.
+
+</Steps>
+
+### Cetak SPM (Operator Pembayaran)
+
+<Steps>
+
+1. Buka menu **Pembayaran > Cetak > Mencetak SPM**.
+2. Pilih SPM yang ingin dicetak.
+3. Klik tombol **Unduh**.
+
+</Steps>
+
+### Upload dokumen pendukung (Operator Pembayaran)
+
+<Steps>
+
+1. Buka menu **Pembayaran > Catat/Upload > Upload Dokumen Pendukung**.
+2. Pilih SPM yang akan diunggah dokumen pendukungnya.
+3. Pilih jenis dokumen pendukung.
+4. Klik tombol **Pilih** untuk memilih berkas yang akan diunggah.
+5. Klik tombol **Upload**.
+6. Berkas yang diunggah akan muncul.
+7. Klik tombol **View** untuk melihat berkas yang telah diunggah.
+8. Klik tombol **Hapus** untuk menghapus berkas yang telah diunggah
+   sebelumnya.
+
+</Steps>
+
+### Setuju SPM (KPA)
+
+Login menggunakan user KPA.
+
+<Steps>
+
+1. Buka menu **Pembayaran > Validasi > Validasi SPM**.
+2. Pilih SPM yang ingin divalidasi.
+3. Klik tombol **Unduh Pra Cetak** untuk mencetak SPM yang akan
+   divalidasi.
+4. Klik tombol **Setuju**.
+5. Klik tombol **Batal** apabila ingin membatalkan validasi atas SPM
+   yang sudah divalidasi.
+6. Klik tombol **Batal Dokumen Pendukung** apabila ingin membatalkan
+   dokumen pendukung yang sudah diunggah.
+
+</Steps>
+
+### Membuat ADK SPM (KPA)
+
+Login menggunakan user KPA.
+
+<Steps>
+
+1. Buka menu **Pembayaran > ADK > ADK SPM OTP**.
+2. Pilih SPP yang ingin dibuat ADK SPM.
+3. Klik tombol **Proses ADK SPM**.
+4. Klik tombol **Req OTP via SMS** untuk meminta kode OTP.
+5. Input OTP pejabat KPA.
+6. Klik tombol **Proses**.
+
+</Steps>
+
+### Proses KPPN
+
+Proses di KPPN mengacu pada Standar Operasional Prosedur pemrosesan
+SPM menjadi SP2D pada KPPN.
+
+### Mencatat SP2D (Operator Pembayaran)
+
+<Steps>
+
+1. Buka menu **Pembayaran > Catat/Upload > Mencatat/Upload SP2D**.
+2. Pilih SPM yang ingin dicatat nomor SP2D-nya.
+3. Klik tombol **Catat SP2D Otomatis**.
+
+</Steps>
+
+## Hasil yang diharapkan
+
+Dokumen input SPP SPM IB Pajak diproses menjadi SP2D SPM IB Pajak
+setelah seluruh tahap selesai.
+
+## Ketentuan
+
+- SPM IB Pajak menggunakan supplier tipe 2, 6, dan 7.
+- SPM IB Pajak disetujui (di-approve) oleh user KPA.
+
+<Aside type="caution" title="Perlu verifikasi">
+Juknis menulis jalur "Pembayaran → RUH SPP → Catat/Ubah SPP" dan
+"Catat/Upload → Catat/Upload SP2D"; jalur baku aplikasi saat ini
+adalah **Pembayaran > RUH Pembayaran > Catat/Ubah SPP** dan
+**Pembayaran > Catat/Upload > Mencatat/Upload SP2D**.
+</Aside>
+
+## Terkait
+
+- [Supplier](/komitmen/ruh/pencatatan-suplier/)
+
+- [Merekam Proyeksi Pengeluaran Bulanan dan RPD Harian](/pembayaran/ruh/proyeksi-belanja-bulanan/)
+
+## Sumber
+
+<SumberAsli />

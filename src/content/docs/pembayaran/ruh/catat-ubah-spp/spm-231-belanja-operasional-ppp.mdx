@@ -1,0 +1,191 @@
+---
+title: Merekam SPM 231 Belanja Operasional PPP
+description: Merekam pembayaran tagihan langganan jasa lewat Platform Pembayaran Pemerintah, dari referensi data pelanggan sampai SPM.
+modul: pembayaran
+menu_sakti: "Pembayaran > RUH Pembayaran > Catat/Ubah SPP"
+peran: [satker]
+jenis: juknis
+kata_kunci: [spm 231, belanja operasional, ppp, langganan jasa, data pelanggan]
+status: review
+perlu_review: true
+sumber:
+  - judul: "Juknis Perekaman SPM 231 - Belanja Operasional PPP"
+    url: "https://drive.google.com/file/d/1q26OoY-fgzeNkAxYp4fYocHp9yPI6l_n/view"
+    jenis: pdf
+    diambil: 2026-11-21
+    id_manifest: B-pem-014
+sidebar:
+  order: 10
+---
+
+import { Steps, Aside } from '@astrojs/starlight/components';
+import MenuSakti from '~/components/MenuSakti.astro';
+import SumberAsli from '~/components/SumberAsli.astro';
+
+Platform Pembayaran Pemerintah (PPP) adalah pelaksana layanan Shared
+Service Center (SSC) pembayaran pemerintah — layanan administrasi
+digital atas proses transaksi pada sistem yang saling terhubung.
+Dengan mekanisme SSC, pembayaran tagihan belanja operasional seperti
+tagihan langganan jasa telepon dan listrik dapat dilakukan langsung
+melalui mekanisme SPM LS pada SAKTI: informasi data pelanggan dan
+tagihan bulanan dari penyedia jasa dikirim melalui Service API dan
+ditarik secara berkala oleh SAKTI untuk di-SPP-kan.
+
+<MenuSakti />
+
+## Prasyarat
+
+- Role yang dibutuhkan: **Operator Pembayaran/Staf PPK** (perekaman
+  dan cetak), **PPK** (validasi SPP, ADK SPP, cetak arsip),
+  **PPSPM** (validasi SPM, ADK SPM, cetak arsip).
+- Supplier penerima pembayaran telah diimpor terlebih dahulu —
+  mengacu pada juknis import supplier. Data supplier untuk
+  pembayaran langganan jasa PLN dan Telkom melalui PPP menurut
+  juknis:
+
+  | Penyedia | Nama supplier |
+  |---|---|
+  | PLN | PT PLN PERSERO INTERKONEKSI SAKTI |
+  | Telkom | PT TELKOM INDONESIA ENTERPRISE |
+
+- Referensi data pelanggan (ID pelanggan yang didaftarkan satker ke
+  penyedia layanan untuk dibayar melalui APBN) telah direkam.
+- Dokumen input: Referensi Data Pelanggan dan Informasi Tagihan
+  Penggunaan Langganan Jasa.
+
+## Alur proses
+
+1. Operator Pembayaran — perekaman referensi data pelanggan.
+2. Operator Pembayaran — penarikan informasi tagihan outstanding.
+3. Operator Pembayaran/Staf PPK — perekaman SPP atas tagihan yang
+   dipilih.
+4. PPK — validasi SPP dan pembuatan ADK SPP.
+5. PPSPM — validasi SPM dan pengiriman ADK SPM.
+
+## Langkah
+
+### Merekam referensi data pelanggan (Operator Pembayaran)
+
+Perekaman referensi data pelanggan bertujuan merekam data langganan
+jasa pemerintah yang akan dibayar melalui SAKTI dengan konsep PPP
+(interkoneksi dengan pihak eksternal).
+
+<Steps>
+
+1. Login menggunakan operator modul Pembayaran.
+2. Buka menu **Pembayaran > Referensi > Referensi Data Pelanggan**.
+3. Pada form Referensi Pembayaran Belanja Operasional terdapat:
+   filter perekaman (memfilter jenis layanan yang akan direkam);
+   grid hasil perekaman (menampilkan hasil perekaman data referensi
+   pelanggan); tombol aksi (Rekam/Tambah Data, Simpan Data, Batal
+   Simpan, dan Keluar Form).
+4. Klik **Rekam**.
+5. Pilih jenis layanan.
+6. Isi informasi nomor telepon / nomor meter PLN.
+7. Klik tombol **Cari** — apabila parameter benar, sistem
+   menampilkan informasi ID pelanggan dan nama pelanggan untuk
+   disimpan pada data pelanggan SAKTI.
+8. Klik **Simpan** — data muncul pada grid hasil perekaman.
+
+</Steps>
+
+Atas data pelanggan yang telah direkam, informasi tagihan bulanan
+dapat diperoleh untuk pembuatan SPM pembayaran tagihan belanja
+operasional langganan jasa.
+
+### Menarik informasi tagihan outstanding
+
+Secara sistem, SAKTI berkomunikasi dengan sistem penyedia layanan
+untuk memperoleh informasi tagihan outstanding setiap awal bulan.
+
+<Steps>
+
+1. Login menggunakan operator modul Pembayaran.
+2. Buka menu **Pembayaran > RUH Pembayaran > Catat/Ubah SPP**.
+3. Pada pilihan jenis SPP, pilih jenis SPP **231** lalu pilih tombol
+   **Belanja Operasional**.
+4. Klik **Tambah** — muncul form Daftar Tagihan Belanja Operasional
+   bulanan berisi: informasi kode satker dan filter jenis layanan;
+   daftar tagihan hasil filter yang belum terbayarkan; tombol aksi
+   **Pilih** (memilih data tagihan) dan **Batal** (batal pilih dan
+   keluar form); serta tombol **Unduh Tagihan**.
+5. Apabila terdapat baris data tagihan pada form, klik tombol
+   **Unduh Tagihan** untuk menampilkan rekapitulasi tagihan yang
+   belum terbayarkan sampai periode terakhir — rekap dapat berisi
+   seluruh tagihan lintas tahun anggaran dan bersumber dari sistem
+   penyedia layanan jasa.
+
+</Steps>
+
+Dokumen rekap tagihan dapat digunakan PPK untuk memverifikasi
+tagihan yang akan dibayarkan melalui SAKTI.
+
+### Merekam SPP atas tagihan (Operator Pembayaran)
+
+Setelah unduh rekap tagihan, pilih informasi tagihan yang akan
+dibayarkan; operator PPK dapat membandingkan informasi tagihan pada
+aplikasi dengan rincian pada rekap yang telah diunduh. Tagihan yang
+muncul dapat direkam sebagian dalam satu SPP atau seluruh tagihan
+dalam satu SPP sekaligus.
+
+<Steps>
+
+1. Login dengan user operator Pembayaran.
+2. Buka menu **Pembayaran > RUH Pembayaran > Catat/Ubah SPP**.
+3. Pilih jenis SPP **231 Belanja Operasional**, klik **Tambah**.
+4. Atas tagihan yang muncul, pilih (ceklis) tagihan yang akan
+   di-SPP-kan, lalu klik tombol **Pilih** — muncul form perekaman
+   SPP; lanjutkan perekaman SPP sampai SPM.
+
+</Steps>
+
+### Tahap perekaman SPP sampai SPM
+
+Tahapan perekaman SPP sampai SPM sama dengan tata cara perekaman
+SPM pada umumnya. Secara ringkas, juknis merangkumnya sebagai berikut:
+
+<Steps>
+
+1. Rekam SPP oleh operator Pembayaran/Staf PPK.
+2. Cetak SPP oleh operator Pembayaran/Staf PPK.
+3. Validasi SPP oleh PPK (PPK mengunduh PDF data tagihan).
+4. Buat ADK SPP dengan OTP PPK.
+5. Cetak arsip SPP oleh PPK — menampilkan cetakan SPP dengan tanda
+   tangan elektronik.
+6. Cetak SPM oleh operator Pembayaran/Staf PPSPM.
+7. Validasi SPM oleh PPSPM (PPK mengunduh PDF data tagihan).
+8. Kirim ADK SPM dengan OTP PPSPM oleh PPSPM.
+9. Cetak arsip SPM oleh PPSPM — menampilkan cetakan SPM dengan tanda
+   tangan elektronik.
+
+</Steps>
+
+## Hasil yang diharapkan
+
+Referensi data pelanggan dan informasi tagihan penggunaan langganan
+jasa diproses menjadi SPM pembayaran tagihan langganan jasa.
+
+## Ketentuan
+
+- SPM pembayaran tagihan langganan jasa **tidak memerlukan** upload
+  dokumen pendukung.
+- Sebelum merekam SPP pembayaran tagihan langganan jasa untuk
+  pertama kali, pastikan telah mengimpor supplier penerima
+  pembayaran yang telah ditentukan.
+- Transaksi terkait dalam juknis adalah perekaman referensi data
+  pelanggan dan perekaman SPM; modul terkait ADM, PEM, dan GLP.
+
+<Aside type="caution" title="Perlu verifikasi">
+Juknis menulis jalur "RUH SPP dan Renkas → Catat/Ubah SPP"; jalur
+baku aplikasi saat ini adalah **Pembayaran > RUH Pembayaran >
+Catat/Ubah SPP**.
+</Aside>
+
+## Terkait
+
+- [Supplier](/komitmen/ruh/pencatatan-suplier/)
+- [Merekam SPM 231 Non Gaji BAST](/pembayaran/ruh/catat-ubah-spp/spm-231-nongaji-bast/)
+
+## Sumber
+
+<SumberAsli />
