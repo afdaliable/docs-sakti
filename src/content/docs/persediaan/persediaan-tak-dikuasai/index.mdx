@@ -1,12 +1,62 @@
 ---
-title: Persediaan Tak Dikuasai
-description: Panduan menu Persediaan Tak Dikuasai pada modul Persediaan.
+title: Mengelola Persediaan Tak Dikuasai
+description: Pencatatan, penghapusan, pembatalan, dan pelaporan persediaan yang secara fisik berada pada entitas tetapi tidak dikuasai.
 modul: persediaan
-jenis: indeks
-status: terbit
+menu_sakti: "Persediaan > Persediaan Tak Dikuasai"
+peran: [satker]
+jenis: juknis
+kata_kunci: [persediaan tak dikuasai, barang titipan, barang sitaan]
+status: review
+perlu_review: false
+sumber:
+  - judul: "Persediaan Tak Dikuasai"
+    url: "https://sites.google.com/view/saktipelaporan/persediaan/persediaan-tak-dikuasai"
+    jenis: google-sites
+    diambil: 2026-11-21
+    id_manifest: C-persediaan-persediaan-tak-dikuasai
 sidebar:
   label: Ringkasan
   order: 0
 ---
 
-Panduan untuk menu **Persediaan Tak Dikuasai** sedang disiapkan.
+import MenuSakti from '~/components/MenuSakti.astro';
+import SumberAsli from '~/components/SumberAsli.astro';
+
+Menurut Standar Akuntansi Pemerintahan (SAP) berbasis akrual yang
+diatur dalam Peraturan Pemerintah Republik Indonesia Nomor 71 Tahun
+2010, persediaan adalah aset lancar dalam bentuk barang atau
+perlengkapan yang dimaksudkan untuk digunakan dalam kegiatan
+operasional pemerintah, dimanfaatkan dalam rangka diserahkan kepada
+masyarakat, atau dijual dalam rangka pelaksanaan tugas dan fungsi
+entitas pemerintah.
+
+Persediaan tak dikuasai adalah persediaan yang secara fisik berada
+pada entitas pemerintah, tetapi tidak memiliki bukti penguasaan
+legal atau administratif, tidak dapat dikendalikan penggunaannya,
+atau tidak dapat diakui manfaat ekonominya di masa mendatang —
+misalnya bantuan barang dari pihak ketiga yang belum ditetapkan
+penggunanya, barang sitaan yang belum memiliki putusan hukum tetap,
+atau barang titipan pihak lain.
+
+<MenuSakti />
+
+## Ketentuan
+
+Menu Persediaan Tak Dikuasai terdiri atas lima submenu:
+
+1. **Pencatatan Persediaan Tak Dikuasai** — digunakan untuk mencatat
+   persediaan yang tidak dikuasai oleh instansi pengguna.
+2. **Penghapusan Daftar Persediaan Tak Dikuasai** — menghapus
+   persediaan tidak dikuasai yang sudah tidak lagi berada di
+   entitas pengguna.
+3. **Batal Catat Persediaan Tak Dikuasai** — digunakan untuk
+   membatalkan proses pencatatan persediaan tak dikuasai yang
+   sedang berlangsung.
+4. **Laporan Persediaan Tak Dikuasai** — digunakan untuk melihat
+   persediaan tak dikuasai pada periode tertentu.
+5. **Daftar Persediaan Tak Dikuasai** — digunakan untuk melihat
+   persediaan tak dikuasai pada periode tertentu.
+
+## Sumber
+
+<SumberAsli />

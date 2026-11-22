@@ -1,12 +1,64 @@
 ---
-title: Pelaporan
-description: Panduan menu Pelaporan pada modul Persediaan.
+title: Mencetak Laporan Persediaan
+description: Mencetak laporan aset persediaan satuan kerja, baik UAKPB maupun UAPKPB, untuk periode yang dipilih.
 modul: persediaan
-jenis: indeks
-status: terbit
+menu_sakti: "Persediaan > Pelaporan"
+peran: [satker]
+jenis: juknis
+kata_kunci: [laporan persediaan, cetak laporan, buku persediaan]
+status: review
+perlu_review: false
+sumber:
+  - judul: "Pelaporan"
+    url: "https://sites.google.com/view/saktipelaporan/persediaan/pelaporan"
+    jenis: google-sites
+    diambil: 2026-11-21
+    id_manifest: C-persediaan-pelaporan
 sidebar:
   label: Ringkasan
   order: 0
 ---
 
-Panduan untuk menu **Pelaporan** sedang disiapkan.
+import MenuSakti from '~/components/MenuSakti.astro';
+import SumberAsli from '~/components/SumberAsli.astro';
+
+Menu Pelaporan digunakan untuk mencetak laporan aset persediaan
+yang dimiliki oleh satuan kerja, baik UAKPB maupun UAPKPB. Pada
+menu ini, pengguna juga dapat memilih periode yang akan
+ditampilkan. Terdapat 10 submenu pelaporan:
+
+1. **Cetak Laporan Buku Persediaan** — digunakan untuk mencetak
+   buku persediaan.
+2. **Cetak Laporan Persediaan** — digunakan untuk mencetak laporan
+   persediaan untuk periode tahun anggaran yang dipilih oleh
+   pengguna.
+3. **Cetak Laporan Rincian Persediaan** — digunakan untuk mencetak
+   laporan persediaan secara rinci, dengan informasi tambahan
+   berupa saldo di awal dan akhir periode serta mutasi persediaan
+   selama periode (tanggal, bulan, atau tahun) yang dipilih.
+4. **Cetak Laporan Transaksi Persediaan** — digunakan untuk
+   mencetak laporan transaksi persediaan yang terjadi selama
+   periode (tanggal, bulan, atau tahun) yang dipilih.
+5. **Cetak Laporan Mutasi Persediaan** — digunakan untuk mencetak
+   laporan berisi mutasi persediaan yang berlangsung selama rentang
+   yang dipilih oleh pengguna.
+6. **Cetak Laporan Posisi Persediaan Neraca** — digunakan untuk
+   mencetak laporan berisi saldo persediaan pada periode yang
+   dipilih oleh pengguna.
+7. **Cetak Laporan Monitoring Reklas Aset Persediaan** — digunakan
+   untuk mencetak laporan berisi persediaan yang direklasifikasi
+   dari maupun ke kelompok aset (tetap).
+8. **Cetak Laporan Monitoring Reklas Masuk - Reklas Keluar** —
+   digunakan untuk mencetak laporan berisi persediaan yang
+   direklasifikasi masuk maupun direklasifikasi keluar.
+9. **Cetak Laporan Monitoring Transfer Masuk - Keluar** — digunakan
+   untuk mencetak laporan berisi persediaan yang ditransfer masuk
+   maupun keluar (dari instansi pengguna).
+10. **Cetak Laporan Monitoring Internal Transfer Masuk - Keluar** —
+    digunakan untuk mencetak laporan berisi persediaan yang
+    ditransfer masuk maupun keluar (dari suatu UAKPB ke UAKPB
+    lain).
+
+## Sumber
+
+<SumberAsli />

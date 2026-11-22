@@ -1,12 +1,51 @@
 ---
-title: Likuidasi
-description: Panduan menu Likuidasi pada modul Persediaan.
+title: Melakukan Likuidasi Persediaan
+description: Penyelesaian hak dan kewajiban persediaan UAKPB yang tidak lagi menjalankan fungsi, melalui transfer keluar dan transfer masuk likuidasi.
 modul: persediaan
-jenis: indeks
-status: terbit
+menu_sakti: "Persediaan > Likuidasi"
+peran: [satker]
+jenis: juknis
+kata_kunci: [likuidasi persediaan, likuidasi uakpb, transfer likuidasi]
+status: review
+perlu_review: false
+sumber:
+  - judul: "Likuidasi"
+    url: "https://sites.google.com/view/saktipelaporan/persediaan/likuidasi"
+    jenis: google-sites
+    diambil: 2026-11-21
+    id_manifest: C-persediaan-likuidasi
 sidebar:
   label: Ringkasan
   order: 0
 ---
 
-Panduan untuk menu **Likuidasi** sedang disiapkan.
+import MenuSakti from '~/components/MenuSakti.astro';
+import SumberAsli from '~/components/SumberAsli.astro';
+
+Likuidasi UAKPB adalah proses administratif dan akuntansi untuk
+menyelesaikan hak dan kewajiban unit kerja (UAKPB) yang tidak lagi
+menjalankan fungsi sebagai entitas pengguna barang.
+
+<MenuSakti />
+
+## Ketentuan
+
+- Transfer Keluar Likuidasi adalah pengalihan aset dari UAKPB yang
+  dilikuidasi ke UAKPB penerima aset, dan dicatat dalam akun
+  Transfer Keluar BMN karena Likuidasi UAKPB (811121).
+- Transfer Masuk Likuidasi dilakukan oleh UAKPB penerima pengalihan
+  aset dari UAKPB yang dilikuidasi, dan dicatat dalam akun Transfer
+  Masuk BMN karena Likuidasi UAKPB (811122).
+- Aktivitas ini tidak diakui sebagai pendapatan atau belanja,
+  tetapi dicatat sebagai transfer internal antar entitas dalam satu
+  pelaporan pemerintah pusat.
+- Didukung oleh dokumen sumber: BAST, SK likuidasi, dan daftar
+  rincian aset.
+
+## Terkait
+
+- [Merekam Internal Transfer Non-Aktif UAKPB Persediaan](/persediaan/transaksi-keluar/internal-transfer-non-aktif-uakpb/)
+
+## Sumber
+
+<SumberAsli />

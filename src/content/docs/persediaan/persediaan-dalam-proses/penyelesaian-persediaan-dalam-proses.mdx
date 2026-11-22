@@ -1,0 +1,81 @@
+---
+title: Menyelesaikan Persediaan dalam Proses
+description: Menyelesaikan barang dalam proses hasil pembelian bertahap (termin) menjadi barang persediaan diserahkan ke masyarakat.
+modul: persediaan
+menu_sakti: "Persediaan > Persediaan Dalam Proses > Penyelesaian Persediaan Dalam Proses"
+peran: [satker]
+jenis: juknis
+kata_kunci: [persediaan dalam proses, penyelesaian, barang dalam proses, termin]
+status: review
+perlu_review: true
+sumber:
+  - judul: "Penyelesaian Persediaan dalam Proses"
+    url: "https://sites.google.com/view/saktipelaporan/persediaan/persediaan-dalam-proses/penyelesaian-persediaan-dalam-proses"
+    jenis: google-sites
+    diambil: 2026-11-21
+    id_manifest: C-persediaan-persediaan-dalam-proses-penyelesaian-persediaan-dalam-proses
+sidebar:
+  order: 1
+---
+
+import { Aside } from '@astrojs/starlight/components';
+import MenuSakti from '~/components/MenuSakti.astro';
+import SumberAsli from '~/components/SumberAsli.astro';
+
+Menu Persediaan Dalam Proses Masuk (M15) digunakan untuk melakukan
+perekaman pembelian barang persediaan diserahkan ke masyarakat
+(kode barang 10105 XXXXX) yang diperoleh bukan dari pembelian
+langsung, melainkan pembelian yang terdiri dari beberapa termin.
+Untuk tiap-tiap pembayaran (BAST), barang didetilkan dahulu ke kode
+barang dalam proses (10109 XXXXX); setelah semua termin terekam,
+barang diselesaikan pada menu Penyelesaian Persediaan dalam Proses
+untuk dijadikan kode barang diserahkan ke masyarakat
+(10105 XXXXX).
+
+<MenuSakti />
+
+## Prasyarat
+
+- Dokumen sumber: BAST dari modul Komitmen.
+- Perekaman di menu ini harus terlebih dahulu diawali dengan
+  pendetailan persediaan atas BAST Barang dalam Proses.
+- Sebelum merekam persediaan dalam proses, pastikan referensi kode
+  barang sudah ada dahulu di **Persediaan > Referensi > Mengelola
+  Barang Persediaan**; kode barang persediaan dalam proses adalah
+  10109 XXXXX.
+- Referensi yang direkam sebanyak tahapan transaksi persediaan yang
+  ingin dilakukan: jika terdapat dua tahapan (2 BAST), maka harus
+  direkam dua referensi; demikian juga jika terdapat tiga tahapan
+  dan seterusnya.
+
+## Ketentuan
+
+- Modul yang terkait: modul Pelaksanaan - Komitmen (saat pembuatan
+  BAST) dan modul Pelaporan - GLP (setelah transaksi
+  disetujui/di-approve akan terbentuk jurnal).
+- Ketentuan perekaman di modul Komitmen: BAST direkam sebanyak
+  tahapan yang ingin dilakukan; ketika merekam BAST, pilih barang
+  dalam proses. Perekaman di modul Komitmen dilakukan pada menu
+  Komitmen > RUH > Pencatatan BAST Kontrak/Non-Kontraktual.
+
+## Jurnal transaksi
+
+Jurnal yang terbentuk saat pendetilan BAST di modul Persediaan:
+
+- (D) Persediaan dalam proses
+- (K) Persediaan belum diregister
+
+Jurnal yang terbentuk saat penyelesaian persediaan dalam proses:
+
+- (D) Persediaan
+- (K) Persediaan dalam proses
+
+<Aside type="caution" title="Perlu verifikasi">
+Halaman sumber tidak merinci langkah klik perekaman di menu ini
+(hanya memuat ketentuan, jurnal, dan tangkapan layar aplikasi),
+sehingga bagian Langkah tidak ditulis.
+</Aside>
+
+## Sumber
+
+<SumberAsli />

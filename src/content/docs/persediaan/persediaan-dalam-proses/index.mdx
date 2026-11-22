@@ -1,6 +1,6 @@
 ---
-title: Persediaan Dalam Proses
-description: Panduan menu Persediaan Dalam Proses pada modul Persediaan.
+title: Persediaan dalam Proses
+description: Panduan menu Persediaan dalam Proses pada modul Persediaan.
 modul: persediaan
 jenis: indeks
 status: terbit
@@ -9,4 +9,18 @@ sidebar:
   order: 0
 ---
 
-Panduan untuk menu **Persediaan Dalam Proses** sedang disiapkan.
+import { CardGrid, LinkCard } from '@astrojs/starlight/components';
+
+Menu Persediaan dalam Proses mencakup perekaman dan penyelesaian
+barang dalam proses. Sub-menu Laporan Persediaan dalam Proses
+digunakan untuk mengunduh/mencetak laporan barang persediaan dalam
+proses; pengguna dapat memilih periode laporan yang akan dicetak,
+yaitu rentang tanggal, bulan tertentu, atau tahun tertentu.
+
+<CardGrid>
+	<LinkCard
+		title="Menyelesaikan Persediaan dalam Proses"
+		description="Menyelesaikan barang dalam proses hasil pembelian bertahap (termin) menjadi barang persediaan diserahkan ke masyarakat."
+		href="/persediaan/persediaan-dalam-proses/penyelesaian-persediaan-dalam-proses/"
+	/>
+</CardGrid>
