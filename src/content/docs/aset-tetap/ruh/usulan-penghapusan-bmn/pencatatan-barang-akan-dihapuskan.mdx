@@ -1,0 +1,90 @@
+---
+title: Mencatat Barang yang Akan Dihapuskan
+description: Mencatat transaksi usulan penghapusan BMN kepada pengguna/pengelola barang.
+modul: aset-tetap
+menu_sakti: "Aset Tetap > RUH > Transaksi BMN > Usulan Penghapusan BMN > Pencatatan Barang Yang Akan Dihapuskan"
+peran: [satker]
+jenis: juknis
+kata_kunci: [usulan penghapusan bmn, barang akan dihapuskan, kode transaksi 911]
+status: review
+sumber:
+  - judul: "SAKTI PELAPORAN - Pencatatan Barang yang Akan Dihapuskan"
+    url: "https://sites.google.com/view/saktipelaporan/aset-tetap/ruh/transaksi-bmn/usulan-penghapusan-bmn/pencatatan-barang-yang-akan-dihapuskan"
+    jenis: google-sites
+    diambil: 2026-11-21
+    id_manifest: C-aset-tetap-ruh-transaksi-bmn-usulan-penghapusan-bmn-pencatatan-barang-yang-akan-dihapuskan
+  - judul: "Usulan Penghapusan BMN"
+    url: "https://docs.google.com/presentation/d/1-MoCVfxCtyEG2ai3Copn4fizTYZa2ps9SX5_CwGLVK0/"
+    jenis: google-slides
+    diambil: 2026-11-21
+    id_manifest: C-dok-080
+sidebar:
+  order: 2
+---
+
+import { Steps } from '@astrojs/starlight/components';
+import MenuSakti from '~/components/MenuSakti.astro';
+import SumberAsli from '~/components/SumberAsli.astro';
+
+Menu Pencatatan Barang yang Akan Dihapuskan (kode transaksi 911)
+digunakan untuk mencatat transaksi usulan penghapusan kepada
+pengelola barang berdasarkan surat usulan penghapusan, baik
+berupa pemindahtanganan/pemusnahan atas BMN.
+
+<MenuSakti />
+
+## Prasyarat
+
+- Dokumen sumber: Surat usulan penghapusan kepada Pengelola
+  Barang yang ditandatangani KPB.
+- Untuk usulan penghapusan BMN RB/U/H, telah dilakukan
+  persetujuan atas transaksi
+  [Penghentian Penggunaan](/aset-tetap/ruh/penghentian-penggunaan/penghentian-penggunaan/)/Usang/Barang
+  Hilang.
+
+## Langkah
+
+<Steps>
+
+1. Pilih menu **Aset Tetap > RUH > Transaksi BMN > Usulan
+   Penghapusan BMN > Pencatatan Barang Yang Akan Dihapuskan**,
+   lalu klik **Rekam**.
+2. Pilih Status BMN:
+   - **Henti Guna**: pada rincian aset hanya akan muncul BMN
+     yang telah disetujui transaksi penghentian penggunaan.
+   - **Non Henti Guna**: pada rincian aset akan muncul semua
+     kode BMN.
+3. Pilih BMN yang akan diusulkan hapus.
+4. Pilih tanggal buku sesuai dengan dokumen sumber dan isikan
+   dokumen sumber usulan penghapusan.
+5. Klik **Simpan**.
+
+</Steps>
+
+## Ketentuan
+
+- Dampak dari transaksi ini adalah keluarnya BMN dari pelaporan
+  BMN dan dari Neraca.
+
+## Jurnal transaksi
+
+- D. Beban Kerugian Pelepasan Aset
+- K. Aset Tetap yang tidak digunakan dalam Operasi Pemerintahan
+- D. Akumulasi Penyusutan Aset Tetap yang tidak digunakan dalam
+  Operasi Pemerintahan
+- K. Beban Kerugian Pelepasan Aset
+
+## Ilustrasi transaksi
+
+Satker KPPN Pekalongan mengusulkan penghapusan BMN atas AC Split
+NUP 1 kepada pengguna barang, karena BMN dimaksud telah rusak
+berat dan telah dilakukan penghentian dari penggunaan.
+
+## Terkait
+
+- [Membatalkan Pencatatan Barang yang Akan Dihapuskan](/aset-tetap/ruh/usulan-penghapusan-bmn/pembatalan-barang-akan-dihapuskan/)
+- [Merekam Transfer Keluar (Usul Hapus)](/aset-tetap/ruh/penghapusan/transfer-keluar-usul-hapus/)
+
+## Sumber
+
+<SumberAsli />

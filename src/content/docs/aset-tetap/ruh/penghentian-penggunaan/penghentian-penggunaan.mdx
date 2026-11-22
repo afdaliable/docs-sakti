@@ -1,0 +1,101 @@
+---
+title: Merekam Penghentian Penggunaan BMN
+description: Mencatat penghentian BMN dari penggunaan sebelum proses usul penghapusan.
+modul: aset-tetap
+menu_sakti: "Aset Tetap > RUH > Transaksi BMN > Penghentian Penggunaan > Penghentian Penggunaan"
+peran: [satker]
+jenis: juknis
+kata_kunci: [penghentian penggunaan, bmn henti guna, kode transaksi 401]
+status: review
+sumber:
+  - judul: "SAKTI PELAPORAN - Penghentian Penggunaan"
+    url: "https://sites.google.com/view/saktipelaporan/aset-tetap/ruh/transaksi-bmn/penghentian-penggunaan/penghentian-penggunaan"
+    jenis: google-sites
+    diambil: 2026-11-21
+    id_manifest: C-aset-tetap-ruh-transaksi-bmn-penghentian-penggunaan-penghentian-penggunaan
+  - judul: "Juknis SAKTI 2021 Penghentian Penggunaan"
+    url: "https://docs.google.com/presentation/d/1yC6KYX5eLsGCv0XvS0RGBMf9vuLNZiW7WbuFHxIrOnY/"
+    jenis: google-slides
+    diambil: 2026-11-21
+    id_manifest: C-dok-076
+sidebar:
+  order: 2
+---
+
+import { Steps } from '@astrojs/starlight/components';
+import MenuSakti from '~/components/MenuSakti.astro';
+import SumberAsli from '~/components/SumberAsli.astro';
+
+Menu Penghentian Penggunaan (kode transaksi 401) digunakan untuk
+mencatat transaksi penghentian BMN sebelum dilakukan proses usul
+penghapusan BMN, karena BMN tersebut tidak dipergunakan lagi
+dalam operasional normal satker yang bersangkutan. BMN yang
+telah dihentikan dari penggunaan berubah (reklasifikasi) dari
+Aset Tetap menjadi Aset Lainnya.
+
+<MenuSakti />
+
+## Prasyarat
+
+- Dokumen sumber: SK penghentian penggunaan BMN.
+- Pencatatan transaksi ini harus didasarkan dengan kriteria:
+  1. Satker memiliki keputusan pertimbangan yang rasional bahwa
+     BMN tersebut tidak lagi digunakan dalam kegiatan
+     operasional. Contoh pertimbangan rasional: kondisi/keadaan
+     BMN yang rusak sehingga tidak dapat digunakan kembali
+     melalui proses reparasi/pemeliharaan atau biaya
+     pemeliharaan sama dengan atau lebih besar daripada membeli
+     aset yang baru.
+  2. Telah terdapat dokumen sumber yang dibutuhkan yaitu surat
+     keterangan penghentian penggunaan.
+- BMN yang telah dihentikan penggunaannya akan ditindaklanjuti
+  sesuai dengan kondisi dari BMN yang bersangkutan.
+
+## Langkah
+
+<Steps>
+
+1. Pilih menu **Aset Tetap > RUH > Transaksi BMN > Penghentian
+   Penggunaan > Penghentian Penggunaan**, lalu klik **Rekam**.
+2. Pilih Kode Barang yang akan dihentikan penggunaannya dengan
+   memilih status BMN terlebih dahulu: RB/U/H (Rusak
+   Berat/Usang/Hilang) atau Non RB/U/H.
+3. Isikan NUP awal dan NUP akhir BMN yang akan dihenti gunakan.
+4. Pilih tanggal pembukuan sesuai dengan dokumen sumber.
+5. Isikan dan pilih nomor dan tanggal dasar koreksi.
+6. Klik tombol **Simpan**.
+
+</Steps>
+
+## Ketentuan
+
+- BMN yang telah dihentikan dari penggunaan berubah (reklas)
+  dari Aset Tetap menjadi Aset Lainnya.
+
+## Jurnal transaksi
+
+- D. Aset Tetap yang tidak digunakan dalam Operasi Pemerintahan
+- K. Aset Tetap
+- D. Akumulasi Penyusutan Aset Tetap
+- K. Akumulasi Penyusutan Aset Tetap yang tidak digunakan dalam
+  Operasi Pemerintahan
+
+## Ilustrasi transaksi
+
+A.C. Split NUP 1 milik KPPN Palu mengalami kerusakan yang
+diakibatkan bencana alam berupa gempa. Setelah dicatat
+[perubahan kondisi](/aset-tetap/ruh/perubahan-bmn/perubahan-kondisi/)
+menjadi rusak berat, maka A.C. Split NUP 1 ditetapkan untuk
+dihentikan penggunaannya dalam operasional sehari-hari
+perkantoran. (Versi tabel juknis pada halaman sumber: A.C.
+Split NUP 1 milik KPPN Pekalongan terbakar komponen utamanya
+karena hubungan pendek listrik kantor.)
+
+## Terkait
+
+- [Merekam Penggunaan Kembali BMN](/aset-tetap/ruh/penghentian-penggunaan/penggunaan-kembali/)
+- [Mencatat Barang yang Akan Dihapuskan](/aset-tetap/ruh/usulan-penghapusan-bmn/pencatatan-barang-akan-dihapuskan/)
+
+## Sumber
+
+<SumberAsli />

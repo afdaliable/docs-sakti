@@ -1,0 +1,86 @@
+---
+title: Merekam Penggunaan Kembali BMN
+description: Mencatat BMN yang dipergunakan kembali setelah penghentian dari penggunaan.
+modul: aset-tetap
+menu_sakti: "Aset Tetap > RUH > Transaksi BMN > Penghentian Penggunaan > Penggunaan Kembali"
+peran: [satker]
+jenis: juknis
+kata_kunci: [penggunaan kembali, bmn digunakan kembali, kode transaksi 402]
+status: review
+sumber:
+  - judul: "SAKTI PELAPORAN - Penggunaan Kembali"
+    url: "https://sites.google.com/view/saktipelaporan/aset-tetap/ruh/transaksi-bmn/penghentian-penggunaan/penggunaan-kembali"
+    jenis: google-sites
+    diambil: 2026-11-21
+    id_manifest: C-aset-tetap-ruh-transaksi-bmn-penghentian-penggunaan-penggunaan-kembali
+  - judul: "Juknis SAKTI 2021 Penggunaan Kembali"
+    url: "https://docs.google.com/presentation/d/1fOr6MRrXIta0HFF418FH4BItfD_jaicNJhKVmowu0fE/"
+    jenis: google-slides
+    diambil: 2026-11-21
+    id_manifest: C-dok-078
+sidebar:
+  order: 3
+---
+
+import { Steps } from '@astrojs/starlight/components';
+import MenuSakti from '~/components/MenuSakti.astro';
+import SumberAsli from '~/components/SumberAsli.astro';
+
+Menu Penggunaan Kembali (kode transaksi 402) digunakan untuk
+mencatat BMN yang dipergunakan kembali setelah sebelumnya
+dilakukan penghentian BMN dari penggunaan dikarenakan perubahan
+kondisi. BMN tersebut dapat dipergunakan kembali setelah
+mendapat perbaikan, baik dengan atau tanpa biaya tambahan.
+Dampak dari transaksi ini adalah perlu adanya pencatatan atas
+aset tersebut dengan mengembalikan (reklasifikasi) dari pos Aset
+Lainnya ke pos Aset Tetap sebelumnya termasuk akumulasi
+penyusutannya.
+
+<MenuSakti />
+
+## Prasyarat
+
+- Dokumen sumber: SK penggunaan kembali.
+- Sebelumnya harus sudah dilakukan persetujuan atas transaksi
+  [Penghentian Penggunaan](/aset-tetap/ruh/penghentian-penggunaan/penghentian-penggunaan/).
+
+## Langkah
+
+<Steps>
+
+1. Pilih menu **Aset Tetap > RUH > Transaksi BMN > Penghentian
+   Penggunaan > Penggunaan Kembali**, lalu klik **Rekam**.
+2. Pilih Kode Barang yang akan digunakan kembali (berasal dari
+   transaksi Penghentian Penggunaan yang sebelumnya telah
+   disetujui oleh approver).
+3. Isikan NUP awal dan NUP akhir BMN.
+4. Pilih tanggal pembukuan sesuai dengan dokumen sumber.
+5. Isikan dan pilih nomor dan tanggal dasar koreksi.
+6. Klik tombol **Simpan**.
+
+</Steps>
+
+## Jurnal transaksi
+
+- D. Aset Tetap
+- K. Aset Tetap yang tidak digunakan dalam Operasi Pemerintahan
+- D. Akumulasi Penyusutan Aset Tetap yang tidak digunakan dalam
+  Operasi Pemerintahan
+- K. Akumulasi Penyusutan Aset Tetap
+
+## Ilustrasi transaksi
+
+A.C. Split NUP 1 milik KPPN Palu yang mengalami kerusakan dan
+telah dihenti gunakan ternyata masih dapat diperbaiki dan
+setelah perbaikan A.C. tersebut dapat berfungsi dengan baik
+kembali, maka atas aset tersebut dilakukan perekaman transaksi
+penggunaan kembali. (Versi tabel juknis pada halaman sumber:
+biaya perbaikan sebesar Rp1.000.000,- dengan SPM/SP2D.)
+
+## Terkait
+
+- [Merekam Penghentian Penggunaan BMN](/aset-tetap/ruh/penghentian-penggunaan/penghentian-penggunaan/)
+
+## Sumber
+
+<SumberAsli />
