@@ -1,0 +1,267 @@
+---
+title: Menatausahakan Transaksi Hibah Kas
+description: Penatausahaan hibah kas pada SAKTI dari registrasi hibah, penerimaan kas hibah, kuitansi hibah, DRPP hibah, SP2HL/SP4HL, sampai SP2D.
+modul: bendahara
+peran: [satker]
+jenis: juknis
+kata_kunci: [hibah kas, kas hibah, drpp hibah, kuitansi hibah, sp2hl, sp4hl, sptb kuitansi hibah, register hibah]
+status: review
+perlu_review: true
+sumber:
+  - judul: "Juknis Penatausahaan Transaksi Hibah Kas Pada SAKTI"
+    url: "https://drive.google.com/file/d/1EvGC6O-S-SbPH7JSZhiPshYlunbqhsv1/view"
+    jenis: pdf
+    diambil: 2026-11-21
+    id_manifest: B-pem-002
+---
+
+import { Steps, Aside } from '@astrojs/starlight/components';
+import SumberAsli from '~/components/SumberAsli.astro';
+
+Dokumen ini menjelaskan penatausahaan transaksi hibah kas pada SAKTI
+lintas modul: registrasi hibah, penerimaan kas hibah pada Bendahara,
+penerimaan barang/jasa hibah kas pada Komitmen, perintah bayar,
+kuitansi hibah, DRPP hibah, penerbitan SP2HL/SP4HL pada Pembayaran,
+sampai pencatatan SP2D. Output akhir adalah SP2HL/SP4HL dan LPJ
+bendahara.
+
+## Prasyarat
+
+- Kas hibah yang sudah teregister di SAKTI — hibah luar negeri
+  didaftarkan melalui DJPPR, hibah kas dalam negeri melalui Kanwil
+  DJPb.
+- Role: admin (referensi register), bendahara pengeluaran,
+  komitmen, pembayaran, PPK, dan PPSPM.
+
+## Alur proses
+
+1. Pengecekan register hibah pada referensi.
+2. Perekaman rekening RPL untuk menampung kas hibah.
+3. Pencatatan penerimaan kas hibah pada modul Bendahara.
+4. Pencatatan penerimaan barang/jasa hibah kas pada Komitmen.
+5. Pencatatan perintah bayar dan validasi PPK.
+6. Perekaman kuitansi hibah oleh bendahara.
+7. Perekaman DRPP hibah.
+8. Perekaman SPP 512 SP2HL (dan varian TAYL).
+9. Pencetakan SPP/SPM, validasi, ADK, dan pencatatan SP2D.
+10. Pengembalian sisa kas hibah melalui SPP 514 SP4HL.
+
+## Langkah
+
+### Pengecekan register hibah (Admin)
+
+<Steps>
+
+1. Login dengan user admin, buka menu **Referensi > Umum > COA >
+   Register**.
+2. Pada tampilan Referensi Register muncul daftar hibah yang sudah
+   teregister — pastikan hibah tersedia dan dapat digunakan untuk
+   pencatatan penerimaan kas hibah.
+
+</Steps>
+
+### Perekaman rekening RPL hibah (Operator Bendahara)
+
+<Steps>
+
+1. Login user bendahara pengeluaran, buka menu **Bendahara >
+   Referensi > Referensi Detail Rekening**.
+2. Isikan elemen data yang diperlukan pada detail rekening, lalu
+   klik **Simpan**.
+
+</Steps>
+
+### Menerima kas hibah (Operator Bendahara)
+
+Pencatatan ini membukukan kas masuk hibah pada bendahara sehingga
+dapat dilakukan transaksi kas bersumber dana hibah.
+
+<Steps>
+
+1. Login user bendahara pengeluaran, buka menu **Bendahara >
+   Transaksi > Menerima Kas Hibah**.
+2. Pada form Penerimaan Kas Hibah, klik tombol **Tambah**.
+3. Isikan informasi: tanggal penerimaan kas hibah; tahun anggaran
+   hibah (tahun anggaran berjalan/TAYL); sumber dana (hibah dalam
+   negeri/luar negeri); nomor register hibah dari referensi SAKTI;
+   jumlah kas hibah yang ditatausahakan; keterangan; cara
+   pembayaran; dan rekening hibah.
+4. Klik **Simpan** — transaksi tampil pada grid; cek saldo pada
+   **Bendahara > Pemindahan Kas > Kas Bank Bendahara Pengeluaran**
+   atau **Kas Tunai Bendahara Pengeluaran** melalui tombol
+   Saldo Detil — kategori kas hibah kini tersedia.
+
+</Steps>
+
+### Pencatatan penerimaan barang/jasa hibah (Operator Komitmen)
+
+Untuk transaksi hibah yang merupakan pembelian barang/menghasilkan
+aset/persediaan, rekam BAST hibah kas terlebih dahulu sebagai titik
+penjurnalan.
+
+<Steps>
+
+1. Login user operator komitmen, buka menu **Komitmen > RUH >
+   BAST/BAKP/BAPP/DYD > Penerimaan Barang/Jasa Hibah Kas**.
+2. Rekam penerimaan barang/jasa hibah sesuai dokumen sumber dengan
+   mengikuti isian form (info dokumen, supplier, PKO, pendetailan
+   COA, dan rincian barang).
+3. Klik **Simpan**.
+
+</Steps>
+
+### Mencatat perintah bayar dan validasi (Pembayaran/PPK)
+
+<Steps>
+
+1. Login operator pembayaran, buka menu **Pembayaran > RUH
+   Pembayaran > Mencatat Perintah Bayar**.
+2. Rekam perintah bayar atas transaksi hibah kas sesuai dokumen
+   sumber, lalu simpan.
+3. Validasi SPBy dilakukan PPK pada menu **Pembayaran > Validasi >
+   Validasi Perintah Bayar**.
+
+</Steps>
+
+### Merekam kuitansi hibah (Operator Bendahara)
+
+<Steps>
+
+1. Buka menu **Bendahara > Transaksi > Membuat Kuitansi Hibah**.
+2. Pilih nomor SPBy hibah yang telah divalidasi, lengkapi isian
+   kuitansi (tanggal, penerima, uraian, cara pembayaran).
+3. Klik **Simpan**.
+
+</Steps>
+
+### Merekam DRPP hibah (Operator Bendahara)
+
+DRPP hibah direkam sebagai dasar pembuatan SP2HL — pastikan kuitansi
+sudah direkam.
+
+<Steps>
+
+1. Buka menu **Bendahara > Membuat Usulan > Membuat DRPP Hibah**.
+2. Pilih nomor register hibah pada DRPP header; pada DRPP detail,
+   pilih akun kuitansi yang akan direkam menjadi DRPP.
+3. Centang kuitansi yang dipertanggungjawabkan — pastikan kuitansi
+   yang dikehendaki sudah dipilih.
+4. Klik **Simpan** — data DRPP muncul pada grid dan dapat dibuat
+   menjadi SP2HL.
+
+</Steps>
+
+### Merekam SPP 512 – SP2HL (Operator Pembayaran)
+
+SP2HL (Surat Perintah Pengesahan Hibah Langsung) dibuat untuk
+pengesahan pembukuan hibah langsung — prasyaratnya adalah perekaman
+**Menerima Kas Hibah** untuk pendapatan atau **Membuat DRPP Hibah**
+untuk pengeluaran.
+
+<Steps>
+
+1. Buka menu **Pembayaran > RUH Pembayaran > Catat/Ubah SPP**,
+   pilih jenis SPP **512 – SP2HL**.
+2. Pada form RUH SPP 512, pilih dasar pembayaran dan isikan uraian
+   pembayaran.
+3. Pada tab **RUH Akun Pengeluaran**: cari DRPP hibah yang telah
+   direkam, pilih akun yang sesuai, klik **Simpan**, lalu keluar.
+4. Pada tab **RUH Akun Potongan/Pendapatan** (bila ada), lengkapi
+   akun potongan/pendapatan, klik **Simpan**, lalu keluar.
+5. Untuk hibah TAYL, gunakan tab RUH Akun Pengeluaran TAYL dan
+   tab RUH Akun Potongan/Pendapatan TAYL dengan langkah yang sama.
+6. Klik **Simpan** pada form RUH SPP.
+
+</Steps>
+
+### Penyelesaian SPP–SPM dan SP2D
+
+<Steps>
+
+1. Cetak SPP pada **Pembayaran > Cetak > Mencetak SPP**.
+2. Lakukan validasi SPP oleh PPK pada **Pembayaran > Validasi >
+   Validasi SPP**.
+3. Cetak SPM pada **Pembayaran > Cetak > Mencetak SPM**, unggah
+   dokumen pendukung pada **Pembayaran > Catat/Upload > Upload
+   Dokumen Pendukung**.
+4. Kirim ADK SPM OTP oleh PPSPM pada **Pembayaran > ADK > ADK SPM
+   OTP**.
+5. Catat SP2D pada **Pembayaran > Catat/Upload > Mencatat/Upload
+   SP2D** — tahap akhir ini sama dengan alur SPP/SPM lainnya, lihat
+   [Merekam Siklus Transaksi GUP](/bendahara/siklus-gup/).
+
+</Steps>
+
+### Pengembalian sisa kas hibah: SPP 514 – SP4HL
+
+Sisa hibah dikembalikan langsung kepada pemberi hibah, dan satker
+membuat SP4HL (Surat Perintah Pengesahan Pengembalian Pendapatan
+Hibah Langsung). Prasyarat: telah terdapat SP2HL pendapatan yang
+disahkan, dan/atau pengembalian belanja telah direkam pada perintah
+bayar dan DRPP untuk pengembalian sisa.
+
+<Steps>
+
+1. Login operator pembayaran, buka menu **Pembayaran > RUH
+   Pembayaran > Mencatat Perintah Bayar**, rekam perintah bayar
+   dengan kategori pengeluaran **Pengembalian Sisa**, lalu simpan.
+2. Lakukan validasi SPBy oleh PPK.
+3. Rekam kuitansi hibah oleh bendahara pada **Bendahara >
+   Transaksi > Membuat Kuitansi Hibah**.
+4. Rekam usulan/DRPP hibah pada **Bendahara > Membuat Usulan >
+   Membuat DRPP Hibah**.
+5. Rekam SP4HL pada modul Pembayaran: buka **Catat/Ubah SPP**,
+   pilih jenis SPP **514 – SP4HL**; pada form RUH SPP pilih dasar
+   pembayaran, isi uraian, dan cari supplier tipe 1/satker —
+   pastikan isian sisa hibah, pengembalian pendapatan, dan saldo
+   akhir pengembalian hibah telah sesuai.
+6. Pada tab **RUH Akun Pengembalian Pendapatan Hibah**, pilih akun
+   pendapatan/pengembalian hibah beserta kode satker dan kode KPPN
+   yang berlaku, isikan nilai pengembalian pendapatan, klik
+   **Simpan**; untuk TAYL, akun pengembalian pendapatan terisi bawaan
+   dengan kode satker dan KPPN mitra satker — isikan nilai, klik
+   **Simpan**, lalu keluar.
+7. Klik **Simpan** pada form RUH SPP, lalu lanjutkan cetak SPP,
+   validasi SPP, cetak SPM, upload dokumen pendukung, kirim ADK
+   SPM, dan pencatatan SP2D seperti tahap sebelumnya.
+
+</Steps>
+
+### Membuat SPTB kuitansi hibah (Operator Bendahara)
+
+Untuk pengembalian/penarikan kembali kuitansi hibah yang telah
+dicatat, gunakan menu **Bendahara > Membuat Usulan > Membuat SPTB
+Kuitansi Hibah** sesuai kebutuhan penatausahaan — status SPTB dapat
+dimonitor pada **Pembayaran > Monitoring > Monitoring DRPP
+Hibah** atas kuitansi/DRPP terkait.
+
+## Hasil yang diharapkan
+
+Hibah kas tercatat mulai dari penerimaan sampai pengesahan SP2HL;
+belanja atas dana hibah terpertanggungjawabkan; serta sisa hibah
+dikembalikan kepada pemberi hibah dan disahkan melalui SP4HL.
+
+<Aside type="caution" title="Perlu verifikasi">
+- Juknis menulis jalur "Administrasi > Umum > Coa > Register";
+  jalur baku aplikasi saat ini adalah **Referensi > Umum > COA >
+  Register**.
+- Juknis menulis jalur "Pembayaran > RUH SPP dan Renkas"; jalur
+  baku aplikasi saat ini adalah **Pembayaran > RUH Pembayaran**.
+- Juknis menulis jalur "Komitmen > RUH > Pencatatan Penerimaan
+  Barang/Jasa Hibah"; jalur baku aplikasi saat ini adalah
+  **Komitmen > RUH > BAST/BAKP/BAPP/DYD > Penerimaan Barang/Jasa
+  Hibah Kas**.
+- Juknis ini terbit November 2022; kode satker DJPPR/KPPN contoh
+  pada juknis tidak disalin — gunakan kode satker dan KPPN yang
+  berlaku pada satker masing-masing.
+</Aside>
+
+## Terkait
+
+- [Merekam Referensi Detil Rekening](/bendahara/referensi-detil-rekening/)
+- [Merekam Siklus Transaksi GUP](/bendahara/siklus-gup/)
+- [Mencatat Perintah Bayar](/pembayaran/ruh/mencatat-perintah-bayar/)
+
+## Sumber
+
+<SumberAsli />

@@ -1,0 +1,142 @@
+---
+title: Mencatat Pembayaran Dana Titipan
+description: Pencatatan pembayaran dana titipan dari SP2D LS bendahara ke pihak ketiga secara tunai, non tunai, dan sebagian.
+modul: bendahara
+menu_sakti: "Bendahara > Transaksi > Mencatat Pembayaran Dana Titipan"
+peran: [satker]
+jenis: juknis
+kata_kunci: [dana titipan, ls bendahara, pemindahan kas, sp2d ls, kas bank, kas tunai]
+status: review
+perlu_review: false
+sumber:
+  - judul: "Juknis Pencatatan Pembayaran Dana Titipan"
+    url: "https://drive.google.com/file/d/1F0O4l7zGYnj3HiLpH95bvsBDhJsQNm_f/view"
+    jenis: pdf
+    diambil: 2026-11-21
+    id_manifest: B-ben-009
+---
+
+import { Steps } from '@astrojs/starlight/components';
+import MenuSakti from '~/components/MenuSakti.astro';
+import SumberAsli from '~/components/SumberAsli.astro';
+
+Dana titipan adalah dana yang berasal dari seluruh jenis SPM/SP2D LS
+bendahara yang akan diteruskan pemberiannya ke pihak ketiga selaku
+penerima dana (pegawai atau rekanan). Bendahara pengeluaran berwenang
+meneruskan pembayarannya, sehingga perlu dilakukan pencatatan pada
+modul Bendahara sebagai bentuk pertanggungjawaban kas.
+
+<MenuSakti />
+
+## Prasyarat
+
+- Role yang dibutuhkan: operator (OPR) modul Bendahara.
+- Operator modul Pembayaran telah melakukan catat SP2D otomatis atas
+  seluruh SPM LS bendahara, sehingga bendahara pengeluaran dapat
+  melanjutkan pencatatan pada menu pemindahan kas dan mencatat
+  pembayaran dana titipan.
+- Dokumen input: dokumen SPM LS bendahara serta data SP2D-nya.
+
+## Langkah
+
+### Mencatat pembayaran dana titipan secara non tunai
+
+<Steps>
+
+1. Buka menu **Bendahara > Pemindahan Kas > Kas Bank Bendahara
+   Pengeluaran**, lalu klik tombol **Rekam**.
+2. Pada kolom tanggal, isikan tanggal diterimanya pencairan SP2D LS
+   bendahara di rekening BPG; isi jenis aktivitas **Terima SP2D** dan
+   kategori kas **LS Bendahara**.
+3. Klik tombol **Cari** pada kolom nomor SP2D — muncul popup daftar
+   SP2D LS bendahara; pilih yang akan dicatat lalu klik **OK**.
+4. Kolom jenis SP2D, jumlah, dan sumber dana terisi otomatis — kolom
+   nomor uang muka dilewati karena dipakai oleh BPP; pada kolom
+   rekening bank, pilih nomor rekening BPG yang sudah didaftarkan
+   pada menu **Bendahara > Referensi > Referensi Detail Rekening**.
+5. Isikan keterangan transaksi sesuai kondisi riil.
+6. Lanjutkan ke menu **Bendahara > Transaksi > Mencatat Pembayaran
+   Dana Titipan**, klik tombol **Tambah**.
+7. Isikan tanggal pembayaran sesuai tanggal dibayarkannya saldo LS
+   bendahara ke pihak ketiga/penerima — kolom nomor pembayaran terisi
+   otomatis.
+8. Pilih cara penyetoran dengan kategori **Non Tunai**.
+9. Isikan nama penerima dan jabatan penerima uang sesuai kondisi
+   riil, lalu isikan jumlah uang yang akan diberikan beserta
+   keterangannya.
+10. Pada kolom nomor dokumen, pilih nomor SP2D LS bendahara yang
+    sudah dicatat pada menu kas bank bendahara pengeluaran, lalu
+    pilih nomor rekening bank BPG, dan klik **Simpan** — transaksi
+    muncul pada kolom Cari Dana Titipan.
+
+</Steps>
+
+### Mencatat pembayaran dana titipan secara tunai
+
+<Steps>
+
+1. Catat pemindahan kas kategori LS bendahara dari kas bank ke kas
+   tunai: buka menu **Kas Tunai Bendahara Pengeluaran**, klik tombol
+   **Tambah**.
+2. Pada kolom tanggal, isikan tanggal disetorkannya LS bendahara dari
+   rekening BPG ke tunai; pilih jenis aktivitas **Penarikan Uang dari
+   Bank**.
+3. Pilih kategori kas **LS Bendahara** dan isikan jumlah saldo LS
+   bendahara yang ditarik tunai pada kolom Jumlah.
+4. Kolom nomor uang muka dilewati (dipakai untuk transaksi UM oleh
+   BPP); kolom sumber dana terisi otomatis — isikan kolom rekening
+   bank dengan rekening BPG.
+5. Isikan keterangan transaksi sesuai kondisi riil pada kolom uraian.
+6. Sebelum mencatat pembayaran dana titipan, cek saldo dengan tombol
+   **Saldo Detail** untuk memastikan saldo LS bendahara sudah
+   berpindah dari kas bank ke kas tunai.
+7. Buka menu **Bendahara > Transaksi > Mencatat Pembayaran Dana
+   Titipan**, klik **Tambah**, dan isi tanggal pembayaran.
+8. Pilih cara penyetoran **Tunai**.
+9. Isikan nama dan jabatan penerima uang, jumlah uang LS bendahara
+   yang diberikan, dan keterangan sesuai kondisi riil.
+10. Pilih nomor SP2D LS bendahara pada kolom nomor dokumen sesuai
+    pemindahan kas tunai sebelumnya, lalu klik **Simpan** — kolom
+    rekening bank tidak perlu diisi karena transaksi tunai.
+
+</Steps>
+
+### Mencatat pembayaran dana titipan sebagian tunai dan non tunai
+
+Satu transaksi LS bendahara dari satu nomor SP2D yang sama dapat
+dibagikan ke penerima secara sebagian tunai dan sebagian non tunai;
+asumsikan saldo sudah berada di kas bank dan kas tunai sehingga
+langkah pemindahan kas dilewati.
+
+<Steps>
+
+1. Pada menu Mencatat Pembayaran Dana Titipan, klik tombol **Rekam**,
+   isi tanggal pembayaran, pilih cara penyetoran **Non Tunai**, dan
+   isikan nama serta jabatan penerima uang.
+2. Pada kolom nomor dokumen, pilih nomor SP2D LS bendahara — kolom
+   jumlah terisi otomatis; sesuaikan jumlah yang akan dibayar, isikan
+   keterangan, lalu klik **Simpan**.
+3. Untuk bagian tunai, pada menu yang sama klik **Rekam**, isi
+   tanggal pembayaran, pilih cara penyetoran **Tunai**, dan isikan
+   nama serta jabatan penerima uang.
+4. Pilih nomor SP2D LS yang sama — kolom jumlah menampilkan sisa
+   saldo LS bendahara atas SP2D tersebut; sesuaikan jumlah yang akan
+   dibayar, isikan keterangan, lalu klik **Simpan**.
+
+</Steps>
+
+## Hasil yang diharapkan
+
+Pembayaran dana titipan dari SP2D LS bendahara tercatat pada kolom
+Cari Dana Titipan sebagai bentuk pertanggungjawaban kas bendahara
+pengeluaran.
+
+## Terkait
+
+- [Merekam Transaksi Bendahara Penerimaan](/bendahara/bendahara-penerimaan/)
+
+- [Merekam Referensi Detil Rekening](/bendahara/referensi-detil-rekening/)
+
+## Sumber
+
+<SumberAsli />

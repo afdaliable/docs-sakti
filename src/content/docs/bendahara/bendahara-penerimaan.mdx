@@ -1,0 +1,274 @@
+---
+title: Merekam Transaksi Bendahara Penerimaan
+description: Siklus transaksi bendahara penerimaan dari persiapan referensi, migrasi saldo awal, uang masuk, setoran PNBP/pajak, pemindahan kas DPK, sampai monitoring.
+modul: bendahara
+peran: [satker]
+jenis: juknis
+kata_kunci: [bendahara penerimaan, pnbp, dpk, sbs, simponi, migrasi saldo awal, uang masuk]
+status: review
+perlu_review: true
+sumber:
+  - judul: "Juknis _Bendahara Penerimaan_2021"
+    url: "https://drive.google.com/file/d/1_QLpU1BqOA9d1DorXfywF1VH6CSOxfFg/view"
+    jenis: pdf
+    diambil: 2026-11-21
+    id_manifest: B-ben-008
+---
+
+import { Steps, Aside } from '@astrojs/starlight/components';
+import SumberAsli from '~/components/SumberAsli.astro';
+
+Dokumen ini menjelaskan penatausahaan bendahara penerimaan pada
+SAKTI: persiapan menu dan referensi, migrasi saldo awal, pencatatan
+uang masuk, penyetoran PNBP (SBS, non-SBS, upload ADK SIMPONI),
+penatausahaan kas DPK, setoran pajak, dan monitoring penerimaan.
+
+## Prasyarat
+
+- User memiliki akses menu bendahara penerimaan pada modul
+  Bendahara (periksa keberadaan submenu **Migrasi Saldo Awal Kas
+  Bendahara Penerimaan**); apabila belum ada, admin satker
+  mengaktifkan akses bendahara penerimaan pada pengelolaan pengguna
+  — lewati tahap ini apabila menu sudah tersedia.
+- Referensi bendaharawan, pejabat, detail rekening, dan wajib
+  pajak/wajib bayar telah direkam.
+
+## Alur proses
+
+1. Persiapan: akses user dan perekaman referensi bendahara
+   penerimaan.
+2. Perekaman migrasi saldo awal bendahara penerimaan.
+3. Pencatatan uang masuk dan setoran PNBP (SBS tunai/non tunai).
+4. Perekaman setoran PNBP non-SBS manual.
+5. Perekaman setoran PNBP melalui upload ADK SIMPONI.
+6. Penatausahaan kas DPK: penerimaan, pemindahan kategori, dan
+   pengeluaran.
+7. Setoran PNBP dan setoran pajak yang berasal dari DPK.
+8. Monitoring penerimaan bendahara.
+
+## Langkah
+
+### Perekaman referensi (Admin/Operator)
+
+<Steps>
+
+1. Dengan user admin satker, rekam referensi bendaharawan pada menu
+   **Referensi > Bendahara > Bendaharawan**, klik **Rekam**,
+   lengkapi data bendahara penerimaan, lalu **Simpan**.
+2. Rekam data pejabat bendahara penerimaan pada referensi jabatan
+   dan pejabat.
+3. Rekam referensi detail rekening bendahara penerimaan pada menu
+   **Bendahara > Referensi > Referensi Detail Rekening**.
+4. Rekam wajib pajak/wajib bayar bendahara penerimaan pada menu
+   **Bendahara > Referensi > Referensi Wajib Pajak / Wajib
+   Bayar** — lihat [Merekam Referensi Wajib Pajak/Wajib
+   Bayar](/bendahara/referensi-wajib-pajak/).
+
+</Steps>
+
+### Migrasi saldo awal bendahara penerimaan
+
+Digunakan untuk mencatat saldo awal tahun anggaran berjalan dari
+saldo akhir tahun anggaran lalu — lewati apabila tidak ada sisa
+saldo pada akhir tahun anggaran sebelumnya.
+
+<Steps>
+
+1. Buka menu **Bendahara > Pemindahan Kas > Migrasi Saldo Awal Kas
+   Bendahara Penerimaan**, klik **Tambah**.
+2. Pilih tanggal 1 Januari tahun anggaran berjalan; isikan nomor
+   referensi sesuai format masing-masing satker — wajib diisi karena
+   data tidak dapat disimpan tanpa nomor referensi.
+3. Abaikan isian kas masuk untuk saldo awal GL — nilai tersebut
+   adalah saldo awal GL tahun lalu dan tidak berpengaruh ke saldo
+   awal LPJ tahun berjalan.
+4. Isikan saldo kas tunai sesuai saldo akhir riil tahun lalu; lanjut
+   ke pencatatan saldo kas bank (jika ada) — rekam data kas bank
+   per kategori (PNBP SBS, PNBP dana titipan, DPK, pajak, dan
+   lainnya) dan pastikan saldo per rekening sesuai posisi
+   sebenarnya; klik **Simpan**.
+5. Pastikan migrasi tercatat: buka **Bendahara > Pemindahan Kas >
+   Kas Bank Bendahara Penerimaan** atau **Kas Tunai Bendahara
+   Penerimaan**, klik **Saldo Detail**, dan cocokkan per kategori
+   dengan data migrasi; lakukan pengecekan lanjut pada cetakan buku
+   kas bendahara penerimaan melalui menu cetak laporan.
+
+</Steps>
+
+### Setoran PNBP SBS tunai/non tunai
+
+Sebelum menyetor, catat terlebih dahulu uang masuk.
+
+<Steps>
+
+1. Buka menu **Bendahara > Transaksi > Mencatat Uang Masuk
+   Bendahara Penerimaan**, klik **Tambah** — nomor DIPA terisi
+   otomatis; pilih NPWP bendahara penerimaan yang telah direkam;
+   isi nomor dan tanggal SPN (jika ada).
+2. Pilih jenis pemindahan kas **Tunai** atau **Non Tunai** — untuk
+   non tunai, isikan rekening bank yang digunakan; isi keterangan
+   dan tanggal SBS.
+3. Lengkapi kolom program, kegiatan, akun, dan jumlah sesuai data
+   PNBP riil; pilih jenis PNBP khusus; klik **Simpan**.
+4. Buka menu **Bendahara > Setoran > Setoran PNBP Bendahara
+   Penerimaan**, klik **Tambah**; pilih jenis setoran **PNBP
+   Khusus** dan jenis pungutan PNBP **SBS**; pilih program dan
+   kegiatan yang sama dengan pencatatan uang masuk; isi tanggal
+   SSBP, NPWP bendahara penerimaan, dan nomor/tanggal SPN (jika
+   ada).
+5. Pilih cara penyetoran sesuai opsi saat mencatat uang masuk; isi
+   keterangan; pilih akun yang disetorkan — kolom jumlah terisi
+   otomatis mengikuti SBS; untuk non tunai pilih rekening bank
+   (sistem menampilkan sisa saldo kas bank rekening tersebut).
+6. Lengkapi pengesahan setoran: tanggal penyetoran, kode billing,
+   NTPN, dan nama bank; klik **Simpan**.
+
+</Steps>
+
+### Setoran PNBP non-SBS secara manual
+
+Dapat dilakukan manual atau dengan upload ADK penerimaan dari
+SIMPONI. Untuk perekaman manual:
+
+<Steps>
+
+1. Buka menu **Bendahara > Setoran > Setoran PNBP Bendahara
+   Penerimaan**, klik **Rekam**; pilih jenis pengembalian setoran
+   **PNBP Khusus** dan jenis pungutan **Non SBS**.
+2. Isikan program dan kegiatan sesuai data penyetoran riil, NPWP
+   wajib setor, tanggal SSBP, nomor dan tanggal SPN (jika ada),
+   keterangan, dan nominal setoran.
+3. Pilih akun PNBP yang disetor — abaikan isian cara pembayaran,
+   rekening bank, dan saldo bank karena dimatikan sistem: setoran
+   non-SBS sudah disetorkan pihak ketiga sehingga tidak mengurangi
+   saldo kas dan pencatatan hanya untuk pembukuan bendahara.
+4. Lengkapi pengesahan setoran (tanggal penyetoran, kode billing,
+   NTPN, nama bank), klik **Simpan**.
+
+</Steps>
+
+### Upload ADK SIMPONI
+
+<Steps>
+
+1. Buka aplikasi SIMPONI pada peramban melalui tautan resmi dan
+   login; pilih menu **Billing**, lalu menu **Backup Data ke
+   Aplikasi SAS**.
+2. Isikan periode tanggal buku sesuai data penerimaan yang akan
+   diunggah; pilih jenis PNBP (fungsional, umum, non anggaran,
+   atau seluruhnya); klik tombol **Backup Data Penyetoran PNBP** —
+   aplikasi mengunduh ADK data penerimaan (.zip).
+3. Pada aplikasi SAKTI, login user bendahara dan buka menu
+   **Bendahara > Upload > Upload Data Penerimaan**; klik tombol
+   **Pilih**, pilih file ADK SIMPONI, klik **Open**.
+4. Klik **Validasi Data** dan tunggu sampai selesai — seluruh
+   transaksi pada ADK SIMPONI muncul pada kolom Data Valid;
+   pastikan semua data sukses diunggah.
+
+</Steps>
+
+### Penatausahaan kas DPK (dana titipan/dana pihak ketiga)
+
+Pencatatan penerimaan DPK melalui pemindahan kas dengan kategori kas
+**Kas DPK**:
+
+<Steps>
+
+1. Terima kas DPK non tunai — menu **Bendahara > Pemindahan
+   Kas > Kas Bank Bendahara Penerimaan**, klik **Tambah**, isi
+   tanggal sesuai tanggal masuk kas, pilih jenis aktivitas
+   **penerimaan bank**, kategori **Kas DPK**, rekening bank,
+   jumlah uang, nama pihak ketiga, dan keterangan — posisi saldo
+   rekening tertampil pada kotak Saldo Kas; klik **Simpan**.
+2. Terima kas DPK tunai — menu **Kas Tunai Bendahara
+   Penerimaan**, klik **Tambah**, isi tanggal, jenis aktivitas
+   **penerimaan tunai**, kategori **Kas DPK**, jumlah, keterangan,
+   dan nama pihak ketiga — saldo kategori DPK muncul otomatis;
+   klik **Simpan**.
+3. Pemindahan kategori kas DPK — menu **Kas Bank Bendahara
+   Penerimaan**, klik **Tambah**, pilih jenis aktivitas
+   **Pemindahan kategori kas Bank**, isi kategori kas asal,
+   rekening bank tujuan, nominal, nama pihak ketiga, keterangan,
+   dan kategori kas tujuan; klik **Simpan**. Untuk tunai gunakan
+   **Kas Tunai Bendahara Penerimaan** dengan jenis aktivitas
+   **Pemindahan Kategori Kas Tunai** — atau **Pemindahan kas Bank
+   ke Tunai** / **Pemindahan kas tunai ke bank** apabila memindah
+   antar jenis kas tanpa mengubah kategori; lengkapi kategori
+   asal/tujuan, nominal, keterangan, dan nama pihak ketiga.
+4. Keluar kas DPK non tunai — menu **Kas Bank Bendahara
+   Penerimaan**, jenis aktivitas **pengeluaran bank**, kategori
+   **Kas DPK**, pilih rekening sesuai posisi saldo, isi jumlah,
+   nama pihak ketiga, dan keterangan; klik **Simpan**.
+5. Keluar kas DPK tunai — menu **Kas Tunai Bendahara
+   Penerimaan**, jenis aktivitas **Pengeluaran Tunai**, kategori
+   **Kas DPK**, isi jumlah, keterangan, dan nama pihak ketiga;
+   klik **Simpan**.
+
+</Steps>
+
+### Setoran PNBP dan pajak yang berasal dari DPK
+
+Digunakan untuk menyetorkan PNBP yang berasal dari pindah kategori
+kas DPK ke PNBP — pastikan pemindahan kategori telah dilakukan.
+
+<Steps>
+
+1. Buka menu **Bendahara > Setoran > Setoran PNBP Dana Titipan /
+   DPK**, klik **Tambah**.
+2. Isi tanggal SSBP, NPWP wajib setor, keterangan, dan cara
+   pembayaran (non tunai → pilih rekening bank); isi program dan
+   kegiatan, pilih akun, dan input jumlah setoran.
+3. Isi tanggal diterima bank, NTPN, NTB, nama bank, dan kode
+   billing; klik **Simpan**.
+
+</Steps>
+
+<Steps>
+
+1. Untuk setoran pajak dari DPK, buka menu **Bendahara > Setoran >
+   Setoran Pajak**, klik **Tambah**.
+2. Isi nomor ketetapan (jika ada), masa pajak, tanggal setoran, dan
+   NPWP wajib pajak; pilih cara penyetoran tunai/non tunai.
+3. Isi nomor objek pajak, alamat objek pajak, jenis setoran, akun
+   pajak, nominal setoran, dan keterangan; lengkapi tanggal
+   penyetoran, kode billing, NTPN, dan nama bank; klik **Simpan**.
+
+</Steps>
+
+### Monitoring penerimaan bendahara
+
+Pencatatan uang masuk dan setoran dapat dimonitor pada **Bendahara >
+Monitoring > Monitoring Penerimaan Bendahara**, dan dilaporkan
+melalui LPJ bendahara penerimaan — lihat [Merekam LPJ Bendahara
+Penerimaan](/bendahara/lpj-bendahara-penerimaan/).
+
+## Hasil yang diharapkan
+
+Seluruh penerimaan dan dana pihak ketiga bendahara penerimaan
+tercatat, penyetoran PNBP dan pajak terbukukan, serta posisi kas
+dapat dimonitor dan dilaporkan melalui LPJ.
+
+<Aside type="caution" title="Perlu verifikasi">
+- Juknis menulis jalur "Administrasi > Bendahara > Bendaharawan";
+  jalur baku aplikasi saat ini adalah **Referensi > Bendahara >
+  Bendaharawan**.
+- Juknis menulis "Pemindahan Kas > migrasi saldo awal bendahara
+  penerimaan"; pada aplikasi tersedia **Migrasi Saldo Awal Kas
+  Bendahara Penerimaan** dan **Migrasi Saldo Awal PNBP Bendahara
+  Penerimaan** — juknis tidak membedakan keduanya.
+- Juknis menulis "setoran > Setoran PNBP dana titipan"; jalur baku
+  aplikasi saat ini adalah **Bendahara > Setoran > Setoran PNBP Dana
+  Titipan / DPK**.
+- Juknis ini diterbitkan tahun 2021; jalur referensi jabatan/pejabat
+  dan akses pengguna mengikuti struktur menu versi juknis.
+</Aside>
+
+## Terkait
+
+- [Merekam LPJ Bendahara Penerimaan](/bendahara/lpj-bendahara-penerimaan/)
+- [Merekam Referensi Wajib Pajak/Wajib Bayar](/bendahara/referensi-wajib-pajak/)
+- [Merekam Referensi Detil Rekening](/bendahara/referensi-detil-rekening/)
+
+## Sumber
+
+<SumberAsli />
