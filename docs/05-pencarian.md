@@ -70,3 +70,5 @@ Rate limit: 30 request/menit per IP. Query dicatat **tanpa IP** untuk analitik (
 ```
 
 Script menjalankan setiap query ke Level 1 dan ke pipeline hybrid, lalu melaporkan hit@3 dan MRR. CI gagal jika hit@3 hybrid < 0,80 (setelah fase 4 selesai).
+
+Selama hybrid belum tersedia (5.2), `pnpm search:eval --level 1` memakai ambang yang sama untuk Level 1 (K62). Eval membuka `/cari/?q=…` hasil `pnpm build` satu kali muat penuh per kueri, karena hasil Pagefind bergantung pada chunk indeks yang sudah dimuat di halaman. Opsi: `--ambang 0.80`, `--json <berkas>`; `E2E_DIST` untuk folder build selain `dist/`.

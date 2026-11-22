@@ -38,7 +38,7 @@ const perModul = konfigurasi.modul
 			<p>Belum ada artikel untuk peran ini.</p>
 		) : (
 			perModul.map((grup) => (
-				<section>
+				<section data-pagefind-ignore>
 					<h2 id={grup.modul.slug}>{grup.modul.nama}</h2>
 					<ul>
 						{grup.dok.map((doc) => (

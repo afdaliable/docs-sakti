@@ -81,29 +81,39 @@ try {
 		.waitFor();
 	console.log('OK Level 1: "adendum kontrak multi year gimana" → addendum-kontrak-multi-year');
 
-	await page.goto(`${BASE_URL}/`, { waitUntil: 'networkidle' });
-	await input.fill('pasword');
-	await panel
-		.locator('a[href="/mulai/akses-aplikasi/ubah-kata-sandi/"]')
-		.first()
-		.waitFor();
-	await page.waitForFunction(
-		() =>
-			(document.querySelector('sakti-cari [data-status]')?.textContent ?? '').includes(
-				'Tidak ada hasil persis',
-			),
+	// Kueri salah ketik dipilih dari daftar kandidat: yang pertama memberi 0 hasil
+	// Pagefind di keadaan segar, supaya pemeriksaan fallback tidak bergantung pada isi indeks.
+	const KANDIDAT_TYPO = [
+		{ q: 'lupa paswod', harap: '/mulai/akses-aplikasi/ubah-kata-sandi/' },
+		{ q: 'pasword', harap: '/mulai/akses-aplikasi/ubah-kata-sandi/' },
+		{ q: 'paswod sakti', harap: '/mulai/akses-aplikasi/ubah-kata-sandi/' },
+		{ q: 'kontark tahuan', harap: '/komitmen/ruh/pencatatan-kontrak/kontrak-tahunan/' },
+	];
+	let uji: { q: string; harap: string } | undefined;
+	const nilaiKandidat: string[] = [];
+	for (const k of KANDIDAT_TYPO) {
+		await page.goto(`${BASE_URL}/cari/?q=${encodeURIComponent(k.q)}`, {
+			waitUntil: 'networkidle',
+		});
+		await page
+			.locator('.halaman-cari:is([data-keadaan="selesai"], [data-keadaan="galat"])')
+			.waitFor();
+		const pf = await page.locator('.halaman-cari').getAttribute('data-jumlah-pagefind');
+		nilaiKandidat.push(`${k.q}=${pf ?? 'galat'}`);
+		if (pf === '0') {
+			uji = k;
+			break;
+		}
+	}
+	assert.ok(
+		uji,
+		`tidak ada kandidat salah ketik yang memberi 0 hasil Pagefind; perbarui daftar kandidat: ${nilaiKandidat.join(', ')}`,
 	);
-	console.log('OK Level 1: "pasword" → ubah-kata-sandi (hasil mirip)');
+	console.log(
+		`OK Level 1: kueri salah ketik terpilih "${uji.q}" (dicoba: ${nilaiKandidat.join(', ')})`,
+	);
 
-	await page.goto(`${BASE_URL}/cari/?q=pasword`, { waitUntil: 'networkidle' });
 	const halamanCari = page.locator('.halaman-cari');
-	await halamanCari.waitFor({ state: 'attached' });
-	await page.locator('.halaman-cari[data-keadaan="selesai"]').waitFor();
-	assert.equal(
-		await halamanCari.getAttribute('data-jumlah-pagefind'),
-		'0',
-		'/cari/: data-jumlah-pagefind harus 0',
-	);
 	assert.ok(
 		parseInt((await halamanCari.getAttribute('data-jumlah')) ?? '0', 10) > 0,
 		'/cari/: data-jumlah harus > 0',
@@ -112,17 +122,28 @@ try {
 		.locator('#daftar-hasil a.judul')
 		.evaluateAll((els) => els.slice(0, 3).map((e) => e.getAttribute('href')));
 	assert.ok(
-		hrefTiga.includes('/mulai/akses-aplikasi/ubah-kata-sandi/'),
-		`/cari/: ubah-kata-sandi harus di 3 hasil pertama: ${JSON.stringify(hrefTiga)}`,
+		hrefTiga.includes(uji.harap),
+		`/cari/: ${uji.harap} harus di 3 hasil pertama: ${JSON.stringify(hrefTiga)}`,
 	);
 	assert.match(
 		(await page.locator('#jumlah-hasil').textContent()) ?? '',
 		/mirip/,
 		'/cari/: #jumlah-hasil harus memuat "mirip"',
 	);
-	console.log('OK Level 1: /cari/?q=pasword menampilkan hasil mirip');
+	console.log(`OK Level 1: /cari/?q=${uji.q} menampilkan hasil mirip`);
 
-	await page.goto(`${BASE_URL}/cari/?q=pasword&modul=persediaan`, {
+	await page.goto(`${BASE_URL}/`, { waitUntil: 'networkidle' });
+	await input.fill(uji.q);
+	await panel.locator(`a[href="${uji.harap}"]`).first().waitFor();
+	await page.waitForFunction(
+		() =>
+			(document.querySelector('sakti-cari [data-status]')?.textContent ?? '').includes(
+				'Tidak ada hasil persis',
+			),
+	);
+	console.log(`OK Level 1: "${uji.q}" → ${uji.harap} (hasil mirip)`);
+
+	await page.goto(`${BASE_URL}/cari/?q=${encodeURIComponent(uji.q)}&modul=persediaan`, {
 		waitUntil: 'networkidle',
 	});
 	await page.locator('.halaman-cari[data-keadaan="selesai"]').waitFor();

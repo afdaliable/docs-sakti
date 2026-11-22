@@ -14,7 +14,7 @@
     "astro": "astro",
     "check:content": "tsx scripts/check-content.ts",
     "check:links": "astro build",
-    "search:eval": "node scripts/belum-tersedia.mjs search:eval 5",
+    "search:eval": "tsx scripts/search/eval.ts",
     "migrate:inventory": "tsx scripts/inventory/index.ts",
     "migrate:extract": "tsx scripts/extract/index.ts",
     "migrate:draft": "node scripts/belum-tersedia.mjs migrate:draft 4",

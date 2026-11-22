@@ -648,7 +648,9 @@
     "sinonim": [
       "void spm",
       "pembatalan sp2d",
-      "batal sp2d"
+      "batal sp2d",
+      "batal spm",
+      "pembatalan spm"
     ],
     "perlu_verifikasi": true
   },

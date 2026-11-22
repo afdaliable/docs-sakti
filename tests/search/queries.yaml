@@ -266,3 +266,21 @@
   harap: ["/aset-tetap/faq/"]
 - q: "saldo beban aset ekstrakomptabel"
   harap: ["/aset-tetap/faq/"]
+- q: "cara batal spm"
+  harap: ["/pembayaran/ruh/void-spm/"]
+- q: "barang persediaan rusak"
+  harap: ["/persediaan/transaksi-keluar/rusak/", "/persediaan/transaksi-keluar/penghapusan-usang-rusak/"]
+- q: "input kontrak"
+  harap: ["/komitmen/ruh/pencatatan-kontrak/", "/komitmen/ruh/pencatatan-kontrak/kontrak-tahunan/"]
+- q: "tutup buku akhir tahun"
+  harap: ["/akuntansi-pelaporan/tutup-buku/tutup-buku/", "/persediaan/tutup-buku/tutup-periode-persediaan/"]
+- q: "lupa pasword sakti"
+  harap: ["/mulai/akses-aplikasi/ubah-kata-sandi/"]
+- q: "kontark tahunan"
+  harap: ["/komitmen/ruh/pencatatan-kontrak/kontrak-tahunan/"]
+- q: "penghapusan piutng"
+  harap: ["/piutang/pengelolaan-piutang/transaksi/penghapusan-piutang/"]
+- q: "opname fisik persedian"
+  harap: ["/persediaan/opname-fisik/rekam-hasil-opname-fisik/", "/persediaan/opname-fisik/"]
+- q: "adendum kontrak tahunan"
+  harap: ["/komitmen/ruh/pencatatan-kontrak/addendum-kontrak-tahunan/"]

@@ -109,6 +109,7 @@ Status Gerbang 4 (22 Nov 2026): semua modul dalam urutan Fase 4 sudah didraf dan
   - 23 Nov 2026: `src/lib/cari/` (varian kueri, gabungan Pagefind, fallback MiniSearch pada `/search-lite.json`), kamus `src/data/kata-kueri.json` (K61); dipakai `BigSearch` dan `/cari/`.
 - [ ] 5.2 `scripts/search/build-embeddings.ts` + `/api/search` (Opsi sesuai K7) + fusion RRF di BigSearch + fallback.
 - [ ] 5.3 `pnpm search:eval` untuk Level 1 dan hybrid; hit@3 hybrid ≥ 0,80.
+  - 23 Nov 2026: Level 1 selesai (`scripts/search/eval.ts`, K62): 143 kueri, hit@1 0,804, hit@3 0,979, MRR 0,885 (Pagefind polos sebelum 5.1: 0,664 / 0,713 / 0,688). Tiga kueri belum masuk 3 teratas: "transfer keluar bmn ke satker lain", "input kontrak", "penghapusan piutng". Belum dicentang: bagian hybrid menunggu 5.2.
 - [ ] 5.4 Keystatic GitHub mode di `/keystatic` (`06-kontributor-admin.md`).
 - [ ] 5.5 CODEOWNERS, template PR/issue, label, branch protection (dokumentasikan langkah manual yang harus dilakukan pemilik repo di `docs/setup-github.md`).
 - [ ] 5.6 Halaman `/kontribusi/*`.
