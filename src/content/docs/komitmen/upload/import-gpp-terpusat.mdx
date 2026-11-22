@@ -1,0 +1,140 @@
+---
+title: Mengimpor Data GPP Terpusat (Interkoneksi KPPN)
+description: Mengimpor data pegawai dan gaji dari aplikasi GPP Terpusat KPPN yang telah direkonsiliasi, serta perekaman SPP gaji.
+modul: komitmen
+menu_sakti: "Komitmen > Upload / Import > Import GPP Terpusat"
+peran: [satker]
+jenis: juknis
+kata_kunci: [import gpp terpusat, gpp kppn, data pegawai, data gaji, rekonsiliasi gaji, monitoring adk gpp]
+status: review
+perlu_review: true
+sumber:
+  - judul: "Juknis Interkoneksi Aplikasi SAKTI dengan Aplikasi GPP Terpusat (KPPN)"
+    url: "https://drive.google.com/file/d/1pFmygnNBNKOQzxo0Qlf-hD1Zd6RFISBt/view"
+    jenis: pdf
+    diambil: 2026-11-21
+    id_manifest: B-kom-014
+sidebar:
+  order: 2
+---
+
+import { Steps, Aside } from '@astrojs/starlight/components';
+import MenuSakti from '~/components/MenuSakti.astro';
+import SumberAsli from '~/components/SumberAsli.astro';
+
+Fitur interkoneksi SAKTI dengan aplikasi GPP Terpusat (KPPN)
+menggantikan proses unggah manual ADK data pegawai dan gaji dari
+aplikasi GPP satker (ADK KOM dan GPP), kecuali untuk pembayaran uang
+makan dan uang lembur yang masih diunggah manual. Satker **wajib**
+melakukan rekonsiliasi gaji dengan KPPN; data gaji dan pegawai hasil
+rekonsiliasi diambil melalui menu Import GPP Terpusat. Fitur ini
+mencakup perekaman referensi anak satker dan pembuatan SPM gaji induk,
+gaji 13, THR, kekurangan gaji, gaji susulan, uang muka gaji, dan gaji
+terusan.
+
+<MenuSakti />
+
+## Langkah
+
+### Merekam anak satker (Admin Satker)
+
+Login sebagai Admin Satker (lokal), masuk ke menu **Referensi > Umum >
+COA > Anak Satker**, pilih **Rekam**, lalu input kode anak satker `00`
+(satker dengan lebih dari satu anak satker dapat menginput sesuai anak
+satker pada aplikasi GPP satker).
+
+### Mengimpor data gaji (Operator Komitmen)
+
+<Steps>
+
+1. Masuk ke menu **Komitmen > Upload / Import > Import GPP Terpusat**.
+
+2. Pilih opsi **Data Gaji**.
+
+3. Pilih **Tahun Bulan Gaji** melalui dropdown.
+
+4. Pilih **Nomor Gaji** — nomor yang ditampilkan adalah nomor gaji
+   yang telah berhasil direkonsiliasi oleh KPPN.
+
+5. Klik **Import**.
+
+</Steps>
+
+### Merekam SPP gaji
+
+<Steps>
+
+1. Masuk ke menu **Pembayaran > RUH Pembayaran > Catat/Ubah SPP**.
+
+2. Pilih jenis SPP yang akan digunakan (misalnya gaji induk memakai
+   jenis SPP 211), klik **Tambah**.
+
+3. Pada form SPP, input informasi Bulan, Tahun, dan No. Gaji, lalu
+   klik **Rekam SPP** dan lanjutkan proses pembuatan SPP/SPM seperti
+   biasa.
+
+</Steps>
+
+### Mengimpor data pegawai
+
+<Steps>
+
+1. Masuk ke menu **Komitmen > Upload / Import > Import GPP Terpusat**.
+
+2. Pilih jenis data **Data Pegawai**, pilih **Kode Anak Satker** pada
+   dropdown, lalu klik **Import**.
+
+3. Setelah berhasil, catat data supplier pegawai pada menu **Komitmen
+   > RUH > Supplier** (supplier header satker → tab Supplier Address
+   tipe 3 → tab Supplier Pegawai).
+
+</Steps>
+
+### Perubahan data gaji
+
+<Steps>
+
+1. Masuk ke menu **Komitmen > Monitoring > ADK GPP** untuk monitoring
+   atau menghapus nomor gaji hasil impor: pilih Bulan dan Tahun, pilih
+   No. Gaji, klik **Hapus**.
+
+2. Apabila nomor gaji sudah digunakan, muncul notifikasi tidak dapat
+   dihapus — hapus SPP terlebih dahulu, lakukan perubahan data gaji dan
+   rekonsiliasi ulang dengan KPPN pada aplikasi GPP, lalu impor ulang
+   seperti langkah di atas.
+
+</Steps>
+
+## Ketentuan
+
+- Apabila ada update jumlah pegawai, supplier tipe 3 diupdate terlebih
+  dahulu baik di aplikasi GPP, SAKTI, maupun data di SPAN.
+- Menu unggah ADK data pegawai dari aplikasi GPP satker (ADK GPP dan
+  KOM) hanya dapat digunakan untuk ADK uang makan dan uang lembur.
+- Data gaji pada GPP Terpusat maupun data gaji di SAKTI yang telah
+  direkam SPP tidak dapat diubah/dihapus sebelum SPP dihapus; data gaji
+  yang sudah menjadi SP2D tidak dapat dibatalkan/diubah/dihapus.
+- Penambahan/perubahan/penghapusan data pegawai terkait supplier tipe 3
+  mewajibkan rekonsiliasi ulang dengan KPPN terlebih dahulu.
+- Monitoring nomor SPP/SPM/SP2D dapat dilihat pada kolom paling kanan
+  tabel rekap gaji; pastikan jumlah gaji bersih pada rekap gaji sama
+  dengan jumlah gaji bersih pada lampiran.
+
+<Aside type="caution" title="Perlu verifikasi">
+Juknis ini (2022) menulis menu impor pada **Komitmen → ADK → Import
+GPP Terpusat**; menu aplikasi saat ini adalah **Komitmen > Upload /
+Import > Import GPP Terpusat**. Juknis menulis perekaman anak satker
+pada modul **Administrasi → Umum → COA → Anak Satker**; menu aplikasi
+saat ini adalah **Referensi > Umum > COA > Anak Satker**. Isian form
+impor pada juknis Supplier Tipe 3 tahun 2024 berbeda (lihat [Merekam
+Supplier Tipe 3](/komitmen/ruh/pencatatan-suplier/suplier-tipe-3/)) —
+perlu dipastikan mana yang berlaku.
+</Aside>
+
+## Terkait
+
+- [Merekam Supplier Tipe 3](/komitmen/ruh/pencatatan-suplier/suplier-tipe-3/)
+
+## Sumber
+
+<SumberAsli />

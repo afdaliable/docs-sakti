@@ -9,4 +9,20 @@ sidebar:
   order: 0
 ---
 
-Panduan untuk menu **Upload / Import** sedang disiapkan.
+import { CardGrid, LinkCard } from '@astrojs/starlight/components';
+
+Menu Upload / Import modul Komitmen mencakup impor data supplier dan
+data pegawai/gaji dari sistem eksternal.
+
+<CardGrid>
+	<LinkCard
+		title="Mengimpor Supplier lewat Interkoneksi Langsung SPAN"
+		description="Mengimpor supplier yang sudah terdaftar dan memiliki NRS di SPAN."
+		href="/komitmen/upload/import-suplier-interkoneksi-span/"
+	/>
+	<LinkCard
+		title="Mengimpor Data GPP Terpusat (Interkoneksi KPPN)"
+		description="Mengimpor data pegawai dan gaji hasil rekonsiliasi GPP Terpusat KPPN."
+		href="/komitmen/upload/import-gpp-terpusat/"
+	/>
+</CardGrid>

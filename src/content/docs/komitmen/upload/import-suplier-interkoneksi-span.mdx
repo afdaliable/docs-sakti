@@ -1,0 +1,97 @@
+---
+title: Mengimpor Supplier lewat Interkoneksi Langsung SPAN
+description: Mengimpor data supplier yang sudah terdaftar pada SPAN dan memiliki NRS langsung ke aplikasi SAKTI.
+modul: komitmen
+menu_sakti: "Komitmen > Upload / Import > Import Supplier Interkoneksi SPAN"
+peran: [satker]
+jenis: juknis
+kata_kunci: [import supplier, interkoneksi span, nrs, tipe supplier]
+status: review
+perlu_review: true
+sumber:
+  - judul: "Juknis Import Supplier Interkoneksi Langsung SPAN"
+    url: "https://drive.google.com/file/d/1JHrqBTmYz-R8lKGZKkFTsGhPl8YTHOeF/view"
+    jenis: pdf
+    diambil: 2026-11-21
+    id_manifest: B-kom-013
+sidebar:
+  order: 1
+---
+
+import { Steps, Aside } from '@astrojs/starlight/components';
+import MenuSakti from '~/components/MenuSakti.astro';
+import SumberAsli from '~/components/SumberAsli.astro';
+
+Fitur ini digunakan untuk mengimpor data supplier yang sudah pernah
+didaftarkan pada SPAN dan telah memiliki NRS, dengan data sumber
+terinterkoneksi langsung dengan SPAN.
+
+<MenuSakti />
+
+## Langkah
+
+<Steps>
+
+1. Login aplikasi SAKTI menggunakan user operator yang memiliki
+   kewenangan modul komitmen, masuk ke menu **Komitmen > Upload /
+   Import > Import Supplier Interkoneksi SPAN**.
+
+2. Pilih tipe supplier yang ingin dicari datanya untuk diimpor dengan
+   mengklik dropdown **Tipe Supplier**.
+
+3. Lengkapi parameter pencarian sesuai tipe supplier (contoh pada
+   juknis memakai tipe 2 – Penyedia Barang dan Jasa dengan menginput
+   nomor rekening). Kolom **Kode KPPN** bersifat opsional; apabila
+   diisi, gunakan kode KPPN mitra kerja masing-masing.
+
+4. Klik tombol **Cari** — daftar data supplier yang siap diimpor akan
+   muncul.
+
+5. Centang **Pilih** pada data supplier yang hendak diimpor, lalu klik
+   tombol **Import**.
+
+6. Tunggu hingga proses selesai; apabila data valid, muncul notifikasi
+   **Import Data Supplier Berhasil**.
+
+7. Cek status data supplier pada menu **Komitmen > RUH > Supplier**.
+   Apabila sudah masuk, data supplier dapat langsung digunakan untuk
+   pencatatan SPP, perekaman data kontrak, ataupun perekaman BAST
+   non-kontraktual.
+
+</Steps>
+
+## Hasil yang diharapkan
+
+Data supplier hasil impor dapat digunakan untuk pembuatan SPP,
+perekaman data kontrak, dan pencatatan BAST non-kontraktual.
+
+## Ketentuan
+
+- Pencarian data supplier harus diawali dengan pemilihan tipe supplier
+  yang hendak diimpor.
+- Tipe supplier 1, 3, dan 8 tidak dapat dicari/diimpor.
+- Nomor rekening wajib diisi untuk tipe supplier 2.
+- NPWP supplier wajib diisi untuk tipe supplier 4 dan 5.
+- NIP tidak diperbolehkan untuk tipe supplier 6.
+- Apabila impor dilakukan tanpa parameter KPPN mitra kerja dan pada
+  daftar tidak ditemukan supplier dengan kode KPPN mitra kerja, setelah
+  berhasil impor satker wajib mengubah KPPN pada tab **Supplier
+  Address** menjadi kode KPPN mitra kerja, kemudian mendaftarkan data
+  supplier tersebut ke KPPN mitra kerja.
+
+<Aside type="caution" title="Perlu verifikasi">
+Juknis menulis menu ini pada **Komitmen → ADK → Import Supplier
+(Interkoneksi Langsung SPAN)** dan pengecekan supplier pada **Komitmen
+→ RUH → Pencatatan Supplier**; menu aplikasi saat ini memakai
+**Komitmen > Upload / Import > Import Supplier Interkoneksi SPAN** dan
+**Komitmen > RUH > Supplier**.
+</Aside>
+
+## Terkait
+
+- [Merekam Supplier Tipe 1, 2, dan 7](/komitmen/ruh/pencatatan-suplier/suplier-tipe-1-2-7/)
+- [Merekam Supplier Tipe 6](/komitmen/ruh/pencatatan-suplier/suplier-tipe-6/)
+
+## Sumber
+
+<SumberAsli />
