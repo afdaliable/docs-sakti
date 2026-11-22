@@ -1,0 +1,222 @@
+---
+title: Menyetujui UP di KPPN
+description: Mekanisme persetujuan usulan UP satker oleh KPPN dari pengujian staf seksi, validasi kepala seksi, approval Kepala KPPN, sampai upload surat persetujuan.
+modul: kppn-bun
+peran: [kppn-kanwil]
+jenis: juknis
+kata_kunci: [persetujuan up, usulan up, uang persediaan, validasi up kppn, upload persetujuan up]
+status: review
+perlu_review: true
+sumber:
+  - judul: "KPPN - Mekanisme Persetujuan UP"
+    url: "https://drive.google.com/file/d/1UF-tb_TUH9EnFH0q95IWCvl3fW_RIIMX/view"
+    jenis: pdf
+    diambil: 2026-11-21
+    id_manifest: B-ben-019
+---
+
+import { Steps, Aside } from '@astrojs/starlight/components';
+import SumberAsli from '~/components/SumberAsli.astro';
+
+Juknis ini menjelaskan alur/mekanisme persetujuan UP oleh KPPN atas
+usulan UP yang diajukan masing-masing satker mitra KPPN pada tahun
+anggaran 2022. Tata cara pengajuan usulan UP dari sisi satker ada
+pada [Merekam Siklus UP Awal](/bendahara/siklus-up-awal/).
+
+## Prasyarat
+
+- Role yang dibutuhkan: operator staf seksi MSKI/PDMS KPPN, user
+  validator Kepala Seksi MSKI/PDMS KPPN, dan user Kepala KPPN —
+  seluruhnya user SAKTI khusus dengan kewenangan KPPN selaku BUN
+  yang telah didaftarkan dan berstatus aktif.
+- Usulan UP satker sudah berstatus **Usulan UP diupload** — sudah
+  divalidasi KPA satker dan berkas usulan UP sudah diupload di
+  SAKTI oleh operator modul bendahara satker.
+
+## Alur proses
+
+1. Staf Seksi MSKI/PDMS KPPN — menguji usulan UP satker berdasarkan
+   kebenaran dokumen Surat Pengajuan/Pernyataan UP Satker serta
+   penerbitan Surat Persetujuan UP tahun anggaran 2022 dari KPPN;
+   usulan yang lolos pengujian dilakukan persetujuan.
+2. Kepala Seksi MSKI/PDMS KPPN — memvalidasi usulan UP satker.
+3. Kepala KPPN — melakukan approval usulan UP satker.
+4. Staf Seksi MSKI/PDMS KPPN — mengupload Surat Persetujuan UP
+   (format .pdf) yang sudah diberi Nomor, Tanggal, dan Tanda Tangan
+   Kepala KPPN.
+
+## Langkah
+
+### Pengujian usulan UP satker oleh staf seksi MSKI/PDMS KPPN
+
+Pengujian tahap pertama dilakukan oleh staf seksi MSKI (untuk KPPN
+tipe A1) atau staf seksi PDMS (untuk KPPN tipe A2) dengan user SAKTI
+khusus berkewenangan KPPN selaku BUN.
+
+<Steps>
+
+1. Login aplikasi SAKTI web pada tautan sakti.kemenkeu.go.id
+   melalui browser — pastikan PC/Laptop memiliki jaringan internet
+   yang aktif; isikan kolom username dan password dengan user
+   operator staf seksi MSKI/PDMS, pilih tahun anggaran 2022,
+   kemudian tekan tombol **Masuk**.
+2. Pilih menu **KPPN > Manajemen Satker > Validasi Persetujuan UP
+   KPPN**.
+3. Pada menu ini tertampil seluruh daftar nomor usulan UP yang
+   diajukan oleh satker mitra KPPN; klik/centang salah satu
+   checkbox usulan UP yang akan dilakukan pengujian dan
+   persetujuan. Persetujuan usulan UP hanya dapat dilakukan satu
+   persatu.
+4. Sebelum dilakukan persetujuan, user dapat terlebih dahulu
+   melakukan pengujian atas surat usulan UP satker dengan mengklik
+   tombol **Unduh Usulan UP Satker** — dokumen usulan UP satker
+   (format .pdf) akan otomatis terunduh pada PC/Laptop. Apabila
+   surat dirasa telah sesuai kebenarannya, KPPN selanjutnya dapat
+   menerbitkan Surat Persetujuan UP yang ditujukan kepada satker
+   melalui aplikasi persuratan/Nadine.
+5. Pada kolom **Validasi Persetujuan UP**, lengkapi seluruh isian:
+
+   - **Nomor dan Tanggal Surat Persetujuan UP** — diisikan sesuai
+     nomor dan tanggal surat persetujuan UP pada aplikasi Nadine;
+   - **Tanggal Validasi** — diisikan sesuai tanggal seksi
+     MSKI/PDMS melakukan validasi atas usulan UP satker;
+   - **Status Validasi** — pilih **Divalidasi** jika usulan UP
+     satker dirasa sudah benar dan akan dilakukan persetujuan;
+     apabila user memilih opsi **Ditolak** maka status usulan UP
+     akan kembali ke operator modul bendahara satker untuk
+     selanjutnya dilakukan perbaikan dan validasi ulang oleh KPA
+     satker.
+
+6. Klik tombol **Simpan**; akan muncul notifikasi **Validasi
+   Berhasil** jika proses validasi berhasil dilakukan.
+7. Status usulan UP satker akan berubah menjadi **Divalidasi staf
+   KPPN**; selanjutnya user staf MSKI/PDMS KPPN dapat mengunduh
+   surat Persetujuan Besaran UP.
+8. Klik/centang pada kotak Nomor Usulan UP sampai sorotan berubah
+   menjadi warna biru.
+9. Setelah validasi berhasil dilakukan pada langkah sebelumnya,
+   tombol **Unduh Persetujuan UP KPPN rtf** akan menyala — tombol
+   ini berfungsi untuk mengunduh format Surat Persetujuan UP (tipe
+   file .rtf yang dapat diedit pada aplikasi Microsoft Word) guna
+   memudahkan KPPN dalam pembuatan Surat Persetujuan UP bagi satker
+   di aplikasi persuratan/Nadine.
+
+</Steps>
+
+Surat persetujuan UP yang sudah memiliki Nomor, Tanggal, dan Tanda
+Tangan Kepala KPPN nantinya diupload ke aplikasi SAKTI dalam bentuk
+softcopy hasil scan dokumen format .pdf pada tahapan terakhir
+persetujuan usulan UP oleh KPPN.
+
+### Validasi UP satker oleh Kepala Seksi MSKI/PDMS KPPN
+
+<Steps>
+
+1. Login aplikasi SAKTI dengan menggunakan user role validator
+   Kepala Seksi MSKI/PDMS KPPN selaku BUN; selanjutnya pilih menu
+   **KPPN > Manajemen Satker**.
+2. Untuk persetujuan usulan UP, pilih **Validasi Persetujuan UP
+   KPPN**.
+3. Usulan UP satker akan muncul pada kolom **Cari Usulan UP**;
+   usulan UP yang muncul pada kolom ini adalah yang sudah
+   berstatus **Divalidasi oleh staf KPPN**.
+4. Klik/centang checkbox pada nomor usulan UP.
+5. Lengkapi isian kolom Validasi Persetujuan UP seperti Nomor dan
+   Tanggal Surat Persetujuan UP, Tanggal Validasi, dan Keterangan
+   (format pengisian sama seperti pada tahap validasi oleh user
+   staf seksi MSKI/PDMS); selanjutnya pilih opsi **Divalidasi**
+   pada kolom **Status Validasi**.
+6. Klik tombol **Simpan**.
+7. User Kepala Seksi PDMS/MSKI juga dapat melakukan pengecekan PDF
+   atas usulan UP yang diajukan oleh masing-masing satker dengan
+   cara mengklik tombol **Unduh Usulan UP Satker**.
+8. Jika validasi berhasil akan muncul notifikasi berhasil; status
+   usulan UP satker akan berubah menjadi **Divalidasi Kasi KPPN**.
+
+</Steps>
+
+### Approval permohonan UP satker oleh Kepala KPPN
+
+<Steps>
+
+1. Login ke aplikasi SAKTI dengan menggunakan user Kepala KPPN
+   selaku BUN; pilih menu **KPPN > Manajemen Satker > Validasi
+   Persetujuan UP KPPN**.
+2. Seluruh usulan UP yang muncul pada menu ini adalah yang telah
+   berstatus **Divalidasi kasi KPPN**.
+3. Lakukan centang pada checkbox nomor usulan UP untuk melanjutkan
+   ke tahap approval.
+4. Pada kolom **Validasi Persetujuan UP**, pastikan data **Nomor
+   Surat Persetujuan UP**, **Tanggal Surat Persetujuan UP**, dan
+   **Tanggal Validasi** sudah benar (data akan otomatis
+   terisi/terbawa pada user Kepala KPPN); kemudian isikan kolom
+   **Keterangan** jika ada dan lanjutkan dengan memilih status
+   validasi **Divalidasi**.
+5. Klik tombol **Simpan**.
+6. Jika validasi berhasil dilakukan akan muncul notifikasi
+   berhasil; status usulan UP satker akan berubah menjadi
+   **Divalidasi Kepala KPPN**.
+
+</Steps>
+
+### Upload dokumen Surat Persetujuan UP KPPN oleh staf seksi MSKI/PDMS
+
+Proses ini merupakan langkah terakhir dalam mekanisme persetujuan UP
+yang wajib dilakukan oleh KPPN — jika terlewat, status usulan UP
+pada masing-masing satker tidak akan terupdate sehingga satker tidak
+dapat mengunduh Surat Persetujuan UP dari KPPN dan tidak dapat
+melakukan perekaman SPP UP.
+
+<Steps>
+
+1. Login pada aplikasi SAKTI dengan kembali menggunakan operator
+   staf seksi MSKI/PDMS; pilih menu **KPPN > Manajemen Satker >
+   Upload Persetujuan UP KPPN**.
+2. Akan muncul daftar nomor usulan/kode UP yang sudah berstatus
+   **Divalidasi Kepala KPPN**; klik hingga sorotan warna berubah
+   menjadi biru.
+3. Klik tombol **Choose** kemudian pilih file (format .pdf) Surat
+   Persetujuan UP oleh KPPN yang sudah memiliki Nomor, Tanggal,
+   dan Tanda Tangan Kepala KPPN.
+4. Nama dan ukuran file akan muncul pada kolom putih; pastikan file
+   yang diupload sudah benar.
+5. Lanjutkan dengan mengklik tombol **Upload**.
+6. Akan muncul notifikasi berhasil jika proses upload sukses
+   dilakukan; status usulan UP satker akan berubah menjadi
+   **Diupload Persetujuan KPPN**.
+
+</Steps>
+
+## Hasil yang diharapkan
+
+Proses persetujuan UP satker oleh KPPN selesai — status usulan UP
+pada satker terupdate menjadi **Diupload Persetujuan KPPN**; satker
+dapat mengunduh Surat Persetujuan UP yang diterbitkan KPPN pada
+modul bendahara aplikasi SAKTI dan melanjutkan dengan perekaman SPP
+sampai dengan SP2D UP.
+
+## Ketentuan
+
+- Untuk menjalankan proses persetujuan UP TA 2022 menggunakan
+  mekanisme baru pada aplikasi SAKTI, seluruh KPPN wajib mengajukan
+  pendaftaran user SAKTI selaku BUN.
+- Informasi dan tata cara lebih lanjut mengenai pendaftaran user
+  SAKTI level KPPN selaku Kuasa BUN dapat merujuk pada slide
+  petunjuk teknis Sosialisasi Pendaftaran User SAKTI Level KPPN
+  Selaku BUN.
+
+<Aside type="caution" title="Perlu verifikasi">
+Juknis ini memakai mekanisme persetujuan UP tahun anggaran 2022 dan
+menjangkau dua menu — **Validasi Persetujuan UP KPPN** dan **Upload
+Persetujuan UP KPPN**; artikel lintas menu ini tidak memakai jalur
+menu tunggal, jalur tiap tahap ditulis pada langkahnya.
+</Aside>
+
+## Terkait
+
+- [Merekam Siklus UP Awal](/bendahara/siklus-up-awal/)
+- [Menggunakan Fitur KPPN BUN](/kppn-bun/fitur-kppn-bun/)
+
+## Sumber
+
+<SumberAsli />
