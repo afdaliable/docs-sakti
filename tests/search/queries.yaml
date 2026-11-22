@@ -118,3 +118,31 @@
   harap: ["/bendahara/transaksi-hibah-kas/"]
 - q: "mereferensikan npwp wajib pajak bendahara"
   harap: ["/bendahara/referensi-wajib-pajak/"]
+- q: "cara input pembelian persediaan setelah bast"
+  harap: ["/persediaan/transaksi-masuk/pembelian/"]
+- q: "saldo awal persediaan tahun lalu belum dicatat"
+  harap: ["/persediaan/transaksi-masuk/saldo-awal/"]
+- q: "hibah masuk persediaan mphl-bjs"
+  harap: ["/persediaan/transaksi-masuk/hibah-masuk/", "/persediaan/transaksi-masuk/hibah-masuk-blu/"]
+- q: "transfer masuk persediaan dari satker yang belum pakai sakti"
+  harap: ["/persediaan/transaksi-masuk/transfer-masuk-manual/"]
+- q: "pemakaian barang persediaan habis pakai"
+  harap: ["/persediaan/transaksi-keluar/pemakaian/"]
+- q: "transfer keluar persediaan online sesama sakti"
+  harap: ["/persediaan/transaksi-keluar/transfer-keluar-online-sesama-sakti/"]
+- q: "persediaan usang rusak dihapuskan"
+  harap: ["/persediaan/transaksi-keluar/penghapusan-usang-rusak/", "/persediaan/transaksi-keluar/usang/", "/persediaan/transaksi-keluar/rusak/"]
+- q: "reklasifikasi persediaan ke aset tetap"
+  harap: ["/persediaan/transaksi-keluar/reklasifikasi-ke-aset/"]
+- q: "koreksi nilai persediaan salah harga satuan"
+  harap: ["/persediaan/koreksi/koreksi-nilai/"]
+- q: "rekam hasil opname fisik persediaan"
+  harap: ["/persediaan/opname-fisik/rekam-hasil-opname-fisik/"]
+- q: "tutup periode persediaan"
+  harap: ["/persediaan/tutup-buku/tutup-periode-persediaan/"]
+- q: "setting metode penilaian persediaan fifo"
+  harap: ["/persediaan/referensi/metode-penilaian-persediaan/"]
+- q: "menambah kode barang persediaan baru"
+  harap: ["/persediaan/referensi/mengelola-barang-persediaan/"]
+- q: "cetak laporan persediaan"
+  harap: ["/persediaan/pelaporan/"]

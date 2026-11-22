@@ -3,25 +3,92 @@ title: Persediaan
 description: Transaksi masuk/keluar, koreksi, opname, dan tutup buku persediaan.
 modul: persediaan
 jenis: indeks
-status: terbit
+status: review
+sumber:
+  - judul: "Persediaan"
+    url: "https://sites.google.com/view/saktipelaporan/persediaan"
+    jenis: google-sites
+    diambil: 2026-11-21
+    id_manifest: C-persediaan
+  - judul: "JUKNIS SAKTI WEB-Persediaan_30122020"
+    url: "https://drive.google.com/file/d/1p_-rUAu_on0H0d_TKFEE2vmpDXCPDzy5/view"
+    jenis: pdf
+    diambil: 2026-11-21
+    id_manifest: C-dok-001
 sidebar:
   label: Ringkasan
   order: 0
 ---
 
-Transaksi masuk/keluar, koreksi, opname, dan tutup buku persediaan.
+import { CardGrid, LinkCard } from '@astrojs/starlight/components';
 
-Panduan modul ini sedang dimigrasikan dari sumber aslinya.
+Modul Persediaan berfungsi mengelola transaksi masuk atau keluar
+atas persediaan yang dimiliki satker, seperti perolehan dari
+pembelian maupun cara perolehan lainnya, pemakaian barang, transfer
+antar satker maupun internal satker, hibah masuk atau keluar,
+penghapusan terhadap barang usang atau rusak, koreksi, opname
+fisik, dan pelaporan.
+
+Level pengguna modul ini adalah operator (operasional aplikasi) dan
+approver (persetujuan dan tutup periode). Pada awal penggunaan modul
+terdapat dua metode yang harus diatur terlebih dahulu: metode
+pencatatan (modul Persediaan menggunakan metode perpetual, yaitu
+pencatatan yang dilakukan secara langsung dan berkesinambungan
+sesuai jumlah dan harga pokok pada setiap transaksi) dan metode
+penilaian (metode Harga Satuan Terakhir, metode Harga Rata-rata,
+dan metode FIFO).
 
 ## Sub-menu
 
-- [Referensi](/persediaan/referensi/)
-- [Transaksi Masuk](/persediaan/transaksi-masuk/)
-- [Transaksi Keluar](/persediaan/transaksi-keluar/)
-- [Koreksi](/persediaan/koreksi/)
-- [Opname Fisik](/persediaan/opname-fisik/)
-- [Pelaporan](/persediaan/pelaporan/)
-- [Tutup Buku](/persediaan/tutup-buku/)
-- [Persediaan Tak Dikuasai](/persediaan/persediaan-tak-dikuasai/)
-- [Persediaan Dalam Proses](/persediaan/persediaan-dalam-proses/)
-- [Likuidasi](/persediaan/likuidasi/)
+<CardGrid>
+	<LinkCard
+		title="Referensi"
+		description="Pengaturan referensi barang dan metode penilaian persediaan."
+		href="/persediaan/referensi/"
+	/>
+	<LinkCard
+		title="Transaksi Masuk"
+		description="Perekaman perolehan persediaan dari saldo awal, pembelian, hibah, rampasan, reklasifikasi, dan transfer masuk."
+		href="/persediaan/transaksi-masuk/"
+	/>
+	<LinkCard
+		title="Transaksi Keluar"
+		description="Perekaman pengeluaran persediaan: pemakaian, hibah, penghapusan, transfer, dan reklasifikasi keluar."
+		href="/persediaan/transaksi-keluar/"
+	/>
+	<LinkCard
+		title="Koreksi"
+		description="Koreksi jumlah dan nilai persediaan serta pembatalan transaksi."
+		href="/persediaan/koreksi/"
+	/>
+	<LinkCard
+		title="Opname Fisik"
+		description="Pencetakan bahan opname dan perekaman hasil opname fisik persediaan."
+		href="/persediaan/opname-fisik/"
+	/>
+	<LinkCard
+		title="Pelaporan"
+		description="Pencetakan laporan aset persediaan satuan kerja per periode."
+		href="/persediaan/pelaporan/"
+	/>
+	<LinkCard
+		title="Tutup Buku"
+		description="Penutupan periode persediaan dan saldo akhir (periode balance)."
+		href="/persediaan/tutup-buku/"
+	/>
+	<LinkCard
+		title="Persediaan Tak Dikuasai"
+		description="Pencatatan dan pelaporan persediaan yang tidak dikuasai entitas pengguna."
+		href="/persediaan/persediaan-tak-dikuasai/"
+	/>
+	<LinkCard
+		title="Persediaan Dalam Proses"
+		description="Perekaman dan penyelesaian barang dalam proses hasil pembelian bertahap."
+		href="/persediaan/persediaan-dalam-proses/"
+	/>
+	<LinkCard
+		title="Likuidasi"
+		description="Penyelesaian hak dan kewajiban persediaan UAKPB yang dilikuidasi."
+		href="/persediaan/likuidasi/"
+	/>
+</CardGrid>

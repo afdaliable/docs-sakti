@@ -855,5 +855,192 @@
       "mencatat pungutan"
     ],
     "perlu_verifikasi": true
+  },
+  {
+    "istilah": "UAKPB",
+    "panjang": "",
+    "sinonim": [
+      "uakpb",
+      "satker induk persediaan"
+    ],
+    "perlu_verifikasi": true
+  },
+  {
+    "istilah": "UAPKPB",
+    "panjang": "",
+    "sinonim": [
+      "uapkpb"
+    ],
+    "perlu_verifikasi": true
+  },
+  {
+    "istilah": "UAKPBP",
+    "panjang": "",
+    "sinonim": [
+      "uakpbp",
+      "satker anak persediaan",
+      "satker pembantu"
+    ],
+    "perlu_verifikasi": true
+  },
+  {
+    "istilah": "MPHLBJS",
+    "panjang": "",
+    "sinonim": [
+      "mphl bjs",
+      "mphlbjs",
+      "pengesahan mphl"
+    ],
+    "perlu_verifikasi": true
+  },
+  {
+    "istilah": "FIFO",
+    "panjang": "",
+    "sinonim": [
+      "metode fifo",
+      "first in first out persediaan"
+    ],
+    "perlu_verifikasi": true
+  },
+  {
+    "istilah": "HST",
+    "panjang": "",
+    "sinonim": [
+      "harga satuan terakhir",
+      "metode hst"
+    ],
+    "perlu_verifikasi": true
+  },
+  {
+    "istilah": "Metode Perpetual",
+    "panjang": "",
+    "sinonim": [
+      "perpetual",
+      "metode pencatatan perpetual"
+    ],
+    "perlu_verifikasi": true
+  },
+  {
+    "istilah": "Opname Fisik",
+    "panjang": "",
+    "sinonim": [
+      "opname",
+      "stok opname",
+      "stock opname persediaan"
+    ],
+    "perlu_verifikasi": true
+  },
+  {
+    "istilah": "Reklasifikasi",
+    "panjang": "",
+    "sinonim": [
+      "reklas",
+      "reklasifikasi persediaan",
+      "ubah kode barang"
+    ],
+    "perlu_verifikasi": true
+  },
+  {
+    "istilah": "Transfer Keluar Online",
+    "panjang": "",
+    "sinonim": [
+      "tk online",
+      "tko persediaan",
+      "transfer online sakti"
+    ],
+    "perlu_verifikasi": true
+  },
+  {
+    "istilah": "Likuidasi",
+    "panjang": "",
+    "sinonim": [
+      "likuidasi uakpb",
+      "likuidasi persediaan",
+      "satker likuidasi"
+    ],
+    "perlu_verifikasi": true
+  },
+  {
+    "istilah": "Persediaan dalam Proses",
+    "panjang": "",
+    "sinonim": [
+      "barang dalam proses",
+      "pdp",
+      "persediaan termin"
+    ],
+    "perlu_verifikasi": true
+  },
+  {
+    "istilah": "Persediaan Tak Dikuasai",
+    "panjang": "",
+    "sinonim": [
+      "persediaan tidak dikuasai",
+      "barang titipan persediaan"
+    ],
+    "perlu_verifikasi": true
+  },
+  {
+    "istilah": "Periode Balance",
+    "panjang": "",
+    "sinonim": [
+      "saldo akhir periode",
+      "saldo periode persediaan"
+    ],
+    "perlu_verifikasi": true
+  },
+  {
+    "istilah": "Saldo Awal",
+    "panjang": "",
+    "sinonim": [
+      "saldo awal persediaan",
+      "input saldo awal"
+    ],
+    "perlu_verifikasi": true
+  },
+  {
+    "istilah": "Memo Penyesuaian",
+    "panjang": "",
+    "sinonim": [
+      "memo koreksi",
+      "surat dasar koreksi"
+    ],
+    "perlu_verifikasi": true
+  },
+  {
+    "istilah": "Koreksi Jumlah",
+    "panjang": "",
+    "sinonim": [
+      "koreksi kuantitas persediaan",
+      "koreksi jumlah barang"
+    ],
+    "perlu_verifikasi": true
+  },
+  {
+    "istilah": "Koreksi Nilai",
+    "panjang": "",
+    "sinonim": [
+      "koreksi harga satuan",
+      "koreksi nilai persediaan"
+    ],
+    "perlu_verifikasi": true
+  },
+  {
+    "istilah": "Pemakaian",
+    "panjang": "",
+    "sinonim": [
+      "habis pakai",
+      "pemakaian persediaan",
+      "bon barang"
+    ],
+    "perlu_verifikasi": true
+  },
+  {
+    "istilah": "Persediaan Belum Diregister",
+    "panjang": "",
+    "sinonim": [
+      "belum diregister",
+      "persediaan blm diregister"
+    ],
+    "perlu_verifikasi": true
   }
 ]
