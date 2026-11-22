@@ -1,0 +1,63 @@
+---
+title: FAQ Modul Aset Tetap
+description: Pertanyaan yang sering diajukan tentang modul Aset Tetap SAKTI.
+modul: aset-tetap
+peran: [satker]
+jenis: faq
+kata_kunci: [faq aset tetap, aset belum diregister, 595xxx, beban aset ekstrakomtabel]
+status: review
+sumber:
+  - judul: "FAQ"
+    url: "https://sites.google.com/view/saktipelaporan/faq"
+    jenis: google-sites
+    diambil: 2026-11-21
+    id_manifest: C-faq
+---
+
+import SumberAsli from '~/components/SumberAsli.astro';
+
+Pertanyaan yang sering diajukan tentang modul Aset Tetap, dijawab
+persis dari halaman FAQ sumber.
+
+**Aset Tetap/Lainnya yang belum diregister (139111 dan 166411)**
+
+## Mengapa di Neraca Satker terdapat saldo aset tetap yang belum diregister?
+
+Pada umumnya akun aset tetap yang belum diregister di Neraca
+bersaldo disebabkan oleh kondisi seperti berikut ini:
+
+- Terdapat Kuitansi/BAST yang belum dilakukan pendetilan di Modul
+  Aset Tetap.
+- Terdapat Kuitansi/BAST yang tanggal Dokumennya berbeda periode
+  dengan tanggal buku pendetilan Aset tetap.
+- Terdapat Kuitansi/BAST yang dibuat namun tidak dilanjutkan menjadi
+  SPP dan tidak dihapus.
+
+**Beban aset ekstrakomtabel (595xxx)**
+
+## Mengapa pada Neraca terdapat saldo akun Beban Aset Ekstrakomtabel?
+
+Akun Beban Ekstrakomtabel tidak akan muncul jika dari sisi
+perencanaan, pelaksanaan, dan pelaporan memperhatikan batasan
+kapitalisasi BMN. Pada umumnya akun beban aset ekstrakomtabel
+terbentuk karena hal-hal sebagai berikut:
+
+- Membuat BAST yang menghasilkan Aset Tetap namun nilainya tidak
+  memenuhi syarat Kapitalisasi BMN.
+- Membuat SPP atas kuitansi yang menghasilkan Aset Tetap yang
+  nilainya tidak memenuhi syarat Kapitalisasi BMN.
+
+Atas permasalahan di atas dilakukan:
+
+- Lakukan koreksi SPM dari akun 53xxxx menjadi akun 52xxxx sepanjang
+  masih mungkin dilakukan.
+- Jika tidak memungkinkan, lakukan [jurnal manual](/akuntansi-pelaporan/proses/jurnal-manual/)
+  akrual dengan terlebih dahulu koordinasi dengan tingkat Eselon I
+  untuk mendapat persetujuan:
+
+  - D. 52xxxx (sesuai dengan akun beban barang seharusnya)
+  - K. 595xxx (sesuai dengan akun beban ekstra)
+
+## Sumber
+
+<SumberAsli />

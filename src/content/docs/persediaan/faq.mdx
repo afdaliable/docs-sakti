@@ -1,0 +1,75 @@
+---
+title: FAQ Modul Persediaan
+description: Pertanyaan yang sering diajukan tentang modul Persediaan SAKTI.
+modul: persediaan
+peran: [satker]
+jenis: faq
+kata_kunci: [faq persediaan, saldo persediaan belum diregister, 491511, pendapatan penyesuaian nilai persediaan]
+status: review
+sumber:
+  - judul: "FAQ"
+    url: "https://sites.google.com/view/saktipelaporan/faq"
+    jenis: google-sites
+    diambil: 2026-11-21
+    id_manifest: C-faq
+---
+
+import SumberAsli from '~/components/SumberAsli.astro';
+
+Pertanyaan yang sering diajukan tentang modul Persediaan, dijawab
+persis dari halaman FAQ sumber.
+
+**Persediaan yang belum diregister (117911)**
+
+## Mengapa di Neraca Satker terdapat saldo persediaan belum diregister?
+
+Pada umumnya akun Persediaan yang belum diregister di Neraca
+bersaldo disebabkan oleh kondisi seperti berikut ini:
+
+- Terdapat Kuitansi/BAST yang belum dilakukan pendetilan di Modul
+  Persediaan.
+- Terdapat Kuitansi/BAST yang tanggal Dokumennya berbeda periode
+  dengan tanggal buku pendetilan Persediaan.
+- Terdapat Kuitansi/BAST yang dibuat namun tidak dilanjutkan menjadi
+  SPP dan tidak dihapus.
+
+**Pendapatan Penyesuaian Nilai Persediaan (491511)**
+
+## Mengapa di Neraca muncul akun Pendapatan Penyesuaian Nilai Persediaan?
+
+Akun Pendapatan Penyesuaian Nilai Persediaan (491511) terbentuk
+ketika terdapat transaksi pada Modul Persediaan sebagai berikut:
+
+- Terdapat [Transaksi Masuk Persediaan](/persediaan/transaksi-masuk/pembelian/)
+  di mana harga satuan terakhir lebih besar daripada harga satuan
+  barang persediaan sebelumnya.
+- Terdapat transaksi [Koreksi Jumlah](/persediaan/koreksi/koreksi-jumlah/)
+  bertambah persediaan.
+- Terdapat transaksi [Koreksi Nilai](/persediaan/koreksi/koreksi-nilai/)
+  harga satuan lebih tinggi.
+
+## Bagaimana jika akun Pendapatan Penyesuaian Nilai Persediaan (491511) di Neraca sangat besar dan dianggap tidak wajar?
+
+- Cetak [Buku Besar](/akuntansi-pelaporan/laporan/) dengan
+  parameter akun 491511, lakukan penelusuran atas transaksi yang
+  tidak wajar.
+- Jika penyebabnya karena kesalahan administrasi, lakukan koreksi
+  jumlah berkurang dan/atau nilai berkurang; jika diperlukan lakukan
+  [Jurnal Manual](/akuntansi-pelaporan/proses/jurnal-manual/):
+
+  - D. 491511 Pendapatan Penyesuaian Nilai Persediaan
+  - K. 593311 Beban Penyesuaian Nilai Persediaan
+
+## Bagaimana agar di Satker tidak muncul akun Pendapatan Penyesuaian Nilai Persediaan (491511) yang nilainya sangat besar sehingga dianggap tidak wajar?
+
+- Saat melakukan Transaksi Masuk pastikan tidak terbalik antara
+  Harga Satuan dan Jumlah barang.
+- Saat melakukan Transaksi Masuk dibutuhkan kecermatan dalam
+  pemilihan kode barang.
+- Saat melakukan Transaksi Masuk agar membuat referensi barang yang
+  berbeda jika secara kualitas dan merek barang yang baru berbeda
+  jauh baik secara kualitas dan harganya.
+
+## Sumber
+
+<SumberAsli />
