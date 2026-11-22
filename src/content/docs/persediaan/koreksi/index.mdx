@@ -9,4 +9,35 @@ sidebar:
   order: 0
 ---
 
-Panduan untuk menu **Koreksi** sedang disiapkan.
+import { CardGrid, LinkCard } from '@astrojs/starlight/components';
+
+Menu Koreksi mencakup koreksi jumlah dan nilai persediaan serta
+pembatalan transaksi pada modul Persediaan.
+
+<CardGrid>
+	<LinkCard
+		title="Mengoreksi Jumlah Persediaan"
+		description="Mengoreksi jumlah barang persediaan atas salah, kurang, atau lebih catat transaksi pada tahun anggaran berjalan tanpa melalui opname fisik."
+		href="/persediaan/koreksi/koreksi-jumlah/"
+	/>
+	<LinkCard
+		title="Mengoreksi Nilai Persediaan"
+		description="Mengoreksi harga satuan barang persediaan atas salah, kurang, atau lebih catat transaksi pada tahun anggaran berjalan tanpa melalui opname fisik."
+		href="/persediaan/koreksi/koreksi-nilai/"
+	/>
+	<LinkCard
+		title="Membatalkan Transfer Keluar Online Persediaan"
+		description="Membatalkan transaksi Transfer Keluar Online yang sudah disetujui satker pengirim tetapi belum direkam transfer masuk oleh satker penerima."
+		href="/persediaan/koreksi/batal-transfer-keluar-online/"
+	/>
+	<LinkCard
+		title="Membatalkan Penghapusan Persediaan Usang/Rusak"
+		description="Membatalkan proses penghapusan atas barang persediaan yang usang/rusak."
+		href="/persediaan/koreksi/batal-penghapusan-usang-rusak/"
+	/>
+	<LinkCard
+		title="Membatalkan Pencatatan Persediaan Usang/Rusak"
+		description="Membatalkan pencatatan atas barang persediaan yang usang/rusak."
+		href="/persediaan/koreksi/batal-catat-usang-rusak/"
+	/>
+</CardGrid>

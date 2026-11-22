@@ -1,0 +1,114 @@
+---
+title: Mengoreksi Nilai Persediaan
+description: Mengoreksi harga satuan barang persediaan atas salah, kurang, atau lebih catat transaksi pada tahun anggaran berjalan tanpa melalui opname fisik.
+modul: persediaan
+menu_sakti: "Persediaan > Koreksi > Koreksi Nilai"
+peran: [satker]
+jenis: juknis
+kata_kunci: [koreksi nilai, koreksi harga satuan, memo penyesuaian]
+status: review
+perlu_review: false
+sumber:
+  - judul: "Koreksi Nilai"
+    url: "https://sites.google.com/view/saktipelaporan/persediaan/koreksi/koreksi-nilai"
+    jenis: google-sites
+    diambil: 2026-11-21
+    id_manifest: C-persediaan-koreksi-koreksi-nilai
+  - judul: "76. koreksi nilai"
+    url: "https://drive.google.com/file/d/1usi78Z7dcZLdpHycARZV4Ozn53k9-WaO/view"
+    jenis: pptx
+    diambil: 2026-11-21
+    id_manifest: C-dok-033
+  - judul: "14-Koreksi Nilai"
+    url: "https://drive.google.com/file/d/11rKfrLgRgnQLoGiFYOjK_-AhIU-W2Dkm/view"
+    jenis: lainnya
+    diambil: 2026-11-21
+    id_manifest: C-dok-032
+  - judul: "JUKNIS SAKTI WEB-Persediaan_30122020"
+    url: "https://drive.google.com/file/d/1p_-rUAu_on0H0d_TKFEE2vmpDXCPDzy5/view"
+    jenis: pdf
+    diambil: 2026-11-21
+    id_manifest: C-dok-001
+sidebar:
+  order: 2
+---
+
+import { Steps } from '@astrojs/starlight/components';
+import MenuSakti from '~/components/MenuSakti.astro';
+import SumberAsli from '~/components/SumberAsli.astro';
+
+Menu Koreksi Nilai digunakan untuk melakukan koreksi harga satuan
+barang persediaan atas adanya salah, kurang catat, atau lebih catat
+transaksi — berdasarkan pemeriksaan internal maupun eksternal — yang
+menambah atau mengurangi harga satuan barang persediaan pada tahun
+anggaran berjalan. Koreksi ini dilakukan tanpa melalui kegiatan
+opname fisik.
+
+<MenuSakti />
+
+## Prasyarat
+
+- Role yang dibutuhkan: OPR dan APR; menurut juknis 2020, pengguna
+  sebagai Operator UAKPB.
+- Dokumen sumber: Surat Dasar Koreksi / Memo Penyesuaian.
+- Validasi urutan tanggal transaksi atas barang yang sejenis (tidak
+  bisa sisip tanggal transaksi).
+- Sudah tutup buku modul Persediaan periode sebelumnya.
+- Menurut juknis 2021 dan 2020: validasi HST dan tanggal pembukuan.
+
+## Langkah
+
+<Steps>
+
+1. Login menggunakan user operator Persediaan, kemudian pilih menu
+   **Persediaan > Koreksi > Koreksi Nilai** dan klik tombol
+   **Rekam**.
+2. Pada form yang tampil, pilih barang yang akan diubah nilai barang
+   persediaannya.
+3. Isikan harga satuan sebesar harga satuan yang seharusnya, beserta
+   isian kode barang, jumlah, dan keterangan, lalu klik **Simpan** —
+   data sudah siap dilakukan persetujuan oleh user approval.
+
+</Steps>
+
+## Hasil yang diharapkan
+
+Perekaman koreksi nilai siap untuk disetujui oleh approver dan
+masuk ke semua laporan pada modul Persediaan.
+
+## Ketentuan
+
+- Tanggal buku diisikan paling tidak sama dengan tanggal transaksi
+  terakhir untuk barang yang sama; menurut juknis, tanggal buku
+  harus sama dengan tanggal dokumen dari transaksi tersebut karena
+  menggunakan metode pencatatan perpetual.
+- Menurut juknis 2020, jika harga satuan yang diinput sama dengan
+  harga satuan barang pada sistem, sistem menampilkan pesan
+  kesalahan.
+
+## Jurnal transaksi
+
+Menurut tabel overview pada halaman situs:
+
+- (D) Beban Penyesuaian Persediaan
+- (K) Barang Persediaan
+
+atau:
+
+- (D) Barang Persediaan
+- (K) Pendapatan Penyesuaian Persediaan
+
+## Ilustrasi transaksi
+
+Menurut tabel overview pada halaman situs, ilustrasi pada sumber
+memuat contoh satker yang salah merekam harga pemakaian barang
+persediaan; operator memperbaikinya dengan melakukan koreksi nilai
+dengan menginput harga seharusnya.
+
+## Terkait
+
+- [Mengoreksi Jumlah Persediaan](/persediaan/koreksi/koreksi-jumlah/)
+
+## Sumber
+
+<SumberAsli />

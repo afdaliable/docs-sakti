@@ -1,0 +1,121 @@
+---
+title: Mengoreksi Jumlah Persediaan
+description: Mengoreksi jumlah barang persediaan atas salah, kurang, atau lebih catat transaksi pada tahun anggaran berjalan tanpa melalui opname fisik.
+modul: persediaan
+menu_sakti: "Persediaan > Koreksi > Koreksi Jumlah"
+peran: [satker]
+jenis: juknis
+kata_kunci: [koreksi jumlah, koreksi persediaan, selisih barang, memo penyesuaian]
+status: review
+perlu_review: false
+sumber:
+  - judul: "Koreksi Jumlah"
+    url: "https://sites.google.com/view/saktipelaporan/persediaan/koreksi/koreksi-jumlah"
+    jenis: google-sites
+    diambil: 2026-11-21
+    id_manifest: C-persediaan-koreksi-koreksi-jumlah
+  - judul: "75. koreksi jumlah"
+    url: "https://drive.google.com/file/d/1ubcbAgjn6rAIuSkrRGN-zpavZbMl8BOJ/view"
+    jenis: pptx
+    diambil: 2026-11-21
+    id_manifest: C-dok-031
+  - judul: "15-Koreksi Jumlah"
+    url: "https://drive.google.com/file/d/1019h1F-WW6NNQnBrdt6REC8rC-arqDjx/view"
+    jenis: lainnya
+    diambil: 2026-11-21
+    id_manifest: C-dok-030
+  - judul: "JUKNIS SAKTI WEB-Persediaan_30122020"
+    url: "https://drive.google.com/file/d/1p_-rUAu_on0H0d_TKFEE2vmpDXCPDzy5/view"
+    jenis: pdf
+    diambil: 2026-11-21
+    id_manifest: C-dok-001
+sidebar:
+  order: 1
+---
+
+import { Steps } from '@astrojs/starlight/components';
+import MenuSakti from '~/components/MenuSakti.astro';
+import SumberAsli from '~/components/SumberAsli.astro';
+
+Menu Koreksi Jumlah digunakan untuk melakukan koreksi jumlah atas
+adanya salah, kurang catat, atau lebih catat transaksi —
+berdasarkan pemeriksaan internal maupun eksternal — yang menambah
+atau mengurangi jumlah barang persediaan pada tahun anggaran
+berjalan. Koreksi ini dilakukan tanpa melalui kegiatan opname fisik.
+
+<MenuSakti />
+
+## Prasyarat
+
+- Role yang dibutuhkan: OPR dan APR; menurut juknis 2020, pengguna
+  sebagai Operator UAKPB atau Operator UAPKPB.
+- Dokumen sumber: Surat Dasar Koreksi / Memo Penyesuaian.
+- Validasi urutan tanggal transaksi atas barang yang sejenis (tidak
+  bisa sisip tanggal transaksi).
+- Sudah tutup buku modul Persediaan periode sebelumnya.
+- Menurut juknis 2021 dan 2020: validasi HST dan tanggal pembukuan.
+
+## Langkah
+
+<Steps>
+
+1. Login menggunakan user operator Persediaan, kemudian pilih menu
+   **Persediaan > Koreksi > Koreksi Jumlah** dan klik tombol
+   **Rekam**.
+2. Pada form yang tampil, pilih barang yang akan diubah jumlah barang
+   persediaannya — pilih jenis transaksi koreksi jumlah, yaitu
+   **Koreksi Masuk** untuk menambah jumlah barang persediaan atau
+   **Koreksi Keluar** untuk mengurangi jumlah barang persediaan.
+3. Isikan jumlah barang sebesar selisih antara jumlah barang
+   sebelumnya dengan jumlah barang seharusnya, beserta isian kode
+   barang, jumlah, dan keterangan, lalu klik **Simpan** — data sudah
+   siap dilakukan persetujuan oleh user approval.
+
+</Steps>
+
+## Hasil yang diharapkan
+
+Perekaman koreksi jumlah siap untuk disetujui oleh approver dan
+masuk ke semua laporan pada modul Persediaan.
+
+## Ketentuan
+
+- Tanggal buku diisikan paling tidak sama dengan tanggal transaksi
+  terakhir untuk barang yang sama; menurut juknis, tanggal buku
+  harus sama dengan tanggal dokumen dari transaksi tersebut karena
+  menggunakan metode pencatatan perpetual.
+- Menurut juknis 2020, proses Rekam, Ubah, dan Hapus dapat
+  dilakukan; untuk Ubah dan Hapus harus diklik baris yang dipilih
+  terlebih dahulu.
+- Menurut juknis 2020, pada transaksi Koreksi Jumlah Masuk kolom
+  harga satuan harus diisi, sedangkan pada Koreksi Jumlah Keluar
+  harga satuan otomatis terisi dengan harga satuan terakhir.
+
+## Jurnal transaksi
+
+Menurut tabel overview pada halaman situs:
+
+- (D) Beban Penyesuaian Persediaan
+- (K) Barang Persediaan
+
+atau:
+
+- (D) Barang Persediaan
+- (K) Pendapatan Penyesuaian Persediaan
+
+## Ilustrasi transaksi
+
+Menurut tabel overview pada halaman situs, ilustrasi pada sumber
+memuat contoh satker yang salah merekam jumlah (kuantitas) pemakaian
+barang persediaan; operator memperbaikinya dengan melakukan koreksi
+jumlah keluar sebesar selisih jumlah yang terekam dengan jumlah
+yang seharusnya.
+
+## Terkait
+
+- [Mengoreksi Nilai Persediaan](/persediaan/koreksi/koreksi-nilai/)
+- [Merekam Hasil Opname Fisik Persediaan](/persediaan/opname-fisik/rekam-hasil-opname-fisik/)
+
+## Sumber
+
+<SumberAsli />

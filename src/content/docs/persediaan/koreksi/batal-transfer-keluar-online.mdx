@@ -1,0 +1,96 @@
+---
+title: Membatalkan Transfer Keluar Online Persediaan
+description: Membatalkan transaksi Transfer Keluar Online yang sudah disetujui satker pengirim tetapi belum direkam transfer masuk oleh satker penerima.
+modul: persediaan
+menu_sakti: "Persediaan > Koreksi > Batal Transfer Keluar Online"
+peran: [satker]
+jenis: juknis
+kata_kunci: [batal transfer keluar online, pembatalan transfer, koreksi transfer]
+status: review
+perlu_review: false
+sumber:
+  - judul: "Koreksi Persediaan: Batal Transfer Keluar Online"
+    url: "https://sites.google.com/view/saktipelaporan/persediaan/koreksi/batal-transfer-keluar-online"
+    jenis: google-sites
+    diambil: 2026-11-21
+    id_manifest: C-persediaan-koreksi-batal-transfer-keluar-online
+  - judul: "JUKNIS SAKTI WEB-Persediaan_30122020"
+    url: "https://drive.google.com/file/d/1p_-rUAu_on0H0d_TKFEE2vmpDXCPDzy5/view"
+    jenis: pdf
+    diambil: 2026-11-21
+    id_manifest: C-dok-001
+sidebar:
+  order: 3
+---
+
+import { Steps } from '@astrojs/starlight/components';
+import MenuSakti from '~/components/MenuSakti.astro';
+import SumberAsli from '~/components/SumberAsli.astro';
+
+Menu Batal Transfer Keluar Online digunakan untuk melakukan koreksi
+terhadap pencatatan barang persediaan yang batal ditransfer keluar —
+menurut juknis 2020, untuk membatalkan transaksi Transfer Keluar
+Online yang telah disetujui oleh satker pengirim tetapi belum
+dilakukan transfer masuk oleh satker penerima, misalnya karena
+kesalahan pemilihan barang yang dikirim atau ketidaksesuaian antara
+fisik barang yang sampai di satker penerima dengan Berita Acara
+Transfer.
+
+<MenuSakti />
+
+## Prasyarat
+
+- Role yang dibutuhkan: menurut juknis 2020, OPR dan APR.
+- Pembatalan transfer keluar hanya dapat dilakukan oleh satker yang
+  telah melakukan Transfer Keluar Online.
+- Proses transfer keluar online persediaan masih belum selesai —
+  menurut juknis 2020, dokumen transfer keluar sudah direkam dan
+  disetujui oleh satker pengirim namun tidak direkam sebagai
+  transfer masuk oleh satker penerima.
+- Menurut juknis 2020: validasi urutan tanggal transaksi atas barang
+  yang sejenis.
+
+## Langkah
+
+<Steps>
+
+1. Pilih menu **Persediaan > Koreksi > Batal Transfer Keluar
+   Online** dan klik rekam, lalu pilih dokumen Transfer Keluar
+   Online yang akan dibatalkan.
+2. Setelah dokumen yang akan dibatalkan dipilih, form Batal
+   Transfer Online menampilkan daftar barang-barang persediaan yang
+   akan dibatalkan; operator hanya perlu menentukan tanggal buku
+   saat transaksi pembatalan Transfer Keluar Online akan
+   dibukukan.
+3. Klik tombol **Selesai** untuk merekam koreksi transfer keluar
+   online.
+
+</Steps>
+
+## Hasil yang diharapkan
+
+Transaksi pembatalan transfer keluar online terekam; menurut juknis
+2020, output transaksi ini adalah semua laporan pada modul
+Persediaan.
+
+## Ketentuan
+
+- Menurut juknis 2020, transaksi Transfer Keluar dan Transfer Masuk
+  Online hanya dapat dilakukan dalam satu periode tahun anggaran:
+  setiap transaksi Transfer Masuk Online hanya dapat direkam pada
+  satker penerima maksimal tanggal 31 Desember pada tahun Transfer
+  Keluar Online dibukukan.
+- Menurut juknis 2020, apabila Transfer Masuk Online belum direkam
+  di satker penerima dan telah melewati periode bulan dokumen
+  Transfer Keluar Online dibukukan oleh satker pengirim, maka akan
+  muncul peringatan yang bersifat informatif pada saat tutup periode
+  di satker pengirim dan penerima, namun tutup buku masih dapat
+  dilakukan.
+
+## Terkait
+
+- [Merekam Transfer Keluar Online (Sesama SAKTI) Persediaan](/persediaan/transaksi-keluar/transfer-keluar-online-sesama-sakti/)
+
+## Sumber
+
+<SumberAsli />
