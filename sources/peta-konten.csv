@@ -421,7 +421,9 @@ kppn-bun/proses-adk-spm-koreksi,Memproses ADK SPM Koreksi di KPPN,kppn-bun,KPPN 
 kppn-bun/renkas-harian,Memproses Renkas Harian di KPPN,kppn-bun,KPPN > Pencairan Dana > Proses,kppn-kanwil,juknis,B-bun-002,"K56: pecahan B-bun-002 bagian H; label menu sumber ""Renkas Harian"" tidak ada padanan persis (terdekat Scheduled Payment Date)"
 kppn-bun/pengujian-spm-tte,Menguji SPM dengan TTE,kppn-bun,KPPN > Pencairan Dana > Proses > SPM,kppn-kanwil,juknis,B-bun-003,
 kppn-bun/persetujuan-up,Menyetujui UP di KPPN,kppn-bun,,kppn-kanwil,juknis,B-ben-019,berkas berada di folder Drive Bendahara
-peraturan,Peraturan,peraturan,,satker;kppn-kanwil;djpb-pusat;dja;djkn;bappenas;bpk;apip;widyaiswara,peraturan,A-peraturan;A-dok-056;A-dok-057;A-dok-058,
+peraturan,Peraturan,peraturan,,satker;kppn-kanwil;djpb-pusat;dja;djkn;bappenas;bpk;apip;widyaiswara,indeks,A-peraturan;A-dok-056,
+peraturan/pmk-171-pmk05-2021,PMK Nomor 171/PMK.05/2021 tentang Pelaksanaan Sistem SAKTI,peraturan,,satker;kppn-kanwil;djpb-pusat;dja;djkn;bappenas;bpk;apip;widyaiswara,peraturan,A-dok-058,K57: satu halaman per peraturan
+peraturan/per-16-pb-2020,PER-16/PB/2020 tentang Hak Akses Pengguna dan Pengamanan Secara Elektronik dalam Piloting SAKTI,peraturan,,satker;kppn-kanwil;djpb-pusat;dja;djkn;bappenas;bpk;apip;widyaiswara,peraturan,A-dok-057,K57: satu halaman per peraturan
 faq,FAQ Umum,faq,,satker,faq,C-faq,dipecah per modul saat migrasi (docs/01)
 bantuan,Bantuan & Kontak,bantuan,,satker;kppn-kanwil;djpb-pusat;dja;djkn;bappenas;bpk;apip;widyaiswara,indeks,A-hubungi-kami,tautan tiket HAI di sumber 404; pakai kontak resmi yang masih hidup
 ,Mengajukan Interkoneksi Data MonSAKTI,,,satker,ditolak,A-layanan;A-dok-059;A-dok-060,K6: ditunda; dokumentasi API MonSAKTI/MinSAKTI tidak dimigrasikan (eks bantuan/layanan-interkoneksi-monsakti)

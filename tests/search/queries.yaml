@@ -254,3 +254,7 @@
   harap: ["/kppn-bun/pengujian-spm-tte/"]
 - q: "persetujuan up oleh kppn"
   harap: ["/kppn-bun/persetujuan-up/", "/bendahara/siklus-up-awal/"]
+- q: "pmk pelaksanaan sistem sakti"
+  harap: ["/peraturan/pmk-171-pmk05-2021/", "/peraturan/"]
+- q: "peraturan hak akses pengguna sakti"
+  harap: ["/peraturan/per-16-pb-2020/", "/peraturan/"]
