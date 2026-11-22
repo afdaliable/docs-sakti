@@ -1,12 +1,21 @@
 ---
 title: Tutup Buku
-description: Panduan menu Tutup Buku pada modul Akuntansi dan Pelaporan.
+description: Tutup buku sementara dan permanen, buka periode, dan monitoring tutup transaksi modul.
 modul: akuntansi-pelaporan
 jenis: indeks
 status: terbit
 sidebar:
   label: Ringkasan
-  order: 0
+  order: 2
 ---
 
-Panduan untuk menu **Tutup Buku** sedang disiapkan.
+import { LinkCard, CardGrid } from '@astrojs/starlight/components';
+
+Sub-menu **Akuntansi dan Pelaporan > Tutup Buku** memuat fitur
+tutup buku atau buka buku modul GLP sementara maupun
+permanen, dan monitoring tutup periode masing-masing modul.
+
+<CardGrid>
+  <LinkCard title="Menutup Buku" href="/akuntansi-pelaporan/tutup-buku/tutup-buku/" description="Tutup sementara, buka periode, dan tutup permanen GLP." />
+  <LinkCard title="Memantau Tutup Transaksi" href="/akuntansi-pelaporan/tutup-buku/monitoring-tutup-transaksi/" description="Memastikan submodul sudah tutup sebelum tutup periode GLP." />
+</CardGrid>

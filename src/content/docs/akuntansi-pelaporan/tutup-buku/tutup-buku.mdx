@@ -1,0 +1,137 @@
+---
+title: Menutup Buku
+description: Tutup buku atau buka buku modul GLP sementara maupun permanen.
+modul: akuntansi-pelaporan
+menu_sakti: "Akuntansi dan Pelaporan > Tutup Buku > Tutup Buku"
+peran: [satker]
+jenis: juknis
+kata_kunci: [tutup buku, tutup periode, tutup sementara, tutup permanen, buka periode]
+status: review
+sumber:
+  - judul: "SAKTI PELAPORAN - Tutup Buku"
+    url: "https://sites.google.com/view/saktipelaporan/akuntansi-dan-pelaporan/tutup-buku/tutup-buku"
+    jenis: google-sites
+    diambil: 2026-11-21
+    id_manifest: C-akuntansi-dan-pelaporan-tutup-buku-tutup-buku
+  - judul: "Tutup Buku-5"
+    url: "https://drive.google.com/file/d/1Wp8ABPupIUhKv9qYpcpqTdFBx82qCtNN/view"
+    jenis: lainnya
+    diambil: 2026-11-21
+    id_manifest: C-dok-173
+  - judul: "Juknis SAKTI Web - GLP_30122020"
+    url: "https://drive.google.com/file/d/1Z8R3bR_pYK-God0fQSBy5twxtJDASqaa/view"
+    jenis: pdf
+    diambil: 2026-11-21
+    id_manifest: C-dok-161
+  - judul: "Juknis SAKTI Satker BLU"
+    url: "https://drive.google.com/file/d/1gt7ZitAXOh7tvJff1HFT4LTzni5X4yk5/view"
+    jenis: pdf
+    diambil: 2026-11-21
+    id_manifest: B-pem-041
+---
+
+import { Steps, LinkCard } from '@astrojs/starlight/components';
+import MenuSakti from '../../../components/MenuSakti.astro';
+import SumberAsli from '../../../components/SumberAsli.astro';
+
+Menu ini digunakan untuk tutup buku atau buka buku modul GLP
+sementara atau permanen.
+
+<MenuSakti />
+
+## Prasyarat
+
+- Role yang dibutuhkan: OPR.
+- Modul Persediaan dan Aset Tetap telah dilakukan tutup buku.
+- Modul Piutang telah tutup periode khusus bulan Juni dan
+  Desember.
+- Jurnal transaksi telah diposting.
+- Diharapkan koordinasi sebelumnya dengan semua operator
+  modul; Modul Aset Tetap dan Modul Persediaan harus sudah
+  ditutup buku oleh Approver (menurut juknis satker BLU).
+
+## Langkah
+
+### Tutup Buku GLP Sementara
+
+Digunakan untuk memindahkan saldo neraca periode sebelumnya
+ke awal bulan dan untuk keperluan push data interkoneksi
+rekonsiliasi bulanan SAKTI dengan e-Rekon. Selama status
+tutup periode sementara, operator GLP masih bisa melakukan
+buka periode kembali jika diperlukan.
+
+<Steps>
+
+1. Login menggunakan user operator GLP pada menu **Akuntansi
+   dan Pelaporan > Tutup Buku > Tutup Buku**.
+2. Pilih periode yang akan ditutup, klik **Tutup
+   Sementara**.
+3. Pilih **Ya**; setelah berhasil tombol Tutup Sementara
+   menjadi tidak aktif.
+
+</Steps>
+
+### Buka Periode GLP
+
+Buka periode GLP dapat dilakukan sepanjang statusnya adalah
+sementara; pembukaan periode GLP mengakibatkan terbukanya
+semua modul yang periodenya dibuka kecuali modul Aset
+periode Juni dan Desember.
+
+<Steps>
+
+1. Pada menu Tutup Buku pilih periode yang akan dibuka, klik
+   **Buka Periode**.
+2. Pilih **Ya**; jika berhasil semua modul akan terbuka
+   kecuali modul Aset Tetap bulan Juni dan Desember, dan
+   tombol Tutup Sementara aktif kembali.
+3. Lakukan dengan cara yang sama untuk pembukaan periode
+   lainnya sesuai kebutuhan.
+
+</Steps>
+
+### Tutup Permanen GLP
+
+Melakukan tutup periode GLP secara permanen dan tidak dapat
+dibuka kembali; idealnya dilakukan setelah penyusunan
+Laporan Keuangan usai.
+
+<Steps>
+
+1. Pilih periode GLP yang akan ditutup permanen.
+2. Klik **Tutup Permanen**.
+
+</Steps>
+
+## Ketentuan
+
+- Transaksi dari modul lainnya tidak dapat dilakukan pada
+  periode bulan yang sudah tutup Modul GLP, atau jurnalnya
+  dibukukan pada tanggal di periode bulan berikutnya yang
+  masih terbuka.
+- Tutup sementara dapat dilakukan maksimal selama satu
+  semester; untuk tutup sementara semester berikutnya harus
+  dilakukan tutup permanen semua periode semester
+  sebelumnya.
+- Buka periode dilakukan berurutan mulai dari bulan
+  terakhir, dan tidak dapat dilakukan bila Modul Persediaan
+  atau Modul Aset Tetap sudah tutup buku periode
+  selanjutnya.
+- Tutup buku permanen mensyaratkan telah dilakukan tutup
+  sementara; periode yang ditutup permanen tidak dapat
+  dibuka kembali oleh user satker.
+- Transaksi ubah atau hapus atas transaksi pada periode yang
+  ditutup mengakibatkan jurnal dibukukan pada periode yang
+  masih terbuka.
+- Jika suatu periode telah tutup permanen, transaksi tidak
+  bisa dikoreksi untuk semua modul pada periode tersebut
+  (menurut juknis satker BLU).
+
+## Terkait
+
+<LinkCard title="Memantau Tutup Transaksi" href="/akuntansi-pelaporan/tutup-buku/monitoring-tutup-transaksi/" description="Cek status tutup semua modul." />
+<LinkCard title="Mencetak Laporan Keuangan" href="/akuntansi-pelaporan/laporan/" description="Laporan mensyaratkan tutup periode sebelumnya." />
+
+## Sumber
+
+<SumberAsli />

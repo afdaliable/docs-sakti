@@ -1,0 +1,62 @@
+---
+title: Memantau Tutup Transaksi
+description: Monitoring tutup periode masing-masing modul sebelum tutup periode GLP.
+modul: akuntansi-pelaporan
+menu_sakti: "Akuntansi dan Pelaporan > Tutup Buku > Monitoring Tutup Transaksi"
+peran: [satker]
+jenis: juknis
+kata_kunci: [monitoring tutup transaksi, tutup periode modul, tutup buku]
+status: review
+sumber:
+  - judul: "SAKTI PELAPORAN - Monitoring Tutup Transaksi"
+    url: "https://sites.google.com/view/saktipelaporan/akuntansi-dan-pelaporan/tutup-buku/monitoring-tutup-transaksi"
+    jenis: google-sites
+    diambil: 2026-11-21
+    id_manifest: C-akuntansi-dan-pelaporan-tutup-buku-monitoring-tutup-transaksi
+  - judul: "08 Monitoring Tutup Transaksi_WEB"
+    url: "https://drive.google.com/file/d/1iZdMJFUN3fmhAOESZeHxBDSp5y5cZzAK/view"
+    jenis: pdf
+    diambil: 2026-11-21
+    id_manifest: C-dok-174
+  - judul: "Juknis SAKTI Web - GLP_30122020"
+    url: "https://drive.google.com/file/d/1Z8R3bR_pYK-God0fQSBy5twxtJDASqaa/view"
+    jenis: pdf
+    diambil: 2026-11-21
+    id_manifest: C-dok-161
+---
+
+import { Steps, LinkCard } from '@astrojs/starlight/components';
+import MenuSakti from '../../../components/MenuSakti.astro';
+import SumberAsli from '../../../components/SumberAsli.astro';
+
+Menu ini digunakan untuk melakukan monitoring tutup periode
+masing-masing modul untuk memastikan submodul telah tutup
+sebelum melakukan tutup periode GLP.
+
+<MenuSakti />
+
+## Prasyarat
+
+- Role yang dibutuhkan: OPR.
+
+## Langkah
+
+<Steps>
+
+1. Login menggunakan user operator GLP pada menu **Akuntansi
+   dan Pelaporan > Tutup Buku > Monitoring Tutup
+   Transaksi**.
+2. Pada form yang muncul, periksa monitoring tutup
+   transaksi: periode yang ditutup, modul yang ditutup, dan
+   tanggal dilakukan tutup buku; halaman terakhir
+   menunjukkan monitoring tutup buku paling terakhir.
+
+</Steps>
+
+## Terkait
+
+<LinkCard title="Menutup Buku" href="/akuntansi-pelaporan/tutup-buku/tutup-buku/" description="Tutup buku GLP sementara dan permanen." />
+
+## Sumber
+
+<SumberAsli />
