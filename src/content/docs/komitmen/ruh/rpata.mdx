@@ -1,0 +1,253 @@
+---
+title: Merekam Transaksi Rekening Penampungan Akhir Tahun (RPATA)
+description: Alur transaksi RPATA — penampungan, pembayaran, penihilan, dan pemberian kesempatan pekerjaan — pada SAKTI.
+modul: komitmen
+menu_sakti: "Komitmen > RUH > Transakti RPATA"
+peran: [satker, kppn-kanwil]
+jenis: juknis
+kata_kunci: [rpata, rekening penampungan, termin rpata, penampungan rpata, penihilan rpata, pemberian kesempatan]
+status: review
+perlu_review: true
+sumber:
+  - judul: "Petunjuk Teknis Transaksi RPATA 2025"
+    url: "https://drive.google.com/file/d/1vZx6pGnDmLrwzjYLKsQr9PTchQx8o6Qv/view"
+    jenis: pdf
+    diambil: 2026-11-21
+    id_manifest: B-kom-034
+  - judul: "Juknis Transaksi RPATA 2023 (versi lama, digantikan)"
+    url: "https://drive.google.com/file/d/1sz4KBYl-uuUzlbVXTQdAqiUxsVLDKH38/view"
+    jenis: pdf
+    diambil: 2026-11-21
+    id_manifest: B-kom-033
+sidebar:
+  order: 14
+---
+
+import { Steps, Aside } from '@astrojs/starlight/components';
+import MenuSakti from '~/components/MenuSakti.astro';
+import SumberAsli from '~/components/SumberAsli.astro';
+
+Rekening Penampungan atas Pekerjaan yang Belum Diselesaikan pada Akhir
+Tahun Anggaran — selanjutnya disebut **RPATA** — menampung anggaran
+pekerjaan tahun anggaran sebelumnya untuk diselesaikan tahun
+berikutnya (PMK 84/2025). Alurnya mencakup penampungan RPATA, pembayaran RPATA,
+penihilan RPATA, dan pemberian kesempatan pekerjaan, melibatkan modul
+Komitmen, Pembayaran, dan SAKTI-BUN.
+
+<MenuSakti />
+
+## Langkah
+
+### Penampungan RPATA
+
+**Pemilihan termin RPATA** (operator komitmen):
+
+<Steps>
+
+1. Buka **Komitmen > RUH > Kontrak**, pilih kontrak yang akan
+   dibayarkan melalui mekanisme RPATA, klik **Ubah**.
+
+2. Pada tab Kontrak (Contract Header), pindah ke tab **Rencana
+   Pembayaran (Contract Line)**, pilih line yang akan dibayarkan
+   melalui RPATA, lalu pindah ke tab **Jadwal Pembayaran (Payment
+   Schedule)**.
+
+3. Pilih termin yang akan dijadikan Termin RPATA, klik **Ubah**, pada
+   kolom jenis termin pilih **Termin RPATA**, klik **Simpan**.
+
+</Steps>
+
+Perekaman BAST Penampungan RPATA:
+
+<Steps>
+
+1. Buka **Komitmen > RUH > Transakti RPATA > Penerimaan Barang/Jasa
+   RPATA**, klik **Rekam**, pilih kategori **RPATA Penampungan**.
+
+2. Klik tombol **Cari Kontrak** untuk mencari kontrak dengan jenis
+   Termin RPATA; setelah memilih kontrak dan termin, rekam informasi
+   **Tanggal Dokumen/BAST** — nomor dokumen di-*generate* sistem dengan
+   format `RPATA171/kode_satker/nomor_urut/tahun_anggaran` — klik
+   **Simpan**.
+
+</Steps>
+
+Perekaman SPM Penampungan RPATA (SPP 171):
+
+<Steps>
+
+1. Login user operator modul Pembayaran, buka **Pembayaran > RUH
+   Pembayaran > Catat/Ubah SPP**, pilih jenis SPP **171 – Penampungan
+   RPATA**, klik **Tambah**.
+
+2. Pilih Termin RPATA yang telah direkam BAST Penampungannya, klik
+   **Pilih**, lakukan perekaman informasi yang dibutuhkan dan pilih
+   **Dasar Pembayaran** — uraian pembayaran di-*generate* sistem.
+
+3. Pilih BAST Penampungan RPATA pada form Ambil Data Kontrak BAST,
+   klik **Rekam SPP** — data akun pengeluaran otomatis terisi sesuai
+   COA pada BAST; lanjutkan rekam akun potongan/penerimaan (klik **RUH
+   Akun**, **Tambah**, lalu **Simpan** tanpa mengubah akun, klik
+   **Keluar**).
+
+4. Klik **Simpan** pada form SPP, lalu cetak SPP pada **Pembayaran >
+   Cetak > Mencetak SPP** (pilih SPP dan PPK penandatangan, klik
+   **Unduh**).
+
+5. Bentuk SPTJM melalui **Pembayaran > Catat/Upload > Upload Dokumen
+   Pendukung** — pilih jenis dokumen pendukung **SPTJM RPATA
+   (Penampungan)**, klik **Bentuk & Unggah** (baru dapat dilakukan
+   setelah cetak SPP).
+
+6. Lanjutkan validasi SPP oleh PPK.
+
+</Steps>
+
+### Pembayaran RPATA
+
+BAST Pembayaran RPATA hanya dapat direkam apabila BAST Penampungan
+sudah dibayarkan (tercatat SP2D).
+
+<Steps>
+
+1. Buka **Komitmen > RUH > Transakti RPATA > Penerimaan Barang/Jasa
+   RPATA**, klik **Rekam**, pilih kategori **RPATA Pembayaran Aset /
+   Jasa Dikapitalisasi Aset** atau **RPATA Pembayaran Jasa / Non
+   Aset**.
+
+2. Klik **Cari Kontrak** — hanya Termin RPATA yang telah dilakukan
+   Penampungan (SPP 171 tercatat SP2D) yang dapat dipilih.
+
+3. Isi **Nomor Dokumen/BAST** dan **Tanggal Dokumen/BAST** sesuai BAST
+   riil satker; rekam nilai pada **Pendetilan COA**; rekam **Progress
+   Pekerjaan** sebesar persentase nilai BAST dibanding nilai termin;
+   rekam informasi barang yang dihasilkan (sama seperti BAST
+   aset/persediaan biasa); klik **Simpan**.
+
+4. Rekam SPM Pembayaran RPATA: **Pembayaran > RUH Pembayaran >
+   Catat/Ubah SPP**, jenis SPP **172 – Pembayaran RPATA**, klik
+   **Tambah**, pilih termin, klik **Pilih**, isi Dasar Pembayaran,
+   pilih BAST Pembayaran RPATA, rekam akun pengeluaran dan akun
+   potongan (pajak/denda bila ada), klik **Simpan**.
+
+5. Cetak SPP (**Pembayaran > Cetak > Mencetak SPP**), lalu unduh
+   SPTJM Pembayaran — bila kontrak memuat tanggal pemeliharaan, SPTJM
+   membawa informasi pemeliharaan; untuk SPTJM dengan informasi jaminan
+   pengawasan lakukan penyesuaian informasi secara manual — unggah
+   dokumen pendukung, lalu lanjutkan validasi SPP oleh PPK hingga ADK
+   SPM.
+
+</Steps>
+
+### Penihilan RPATA
+
+BAST Penihilan menarik saldo sisa atas termin dan harus menjadi BAST
+RPATA terakhir yang direkam.
+
+<Steps>
+
+1. Buka **Komitmen > RUH > Transakti RPATA > Penerimaan Barang/Jasa
+   RPATA**, klik **Rekam**, pilih kategori **RPATA Penihilan**, klik
+   **Cari Kontrak** untuk memilih Termin RPATA yang telah dilakukan
+   penampungan.
+
+2. Rekam **Tanggal Dokumen/BAST** (nomor tergenerate otomatis; nilai
+   ditarik otomatis senilai saldo sisa termin), klik **Simpan**.
+
+3. Rekam SPM Penihilan RPATA: **Pembayaran > RUH Pembayaran >
+   Catat/Ubah SPP**, jenis SPP **173 – Penihilan RPATA**, klik
+   **Tambah**, pilih termin (hanya yang sudah direkam BAST Penihilan),
+   klik **Pilih**, pilih Dasar Pembayaran, klik **Cari BAST** dan pilih
+   BAST Penihilan, pastikan akun pengeluaran dan akun potongan direkam
+   (bila direkam pada TA selanjutnya, akun potongan 4xx direkam lewat
+   tombol 4xx & 8xx), klik **Simpan**.
+
+4. Cetak SPP, lalu bentuk SPTJM melalui **Pembayaran > Catat/Upload >
+   Upload Dokumen Pendukung** dengan jenis **SPTJM RPATA (Penihilan)**.
+
+</Steps>
+
+### Pemberian kesempatan pekerjaan
+
+Direkam pada menu **Komitmen > RUH > Transaksi RPATA > Pemberian
+Kesempatan** (jalur menurut juknis), melibatkan operator komitmen, PPK,
+PPSPM, dan operator pencairan dana KPPN-BUN:
+
+<Steps>
+
+1. **Operator komitmen**: klik **Rekam**, pada form Informasi Kontrak
+   klik **Cari** dan pilih kontrak yang akan diperpanjang; lengkapi
+   form Informasi Detil Pemberian Kesempatan, klik **Simpan** — status
+   menjadi **Usulan Baru**; lengkapi dengan mengunggah dokumen
+   pendukung.
+
+2. **PPK satker**: pilih data yang akan direview, lakukan review, lalu
+   setujui/tolak. Untuk persetujuan, PPK wajib menyatakan keyakinan
+   bahwa penyedia mampu menyelesaikan pekerjaan dengan mencentang
+   checkbox **setuju** dan mengklik konfirmasi — status menjadi **Setuju
+   PPK** atau **Tolak PPK**.
+
+3. **PPSPM satker**: review dan beri persetujuan/penolakan — status
+   menjadi **Setuju PPSPM** atau **Tolak PPSPM**.
+
+4. **Operator pencairan dana KPPN-BUN**: review dan beri
+   persetujuan/penolakan — status menjadi **Setuju Operator KPPN** atau
+   sebaliknya.
+
+</Steps>
+
+## Ketentuan
+
+- Termin yang sudah dibayarkan melalui transaksi kontraktual tidak
+  dapat diubah menjadi Termin RPATA; Termin RPATA tidak dapat dipakai
+  untuk perekaman kontraktual reguler; satu line kontrak maksimal dua
+  jenis Termin RPATA.
+- BAST Penampungan: nomor dokumen, progress pekerjaan, dan nilai detail
+  COA terisi otomatis; satu Termin RPATA memiliki satu BAST
+  Penampungan.
+- BAST Pembayaran: untuk BAST Penampungan dengan akun wajib BMN hanya
+  dapat direkam BAST Pembayaran Aset/Jasa Dikapitalisasi Aset; satu
+  termin dapat direkam lebih dari satu BAST Pembayaran; tanggalnya
+  harus melebihi tanggal SPM Penampungan; dapat direkam lintas tahun
+  apabila terdapat Pemberian Kesempatan.
+- SPP Pembayaran (172): dapat menggunakan lebih dari satu BAST
+  Pembayaran; satu termin hanya satu SPM Pembayaran; hanya dapat
+  direkam setelah seluruh BAST Pembayaran dan Penihilan (jika ada)
+  direkam.
+- Penihilan: sisa saldo RPATA menjadi 0 setelah BAST Penihilan direkam;
+  sebaiknya SPM Penihilan diajukan setelah SPM Pembayaran terbit SP2D.
+- Pemberian kesempatan (kategori pekerjaan Lainnya): untuk jenis
+  pekerjaan konstruksi wajib ada BAST progress pekerjaan tanggal 31
+  Desember dengan minimal progress penyelesaian 75%; tidak dapat
+  direkam bila progress sudah 100%; pemberian kesempatan pertama
+  maksimal 50 hari kalender; kesempatan kedua dapat diberikan setelah
+  kesempatan pertama disetujui KPPN; kesempatan pertama dan kedua total
+  maksimal 90 hari kalender; pembatalan tidak dapat dilakukan bila telah
+  direkam BAST Pembayaran; dokumen pendukung minimal "Surat Pernyataan
+  dari Rekanan" (untuk kategori Persetujuan Menteri Keuangan ditambah
+  "Surat Persetujuan Menteri Keuangan"; untuk SBSN ditambah "Dokumen
+  Pendukung SBSN"); tanggal persetujuan tidak dapat melewati tanggal
+  sistem.
+
+<Aside type="caution" title="Perlu verifikasi">
+Juknis menulis simpul **Transaksi RPATA** (juga salah ketik "RPTA");
+menu aplikasi saat ini adalah **Komitmen > RUH > Transakti RPATA >
+Penerimaan Barang/Jasa RPATA** — ejaan "Transakti" memang ejaan
+aplikasi. Menu **Pemberian Kesempatan** tidak terdapat di bawah
+**Transakti RPATA** pada menu aplikasi saat ini (anak simpulnya:
+**Perpanjangan Kontrak**, **Penerimaan Barang/Jasa RPATA**, **Monitoring
+RPATA**) — **Perpanjangan Kontrak** adalah menu yang paling mirip,
+perlu dipastikan. Juknis menulis perekaman SPP pada "Pembayaran > RUH
+SPP Pembayaran / RUH SPP dan Renkas"; menu aplikasi saat ini adalah
+**Pembayaran > RUH Pembayaran > Catat/Ubah SPP**. Tanggal batas yang
+tertulis juknis adalah untuk tahun 2025.
+</Aside>
+
+## Terkait
+
+- [Merekam Kontrak Tahunan (IDR)](/komitmen/ruh/pencatatan-kontrak/kontrak-tahunan/)
+- [Merekam BAST Kontraktual](/komitmen/ruh/pencatatan-bast/bast-kontraktual/)
+
+## Sumber
+
+<SumberAsli />

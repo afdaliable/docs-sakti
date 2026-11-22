@@ -1,0 +1,223 @@
+---
+title: Mengisi Target Proyek Capaian Output
+description: Mengisi dan memutakhirkan data target/proyeksi capaian output satker pada menu Target Kinerja Satker.
+modul: komitmen
+menu_sakti: "Komitmen > RUH > Capaian Kinerja > Target Kinerja Satker"
+peran: [satker]
+jenis: juknis
+kata_kunci: [target kinerja satker, tpcro, trvro, proyeksi capaian output, dispensasi ro, isi otomatis]
+status: review
+perlu_review: true
+sumber:
+  - judul: "Juknis Pengisian dan Pelaporan Data Target/Proyeksi Output Satker Ver.2.0 Tahun 2024"
+    url: "https://drive.google.com/file/d/1QpBYLLlREZPWYxWPUxOGZvPnmCBLNZ-w/view"
+    jenis: pdf
+    diambil: 2026-11-21
+    id_manifest: B-kom-017
+sidebar:
+  order: 12
+---
+
+import { Steps, Aside } from '@astrojs/starlight/components';
+import MenuSakti from '~/components/MenuSakti.astro';
+import SumberAsli from '~/components/SumberAsli.astro';
+
+Isi proyeksi target capaian output (TPCRO dan TRVRO non kumulatif)
+pada menu **Komitmen > RUH > Capaian Kinerja > Target Kinerja
+Satker**. Pengisian target output (input TPCRO dan
+TRVRO non kumulatif) dilakukan setiap triwulan atau sepanjang terdapat
+revisi DIPA yang mengakibatkan perubahan jumlah dan/atau target RO;
+pengisian capaian output dilakukan setiap bulan pada menu Realisasi
+Kinerja Satker.
+
+<MenuSakti />
+
+## Prasyarat
+
+- Role: **Operator Komitmen**.
+- RO yang mengalami perubahan satuan atau RO baru wajib telah
+  di-*assessment* oleh bidang perencanaan unit eselon I K/L — tanpa
+  assessment, sistem memvalidasi dan satker tidak dapat mengisi target
+  maupun melaporkan realisasi.
+
+## Periode dan pemutakhiran
+
+- Pengisian data pertama kali mencakup Januari–Desember; menurut jadwal
+  tahun 2024 dalam juknis, batas akhirnya adalah **30 April 2024**.
+- Pemutakhiran reguler mengikuti periodisasi pemutakhiran RPD Halaman
+  III DIPA (jadwal tahun 2024 menurut juknis): periode Jan–Des selama
+  10 hari kerja awal Februari (triwulan I), Apr–Des 10 hari kerja awal
+  April, Jul–Des 10 hari kerja awal Juli, dan Okt–Des 10 hari kerja
+  awal Oktober.
+- Revisi DIPA yang mengubah jumlah/volume RO dapat dimutakhirkan
+  mandiri lewat fitur **Dispensasi**, aktif sejak DIPA revisi terbaru
+  ter-posting sampai operator mengklik **KIRIM**.
+
+## Langkah
+
+<Steps>
+
+1. Login dengan user operator komitmen, buka **Komitmen > RUH >
+   Capaian Kinerja > Target Kinerja Satker** — layar menampilkan
+   parameter data (Program/Kegiatan/KRO/RO), informasi status
+   DIPA/revisi DIPA, form input TPCRO dan TRVRO non kumulatif, grid
+   data, dan tombol aksi (termasuk Isi Otomatis, Unduh, Sinkron Data,
+   Dispensasi).
+
+2. Pilih parameter secara sekuensial (Program → Kegiatan → Klasifikasi
+   Rincian Output → Rincian Output), atau langsung pilih RO pada grid.
+   Sistem mendeteksi periode aktif otomatis.
+
+3. Klik tombol **Ubah**, lalu isi **TPCRO** dan **TRVRO** per bulan
+   secara **non kumulatif**; kolom ∑ menampilkan nilai kumulatif yang
+   dihitung otomatis sistem. Satker dapat memakai fitur **Isi
+   Otomatis** untuk program Dukungan Manajemen dengan target dan satuan
+   1 Layanan.
+
+4. Klik **Simpan** — baris RO pada grid terisi. Tombol **Reset**
+   membersihkan filter parameter; **Refresh** mengambil ulang data RO.
+
+5. Setelah seluruh RO terisi, klik **KIRIM**, lalu tekan **YA** pada
+   notifikasi konfirmasi. Data target yang dikirim otomatis muncul pada
+   menu Realisasi Kinerja Satker.
+
+</Steps>
+
+**Fitur Dispensasi** (untuk RO baru/perubahan volume akibat revisi
+DIPA): klik **Dispensasi** — daftar RO yang mendapat dispensasi tampil
+— pilih RO, klik **Ubah**, isi/ubah TPCRO dan TRVRO non kumulatif,
+klik **Simpan**; setelah seluruh RO disesuaikan, klik **KIRIM** lalu
+**YA**.
+
+**Tombol Unduh** mencetak laporan data target dalam format .xls dan
+.pdf; **Sinkron Data** menyinkronkan data target di SAKTI dengan data
+di OMSPAN (bila ada data yang diubah dan disimpan namun belum dikirim).
+
+## Perhitungan proyeksi target output
+
+Perhitungan proyeksi target output merupakan kewenangan satker (PPK)
+dengan memperhatikan standardisasi K/L, kewajaran data, dan informasi
+memadai — satker dapat berkoordinasi dengan unit vertikal (mis. biro
+perencanaan/keuangan). Sistem memastikan TRVRO akumulatif sama dengan
+target RO dalam DIPA; secara default TRVRO akumulatif Desember
+maksimal sama dengan target DIPA, dan setelah tercapai, pengisian
+bulan berikutnya dapat diisi 0 (khususnya RO polarisasi time
+efficiency). Jika satker belum punya metode sendiri, perhitungan dapat
+mengacu enam contoh jenis RO dalam juknis:
+
+1. **RO Dukungan Manajemen target 1 Layanan** (program WA, statis):
+   TPCRO dibagi pro rata 12 bulan; TRVRO ditargetkan di akhir periode
+   pelaporan.
+2. **RO Dukungan Manajemen target 12 Layanan**: TRVRO dan TPCRO dibagi
+   pro rata sejumlah bulan dalam tahun anggaran.
+3. **RO penyaluran bantuan sosial**: periodik/tahapan sesuai juknis
+   penyaluran (bulanan, triwulanan, caturwulan, semesteran, tahunan);
+   TPCRO proporsional per periode; TRVRO umumnya seluruhnya di
+   awal/penyaluran tahap pertama.
+4. RO dengan serangkaian tahapan: breakdown tahapan di level
+   komponen/subkomponen RKA-K/L sebagai basis TPCRO (proporsional pagu
+   atau penilaian PPK); TRVRO ditentukan tercapai saat pelaporan
+   selesai (mis. pembangunan gedung, jalan, jembatan).
+5. RO proporsional: TPCRO = pembagian proporsional RVRO terhadap
+   target RO DIPA; TRVRO sebesar proyeksi pencapaian RVRO sesuai
+   jadwal (mis. diklat, pemasangan PJU, penerbitan izin, pengujian
+   sampel).
+6. RO polarisasi minimize: bersifat tak terprediksi/memerlukan
+   trigger (bencana, perkara); TPCRO dan TRVRO dapat diisi di akhir
+   tahun anggaran — satker bersifat *wait and see* dan memanfaatkan
+   periode pemutakhiran apabila trigger terjadi.
+
+## Validasi sistem
+
+Menu Target Kinerja Satker:
+
+| No | Kondisi | Validasi | Pesan | Saat |
+|---|---|---|---|---|
+| 1 | Nilai TPCRO kumulatif (s.d. bulan Des) ≠ 100% | Input ditolak | Nilai Total TPCRO tidak sama dengan 100 persen. | Simpan |
+| 2 | Nilai TRVRO kumulatif (s.d. bulan Des) ≠ target output (RO) dalam DIPA | Input ditolak | Nilai Total TRVRO tidak sama dengan target volume tahunan. | Simpan |
+| 3 | Terdapat RO yang belum dilakukan perekaman assesment RO | Input ditolak | xx.xxxx.xxx.xxx (P/K/KRO/RO) mengalami perubahan satuan/merupakan RO baru, UE I belum melakukan pemutakhiran Assesment RO. | Simpan |
+| 4 | Data sudah valid | Notifikasi | Data target kinerja satker berhasil tersimpan. | Simpan |
+| 5 | Terdapat RO yang belum terisi pada saat proses Kirim Data Target Kinerja Satker | Input ditolak (notifikasi gagal kirim) | Target Kinerja RO ini belum direkam (Kode Prog/Kode Keg/Kode KRO/Kode RO). | Kirim |
+| 6 | Data kiriman target belum ter-posting di OMSPAN | Input ditolak (notifikasi gagal kirim) | Data target capaian output nomor kirim xx belum diproses oleh OMSPAN. Mohon menunggu periode proses OMSPAN berikutnya (pukul 06, 12, 18, dan 24). | Kirim |
+
+Menu Realisasi Kinerja Satker mengikuti tabel validasi pada artikel
+[Mengisi Data Capaian Output Satker](/komitmen/ruh/realisasi-kinerja-satker/#validasi-by-system).
+
+## Ketentuan
+
+- Validasi saat simpan: **TPCRO kumulatif** (s.d. Desember) = 100 dan
+  **TRVRO kumulatif** = target RO dalam DIPA; seluruh RO harus terisi.
+- Saat kirim, sistem memvalidasi ulang seluruh RO (kelengkapan TPCRO/
+  TRVRO, isian tidak valid seperti RVRO kumulatif minus, dan RO yang
+  belum di-assessment unit eselon I akan ditolak).
+- Satker tidak dapat mengirim data berulang dalam rentang waktu
+  berdekatan; KIRIM ulang dapat dilakukan setelah kiriman sebelumnya
+  ter-posting di OMSPAN (dikenali dari kolom Tanggal Flag OMSPAN).
+- Monitoring kiriman data ke OMSPAN dilakukan pada aplikasi MonevPA/
+  OMSPAN (menu Konfirmasi Capaian Output → Monitoring Kiriman Target).
+
+## Masalah umum
+
+<details>
+<summary>Apa saja yang berubah pada menu Target Kinerja Satker tahun 2024?</summary>
+
+Sesuai assessment RO oleh unit eselon I bersama DJA pada aplikasi Monev
+Kemenkeu (jenis RO statis/dinamis; cara pelaporan otomatis/periodik/
+tahapan; polarisasi capaian dan waktu): tampilan menu berubah, satker
+hanya wajib mengisi TPCRO dan TRVRO, dan fitur Isi Otomatis mengakui
+TRVRO pelaporan di akhir periode pelaporan.
+
+</details>
+
+<details>
+<summary>Bagaimana bila ada perubahan satuan RO atau RO baru?</summary>
+
+Wajib dilakukan assessment RO oleh bidang perencanaan unit eselon I K/L
+terlebih dahulu; tanpa assessment, sistem memvalidasi dan satker tidak
+dapat mengisi target maupun melaporkan realisasi capaian output.
+
+</details>
+
+<details>
+<summary>Pengisian pertama: cukup triwulan II atau dari Januari, dan kapan
+batas akhirnya?</summary>
+
+Menurut jadwal juknis tahun 2024: pengisian pertama mencakup Januari
+s.d. Desember dengan batas akhir 30 April 2024.
+
+</details>
+
+<details>
+<summary>Apakah target/proyeksi capaian output dapat diubah dan kapan?</summary>
+
+Ya — melalui pemutakhiran reguler triwulanan (10 hari kerja awal
+Februari, April, Juli, Oktober) atau saat revisi DIPA mengubah
+jumlah/volume RO.
+
+</details>
+
+<details>
+<summary>Apakah pemutakhiran akibat revisi DIPA di luar periode reguler
+perlu izin KPPN?</summary>
+
+Tidak — satker dapat memutakhirkan mandiri dengan fitur **Dispensasi**
+yang aktif sejak DIPA revisi ter-posting sampai operator mengklik
+**KIRIM**.
+
+</details>
+
+<Aside type="caution" title="Perlu verifikasi">
+Juknis ini berlaku untuk **tahun 2024** — jadwal dan rilis sistem dapat
+berubah. Juknis menulis menu pada **RUH → Target Kinerja Satker**; menu
+aplikasi saat ini adalah **Komitmen > RUH > Capaian Kinerja > Target
+Kinerja Satker**. Juknis asli juga memuat monitoring kiriman pada
+aplikasi OMSPAN (tidak dibahas detail di sini).
+</Aside>
+
+## Terkait
+
+- [Mengisi Data Capaian Output Satker](/komitmen/ruh/realisasi-kinerja-satker/)
+
+## Sumber
+
+<SumberAsli />

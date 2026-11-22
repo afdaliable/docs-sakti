@@ -1,0 +1,89 @@
+---
+title: Merekam Transaksi Govmart dengan UP/KKP
+description: Penarikan BAST non kontraktual dari e-Katalog v6 dan pembayaran transaksi Govmart mekanisme UP/KKP.
+modul: komitmen
+menu_sakti: "Komitmen > RUH > Interkoneksi BAST Non Kontraktual"
+peran: [satker]
+jenis: juknis
+kata_kunci: [govmart, e-katalog, interkoneksi bast, up tunai, kkp, kuitansi]
+status: review
+perlu_review: false
+sumber:
+  - judul: "Petunjuk Teknis Govmart - SAKTI"
+    url: "https://drive.google.com/file/d/1aJa5gpQs8TK1Ts_q0MxQZR98yNWXqJzv/view"
+    jenis: pdf
+    diambil: 2026-11-21
+    id_manifest: B-kom-012
+sidebar:
+  order: 6
+---
+
+import { Steps, Aside } from '@astrojs/starlight/components';
+import MenuSakti from '~/components/MenuSakti.astro';
+import SumberAsli from '~/components/SumberAsli.astro';
+
+Pembayaran pengadaan pada Katalog Elektronik/Govmart dapat memakai
+mekanisme uang persediaan/UP (CMS, KKP, KKI) dengan maksimal transaksi
+sebesar Rp200.000.000,00 kepada satu penyedia dalam satu surat pesanan.
+Pembayaran dari rekening satker/BUN ditujukan ke rekening penampungan
+Payment Gateway yang memisahkan pembayaran ke rekening penyedia, fee
+transaksi, PNBP Telkom, biaya kurir, dan penyetoran pajak ke kas negara.
+
+<MenuSakti />
+
+## Langkah
+
+### Tahap Komitmen — Interkoneksi BAST Non Kontraktual
+
+<Steps>
+
+1. Login sebagai operator komitmen, buka menu **Komitmen > RUH >
+   Interkoneksi BAST Non Kontraktual**.
+
+2. Simpan data BAST — setelah pembuatan invoice pada e-Katalog versi
+   6: pilih jenis dokumen **BAST UP Tunai Lainnya** (untuk UP) atau
+   **BAST KKP Lainnya** (untuk KKP); pada Settlement pilih jenis kas
+   **UP** atau **TUP** dan kategori **Barang** atau **Jasa**; centang
+   nomor BAST yang akan disimpan; klik **Rincian Barang** jika terdapat
+   barang yang akan didetailkan; lalu klik **Simpan Data**.
+
+3. Proses BAST: pilih jenis dokumen **Kuitansi UP Tunai/Bank** (untuk
+   transaksi UP/VA) atau **Kuitansi KKP** (untuk transaksi KKP); pilih
+   jenis kas; pilih sumber dana; centang nomor BAST yang akan diproses
+   dan lakukan **Preview Dokumen PDF**; klik **Proses**.
+
+4. Pada hasil preview dokumen (invoice beserta perhitungan pajak,
+   BAST, surat pesanan, PNBP), lakukan **Verifikasi DS** pada
+   masing-masing dokumen.
+
+</Steps>
+
+### Tahap Pembayaran
+
+<Steps>
+
+1. Monitoring tagihan: buka **Pembayaran > Monitoring > Monitoring
+   Tagihan Interkoneksi** untuk melihat tagihan yang masuk, status
+   proses, dan pengecekan dokumen — dapat diakses operator pembayaran,
+   PPK, PPSPM, dan bendahara.
+
+2. Lanjutkan pembayaran: untuk transaksi **KKP** lanjutkan ke menu RUH
+   SPP (**Pembayaran > RUH Pembayaran > Catat/Ubah SPP**); untuk
+   transaksi **UP** lanjutkan ke perekaman SPBy pada menu **Pembayaran > RUH
+   Pembayaran > Mencatat Perintah Bayar** dengan memilih interkoneksi BAST dan seterusnya.
+
+</Steps>
+
+## Ketentuan
+
+- Validasi pada transaksi ini: Pagu DIPA dan SPBY.
+
+## Terkait
+
+- [Merekam Transaksi Govmart dengan Pembayaran LS](/komitmen/ruh/govmart-ls/)
+- [Merekam Transaksi Govmart/Inaproc LS Kontraktual](/komitmen/ruh/govmart-ls-kontraktual/)
+- [Merekam Supplier pada Transaksi Govmart](/komitmen/ruh/pencatatan-suplier/suplier-transaksi-govmart/)
+
+## Sumber
+
+<SumberAsli />

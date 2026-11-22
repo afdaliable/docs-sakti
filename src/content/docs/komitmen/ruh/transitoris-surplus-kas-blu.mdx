@@ -1,0 +1,156 @@
+---
+title: Mencatat Transitoris Surplus Kas BLU
+description: Pencatatan transaksi transitoris kas keluar dan kas masuk surplus anggaran antar BLU, beserta pengesahannya.
+modul: komitmen
+menu_sakti: "Komitmen > RUH > Pencatatan Transaksi Transitoris BLU"
+peran: [satker]
+jenis: juknis
+kata_kunci: [transitoris blu, surplus kas blu, pemindahbukuan, sp3b blu, pengesahan blu]
+status: review
+perlu_review: true
+sumber:
+  - judul: "Juknis Pencatatan Transaksi Transitoris Surplus Kas BLU"
+    url: "https://drive.google.com/file/d/1dV5YvKcKRhOnPRzqKTk1W2vQlJ8YlMVe/view"
+    jenis: pdf
+    diambil: 2026-11-21
+    id_manifest: B-pem-003
+sidebar:
+  order: 4
+---
+
+import { Steps, Aside } from '@astrojs/starlight/components';
+import MenuSakti from '~/components/MenuSakti.astro';
+import SumberAsli from '~/components/SumberAsli.astro';
+
+Petunjuk ini digunakan untuk pencatatan transaksi transitoris kas pada
+satker BLU, yaitu pemindahan surplus anggaran antar BLU berdasarkan
+Keputusan Menteri Keuangan: BLU Pemberi memindahbukukan saldo surplus
+ke rekening BLU Penerima, lalu keduanya melakukan pengesahan (SP3B) ke
+KPPN mitra kerjanya — BLU Pemberi dengan akun 82 (satu dokumen
+SP3B-BLU untuk satu tujuan BLU penerima) dan BLU Penerima dengan akun
+81 (satu dokumen untuk satu sumber BLU Pemberi).
+
+<MenuSakti />
+
+## Langkah
+
+### Pencatatan kas keluar transitoris (Operator Komitmen)
+
+<Steps>
+
+1. Login menggunakan operator modul komitmen, buka **Komitmen > RUH >
+   Pencatatan Transaksi Transitoris BLU** — kertas kerja menampilkan
+   kolom Daftar Dokumen dan Input Informasi Dokumen.
+
+2. Pada form input Informasi Dokumen: klik **Rekam**, input Nomor
+   Dokumen, Tanggal Dokumen, dan Nilai Dokumen (nomor dan tanggal DIPA
+   otomatis).
+
+3. Pilih **Satuan Kerja Intraco** (satker penerima kas surplus BLU),
+   input uraian/keterangan dokumen, lalu klik **Simpan**.
+
+</Steps>
+
+Hasil perekaman dapat dicek pada modul GLP: login user operator GLP,
+masuk ke **Akuntansi dan Pelaporan > Proses > Monitoring Jurnal**,
+lakukan filter pencarian — hasil tampil pada form Daftar Jurnal.
+
+### Pencatatan kas masuk/pemindahbukuan (modul Bendahara)
+
+Dilakukan oleh satker penerima uang:
+
+<Steps>
+
+1. Masuk ke **Bendahara > Transaksi > Mencatat Uang Masuk Bendahara
+   Pengeluaran**, klik **Tambah**.
+
+2. Pilih NPWP menggunakan tombol kaca pembesar; pilih jenis pemindahan
+   kas — apabila **Non Tunai**, pastikan memilih rekening bank tempat
+   uang diterima; tambahkan keterangan; pilih jenis PNBP **Penerimaan
+   Pemindahbukuan BLU**.
+
+3. Pilih satker pengirim dana melalui kaca pembesar pada kolom **Kode
+   Satker (Intraco)**: masukkan kode/nama satker, klik **Cari**, pilih
+   satker pada daftar, klik **OK**.
+
+4. Masukkan jumlah penerimaan pada kolom jumlah, cek tanggal transaksi,
+   isikan tanggal pada bagian **Tgl SBS**, lalu klik **Simpan**.
+
+</Steps>
+
+Pengecekan dilakukan operator GL dan Pelaporan pada **Akuntansi dan
+Pelaporan > Proses > Monitoring Jurnal** sesuai tanggal penerimaan.
+
+### Pengesahan kas keluar transitoris (akun 82, modul Pembayaran)
+
+<Steps>
+
+1. Login operator modul Pembayaran, buka **Pembayaran > RUH Pembayaran
+   > Catat/Ubah SPP**, pilih jenis SPP **511 - Pengesahan BLU**.
+
+2. Pada jendela Ambil Data Pengesahan: lakukan pencarian nomor
+   dokumen, pilih/centang nomor dokumen akun 82 yang telah diinput pada
+   modul komitmen, klik **Pilih**.
+
+3. Pada form RUH SPP: input dasar pembayaran, uraian, RPD jika ada, dan
+   cari supplier — saldo belanja pada informasi Pengesahan BLU dan data
+   COA pada Distribusi COA terinput otomatis — klik **Simpan**.
+
+4. Cetak SPM langsung (SPP tidak dicetak): **Pembayaran > Cetak >
+   Mencetak SPM**, pilih No Resume Tagihan, pilih PPSPM penandatangan,
+   tempat dan tanggal, klik **Cetak**.
+
+5. Validasi SPM: operator SPM mengunggah dokumen pendukung, lalu user
+   PPSPM membuka **Pembayaran > Validasi > Validasi SPM**, pilih nomor
+   resume tagihan, klik **Setuju**.
+
+6. Kirim ADK SPM: user PPSPM membuka **Pembayaran → ADK → ADK SPM** (jalur menurut juknis),
+   klik **Proses ADK SPM** dan input PIN PPSPM.
+
+7. Setelah terbit nomor pengesahan dari SPAN: user operator membuka
+   **Pembayaran > Catat/Upload > Mencatat/Upload BLU**, pilih No SPP
+   BLU, input nomor pengesahan dan tanggal pada kolom **Catat NO. SP2B
+   BLU**, klik **Simpan**.
+
+</Steps>
+
+### Pengesahan kas masuk/pendapatan transitoris (akun 81)
+
+<Steps>
+
+1. Buka **Pembayaran > RUH Pembayaran > Catat/Ubah SPP**, pilih jenis
+   SPP **511 - Pengesahan BLU**. Pada jendela Ambil Data Pengesahan
+   tidak perlu memilih data — klik **Batal** untuk masuk form RUH SPP.
+
+2. Input dasar pembayaran, uraian, RPD jika ada, dan cari supplier.
+   Pilih tab **Pendapatan** pada Distribusi COA, klik **RUH Akun**.
+
+3. Pada form Pendapatan/Potongan/Penerimaan: klik **Cari Bukti
+   Setor**, pilih No SBS akun 81 yang telah direkam pada modul
+   Bendahara, klik **Pilih**, klik **Simpan**, lalu klik **Keluar**.
+
+4. Kembali ke form RUH SPP — informasi pengesahan BLU pada pendapatan
+   dan Distribusi COA terisi — klik **Simpan**.
+
+5. Langkah selanjutnya sama seperti pengesahan kas keluar: cetak SPM,
+   validasi SPM, kirim ADK SPM, dan catat nomor pengesahan.
+
+</Steps>
+
+<Aside type="caution" title="Perlu verifikasi">
+Juknis menulis jalur modul pelaporan sebagai **GL dan Pelaporan →
+Proses → Monitoring Jurnal** dan perekaman SPP pada **Pembayaran → RUH
+SPP dan Renkas → Catat/Ubah SPP**; menu aplikasi saat ini memakai
+**Akuntansi dan Pelaporan > Proses > Monitoring Jurnal** dan
+**Pembayaran > RUH Pembayaran > Catat/Ubah SPP**. Juknis juga
+menulis pengiriman ADK sebagai **Pembayaran → ADK → ADK SPM**; menu
+aplikasi saat ini memisahkan **ADK SPM OTP** dan **ADK SPM DS**.
+</Aside>
+
+## Terkait
+
+- [Merekam Supplier Tipe 1, 2, dan 7](/komitmen/ruh/pencatatan-suplier/suplier-tipe-1-2-7/)
+
+## Sumber
+
+<SumberAsli />

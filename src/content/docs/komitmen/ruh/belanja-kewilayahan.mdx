@@ -1,0 +1,292 @@
+---
+title: Merekam Belanja Kewilayahan
+description: Pengisian lokasi kegiatan belanja kewilayahan pada menu Informasi P3DN atas berbagai dokumen sumber.
+modul: komitmen
+menu_sakti: "Komitmen > RUH > Informasi P3DN"
+peran: [satker]
+jenis: juknis
+kata_kunci: [belanja kewilayahan, lokasi kegiatan, informasi p3dn, lokus, monsakti]
+status: review
+perlu_review: true
+sumber:
+  - judul: "Petunjuk Teknis Belanja Kewilayahan 2024"
+    url: "https://drive.google.com/file/d/1I2P7rTM0e6UqJT9iR7lBMK0LGzGxYfpq/view"
+    jenis: pdf
+    diambil: 2026-11-21
+    id_manifest: B-kom-002
+sidebar:
+  order: 9
+---
+
+import { Steps, Aside } from '@astrojs/starlight/components';
+import MenuSakti from '~/components/MenuSakti.astro';
+import SumberAsli from '~/components/SumberAsli.astro';
+
+Isi lokasi kegiatan belanja pada menu **Komitmen > RUH > Informasi
+P3DN** setelah dokumen sumber pembayaran direkam — wajib dilakukan
+operator Komitmen/Pembayaran satker sebelum PPK memvalidasi SPBy/SPP,
+dengan monitoring realisasi pada monSAKTI. Perekaman lokasi kegiatan
+belanja bersifat **wajib**: apabila tidak diisi, SPP tidak dapat
+divalidasi PPK sehingga tidak dapat diterbitkan/dilanjutkan menjadi
+SPM.
+
+Kewenangan: operator komitmen/pembayaran berwenang merekam dan
+memperbaiki data lokasi kegiatan termasuk nilai tiap lokasi; PPK
+berwenang memvalidasi dan berwenang menolak validasi SPBy/SPP apabila
+data lokasi tidak tepat.
+
+<MenuSakti />
+
+## Fokus pengisian lokasi kegiatan
+
+Empat jenis belanja wajib diisi lokasi kegiatannya:
+
+- **Belanja Pegawai (51)** — lokasi Kabupaten/Kota tempat pegawai
+  berkantor atau bertugas.
+- **Belanja Barang (52)** — untuk kebutuhan operasional kantor via GUP:
+  lokasi Kabupaten/Kota pemanfaatan barang (bila tidak memungkinkan,
+  lokasi satker yang membayar); belanja barang selain operasional
+  kantor: lokasi pemanfaatan barang/tempat kegiatan; perjalanan dinas:
+  Kabupaten/Kota tujuan kegiatan; belanja barang berkarakteristik
+  bantuan pemerintah: Kabupaten/Kota penerima bantuan/manfaat.
+- **Belanja Modal (53)** — umumnya lokasi Kabupaten/Kota pemanfaatan
+  aset; untuk konstruksi lebih dari satu lokasi, difokuskan pada lokasi
+  dengan nilai signifikansi terbesar, atau didetailkan per
+  Kabupaten/Kota bila nilai kontrak dapat dipecah.
+- **Belanja Bantuan Sosial (57)** — saat ini difokuskan pada lokasi
+  satker penyalur bansos berada (juknis mencatat sedang dikembangkan
+  sistem yang menangkap lokasi penerima manfaat berbasis by name by
+  address/BNBA).
+
+Mekanisme pengisian terhadap pengembalian belanja: setelah pencatatan
+Surat Setoran Pengembalian Belanja (SSPB) pada menu setoran
+pengembalian belanja di modul Bendahara, user merekam penyesuaian
+lokasi kegiatan pada menu Informasi P3DN dengan jenis dokumen "SSPB";
+data realisasi menyesuaikan pada laporan di monSAKTI.
+
+## Jenis dokumen sumber dan prasyarat
+
+Pengisian lokasi kegiatan alur normal dilakukan atas jenis dokumen
+sumber pembayaran: (a) BAST Kontraktual Barang; (b) BAST Kontraktual
+Jasa; (c) BAST Kontraktual Lainnya; (d) BAST Non Kontraktual Barang;
+(e) BAST Non Kontraktual Jasa; (f) BAST Non Kontraktual Lainnya;
+(g) SPBy Non BAST; (h) SPBy Non BAST Lainnya; dan (i) SPP LS Non BAST.
+
+Sebelum merekam lokasi kegiatan, pastikan:
+
+1. Untuk dokumen BAST Kontraktual/Non Kontraktual: BAST telah direkam
+   pada modul Komitmen.
+2. Untuk SPBy Non BAST: SPBy Non BAST telah direkam.
+3. Untuk SPP LS Non BAST/SPP LS Non BAST Lainnya: proses simpan SPP
+   telah dilakukan oleh operator.
+
+Data lokasi kegiatan yang disimpan satker divalidasi PPK: apabila
+pembuatan SPP memakai Ganti Uang Persediaan (GUP), PPK memvalidasi
+pada menu **Validasi SPBy** (jalur menurut juknis); apabila memakai
+Langsung (LS), PPK memvalidasi pada **Pembayaran > Validasi > Validasi
+SPP**. Sistem kemudian menangkap realisasi anggaran berdasarkan lokus
+kegiatan dari Program sampai Item per wilayah (provinsi dan
+kabupaten/kota) sesuai isian.
+
+## Mekanisme pengisian lokasi kegiatan
+
+- **Satu lokasi kegiatan**: satker mengisi satu lokasi beserta
+  nilai/jumlahnya pada tombol **Detail** sub menu pendetilan lokasi.
+  Pengisian difasilitasi kata kunci (keyword) sehingga tidak perlu
+  menggulir daftar Kabupaten/Kota — cukup ketik sebagian nama lalu
+  pilih.
+- **Multi lokasi kegiatan**: apabila lokasi lebih dari satu
+  kabupaten/kota, tekan tombol **Detail** sejumlah lokasi yang diisi.
+  Setiap lokasi wajib diisi jumlah/nominal, dan nilai tiap lokasi
+  tidak boleh melebihi atau kurang dari total nominal item COA yang
+  dipilih.
+- Multi lokasi dengan unggah CSV/Excel: tekan tombol dropdown
+  **v** di sebelah **Detail**, unduh template `.csv` atau `.xlsx`,
+  lalu isi kolom **Kode Wilayah** dan **Nilai**. Referensi kode
+  wilayah dapat diunduh pada tombol **Referensi Wilayah**. Kolom lain
+  pada template tidak boleh diubah:
+
+  | Kolom | Isi |
+  |---|---|
+  | ID Transaksi | Kode unik tiap item akun yang dipilih (5 digit) |
+  | Jenis Transaksi | Jenis dokumen transaksi (1 digit) |
+  | ID COA | Kode unit atas COA (5 digit) |
+  | Kode COA | Kode COA item |
+  | Kode Wilayah | Kode provinsi dan kabupaten/kota lokus sesuai referensi — **boleh diubah** |
+  | Nilai | Nilai lokus per wilayah — **boleh diubah** |
+
+  Gunakan Notepad untuk mengedit CSV dan Microsoft Excel untuk XLSX.
+  Total nilai lokus pada file tidak boleh melebihi atau kurang dari
+  nilai item COA; sistem menolak file apabila totalnya tidak sama
+  dengan nilai item, dan user dapat mengunggah kembali file yang telah
+  diperbaiki.
+
+- **Perubahan lokasi kegiatan**: dilakukan melalui mekanisme Koreksi
+  SPM. Apabila terdapat koreksi COA yang mengharuskan Koreksi SPM,
+  satker wajib merekam ulang lokasi kegiatan atas seluruh item pada
+  SPM yang dikoreksi melalui **Komitmen > RUH > Informasi P3DN** —
+  pilih dokumen sumber awal: **SPP LS Non BAST** untuk dokumen tanpa
+  BAST dan **SPP LS Lainnya** untuk dokumen dengan BAST.
+- **Pengembalian belanja**: setelah pencatatan SSPB pada menu setoran
+  pengembalian belanja di modul Bendahara, rekam penyesuaian lokasi
+  kegiatan pada **Komitmen > RUH > Informasi P3DN** dengan jenis
+  dokumen **SSPB** (langkah pada bagian Pengembalian belanja di
+  bawah).
+
+## Langkah
+
+### Dokumen sumber SPP LS Non BAST / SPP LS Non BAST Lainnya
+
+<Steps>
+
+1. Buat SPP LS Non BAST pada modul Pembayaran.
+
+2. Buka **Komitmen > RUH > Informasi P3DN**. Pilihan **SPP LS Non
+   BAST** dipakai untuk semua jenis belanja dan untuk koreksi SPM yang
+   berasal dari dokumen tanpa BAST; pilihan **SPP LS Lainnya** hanya
+   apabila terdapat koreksi SPM yang menggunakan BAST.
+
+3. Pilih jenis data **P3DN**, klik box pada kolom **pilih** atas semua
+   item yang ada, isi informasi P3DN terlebih dahulu, klik **Simpan**.
+
+4. Klik jenis data **Belanja Kewilayahan** untuk mengisi lokasi
+   kegiatan — tabel Progres Belanja Kewilayahan menampilkan keterangan
+   misalnya "0/3 belum" (0 dari 3 item telah direkam lokasinya).
+
+5. Klik **Detail** pada masing-masing item, lalu pada menu pendetailan
+   lokasi kegiatan isikan: **Jenis Lokasi** (Indonesia/Luar Negeri),
+   **Pencarian Lokasi** (Kabupaten/Kota), dan **Nilai** (sejumlah nilai
+   sesuai lokasi kegiatan).
+
+6. Setelah perekaman, progres menampilkan terisi penuh (misalnya 3/3)
+   dan tabel keterangan pendetailan menampilkan resume pengisian
+   Kota/Kabupaten atas item tersebut.
+
+</Steps>
+
+### Dokumen sumber BAST non kontraktual barang/jasa
+
+<Steps>
+
+1. Buat BAST non kontraktual barang/jasa, lalu buka
+   **Komitmen > RUH > Informasi P3DN**.
+
+2. Pilih jenis dokumen **BAST LS Non Kontraktual** yang telah dibuat.
+
+3. Pilih jenis data **P3DN**, centang kolom **pilih** atas semua item,
+   isi informasi P3DN, klik **Simpan**.
+
+4. Klik jenis data **Belanja Kewilayahan**, klik **Detail** pada
+   masing-masing item, isi Jenis Lokasi, Pencarian Lokasi, dan Nilai —
+   progres menampilkan terisi penuh beserta resume Kota/Kabupaten.
+
+</Steps>
+
+### Dokumen sumber BAST kontraktual barang/jasa
+
+Dilakukan dalam tiga tahap: pembuatan kontrak, pembuatan BAST, lalu
+pengisian Informasi P3DN dan lokasi kegiatan.
+
+<Steps>
+
+1. Buka **Komitmen > RUH > Informasi P3DN**, pilih jenis dokumen
+   **BAST Kontraktual** yang telah direkam.
+
+2. Pilih jenis data **P3DN**, centang kolom **pilih** atas semua
+   item, isi informasi P3DN terlebih dahulu, klik **Simpan**.
+
+3. Klik jenis data **Belanja Kewilayahan** — tabel Progres Belanja
+   Kewilayahan menampilkan keterangan jumlah item yang belum direkam.
+
+4. Klik **Detail** pada masing-masing item, isi **Jenis Lokasi**
+   (Indonesia/Luar Negeri), **Pencarian Lokasi** (Kabupaten/Kota),
+   dan **Nilai**.
+
+5. Setelah perekaman, progres menampilkan terisi penuh dan tabel
+   keterangan pendetailan menampilkan resume pengisian
+   Kota/Kabupaten atas item tersebut.
+
+</Steps>
+
+### Dokumen sumber SPBy non BAST
+
+<Steps>
+
+1. Buat SPBy non BAST, lalu buka **Komitmen > RUH > Informasi P3DN**
+   dan pilih jenis dokumen **SPBy Non BAST** yang telah direkam.
+
+2. Pilih jenis data **P3DN**, centang kolom **pilih** atas semua
+   item, isi informasi P3DN terlebih dahulu, klik **Simpan**.
+
+3. Klik jenis data **Belanja Kewilayahan** — tabel Progres Belanja
+   Kewilayahan menampilkan keterangan jumlah item yang belum direkam.
+
+4. Klik **Detail** pada masing-masing item, isi **Jenis Lokasi**
+   (Indonesia/Luar Negeri), **Pencarian Lokasi** (Kabupaten/Kota),
+   dan **Nilai**.
+
+5. Setelah perekaman, progres menampilkan terisi penuh dan tabel
+   keterangan pendetailan menampilkan resume pengisian
+   Kota/Kabupaten atas item tersebut.
+
+</Steps>
+
+### Dokumen sumber SPP koreksi (515/516)
+
+<Steps>
+
+1. Buat SPP Koreksi 515/516 dan simpan; dokumen sumber yang dipakai
+   adalah SPP LS Non BAST dan SPP LS Lainnya.
+
+2. Buka **Komitmen > RUH > Informasi P3DN**; pilih jenis dokumen **SPP
+   LS Non BAST** — apabila jenis SPP yang dikoreksi menggunakan BAST,
+   pilih **SPP LS Non BAST Lainnya**.
+
+3. Pada jenis data **P3DN** centang semua item, isi informasi P3DN,
+   klik **Simpan**; klik jenis data **Belanja Kewilayahan**, klik
+   **Detail** tiap item, isi Jenis Lokasi, Pencarian Lokasi, dan Nilai
+   hingga progres terisi penuh.
+
+</Steps>
+
+### Pengembalian belanja
+
+<Steps>
+
+1. Lakukan penyetoran (pembuatan billing interkoneksi/penyetoran),
+   lalu pencatatan pengembalian belanja (SSPB) pada modul Bendahara.
+
+2. Buka **Komitmen > RUH > Informasi P3DN**, pilih jenis dokumen
+   **SSPB**, klik dokumen yang telah direkam pada menu pengembalian
+   belanja, klik **Detail** pada form Detil Dokumen Belanja
+   Kewilayahan.
+
+3. Klik **Tambah**, isi perubahan data lokasi kegiatan yang akan
+   diubah — pengisian lokasi kegiatan atas pengembalian belanja
+   selesai.
+
+</Steps>
+
+## Monitoring realisasi
+
+Laporan monitoring realisasi anggaran berdasarkan lokasi kegiatan per
+satker terdapat pada **monSAKTI**, menampilkan realisasi anggaran per
+provinsi dan kab/kota mulai dari Program sampai Rincian Output (RO)
+berdasarkan lokasi kegiatan belanja, dengan filter Data (Kegiatan dan
+Supplier — wajib), Program, Kegiatan, KRO, dan RO, serta opsi cetak
+excel dan PDF.
+
+<Aside type="caution" title="Perlu verifikasi">
+Juknis menulis form pengisian sebagai **Komitmen → RUH → Informasi
+P3DN & Belanja Kewilayahan**; menu aplikasi saat ini adalah **Komitmen
+> RUH > Informasi P3DN**. Monitoring realisasi dilakukan pada aplikasi
+monSAKTI, bukan menu SAKTI.
+</Aside>
+
+## Terkait
+
+- [Mencatat Informasi TKDN](/komitmen/ruh/pencatatan-informasi-tkdn/)
+
+## Sumber
+
+<SumberAsli />

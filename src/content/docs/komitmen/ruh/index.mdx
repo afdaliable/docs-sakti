@@ -9,4 +9,80 @@ sidebar:
   order: 0
 ---
 
-Panduan untuk menu **RUH** sedang disiapkan.
+import { CardGrid, LinkCard } from '@astrojs/starlight/components';
+
+Menu RUH modul Komitmen mencakup perekaman data supplier, kontrak,
+BAST, dan dokumen pendukung lainnya.
+
+<CardGrid>
+	<LinkCard
+		title="Supplier"
+		description="Perekaman data supplier berbagai tipe, NPWP 16 digit, dan supplier Govmart."
+		href="/komitmen/ruh/pencatatan-suplier/"
+	/>
+	<LinkCard
+		title="Kontrak"
+		description="Perekaman kontrak tahunan, multi year, release, addendum, dan terminate termin."
+		href="/komitmen/ruh/pencatatan-kontrak/"
+	/>
+	<LinkCard
+		title="BAST/BAKP/BAPP/DYD"
+		description="Perekaman BAST kontraktual, non kontraktual, BAST-BG/SPTJM, void BAST, dan unggah CSV."
+		href="/komitmen/ruh/pencatatan-bast/"
+	/>
+	<LinkCard
+		title="Mencatat Transitoris Surplus Kas BLU"
+		description="Pencatatan kas keluar dan kas masuk transitoris surplus anggaran antar BLU."
+		href="/komitmen/ruh/transitoris-surplus-kas-blu/"
+	/>
+	<LinkCard
+		title="Merekam Transaksi Govmart dengan Pembayaran LS"
+		description="Interkoneksi BAST non kontraktual dan pembayaran LS atas transaksi Govmart."
+		href="/komitmen/ruh/govmart-ls/"
+	/>
+	<LinkCard
+		title="Merekam Transaksi Govmart dengan UP/KKP"
+		description="Interkoneksi BAST non kontraktual dan pembayaran UP/KKP atas transaksi e-Katalog."
+		href="/komitmen/ruh/govmart-up-kkp/"
+	/>
+	<LinkCard
+		title="Merekam Transaksi Govmart/Inaproc LS Kontraktual"
+		description="Interkoneksi BAST kontraktual dan pembayaran LS kontraktual atas transaksi Inaproc."
+		href="/komitmen/ruh/govmart-ls-kontraktual/"
+	/>
+	<LinkCard
+		title="Mencatat Informasi TKDN"
+		description="Pencatatan informasi TKDN, cluster TKDN, dan KBKI atas dokumen belanja."
+		href="/komitmen/ruh/pencatatan-informasi-tkdn/"
+	/>
+	<LinkCard
+		title="Merekam Belanja Kewilayahan"
+		description="Pengisian lokasi kegiatan belanja kewilayahan atas berbagai dokumen sumber."
+		href="/komitmen/ruh/belanja-kewilayahan/"
+	/>
+	<LinkCard
+		title="Mereklasifikasi BAST/BMN"
+		description="Perubahan cara pembayaran BAST dan perubahan transaksi yang menghasilkan BMN."
+		href="/komitmen/ruh/reklasifikasi-bast-bmn/"
+	/>
+	<LinkCard
+		title="Mencatat Jaminan Akhir Tahun"
+		description="Pencatatan jaminan akhir tahun (Bank Garansi/SPTJM) atas transaksi kontraktual."
+		href="/komitmen/ruh/pencatatan-jaminan-akhir-tahun/"
+	/>
+	<LinkCard
+		title="Mengisi Target Proyek Capaian Output"
+		description="Pengisian TPCRO dan TRVRO pada menu Target Kinerja Satker."
+		href="/komitmen/ruh/target-proyek-capaian-output/"
+	/>
+	<LinkCard
+		title="Mengisi Data Capaian Output Satker"
+		description="Pengisian dan pengiriman realisasi kinerja satker ke OMSPAN."
+		href="/komitmen/ruh/realisasi-kinerja-satker/"
+	/>
+	<LinkCard
+		title="Merekam Transaksi RPATA"
+		description="Penampungan, pembayaran, penihilan, dan pemberian kesempatan pekerjaan RPATA."
+		href="/komitmen/ruh/rpata/"
+	/>
+</CardGrid>

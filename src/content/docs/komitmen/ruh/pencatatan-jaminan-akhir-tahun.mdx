@@ -1,0 +1,133 @@
+---
+title: Mencatat Jaminan Akhir Tahun (Bank Garansi)
+description: Langkah mencatat jaminan akhir tahun/bank garansi untuk transaksi kontraktual akhir tahun pada modul Komitmen.
+modul: komitmen
+menu_sakti: "Komitmen > RUH > Jaminan Akhir Tahun (Valas)"
+peran: [satker]
+jenis: juknis
+kata_kunci: [jaminan akhir tahun, bank garansi, sptjm, e-bg, jat, pencatatan jaminan]
+status: review
+perlu_review: true
+sumber:
+  - judul: "Juknis Transaksi Kontraktual dengan Pencatatan Jaminan Akhir Tahun - Bank Garansi-1"
+    url: "https://drive.google.com/file/d/1QXeT5ZTwn1t9hjeXYFhzckIP2jMOB3cP/view"
+    jenis: pdf
+    diambil: 2026-11-21
+    id_manifest: B-kom-008
+  - judul: "Juknis_Perekaman_BAST_BG_SPTJM (versi lama, digantikan)"
+    url: "https://drive.google.com/file/d/1P8nvWPABuxglfVVpqcbg94Ze8pka2fmW/view"
+    jenis: pdf
+    diambil: 2026-11-21
+    id_manifest: B-kom-018
+sidebar:
+  order: 11
+---
+
+import { Steps, Aside } from '@astrojs/starlight/components';
+import MenuSakti from '~/components/MenuSakti.astro';
+import SumberAsli from '~/components/SumberAsli.astro';
+
+Jaminan Akhir Tahun (JAT)/Bank Garansi (BG) digunakan untuk
+penatausahaan transaksi kontraktual pada akhir tahun anggaran, baik
+dengan mekanisme bank garansi elektronik (e-BG) maupun non-elektronik.
+Pencatatan jaminan akhir tahun merupakan tahap pertama sebelum BAST-BG,
+SPP kontraktual, BAST Final, dan penyetoran SPNP.
+
+<MenuSakti />
+
+## Prasyarat
+
+- Role yang dibutuhkan: user operator yang memiliki role **Komitmen**.
+- Data kontrak sudah direkam pada SAKTI dan telah mendapatkan NRK/CAN.
+- Untuk mekanisme e-BG (bank penerbit termasuk bank peserta piloting
+  Bank Garansi menurut juknis, yaitu BRI, Mandiri, dan BNI): data
+  e-BG sudah dikonfirmasi melalui OMSPAN.
+- Untuk bank garansi yang diterbitkan selain bank peserta piloting
+  e-BG: jaminan akhir tahun dapat direkam langsung pada aplikasi SAKTI
+  tanpa mekanisme konfirmasi e-BG pada OMSPAN.
+
+## Alur proses
+
+Transaksi kontraktual akhir tahun yang diatur dalam juknis meliputi
+lima tahap:
+
+1. Pencatatan jaminan akhir tahun/bank garansi.
+2. Perekaman BAST bank garansi (BAST-BG).
+3. Perekaman SPM kontraktual dengan bank garansi.
+4. Perekaman BAST Final atas SPM dengan BAST-BG.
+5. Penyetoran atas selisih BAST-BG dengan BAST Final atau SPNP (Surat
+   Penetapan Nilai Pengembalian).
+
+Tahap selanjutnya setelah pencatatan jaminan dijelaskan pada [Merekam
+BAST dengan Bank Garansi/SPTJM](/komitmen/ruh/pencatatan-bast/bast-bg-sptjm/).
+
+## Langkah
+
+<Steps>
+
+1. Login menggunakan user operator yang memiliki role Komitmen, lalu
+   buka menu **Komitmen > RUH > Jaminan Akhir Tahun (Valas)**.
+
+2. Sebelum form pencatatan jaminan akhir tahun terbuka, muncul dialog
+   box konfirmasi perekaman jaminan akhir tahun sesuai periode LLAT —
+   klik **Lanjut**.
+
+3. Setelah form pencatatan jaminan akhir tahun terbuka, klik
+   **Rekam**.
+
+4. Cari data kontrak (termin kontrak) yang akan di-BAST-BG-kan dengan
+   mengklik tombol **Cari** di sebelah kanan kolom Nomor Kontrak.
+
+5. Pilih jenis jaminan akhir tahun yang akan direkam: **Bank
+   Garansi** untuk kontrak dengan nilai lebih dari Rp50.000.000,00 dan
+   **SPTJM** untuk kontrak dengan nilai sampai dengan Rp50.000.000,00.
+
+6. Pada sub Informasi Jaminan, klik tombol **Cari data E-BG** — muncul
+   form daftar jaminan yang telah dikonfirmasi melalui OMSPAN — lalu
+   pilih data e-BG dan klik **Pilih**; informasi jaminan otomatis
+   terisi.
+
+   Untuk jaminan akhir tahun/bank garansi yang diterbitkan selain bank
+   peserta piloting e-BG (BRI, BNI, dan Mandiri), perekaman dapat
+   dilakukan secara manual tanpa pencarian data bank garansi pada
+   tombol **Cari data E-BG**.
+
+7. Isikan detail bank garansi/SPTJM yang akan direkam: tanggal Mulai
+   Berlaku diisi tanggal bank garansi/SPTJM, dan s.d. Tanggal diisi
+   tanggal 31 Desember tahun anggaran berkenaan.
+
+8. Klik **Simpan**. Data jaminan akhir tahun terekam dan dapat
+   digunakan untuk perekaman BAST bank garansi.
+
+</Steps>
+
+## Hasil yang diharapkan
+
+Data jaminan akhir tahun terekam dan dapat dipilih pada perekaman
+BAST-BG (lihat [Merekam BAST dengan
+Bank Garansi/SPTJM](/komitmen/ruh/pencatatan-bast/bast-bg-sptjm/)).
+
+## Ketentuan
+
+- Perekaman BAST Final dapat dilakukan setelah SPM kontraktual telah
+  catat SP2D.
+- Input nilai desimal tidak dapat dilakukan untuk nilai harga yang
+  menggunakan mata uang Rupiah.
+
+<Aside type="caution" title="Perlu verifikasi">
+Juknis Desember 2022 dan juknis Maret 2022 menulis menu
+**Pencatatan Jaminan Akhir Tahun**; simpul padanan pada menu aplikasi
+saat ini adalah **Komitmen > RUH > Jaminan Akhir Tahun (Valas)** dengan
+form **Bank Garansi / SPTJM** di bawahnya — padanan perlu dipastikan.
+</Aside>
+
+## Terkait
+
+- [Merekam BAST dengan Bank Garansi/SPTJM](/komitmen/ruh/pencatatan-bast/bast-bg-sptjm/)
+- [Merekam BAST Kontraktual](/komitmen/ruh/pencatatan-bast/bast-kontraktual/)
+
+- [Merekam Supplier Tipe 1, 2, dan 7](/komitmen/ruh/pencatatan-suplier/suplier-tipe-1-2-7/)
+
+## Sumber
+
+<SumberAsli />

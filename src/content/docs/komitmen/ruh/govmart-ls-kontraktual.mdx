@@ -1,0 +1,118 @@
+---
+title: Merekam Transaksi Govmart/Inaproc LS Kontraktual
+description: Interkoneksi BAST kontraktual dari Inaproc dan perekaman SPM LS kontraktual atas transaksi Govmart.
+modul: komitmen
+menu_sakti: "Komitmen > RUH > Interkoneksi BAST Kontraktual"
+peran: [satker]
+jenis: juknis
+kata_kunci: [inaproc, govmart, ls kontraktual, interkoneksi bast kontraktual, spp 111]
+status: review
+perlu_review: false
+sumber:
+  - judul: "Juknis Inaproc - SAKTI Pembayaran Mekanisme LS Kontraktual"
+    url: "https://drive.google.com/file/d/1f_xU9PyqFdSKxuZfNWVXi8YVllI6VLr3/view"
+    jenis: pdf
+    diambil: 2026-11-21
+    id_manifest: B-kom-010
+sidebar:
+  order: 7
+---
+
+import { Steps, Aside } from '@astrojs/starlight/components';
+import MenuSakti from '~/components/MenuSakti.astro';
+import SumberAsli from '~/components/SumberAsli.astro';
+
+Untuk pembayaran LS kontraktual atas transaksi Inaproc, lakukan
+perekaman kontrak pada Inaproc dan aplikasi SAKTI dengan nomor kontrak
+sesuai nomor pesanan. Pembayaran dari rekening satker/BUN ditujukan ke
+rekening penampungan Payment Gateway yang memisahkan pembayaran ke
+rekening penyedia, fee transaksi, PNBP Telkom, biaya kurir, dan
+penyetoran pajak ke kas negara.
+
+<MenuSakti />
+
+## Langkah
+
+### Tahap Komitmen — Interkoneksi BAST Kontraktual
+
+<Steps>
+
+1. Buka menu **Komitmen > RUH > Interkoneksi BAST Kontraktual**.
+
+2. Proses Simpan Data BAST LS Kontraktual — setelah pembuatan tagihan
+   kontraktual pada Inaproc: pilih jenis dokumen **BAST Kontraktual**
+   atau **BAST Kontraktual Lainnya**; centang nomor BAST yang dipilih;
+   klik **Preview Dokumen PDF** untuk melihat dokumen dari Inaproc;
+   pilih kategori Jasa atau Barang; klik **Proses**.
+
+3. Pada hasil preview dokumen (invoice, BAST, surat pesanan, PNBP),
+   lakukan **Verifikasi DS** pada masing-masing dokumen, lalu tutup.
+
+4. Monitoring data BAST LS Kontraktual: cek data BAST kontraktual yang
+   telah diproses pada menu **Komitmen > RUH > BAST/BAKP/BAPP/DYD >
+   BAST/BG Kontraktual** — pada menu ini data BAST juga dapat dihapus
+   bila akan dilakukan perbaikan melalui proses ulang pada Interkoneksi
+   BAST Kontraktual.
+
+5. Monitoring tagihan interkoneksi: buka **Pembayaran > Monitoring >
+   Monitoring Tagihan Interkoneksi**, pilih jenis tagihan Inaproc →
+   BAST, cek status untuk melihat posisi data (Baru/Proses/SP2D).
+
+</Steps>
+
+### Tahap Pembayaran — SPM LS kontraktual
+
+<Steps>
+
+1. Buka **Pembayaran > RUH Pembayaran > Catat/Ubah SPP**, pilih jenis
+   SPP **111 - Non Gaji Kontraktual**, klik **Tambah**.
+
+2. Pada Ambil Data BAST Kontraktual, pilih data BAST yang akan dibuat
+   SPP/SPM, klik **Pilih** untuk kembali ke form RUH SPP.
+
+3. Pada form RUH SPP: isi Dasar Pembayaran (klik Tambah atau UU APBN
+   untuk default APBN), Cara Bayar **8 - RPT**, dan uraian pembayaran
+   sesuai ketentuan. Pilih BAST dengan klik tombol **Cari BAST** —
+   informasi supplier dan RUH Akun terinput otomatis; input akun
+   potongan manual jika ada; klik **Simpan** — saat simpan SPP, SAKTI
+   mengirim nomor SPP ke Inaproc.
+
+4. Cetak SPP: **Pembayaran > Cetak > Mencetak SPP**, pilih data SPP,
+   pilih PPK, klik **Unduh** untuk mengunduh SPP atau **SSP** untuk
+   mengunduh pajak.
+
+5. Validasi SPP: **Pembayaran > Validasi > Validasi SPP**, pilih data
+   SPP, pilih NIP PPK, klik **Proses Persetujuan**.
+
+6. ADK SPP OTP: **Pembayaran > ADK > ADK SPP OTP**, pilih data SPP,
+   klik **Proses**, klik **Req OTP via SMS**, masukkan kode OTP, klik
+   **Proses**.
+
+7. Cetak SPM: **Pembayaran > Cetak > Mencetak SPM**, pilih data SPM,
+   pilih PPSPM, klik **Unduh**.
+
+8. Validasi SPM: **Pembayaran > Validasi > Validasi SPM**, pilih data
+   SPM, pilih NIP PPSPM, klik **Proses Persetujuan** — saat setuju SPM
+   oleh PPSPM, SAKTI mengirim nomor SPM ke Inaproc.
+
+9. ADK SPM OTP: **Pembayaran > ADK > ADK SPM OTP**, pilih data SPM,
+   klik **Proses**.
+
+10. Pencatatan SP2D dicatat otomatis oleh sistem; nomor dan tanggal
+    dokumen dari SAKTI dapat dilihat pada aplikasi Inaproc.
+
+</Steps>
+
+## Ketentuan
+
+- Validasi pada transaksi ini: Pagu DIPA dan Validasi SPP.
+
+## Terkait
+
+- [Merekam Transaksi Govmart dengan Pembayaran LS](/komitmen/ruh/govmart-ls/)
+- [Merekam BAST Kontraktual](/komitmen/ruh/pencatatan-bast/bast-kontraktual/)
+- [Merekam Supplier pada Transaksi Govmart](/komitmen/ruh/pencatatan-suplier/suplier-transaksi-govmart/)
+
+## Sumber
+
+<SumberAsli />

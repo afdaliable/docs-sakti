@@ -1,0 +1,337 @@
+---
+title: Mengisi Data Capaian Output Satker
+description: Mengisi dan mengirim data realisasi kinerja (capaian output) satker pada menu Realisasi Kinerja Satker.
+modul: komitmen
+menu_sakti: "Komitmen > RUH > Capaian Kinerja > Realisasi Kinerja Satker"
+peran: [satker]
+jenis: juknis
+kata_kunci: [realisasi kinerja satker, capaian output, pcro, rvro, hitung otomatis, kirim data ompspan]
+status: review
+perlu_review: true
+sumber:
+  - judul: "Juknis Pengisian, Pelaporan, dan Monitoring Realisasi Kinerja (Capaian Output) Satker Ver. 2.0 Tahun 2024"
+    url: "https://drive.google.com/file/d/13-hDmFtbZk7cn1M9uhVJU-T0I_rFjHmB/view"
+    jenis: pdf
+    diambil: 2026-11-21
+    id_manifest: B-kom-016
+  - judul: "Juknis Pengisian, Pelaporan, dan Monitoring Realisasi Kinerja Satker 2022 (versi lama, digantikan)"
+    url: "https://drive.google.com/file/d/1GgOTUZPs5l_0iUJWP8VfRL0B7m7TYWpw/view"
+    jenis: pdf
+    diambil: 2026-11-21
+    id_manifest: B-kom-003
+  - judul: "Juknis Realisasi Kinerja Satker 2021 (versi lama, digantikan)"
+    url: "https://drive.google.com/file/d/1axhL3VhKzMfEX8xF7PQNZGaXNbO3Wu2a/view"
+    jenis: pdf
+    diambil: 2026-11-21
+    id_manifest: B-kom-036
+sidebar:
+  order: 13
+---
+
+import { Steps, Aside } from '@astrojs/starlight/components';
+import MenuSakti from '~/components/MenuSakti.astro';
+import SumberAsli from '~/components/SumberAsli.astro';
+
+Isi dan laporkan data realisasi kinerja (capaian output) satker pada
+menu **Komitmen > RUH > Capaian Kinerja > Realisasi Kinerja Satker**
+untuk memenuhi monitoring kinerja pelaksanaan anggaran. Pengisian
+capaian output dilakukan **setiap bulan** secara non kumulatif (menginput penambahan capaian pada bulan
+berkenaan) dan dikirim ke OMSPAN sebagai basis penilaian indikator
+capaian output.
+
+<MenuSakti />
+
+## Prasyarat
+
+- Role: **Operator Komitmen** untuk perekaman; tombol **KIRIM** hanya
+  tersedia pada **Operator PPK Umum** dan hanya dapat digunakan apabila
+  seluruh RO telah diisi dan valid.
+- Data target/proyeksi capaian output telah dikirim pada menu Target
+  Kinerja Satker.
+
+## Kewenangan
+
+1. Pengisian data capaian output dilakukan oleh **Operator Komitmen**
+   sesuai kewenangan pagu masing-masing.
+2. Pengiriman data capaian output satker dilakukan oleh **Operator PPK
+   Umum** (operator komitmen yang di-mapping ke user PPK Umum).
+
+## Istilah
+
+- **Rincian Output (RO)**: keluaran riil yang sangat spesifik dari unit
+  kerja K/L.
+- **PCRO**: persentase tingkat penyelesaian tahapan/aktivitas mencapai
+  output riil.
+- **RVRO**: capaian output riil berupa jumlah barang/jasa yang
+  dihasilkan.
+- TRVRO / Target RO: target output di level RO dalam satu tahun
+  anggaran pada DIPA.
+- **PPA**: persentase penyerapan anggaran terhadap pagu satker.
+- **Gap**: selisih antara PCRO dengan PPA pada suatu RO.
+- RO PN / non RO PN: RO yang termasuk/tidak termasuk prioritas
+  nasional.
+- RO Terkonfirmasi / Tidak Terkonfirmasi: data RO yang dinilai
+  wajar/tidak wajar oleh sistem atau petugas berwenang.
+- **Anomali kuantitatif**: data RO terindikasi tidak selaras dari
+  perbandingan komponen kuantitatif (PCRO, RVRO, PPA).
+- **Anomali keterangan**: data anomali kuantitatif yang tidak disertai
+  penjelasan memadai — dikonfirmasi KPPN ke satker untuk diperbaiki.
+- **Polarisasi Capaian**: ekspektasi arah nilai realisasi output
+  terhadap target dari aspek capaian — **Maximize** (semakin tinggi
+  semakin baik) atau **Minimize** (semakin rendah semakin baik, mis.
+  bencana, perkara).
+- **Polarisasi Waktu**: ekspektasi dari aspek waktu — **Stabilized**
+  (semakin akurat sesuai jadwal semakin baik) atau **Time Efficiency**
+  (semakin cepat semakin baik).
+- **Jenis RO**: **Statis** (RVRO tidak dapat melebihi target RO dalam
+  DIPA) atau **Dinamis** (dapat melebihi target).
+- **Cara Pelaporan**: **Otomatis** (perhitungan otomatis TPCRO/TRVRO
+  dengan fitur hitung otomatis), **Periodik** (penerima manfaat sama,
+  diberikan berulang per periode), atau **Tahapan** (perhitungan
+  berdasarkan bobot tahapan yang dilaksanakan).
+
+## Alur proses
+
+1. Operator Komitmen mengakses menu Realisasi Kinerja dan merekam data
+   capaian output: RVRO, PCRO, dan Keterangan sesuai periode pengisian.
+2. Operator PPK Umum mengirim data capaian RO ke aplikasi OMSPAN.
+3. OMSPAN mem-posting data sesuai skedul dan melakukan validasi untuk
+   menentukan status konfirmasi.
+4. User PDMS/MSKI memonitor data capaian output pada Modul Konfirmasi
+   Capaian Output dan mengidentifikasi kewajaran data, khususnya yang
+   Tidak Terkonfirmasi.
+5. Apabila seluruh data valid → status Terkonfirmasi; apabila ada yang
+   belum memadai → user PDMS/MSKI mengisi catatan penolakan dan
+   menyampaikan pemberitahuan ke satker untuk perbaikan. User PDMS/MSKI
+   dapat mengubah data yang sudah Terkonfirmasi by system menjadi
+   Tidak Terkonfirmasi apabila dinilai masih tidak wajar.
+6. Data yang tervalidasi tersimpan pada database OMSPAN dan menjadi
+   basis perhitungan indikator Capaian Output pada IKPA.
+
+## Periode pelaporan
+
+- Periode pengisian dan pengiriman (open period): sejak awal bulan
+  berikutnya sampai hari kerja ke-5 bulan berikutnya (buka sistem
+  otomatis); sesudahnya sampai akhir bulan berikutnya hanya sepanjang
+  dibuka periode pelaporan tambahan oleh KPPN pada OMSPAN — kecuali
+  diatur lain, open period tambahan hanya sampai akhir bulan berikutnya.
+- Jadwal tahun 2024 menurut juknis: pelaporan pertama kali dibuka untuk
+  data Januari–Maret dengan batas **30 April 2024**; periode selanjutnya
+  mengikuti ketentuan open period (misalnya data April berakhir 8 Mei
+  2024, Mei berakhir 7 Juni 2024, dan seterusnya sampai data Desember
+  berakhir 8 Januari 2025).
+
+## Pembukaan akses di luar open periode
+
+Apabila terdapat satu periode yang terlewat dilaporkan, satker tidak
+dapat menyampaikan pelaporan periode berikutnya (mekanisme
+sekuensial). Satker dapat mengajukan pembukaan akses pelaporan untuk
+periode yang telah berlalu melalui contact center **Hai Kemenkeu**
+(https://hai.kemenkeu.go.id/) dengan minimal menyampaikan kronologi,
+latar belakang, Kode BA, Unit Eselon I, Kanwil DJPb mitra, KPPN mitra,
+kode satker, dan periode pelaporan yang hendak dibuka.
+
+## Jadwal posting
+
+Data KIRIM dari aplikasi SAKTI diposting ke OMSPAN sesuai jadwal
+posting (periode proses OMSPAN). Kirim ulang data hanya dapat
+dilakukan setelah data sebelumnya terposting.
+
+## Pengisian otomatis (cara pelaporan otomatis)
+
+Tombol **HITUNG OTOMATIS** mengisi data RO dengan tagging cara
+pelaporan otomatis (mis. RO Dukungan Manajemen target 1 Layanan).
+Isian hasil otomasi dapat diubah manual oleh user.
+
+## Mekanisme pengisian dan koreksi
+
+- Pengisian non kumulatif: input penambahan capaian pada bulan
+  berkenaan (bukan angka kumulatif).
+- Penyesuaian bulan sebelumnya: data periode sebelumnya tidak
+  dapat diubah; kekeliruan disesuaikan pada pengisian periode
+  berikutnya (mis. mengurangi/menambah non kumulatif bulan berjalan
+  sehingga kumulatifnya benar).
+
+## Pengukuran capaian output
+
+- **Pengakuan RVRO**: diakui saat manfaat barang/jasa diterima
+  stakeholder; isi dengan satu satuan utuh (bukan pecahan), kecuali
+  RO dengan satuan yang memang dimungkinkan desimal (mis. km, kg).
+- **Pengukuran PCRO**: berdasarkan basis aktivitas — identifikasi
+  bobot tiap tahapan (signifikansi aktivitas, alokasi anggaran, atau
+  pertimbangan lain) lalu jumlahkan bobot tahapan yang telah
+  diselesaikan; PCRO dapat diisi sampai dua angka di belakang koma.
+- **Anomali data**: dibandingkan antar komponen (PCRO, PPA, RVRO,
+  target, keterangan). Anomali kuantitatif meliputi **anomali gap**
+  (gap PCRO–PPA > 20% atau < -20% untuk non RO PN; > 5% atau < -5%
+  untuk RO PN) dan anomali lainnya.
+- **Referensi Keterangan**: muncul apabila PPK mengisi data anomali
+  kuantitatif — 9 referensi tersedia:
+
+  | Kode | Referensi | Kondisi anomali |
+  |---|---|---|
+  | 01 | Adanya efisiensi anggaran | Capaian kinerja terlalu tinggi |
+  | 02 | Kegiatan sudah dilaksanakan, pertanggungjawaban keuangan belum/masih proses | Capaian kinerja terlalu tinggi |
+  | 03 | Alokasi anggaran terlalu besar/melebihi kebutuhan | Capaian kinerja terlalu tinggi |
+  | 04 | Tidak/belum dilakukan revisi penyesuaian target output | Terlalu tinggi + terlalu rendah |
+  | 05 | Penilaian progres output periodik; belum dilakukan penilaian | Terlalu rendah |
+  | 06 | Pembayaran uang muka pekerjaan, pekerjaan belum/baru dilakukan | Terlalu rendah |
+  | 08 | Pembayaran untuk tunggakan/tagihan tahun lalu | Terlalu rendah |
+  | 07 | Output telah tercapai, menunggu finalisasi laporan/serah terima | Anomali kuantitatif lainnya |
+  | 99 | Lainnya | Semua kondisi anomali kuantitatif |
+
+- Kriteria keterangan memadai: keterangan bersifat wajib untuk
+  seluruh RO (maksimal 2.000 karakter); untuk referensi 99 "Lainnya"
+  keterangan minimal menyampaikan (1) capaian dan tahapan aktivitas
+  yang telah dilaksanakan, (2) permasalahan dan tindak lanjut, dan
+  (3) metode perhitungan dan/atau penjelasan substansial lainnya.
+
+## Validasi by system
+
+Saat data diisi, sistem menampilkan *warning box* apabila isian dinilai
+tidak wajar, berupa penolakan isian atau konfirmasi ulang:
+
+| No | Kondisi | Hasil | Pesan *warning box* |
+|---|---|---|---|
+| 1 | PCRO kumulatif nilainya > 100% | Input ditolak | Isian data tidak valid. PCRO tidak boleh melebihi 100% |
+| 2 | RVRO kumulatif nilainya melebihi target RO untuk Jenis RO Dinamis | Input diterima | Realisasi Volume RO telah melebihi Target Rincian Output, apakah anda yakin? |
+| 3 | RVRO kumulatif nilainya melebihi target RO untuk Jenis RO Statis | Input ditolak | Capaian tidak boleh melebihi target RO Dalam DIPA. |
+| 4 | Field KETERANGAN kosong (tanpa isian karakter teks atau angka) | Input ditolak | Isian data tidak valid. Kolom Keterangan harus diisi. |
+| 5 | GAP > 20% untuk RO Non PN, dan GAP > 5% untuk RO PN | Input diterima | Gap Progres Kinerja dengan Persentase Realisasi terlalu tinggi (Capaian Kinerja Terlalu Tinggi). Apakah anda yakin dengan isian datanya? |
+| 6 | GAP < -20% untuk RO Non PN, dan GAP < -5% untuk RO PN | Input diterima | Gap Persentase Realisasi dengan Progres Kinerja terlalu tinggi (Capaian Kinerja Terlalu Rendah). Apakah anda yakin dengan isian datanya? |
+| 7 | Terdapat RO yang belum terisi dan user Operator PPK Umum melakukan proses KIRIM data | Input ditolak | Terdapat RO yang belum diisi (Kode Prog/Kode Keg/Kode KRO/Kode RO) |
+| 8 | Terdapat RO dengan anomali kuantitatif, Referensi Keterangan belum dipilih | Input ditolak | Referensi Keterangan belum dipilih. |
+| 9 | Terdapat isian RVRO, tetapi PCRO diisi 0% | Input ditolak | Anomali Mutlak, data capaian kinerja tidak dapat disimpan. |
+| 10 | Terdapat RO yang belum dilakukan perekaman assesment RO | Input ditolak | xxx.xx.xx.xxxx.xxx.xxx-xxxx (BA.ESI.P.K.KRO.RO-Tahun) Belum dilakukan Assesment oleh Unit Eselon I Kementerian Anda |
+| 11 | RVRO diisi minus hingga RVRO kumulatif < 0 | Input ditolak | Isian data tidak valid, Realisasi Volume RO Kumulatif Harus lebih besar dari 0 |
+| 12 | Terdapat RO pada menu Target Kinerja Satker yang belum terisi (TRVRO/TPCRO) atau belum diubah sesuai target pada DIPA/Revisi DIPA yang berlaku | Input ditolak | Target RO (Program/Kegiatan/KRO/RO) belum diisi dengan lengkap. Mohon dapat merekam target kinerja pada menu RUH → Target Kinerja Satker |
+
+Setiap kali user PPK Umum melakukan KIRIM data, sistem melakukan
+validasi ulang (validasi nomor 1–12) untuk seluruh RO.
+
+Validasi pada OMSPAN dilakukan by system (status Terkonfirmasi/Tidak
+Terkonfirmasi) dan manual oleh Seksi PDMS/MSKI KPPN untuk data Tidak
+Terkonfirmasi.
+
+## Langkah
+
+<Steps>
+
+1. Login dengan user operator komitmen, buka **Komitmen > RUH >
+   Capaian Kinerja > Realisasi Kinerja Satker** — layar menampilkan
+   parameter data (Periode, Program, Kegiatan, KRO, RO), informasi data
+   kumulatif, hasil assessment RO, informasi DIPA/revisi DIPA, form
+   input data, grid data, dan tombol aksi.
+
+2. Pilih parameter: klik **Periode** dan pilih bulan yang akan direkam
+   (lakukan berurutan mulai bulan pertama), lalu pilih Program →
+   Kegiatan → Klasifikasi Rincian Output → Rincian Output; atau
+   langsung pilih RO pada grid setelah memilih periode.
+
+3. Untuk RO Dukungan Manajemen dengan target 1 Layanan, dapat dipakai
+   fitur **HITUNG OTOMATIS**: tekan tombol **HITUNG OTOMATIS** lalu
+   **YA** — isian data RO terkait terisi otomatis (dapat diubah manual).
+
+4. Setelah memilih RO, klik tombol **Tambah Realisasi**, lalu isi:
+
+   - **Penambahan Realisasi Volume RO** — tambahan capaian riil pada
+     bulan berkenaan;
+   - **Penambahan Progres Capaian RO** — tambahan progres aktivitas
+     (persentase) pada bulan berkenaan;
+   - **Bukti dokumen** — nama/uraian dokumen dasar penambahan;
+   - **Referensi Capaian** — wajib dipilih apabila terdapat kondisi
+     anomali kuantitatif.
+
+5. Tekan tombol **Simpan** — kolom Ref Capaian pada grid terisi angka.
+   Untuk RO lain, tekan **Refresh RO** dan pilih data pada grid atau
+   pilih ulang parameter; isian yang sudah disimpan dapat diubah dengan
+   tombol **UBAH REALISASI**.
+
+6. Operator **PPK Umum** mengirim data setelah seluruh RO terisi:
+   tekan **KIRIM**, lalu **YA** pada notifikasi konfirmasi — data siap
+   diposting ke OMSPAN.
+
+</Steps>
+
+## Ketentuan
+
+- Kekeliruan pengisian bulan lalu tidak dapat diubah pada periode
+  sebelumnya yang telah dilaporkan ke OMSPAN; penyesuaian dilakukan
+  cukup pada periode pelaporan berikutnya.
+- Perekaman dan pengiriman hanya dapat dilakukan sepanjang periode
+  pelaporan bulan berkenaan masih dibuka.
+- Sistem memvalidasi kelengkapan isian PCRO, RVRO, referensi
+  keterangan, dan keterangan setiap RO serta kesesuaiannya dengan
+  kriteria; isian tidak valid (misalnya RVRO kumulatif minus) ditolak.
+- Juknis asli juga memuat panduan monitoring data capaian output pada
+  aplikasi OMSPAN (level satker, eselon I, dan K/L) yang tidak dibahas
+  di sini.
+
+## Masalah umum
+
+<details>
+<summary>Apa yang berbeda pada pengisian capaian output tahun 2024?</summary>
+
+Perubahan user interface menu Realisasi Kinerja mengakomodasi hasil
+assesment RO; RO dengan tagging statis maksimal diinput sesuai target
+DIPA; fitur otomatis mengakui seluruh RVRO di akhir periode pelaporan.
+
+</details>
+
+<details>
+<summary>Dari mana data assesment RO berasal?</summary>
+
+Assesment RO dilakukan bidang perencanaan Unit Eselon I K/L dan
+divalidasi DJA melalui aplikasi Monev Kemenkeu atas tiga kriteria:
+jenis RO (statis/dinamis), cara pelaporan (otomatis/periodik/tahapan),
+dan polarisasi capaian/waktu.
+
+</details>
+
+<details>
+<summary>Bagaimana jika ada perubahan satuan RO atau RO baru?</summary>
+
+RO yang berubah satuannya atau RO baru wajib di-assesment oleh bidang
+perencanaan UE I; tanpa assesment, sistem memvalidasi dan satker tidak
+dapat melaporkan realisasi kinerja/capaian output.
+
+</details>
+
+<details>
+<summary>Apakah seluruh karakteristik assesment RO divalidasi sistem?</summary>
+
+Menurut juknis tahun 2024, validasi baru ada atas karakteristik jenis
+RO: statis atau dinamis.
+
+</details>
+
+<details>
+<summary>Pengisian pertama: cukup bulan Maret atau dari Januari, dan
+kapan batas akhirnya?</summary>
+
+Menurut jadwal juknis tahun 2024: pengisian pertama berurutan untuk
+Januari–Maret 2024 dengan batas 30 April 2024; periode berikutnya
+mengikuti open period reguler (5 hari kerja pertama setelah bulan
+berkenaan berakhir).
+
+</details>
+
+<Aside type="caution" title="Perlu verifikasi">
+Juknis ini berlaku untuk **tahun 2024** — jadwal dan rilis sistem dapat
+berubah. Juknis menulis menu pada **RUH → Realisasi Kinerja Satker**;
+menu aplikasi saat ini adalah **Komitmen > RUH > Capaian Kinerja >
+Realisasi Kinerja Satker**. Pada tabel referensi keterangan juknis, kode
+04 adalah "Tidak/belum dilakukan revisi penyesuaian target output" dan
+kode 05 "Penilaian progres output dilakukan secara periodik", sedangkan
+uraian penjelasan di juknis yang sama menomori "Penilaian progres
+output dilakukan secara periodik" sebagai 04; artikel ini mengikuti
+tabel.
+</Aside>
+
+## Terkait
+
+- [Mengisi Target Proyek Capaian Output](/komitmen/ruh/target-proyek-capaian-output/)
+
+## Sumber
+
+<SumberAsli />

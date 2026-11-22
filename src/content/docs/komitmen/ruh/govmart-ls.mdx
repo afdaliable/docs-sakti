@@ -1,0 +1,115 @@
+---
+title: Merekam Transaksi Govmart dengan Pembayaran LS
+description: Penarikan data BAST non kontraktual dari Inaproc dan perekaman SPM mekanisme LS atas transaksi Govmart.
+modul: komitmen
+menu_sakti: "Komitmen > RUH > Interkoneksi BAST Non Kontraktual"
+peran: [satker]
+jenis: juknis
+kata_kunci: [govmart, inaproc, e-katalog, interkoneksi bast, spm ls, banyak penerima]
+status: review
+perlu_review: false
+sumber:
+  - judul: "Juknis Govmart - SAKTI Pembayaran Mekanisme LS"
+    url: "https://drive.google.com/file/d/1M8RcEvMfzJeWC_ZBfTKkAxNENgNmP6Xm/view"
+    jenis: pdf
+    diambil: 2026-11-21
+    id_manifest: B-kom-011
+sidebar:
+  order: 5
+---
+
+import { Steps, Aside } from '@astrojs/starlight/components';
+import MenuSakti from '~/components/MenuSakti.astro';
+import SumberAsli from '~/components/SumberAsli.astro';
+
+Pengadaan barang/jasa pada Katalog Elektronik/Govmart/InaProc dilakukan
+pembeli dan penyedia dalam satu platform seperti e-commerce; pembayaran
+oleh satker pembeli dilakukan melalui SAKTI dengan mekanisme UP maupun
+LS. Dalam desain Govmart, pembayaran dari rekening satker/BUN ditujukan
+ke rekening penampungan Payment Gateway yang memisahkan pembayaran ke
+rekening penyedia, fee transaksi, PNBP Telkom, biaya kurir, dan
+penyetoran pajak ke kas negara.
+
+<MenuSakti />
+
+## Langkah
+
+### Tahap Komitmen — Interkoneksi BAST Non Kontraktual
+
+<Steps>
+
+1. Login sebagai operator komitmen, buka menu **Komitmen > RUH >
+   Interkoneksi BAST Non Kontraktual**.
+
+2. Simpan BAST LS Non Kontraktual: setelah pembuatan tagihan pada
+   Inaproc, pilih jenis dokumen **BAST Lainnya**, centang nomor BAST
+   yang dipilih, pilih kategori Barang atau Jasa, klik **Preview
+   Dokumen PDF** untuk melihat dokumen dari Inaproc, lalu klik
+   **Simpan Data**.
+
+3. Proses BAST LS Non Kontraktual: pilih jenis dokumen **BAST Non
+   Kontraktual**, centang nomor BAST yang dipilih, klik **Preview
+   Dokumen PDF**, lalu klik **Proses**.
+
+4. Pada hasil preview dokumen (invoice, BAST, surat pesanan, PNBP),
+   lakukan **Verifikasi DS** pada masing-masing dokumen, lalu tutup.
+
+</Steps>
+
+### Tahap Pembayaran — SPM mekanisme LS
+
+<Steps>
+
+1. Login sebagai operator pembayaran, buka **Pembayaran > RUH
+   Pembayaran > Catat/Ubah SPP**, pilih jenis SPP **237 - LS Banyak
+   Penerima**, klik **Tambah**.
+
+2. Pada Ambil Data BAST Non Kontraktual (data dari hasil proses
+   interkoneksi), pilih data BAST yang akan dibuat SPP/SPM, klik
+   **Pilih**.
+
+3. Pada form RUH SPP: isi Dasar Pembayaran (klik Tambah atau UU APBN
+   untuk default APBN), Cara Bayar **2 - SP2D**, dan uraian pembayaran
+   sesuai ketentuan. Informasi data supplier dan RUH Akun terinput
+   otomatis; klik **Simpan** — saat simpan SPP, SAKTI mengirim nomor
+   SPP ke Inaproc.
+
+4. Cetak SPP: **Pembayaran > Cetak > Mencetak SPP**, pilih data SPP,
+   pilih PPK, klik **Unduh** untuk mengunduh SPP atau **SSP** untuk
+   mengunduh pajak.
+
+5. Validasi SPP: **Pembayaran > Validasi > Validasi SPP**, pilih data
+   SPP, pilih NIP PPK, klik **Proses Persetujuan**.
+
+6. ADK SPP OTP: **Pembayaran > ADK > ADK SPP OTP**, pilih data SPP,
+   klik **Proses**, klik **Req OTP via SMS**, masukkan kode OTP, klik
+   **Proses**.
+
+7. Cetak SPM: **Pembayaran > Cetak > Mencetak SPM**, pilih data SPM,
+   pilih PPSPM, klik **Unduh**.
+
+8. Validasi SPM: **Pembayaran > Validasi > Validasi SPM**, pilih data
+   SPM, pilih NIP PPSPM, klik **Proses Persetujuan** — saat setuju SPM
+   oleh PPSPM, SAKTI mengirim nomor SPM ke Inaproc.
+
+9. ADK SPM OTP: **Pembayaran > ADK > ADK SPM OTP**, pilih data SPM,
+   klik **Proses**.
+
+10. Pencatatan SP2D dicatat otomatis oleh sistem; nomor dan tanggal
+    dokumen dari SAKTI dapat dilihat pada aplikasi Inaproc.
+
+</Steps>
+
+## Ketentuan
+
+- Validasi pada transaksi ini: Pagu DIPA dan Validasi SPP.
+
+## Terkait
+
+- [Merekam Transaksi Govmart dengan UP/KKP](/komitmen/ruh/govmart-up-kkp/)
+- [Merekam Transaksi Govmart/Inaproc LS Kontraktual](/komitmen/ruh/govmart-ls-kontraktual/)
+- [Merekam Supplier pada Transaksi Govmart](/komitmen/ruh/pencatatan-suplier/suplier-transaksi-govmart/)
+
+## Sumber
+
+<SumberAsli />

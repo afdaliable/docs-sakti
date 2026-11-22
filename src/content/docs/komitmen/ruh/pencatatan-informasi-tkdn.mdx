@@ -1,0 +1,137 @@
+---
+title: Mencatat Informasi TKDN
+description: Pencatatan detail informasi Tingkat Kandungan Dalam Negeri (TKDN) atas belanja barang/jasa pada SAKTI.
+modul: komitmen
+menu_sakti: "Komitmen > RUH > Informasi P3DN"
+peran: [satker]
+jenis: juknis
+kata_kunci: [tkdn, p3dn, kbki, cluster tkdn, produk dalam negeri, impor]
+status: review
+perlu_review: true
+sumber:
+  - judul: "Juknis Pencatatan Informasi Tingkat Kandungan Dalam Negeri (TKDN) v.1.1"
+    url: "https://drive.google.com/file/d/1Xz_E-YChWDk9ZiZ1WFMkIh7P71iXF9Dx/view"
+    jenis: pdf
+    diambil: 2026-11-21
+    id_manifest: B-kom-035
+sidebar:
+  order: 8
+---
+
+import { Steps, Aside } from '@astrojs/starlight/components';
+import MenuSakti from '~/components/MenuSakti.astro';
+import SumberAsli from '~/components/SumberAsli.astro';
+
+Menu ini digunakan untuk mencatat detail informasi Tingkat Kandungan
+Dalam Negeri (TKDN) atas belanja barang/jasa yang direkam pada SAKTI,
+dalam rangka program Peningkatan Penggunaan Produksi Dalam Negeri
+(P3DN). Informasi yang direkam: persentase TKDN, cluster TKDN
+(TKDN/Produk Dalam Negeri/Impor), dan Klasifikasi Baku Komoditas
+Indonesia (KBKI). Perekaman dilakukan atas dokumen sumber BAST
+kontraktual, BAST non kontraktual barang, SPBy non BAST (non barang),
+dan SPP LS non BAST (non barang).
+
+<MenuSakti />
+
+## Prasyarat
+
+- Role: **Operator Komitmen**.
+- Untuk dokumen BAST (kontraktual maupun non kontraktual): BAST sudah
+  direkam pada modul komitmen.
+- Untuk SPBy non BAST: SPBy sudah divalidasi oleh PPK.
+- Untuk SPP LS non BAST: SPP sudah divalidasi oleh PPK.
+
+## Jenis dokumen yang dapat direkam
+
+- BAST Kontraktual Barang; BAST Kontraktual Jasa;
+- BAST Non Kontraktual Barang (belanja barang/jasa LS non kontraktual,
+  UP tunai/bank, kas hibah, KKP, dan UP valas);
+- BAST Non Kontraktual Jasa;
+- SPBy non BAST (SPBy yang tidak menggunakan BAST sebagai dokumen
+  sumber);
+- SPP LS non BAST (SPP yang tidak menggunakan BAST sebagai dokumen
+  sumber).
+
+## Langkah
+
+<Steps>
+
+1. Login user operator komitmen, buka **Komitmen > RUH > Informasi
+   P3DN**, lalu pilih jenis dokumen.
+
+2. Pada grid daftar dokumen, pilih dokumen yang akan direkam informasi
+   TKDN-nya.
+
+3. Cek detail barang dokumen; pilih filter **Belum Rekam** pada tampilan
+   detail barang (filter **Semua** hanya untuk melihat data; **Sudah
+   Rekam** untuk mengubah/menghapus info TKDN).
+
+4. Pilih/centang data yang akan didetailkan informasi TKDN-nya.
+
+5. Klik tombol **Input/Ubah**.
+
+6. Rekam informasi persentase TKDN, cluster TKDN, dan kode KBKI
+   (opsional) dengan ketentuan:
+
+   - **TKDN**: barang/jasa yang memiliki sertifikat TKDN sebagaimana
+     tercantum dalam laman tkdn.kemenperin.go.id;
+   - **PDN**: produk dan produsen yang sesuai ditemukan pada laman
+     referensi TKDN Kemenperin atau berdasarkan hasil penyelidikan
+     kebenaran produksi dalam negeri ke penyedia dan produsen;
+   - **Impor**: selain yang memenuhi TKDN dan PDN.
+
+   Nilai perekaman KBKI, persentase TKDN, dan cluster TKDN mengacu pada
+   ketentuan/peraturan yang berlaku pada Kementerian Perindustrian.
+
+7. Klik tombol **Simpan**, lalu cek progres perekaman pada grid daftar
+   dokumen.
+
+</Steps>
+
+Untuk detail barang, perekaman informasi TKDN memakai pendekatan kode
+barang yang digunakan; untuk detail jasa (SPP non BAST, SPBy non BAST),
+perekaman memakai pendekatan item pada detail SPP atau SPBy non BAST.
+
+## Mencetak laporan TKDN
+
+<Steps>
+
+1. Login user operator komitmen, buka **Komitmen > Cetak > Laporan
+   P3DN**, lalu pilih jenis cetakan (**P3DN Per Kategori & Jenis
+   Belanja** atau **P3DN Per Pagu Anggaran**).
+
+2. Tentukan parameter cetak.
+
+3. Klik tombol **Unduh PDF**.
+
+</Steps>
+
+Monitoring realisasi TKDN dalam rangka P3DN dapat dilihat melalui
+monsakti.kemenkeu.go.id.
+
+## Ketentuan
+
+- Perekaman informasi TKDN harus memuat informasi Cluster TKDN dan
+  Persentase TKDN.
+- Transaksi hapus BAST, batal validasi SPP, atau batal validasi SPBy
+  atas dokumen yang telah direkam nilai TKDN-nya akan turut menghapus
+  data TKDN yang telah direkam.
+- FAQ dan layanan konsultasi online dapat diakses melalui
+  tkdn.kemenperin.go.id.
+
+<Aside type="caution" title="Perlu verifikasi">
+Juknis menulis form pencatatan sebagai **Komitmen → RUH → Pencatatan
+Informasi TKDN** dan cetakan pada **Komitmen → Cetak → Laporan TKDN**;
+menu aplikasi saat ini memakai **Komitmen > RUH > Informasi P3DN** dan
+**Komitmen > Cetak > Laporan P3DN** (dengan cetakan **P3DN Per Pagu
+Anggaran** dan **P3DN Per Kategori & Jenis Belanja**).
+</Aside>
+
+## Terkait
+
+- [Merekam Belanja Kewilayahan](/komitmen/ruh/belanja-kewilayahan/)
+- [Merekam BAST Non Kontraktual](/komitmen/ruh/pencatatan-bast/bast-non-kontraktual/)
+
+## Sumber
+
+<SumberAsli />

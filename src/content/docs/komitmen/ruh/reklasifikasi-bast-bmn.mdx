@@ -1,0 +1,159 @@
+---
+title: Mereklasifikasi BAST/BMN
+description: Perubahan cara pembayaran pada BAST dan perubahan transaksi yang menghasilkan BMN pada satu menu reklasifikasi.
+modul: komitmen
+menu_sakti: "Komitmen > RUH > Reklasifikasi BAST/BMN"
+peran: [satker]
+jenis: juknis
+kata_kunci: [reklasifikasi bast, reklasifikasi bmn, ubah metode pembayaran bast, kode barang]
+status: review
+perlu_review: true
+sumber:
+  - judul: "Juknis Reklasifikasi Metode Pembayaran BAST dan Transaksi BMN v.1.0"
+    url: "https://drive.google.com/file/d/1zgItJzjCfUIXdZKyxqcV4SQG6G3eFgZP/view"
+    jenis: pdf
+    diambil: 2026-11-21
+    id_manifest: B-kom-006
+  - judul: "SAKTI Pelaksanaan — Komitmen > RUH > Reklasifikasi BAST/BMN"
+    url: "https://sites.google.com/view/saktipelaksanaan/modul-pelaksanaan/komitmen/ruh/reklasifikasi-bastbmn"
+    jenis: google-sites
+    diambil: 2026-11-21
+    id_manifest: C-sakti-pelaksanaan-komitmen-ruh-reklasifikasi-bastbmn_1
+sidebar:
+  order: 10
+---
+
+import { Steps, Aside } from '@astrojs/starlight/components';
+import MenuSakti from '~/components/MenuSakti.astro';
+import SumberAsli from '~/components/SumberAsli.astro';
+
+Menu ini digunakan untuk melakukan **perubahan cara pembayaran pada
+BAST** (non kontraktual) yang telah direkam pada SAKTI, dan **perubahan
+pendetilan barang** atas BAST yang menghasilkan aset/persediaan yang
+sudah tidak dapat diubah secara mandiri melalui menu pencatatan
+barang/jasa/BAST karena terkena validasi pendetilan barang atau telah
+dilakukan transaksi lanjutan sampai SP2D.
+
+Proses reklasifikasi bersifat **final**: data yang sudah pernah
+direklasifikasi tidak dapat direklasifikasi kembali.
+
+<MenuSakti />
+
+## Prasyarat
+
+- Role: **Operator Komitmen**.
+
+## Langkah
+
+### Reklasifikasi metode pembayaran BAST
+
+Kriteria BAST yang dapat direklasifikasi metode pembayarannya: jenis
+**BAST/Penerimaan Barang Jasa Non Kontraktual**, status pendetilan
+**sudah** didetilkan aset/persediaan, dan status pembayaran **belum**
+dibuat SPP/SPby.
+
+Matriks variasi perubahan metode pembayaran:
+
+| No | Semula | Menjadi | Parameter yang dapat diubah |
+|---|---|---|---|
+| 1 | BAST UP | BAST TUP | Supplier, Ref WP/WB, Unit Teknis, Uraian, Nama Penerima |
+| 2 | BAST UP | BAST LS Non Kontraktual | Supplier, Uraian, Nomor Dokumen |
+| 3 | BAST TUP | BAST UP | Supplier, Ref WP/WB, Unit Teknis, Uraian, Nama Penerima |
+| 4 | BAST TUP | BAST LS Non Kontraktual | Supplier, Uraian, Nomor Dokumen |
+| 5 | BAST LS Non Kontraktual | BAST UP | Supplier, Ref WP/WB, Unit Teknis, Uraian, Nama Penerima |
+| 6 | BAST LS Non Kontraktual | BAST TUP | Supplier, Ref WP/WB, Unit Teknis, Uraian, Nama Penerima |
+
+<Steps>
+
+1. Login user operator komitmen, buka menu **Komitmen > RUH >
+   Reklasifikasi BAST/BMN** — form terdiri dari tiga sub-kelompok:
+   Daftar Dokumen (filter jenis fungsi dan kategori BAST semula),
+   Parameter Reklasifikasi, dan Daftar Dokumen Reklasifikasi.
+
+2. Pada sub form Daftar Dokumen, pilih jenis transaksi **Reklasifikasi
+   BAST**, pilih **Kategori Semula** — grid menampilkan dokumen yang
+   memenuhi kriteria — lalu pilih dokumen.
+
+3. Isi/lengkapi parameter reklasifikasi sesuai matriks di atas
+   (perubahan kategori tujuan, supplier, uraian, referensi WP/WB/Setor,
+   kode unit teknis, nomor dokumen, nama penerima BAST), lalu klik
+   tombol **Proses** — muncul pesan konfirmasi bahwa reklas hanya dapat
+   dilakukan satu kali.
+
+4. Setelah konfirmasi berhasil, data hasil reklasifikasi tampil pada
+   Daftar Dokumen Reklasifikasi dengan nomor dokumen baru (nomor
+   terakhir + 1) dengan tambahan sequencer **"/R"**.
+
+5. Pastikan hasil reklasifikasi dengan pengecekan pada menu perekaman
+   terkait (misalnya hasil reklas ke UP dicek pada menu Pencatatan
+   Penerimaan Barang/Jasa UP Tunai).
+
+</Steps>
+
+### Reklasifikasi BMN
+
+Kriteria: jenis BAST **Pencatatan BAST Non Kontraktual**, **Penerimaan
+Barang/Jasa UP Tunai**, **Penerimaan Barang/Jasa KKP**, atau
+**Penerimaan Barang/Jasa Valas**; status pendetilan **belum** didetilkan
+aset/persediaan; status pembayaran **sudah** SP2D. Perubahan yang dapat
+dilakukan meliputi kode barang, jumlah, dan nilai satuan.
+
+<Steps>
+
+1. Pada menu **Komitmen > RUH > Reklasifikasi BAST/BMN**, sub form
+   Daftar Dokumen pilih jenis transaksi **Reklasifikasi BMN**.
+
+2. Pilih **Kategori Semula** (jenis BAST/penerimaan barang) — grid
+   menampilkan dokumen yang memenuhi kriteria — pilih salah satu
+   dokumen.
+
+3. Pada sub form Parameter Reklasifikasi, untuk **Kategori Menjadi**
+   pilih jenis BAST/penerimaan barang yang sama dengan semula, lalu
+   klik **Rincian Barang**.
+
+4. Pada form Rincian Barang: di sub form Barang Asal pilih baris kode
+   BMN yang akan diubah, klik **Rekam**; pada **Kode Barang Reklas**
+   klik tombol kotak biru kecil (kaca pembesar); pada Look up Barang
+   pilih kategori pencarian (nama/kode barang), isikan kata kunci, klik
+   **Cari**, pilih barang, klik **Pilih**.
+
+5. Kembali pada form Rincian Barang: isikan **Jumlah** dan **Harga
+   Satuan** seharusnya, klik **Simpan**; bila perekaman selesai klik
+   **Keluar**.
+
+6. Kembali pada form awal, klik **Proses** — muncul pesan bahwa
+   reklasifikasi BMN hanya dapat dilakukan sekali atas satu dokumen.
+
+7. Data hasil reklasifikasi tampil pada Daftar Dokumen Reklasifikasi
+   dengan nomor dokumen baru ditambah sequencer **"/R"**; hasilnya
+   dapat dicek pada menu pencatatan penerimaan barang/jasa terkait.
+
+</Steps>
+
+## Ketentuan
+
+- Pastikan dokumen/BAST memenuhi kriteria sebelum direklasifikasi;
+  proses tidak dapat diulang — berkoordinasi lebih dulu dengan modul
+  terkait (Komitmen/Aset/Persediaan).
+- Reklasifikasi membentuk nomor dokumen baru (nomor terakhir + 1)
+  dengan tambahan sequence "/R".
+- Saat disimpan, reklasifikasi membalik jurnal BAST/penerimaan barang
+  lama dengan nomor dokumen lama dan membentuk jurnal baru dengan nomor
+  dokumen baru ("/R"); jurnal terbentuk pada periode bulan GLP yang
+  masih terbuka.
+
+<Aside type="caution" title="Perlu verifikasi">
+Contoh nomor dokumen pada juknis sengaja tidak disalin. Juknis menulis
+pengecekan hasil reklasifikasi pada "menu pencatatan terkait" tanpa
+menyebut jalur baku; pastikan menu pengecekan yang relevan di aplikasi
+saat ini.
+</Aside>
+
+## Terkait
+
+- [Merekam BAST Non Kontraktual](/komitmen/ruh/pencatatan-bast/bast-non-kontraktual/)
+- [Melakukan Void BAST](/komitmen/ruh/pencatatan-bast/void-bast/)
+
+## Sumber
+
+<SumberAsli />
