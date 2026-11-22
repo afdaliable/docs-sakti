@@ -53,6 +53,7 @@ Kerjakan berurutan. Centang `[x]` saat selesai. Setiap fase diakhiri **gerbang**
 - [x] 3.1 `BigSearch` (Level 1 Pagefind dulu) sesuai `04-tampilan-ux.md`, termasuk aksesibilitas keyboard/ARIA.
 - [x] 3.2 `ModuleGrid`, `RoleChips`, `RecentlyUpdated`, `HelpBox`, `PopularLinks`.
 - [x] 3.3 Landing page `template: splash`.
+  - 22 Nov 2026: atas permintaan pemilik, beranda memakai layout docs agar sidebar tampil (K48); isi beranda tidak berubah.
 - [x] 3.4 Halaman `/cari/` dengan filter modul/peran/jenis.
 - [x] 3.5 Override komponen artikel: breadcrumb `menu_sakti`, badge, kotak "Menu di SAKTI", footer sumber + feedback.
 - [x] 3.6 Komponen MDX: `MenuSakti`, `SumberAsli`.

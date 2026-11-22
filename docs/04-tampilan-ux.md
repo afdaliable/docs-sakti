@@ -1,6 +1,8 @@
 # 04 — Tampilan & UX
 
-## Landing page (`src/content/docs/index.mdx`, `template: splash`)
+## Landing page (`src/content/docs/index.mdx`, layout docs dengan sidebar)
+
+Sejak 22 Nov 2026 beranda tidak lagi memakai `template: splash`: sidebar navigasi tampil di kiri (di HP lewat tombol menu), dengan grup modul dibuka satu tingkat khusus di beranda (K48). Wireframe di bawah menggambarkan area konten di samping sidebar; daftar isi kanan dimatikan (`tableOfContents: false`).
 
 ```
 ┌──────────────────────────────────────────────────────────┐

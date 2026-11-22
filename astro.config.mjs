@@ -19,6 +19,7 @@ export default defineConfig({
 				Search: './src/components/overrides/Search.astro',
 				SocialIcons: './src/components/overrides/SocialIcons.astro',
 			},
+			routeMiddleware: './src/routeData.ts',
 			defaultLocale: 'root',
 			locales: {
 				root: { label: 'Bahasa Indonesia', lang: 'id' },

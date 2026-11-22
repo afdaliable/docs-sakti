@@ -24,16 +24,14 @@
 }
 
 /* Landing page */
+:root[data-has-hero][data-has-sidebar] {
+	--sl-content-width: 60rem;
+}
 .dua-kolom {
 	display: grid;
-	grid-template-columns: 1fr;
+	grid-template-columns: repeat(auto-fit, minmax(min(100%, 18rem), 1fr));
 	gap: 2.5rem;
 	margin-top: 3rem;
-}
-@media (min-width: 50rem) {
-	.dua-kolom {
-		grid-template-columns: 1fr 1fr;
-	}
 }
 .baris-kecil {
 	margin-top: 3rem;
