@@ -272,5 +272,239 @@
       "konsolidasi laporan"
     ],
     "perlu_verifikasi": true
+  },
+  {
+    "istilah": "NRS",
+    "panjang": "Nomor Register Supplier",
+    "sinonim": [
+      "nomor register supplier"
+    ]
+  },
+  {
+    "istilah": "CAN",
+    "panjang": "Commitment Application Number",
+    "sinonim": [
+      "nomor can",
+      "can kontrak"
+    ]
+  },
+  {
+    "istilah": "BCSU",
+    "panjang": "Budget Commitment Supplier Update",
+    "sinonim": [
+      "adk update supplier",
+      "ubah data supplier"
+    ]
+  },
+  {
+    "istilah": "BCKA",
+    "panjang": "",
+    "sinonim": [
+      "adk kontrak"
+    ],
+    "perlu_verifikasi": true
+  },
+  {
+    "istilah": "SPNP",
+    "panjang": "Surat Penetapan Nilai Pengembalian",
+    "sinonim": [
+      "surat penetapan nilai pengembalian"
+    ]
+  },
+  {
+    "istilah": "Bank Garansi",
+    "panjang": "",
+    "sinonim": [
+      "bank garansi",
+      "bg",
+      "jaminan bank"
+    ],
+    "perlu_verifikasi": true
+  },
+  {
+    "istilah": "SPTJM",
+    "panjang": "",
+    "sinonim": [
+      "sptjm"
+    ],
+    "perlu_verifikasi": true
+  },
+  {
+    "istilah": "RPATA",
+    "panjang": "Rekening Penampungan Akhir Tahun Anggaran",
+    "sinonim": [
+      "rekening penampungan",
+      "rpata"
+    ]
+  },
+  {
+    "istilah": "TKDN",
+    "panjang": "Tingkat Kandungan Dalam Negeri",
+    "sinonim": [
+      "tingkat kandungan dalam negeri"
+    ]
+  },
+  {
+    "istilah": "P3DN",
+    "panjang": "Peningkatan Penggunaan Produksi Dalam Negeri",
+    "sinonim": [
+      "produk dalam negeri"
+    ]
+  },
+  {
+    "istilah": "PDN",
+    "panjang": "Produk Dalam Negeri",
+    "sinonim": [
+      "produk dalam negeri"
+    ]
+  },
+  {
+    "istilah": "RO",
+    "panjang": "Rincian Output",
+    "sinonim": [
+      "rincian output",
+      "output satker"
+    ]
+  },
+  {
+    "istilah": "KRO",
+    "panjang": "Klasifikasi Rincian Output",
+    "sinonim": [
+      "klasifikasi rincian output"
+    ]
+  },
+  {
+    "istilah": "TPCRO",
+    "panjang": "Target Progres Capaian Rincian Output",
+    "sinonim": [
+      "target progres capaian output"
+    ]
+  },
+  {
+    "istilah": "TRVRO",
+    "panjang": "Target Rincian Volume Rincian Output",
+    "sinonim": [
+      "target volume output"
+    ]
+  },
+  {
+    "istilah": "PCRO",
+    "panjang": "Progres Capaian Rincian Output",
+    "sinonim": [
+      "progres capaian output"
+    ]
+  },
+  {
+    "istilah": "RVRO",
+    "panjang": "Realisasi Volume Rincian Output",
+    "sinonim": [
+      "realisasi volume output"
+    ]
+  },
+  {
+    "istilah": "COA",
+    "panjang": "Chart of Account",
+    "sinonim": [
+      "akun",
+      "chart of account",
+      "kode akun"
+    ]
+  },
+  {
+    "istilah": "Karwas",
+    "panjang": "Kartu Pengawasan",
+    "sinonim": [
+      "kartu pengawasan",
+      "karwas kontrak"
+    ]
+  },
+  {
+    "istilah": "Govmart",
+    "panjang": "",
+    "sinonim": [
+      "gov'mart",
+      "government marketplace"
+    ],
+    "perlu_verifikasi": true
+  },
+  {
+    "istilah": "Inaproc",
+    "panjang": "",
+    "sinonim": [
+      "inaproc",
+      "e-katalog",
+      "katalog elektronik"
+    ],
+    "perlu_verifikasi": true
+  },
+  {
+    "istilah": "SPBy",
+    "panjang": "Surat Perintah Bayar",
+    "sinonim": [
+      "surat perintah bayar",
+      "spby"
+    ]
+  },
+  {
+    "istilah": "KKP",
+    "panjang": "Kartu Kredit Pemerintah",
+    "sinonim": [
+      "kartu kredit pemerintah",
+      "kkp"
+    ]
+  },
+  {
+    "istilah": "Supplier",
+    "panjang": "",
+    "sinonim": [
+      "suplier",
+      "penyedia",
+      "rekanan"
+    ],
+    "perlu_verifikasi": true
+  },
+  {
+    "istilah": "Addendum",
+    "panjang": "",
+    "sinonim": [
+      "adendum",
+      "addendum kontrak",
+      "perubahan kontrak"
+    ],
+    "perlu_verifikasi": true
+  },
+  {
+    "istilah": "Termin",
+    "panjang": "",
+    "sinonim": [
+      "termin",
+      "termin pembayaran",
+      "jadwal pembayaran"
+    ],
+    "perlu_verifikasi": true
+  },
+  {
+    "istilah": "Void BAST",
+    "panjang": "",
+    "sinonim": [
+      "void bast",
+      "pembatalan bast",
+      "hapus bast"
+    ],
+    "perlu_verifikasi": true
+  },
+  {
+    "istilah": "JAT",
+    "panjang": "Jaminan Akhir Tahun",
+    "sinonim": [
+      "jaminan akhir tahun"
+    ]
+  },
+  {
+    "istilah": "SSPB",
+    "panjang": "Surat Setoran Pengembalian Belanja",
+    "sinonim": [
+      "setoran pengembalian belanja"
+    ]
   }
 ]

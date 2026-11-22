@@ -42,3 +42,29 @@
   harap: ["/referensi/aset-tetap/ruangan/"]
 - q: "satker tidak masuk konsolidasi wilayah"
   harap: ["/referensi/umum/perubahan-konsolidator/"]
+- q: "cara rekam supplier penyedia barang jasa"
+  harap: ["/komitmen/ruh/pencatatan-suplier/suplier-tipe-1-2-7/"]
+- q: "supplier tipe 3 pegawai tidak muncul setelah upload adk"
+  harap: ["/komitmen/ruh/pencatatan-suplier/suplier-tipe-3/"]
+- q: "cara bikin kontrak tahunan sakti"
+  harap: ["/komitmen/ruh/pencatatan-kontrak/kontrak-tahunan/"]
+- q: "adendum kontrak multi year gimana"
+  harap: ["/komitmen/ruh/pencatatan-kontrak/addendum-kontrak-multi-year/"]
+- q: "rekam bast non kontraktual kuitansi"
+  harap: ["/komitmen/ruh/pencatatan-bast/bast-non-kontraktual/"]
+- q: "bast sudah terlanjur diproses mau dibatalkan"
+  harap: ["/komitmen/ruh/pencatatan-bast/void-bast/"]
+- q: "input bank garansi akhir tahun"
+  harap: ["/komitmen/ruh/pencatatan-jaminan-akhir-tahun/"]
+- q: "bayar belanja lewat govmart inaproc"
+  harap: ["/komitmen/ruh/govmart-ls/", "/komitmen/ruh/govmart-up-kkp/"]
+- q: "cara isi tkdn barang impor pdn"
+  harap: ["/komitmen/ruh/pencatatan-informasi-tkdn/"]
+- q: "belum dilakukan assesment oleh unit eselon i kementerian anda"
+  harap: ["/komitmen/ruh/target-proyek-capaian-output/", "/komitmen/ruh/realisasi-kinerja-satker/"]
+- q: "cara rekam pembayaran rpata akhir tahun"
+  harap: ["/komitmen/ruh/rpata/"]
+- q: "ubah data supplier yang sudah ada nrs"
+  harap: ["/komitmen/adk/adk-bcsu/"]
+- q: "import data gaji dari gpp kppn"
+  harap: ["/komitmen/upload/import-gpp-terpusat/"]

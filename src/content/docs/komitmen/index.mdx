@@ -9,12 +9,28 @@ sidebar:
   order: 0
 ---
 
-Supplier, kontrak, BAST, escrow, dan ADK GPP.
+import { CardGrid, LinkCard } from '@astrojs/starlight/components';
 
-Panduan modul ini sedang dimigrasikan dari sumber aslinya.
+Panduan modul Komitmen mencakup perekaman data supplier dan kontrak,
+pencatatan BAST, capaian output, transaksi RPATA, pembentukan ADK, dan
+impor data dari sistem eksternal.
 
 ## Sub-menu
 
-- [RUH](/komitmen/ruh/)
-- [ADK](/komitmen/adk/)
-- [Upload / Import](/komitmen/upload/)
+<CardGrid>
+	<LinkCard
+		title="RUH"
+		description="Supplier, kontrak, BAST/BAKP/BAPP/DYD, capaian output, RPATA, dan pencatatan lainnya."
+		href="/komitmen/ruh/"
+	/>
+	<LinkCard
+		title="ADK"
+		description="Pembentukan ADK supplier (BCSR/BCSU) dan ADK supplier tipe 3 manual."
+		href="/komitmen/adk/"
+	/>
+	<LinkCard
+		title="Upload / Import"
+		description="Impor supplier interkoneksi SPAN dan impor data GPP Terpusat."
+		href="/komitmen/upload/"
+	/>
+</CardGrid>
