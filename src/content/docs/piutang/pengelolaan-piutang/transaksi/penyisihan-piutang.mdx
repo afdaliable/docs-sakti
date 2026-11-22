@@ -1,0 +1,100 @@
+---
+title: Merekam Penyisihan Piutang
+description: Melakukan transaksi penyisihan piutang setiap semesteran setelah tutup buku.
+modul: piutang
+menu_sakti: "Piutang > Pengelolaan Piutang > Transaksi > Penyisihan Piutang"
+peran: [satker]
+jenis: juknis
+kata_kunci: [penyisihan piutang, piutang tak tertagih, semesteran]
+status: review
+sumber:
+  - judul: "SAKTI PELAPORAN - Penyisihan Piutang"
+    url: "https://sites.google.com/view/saktipelaporan/piutang/pengelolaan-piutang/transaksi/penyisihan-piutang"
+    jenis: google-sites
+    diambil: 2026-11-21
+    id_manifest: C-piutang-pengelolaan-piutang-transaksi-penyisihan-piutang
+  - judul: "JUKNIS SAKTI-Modul Piutang web_30122020"
+    url: "https://drive.google.com/file/d/1heaiMUcDJHnf97xK2LL76bUzZgpkRo4H/view"
+    jenis: pdf
+    diambil: 2026-11-21
+    id_manifest: C-dok-130
+  - judul: "Penyisihan Piutang-5"
+    url: "https://drive.google.com/file/d/1enWtC-Lz8a5AO6AGzaa1H2KuXIs5Nvgr/view"
+    jenis: video
+    diambil: 2026-11-21
+    id_manifest: C-dok-142
+  - judul: "Penyisihan Piutang"
+    url: "https://docs.google.com/presentation/d/1tnkPHr3Ev77tbDzmR0kA3pqCwZdtKA80qr75I-UaoYM/"
+    jenis: google-slides
+    diambil: 2026-11-21
+    id_manifest: C-dok-143
+sidebar:
+  order: 3
+---
+
+import { Steps } from '@astrojs/starlight/components';
+import MenuSakti from '~/components/MenuSakti.astro';
+import SumberAsli from '~/components/SumberAsli.astro';
+
+Menu Penyisihan Piutang digunakan untuk melakukan transaksi
+penyisihan piutang setiap semesteran dengan terlebih dahulu
+menutup buku piutang sampai dengan sebelum bulan dilakukan
+penyisihan.
+
+<MenuSakti />
+
+## Prasyarat
+
+- Dokumen sumber: data piutang.
+- Modul dan transaksi terkait: GLP.
+- Harus sudah tutup buku pada bulan sebelum penyisihan:
+  penyisihan semester I minimal harus sudah tutup buku bulan 5,
+  penyisihan semester II minimal harus sudah tutup buku bulan
+  11.
+
+## Langkah
+
+<Steps>
+
+1. Pilih menu **Piutang > Pengelolaan Piutang > Transaksi >
+   Penyisihan Piutang**, lalu klik **Sisihkan**.
+2. Setelah itu muncul parameter penyisihan piutang dengan
+   tanggal yang sudah otomatis terisi sesuai periode penyisihan
+   terdekat dengan tutup buku terakhir; pastikan tanggal yang
+   terisi adalah tanggal akhir pada semester berkenaan, lalu
+   klik **Proses**.
+3. Setelah ada notifikasi penyisihan berhasil dilakukan, klik
+   keluar; penyisihan terbentuk per akun piutang.
+4. Untuk melihat secara detail, klik pada salah satu penyisihan
+   piutang yang sudah ada; data detail penyisihan ditampilkan
+   per nomor piutang.
+
+</Steps>
+
+## Ketentuan
+
+- Penyisihan piutang tidak tertagih pada Kementerian
+  Negara/Lembaga ditetapkan sebesar: 5 permil dari piutang
+  berkualitas lancar; 10% dari piutang berkualitas kurang lancar
+  setelah dikurangi nilai agunan atau nilai barang sitaan; 50%
+  dari piutang berkualitas diragukan setelah dikurangi nilai
+  agunan atau nilai barang sitaan; 100% dari piutang
+  berkualitas macet setelah dikurangi nilai agunan atau nilai
+  barang sitaan.
+- Satker dapat melihat detail hasil penyisihan per id piutang
+  pada menu ini untuk membandingkan dengan jurnal yang
+  terbentuk.
+
+## Jurnal transaksi
+
+- D. 594931/594211
+- K. 116211/156311
+
+## Terkait
+
+- [Merekam Surat Peringatan (SP)](/piutang/pengelolaan-piutang/transaksi/surat-peringatan-sp/)
+- [Merekam Penghapusan Piutang](/piutang/pengelolaan-piutang/transaksi/penghapusan-piutang/)
+
+## Sumber
+
+<SumberAsli />

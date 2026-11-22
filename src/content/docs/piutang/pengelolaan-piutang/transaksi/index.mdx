@@ -1,0 +1,26 @@
+---
+title: Transaksi
+description: Transaksi piutang, dari settlement, penyisihan, surat peringatan, restrukturisasi, penghapusan, sampai pelimpahan ke DJKN/PUPN.
+modul: piutang
+jenis: indeks
+status: terbit
+sidebar:
+  label: Ringkasan
+  order: 3
+---
+
+import { LinkCard, CardGrid } from '@astrojs/starlight/components';
+
+Sub-menu **Piutang > Pengelolaan Piutang > Transaksi** memuat
+transaksi piutang: pembayaran/settlement, penyisihan,
+penghapusan, surat peringatan, restrukturisasi, dan pelimpahan
+ke DJKN/PUPN.
+
+<CardGrid>
+  <LinkCard title="Pembayaran/Settlement" href="/piutang/pengelolaan-piutang/transaksi/settlement/" description="Mencatat pembayaran/pelunasan piutang dari empat sumber data setoran." />
+  <LinkCard title="Penyisihan Piutang" href="/piutang/pengelolaan-piutang/transaksi/penyisihan-piutang/" description="Menyisihkan piutang setiap semesteran setelah tutup buku." />
+  <LinkCard title="Penghapusan Piutang" href="/piutang/pengelolaan-piutang/transaksi/penghapusan-piutang/" description="Menghapus piutang lewat hapus buku dan hapus tagih." />
+  <LinkCard title="Surat Peringatan (SP)" href="/piutang/pengelolaan-piutang/transaksi/surat-peringatan-sp/" description="Mencatat surat peringatan yang memengaruhi kualitas piutang." />
+  <LinkCard title="Restrukturisasi Piutang" href="/piutang/pengelolaan-piutang/transaksi/restrukturisasi-piutang/" description="Mencatat perubahan kualitas piutang sesuai dokumen penetapan restrukturisasi." />
+  <LinkCard title="Pelimpahan Piutang ke DJKN/PUPN" href="/piutang/pengelolaan-piutang/transaksi/pelimpahan-piutang-ke-djkn-pupn/" description="Mencatat piutang macet yang diserahkan ke DJKN/PUPN." />
+</CardGrid>

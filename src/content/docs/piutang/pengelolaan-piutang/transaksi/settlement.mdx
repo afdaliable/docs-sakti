@@ -1,0 +1,199 @@
+---
+title: Mencatat Pembayaran Piutang (Settlement)
+description: Mencatat pembayaran/pelunasan piutang dari setoran SBS, SSBP non SBS, potongan SPM, dan data upload.
+modul: piutang
+menu_sakti: "Piutang > Pengelolaan Piutang > Transaksi"
+peran: [satker]
+jenis: juknis
+kata_kunci: [settlement, pembayaran piutang, pelunasan piutang, setoran]
+status: review
+perlu_review: true
+sumber:
+  - judul: "SAKTI PELAPORAN - Pencatatan Pembayaran/Settlement"
+    url: "https://sites.google.com/view/saktipelaporan/piutang/pengelolaan-piutang/transaksi/settlement"
+    jenis: google-sites
+    diambil: 2026-11-21
+    id_manifest: C-piutang-pengelolaan-piutang-transaksi-settlement
+  - judul: "JUKNIS SAKTI-Modul Piutang web_30122020"
+    url: "https://drive.google.com/file/d/1heaiMUcDJHnf97xK2LL76bUzZgpkRo4H/view"
+    jenis: pdf
+    diambil: 2026-11-21
+    id_manifest: C-dok-130
+sidebar:
+  order: 2
+---
+
+import { Steps, Aside } from '@astrojs/starlight/components';
+import MenuSakti from '~/components/MenuSakti.astro';
+import SumberAsli from '~/components/SumberAsli.astro';
+
+Menu Pembayaran/Settlement Piutang digunakan untuk mencatat
+transaksi pembayaran/pelunasan piutang yang berasal dari empat
+sumber data setoran yang telah dicatat dalam modul lain:
+
+- **Settlement SBS**: atas setoran pembayaran piutang melalui
+  bendahara satuan kerja yang sudah dicatat pada modul bendahara
+  pada menu mencatat uang masuk bendahara.
+- **Settlement SSBP Non SBS**: atas setoran pembayaran piutang
+  yang dicatat pada modul bendahara pada menu Setoran
+  UP/TUP/PNBP Bendahara.
+- **Settlement Data Pot SPM**: atas potongan SPM yang digunakan
+  sebagai pembayaran piutang yang dicatat pada modul pembayaran
+  sampai menjadi SP2D.
+- **Settlement Data Upload**: atas setoran pembayaran piutang
+  melalui bendahara satuan kerja yang dicatat pada modul
+  bendahara pada menu upload data dari simponi.
+
+<MenuSakti />
+
+## Prasyarat
+
+- Dokumen sumber: Potongan SPM, SSBP, Billing, SBS.
+- Modul dan transaksi terkait: Modul Bendahara untuk data
+  setoran yang telah dicatat; Modul Pembayaran untuk data
+  potongan SPM yang sudah menjadi SP2D; GLP terkait jurnal yang
+  terbentuk.
+- Untuk melakukan settlement, data setoran harus sudah dicatat
+  terlebih dahulu oleh modul bendahara atau pembayaran.
+
+## Langkah
+
+### Settlement SBS
+
+<Steps>
+
+1. Pilih menu **Piutang > Pengelolaan Piutang > Transaksi >
+   Settlement SBS**, lalu klik **Rekam**.
+2. Pilih Identitas Debitur dengan mengklik lihat, pilih data
+   debitur yang membayar piutang, lalu klik pilih.
+3. Pilih Nomor Piutang dengan mengklik lihat, pilih nomor
+   piutang yang dibayar cicilan atau pelunasannya, lalu klik
+   pilih.
+4. Isikan tanggal settlement sesuai dengan tanggal buku
+   pembayaran piutang.
+5. Ambil data SBS yang digunakan dalam pembayaran piutang dengan
+   klik tombol lihat, pilih data SBS yang digunakan untuk
+   pembayaran atas piutang yang sudah dipilih, lalu klik pilih.
+6. Isikan jumlah pembayaran piutang.
+7. Isikan uraian keterangan sebagai tambahan informasi yang
+   diperlukan, lalu klik **Simpan**.
+
+</Steps>
+
+### Settlement SSBP Non SBS
+
+<Steps>
+
+1. Pilih menu **Piutang > Pengelolaan Piutang > Transaksi >
+   Settlement via Potongan SPM & Data Upload**, lalu klik
+   **Rekam**.
+2. Pilih Identitas Debitur dengan mengklik lihat, pilih data
+   debitur yang membayar piutang, lalu klik pilih.
+3. Pilih Nomor Piutang dengan mengklik lihat, pilih nomor
+   piutang yang dibayar cicilan atau pelunasannya, lalu klik
+   pilih.
+4. Isikan tanggal settlement sesuai dengan tanggal buku
+   pembayaran piutang.
+5. Ambil data SSBP yang digunakan dalam pembayaran piutang
+   dengan klik tombol lihat, pilih data SSBP yang digunakan
+   untuk pembayaran atas piutang yang sudah dipilih sebelumnya,
+   lalu klik pilih.
+6. Isikan jumlah pembayaran piutang.
+7. Isikan uraian keterangan sebagai tambahan informasi yang
+   diperlukan, lalu klik **Simpan**.
+
+</Steps>
+
+### Settlement via potongan SPM
+
+<Steps>
+
+1. Pilih menu **Piutang > Pengelolaan Piutang > Transaksi >
+   Settlement via Potongan SPM & Data Upload**, lalu klik
+   **Rekam**.
+2. Pilih Identitas Debitur dengan mengklik lihat, pilih data
+   debitur yang membayar piutang, lalu klik pilih.
+3. Pilih Nomor Piutang dengan mengklik lihat, pilih nomor
+   piutang yang dibayar cicilan atau pelunasannya, lalu klik
+   pilih.
+4. Isikan tanggal settlement sesuai dengan tanggal buku
+   pembayaran piutang.
+5. Klik pada tombol via pot. SPM pada pilihan Sumber Data
+   Settlement.
+6. Ambil data Pot. SPM yang digunakan dalam pembayaran piutang
+   dengan klik tombol lihat, pilih data Pot. SPM yang digunakan
+   untuk pembayaran atas piutang yang sudah dipilih sebelumnya,
+   lalu klik pilih.
+7. Isikan jumlah pembayaran piutang.
+8. Isikan uraian keterangan sebagai tambahan informasi yang
+   diperlukan, lalu klik **Simpan**.
+
+</Steps>
+
+### Settlement via data upload
+
+<Steps>
+
+1. Pilih menu **Piutang > Pengelolaan Piutang > Transaksi >
+   Settlement via Potongan SPM & Data Upload**, lalu klik
+   **Rekam**.
+2. Pilih Identitas Debitur dengan mengklik lihat, pilih data
+   debitur yang membayar piutang, lalu klik pilih.
+3. Pilih Nomor Piutang dengan mengklik lihat, pilih nomor
+   piutang yang dibayar cicilan atau pelunasannya, lalu klik
+   pilih.
+4. Isikan tanggal settlement sesuai dengan tanggal buku
+   pembayaran piutang.
+5. Klik pada tombol via data hasil upload pada pilihan Sumber
+   Data Settlement.
+6. Ambil data upload yang digunakan dalam pembayaran piutang
+   dengan klik tombol lihat, pilih data hasil upload yang
+   digunakan untuk pembayaran atas piutang yang sudah dipilih
+   sebelumnya, lalu klik pilih.
+7. Isikan jumlah pembayaran piutang.
+8. Isikan uraian keterangan sebagai tambahan informasi yang
+   diperlukan, lalu klik **Simpan**.
+
+</Steps>
+
+## Ketentuan
+
+- Tanggal buku harus lebih dari sama dengan tanggal setoran.
+- Jumlah settlement harus lebih kecil sama dengan saldo piutang
+  dan saldo sisa matching setorannya.
+- Satu setoran dapat digunakan untuk settlement beberapa
+  debitur maupun id piutang, dengan total tidak boleh lebih dari
+  nilai setorannya.
+- Apabila terdapat perbedaan akun piutang dengan setorannya,
+  pastikan terlebih dahulu tidak terdapat kesalahan setoran;
+  apabila terdapat kesalahan, koreksi akun terlebih dahulu
+  sebelum dilakukan settlement.
+- Setoran yang sudah digunakan untuk settlement tidak bisa
+  diubah; lakukan penghapusan transaksi settlement terlebih
+  dahulu sebelum melakukan perubahan/koreksi data setoran atau
+  potongan SPM tersebut.
+
+## Jurnal transaksi
+
+- D. 42XXXX sesuai dengan akun setoran yang dipilih
+- K. 152111/115211
+
+<Aside type="caution" title="Perlu verifikasi">
+Halaman sumber bernama "Pencatatan Pembayaran/Settlement" dan
+tidak punya padanan label persis di daftar menu SAKTI; jalur
+menu di atas memakai simpul induk **Transaksi**. Menu pada
+aplikasi adalah Settlement SBS, Settlement SSBP Non SBS, dan
+Settlement via Potongan SPM & Data Upload sesuai masing-masing
+jenis setoran. Pada juknis, langkah Settlement SSBP Non SBS dan
+Settlement via data upload sama-sama merujuk menu "Settlement
+via potongan SPM dan data upload" — ditulis sesuai sumber.
+</Aside>
+
+## Terkait
+
+- [Mencatat Piutang/Tagihan](/piutang/pengelolaan-piutang/pencatatan/pencatatan-piutang-tagihan/)
+- [Merekam Penyisihan Piutang](/piutang/pengelolaan-piutang/transaksi/penyisihan-piutang/)
+
+## Sumber
+
+<SumberAsli />

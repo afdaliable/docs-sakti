@@ -1,0 +1,93 @@
+---
+title: Merekam Penghapusan Piutang
+description: Melakukan transaksi penghapusan piutang yang terdiri dari hapus buku dan hapus tagih.
+modul: piutang
+menu_sakti: "Piutang > Pengelolaan Piutang > Transaksi > Penghapusan Piutang"
+peran: [satker]
+jenis: juknis
+kata_kunci: [penghapusan piutang, hapus buku, hapus tagih]
+status: review
+sumber:
+  - judul: "SAKTI PELAPORAN - Penghapusan Piutang"
+    url: "https://sites.google.com/view/saktipelaporan/piutang/pengelolaan-piutang/transaksi/penghapusan-piutang"
+    jenis: google-sites
+    diambil: 2026-11-21
+    id_manifest: C-piutang-pengelolaan-piutang-transaksi-penghapusan-piutang
+  - judul: "JUKNIS SAKTI-Modul Piutang web_30122020"
+    url: "https://drive.google.com/file/d/1heaiMUcDJHnf97xK2LL76bUzZgpkRo4H/view"
+    jenis: pdf
+    diambil: 2026-11-21
+    id_manifest: C-dok-130
+  - judul: "Penghapusan Piutang-4"
+    url: "https://drive.google.com/file/d/10P1lSu6_Jv9juqWQNkyxkiD6kE2DWChn/view"
+    jenis: video
+    diambil: 2026-11-21
+    id_manifest: C-dok-140
+  - judul: "Penghapusan Piutang"
+    url: "https://docs.google.com/presentation/d/1PMLaj0ahq7t78gVFhf307zzSos9IQPOSfklgbUZsDhE/"
+    jenis: google-slides
+    diambil: 2026-11-21
+    id_manifest: C-dok-141
+sidebar:
+  order: 4
+---
+
+import { Steps } from '@astrojs/starlight/components';
+import MenuSakti from '~/components/MenuSakti.astro';
+import SumberAsli from '~/components/SumberAsli.astro';
+
+Menu Penghapusan Piutang digunakan untuk melakukan transaksi
+penghapusan piutang yang terdiri dari hapus buku dan hapus
+tagih.
+
+<MenuSakti />
+
+## Prasyarat
+
+- Dokumen sumber: dokumen penghapusan piutang.
+- Modul dan transaksi terkait: GLP.
+
+## Langkah
+
+<Steps>
+
+1. Pilih menu **Piutang > Pengelolaan Piutang > Transaksi >
+   Penghapusan Piutang**, lalu klik **Rekam**.
+2. Pilih status hapus buku atau hapus tagih.
+3. Pilih No Piutang dengan mengklik tombol look up; apabila
+   status hapus yang dipilih adalah hapus buku maka data yang
+   muncul adalah data piutang yang memiliki kualitas macet dan
+   data piutang yang telah mendapatkan SP3 lebih dari 30 hari,
+   sedangkan bila yang dipilih hapus tagih maka data yang muncul
+   adalah data piutang yang sudah dihapusbukukan. Pilih data
+   piutang yang dilakukan penghapusan, lalu klik pilih.
+4. Isikan tanggal penghapusan piutang.
+5. Isikan uraian keterangan sebagai tambahan informasi yang
+   diperlukan.
+6. Isikan Nomor Dokumen sesuai dengan nomor dokumen penghapusan
+   yang ada, lalu klik **Simpan**.
+
+</Steps>
+
+## Ketentuan
+
+- Piutang yang bisa dihapus buku adalah piutang yang memiliki
+  kualitas macet atau sudah mendapatkan SP3 selama 30 hari.
+- Piutang yang bisa dihapus tagih adalah piutang yang sudah
+  dihapus buku.
+
+## Jurnal transaksi
+
+Jurnal terbentuk saat hapus buku:
+
+- D. 116211/156311
+- K. 152111/115211
+
+## Terkait
+
+- [Menghapus Piutang (Koreksi Hapus)](/piutang/pengelolaan-piutang/koreksi/hapus-piutang/)
+- [Merekam Pelimpahan Piutang ke DJKN/PUPN](/piutang/pengelolaan-piutang/transaksi/pelimpahan-piutang-ke-djkn-pupn/)
+
+## Sumber
+
+<SumberAsli />

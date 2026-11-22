@@ -1,0 +1,89 @@
+---
+title: Merekam Restrukturisasi Piutang
+description: Mencatat perubahan kualitas piutang sesuai dokumen penetapan restrukturisasi piutang.
+modul: piutang
+menu_sakti: "Piutang > Pengelolaan Piutang > Transaksi > Restrukturisasi Piutang"
+peran: [satker]
+jenis: juknis
+kata_kunci: [restrukturisasi piutang, reklasifikasi piutang, kualitas piutang]
+status: review
+perlu_review: true
+sumber:
+  - judul: "SAKTI PELAPORAN - Restrukturisasi Piutang"
+    url: "https://sites.google.com/view/saktipelaporan/piutang/pengelolaan-piutang/transaksi/restrukturisasi-piutang"
+    jenis: google-sites
+    diambil: 2026-11-21
+    id_manifest: C-piutang-pengelolaan-piutang-transaksi-restrukturisasi-piutang
+  - judul: "JUKNIS SAKTI-Modul Piutang web_30122020"
+    url: "https://drive.google.com/file/d/1heaiMUcDJHnf97xK2LL76bUzZgpkRo4H/view"
+    jenis: pdf
+    diambil: 2026-11-21
+    id_manifest: C-dok-130
+  - judul: "Restrukturisasi Piutang-6"
+    url: "https://drive.google.com/file/d/1MswiX06JVquODLwmcbNBBHbZIRyMR6XL/view"
+    jenis: video
+    diambil: 2026-11-21
+    id_manifest: C-dok-138
+  - judul: "Restrukturisasi Piutang"
+    url: "https://docs.google.com/presentation/d/1niOC2aKy38A7sS8NmNHhEpoMMXczlZYVhZf7RD9kDo0/"
+    jenis: google-slides
+    diambil: 2026-11-21
+    id_manifest: C-dok-139
+sidebar:
+  order: 6
+---
+
+import { Steps, Aside } from '@astrojs/starlight/components';
+import MenuSakti from '~/components/MenuSakti.astro';
+import SumberAsli from '~/components/SumberAsli.astro';
+
+Menu Restrukturisasi Piutang digunakan untuk melakukan
+pencatatan perubahan kualitas Piutang sesuai dengan dokumen
+penetapan restrukturisasi piutang.
+
+<MenuSakti />
+
+## Prasyarat
+
+- Dokumen sumber: Dokumen Reklas Piutang.
+
+## Langkah
+
+<Steps>
+
+1. Pilih menu **Piutang > Pengelolaan Piutang > Transaksi >
+   Restrukturisasi Piutang**, lalu klik **Rekam**.
+2. Pilih No Piutang dengan mengklik tombol look up, pilih data
+   piutang yang dilakukan restrukturisasi, lalu klik pilih.
+3. Isikan tanggal restrukturisasi piutang.
+4. Isikan uraian keterangan sebagai tambahan informasi yang
+   diperlukan.
+5. Isikan perubahan kualitas piutang/direklas menjadi sesuai
+   dengan status piutang hasil restrukturisasi.
+6. Isikan Nomor Dokumen sesuai dengan nomor dokumen
+   restrukturisasi yang ada, lalu klik **Simpan**.
+
+</Steps>
+
+## Ketentuan
+
+- Piutang Macet dapat direklas menjadi Ragu-Ragu atau Kurang
+  Lancar.
+- Piutang Ragu-Ragu dapat direklas menjadi Kurang Lancar.
+
+<Aside type="caution" title="Perlu verifikasi">
+Tabel ikhtisar juknis pada halaman sumber berjudul
+"Reklasifikasi Piutang" dengan nama menu "Transkasi >>
+Reklasifikasi Piutang", sedangkan menu pada aplikasi bernama
+Restrukturisasi Piutang. Keduanya merujuk pencatatan perubahan
+kualitas piutang yang sama; artikel memakai nama menu aplikasi.
+</Aside>
+
+## Terkait
+
+- [Mengoreksi Piutang](/piutang/pengelolaan-piutang/koreksi/koreksi-piutang/)
+- [Merekam Surat Peringatan (SP)](/piutang/pengelolaan-piutang/transaksi/surat-peringatan-sp/)
+
+## Sumber
+
+<SumberAsli />

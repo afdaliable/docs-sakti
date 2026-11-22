@@ -1,0 +1,75 @@
+---
+title: Merekam Pelimpahan Piutang ke DJKN/PUPN
+description: Mencatat piutang berkualitas macet yang diserahkan kepada DJKN/PUPN.
+modul: piutang
+menu_sakti: "Piutang > Pengelolaan Piutang > Transaksi > Pelimpahan Piutang ke DJKN/PUPN"
+peran: [satker]
+jenis: juknis
+kata_kunci: [pelimpahan piutang, DJKN, PUPN, penyerahan piutang]
+status: review
+sumber:
+  - judul: "SAKTI PELAPORAN - Pelimpahan Piutang ke DJKN / PUPN"
+    url: "https://sites.google.com/view/saktipelaporan/piutang/pengelolaan-piutang/transaksi/pelimpahan-piutang-ke-djkn-pupn"
+    jenis: google-sites
+    diambil: 2026-11-21
+    id_manifest: C-piutang-pengelolaan-piutang-transaksi-pelimpahan-piutang-ke-djkn-pupn
+  - judul: "JUKNIS SAKTI-Modul Piutang web_30122020"
+    url: "https://drive.google.com/file/d/1heaiMUcDJHnf97xK2LL76bUzZgpkRo4H/view"
+    jenis: pdf
+    diambil: 2026-11-21
+    id_manifest: C-dok-130
+  - judul: "Pelimpahan Piutang ke DJKN-PUPN"
+    url: "https://docs.google.com/presentation/d/16rgkYeaZSIQsuWSnbhOHvEyKTEGtCcdzMOVtyqGdQ98/"
+    jenis: google-slides
+    diambil: 2026-11-21
+    id_manifest: C-dok-147
+sidebar:
+  order: 7
+---
+
+import { Steps } from '@astrojs/starlight/components';
+import MenuSakti from '~/components/MenuSakti.astro';
+import SumberAsli from '~/components/SumberAsli.astro';
+
+Menu Pelimpahan Piutang ke DJKN/PUPN digunakan untuk mencatat
+piutang yang diserahkan ke DJKN/PUPN dengan syarat piutang
+tersebut harus memiliki kualitas macet. Atas pencatatan ini
+kualitas piutang tidak berubah walaupun ada pembayaran.
+
+<MenuSakti />
+
+## Prasyarat
+
+- Dokumen sumber: dokumen penyerahan piutang.
+- Hanya untuk piutang yang memiliki kualitas macet.
+
+## Langkah
+
+<Steps>
+
+1. Pilih menu **Piutang > Pengelolaan Piutang > Transaksi >
+   Pelimpahan Piutang ke DJKN/PUPN**, lalu klik **Rekam**.
+2. Pilih No Piutang dengan mengklik tombol look up, pilih data
+   piutang yang dilakukan pelimpahan, lalu klik pilih.
+3. Isikan tanggal pelimpahan piutang.
+4. Isikan uraian keterangan sebagai tambahan informasi yang
+   diperlukan.
+5. Isikan Nomor Dokumen sesuai dengan nomor dokumen pelimpahan
+   piutang yang ada, lalu klik **Simpan**.
+
+</Steps>
+
+## Ketentuan
+
+- Atas perekaman penyerahan ini, data piutang tidak berubah
+  kualitasnya walaupun ada pembayaran; piutang macet yang ada
+  settlement-nya saat disisihkan akan tetap macet.
+
+## Terkait
+
+- [Merekam Penghapusan Piutang](/piutang/pengelolaan-piutang/transaksi/penghapusan-piutang/)
+- [Mencetak Laporan Piutang](/piutang/pengelolaan-piutang/laporan/)
+
+## Sumber
+
+<SumberAsli />

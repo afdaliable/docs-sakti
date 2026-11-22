@@ -1,0 +1,83 @@
+---
+title: Merekam Surat Peringatan (SP)
+description: Mencatat surat peringatan yang diterbitkan satker kepada debitur piutang.
+modul: piutang
+menu_sakti: "Piutang > Pengelolaan Piutang > Transaksi > Surat Peringatan (SP)"
+peran: [satker]
+jenis: juknis
+kata_kunci: [surat peringatan, SP piutang, SP1, SP2, SP3]
+status: review
+sumber:
+  - judul: "SAKTI PELAPORAN - Surat Peringatan (SP)"
+    url: "https://sites.google.com/view/saktipelaporan/piutang/pengelolaan-piutang/transaksi/surat-peringatan-sp"
+    jenis: google-sites
+    diambil: 2026-11-21
+    id_manifest: C-piutang-pengelolaan-piutang-transaksi-surat-peringatan-sp
+  - judul: "JUKNIS SAKTI-Modul Piutang web_30122020"
+    url: "https://drive.google.com/file/d/1heaiMUcDJHnf97xK2LL76bUzZgpkRo4H/view"
+    jenis: pdf
+    diambil: 2026-11-21
+    id_manifest: C-dok-130
+  - judul: "Surat Peringatan-10"
+    url: "https://drive.google.com/file/d/19kM9C7PsaKVjRTFKH8SU6kYHkHprLI1_/view"
+    jenis: video
+    diambil: 2026-11-21
+    id_manifest: C-dok-144
+  - judul: "Surat Peringatan"
+    url: "https://docs.google.com/presentation/d/1jbE1nax-soOxcnxj3ceGMxQ21A9Y7UnVfGJHbQGy9hE/"
+    jenis: google-slides
+    diambil: 2026-11-21
+    id_manifest: C-dok-145
+sidebar:
+  order: 5
+---
+
+import { Steps } from '@astrojs/starlight/components';
+import MenuSakti from '~/components/MenuSakti.astro';
+import SumberAsli from '~/components/SumberAsli.astro';
+
+Menu Surat Peringatan digunakan untuk melakukan pencatatan
+transaksi atas surat peringatan yang diterbitkan satker kepada
+debitur piutang yang selanjutnya dapat memengaruhi kualitas
+piutang saat proses penyisihan semesteran.
+
+<MenuSakti />
+
+## Prasyarat
+
+- Dokumen sumber: Surat Peringatan Piutang.
+- Surat peringatan dibuat setelah tanggal jatuh tempo dan
+  debitur belum melakukan pembayaran.
+
+## Langkah
+
+<Steps>
+
+1. Pilih menu **Piutang > Pengelolaan Piutang > Transaksi >
+   Surat Peringatan (SP)**, lalu klik **Rekam**.
+2. Pilih SP ke berapa sesuai dengan dokumen surat peringatan
+   yang dibuat, dengan pilihan SP1, SP2, dan SP3.
+3. Pilih No Piutang dengan mengklik tombol look up, pilih data
+   piutang yang akan diberikan surat peringatan, lalu klik
+   pilih.
+4. Isikan tanggal SP piutang.
+5. Isikan uraian keterangan sebagai tambahan informasi yang
+   diperlukan, lalu klik **Simpan**.
+
+</Steps>
+
+## Ketentuan
+
+- SP1: lebih dari 30 hari setelah tanggal jatuh tempo; kualitas
+  Kurang Lancar.
+- SP2: lebih dari 30 hari setelah SP1; kualitas Ragu-ragu.
+- SP3: lebih dari 30 hari setelah SP2; kualitas Macet.
+
+## Terkait
+
+- [Merekam Penyisihan Piutang](/piutang/pengelolaan-piutang/transaksi/penyisihan-piutang/)
+- [Merekam Penghapusan Piutang](/piutang/pengelolaan-piutang/transaksi/penghapusan-piutang/)
+
+## Sumber
+
+<SumberAsli />
