@@ -1,0 +1,148 @@
+---
+title: Melakukan Terminate Termin Kontrak
+description: Langkah menyesuaikan nilai termin kontrak yang sudah terealisasi sebagian pada modul Komitmen.
+modul: komitmen
+menu_sakti: "Komitmen > RUH > Kontrak"
+peran: [satker]
+jenis: juknis
+kata_kunci: [terminate termin, terminasi termin, ubah nilai termin, realisasi sebagian, pemulihan fa kontrak]
+status: review
+perlu_review: true
+sumber:
+  - judul: "Juknis_SAKTI_Terminate_termin_Kontrak_SAKTI_WEB"
+    url: "https://drive.google.com/file/d/16Yz5HwJcCMgolQ5rhGH3eHZ6smM3uDSq/view"
+    jenis: pdf
+    diambil: 2026-11-21
+    id_manifest: B-kom-032
+sidebar:
+  order: 7
+---
+
+import { Steps, Aside } from '@astrojs/starlight/components';
+import MenuSakti from '~/components/MenuSakti.astro';
+import SumberAsli from '~/components/SumberAsli.astro';
+
+Terminate termin dilakukan apabila terdapat perubahan data kontrak yang
+mana suatu termin sudah terealisasi sebagian dengan nilai realisasi lebih
+kecil dari termin yang didaftarkan, sehingga nilai termin diubah menjadi
+sebesar nilai realisasi. Mekanisme ini juga dipakai apabila sisa termin
+yang di-terminate akan digunakan pada termin berikutnya.
+
+<MenuSakti />
+
+## Prasyarat
+
+- Role yang dibutuhkan: **Operator Komitmen**.
+- Data kontrak awal sudah direkam dan didaftarkan dalam SPAN serta sudah
+  mendapatkan CAN (Commitment Application Number) atau NRK (Nomor
+  Registrasi Kontrak).
+- Supplier yang digunakan adalah supplier tipe 2 dan tipe 6 yang sudah
+  mendapatkan NRS (Nomor Register Supplier).
+- Termin yang akan di-terminate sudah terdapat realisasi sebagian
+  (minimal sudah dibuatkan BAST) dengan nilai lebih kecil dari nilai
+  termin yang didaftarkan.
+
+## Langkah
+
+### Melakukan terminate termin
+
+<Steps>
+
+1. Login dengan user operator komitmen, lalu buka menu **Komitmen >
+   RUH > Kontrak**. Pilih data kontrak, lalu klik tombol **Ubah**.
+
+2. Pada tab **Kontrak (Contract Header)**, isi tanda cek pada checkbox
+   **Addendum**; kolom tanggal dan nomor addendum akan aktif — lakukan
+   pengisian kolom tersebut. Untuk terminate termin, pada header
+   kontrak user cukup mengisi checkbox serta tanggal dan nomor
+   addendum.
+
+3. Pindahkan kursor ke tab **Rencana Pembayaran (Contract Line)**,
+   lalu pilih Contract Line tempat termin yang akan di-terminate
+   terdaftar.
+
+4. Arahkan kursor ke tab **Jadwal Pembayaran (Payment Schedule)**,
+   lalu pilih termin yang akan dilakukan terminate.
+
+5. Pilih tab **Distribusi COA**, pilih distribusi COA yang akan
+   di-terminate, tekan tombol **Terminate**, lalu lakukan
+   penyimpanan.
+
+</Steps>
+
+Saat terminate termin disimpan, nilai COA berubah menjadi sebesar nilai
+realisasi dan nilai sisa kembali ke pagu Fund Available serta tidak lagi
+terikat dengan data kontrak. Secara otomatis nilai pada tab Jadwal
+Pembayaran dan Rencana Pembayaran juga berkurang sebesar nilai yang
+kembali ke pagu Fund Available.
+
+### Menyesuaikan data kontrak setelah terminate
+
+- Apabila terminate termin hanya untuk penyesuaian atas berkurangnya
+  nilai kontrak dan nilai sisa tidak digunakan lagi untuk
+  pembayaran/termin berikutnya, cukup sesuaikan nilai kontrak pada tab
+  Header Kontrak — berkurang sebesar nilai sisa termin yang
+  di-terminate. Data kontrak yang sudah disesuaikan dapat disimpan,
+  lalu daftarkan perubahannya ke KPPN mitra kerja.
+- Apabila nilai sisa akan digunakan untuk pembayaran/termin berikutnya,
+  nilai perlu disesuaikan kembali ke nilai awal, mulai dari nilai
+  kontrak dan nilai contract line. Untuk perubahan pada jadwal
+  pembayaran, gunakan mekanisme addendum kontrak tahunan/release multi
+  year.
+
+### Menggunakan nilai sisa pada termin berikutnya
+
+<Steps>
+
+1. Pada tab **Rencana Pembayaran (Contract Line)**, tekan tombol
+   **Ubah**, kembalikan nilai rencana pembayaran menjadi sebesar nilai
+   semula sebelum terminate termin, lalu lakukan penyimpanan.
+
+2. Masuk ke tab **Jadwal Pembayaran (Payment Schedule)** dan pilih
+   pembayaran/termin yang akan diubah atau ditambah nilainya.
+
+3. Pada tab **Distribusi COA**, lakukan penghapusan atas COA yang
+   sudah terdaftar — distribusi COA terhapus termasuk pendetilan 15/16
+   segmennya — lalu lakukan penyimpanan.
+
+4. Kembali ke tab jadwal pembayaran, lakukan perubahan data jadwal
+   pembayaran untuk memasukkan nilai nominal baru.
+
+5. Pada tab **Distribusi COA**, lakukan perekaman distribusi COA yang
+   membebani termin tersebut beserta perekaman pendetilan 15/16 segmen
+   COA, lalu lakukan penyimpanan.
+
+</Steps>
+
+## Ketentuan
+
+- Terminate termin hanya untuk termin yang telah terdapat realisasi
+  sebagian (nilai realisasi lebih kecil dari termin yang didaftarkan).
+- Distribusi COA tidak dapat diubah; distribusi COA dihapus apabila
+  terdapat perubahan data, dengan catatan belum terdapat realisasi
+  seluruhnya. Untuk distribusi COA yang sudah terdapat realisasi
+  sebagian, penyesuaian dilakukan dengan mekanisme terminate termin.
+- Distribusi COA yang terhapus karena penghapusan contract line atau
+  jadwal pembayaran harus direkam kembali.
+- Termin kontrak yang telah dibayarkan penuh tidak dapat dihapus.
+- Nomor kontrak tidak dapat diubah.
+- Perubahan yang perlu didaftarkan adalah perubahan informasi data
+  kontrak yang tercantum pada aplikasi; perubahan dokumen kontrak yang
+  tidak tercantum pada data aplikasi (misalnya perubahan PPK) tidak
+  perlu didaftarkan addendum.
+
+<Aside type="caution" title="Perlu verifikasi">
+Juknis 2022 menulis jalur **Komitmen > RUH > Pencatatan Kontrak**; menu
+aplikasi saat ini memakai **Komitmen > RUH > Kontrak**.
+</Aside>
+
+## Terkait
+
+- [Merekam Addendum Kontrak Tahunan (IDR)](/komitmen/ruh/pencatatan-kontrak/addendum-kontrak-tahunan/)
+- [Merekam Addendum Kontrak Release](/komitmen/ruh/pencatatan-kontrak/addendum-kontrak-release/)
+
+- [Merekam Supplier Tipe 1, 2, dan 7](/komitmen/ruh/pencatatan-suplier/suplier-tipe-1-2-7/)
+
+## Sumber
+
+<SumberAsli />

@@ -1,0 +1,191 @@
+---
+title: Merekam Addendum Kontrak Tahunan (IDR)
+description: Langkah mengubah data kontrak tahunan yang sudah terdaftar di SPAN pada modul Komitmen.
+modul: komitmen
+menu_sakti: "Komitmen > RUH > Kontrak"
+peran: [satker]
+jenis: juknis
+kata_kunci: [addendum kontrak, ubah kontrak, perubahan kontrak, addendum kontrak tahunan, bcaa]
+status: review
+perlu_review: true
+sumber:
+  - judul: "Juknis_SAKTI_Perekaman_Addendum_Kontrak_Tahunan_IDR"
+    url: "https://drive.google.com/file/d/1gTqENd5mr3LPAu04XYowi2iy0Lhphe6W/view"
+    jenis: pdf
+    diambil: 2026-11-21
+    id_manifest: B-kom-023
+sidebar:
+  order: 4
+---
+
+import { Steps, Aside } from '@astrojs/starlight/components';
+import MenuSakti from '~/components/MenuSakti.astro';
+import SumberAsli from '~/components/SumberAsli.astro';
+
+Apabila kontrak yang telah terdaftar pada aplikasi SPAN mengalami
+perubahan, satker dapat melakukan perubahan (addendum) pada data kontrak
+yang didaftarkan ke KPPN disertai dengan bukti yang kuat. Addendum
+dilakukan oleh operator komitmen atas data kontrak yang sudah
+mendapatkan CAN/NRK.
+
+<MenuSakti />
+
+## Prasyarat
+
+- Role yang dibutuhkan: **Operator Komitmen** untuk addendum data
+  kontrak dan **PPK** untuk pembentukan ADK.
+- Supplier yang digunakan sudah mendapatkan NRS (Nomor Register
+  Supplier).
+- Data kontrak awal sudah direkam dan didaftarkan dalam SPAN serta
+  sudah mendapatkan CAN (Commitment Application Number) atau NRK
+  (Nomor Registrasi Kontrak).
+
+## Alur proses
+
+1. Operator Komitmen — merekam data kontrak sampai mendapatkan Nomor
+   CAN (mengacu pada petunjuk perekaman data kontrak).
+2. Operator Komitmen — merekam addendum data kontrak.
+3. PPK/KPPN — memproses addendum sesuai jenis perubahan.
+
+## Langkah
+
+### Merekam addendum kontrak (Operator Komitmen)
+
+<Steps>
+
+1. Login dengan user operator komitmen, lalu buka menu **Komitmen >
+   RUH > Kontrak**. Pilih data kontrak yang akan di-addendum, lalu
+   klik tombol **Ubah**. Perubahan yang dapat dilakukan antara lain
+   jangka waktu kontrak, nilai kontrak, dan komposisi nilai termin
+   pembayaran.
+
+2. Pada tab **Kontrak (Contract Header)**, lengkapi isian wajib
+   berikut:
+
+   - tanda cek pada checkbox **Addendum** harus terisi;
+   - informasi **Nomor Addendum** dan **Tgl. Addendum** harus terisi;
+   - klik tombol **Cari Supplier** apabila terdapat perubahan supplier
+     (perubahan supplier dapat dilakukan jika supplier yang dipilih
+     telah direkam pada Supplier Address dan Supplier Header yang sama
+     dengan supplier sebelumnya);
+   - ubah **Nilai Kontrak** apabila terdapat perubahan nilai kontrak;
+   - ubah **Jangka Waktu Pelaksanaan** dan **Jangka Waktu
+     Pemeliharaan** apabila terdapat perubahan waktu pelaksanaan dan
+     pemeliharaan kontrak.
+
+   Klik tombol **Simpan**, lalu lanjutkan ke tab **Rencana Pembayaran
+   (Contract Line)**.
+
+3. Pada tab **Rencana Pembayaran (Contract Line)**, pilih baris
+   Contract Line yang akan diubah, lalu klik tombol **Ubah**:
+
+   - ubah Nilai Line apabila total seluruh nilai baris Contract Line
+     belum sama dengan nilai kontrak;
+   - tambah baris Contract Line baru apabila terdapat
+     perubahan/penambahan kombinasi 12 segmen COA yang digunakan.
+
+   Klik tombol **Simpan**, lalu lanjutkan ke tab **Jadwal Pembayaran
+   (Payment Schedule)**. Apabila tidak ada perubahan, dapat langsung
+   lanjut ke tab Jadwal Pembayaran.
+
+4. Pada tab **Jadwal Pembayaran (Payment Schedule)**, pilih baris
+   termin yang akan diubah, lalu klik tombol **Ubah**. Nilai total
+   seluruh termin harus sama dengan nilai baris Contract Line yang
+   menjadi induknya. Pada tab ini juga dapat dilakukan:
+
+   - perekaman termin baru apabila ada penambahan jumlah termin (klik
+     tombol **Rekam**);
+   - penghapusan termin apabila terdapat pengurangan termin (klik
+     tombol **Hapus**);
+   - perubahan tanggal jadwal pembayaran (dapat dilakukan dengan
+     addendum data kontrak, atau tanpa addendum — cukup ubah-simpan
+     pada tab Jadwal Pembayaran).
+
+   Klik tombol **Simpan**, lalu lanjutkan ke tab **Distribusi COA
+   (Distribution)**.
+
+5. Pada tab **Distribusi COA (Distribution)**, pilih distribusi COA
+   yang akan diubah, lalu klik tombol **Hapus** untuk menyesuaikan
+   nilai sesuai terminnya. Klik tombol **Rekam** untuk merekam
+   distribusi COA yang baru, lalu klik tombol **Simpan**.
+
+</Steps>
+
+### Addendum yang tidak mengubah struktur data kontrak
+
+Addendum jenis ini tidak mengubah jumlah Contract Line ataupun jumlah
+termin kontrak. KPPN mitra kerja memproses addendum kontrak
+berdasarkan ADK BCAA yang dibentuk dari aplikasi SAKTI.
+
+<Steps>
+
+1. Login dengan user PPK.
+
+2. Buka menu **Komitmen > ADK > ADK Kontrak Interkoneksi OTP**, pilih
+   data kontrak dengan status data AA (addendum), lalu tekan tombol
+   **Process**.
+
+</Steps>
+
+### Addendum yang mengubah struktur data kontrak
+
+Addendum jenis ini mengubah jumlah Contract Line (misalnya dari satu
+menjadi dua Contract Line atau sebaliknya) ataupun jumlah termin
+kontrak. KPPN mitra kerja memproses addendum berdasarkan Surat
+Permintaan Perubahan Data Kontrak yang diajukan langsung pada SPAN
+menggunakan user SPAN pada KPPN.
+
+Pengguna SAKTI perlu melakukan update Nomor CAN secara mandiri pada
+aplikasi SAKTI sesuai Nomor CAN pada SPAN, menggunakan user operator
+komitmen, pada menu **Komitmen > Upload/Rekam > Upload/Rekam ADK
+CAN** (jalur menurut juknis):
+
+<Steps>
+
+1. Pilih data kontrak yang akan di-update Nomor CAN-nya.
+
+2. Klik tombol **Ubah**, lakukan perubahan Nomor CAN sesuai Nomor CAN
+   pada SPAN.
+
+3. Klik tombol **Simpan** untuk menyimpan.
+
+</Steps>
+
+## Hasil yang diharapkan
+
+- Resume kontrak dapat dicetak.
+- Data kontrak hasil addendum dapat digunakan untuk pembuatan SPP
+  Kontraktual.
+
+## Ketentuan
+
+- Perubahan kontrak sebelum didaftarkan dalam aplikasi SPAN dianggap
+  sebagai kontrak baru.
+- Perubahan pada 15/16 segmen COA tidak perlu melakukan addendum
+  kontrak.
+- Nomor kontrak tidak dapat diubah.
+- Termin kontrak yang sudah dibayarkan tidak dapat dihapus.
+- Pada kondisi khusus, addendum yang mengubah struktur data kontrak
+  tetap direkam di aplikasi SAKTI, namun pada aplikasi SPAN tidak bisa
+  langsung diubah dengan ADK dan harus menggunakan user khusus SPAN di
+  KPPN (biasanya user Kepala KPPN).
+
+<Aside type="caution" title="Perlu verifikasi">
+Juknis 2022 menulis jalur **Komitmen > RUH > Pencatatan Kontrak**; menu
+aplikasi saat ini memakai **Komitmen > RUH > Kontrak**. Juknis juga
+menulis update Nomor CAN pada **Komitmen > Upload/Rekam > Upload/Rekam
+ADK CAN**; menu aplikasi saat ini tidak memuat **Upload / Rekam** —
+menu yang paling mirip adalah **Komitmen > Monitoring > Nomor Register
+Kontrak (CAN)**, perlu dipastikan.
+</Aside>
+
+## Terkait
+
+- [Merekam Kontrak Tahunan (IDR)](/komitmen/ruh/pencatatan-kontrak/kontrak-tahunan/)
+- [Melakukan Terminate Termin Kontrak](/komitmen/ruh/pencatatan-kontrak/terminate-termin-kontrak/)
+
+- [Merekam Supplier Tipe 1, 2, dan 7](/komitmen/ruh/pencatatan-suplier/suplier-tipe-1-2-7/)
+
+## Sumber
+
+<SumberAsli />

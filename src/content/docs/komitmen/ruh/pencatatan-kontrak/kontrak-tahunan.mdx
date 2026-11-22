@@ -1,0 +1,186 @@
+---
+title: Merekam Kontrak Tahunan (IDR)
+description: Langkah merekam data kontrak tahun tunggal dalam mata uang Rupiah pada modul Komitmen hingga siap didaftarkan ke KPPN.
+modul: komitmen
+menu_sakti: "Komitmen > RUH > Kontrak"
+peran: [satker]
+jenis: juknis
+kata_kunci: [rekam kontrak, pencatatan kontrak, kontrak tahunan, kontrak tahun tunggal, input kontrak, contract header, contract line]
+status: review
+perlu_review: true
+sumber:
+  - judul: "Juknis_SAKTI_Rekam_Kontrak_Tahunan_IDR_SAKTI_WEB"
+    url: "https://drive.google.com/file/d/1SDUOiZGtrfHC1FUWjBZDw4fChQId-dNT/view"
+    jenis: pdf
+    diambil: 2026-11-21
+    id_manifest: B-kom-031
+sidebar:
+  order: 1
+---
+
+import { Steps, Aside } from '@astrojs/starlight/components';
+import MenuSakti from '~/components/MenuSakti.astro';
+import SumberAsli from '~/components/SumberAsli.astro';
+
+Kontrak tahun tunggal adalah kontrak yang pelaksanaan pekerjaannya
+mengikat dana anggaran selama masa satu tahun anggaran. Data kontrak
+direkam oleh operator komitmen sebelum didaftarkan ke KPPN dan digunakan
+untuk transaksi lanjutan seperti BAST dan SPP kontraktual.
+
+<MenuSakti />
+
+## Prasyarat
+
+- Role yang dibutuhkan: **Operator Komitmen** untuk perekaman kontrak dan
+  **PPK** untuk pembentukan ADK.
+- Supplier yang digunakan sudah mendapatkan NRS (Nomor Register
+  Supplier).
+- Data Pagu DIPA terkait kontrak sudah tersedia.
+
+## Alur proses
+
+1. Operator Komitmen — merekam data kontrak.
+2. PPK — membentuk ADK BCKA.
+3. KPPN — memproses data kontrak pada SPAN.
+
+## Langkah
+
+### Merekam kontrak (Operator Komitmen)
+
+<Steps>
+
+1. Login dengan user operator komitmen, lalu buka menu **Komitmen > RUH
+   > Kontrak**. Untuk merekam data kontrak baru, klik tombol **Rekam**.
+
+2. Pada tab **Kontrak (Contract Header)**, lengkapi isian berikut:
+
+   - Tipe kontrak: pilih **Annual Year**;
+   - Tipe komitmen: pilih **Kontrak**;
+   - Supplier (yang dapat digunakan adalah supplier yang telah
+     mendapatkan NRS);
+   - Nomor Kontrak;
+   - Kode KPPN sebagai kantor bayar;
+   - Mata uang (kontrak dengan lebih dari satu mata uang direkam
+     sebagai data kontrak terpisah);
+   - Tipe kurs, apabila mata uang selain IDR;
+   - Uraian pekerjaan;
+   - Data pinjaman atau hibah luar negeri (apabila sumber dana dari
+     loan/hibah);
+   - Jangka waktu pelaksanaan (tanggal mulai dan berakhirnya kontrak
+     dalam satu tahun anggaran yang sama);
+   - Jangka waktu pemeliharaan;
+   - Uraian ketentuan dan sanksi (sebaiknya hindari simbol kode ASCII
+     seperti %, ‰, dan lain-lain, serta copy-paste);
+   - Koordinat lokasi pekerjaan kontrak;
+   - Cara pembayaran: **Sekaligus** atau **Bertahap (Termin)**;
+   - Informasi uang muka dan retensi (cara pembayaran uang muka dan
+     cara pengembalian retensi masih belum digunakan).
+
+   Klik tombol **Simpan** untuk menyimpan.
+
+3. Pada tab **Rencana Pembayaran (Contract Line)**, klik tombol
+   **Rekam** untuk merekam baris Contract Line baru, lalu lengkapi:
+
+   - No. Line (terisi otomatis sesuai jumlah line yang akan direkam);
+   - Tipe Line: pilih **Belanja/Biaya**;
+   - Deskripsi Line;
+   - Kategori Line (Cara Tarik);
+   - Nilai Line;
+   - kolom Uang Muka dan Retensi sementara belum digunakan.
+
+   Klik tombol **Simpan**.
+
+   Satu baris Contract Line hanya dapat membebani satu kombinasi 12
+   segmen COA; apabila kontrak memakai lebih dari satu kombinasi 12
+   segmen COA, rekam lebih dari satu baris (satu Contract Line tetap
+   dapat membebani kombinasi 15/16 segmen COA yang berbeda selagi masih
+   dalam 12 segmen COA yang sama). Total nilai seluruh Contract Line
+   harus sama dengan nilai kontrak.
+
+4. Pada tab **Jadwal Pembayaran (Payment Schedule)**, klik tombol
+   **Rekam** untuk merekam termin baru, lalu lengkapi:
+
+   - Nilai Line (terisi otomatis sesuai nilai Contract Line induknya);
+   - Nomor Jadwal Pembayaran (nomor termin yang direkam);
+   - Deskripsi Pembayaran (misalnya pembayaran uang muka, termin 1,
+     dan seterusnya);
+   - Uang Muka (sementara tidak digunakan);
+   - Tanggal Pembayaran (pembayaran pertama harus sama atau lebih dari
+     tanggal kontrak; pembayaran terakhir dapat melebihi tanggal
+     berakhirnya kontrak namun masih dalam tahun anggaran yang sama);
+   - Nilai Pembayaran (nominal termin).
+
+   Klik tombol **Simpan**.
+
+   Total nilai seluruh termin harus sama dengan nilai Contract Line
+   yang menjadi induknya. Termin dengan kombinasi 12 segmen COA berbeda
+   direkam pada Contract Line berbeda (perbedaan pada 15/16 segmen COA
+   tetap dalam Contract Line yang sama). Perekaman pembayaran uang muka
+   dan/atau retensi masih memakai metode netto dan direkam sebagai
+   termin.
+
+5. Pada tab **Distribusi COA (Distribution)**, klik tombol **Rekam**,
+   lalu lengkapi isian struktur 12 segmen COA dengan memilih kombinasi
+   Satker, Kementerian, Eselon I, Program, Aktivitas, KRO, Akun, KPPN,
+   Sumber Dana, Cara Penarikan, dan Nomor Register. Satu termin hanya
+   berisi satu distribusi COA dan nilainya harus sama dengan nilai
+   termin.
+
+6. Klik tombol **Pendetilan COA**, lalu klik tombol **Tambah** untuk
+   merekam pendetilan 15/16 segmen COA. Klik ikon **Pencarian** untuk
+   memilih detil RO, Komponen, Sub Komponen (untuk 15 segmen) dan Item
+   (untuk 16 segmen), lalu klik **Ok**. Input nilai sejumlah nilai pada
+   termin, lalu klik **Simpan**.
+
+7. Untuk mencetak karwas kontrak, juknis menunjuk menu **Komitmen >
+   Cetak > Resume Kontrak**.
+
+</Steps>
+
+### Membentuk ADK BCKA (PPK)
+
+<Steps>
+
+1. Login dengan user PPK.
+
+2. Buka menu **Komitmen > ADK > ADK Kontrak Interkoneksi OTP**, pilih
+   data kontrak yang akan dibentuk ADK-nya, lalu tekan tombol
+   **Process**.
+
+</Steps>
+
+### Proses KPPN
+
+Atas ADK yang telah dibentuk, KPPN memproses data kontrak pada SPAN
+mengacu pada SOP yang berlaku.
+
+## Hasil yang diharapkan
+
+- Resume kontrak dapat dicetak.
+- Data kontrak yang sudah mendapatkan Nomor CAN dapat digunakan untuk
+  pembuatan SPP Kontraktual.
+
+## Ketentuan
+
+- Data kontrak yang dapat digunakan pada perekaman transaksi lanjutan
+  adalah data kontrak yang telah memiliki Nomor CAN.
+
+<Aside type="caution" title="Perlu verifikasi">
+Juknis 2022 menulis jalur **Komitmen > RUH > Pencatatan Kontrak** dan
+pencetakan karwas kontrak pada **Komitmen > Cetak > Cetak Resume
+Kontrak**; menu aplikasi saat ini memakai **Komitmen > RUH > Kontrak**
+serta memisahkan **Komitmen > Cetak > Resume Kontrak** dan **Komitmen >
+Cetak > Karwas Kontrak** — pencetakan karwas perlu dipastikan.
+</Aside>
+
+## Terkait
+
+- [Merekam Addendum Kontrak Tahunan (IDR)](/komitmen/ruh/pencatatan-kontrak/addendum-kontrak-tahunan/)
+- [Melakukan Terminate Termin Kontrak](/komitmen/ruh/pencatatan-kontrak/terminate-termin-kontrak/)
+- [Merekam BAST Kontraktual](/komitmen/ruh/pencatatan-bast/bast-kontraktual/)
+
+- [Merekam Supplier Tipe 1, 2, dan 7](/komitmen/ruh/pencatatan-suplier/suplier-tipe-1-2-7/)
+
+## Sumber
+
+<SumberAsli />

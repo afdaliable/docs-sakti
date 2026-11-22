@@ -1,0 +1,171 @@
+---
+title: Merekam Kontrak Multi Year
+description: Langkah merekam data kontrak tahun jamak (multi year) pada modul Komitmen hingga mendapatkan Nomor CAN.
+modul: komitmen
+menu_sakti: "Komitmen > RUH > Kontrak"
+peran: [satker]
+jenis: juknis
+kata_kunci: [kontrak multi year, kontrak tahun jamak, rekam kontrak, can multi year, bckm, nomor register kontrak]
+status: review
+perlu_review: true
+sumber:
+  - judul: "Juknis_SAKTI_Rekam_Kontrak_Multi Year_SAKTI_WEB"
+    url: "https://drive.google.com/file/d/1OxyPKhdDXl6PrpnJzWV5m_RlhzUzpK8p/view"
+    jenis: pdf
+    diambil: 2026-11-21
+    id_manifest: B-kom-029
+sidebar:
+  order: 2
+---
+
+import { Steps, Aside } from '@astrojs/starlight/components';
+import MenuSakti from '~/components/MenuSakti.astro';
+import SumberAsli from '~/components/SumberAsli.astro';
+
+Kontrak tahun jamak (multi year) adalah kontrak yang pelaksanaan
+pekerjaannya untuk masa lebih dari satu tahun anggaran atas beban
+anggaran. Perekaman kontrak multi year hanya sampai pada header kontrak
+dan menjadi induk bagi kontrak release tahunan.
+
+<MenuSakti />
+
+## Prasyarat
+
+- Role yang dibutuhkan: **Operator Komitmen** untuk perekaman kontrak
+  dan **PPK** untuk pembentukan ADK.
+- Supplier yang digunakan adalah supplier tipe 2 dan tipe 6 yang sudah
+  mendapatkan NRS (Nomor Register Supplier).
+
+## Alur proses
+
+1. Operator Komitmen — merekam kontrak multi year.
+2. PPK — membentuk ADK kontrak multi year.
+3. KPPN — memproses data kontrak pada SPAN.
+
+## Langkah
+
+### Merekam kontrak (Operator Komitmen)
+
+<Steps>
+
+1. Login dengan user operator komitmen, lalu buka menu **Komitmen >
+   RUH > Kontrak**. Untuk merekam data kontrak baru, klik tombol
+   **Rekam**.
+
+2. Pada tab **Kontrak (Contract Header)**, lengkapi isian berikut:
+
+   - Tipe kontrak: pilih **Multi Year**;
+   - Tipe komitmen: pilih **Kontrak**;
+   - Supplier (yang dapat digunakan adalah supplier tipe 2 dan tipe 6
+     yang telah mendapatkan NRS);
+   - Kode KPPN sebagai kantor bayar (berkaitan juga dengan kode KPPN
+     pada supplier yang dipilih);
+   - Nomor Kontrak (free text);
+   - Mata uang (kontrak dengan lebih dari satu mata uang direkam
+     sebagai data kontrak terpisah);
+   - Nilai Kontrak (nilai kontrak total multi year untuk beberapa
+     tahun; tidak terikat dengan ketersediaan FA dari DIPA tahun
+     anggaran berjalan);
+   - Uraian pekerjaan (free text);
+   - Jangka Waktu Pelaksanaan (tanggal mulai dan selesai kontrak harus
+     lebih dari satu tahun anggaran);
+   - Cara pembayaran (bertahap atau sekaligus);
+   - Koordinat (lokasi pelaksanaan kontrak).
+
+3. Klik tombol **Simpan** untuk menyimpan.
+
+   Informasi tambahan:
+
+   - Data pinjaman atau hibah luar negeri (apabila sumber dana dari
+     loan/hibah luar negeri) bersifat opsional;
+   - kolom Nilai Uang Muka, Cara Pengembalian UM, Bank/Asuransi
+     Penjamin UM, Cara Pemotongan Retensi, dan lain-lain yang masih
+     disable belum perlu diisi.
+
+4. Untuk mencetak resume kontrak, buka menu **Komitmen > Cetak >
+   Resume Kontrak**.
+
+</Steps>
+
+### Membentuk ADK kontrak multi year (PPK)
+
+<Steps>
+
+1. Login dengan user PPK, lalu buka menu **Komitmen > ADK > ADK
+   Kontrak Interkoneksi OTP**.
+
+2. Pilih jenis kontrak **Multi Years**, pilih Kontrak Multi Years (KM)
+   yang akan dibuatkan ADK, lalu tekan tombol **Proses**.
+
+3. Pilih request OTP via SMS atau email (OTP dikirim ke handphone
+   pejabat yang sudah didaftarkan), masukkan kode OTP yang didapat,
+   lalu lakukan proses.
+
+</Steps>
+
+Untuk kontrak multi year, file ADK yang dihasilkan adalah file BCKM
+(Budget Commitment Kontrak Multi Year). ADK terkirim otomatis ke Portal
+SPAN pada KPPN mitra kerja dan diunduh petugas KPPN untuk diproses di
+KPPN/SPAN.
+
+### Proses KPPN dan Nomor CAN
+
+Atas ADK yang telah dibentuk, KPPN memproses data kontrak pada SPAN
+mengacu pada SOP yang berlaku. Apabila pendaftaran data kontrak telah
+di-approve KPPN, data CAN/NRK pada aplikasi SAKTI ter-update; dalam
+kondisi normal nomor CAN ter-update otomatis dengan mengambil data dari
+OMSPAN secara scheduler.
+
+Apabila nomor CAN tidak ter-update otomatis, user dapat melakukan
+pencatatan CAN manual pada menu **Komitmen > Upload / Rekam > Upload
+Rekam ADK CAN** (jalur menurut juknis):
+
+<Steps>
+
+1. Isikan nomor CAN pada kolom CAN Multi Year untuk kontrak multi
+   year, sesuai nomor CAN yang didapat dari KPPN/SPAN. Penulisan nomor
+   CAN bersifat case sensitive dan harus sama persis dengan data SPAN.
+
+2. Tekan tombol **Simpan**, sehingga nomor CAN multi year terisi dan
+   tersimpan.
+
+</Steps>
+
+## Hasil yang diharapkan
+
+Setelah Nomor CAN multi year tercatat, data kontrak multi year dapat
+digunakan untuk transaksi selanjutnya, yaitu pembuatan kontrak release
+tahunan (komitmen tahunan kontrak tahun jamak).
+
+## Ketentuan
+
+- Perekaman data kontrak multi year hanya sampai pada header kontrak.
+- Data kontrak multi year belum membebani atau mengurangi pagu Fund
+  Available (FA) dari pagu DIPA yang tersedia, sehingga belum dapat
+  dijadikan dasar pembuatan transaksi tagihan seperti BAST maupun SPP
+  Kontraktual.
+- Data kontrak yang dapat digunakan pada perekaman transaksi lanjutan
+  adalah data kontrak yang telah memiliki Nomor CAN (Commitment
+  Application Number)/NRK (Nomor Register Kontrak).
+
+<Aside type="caution" title="Perlu verifikasi">
+Juknis 2022 menulis jalur **Komitmen > RUH > Pencatatan Kontrak** dan
+pencetakan resume kontrak pada **Komitmen > Cetak > Cetak Resume
+Kontrak**; menu aplikasi saat ini memakai **Komitmen > RUH > Kontrak**
+dan **Komitmen > Cetak > Resume Kontrak**. Juknis juga menulis
+pencatatan CAN manual pada **Komitmen > Upload / Rekam > Upload Rekam
+ADK CAN**; menu aplikasi saat ini tidak memuat **Upload / Rekam** —
+menu yang paling mirip adalah **Komitmen > Monitoring > Nomor Register
+Kontrak (CAN)**, perlu dipastikan.
+</Aside>
+
+## Terkait
+
+- [Merekam Kontrak Release](/komitmen/ruh/pencatatan-kontrak/kontrak-release/)
+- [Merekam Addendum Kontrak Multi Year](/komitmen/ruh/pencatatan-kontrak/addendum-kontrak-multi-year/)
+
+- [Merekam Supplier Tipe 1, 2, dan 7](/komitmen/ruh/pencatatan-suplier/suplier-tipe-1-2-7/)
+
+## Sumber
+
+<SumberAsli />

@@ -1,0 +1,234 @@
+---
+title: Merekam Addendum Kontrak Release
+description: Langkah mengubah data kontrak release yang sudah terdaftar di SPAN pada modul Komitmen.
+modul: komitmen
+menu_sakti: "Komitmen > RUH > Kontrak"
+peran: [satker]
+jenis: juknis
+kata_kunci: [addendum kontrak release, ubah kontrak release, perubahan kontrak, bcar, can release]
+status: review
+perlu_review: true
+sumber:
+  - judul: "Juknis_SAKTI_Rekam_Addendum Kontrak_Release_SAKTI_WEB"
+    url: "https://drive.google.com/file/d/1nCg5HmOqAlCtpuVysPez6jkl0NW66Tir/view"
+    jenis: pdf
+    diambil: 2026-11-21
+    id_manifest: B-kom-026
+sidebar:
+  order: 6
+---
+
+import { Steps, Aside } from '@astrojs/starlight/components';
+import MenuSakti from '~/components/MenuSakti.astro';
+import SumberAsli from '~/components/SumberAsli.astro';
+
+Addendum data kontrak release adalah perubahan atas data kontrak
+release (komitmen tahunan kontrak tahun jamak) yang telah terdaftar di
+SPAN dan sudah mendapatkan CAN (Commitment Application Number)/NRK
+(Nomor Register Kontrak).
+
+<MenuSakti />
+
+## Prasyarat
+
+- Role yang dibutuhkan: **Operator Komitmen** untuk addendum data
+  kontrak dan **PPK** untuk pembentukan ADK.
+- Supplier yang digunakan adalah supplier tipe 2 dan tipe 6 yang sudah
+  mendapatkan NRS (Nomor Register Supplier).
+- Data kontrak awal sudah direkam dan didaftarkan dalam SPAN serta
+  sudah mendapatkan CAN/NRK.
+
+## Alur proses
+
+1. Operator Komitmen — merekam addendum kontrak release.
+2. PPK — membentuk ADK addendum kontrak release.
+3. KPPN — memproses data kontrak pada SPAN.
+
+## Langkah
+
+### Merekam addendum kontrak (Operator Komitmen)
+
+<Steps>
+
+1. Login dengan user operator komitmen, lalu buka menu **Komitmen >
+   RUH > Kontrak**. Pilih data kontrak yang akan diubah, lalu klik
+   tombol **Ubah**.
+
+2. Pada tab **Kontrak (Contract Header)**, lakukan hal berikut:
+
+   - tanda cek pada checkbox **Addendum** harus terisi;
+   - kolom tanggal dan nomor addendum akan aktif — lakukan pengisian
+     kolom tersebut;
+   - lakukan perubahan data header kontrak apabila addendum mengubah
+     informasi pada header kontrak;
+   - lakukan penyimpanan atas perubahan data kontrak release.
+
+   Informasi tambahan:
+
+   - nilai kontrak release harus lebih kecil atau sama dengan sisa
+     kontrak multi year;
+   - nilai kontrak release harus lebih besar atau sama dengan total
+     nilai Contract Line-nya;
+   - untuk addendum dengan nilai kontrak bertambah, perubahan dimulai
+     dari header kontrak hingga distribusi COA;
+   - untuk addendum dengan nilai kontrak berkurang, perubahan dimulai
+     dari distribusi COA hingga perubahan header kontrak.
+
+3. Pada **Rencana Pembayaran (Contract Line)**, lakukan perubahan data
+   apabila addendum mengubah informasi pada contract line, lalu
+   simpan.
+
+   Informasi tambahan:
+
+   - satu baris Contract Line hanya dapat membebani satu kombinasi 12
+     segmen COA; apabila kontrak memakai lebih dari satu kombinasi 12
+     segmen COA, baris Contract Line yang direkam lebih dari satu
+     (satu Contract Line dapat membebani kombinasi 15/16 segmen COA
+     yang berbeda selagi masih dalam 12 segmen COA yang sama);
+   - total nilai seluruh Contract Line harus lebih kecil atau sama
+     dengan nilai kontrak;
+   - nilai Contract Line harus lebih besar atau sama dengan total
+     jadwal pembayaran (termin) yang membebani;
+   - Contract Line beserta turunannya (jadwal pembayaran/termin dan
+     distribusi COA yang membebani) dapat dihapus apabila distribusi
+     COA-nya belum dibuatkan BAST atau belum terdapat realisasi.
+
+4. Pada **Jadwal Pembayaran (Payment Schedule)**, pilih jadwal
+   pembayaran yang akan diubah atau dihapus:
+
+   - pilih **Ubah** untuk mengubah data jadwal pembayaran/termin,
+     dengan catatan distribusi COA yang membebani sudah dihapus
+     terlebih dahulu;
+   - pilih **Hapus** untuk menghapus jadwal pembayaran/termin beserta
+     turunannya (distribusi COA yang membebani) apabila belum terdapat
+     realisasi atau belum dibuatkan BAST atas COA dimaksud;
+   - lakukan penyimpanan apabila sudah selesai melakukan perubahan.
+
+   Dalam satu contract line dapat terdapat lebih dari satu jadwal
+   pembayaran/termin; total nilai seluruh termin harus lebih kecil atau
+   sama dengan nilai contract line yang menjadi induknya. Satu jadwal
+   pembayaran/termin hanya dibebani oleh satu distribusi COA.
+
+5. Pada **Distribusi COA (Distribution)**: distribusi COA tidak dapat
+   diubah, melainkan dihapus apabila terdapat perubahan data, dengan
+   catatan belum terdapat realisasi seluruhnya. Untuk distribusi COA
+   yang sudah terdapat realisasi sebagian, penyesuaian dilakukan
+   dengan mekanisme terminate termin (dijelaskan pada juknis
+   tersendiri). Distribusi COA yang terhapus karena penghapusan
+   contract line atau jadwal pembayaran harus direkam kembali:
+
+   - klik tombol **Rekam**, lalu lengkapi isian struktur 12 segmen COA
+     dengan memilih kombinasi Satker, Kementerian, Eselon I, Program,
+     Aktivitas, KRO, Akun, KPPN, Sumber Dana, Cara Penarikan, dan
+     Nomor Register;
+   - klik tombol **Pendetilan COA**, lalu klik tombol **Tambah** untuk
+     merekam pendetilan 15/16 segmen COA. Klik ikon **Pencarian**
+     untuk memilih detil RO, Komponen, Sub Komponen (untuk 15 segmen)
+     dan Item (untuk 16 segmen), lalu klik **Ok**. Input nilai
+     sejumlah nilai pada termin, lalu klik **Simpan**.
+
+6. Untuk mencetak Karwas (Kartu Pengawasan) Kontrak, buka menu
+   **Komitmen > Cetak > Karwas Kontrak**.
+
+</Steps>
+
+### Membentuk ADK addendum kontrak release (PPK)
+
+<Steps>
+
+1. Login dengan user PPK, lalu buka menu **Komitmen > ADK > ADK
+   Kontrak Interkoneksi OTP**.
+
+2. Pilih jenis kontrak **Kontrak Annual / Release**, pilih Addendum
+   Release (AR) yang akan dibuatkan ADK, lalu tekan tombol
+   **Proses**.
+
+3. Pilih request OTP via SMS atau email (OTP dikirim ke handphone
+   pejabat yang sudah didaftarkan), masukkan kode OTP yang didapat,
+   lalu lakukan proses.
+
+</Steps>
+
+Untuk addendum kontrak release, file ADK yang dihasilkan adalah file
+BCAR (Budget Commitment Addendum Release). ADK terkirim otomatis ke
+Portal SPAN pada KPPN mitra kerja dan diunduh petugas KPPN untuk
+diproses di KPPN/SPAN.
+
+### Proses KPPN dan Nomor CAN
+
+Atas ADK yang telah dibentuk, KPPN memproses data kontrak pada SPAN
+mengacu pada SOP yang berlaku. Apabila pendaftaran data kontrak telah
+di-approve KPPN, data CAN/NRK pada aplikasi SAKTI ter-update; dalam
+kondisi normal nomor CAN ter-update otomatis dengan mengambil data dari
+OMSPAN secara scheduler.
+
+Apabila nomor CAN tidak ter-update otomatis, user dapat melakukan
+pencatatan CAN manual pada menu **Komitmen > Upload / Rekam > Upload
+Rekam ADK CAN** (jalur menurut juknis):
+
+<Steps>
+
+1. Lakukan perubahan nomor CAN pada kolom CAN Tahunan untuk kontrak
+   release, sesuai nomor CAN yang didapat dari KPPN/SPAN. Penulisan
+   nomor CAN bersifat case sensitive dan harus sama persis dengan data
+   SPAN.
+
+2. Tekan tombol **Simpan**, sehingga perubahan nomor CAN release
+   terisi dan tersimpan.
+
+</Steps>
+
+## Hasil yang diharapkan
+
+- Resume kontrak dan karwas kontrak dapat dicetak.
+- Setelah Nomor CAN release tercatat, data kontrak release dapat
+  digunakan untuk transaksi selanjutnya, yaitu pembuatan BAST dan
+  pembuatan SPP kontraktual.
+
+## Ketentuan
+
+- Perubahan kontrak sebelum didaftarkan dalam aplikasi SPAN dianggap
+  sebagai kontrak baru.
+- Perubahan pada 15/16 segmen COA tidak perlu melakukan addendum
+  kontrak.
+- Perubahan supplier dapat dilakukan jika supplier yang dipilih telah
+  direkam pada Supplier Address dan Supplier Header yang sama dengan
+  supplier sebelumnya.
+- Nomor kontrak tidak dapat diubah.
+- Termin kontrak yang sudah dibayarkan tidak dapat dihapus.
+- Perubahan yang perlu didaftarkan adalah perubahan informasi data
+  kontrak yang tercantum pada aplikasi; perubahan dokumen kontrak yang
+  tidak tercantum pada data aplikasi (misalnya perubahan PPK) tidak
+  perlu didaftarkan addendum.
+- Khusus kontrak release tahunan, apabila pada akhir tahun periode
+  tahunan masih terdapat sisa kontrak yang belum terealisasi, wajib
+  dilakukan penyesuaian nilai kontrak menjadi sebesar realisasi,
+  karena sisa nilai kontrak release akan digunakan pada release tahun
+  berikutnya dan nilai realisasi akan sama dengan nilai kontrak multi
+  year-nya.
+- Pada kondisi khusus, addendum yang mengubah struktur data kontrak
+  tetap direkam di aplikasi SAKTI, namun pada aplikasi SPAN tidak bisa
+  langsung diubah dengan ADK dan harus menggunakan user khusus SPAN di
+  KPPN (biasanya user Kepala KPPN).
+
+<Aside type="caution" title="Perlu verifikasi">
+Juknis 2022 menulis jalur **Komitmen > RUH > Pencatatan Kontrak** dan
+pencetakan karwas kontrak pada **Komitmen > Monitoring > Karwas
+Kontrak**; menu aplikasi saat ini memakai **Komitmen > RUH > Kontrak**
+dan **Komitmen > Cetak > Karwas Kontrak**. Juknis juga menulis
+pencatatan CAN manual pada **Komitmen > Upload / Rekam > Upload Rekam
+ADK CAN**; menu aplikasi saat ini tidak memuat **Upload / Rekam** —
+menu yang paling mirip adalah **Komitmen > Monitoring > Nomor Register
+Kontrak (CAN)**, perlu dipastikan.
+</Aside>
+
+## Terkait
+
+- [Merekam Kontrak Release](/komitmen/ruh/pencatatan-kontrak/kontrak-release/)
+- [Melakukan Terminate Termin Kontrak](/komitmen/ruh/pencatatan-kontrak/terminate-termin-kontrak/)
+
+- [Merekam Supplier Tipe 1, 2, dan 7](/komitmen/ruh/pencatatan-suplier/suplier-tipe-1-2-7/)
+
+## Sumber
+
+<SumberAsli />

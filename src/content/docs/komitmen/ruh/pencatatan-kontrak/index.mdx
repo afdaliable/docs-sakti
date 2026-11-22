@@ -1,0 +1,54 @@
+---
+title: Kontrak
+description: Panduan perekaman kontrak, addendum, dan terminasi termin pada modul Komitmen.
+modul: komitmen
+jenis: indeks
+status: terbit
+sidebar:
+  label: Ringkasan
+  order: 2
+---
+
+import { CardGrid, LinkCard } from '@astrojs/starlight/components';
+
+Sub-menu ini berisi panduan perekaman kontrak tahunan, kontrak multi
+year, kontrak release, addendum kontrak, serta terminate termin kontrak
+pada aplikasi SAKTI.
+
+<CardGrid>
+	<LinkCard
+		title="Merekam Kontrak Tahunan (IDR)"
+		description="Merekam data kontrak tahun tunggal dalam mata uang Rupiah."
+		href="/komitmen/ruh/pencatatan-kontrak/kontrak-tahunan/"
+	/>
+	<LinkCard
+		title="Merekam Kontrak Multi Year"
+		description="Merekam data kontrak tahun jamak lebih dari satu tahun anggaran."
+		href="/komitmen/ruh/pencatatan-kontrak/kontrak-multi-year/"
+	/>
+	<LinkCard
+		title="Merekam Kontrak Release"
+		description="Merekam komitmen tahunan bagian dari kontrak tahun jamak."
+		href="/komitmen/ruh/pencatatan-kontrak/kontrak-release/"
+	/>
+	<LinkCard
+		title="Merekam Addendum Kontrak Tahunan (IDR)"
+		description="Mengubah data kontrak tahunan yang sudah terdaftar di SPAN."
+		href="/komitmen/ruh/pencatatan-kontrak/addendum-kontrak-tahunan/"
+	/>
+	<LinkCard
+		title="Merekam Addendum Kontrak Multi Year"
+		description="Mengubah data kontrak tahun jamak yang sudah terdaftar di SPAN."
+		href="/komitmen/ruh/pencatatan-kontrak/addendum-kontrak-multi-year/"
+	/>
+	<LinkCard
+		title="Merekam Addendum Kontrak Release"
+		description="Mengubah data kontrak release yang sudah terdaftar di SPAN."
+		href="/komitmen/ruh/pencatatan-kontrak/addendum-kontrak-release/"
+	/>
+	<LinkCard
+		title="Melakukan Terminate Termin Kontrak"
+		description="Menyesuaikan nilai termin yang sudah terealisasi sebagian."
+		href="/komitmen/ruh/pencatatan-kontrak/terminate-termin-kontrak/"
+	/>
+</CardGrid>

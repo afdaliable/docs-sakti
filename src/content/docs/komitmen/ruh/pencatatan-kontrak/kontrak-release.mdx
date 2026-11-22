@@ -1,0 +1,206 @@
+---
+title: Merekam Kontrak Release
+description: Langkah merekam kontrak release (komitmen tahunan kontrak tahun jamak) pada modul Komitmen hingga mendapatkan Nomor CAN.
+modul: komitmen
+menu_sakti: "Komitmen > RUH > Kontrak"
+peran: [satker]
+jenis: juknis
+kata_kunci: [kontrak release, komitmen tahunan, rekam kontrak, kontrak tahun jamak, can release, bckr]
+status: review
+perlu_review: true
+sumber:
+  - judul: "Juknis_SAKTI_Rekam_Kontrak_Release_SAKTI_WEB"
+    url: "https://drive.google.com/file/d/1Ksn49XubAy5Y-lxXzrJbCsmMDD-1hLWs/view"
+    jenis: pdf
+    diambil: 2026-11-21
+    id_manifest: B-kom-030
+sidebar:
+  order: 3
+---
+
+import { Steps, Aside } from '@astrojs/starlight/components';
+import MenuSakti from '~/components/MenuSakti.astro';
+import SumberAsli from '~/components/SumberAsli.astro';
+
+Kontrak release (komitmen tahunan kontrak tahun jamak) adalah komitmen
+tahun tunggal yang merupakan bagian dari kontrak tahun jamak. Kontrak
+release membebani pagu DIPA tahun anggaran berjalan dan menjadi dasar
+pembuatan BAST dan SPP kontraktual.
+
+<MenuSakti />
+
+## Prasyarat
+
+- Role yang dibutuhkan: **Operator Komitmen** untuk perekaman kontrak
+  dan **PPK** untuk pembentukan ADK.
+- Kontrak multi year yang menjadi induk sudah direkam.
+- Supplier yang digunakan adalah supplier tipe 2 dan tipe 6 yang sudah
+  mendapatkan NRS (Nomor Register Supplier).
+- Data pagu DIPA terkait kontrak sudah tersedia.
+
+## Alur proses
+
+1. Operator Komitmen — merekam kontrak release.
+2. PPK — membentuk ADK kontrak release.
+3. KPPN — memproses data kontrak pada SPAN.
+
+## Langkah
+
+### Merekam kontrak (Operator Komitmen)
+
+<Steps>
+
+1. Login dengan user operator komitmen, lalu buka menu **Komitmen >
+   RUH > Kontrak**. Untuk merekam data kontrak baru, klik tombol
+   **Rekam**.
+
+2. Pada tab **Kontrak (Contract Header)**, lengkapi isian berikut:
+
+   - Tipe kontrak: pilih **Annual Year**;
+   - Tipe komitmen: pilih **Release Multi Year**;
+   - isi cek list **Referensi Kontrak Multi Year**, lalu pilih
+     kontrak/CAN multi year yang menjadi induk kontrak release;
+   - Nomor Kontrak (terisi otomatis mengambil data kontrak multi
+     year);
+   - Cari Supplier (terisi otomatis mengambil data kontrak multi
+     year);
+   - KPPN (terisi otomatis mengambil data kontrak multi year);
+   - Nilai Kontrak (nilai kontrak tahunan yang membebani ketersediaan
+     FA dari DIPA tahun anggaran berjalan; total nilai kontrak release
+     harus lebih kecil atau sama dengan kontrak multi year-nya);
+   - Uraian pekerjaan (free text);
+   - Jangka Waktu Pelaksanaan (tanggal mulai kontrak disesuaikan sama
+     dengan tanggal mulai kontrak multi year; tanggal selesai pada
+     release pertama atau release pada tahun sebelum berakhirnya
+     kontrak otomatis terisi tanggal akhir tahun anggaran, dan pada
+     tahun berakhirnya kontrak terisi tanggal berakhirnya kontrak);
+   - Ketentuan Sanksi (diisi sanksi yang tertuang dalam dokumen
+     kontrak; hindari penggunaan kode ASCII seperti ‰, ⅓, dan
+     lain-lain, serta hindari copy-paste dari dokumen lain);
+   - Cara pembayaran (bertahap atau sekaligus);
+   - Koordinat (lokasi pelaksanaan kontrak).
+
+3. Klik tombol **Simpan** untuk menyimpan.
+
+   Informasi tambahan:
+
+   - Data pinjaman atau hibah luar negeri (apabila sumber dana dari
+     loan/hibah luar negeri) bersifat opsional;
+   - kolom Nilai Uang Muka, Cara Pengembalian UM, Bank/Asuransi
+     Penjamin UM, Cara Pemotongan Retensi, dan lain-lain yang masih
+     disable belum perlu diisi.
+
+4. Pada perekaman **Rencana Pembayaran (Contract Line)** dan **Jadwal
+   Pembayaran (Payment Schedule)**, lengkapi isian berikut:
+
+   - Nilai Line Kontrak (terisi otomatis atas nilai line kontrak yang
+     menjadi induknya);
+   - No. Jadwal Pembayaran (nomor urut jadwal pembayaran apabila satu
+     contract line berisi lebih dari satu jadwal pembayaran);
+   - Deskripsi Pembayaran (free text);
+   - Tanggal Pembayaran (tanggal rencana penagihan jadwal pembayaran);
+   - Nilai Pembayaran (nominal yang akan ditagihkan pada jadwal
+     pembayaran/termin).
+
+   Dalam satu contract line dapat terdapat lebih dari satu jadwal
+   pembayaran/termin; total nilai seluruh termin harus lebih kecil atau
+   sama dengan nilai contract line yang menjadi induknya.
+
+5. Pada tab **Distribusi COA (Distribution)**, klik tombol **Rekam**,
+   lalu lengkapi isian struktur 12 segmen COA dengan memilih kombinasi
+   Satker, Kementerian, Eselon I, Program, Aktivitas, KRO, Akun, KPPN,
+   Sumber Dana, Cara Penarikan, dan Nomor Register.
+
+6. Klik tombol **Pendetilan COA**, lalu klik tombol **Tambah** untuk
+   merekam pendetilan 15/16 segmen COA. Klik ikon **Pencarian** untuk
+   memilih detil RO, Komponen, Sub Komponen (untuk 15 segmen) dan Item
+   (untuk 16 segmen), lalu klik **Ok**. Input nilai sejumlah nilai pada
+   termin, lalu klik **Simpan**.
+
+7. Untuk mencetak Karwas (Kartu Pengawasan) Kontrak, buka menu
+   **Komitmen > Cetak > Karwas Kontrak**.
+
+</Steps>
+
+### Membentuk ADK kontrak release (PPK)
+
+<Steps>
+
+1. Login dengan user PPK, lalu buka menu **Komitmen > ADK > ADK
+   Kontrak Interkoneksi OTP**.
+
+2. Pilih jenis kontrak **Kontrak Annual / Release**, pilih Kontrak
+   Release (KR) yang akan dibuatkan ADK, lalu tekan tombol
+   **Proses**.
+
+3. Pilih request OTP via SMS atau email (OTP dikirim ke handphone
+   pejabat yang sudah didaftarkan), masukkan kode OTP yang didapat,
+   lalu lakukan proses.
+
+</Steps>
+
+Untuk kontrak release, file ADK yang dihasilkan adalah file BCKR
+(Budget Commitment Kontrak Release). ADK terkirim otomatis ke Portal
+SPAN pada KPPN mitra kerja dan diunduh petugas KPPN untuk diproses di
+KPPN/SPAN.
+
+### Proses KPPN dan Nomor CAN
+
+Atas ADK yang telah dibentuk, KPPN memproses data kontrak pada SPAN
+mengacu pada SOP yang berlaku. Apabila pendaftaran data kontrak telah
+di-approve KPPN, data CAN/NRK pada aplikasi SAKTI ter-update; dalam
+kondisi normal nomor CAN ter-update otomatis dengan mengambil data dari
+OMSPAN secara scheduler.
+
+Apabila nomor CAN tidak ter-update otomatis, user dapat melakukan
+pencatatan CAN manual pada menu **Komitmen > Upload / Rekam > Upload
+Rekam ADK CAN** (jalur menurut juknis):
+
+<Steps>
+
+1. Isikan nomor CAN pada kolom CAN Tahunan untuk kontrak release,
+   sesuai nomor CAN yang didapat dari KPPN/SPAN. Penulisan nomor CAN
+   bersifat case sensitive dan harus sama persis dengan data SPAN.
+
+2. Tekan tombol **Simpan**, sehingga nomor CAN release terisi dan
+   tersimpan.
+
+</Steps>
+
+## Hasil yang diharapkan
+
+Setelah Nomor CAN release tercatat, data kontrak release dapat
+digunakan untuk transaksi selanjutnya, yaitu pembuatan BAST dan
+pembuatan SPP kontraktual.
+
+## Ketentuan
+
+- Data kontrak release sudah membebani FA dari pagu DIPA dan menjadi
+  dasar pembuatan transaksi tagihan seperti BAST ataupun SPP
+  Kontraktual.
+- Data kontrak yang dapat digunakan pada perekaman transaksi lanjutan
+  adalah data kontrak yang telah memiliki Nomor CAN (Commitment
+  Application Number)/NRK (Nomor Register Kontrak).
+
+<Aside type="caution" title="Perlu verifikasi">
+Juknis 2022 menulis jalur **Komitmen > RUH > Pencatatan Kontrak** dan
+pencetakan karwas kontrak pada **Komitmen > Monitoring > Karwas
+Kontrak**; menu aplikasi saat ini memakai **Komitmen > RUH > Kontrak**
+dan **Komitmen > Cetak > Karwas Kontrak**. Juknis juga menulis
+pencatatan CAN manual pada **Komitmen > Upload / Rekam > Upload Rekam
+ADK CAN**; menu aplikasi saat ini tidak memuat **Upload / Rekam** —
+menu yang paling mirip adalah **Komitmen > Monitoring > Nomor Register
+Kontrak (CAN)**, perlu dipastikan.
+</Aside>
+
+## Terkait
+
+- [Merekam Kontrak Multi Year](/komitmen/ruh/pencatatan-kontrak/kontrak-multi-year/)
+- [Merekam Addendum Kontrak Release](/komitmen/ruh/pencatatan-kontrak/addendum-kontrak-release/)
+- [Merekam BAST Kontraktual](/komitmen/ruh/pencatatan-bast/bast-kontraktual/)
+
+- [Merekam Supplier Tipe 1, 2, dan 7](/komitmen/ruh/pencatatan-suplier/suplier-tipe-1-2-7/)
+
+## Sumber
+
+<SumberAsli />
