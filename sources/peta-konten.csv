@@ -171,23 +171,23 @@ pembayaran/ruh/void-spm,Melakukan Void SPM,pembayaran,Pembayaran > Validasi > Vo
 ,Monitoring Perintah Bayar,pembayaran,Pembayaran > Monitoring > Monitoring Perintah Bayar,satker,ditolak,C-sakti-pelaksanaan-pembayaran-monitoring-monitoring-perintah-bayar,"halaman sumber kosong (3 kata, tanpa dokumen)"
 ,Monitoring SPP,pembayaran,Pembayaran > Monitoring > Monitoring SPP,satker,ditolak,C-sakti-pelaksanaan-pembayaran-monitoring-monitoring-spp,"halaman sumber kosong (2 kata, tanpa dokumen)"
 bendahara,Bendahara,bendahara,Bendahara,satker,indeks,C-sakti-pelaksanaan-bendahara,"hanya struktur menu, tanpa isi"
-bendahara/bendahara-penerimaan,Merekam Transaksi Bendahara Penerimaan,bendahara,,satker,juknis,B-ben-008,
-bendahara/billing-interkoneksi,Merekam Billing Interkoneksi,bendahara,,satker,juknis,B-ben-021,
-bendahara/kartu-kredit-pemerintah,Merekam Transaksi Kartu Kredit Pemerintah (KKP),bendahara,,satker,juknis,B-ben-007;B-ben-001,"B-ben-007 (2024, R1) terbaru menang; B-ben-001 (2021) digantikan"
-bendahara/lpj-bendahara-penerimaan,Membuat LPJ Bendahara Penerimaan dengan TTE,bendahara,,satker,juknis,B-ben-013,
-bendahara/lpj-bendahara-pengeluaran,Membuat LPJ Bendahara Pengeluaran,bendahara,,satker,juknis,B-ben-016,
-bendahara/pembayaran-dana-titipan,Mencatat Pembayaran Dana Titipan,bendahara,,satker,juknis,B-ben-009,
-bendahara/penihilan-gup,Merekam Penihilan GUP,bendahara,,satker,juknis,B-ben-010,
-bendahara/referensi-detil-rekening,Merekam Referensi Detil Rekening,bendahara,,satker,juknis,B-ben-004,
-bendahara/referensi-wajib-pajak,Merekam Referensi Wajib Pajak/Wajib Bayar,bendahara,,satker,juknis,B-ben-011,
-bendahara/setoran-pengembalian-belanja,Merekam Setoran Pengembalian Belanja,bendahara,,satker,juknis,B-ben-014,
-bendahara/setoran-up-tup,Merekam Setoran UP/TUP Bendahara Pengeluaran,bendahara,,satker,juknis,B-ben-015,
-bendahara/siklus-gup,Merekam Siklus Transaksi GUP,bendahara,,satker,juknis,B-ben-005,
-bendahara/siklus-ptup,Merekam Siklus Transaksi PTUP,bendahara,,satker,juknis,B-ben-006,
-bendahara/siklus-tup,Merekam Siklus TUP,bendahara,,satker,juknis,B-ben-017,
-bendahara/siklus-up-awal,Merekam Siklus UP Awal,bendahara,,satker,juknis,B-ben-020;B-ben-018,"B-ben-020 (TA 2022) dan B-ben-018: tanggal unggah sama, bandingkan isi saat migrasi"
-bendahara/transaksi-hibah-kas,Menatausahakan Transaksi Hibah Kas,bendahara,,satker,juknis,B-pem-002,berkas berada di folder Drive Pembayaran; juknis menyebut Modul BEN
-bendahara/up-bpp,Merekam UP untuk BPP,bendahara,,satker,juknis,B-ben-012,
+bendahara/bendahara-penerimaan,Merekam Transaksi Bendahara Penerimaan,bendahara,,satker,juknis,B-ben-008,"K47: artikel siklus lintas menu, tanpa menu_sakti (K30)"
+bendahara/billing-interkoneksi,Merekam Billing Interkoneksi,bendahara,Bendahara > Setoran > Membuat Billing Interkoneksi,satker,juknis,B-ben-021,
+bendahara/kartu-kredit-pemerintah,Merekam Transaksi Kartu Kredit Pemerintah (KKP),bendahara,,satker,juknis,B-ben-007;B-ben-001,"B-ben-007 (2024, R1) terbaru menang; B-ben-001 (2021) digantikan; tidak ada isi yang diambil dari B-ben-001 (hanya entri daftar isi tanpa isi); K47: artikel siklus lintas menu, tanpa menu_sakti (K30)"
+bendahara/lpj-bendahara-penerimaan,Membuat LPJ Bendahara Penerimaan dengan TTE,bendahara,Bendahara > Cetak Laporan > LPJ Bendahara Penerimaan,satker;kppn-kanwil,juknis,B-ben-013,peran ditambah kppn-kanwil (juknis memuat validasi staf dan kepala seksi KPPN)
+bendahara/lpj-bendahara-pengeluaran,Membuat LPJ Bendahara Pengeluaran,bendahara,Bendahara > Cetak Laporan > LPJ Bendahara Pengeluaran,satker,juknis,B-ben-016,
+bendahara/pembayaran-dana-titipan,Mencatat Pembayaran Dana Titipan,bendahara,Bendahara > Transaksi > Mencatat Pembayaran Dana Titipan,satker,juknis,B-ben-009,
+bendahara/penihilan-gup,Merekam Penihilan GUP,bendahara,,satker,juknis,B-ben-010,"K47: artikel siklus lintas menu, tanpa menu_sakti (K30)"
+bendahara/referensi-detil-rekening,Merekam Referensi Detil Rekening,bendahara,Bendahara > Referensi > Referensi Detail Rekening,satker,juknis,B-ben-004,
+bendahara/referensi-wajib-pajak,Merekam Referensi Wajib Pajak/Wajib Bayar,bendahara,Bendahara > Referensi > Referensi Wajib Pajak / Wajib Bayar,satker,juknis,B-ben-011,
+bendahara/setoran-pengembalian-belanja,Merekam Setoran Pengembalian Belanja,bendahara,Bendahara > Setoran > Pengembalian Belanja,satker,juknis,B-ben-014,
+bendahara/setoran-up-tup,Merekam Setoran UP/TUP Bendahara Pengeluaran,bendahara,Bendahara > Setoran > Setoran UP/TUP/PNBP Bendahara Pengeluaran,satker,juknis,B-ben-015,
+bendahara/siklus-gup,Merekam Siklus Transaksi GUP,bendahara,,satker,juknis,B-ben-005,"K47: artikel siklus lintas menu, tanpa menu_sakti (K30)"
+bendahara/siklus-ptup,Merekam Siklus Transaksi PTUP,bendahara,,satker,juknis,B-ben-006,"K47: artikel siklus lintas menu, tanpa menu_sakti (K30)"
+bendahara/siklus-tup,Merekam Siklus TUP,bendahara,,satker,juknis,B-ben-017,"K47: artikel siklus lintas menu, tanpa menu_sakti (K30)"
+bendahara/siklus-up-awal,Merekam Siklus UP Awal,bendahara,,satker;kppn-kanwil,juknis,B-ben-020;B-ben-018,"B-ben-020 (TA 2022) dan B-ben-018: tanggal unggah sama, bandingkan isi saat migrasi; B-ben-020 (TA 2022) menang; dari B-ben-018 hanya rincian tahap SPP UP dan Referensi Variabel UP; peran ditambah kppn-kanwil; K47: artikel siklus lintas menu, tanpa menu_sakti (K30)"
+bendahara/transaksi-hibah-kas,Menatausahakan Transaksi Hibah Kas,bendahara,,satker,juknis,B-pem-002,"berkas berada di folder Drive Pembayaran; juknis menyebut Modul BEN; K47: artikel siklus lintas menu, tanpa menu_sakti (K30)"
+bendahara/up-bpp,Merekam UP untuk BPP,bendahara,,satker,juknis,B-ben-012,"K47: artikel siklus lintas menu, tanpa menu_sakti (K30)"
 persediaan,Persediaan,persediaan,Persediaan,satker,indeks,C-persediaan;C-dok-001,
 persediaan/koreksi,Koreksi,persediaan,Persediaan > Koreksi,satker,indeks,C-persediaan-koreksi,"hanya struktur menu, tanpa isi"
 persediaan/koreksi/batal-catat-usang-rusak,Membatalkan Pencatatan Persediaan Usang/Rusak,persediaan,Persediaan > Koreksi > Batal Catat Usang Rusak,satker,juknis,C-persediaan-koreksi-batal-catat-usangrusak,
