@@ -184,3 +184,27 @@
   harap: ["/aset-tetap/referensi/akun-vs-kode-barang/"]
 - q: "monitoring status transaksi aset tetap"
   harap: ["/aset-tetap/monitoring/status-transaksi/"]
+- q: "cara mencatat piutang baru tagihan"
+  harap: ["/piutang/pengelolaan-piutang/pencatatan/pencatatan-piutang-tagihan/"]
+- q: "rekam data debitur piutang"
+  harap: ["/piutang/pengelolaan-piutang/referensi/data-debitur/", "/piutang/pengelolaan-piutang/referensi/"]
+- q: "upload data piutang lewat excel"
+  harap: ["/piutang/pengelolaan-piutang/pencatatan/upload-data-piutang/", "/piutang/pengelolaan-piutang/upload/"]
+- q: "penyisihan piutang tidak tertagih"
+  harap: ["/piutang/pengelolaan-piutang/transaksi/penyisihan-piutang/"]
+- q: "penghapusan piutang"
+  harap: ["/piutang/pengelolaan-piutang/transaksi/penghapusan-piutang/", "/piutang/pengelolaan-piutang/koreksi/hapus-piutang/"]
+- q: "pelimpahan piutang ke djkn pupn"
+  harap: ["/piutang/pengelolaan-piutang/transaksi/pelimpahan-piutang-ke-djkn-pupn/"]
+- q: "mencatat pembayaran piutang settlement"
+  harap: ["/piutang/pengelolaan-piutang/transaksi/settlement/"]
+- q: "surat peringatan piutang"
+  harap: ["/piutang/pengelolaan-piutang/transaksi/surat-peringatan-sp/"]
+- q: "restrukturisasi piutang"
+  harap: ["/piutang/pengelolaan-piutang/transaksi/restrukturisasi-piutang/"]
+- q: "transfer piutang ke satker lain"
+  harap: ["/piutang/pengelolaan-piutang/transfer/"]
+- q: "koreksi piutang salah nilai"
+  harap: ["/piutang/pengelolaan-piutang/koreksi/koreksi-piutang/"]
+- q: "cetak laporan piutang"
+  harap: ["/piutang/pengelolaan-piutang/laporan/"]

@@ -782,7 +782,8 @@
     "istilah": "SBS",
     "panjang": "",
     "sinonim": [
-      "sbs pnbp"
+      "sbs pnbp",
+      "settlement sbs"
     ],
     "perlu_verifikasi": true
   },
@@ -790,7 +791,8 @@
     "istilah": "SSBP",
     "panjang": "",
     "sinonim": [
-      "ssbp"
+      "ssbp",
+      "ssbp non sbs"
     ],
     "perlu_verifikasi": true
   },
@@ -1179,6 +1181,118 @@
     "sinonim": [
       "transfer internal",
       "internal transfer"
+    ],
+    "perlu_verifikasi": true
+  },
+  {
+    "istilah": "PUPN",
+    "panjang": "Panitia Urusan Piutang Negara",
+    "sinonim": [
+      "pupn",
+      "panitia urusan piutang negara"
+    ],
+    "perlu_verifikasi": true
+  },
+  {
+    "istilah": "DJKN",
+    "panjang": "Direktorat Jenderal Kekayaan Negara",
+    "sinonim": [
+      "djkn",
+      "djkn pupn"
+    ],
+    "perlu_verifikasi": true
+  },
+  {
+    "istilah": "TPA",
+    "panjang": "Tagihan Penjualan Angsuran",
+    "sinonim": [
+      "tpa",
+      "tagihan penjualan angsuran"
+    ],
+    "perlu_verifikasi": true
+  },
+  {
+    "istilah": "TP/TGR",
+    "panjang": "Tuntutan Perbendaharaan/Tuntutan Ganti Rugi",
+    "sinonim": [
+      "tp tgr",
+      "tptgr",
+      "tuntutan ganti rugi"
+    ],
+    "perlu_verifikasi": true
+  },
+  {
+    "istilah": "TKTM",
+    "panjang": "",
+    "sinonim": [
+      "tktm",
+      "transfer keluar transfer masuk piutang"
+    ],
+    "perlu_verifikasi": true
+  },
+  {
+    "istilah": "Settlement",
+    "panjang": "",
+    "sinonim": [
+      "settlement piutang",
+      "pembayaran piutang",
+      "pelunasan piutang"
+    ],
+    "perlu_verifikasi": true
+  },
+  {
+    "istilah": "Surat Peringatan",
+    "panjang": "",
+    "sinonim": [
+      "sp",
+      "sp piutang",
+      "sp1",
+      "sp2",
+      "sp3"
+    ],
+    "perlu_verifikasi": true
+  },
+  {
+    "istilah": "Penyisihan Piutang",
+    "panjang": "",
+    "sinonim": [
+      "penyisihan",
+      "penyisihan piutang tak tertagih",
+      "cadangan piutang"
+    ],
+    "perlu_verifikasi": true
+  },
+  {
+    "istilah": "Debitur",
+    "panjang": "",
+    "sinonim": [
+      "data debitur",
+      "referensi debitur"
+    ],
+    "perlu_verifikasi": true
+  },
+  {
+    "istilah": "Piutang Jangka Panjang",
+    "panjang": "",
+    "sinonim": [
+      "bagian lancar piutang jangka panjang"
+    ],
+    "perlu_verifikasi": true
+  },
+  {
+    "istilah": "Hapus Buku",
+    "panjang": "",
+    "sinonim": [
+      "hapus buku piutang",
+      "dihapusbukukan"
+    ],
+    "perlu_verifikasi": true
+  },
+  {
+    "istilah": "Bagian Lancar",
+    "panjang": "",
+    "sinonim": [
+      "bagian lancar piutang"
     ],
     "perlu_verifikasi": true
   }

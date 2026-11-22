@@ -3,17 +3,60 @@ title: Piutang
 description: Debitur, pencatatan, settlement, penyisihan, dan pelimpahan piutang.
 modul: piutang
 jenis: indeks
-status: terbit
+status: review
+sumber:
+  - judul: "Piutang"
+    url: "https://sites.google.com/view/saktipelaporan/piutang"
+    jenis: google-sites
+    diambil: 2026-11-21
+    id_manifest: C-piutang
+  - judul: "Pengelolaan Piutang"
+    url: "https://sites.google.com/view/saktipelaporan/piutang/pengelolaan-piutang"
+    jenis: google-sites
+    diambil: 2026-11-21
+    id_manifest: C-piutang-pengelolaan-piutang
+  - judul: "JUKNIS SAKTI-Modul Piutang web_30122020"
+    url: "https://drive.google.com/file/d/1heaiMUcDJHnf97xK2LL76bUzZgpkRo4H/view"
+    jenis: pdf
+    diambil: 2026-11-21
+    id_manifest: C-dok-130
 sidebar:
   label: Ringkasan
   order: 0
 ---
 
-Debitur, pencatatan, settlement, penyisihan, dan pelimpahan piutang.
+import { CardGrid, LinkCard } from '@astrojs/starlight/components';
+import SumberAsli from '~/components/SumberAsli.astro';
 
-Panduan modul ini sedang dimigrasikan dari sumber aslinya.
+Modul Piutang digunakan untuk mencatat Piutang PNBP, Transaksi
+Piutang Tagihan Penjualan Angsuran, dan Transaksi Piutang
+Tuntutan Perbendaharaan/Tuntutan Ganti Rugi (TP/TGR), tidak
+termasuk piutang perpajakan. Modul Piutang menghasilkan laporan
+kartu piutang, rekapitulasi saldo piutang, dan beberapa laporan
+manajerial lainnya, serta tidak perlu lagi membuat jurnal manual
+terkait penyisihan piutang karena telah dihitung secara otomatis
+oleh sistem.
+
+Ruang lingkup Modul Piutang meliputi pencatatan referensi
+debitur, pencatatan saldo awal piutang, pencatatan piutang baru,
+settlement/matching cicilan/pelunasan, penyisihan piutang,
+pencatatan SP, pencatatan koreksi, dan pelimpahan ke PUPN.
 
 ## Sub-menu
 
-- [Likuidasi](/piutang/likuidasi/)
-- [Pengelolaan Piutang](/piutang/pengelolaan-piutang/)
+<CardGrid>
+	<LinkCard
+		title="Likuidasi"
+		description="Menyerahkan dan menerima saldo piutang antar satuan kerja dalam rangka likuidasi."
+		href="/piutang/likuidasi/"
+	/>
+	<LinkCard
+		title="Pengelolaan Piutang"
+		description="Referensi debitur, pencatatan, transaksi, koreksi, transfer, laporan, piutang jangka panjang, dan upload."
+		href="/piutang/pengelolaan-piutang/"
+	/>
+</CardGrid>
+
+## Sumber
+
+<SumberAsli />
