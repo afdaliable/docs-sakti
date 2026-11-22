@@ -1,0 +1,128 @@
+---
+title: Merekam Setoran UP/TUP Bendahara Pengeluaran
+description: Pencatatan setoran sisa UP/TUP bendahara pengeluaran ke kas negara pada akhir tahun anggaran.
+modul: bendahara
+menu_sakti: "Bendahara > Setoran > Setoran UP/TUP/PNBP Bendahara Pengeluaran"
+peran: [satker]
+jenis: juknis
+kata_kunci: [setoran up, setoran tup, sisa up, sisa tup, ssbp, ntpn, akhir tahun]
+status: review
+perlu_review: true
+sumber:
+  - judul: "Juknis Setoran UP TUP Bendahara Pengeluaran"
+    url: "https://drive.google.com/file/d/1d77d3oZwNI7SvYX67-pZEq29x_G1H4-t/view"
+    jenis: pdf
+    diambil: 2026-11-21
+    id_manifest: B-ben-015
+---
+
+import { Steps, Aside } from '@astrojs/starlight/components';
+import MenuSakti from '~/components/MenuSakti.astro';
+import SumberAsli from '~/components/SumberAsli.astro';
+
+Apabila pada akhir tahun anggaran masih terdapat sisa saldo UP/TUP di
+kas bendahara pengeluaran, sisa tersebut disetorkan kembali ke kas
+negara karena saldo kas bendahara di akhir tahun harus bersaldo 0.
+
+<MenuSakti />
+
+## Prasyarat
+
+- Role yang dibutuhkan: operator (OPR) modul Bendahara.
+- Dokumen input: bukti setoran UP/TUP yang memuat kode billing, NTPN,
+  dan NTB.
+- Masih terdapat sisa saldo UP/TUP untuk disetorkan — dicek melalui
+  tombol **Saldo Detail** atau **Saldo Per Kategori** pada menu
+  **Bendahara > Pemindahan Kas**.
+
+## Alur proses
+
+1. Satker/penyetor menyetor sisa saldo UP/TUP melalui bank
+   persepsi/pos.
+2. Satker mencatat kelengkapan setoran (NTPN, NTB, kode billing,
+   akun, nominal) pada modul Bendahara.
+3. Satker mengecek sisa saldo kas bendahara melalui tombol Saldo
+   Detail pada menu Pemindahan Kas serta memonitor jurnal pada modul
+   GLP untuk memastikan perekaman setoran membentuk jurnal.
+
+## Langkah
+
+### Pengecekan sisa saldo dan form setoran
+
+<Steps>
+
+1. Pastikan masih ada sisa saldo UP/TUP dengan menekan tombol **Saldo
+   Detail** atau **Saldo Per Kategori** pada menu **Bendahara >
+   Pemindahan Kas**.
+2. Pada modul Bendahara, pilih menu Setoran lalu sub menu
+   **Bendahara > Setoran > Setoran UP/TUP/PNBP Bendahara
+   Pengeluaran**, dan klik tombol **Tambah** — kolom nomor DIPA
+   terisi otomatis berdasarkan data DIPA satker.
+3. Pilih jenis pengembalian/setoran **UP/UPKP** untuk menyetor sisa
+   UP atau **TUP** untuk menyetor sisa TUP.
+4. Isikan program dan kegiatan sesuai data riil penyetoran.
+5. Isikan tanggal SSBP sesuai tanggal penyetoran; kolom nomor SPN
+   dan tanggal SPN opsional — kosongkan atau isi tanda "-" apabila
+   tidak ada.
+6. Pilih jenis UP/TUP **Rupiah**; untuk satker yang mengelola UP
+   valas pilih **Valas** dan lanjutkan dengan mengisi kolom mata uang
+   dan kurs sesuai data riil.
+7. Pilih cara penyetoran **Tunai** atau **Non Tunai** sesuai cara
+   penyetoran bendahara.
+8. Isikan keterangan setoran.
+</Steps>
+
+### Sumber dana dan akun setoran
+
+<Steps>
+
+1. Pada isian sumber dana, klik tombol dropdown dan pilih jenis
+   sumber dana yang tersedia.
+2. Isikan kolom NPWP wajib setor dengan kaca pembesar lalu pilih
+   data NPWP bendahara pengeluaran.
+3. Isikan jumlah setoran dalam nominal rupiah.
+4. Pilih kode akun yang akan disetorkan — akun 815111 untuk sisa UP
+   tahun berjalan dan akun 815511 untuk sisa TUP tahun berjalan.
+5. Pilih rekening bank yang digunakan untuk menyetor sisa UP/TUP
+   (untuk setoran non tunai; lewati apabila tunai) — kolom saldo
+   bank menampilkan sisa saldo UP/TUP.
+
+</Steps>
+
+### Pengesahan setoran
+
+<Steps>
+
+1. Pada kolom Pengesahan Setoran, isikan tanggal diterima bank
+   (tanggal penyetoran pada bank/pos), NTPN, dan NTB sesuai surat
+   bukti setoran.
+2. Isikan nama bank tempat penyetoran sisa UP/TUP.
+3. Klik tombol **Simpan** — setoran yang tersimpan muncul pada kolom
+   Cari SSBP.
+
+</Steps>
+
+## Hasil yang diharapkan
+
+Setoran sisa UP/TUP terekam dengan nomor SSBP, saldo kas bendahara
+menjadi 0, dan perekaman membentuk jurnal pada modul GLP.
+
+## Ketentuan
+
+- Setoran UP/TUP yang sudah berhasil disimpan tidak dapat
+  diubah/diedit — apabila ada kesalahan perekaman, lakukan hapus
+  lalu rekam ulang.
+
+<Aside type="caution" title="Perlu verifikasi">
+Juknis menulis menu "Pemindahan Kas Bank/Tunai"; jalur baku aplikasi
+saat ini adalah **Bendahara > Pemindahan Kas**.
+</Aside>
+
+## Terkait
+
+- [Merekam Siklus TUP](/bendahara/siklus-tup/)
+- [Merekam Siklus Transaksi PTUP](/bendahara/siklus-ptup/)
+
+## Sumber
+
+<SumberAsli />

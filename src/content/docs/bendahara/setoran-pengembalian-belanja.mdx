@@ -1,0 +1,121 @@
+---
+title: Merekam Setoran Pengembalian Belanja
+description: Pencatatan setoran pengembalian belanja (SSPB) dengan pendetailan COA sebelum pengajuan SPP pemulihan pagu.
+modul: bendahara
+menu_sakti: "Bendahara > Setoran > Pengembalian Belanja"
+peran: [satker]
+jenis: juknis
+kata_kunci: [sspb, pengembalian belanja, pemulihan pagu, ntpn, kode billing, detail coa]
+status: review
+perlu_review: false
+sumber:
+  - judul: "Juknis Setoran Pengembalian Belanja"
+    url: "https://drive.google.com/file/d/1Rt8z3hgTosHnttGtAMc7min8W1mP0V-1/view"
+    jenis: pdf
+    diambil: 2026-11-21
+    id_manifest: B-ben-014
+---
+
+import { Steps } from '@astrojs/starlight/components';
+import MenuSakti from '~/components/MenuSakti.astro';
+import SumberAsli from '~/components/SumberAsli.astro';
+
+Setoran pengembalian belanja (SSPB) direkam sebelum satker mengajukan
+SPP pemulihan pagu — satker terlebih dahulu menyetor pengembalian
+belanja ke kas negara yang dibuktikan dengan NTPN terbit, lalu
+merekamnya pada menu setoran SSPB di modul Bendahara.
+
+<MenuSakti />
+
+## Prasyarat
+
+- Role yang dibutuhkan: operator (OPR) modul Bendahara.
+- Dokumen input: bukti setoran pengembalian belanja yang memuat kode
+  billing, NTPN, dan NTB.
+
+## Alur proses
+
+1. Satker/penyetor menyetor pengembalian belanja melalui bank
+   persepsi/pos.
+2. Satker mencatat kelengkapan setoran (NTPN, NTB, kode billing,
+   akun, nominal) pada modul Bendahara.
+3. Satker mengonfirmasi setoran pengembalian belanja ke KPPN.
+4. Satker mengajukan surat dari KPA kepada KPPN selaku BUN perihal
+   pemulihan pagu — KPPN memproses pemulihan pagu pada aplikasi SPAN.
+5. Setelah pagu pada SPAN/OMSPAN kembali, satker membuat SPP
+   Pengembalian Belanja jenis 611 pada modul Pembayaran — prosesnya
+   hanya sampai validasi SPP oleh KPA dan tidak perlu dikirim ke
+   KPPN.
+
+## Langkah
+
+### Merekam SSPB
+
+<Steps>
+
+1. Buka menu **Bendahara > Setoran > Pengembalian Belanja**, lalu
+   klik tombol **Tambah**.
+2. Lengkapi kolom KPPN, lokasi, kementerian, unit organisasi, nomor
+   SP2D (lewati apabila pengembalian belanja bukan berasal dari SP2D
+   LS bendahara), sumber dana, program, kegiatan, output, lokasi,
+   fungsi, dan sub fungsi.
+3. Lengkapi kolom nomor SSPB, tanggal SSPB, NPWP bendahara, nama
+   bendahara, alamat, dan keterangan — kolom jumlah akan terisi 0
+   karena baru terbentuk setelah pendetailan COA.
+4. Pilih cara penyetoran Tunai/Non Tunai.
+
+</Steps>
+
+### Pendetailan COA
+
+<Steps>
+
+1. Pilih akun yang akan dilakukan pengembalian belanja, lalu klik
+   tombol **Detail COA**.
+2. Klik tombol **Tambah**, lalu klik ikon kaca pembesar untuk memilih
+   kode detail COA.
+3. Pilih detail COA sesuai program, kegiatan, output, dan akun yang
+   sudah dipilih pada form SSPB.
+4. Pada form pendetailan COA, pastikan kode COA sudah sesuai kode
+   COA pengembalian yang dipilih, lalu isikan nilai/nominal transaksi
+   pada kolom Nilai, dan klik **Simpan**.
+
+</Steps>
+
+### Pengesahan pengembalian belanja
+
+<Steps>
+
+1. Kolom jumlah pada form SSPB terisi otomatis sesuai nilai yang
+   diinput pada pendetailan COA.
+2. Lengkapi detail pengesahan pengembalian belanja: tanggal setoran
+   diterima bank, NTPN, NTB, nama bank, dan kode billing.
+3. Klik **Simpan**.
+4. Lanjutkan transaksi perekaman SPP Pemulihan Pagu pada modul
+   Pembayaran.
+
+</Steps>
+
+## Hasil yang diharapkan
+
+Setoran pengembalian belanja terekam dengan nomor SSPB dan menjadi
+dasar konfirmasi ke KPPN serta pengajuan SPP pemulihan pagu jenis
+611.
+
+## Ketentuan
+
+- Setoran pengembalian belanja yang sudah disimpan tidak dapat
+  diubah/diedit — apabila ada kesalahan data, lakukan hapus lalu
+  rekam ulang, untuk menghindari anomali data jurnal pada modul GLP
+  SAKTI.
+- Pasca implementasi RSPP, menu ini memiliki fitur tombol pendetailan
+  COA 15/16 segmen.
+
+## Terkait
+
+- [Merekam SPP 611 Pengembalian Belanja](/pembayaran/ruh/catat-ubah-spp/spp-611-pengembalian-belanja/)
+- [Merekam Billing Interkoneksi](/bendahara/billing-interkoneksi/)
+
+## Sumber
+
+<SumberAsli />

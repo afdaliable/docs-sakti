@@ -1,0 +1,126 @@
+---
+title: Merekam Billing Interkoneksi
+description: Pembuatan billing setoran pengembalian belanja langsung dari SAKTI melalui interkoneksi dengan MPN.
+modul: bendahara
+menu_sakti: "Bendahara > Setoran > Membuat Billing Interkoneksi"
+peran: [satker]
+jenis: juknis
+kata_kunci: [billing interkoneksi, kode billing, mpn, qris, pengembalian belanja]
+status: review
+perlu_review: false
+sumber:
+  - judul: "SATKER-Juknis-Perekaman-Billing-Interkoneksi"
+    url: "https://drive.google.com/file/d/1GobF5DFg8xAtNnjqi_RSIJteYl-ekQOt/view"
+    jenis: pdf
+    diambil: 2026-11-21
+    id_manifest: B-ben-021
+---
+
+import { Steps } from '@astrojs/starlight/components';
+import MenuSakti from '~/components/MenuSakti.astro';
+import SumberAsli from '~/components/SumberAsli.astro';
+
+Fitur billing interkoneksi memungkinkan pembuatan billing setoran
+pengembalian belanja langsung melalui aplikasi SAKTI, dengan kode
+billing yang diterbitkan dari MPN.
+
+<MenuSakti />
+
+## Prasyarat
+
+- Role yang dibutuhkan: user bendahara pengeluaran atau BPP.
+- Kode akun dan kode item yang dapat dipilih hanya yang telah
+  memiliki realisasi pada SAKTI (validasi nilai realisasi dari
+  laporan FA aplikasi SAKTI).
+
+## Langkah
+
+### Membuat billing
+
+<Steps>
+
+1. Login pada aplikasi SAKTI menggunakan user bendahara pengeluaran
+   atau BPP.
+2. Buka menu **Bendahara > Setoran > Membuat Billing Interkoneksi**,
+   lalu klik **Tambah** untuk membuat billing baru.
+3. Pilih jenis setoran **Pengembalian Belanja**.
+4. Pada dropdown **No. SP2D Bersaldo**: pilih salah satu nomor SP2D
+   LS bendahara yang masih bersaldo di bendahara pengeluaran apabila
+   pengembalian belanja sekaligus mengurangi jumlah dana LS di
+   bendahara pengeluaran; apabila pengembalian belanja atas SP2D non
+   LS bendahara atau saldo SP2D LS bendahara sudah habis, nomor SP2D
+   tidak ditampilkan — abaikan pilihan ini.
+5. Isikan keterangan, KPPN, sumber dana, cara penarikan, dan nomor
+   register.
+6. Pilih NPWP bendahara.
+7. Apabila memilih nomor SP2D, pilihan cara penyetoran akan aktif —
+   pilih tunai atau non tunai; pilihan ini nonaktif apabila tidak
+   memilih nomor SP2D bersaldo untuk mengurangi saldo LS bendahara.
+8. Pilih program, kegiatan, dan output (PKO) serta kode lokasi.
+
+</Steps>
+
+### Memilih akun dan pendetailan COA 16 segmen
+
+<Steps>
+
+1. Klik tombol **Tambah Akun** — kode akun yang ditampilkan hanya
+   akun yang telah terdapat realisasi di SAKTI.
+2. Pilih kode akun yang akan dibuatkan billing, lalu klik
+   **Pendetailan**.
+3. Pada pendetailan COA 16 segmen, klik **Tambah** lalu klik tombol
+   **…** untuk memunculkan kode item pengembalian belanja.
+4. Pilih salah satu kode item yang tersedia — hanya kode item yang
+   telah memiliki realisasi yang dapat dipilih.
+5. Isikan nilai pengembalian belanja pada item yang dipilih, lalu
+   klik **Simpan** — kode item dapat ditambahkan lebih dari satu item
+   pada satu akun.
+6. Setelah selesai, klik **Simpan** pada dialog box input akun
+   pengembalian belanja.
+
+</Steps>
+
+### Menyimpan dan membayar billing
+
+<Steps>
+
+1. Klik **Simpan** lalu klik **Ya** — data yang telah disimpan tidak
+   dapat diubah kembali.
+2. Kode billing telah tersedia; apabila data dipilih, kode billing
+   otomatis tersalin ke clipboard dan dapat dipakai untuk pembayaran
+   pada platform pembayaran yang digunakan — status billing
+   ditampilkan sesuai status pembayarannya.
+3. Untuk membayar melalui QRIS, klik tombol **Buat Qris** — tampil
+   bank yang menyediakan layanan QRIS untuk pembayaran MPN, lalu
+   kode QRIS ditampilkan dan dapat dilakukan pembayaran.
+
+</Steps>
+
+### Mencatat setoran pengembalian belanja
+
+<Steps>
+
+1. Setelah billing dibayar, catat pengembalian belanja pada menu
+   **Bendahara > Setoran > Pengembalian Belanja**.
+2. Pilih kode billing pada dropdown billing interkoneksi —
+   pencatatan setoran yang tidak melalui fitur billing interkoneksi
+   tetap dapat dicatat tanpa memilih nomor billing interkoneksi.
+3. Data isian akan terisi otomatis; klik **Simpan** — data
+   pengembalian terbentuk pada modul bendahara dan jurnal terbentuk
+   pada modul GLP.
+
+</Steps>
+
+## Hasil yang diharapkan
+
+Kode billing pengembalian belanja dari MPN tersedia untuk dibayar,
+dan setoran pengembalian belanja tercatat membentuk jurnal pada
+modul GLP.
+
+## Terkait
+
+- [Merekam Setoran Pengembalian Belanja](/bendahara/setoran-pengembalian-belanja/)
+
+## Sumber
+
+<SumberAsli />
