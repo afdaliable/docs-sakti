@@ -18,7 +18,7 @@ sidebar:
   order: 11
 ---
 
-import { Steps } from '@astrojs/starlight/components';
+import { Aside, Steps } from '@astrojs/starlight/components';
 import MenuSakti from '~/components/MenuSakti.astro';
 import SumberAsli from '~/components/SumberAsli.astro';
 
@@ -36,13 +36,6 @@ transaksi 3xx dan 9xx, hanya dapat melakukan perbaikan nomor SK
 dan keterangan (tanggal SK di-*disable*).
 
 <MenuSakti />
-
-:::caution[Perlu verifikasi]
-Isi artikel ini ditranskripsi dari gambar tabel ikhtisar pada
-halaman sumber (teks halaman tidak memuat materi). Seluruh
-uraian, tata cara, dan jurnal di bawah berasal dari tabel
-tersebut.
-:::
 
 ## Prasyarat
 
@@ -66,11 +59,11 @@ tersebut.
 
 </Steps>
 
-:::note
-Tidak ada jurnal yang terbentuk atas transaksi ini.
-:::
+## Jurnal transaksi
 
-## Ilustrasi
+- Tidak ada jurnal yang terbentuk atas transaksi ini.
+
+## Ilustrasi transaksi
 
 Operator MAT pada Satker KPPN Pekalongan melakukan kesalahan
 perekaman nomor SK ketika merekam transaksi penghapusan (kode
@@ -78,5 +71,14 @@ transaksi 301). Yaitu operator merekam SK Penghapusan dengan
 nomor: SK-010/Kemenkeu/2020, sedangkan nomor SK Penghapusan yang
 benar adalah SK-011/Kemenkeu/2020, dan transaksi penghapusan
 dimaksud telah dilakukan persetujuan oleh approver.
+
+<Aside type="caution" title="Perlu verifikasi">
+Isi artikel ini ditranskripsi dari gambar tabel ikhtisar pada
+halaman sumber (teks halaman tidak memuat materi). Seluruh
+uraian, tata cara, dan jurnal di bawah berasal dari tabel
+tersebut.
+</Aside>
+
+## Sumber
 
 <SumberAsli />

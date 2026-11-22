@@ -18,7 +18,7 @@ sidebar:
   order: 9
 ---
 
-import { Steps } from '@astrojs/starlight/components';
+import { Aside, Steps } from '@astrojs/starlight/components';
 import MenuSakti from '~/components/MenuSakti.astro';
 import SumberAsli from '~/components/SumberAsli.astro';
 
@@ -28,13 +28,6 @@ Lain meliputi: asal perolehan, nomor bukti perolehan, merk/type
 dan keterangan per NUP suatu BMN.
 
 <MenuSakti />
-
-:::caution[Perlu verifikasi]
-Isi artikel ini ditranskripsi dari gambar tabel ikhtisar pada
-halaman sumber (teks halaman tidak memuat materi). Seluruh
-uraian, tata cara, dan jurnal di bawah berasal dari tabel
-tersebut.
-:::
 
 ## Langkah
 
@@ -49,16 +42,25 @@ tersebut.
 
 </Steps>
 
-:::note
-Tidak ada jurnal yang terbentuk atas transaksi ini.
-:::
+## Jurnal transaksi
 
-## Ilustrasi
+- Tidak ada jurnal yang terbentuk atas transaksi ini.
+
+## Ilustrasi transaksi
 
 Operator MAT pada Satker KPPN Pekalongan pada saat merekam
 pembelian Sepeda Motor, melakukan kesalahan perekaman merk
 Sepeda Motor, yaitu tertulis merk Yamana, seharusnya merk
 Yamini. Maka operator MAT dapat melakukan koreksi atau perbaikan
 nama merk dimaksud melalui menu Koreksi Rincian Aset.
+
+<Aside type="caution" title="Perlu verifikasi">
+Isi artikel ini ditranskripsi dari gambar tabel ikhtisar pada
+halaman sumber (teks halaman tidak memuat materi). Seluruh
+uraian, tata cara, dan jurnal di bawah berasal dari tabel
+tersebut.
+</Aside>
+
+## Sumber
 
 <SumberAsli />

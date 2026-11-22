@@ -18,7 +18,7 @@ sidebar:
   order: 13
 ---
 
-import { Steps } from '@astrojs/starlight/components';
+import { Aside, Steps } from '@astrojs/starlight/components';
 import MenuSakti from '~/components/MenuSakti.astro';
 import SumberAsli from '~/components/SumberAsli.astro';
 
@@ -32,13 +32,6 @@ pengembangan/penambahan nilainya, atau transaksi yang seharusnya
 mengurangi nilai BMN tapi tidak dicatat pengurangan BMN-nya.
 
 <MenuSakti />
-
-:::caution[Perlu verifikasi]
-Isi artikel ini ditranskripsi dari gambar tabel ikhtisar pada
-halaman sumber (teks halaman tidak memuat materi). Seluruh
-uraian, tata cara, dan jurnal di bawah berasal dari tabel
-tersebut.
-:::
 
 ## Prasyarat
 
@@ -76,19 +69,22 @@ tersebut.
 
 </Steps>
 
-:::note
-- Tanggal dokumen dasar koreksi harus kurang dari atau sama
-  dengan tanggal pembukuan.
-- Dasar perhitungan penyusutan aset berdasarkan tanggal dasar
-  koreksi.
-:::
+## Ketentuan
 
-Jurnal yang terbentuk: (D) Aset Tetap; (K) Koreksi Aset Tetap
-Non-Revaluasi; (D) Koreksi Aset Tetap Non-Revaluasi; (K)
-Akumulasi Penyusutan Aset Tetap; (D) Beban Penyusutan; (K)
-Akumulasi Penyusutan Aset Tetap.
+- Tanggal dokumen dasar koreksi harus kurang dari atau sama dengan
+  tanggal pembukuan.
+- Dasar perhitungan penyusutan aset berdasarkan tanggal dasar koreksi.
 
-## Ilustrasi
+## Jurnal transaksi
+
+- D. Aset Tetap
+- K. Koreksi Aset Tetap Non-Revaluasi
+- D. Koreksi Aset Tetap Non-Revaluasi
+- K. Akumulasi Penyusutan Aset Tetap
+- D. Beban Penyusutan
+- K. Akumulasi Penyusutan Aset Tetap
+
+## Ilustrasi transaksi
 
 1. Terdapat pekerjaan renovasi gedung kantor senilai
    Rp50.000.000,-. Akan tetapi operator Modul Komitmen melakukan
@@ -107,9 +103,20 @@ Akumulasi Penyusutan Aset Tetap.
    merekam Koreksi Susulan dengan tanggal pembukuan Februari 2021
    dan tanggal dokumen dasar koreksi adalah 10 Januari 2021.
 
+<Aside type="caution" title="Perlu verifikasi">
+Isi artikel ini ditranskripsi dari gambar tabel ikhtisar pada
+halaman sumber (teks halaman tidak memuat materi). Seluruh
+uraian, tata cara, dan jurnal di bawah berasal dari tabel
+tersebut.
+</Aside>
+
 ## Terkait
 
-- [Merekam Koreksi Manual](/aset-tetap/ruh/perubahan-bmn/koreksi-manual/)
-- [Merekam Pengembangan Langsung](/aset-tetap/ruh/perubahan-bmn/pengembangan-langsung/)
+- [Merekam Koreksi Manual](/aset-tetap/ruh/perubahan-bmn/koreksi-
+  manual/)
+- [Merekam Pengembangan Langsung](/aset-tetap/ruh/perubahan-
+  bmn/pengembangan-langsung/)
+
+## Sumber
 
 <SumberAsli />

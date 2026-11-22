@@ -5,7 +5,7 @@ modul: aset-tetap
 menu_sakti: "Aset Tetap > RUH > Transaksi BMN > Penghapusan > Hibah Keluar (Barang Henti)"
 peran: [satker]
 jenis: juknis
-kata_kunci: [hibah keluar barang henti, hibah bmn henti guna]
+kata_kunci: [hibah keluar barang henti, hibah bmn, barang henti guna]
 status: review
 perlu_review: true
 sumber:
@@ -18,7 +18,7 @@ sidebar:
   order: 10
 ---
 
-import { Steps } from '@astrojs/starlight/components';
+import { Aside, Steps } from '@astrojs/starlight/components';
 import MenuSakti from '~/components/MenuSakti.astro';
 import SumberAsli from '~/components/SumberAsli.astro';
 
@@ -29,12 +29,6 @@ berjalan. Misalnya penyerahan BMN kepada Pemerintah Daerah,
 perorangan, perusahaan, BUMN, dan lain sebagainya.
 
 <MenuSakti />
-
-:::caution[Perlu verifikasi]
-Halaman sumber menyematkan video dan slide juknis **Hibah
-Keluar** (bukan Hibah Keluar Barang Henti). Uraian di bawah
-berasal dari teks dan tabel ikhtisar pada halaman itu sendiri.
-:::
 
 ## Prasyarat
 
@@ -53,17 +47,28 @@ berasal dari teks dan tabel ikhtisar pada halaman itu sendiri.
 
 </Steps>
 
-Jurnal yang terbentuk: (D) Koreksi Aset Tetap Non-Revaluasi; (K)
-Aset Tetap yang Tidak Digunakan dalam Operasi Pemerintahan.
+## Jurnal transaksi
 
-## Ilustrasi
+- D. Koreksi Aset Tetap Non-Revaluasi
+- K. Aset Tetap yang Tidak Digunakan dalam Operasi Pemerintahan
+
+## Ilustrasi transaksi
 
 Satker KPPN Kendari menyerahkan sepeda motor yang telah
 dihentikan penggunaannya kepada pemerintah Kota Kendari.
 
+<Aside type="caution" title="Perlu verifikasi">
+Halaman sumber menyematkan video dan slide juknis **Hibah
+Keluar** (bukan Hibah Keluar Barang Henti). Uraian di bawah
+berasal dari teks dan tabel ikhtisar pada halaman itu sendiri.
+</Aside>
+
 ## Terkait
 
 - [Merekam Hibah Keluar](/aset-tetap/ruh/penghapusan/hibah-keluar/)
-- [Merekam Transfer Keluar (Henti Guna)](/aset-tetap/ruh/penghapusan/transfer-keluar-henti-guna/)
+- [Merekam Transfer Keluar (Henti Guna)](/aset-
+  tetap/ruh/penghapusan/transfer-keluar-henti-guna/)
+
+## Sumber
 
 <SumberAsli />

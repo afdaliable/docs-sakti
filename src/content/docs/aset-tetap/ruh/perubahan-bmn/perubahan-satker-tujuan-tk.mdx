@@ -5,7 +5,7 @@ modul: aset-tetap
 menu_sakti: "Aset Tetap > RUH > Transaksi BMN > Perubahan > Perubahan Satker Tujuan TK"
 peran: [satker]
 jenis: juknis
-kata_kunci: [perubahan satker tujuan tk, koreksi satker tujuan transfer keluar]
+kata_kunci: [perubahan satker tujuan tk, koreksi satker tujuan, transfer keluar]
 status: review
 perlu_review: true
 sumber:
@@ -18,7 +18,7 @@ sidebar:
   order: 12
 ---
 
-import { Steps } from '@astrojs/starlight/components';
+import { Aside, Steps } from '@astrojs/starlight/components';
 import MenuSakti from '~/components/MenuSakti.astro';
 import SumberAsli from '~/components/SumberAsli.astro';
 
@@ -31,13 +31,6 @@ dapat dilakukan atas TK baik kepada satker sesama pengguna
 Aplikasi SAKTI maupun satker belum menggunakan Aplikasi SAKTI.
 
 <MenuSakti />
-
-:::caution[Perlu verifikasi]
-Isi artikel ini ditranskripsi dari gambar tabel ikhtisar pada
-halaman sumber (teks halaman tidak memuat materi). Seluruh
-uraian, tata cara, dan jurnal di bawah berasal dari tabel
-tersebut.
-:::
 
 ## Prasyarat
 
@@ -65,12 +58,12 @@ berkenaan.
 
 </Steps>
 
-:::note
-Tidak terbentuk jurnal, hanya terjadi perubahan kode satker
-*intraco* pada COA.
-:::
+## Jurnal transaksi
 
-## Ilustrasi
+- Tidak terbentuk jurnal, hanya terjadi perubahan kode satker
+  *intraco* pada COA.
+
+## Ilustrasi transaksi
 
 Operator MAT pada Satker KPPN Pekalongan melakukan kesalahan
 pemilihan satker tujuan Transfer Keluar, yaitu tertulis kode
@@ -79,8 +72,18 @@ Transfer Keluar telah dilakukan persetujuan oleh approver. Maka
 operator MAT dapat menggunakan menu Perubahan Satker Tujuan TK,
 yaitu mengubah dari satker tujuan 123456 menjadi 654321.
 
+<Aside type="caution" title="Perlu verifikasi">
+Isi artikel ini ditranskripsi dari gambar tabel ikhtisar pada
+halaman sumber (teks halaman tidak memuat materi). Seluruh
+uraian, tata cara, dan jurnal di bawah berasal dari tabel
+tersebut.
+</Aside>
+
 ## Terkait
 
-- [Merekam Transfer Keluar (Barang Aktif)](/aset-tetap/ruh/penghapusan/transfer-keluar-barang-aktif/)
+- [Merekam Transfer Keluar (Barang Aktif)](/aset-
+  tetap/ruh/penghapusan/transfer-keluar-barang-aktif/)
+
+## Sumber
 
 <SumberAsli />
