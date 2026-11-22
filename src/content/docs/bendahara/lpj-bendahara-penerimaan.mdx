@@ -1,0 +1,251 @@
+---
+title: Membuat LPJ Bendahara Penerimaan dengan TTE
+description: Penyusunan LPJ bendahara penerimaan bertanda tangan elektronik sampai validasi berjenjang di KPPN.
+modul: bendahara
+menu_sakti: "Bendahara > Cetak Laporan > LPJ Bendahara Penerimaan"
+peran: [satker, kppn-kanwil]
+jenis: juknis
+kata_kunci: [lpj bendahara penerimaan, tte lpj, rekening koran, validasi kppn, saldo valid]
+status: review
+perlu_review: true
+sumber:
+  - judul: "Juknis SAKTI LPJ Bendahara Penerimaan (TTE)"
+    url: "https://drive.google.com/file/d/1YY4FkBv9K5cWkOk9mGXkTibJdfOJWjWr/view"
+    jenis: pdf
+    diambil: 2026-11-21
+    id_manifest: B-ben-013
+---
+
+import { Steps, Aside } from '@astrojs/starlight/components';
+import MenuSakti from '~/components/MenuSakti.astro';
+import SumberAsli from '~/components/SumberAsli.astro';
+
+Juknis menjelaskan penyusunan LPJ bendahara penerimaan yang
+ditandatangani secara elektronik (TTE), mulai dari pengaturan satker
+wajib LPJ di KPPN, penyusunan oleh bendahara, validasi oleh KPA
+satker, sampai validasi berjenjang oleh staf dan kepala seksi KPPN.
+
+<MenuSakti />
+
+## Prasyarat
+
+- Role yang dibutuhkan: bendahara penerimaan dan KPA pada sisi
+  satker; staf KPPN dan kepala seksi KPPN pada sisi KPPN.
+- Pengguna TTE (bendahara penerimaan dan KPA) telah terdaftar pada
+  BsRE.
+
+## Langkah
+
+### Mengatur referensi satker wajib LPJ (KPPN)
+
+KPPN mengatur aktif/tidak aktif satker wajib LPJ pada menu **KPPN >
+Verifikasi dan Akuntansi > Referensi > Referensi Satker LPJ**, dengan
+filter mode tampilan bulanan atau tahunan.
+
+<Steps>
+
+1. Klik tombol **Ubah**.
+2. Klik **Pilih Semua** untuk memilih seluruh jenis LPJ pada satker
+   yang diceklis untuk satu tahun penuh, atau ceklis per bulan dan
+   jenis LPJ tertentu untuk pemilihan manual.
+3. Klik **Simpan** untuk menyimpan data.
+
+</Steps>
+
+### Menyusun LPJ bendahara penerimaan (Bendahara)
+
+<Steps>
+
+1. Isi Informasi Kas Fisik: kolom kas tunai diisi angka; kolom kas
+   bank diisi per detail rekening dengan klik tombol **Tampilkan
+   Saldo Rekening** — nilai kumulatif ditampilkan pada kolom kas
+   bank. Apabila terdapat selisih kas, rekam penjelasan selisihnya.
+2. Setelah informasi kas fisik dan hasil pemeriksaan kas diisi, klik
+   **Simpan** — muncul Form Cari Penandatangan; pilih KPA
+   penandatangan LPJ lalu klik **Unduh**.
+3. Panel Hasil Validasi terbuka dengan status: LPJ "Belum Dikirim
+   Bendahara"; validasi data "Dalam Antrian Pembuatan Konsep" (klik
+   berkala untuk refresh hingga menjadi "Antrian Diproses"); upload
+   rekening koran "Belum Upload Rek Koran" sesuai jumlah rekening
+   yang dikelola; file konsep LPJ dan lampirannya "Diproses".
+4. Setelah antrian selesai: tombol validasi saldo menampilkan "Saldo
+   Valid" (hijau) apabila pengujian saldo dengan data LPJ bulan lalu
+   valid, atau "Saldo Tidak Valid" (merah) bila masih ada yang belum
+   valid; kolom keterangan validasi memuat keterangan saldo yang
+   belum valid maupun tolakan KPA/KPPN; file LPJ, hasil pemeriksaan
+   kas, dan laporan detail rekening berstatus "Konsep", sedangkan
+   konfirmasi penerimaan negara dan suplemen LPJ berstatus
+   "Generated".
+
+</Steps>
+
+### Memeriksa validasi saldo
+
+<Steps>
+
+1. Klik tombol **Saldo Valid** (atau **Saldo Tidak Valid**) untuk
+   membuka sub-menu verifikasi LPJ sesuai PER-3/PB/2014 pasal 11
+   ayat 3 — SAKTI otomatis melakukan perbandingan data saldo.
+2. Apabila hasil perbandingan sama, ditampilkan "Nilai Sama" (hijau)
+   dan LPJ dapat dikirimkan ke KPA.
+3. Apabila berbeda namun perbedaan dapat dilanjutkan (misalnya
+   perbedaan saldo kas tunai dengan hasil pemeriksaan), ditampilkan
+   "Nilai Tidak Sama" dan LPJ tetap dapat dikirimkan ke KPA.
+4. Apabila berbeda dan tidak dapat dilanjutkan (misalnya perbedaan
+   saldo kas bank dengan hasil pemeriksaan), ditampilkan "Nilai Tidak
+   Sama" dan LPJ tidak dapat dikirimkan ke KPA — lakukan perbaikan
+   transaksi pada pencatatan bendahara lalu **Simpan** ulang untuk
+   membentuk data LPJ kembali; klik **Tutup** untuk kembali.
+
+</Steps>
+
+### Mengunggah rekening koran
+
+<Steps>
+
+1. Klik tombol **Belum Upload Rek Koran** untuk membuka daftar
+   rekening yang wajib dilaporkan bendahara penerimaan ke KPPN.
+2. Unggah masing-masing rekening koran dengan klik tombol
+   **Upload**, lalu **Choose** untuk memilih file — hanya format PDF,
+   maksimal 5 MB per dokumen.
+3. Klik tombol **Upload** untuk mengunggah dokumen.
+4. Setelah seluruh rekening koran terunggah, statusnya menjadi "Rek
+   Koran Uploaded" berwarna hijau.
+
+</Steps>
+
+### Mencetak konsep dan mengirim LPJ ke KPA
+
+<Steps>
+
+1. Pilih dokumen yang akan dicetak (misalnya konsep LPJ bendahara
+   penerimaan), lalu klik **Preview** — pada Preview Konsep, bendahara
+   mengecek saldo; klik daftar dokumen untuk melihat konsep dokumen
+   lainnya.
+2. Apabila konsep sudah sesuai, klik **Unduh** pada masing-masing
+   dokumen, lalu klik **Tutup** atau **x** untuk kembali ke menu LPJ.
+3. Klik **Kirim ke KPA** untuk mengirimkan LPJ ke KPA sesuai pilihan
+   penandatangan.
+4. Ceklis pernyataan tanggung jawab pada informasi Proses TTE oleh
+   Bendahara Penerimaan.
+5. Input passphrase sesuai yang terdaftar pada BsRE, lalu klik
+   **Proses** untuk menyelesaikan TTE dan mengirimkan dokumen ke KPA
+   — status LPJ berubah menjadi "Dikirim Bendahara".
+
+</Steps>
+
+### Memvalidasi LPJ oleh KPA satker
+
+Validasi LPJ dilakukan pada menu **Bendahara > Validasi > Validasi
+LPJ Bendahara**, yang terdiri dari panel Filter (jenis LPJ, periode,
+status laporan, unit teknis; tombol **Unduh Monitoring** format
+PDF/XLSX), panel Rekapitulasi LPJ, dan panel Validasi LPJ Bendahara
+Penerimaan dengan tombol **Saldo Valid** dan **Saldo Per Rekening**.
+
+<Steps>
+
+1. Expand data LPJ untuk melihat detail lampiran, lalu geser slider
+   validasi ke hijau untuk menyetujui atau ke merah untuk menolak —
+   tanggal validasi default hari ini dan dapat diubah; keterangan
+   dapat diisi.
+2. Untuk menampilkan cetakan, pilih LPJ bendahara lalu klik
+   **Preview** — dokumen LPJ, hasil pemeriksaan kas, dan laporan
+   detail rekening berstatus "SIGNED" karena telah ditandatangani
+   elektronik oleh bendahara penerimaan.
+3. Klik **Kirim Ke KPPN**, lalu pada panel informasi TTE oleh KPA:
+   ceklis pernyataan tanggung jawab, input passphrase BsRE, dan klik
+   **Proses**.
+4. Setelah TTE KPA berhasil, status validasi berubah menjadi
+   "Dikirim Ke KPPN" dan status data menjadi "Antrian Diproses"
+   hingga "Saldo Valid" — tanggal kirim terisi otomatis; LPJ yang
+   sudah dikirim tidak dapat dibatalkan satker kecuali KPPN menolak
+   lebih dahulu.
+5. Dokumen hasil TTE dapat dilihat dengan memilih dokumen lalu
+   **Preview** — terdapat QR Code pada sisi KPA dan bendahara
+   penerimaan; klik **Verifikasi DS** untuk melihat detail
+   penandatangan.
+
+</Steps>
+
+### Memvalidasi LPJ oleh staf KPPN
+
+Validasi LPJ di KPPN dilakukan dua tahap oleh staf dan kepala seksi
+melalui menu **KPPN > Verifikasi dan Akuntansi > Validasi Persetujuan
+LPJ** (jalur menurut juknis), yang memuat panel Filter, panel
+Monitoring LPJ, dan panel Validasi LPJ Bendahara Penerimaan.
+
+<Steps>
+
+1. Klik **Assign** agar data LPJ dikunci dan tidak dapat divalidasi
+   staf KPPN lain — tombol menjadi hijau dan kolom Diproses
+   menampilkan nama staf beserta waktu assign.
+2. Untuk mengunduh dokumen, gunakan tombol **Jadikan ZIP**: pilih
+   **Rekening Koran** untuk ZIP lengkap dengan lampiran rekening
+   koran, atau **Selain Rekening Koran** untuk ZIP tanpa rekening
+   koran.
+3. Expand data untuk melihat lampiran; tampilkan cetakan dengan
+   memilih file LPJ lalu klik **Preview** — QR Code dan
+   **Verifikasi DS** sama seperti sisi satker.
+4. Geser slider validasi ke hijau untuk menyetujui atau merah untuk
+   menolak, lalu klik **Simpan** — apabila setuju, status berubah
+   dari "Dikirim Satker" menjadi "Divalidasi Staf KPPN".
+
+</Steps>
+
+### Memvalidasi LPJ oleh kepala seksi KPPN
+
+Pada menu yang sama dengan tampilan yang sama seperti staf KPPN:
+
+<Steps>
+
+1. Expand data LPJ dan tampilkan cetakan/lampiran dengan memilih
+   file lalu klik **Preview**.
+2. Klik **Simpan** — apabila memilih setuju, status berubah dari
+   "Divalidasi Staf KPPN" menjadi "Divalidasi Kasi KPPN".
+
+</Steps>
+
+### Validasi tolak oleh KPPN
+
+<Steps>
+
+1. Staf atau kasi KPPN dapat menolak saat LPJ berstatus "Dikirim
+   Satker", "Divalidasi Staf KPPN", maupun setelah "Divalidasi Kasi
+   KPPN": geser slider validasi ke merah, isi kolom keterangan
+   (wajib), lalu klik **Simpan** — status menjadi "Ditolak KPPN".
+2. Apabila status "Ditolak KPPN", bendahara penerimaan membentuk
+   ulang data LPJ dengan klik **Simpan** — status kembali menjadi
+   "Belum Dikirim Bendahara".
+3. Apabila satker mengubah data LPJ pada periode yang telah
+   disetujui sebelumnya, KPPN memberikan validasi tolak secara
+   berurutan dari periode terakhir mundur sampai periode yang diubah
+   (misalnya perubahan periode ke-2 mengharuskan tolakan dari periode
+   ke-8 sampai ke-2 berurutan).
+
+</Steps>
+
+## Hasil yang diharapkan
+
+LPJ bendahara penerimaan ditandatangani elektronik oleh bendahara dan
+KPA, dikirim ke KPPN, dan divalidasi berjenjang oleh staf serta
+kepala seksi KPPN. Kendala terkait LPJ dapat dikonsultasikan ke KPPN
+mitra kerja atau HAI DJPb.
+
+<Aside type="caution" title="Perlu verifikasi">
+- Juknis menulis jalur "KPPN - Verifikasi dan Akuntansi - Validasi
+  Persetujuan LPJ"; jalur ini tidak ditemukan pada daftar menu
+  aplikasi saat ini sehingga ditulis "(jalur menurut juknis)".
+- Juknis ini versi tanggal 17 September 2025; juknis mengasumsikan
+  LPJ bendahara penerimaan mulai diimplementasikan pada bulan
+  Agustus 2025.
+</Aside>
+
+## Terkait
+
+- [Merekam Transaksi Bendahara Penerimaan](/bendahara/bendahara-penerimaan/)
+
+- [Membuat LPJ Bendahara Pengeluaran](/bendahara/lpj-bendahara-pengeluaran/)
+
+## Sumber
+
+<SumberAsli />

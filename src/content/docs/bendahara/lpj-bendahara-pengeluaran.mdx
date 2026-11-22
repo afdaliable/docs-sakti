@@ -1,0 +1,106 @@
+---
+title: Membuat LPJ Bendahara Pengeluaran
+description: Siklus pembuatan LPJ bendahara pengeluaran bulanan dan pengunduhan ADK LPJ untuk rekon ke KPPN.
+modul: bendahara
+menu_sakti: "Bendahara > Cetak Laporan > LPJ Bendahara Pengeluaran"
+peran: [satker]
+jenis: juknis
+kata_kunci: [lpj bendahara pengeluaran, lpj bulanan, adk lpj, rekon sprint, informasi kas fisik]
+status: review
+perlu_review: false
+sumber:
+  - judul: "Juknis Siklus Pembuatan LPJ Bendahara Pengeluaran"
+    url: "https://drive.google.com/file/d/1TuF2YaWpySoDLAACS-bGFfYJh3FpL0gv/view"
+    jenis: pdf
+    diambil: 2026-11-21
+    id_manifest: B-ben-016
+---
+
+import { Steps } from '@astrojs/starlight/components';
+import MenuSakti from '~/components/MenuSakti.astro';
+import SumberAsli from '~/components/SumberAsli.astro';
+
+Menu ini digunakan untuk mencetak dan mengunduh ADK LPJ bendahara
+pengeluaran bulanan untuk keperluan rekon LPJ bulanan ke KPPN.
+Sebelum rekon ke KPPN menggunakan aplikasi SPRINT-KPPN, satker
+mengikuti langkah pada juknis ini untuk menghindari selisih atau
+ketidakcocokan antara ADK dari SAKTI dengan SPRINT KPPN.
+
+<MenuSakti />
+
+## Prasyarat
+
+- Role yang dibutuhkan: operator (OPR) modul Bendahara.
+- Dokumen input: kuitansi, pungutan-setoran pajak, pencatatan
+  pembayaran dana titipan, dan pemindahan kas tunai/bank bendahara
+  pengeluaran.
+- Login dengan tahun anggaran sesuai DIPA berjalan.
+
+## Langkah
+
+### Mencetak LPJ bendahara pengeluaran
+
+<Steps>
+
+1. Masuk modul Bendahara, buka menu **Bendahara > Cetak Laporan >
+   LPJ Bendahara Pengeluaran**.
+2. Pada kolom jenis laporan, pilih **Laporan Pertanggungjawaban
+   Bendahara Pengeluaran** — lewati pilihan jenis ADK karena diakses
+   pada langkah berikutnya.
+3. Pada kolom periode, pilih tanggal terakhir bulan pelaporan LPJ
+   (misalnya tanggal 31 untuk rekon LPJ bulan berkenaan).
+4. Klik tombol **Cek Periode** — lewati isian nomor DIPA, program,
+   kegiatan, fungsi, sub fungsi, dan nomor register.
+5. Isi kolom Informasi Kas Fisik — wajib diisi sesuai kondisi kas
+   tunai dan kas bank riil di akhir bulan pelaporan, karena data ini
+   ditampilkan sebagai saldo dan unsur penambah/pengurang pada
+   cetakan LPJ; apabila tidak diisi dapat menyebabkan selisih pada
+   kategori kas bank/tunai UP.
+6. Pada kolom Hasil Pemeriksaan Kas, isikan kolom Penjelasan Selisih
+   Kas apabila memang terdapat selisih, dan kolom Penjelasan Selisih
+   Pembukuan UP apabila cetakan LPJ memuat selisih pembukuan UP.
+7. Klik tombol **Cetak**.
+8. Pada popup Form Cari Penandatangan, pilih penandatangan LPJ
+   (umumnya KPA).
+9. Klik tombol **Unduh** untuk mencetak LPJ, lalu periksa seluruh
+   saldo pada cetakan — data pada ADK LPJ berasal dari data cetakan
+   LPJ, sehingga isian kas bank/tunai serta penjelasan selisih harus
+   sudah benar agar terbawa ke ADK dan saldo sesuai saat rekon ke
+   SPRINT KPPN.
+
+</Steps>
+
+### Mengunduh ADK LPJ bendahara pengeluaran
+
+<Steps>
+
+1. Masih pada menu **Bendahara > Cetak Laporan > LPJ Bendahara
+   Pengeluaran**, pada kolom jenis ADK pilih **ADK LPJ Bendahara
+   Pengeluaran** — kosongkan kolom jenis laporan.
+2. Atur tanggal periode ADK LPJ yang akan diunduh pada kolom
+   periode, lalu klik tombol **Unduh ADK** pada bagian bawah layar —
+   ADK terunduh ke komputer dan dapat dipakai untuk rekon LPJ bulanan
+   ke KPPN menggunakan aplikasi SPRINT.
+
+</Steps>
+
+## Hasil yang diharapkan
+
+Cetakan LPJ bendahara pengeluaran dan ADK LPJ tersedia untuk rekon
+LPJ bulanan ke KPPN melalui SPRINT-KPPN tanpa selisih saldo.
+
+## Ketentuan
+
+- Menu Cetak Laporan juga dapat mencetak laporan lain: BA Hasil
+  Pemeriksaan Kas, Laporan Daftar Rincian Kas, buku-buku pembantu
+  bendahara, karwas UP KKP, dan laporan konfirmasi setoran — pilih
+  jenis laporan lalu klik tombol **Unduh**.
+
+## Terkait
+
+- [Merekam Referensi Detil Rekening](/bendahara/referensi-detil-rekening/)
+- [Membuat LPJ Bendahara Penerimaan dengan TTE](/bendahara/lpj-bendahara-penerimaan/)
+
+## Sumber
+
+<SumberAsli />
