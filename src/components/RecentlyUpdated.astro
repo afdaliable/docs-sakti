@@ -8,7 +8,7 @@ const namaModul = new Map(konfigurasi.modul.map((m) => [m.slug, m.nama]));
 const base = import.meta.env.BASE_URL;
 
 const terbaru = (await artikelTampil())
-	.map((a) => ({ artikel: a, tanggal: tanggalArtikel(a.data) }))
+	.map((a) => ({ artikel: a, tanggal: tanggalArtikel({ ...a.data, filePath: a.filePath }) }))
 	.filter((a): a is { artikel: typeof a.artikel; tanggal: Date } => a.tanggal !== null)
 	.sort((a, b) => b.tanggal.getTime() - a.tanggal.getTime())
 	.slice(0, 6);

@@ -22,9 +22,9 @@ export function tanggalArtikel(data: {
 }): Date | null {
 	if (data.lastUpdated instanceof Date) return data.lastUpdated;
 	if (data.terakhir_diverifikasi instanceof Date) return data.terakhir_diverifikasi;
-	const berkas = data.filePath ?? (data.id ? `${data.id}.mdx` : undefined);
-	if (!berkas) return null;
-	return tanggalCommit(path.resolve('src/content/docs', berkas));
+	if (data.filePath) return tanggalCommit(path.resolve(data.filePath));
+	if (data.id) return tanggalCommit(path.resolve('src/content/docs', `${data.id}.mdx`));
+	return null;
 }
 
 export function formatTanggal(tanggal: Date): string {
