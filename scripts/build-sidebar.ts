@@ -1,7 +1,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import { parse } from 'yaml';
-import { muatKonfigurasi } from '../src/lib/modul.ts';
+import { labelDariSlug, muatKonfigurasi } from '../src/lib/modul.ts';
 
 const DOCS = path.resolve(process.cwd(), 'src/content/docs');
 
@@ -46,8 +46,64 @@ function artikelAkar(docsDir: string, slugModul: string, produksi: boolean) {
 		.map((nama) => ({ slug: `${slugModul}/${nama.replace(/\.mdx?$/, '')}` }));
 }
 
+function orderDari(frontmatter: Record<string, unknown>): number {
+	const sidebar = frontmatter.sidebar as { order?: number } | undefined;
+	return typeof sidebar?.order === 'number' ? sidebar.order : Number.MAX_VALUE;
+}
+
+function itemFolder(docsDir: string, segmen: string[], produksi: boolean) {
+	const jalur = path.join(docsDir, ...segmen);
+	const slugInduk = segmen.join('/');
+	const hasil: Record<string, unknown>[] = [];
+	if (adaIndeks(docsDir, segmen)) {
+		hasil.push({ slug: slugInduk });
+	}
+	const entri = isiFolder(docsDir, segmen)
+		.filter((nama) => !/^index\.mdx?$/.test(nama))
+		.map((nama) => {
+			const jalurEntri = path.join(jalur, nama);
+			if (fs.statSync(jalurEntri).isDirectory()) {
+				return { nama, jenis: 'folder' as const };
+			}
+			if (/\.mdx?$/.test(nama)) {
+				return { nama, jenis: 'berkas' as const };
+			}
+			return null;
+		})
+		.filter((e): e is { nama: string; jenis: 'folder' | 'berkas' } => e !== null)
+		.map((e) => {
+			if (e.jenis === 'folder') {
+				const indeks = ['index.mdx', 'index.md']
+					.map((f) => path.join(jalur, e.nama, f))
+					.find((f) => fs.existsSync(f));
+				const fm = indeks ? frontmatterBerkas(indeks) : {};
+				return { ...e, order: orderDari(fm), fm };
+			}
+			const fm = frontmatterBerkas(path.join(jalur, e.nama));
+			return { ...e, order: orderDari(fm), fm };
+		})
+		.sort((a, b) => a.order - b.order || a.nama.localeCompare(b.nama));
+	for (const e of entri) {
+		if (e.jenis === 'berkas') {
+			if (produksi && !terbitDiProduksi(path.join(jalur, e.nama))) continue;
+			hasil.push({ slug: `${slugInduk}/${e.nama.replace(/\.mdx?$/, '')}` });
+			continue;
+		}
+		const items = itemFolder(docsDir, [...segmen, e.nama], produksi);
+		if (items.length === 0) continue;
+		const judul = e.fm.title;
+		hasil.push({
+			label: typeof judul === 'string' && judul !== '' ? judul : labelDariSlug(e.nama),
+			collapsed: true,
+			items,
+		});
+	}
+	return hasil;
+}
+
 function itemSub(
 	docsDir: string,
+	produksi: boolean,
 	slugModul: string,
 	sub: { slug: string; nama: string },
 ) {
@@ -55,6 +111,16 @@ function itemSub(
 	if (berkas.length === 0) return null;
 	if (berkas.every((nama) => /^index\.mdx?$/.test(nama))) {
 		return { label: sub.nama, slug: `${slugModul}/${sub.slug}` };
+	}
+	const adaSubFolder = berkas.some((nama) =>
+		fs.statSync(path.join(docsDir, slugModul, sub.slug, nama)).isDirectory(),
+	);
+	if (adaSubFolder) {
+		return {
+			label: sub.nama,
+			collapsed: true,
+			items: itemFolder(docsDir, [slugModul, sub.slug], produksi),
+		};
 	}
 	return {
 		label: sub.nama,
@@ -81,7 +147,7 @@ function itemModul(
 		};
 	}
 	const itemSubMenu = modul.sub
-		.map((sub) => itemSub(docsDir, modul.slug, sub))
+		.map((sub) => itemSub(docsDir, produksi, modul.slug, sub))
 		.filter((item) => item !== null);
 	return {
 		label: modul.nama,

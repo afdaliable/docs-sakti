@@ -66,3 +66,80 @@ test('artikel akar modul ditambahkan setelah sub; draft dilewati di produksi', (
 	assert.deepEqual(slugs, ['komitmen', 'komitmen/ruh', 'komitmen/artikel-a', 'komitmen/artikel-b']);
 	fs.rmSync(tmp, { recursive: true, force: true });
 });
+
+test('sub dengan sub-folder dibangun manual berurutan; draft dilewati di produksi', () => {
+	const tmp = fs.mkdtempSync(path.join(os.tmpdir(), 'sidebar-'));
+	const fm = (judul: string, extra = '') => `---\ntitle: ${judul}\nmodul: komitmen\nstatus: terbit${extra}\n---\n`;
+	fs.mkdirSync(path.join(tmp, 'komitmen/ruh/kontrak'), { recursive: true });
+	fs.mkdirSync(path.join(tmp, 'komitmen/ruh/supplier'), { recursive: true });
+	fs.writeFileSync(path.join(tmp, 'komitmen/index.mdx'), fm('Komitmen'));
+	fs.writeFileSync(path.join(tmp, 'komitmen/ruh/index.mdx'), fm('RUH'));
+	fs.writeFileSync(path.join(tmp, 'komitmen/ruh/lepas.mdx'), fm('Lepas', '\nsidebar:\n  order: 5'));
+	fs.writeFileSync(path.join(tmp, 'komitmen/ruh/kontrak/index.mdx'), fm('Kontrak', '\nsidebar:\n  order: 2'));
+	fs.writeFileSync(path.join(tmp, 'komitmen/ruh/kontrak/a.mdx'), fm('A', '\nsidebar:\n  order: 2'));
+	fs.writeFileSync(path.join(tmp, 'komitmen/ruh/kontrak/b.mdx'), fm('B', '\nsidebar:\n  order: 1'));
+	fs.writeFileSync(
+		path.join(tmp, 'komitmen/ruh/kontrak/draf.mdx'),
+		`---\ntitle: Draf\nmodul: komitmen\nstatus: draft\n---\n`,
+	);
+	fs.writeFileSync(path.join(tmp, 'komitmen/ruh/supplier/index.mdx'), fm('Supplier', '\nsidebar:\n  order: 1'));
+	fs.writeFileSync(path.join(tmp, 'komitmen/ruh/supplier/x.mdx'), fm('X'));
+
+	const cariRuh = (sidebar: ReturnType<typeof bangunSidebar>) =>
+		(sidebar
+			.flatMap((g) => g.items as { label?: string; items?: unknown[] }[])
+			.find((i) => i.label === 'Komitmen')!.items as { label?: string; items?: unknown[] }[])
+			.find((i) => i.label === 'RUH')!;
+
+	const dev = cariRuh(bangunSidebar({ docsDir: tmp, produksi: false }));
+	const ringkas = (items: unknown[]): unknown[] =>
+		(items as { slug?: string; label?: string; items?: unknown[] }[]).map((i) =>
+			i.slug !== undefined ? i.slug : { label: i.label, items: ringkas(i.items ?? []) },
+		);
+	assert.deepEqual(ringkas(dev.items as unknown[]), [
+		'komitmen/ruh',
+		{ label: 'Supplier', items: ['komitmen/ruh/supplier', 'komitmen/ruh/supplier/x'] },
+		{
+			label: 'Kontrak',
+			items: [
+				'komitmen/ruh/kontrak',
+				'komitmen/ruh/kontrak/b',
+				'komitmen/ruh/kontrak/a',
+				'komitmen/ruh/kontrak/draf',
+			],
+		},
+		'komitmen/ruh/lepas',
+	]);
+
+	const prod = cariRuh(bangunSidebar({ docsDir: tmp, produksi: true }));
+	assert.deepEqual(ringkas(prod.items as unknown[]), [
+		'komitmen/ruh',
+		{ label: 'Supplier', items: ['komitmen/ruh/supplier', 'komitmen/ruh/supplier/x'] },
+		{
+			label: 'Kontrak',
+			items: ['komitmen/ruh/kontrak', 'komitmen/ruh/kontrak/b', 'komitmen/ruh/kontrak/a'],
+		},
+		'komitmen/ruh/lepas',
+	]);
+	fs.rmSync(tmp, { recursive: true, force: true });
+});
+
+test('sub tanpa sub-folder tetap memakai autogenerate', () => {
+	const tmp = fs.mkdtempSync(path.join(os.tmpdir(), 'sidebar-'));
+	const fm = (judul: string) => `---\ntitle: ${judul}\nmodul: komitmen\nstatus: terbit\n---\n`;
+	fs.mkdirSync(path.join(tmp, 'komitmen/adk'), { recursive: true });
+	fs.writeFileSync(path.join(tmp, 'komitmen/index.mdx'), fm('Komitmen'));
+	fs.writeFileSync(path.join(tmp, 'komitmen/adk/index.mdx'), fm('ADK'));
+	fs.writeFileSync(path.join(tmp, 'komitmen/adk/artikel.mdx'), fm('Artikel'));
+
+	const komitmen = bangunSidebar({ docsDir: tmp, produksi: true })
+		.flatMap((g) => g.items as { label?: string; items?: unknown[] }[])
+		.find((i) => i.label === 'Komitmen')!;
+	const adk = (komitmen.items as { label?: string }[]).find((i) => i.label === 'ADK')!;
+	assert.deepEqual(adk, {
+		label: 'ADK',
+		collapsed: true,
+		items: [{ autogenerate: { directory: 'komitmen/adk' } }],
+	});
+	fs.rmSync(tmp, { recursive: true, force: true });
+});
