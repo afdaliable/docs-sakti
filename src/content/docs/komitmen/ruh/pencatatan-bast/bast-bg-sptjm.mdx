@@ -1,0 +1,233 @@
+---
+title: Merekam BAST dengan Bank Garansi/SPTJM
+description: Langkah merekam BAST-BG, SPP kontraktual, BAST Final, dan penyetoran SPNP untuk transaksi kontraktual akhir tahun dengan jaminan.
+modul: komitmen
+menu_sakti: "Komitmen > RUH > BAST/BAKP/BAPP/DYD > BAST/BG Kontraktual"
+peran: [satker]
+jenis: juknis
+kata_kunci: [bast bank garansi, bast bg, sptjm, bast final, spnp, jaminan akhir tahun]
+status: review
+perlu_review: true
+sumber:
+  - judul: "Juknis Transaksi Kontraktual dengan Pencatatan Jaminan Akhir Tahun - Bank Garansi-1"
+    url: "https://drive.google.com/file/d/1QXeT5ZTwn1t9hjeXYFhzckIP2jMOB3cP/view"
+    jenis: pdf
+    diambil: 2026-11-21
+    id_manifest: B-kom-008
+  - judul: "Juknis_Perekaman_BAST_BG_SPTJM (versi lama, digantikan)"
+    url: "https://drive.google.com/file/d/1P8nvWPABuxglfVVpqcbg94Ze8pka2fmW/view"
+    jenis: pdf
+    diambil: 2026-11-21
+    id_manifest: B-kom-018
+sidebar:
+  order: 3
+---
+
+import { Steps, Aside } from '@astrojs/starlight/components';
+import MenuSakti from '~/components/MenuSakti.astro';
+import SumberAsli from '~/components/SumberAsli.astro';
+
+BAST dengan Bank Garansi/SPTJM (BAST-BG) adalah dokumen sumber yang
+menjadi trigger perekaman SPP kontraktual dengan bank garansi. Artikel
+ini mencakup tahapan setelah jaminan akhir tahun direkam: perekaman
+BAST-BG, SPP kontraktual sampai catat SP2D, perekaman BAST Final, dan
+penyetoran SPNP.
+
+<MenuSakti />
+
+## Prasyarat
+
+- Role yang dibutuhkan: **Operator Komitmen**.
+- Jaminan akhir tahun/bank garansi sudah direkam (lihat [Mencatat
+  Jaminan Akhir Tahun (Bank
+  Garansi)](/komitmen/ruh/pencatatan-jaminan-akhir-tahun/)).
+- Input nilai desimal tidak dapat dilakukan untuk nilai harga yang
+  menggunakan mata uang Rupiah.
+
+## Alur proses
+
+Setelah perekaman jaminan akhir tahun, tahapan pada SAKTI adalah:
+
+1. Merekam BAST dengan bank garansi (BAST-BG).
+2. Merekam SPP kontraktual sampai catat SP2D.
+3. Merekam BAST Final sebagai pendetilan atas transaksi dengan
+   BAST-BG.
+4. Melakukan penyetoran SPNP apabila terdapat selisih antara BAST-BG
+   dengan BAST Final (realisasi pekerjaan).
+
+## Langkah
+
+### Merekam BAST-BG
+
+<Steps>
+
+1. Masuk ke menu **Komitmen > RUH > BAST/BAKP/BAPP/DYD > BAST/BG
+   Kontraktual**, lalu klik **Rekam**.
+
+2. Cari data kontrak (termin kontrak) yang akan di-BAST-BG-kan dan
+   telah dilakukan perekaman jaminan akhir tahun.
+
+3. Rekam pendetilan COA: klik **Rekam**, klik tombol **[…]** di
+   sebelah kanan kolom Kode COA lalu pilih detail COA yang akan
+   digunakan, masukkan nilai yang akan dibebankan pada COA tersebut,
+   klik **Simpan**, lalu klik **Keluar** untuk kembali ke form
+   perekaman BAST.
+
+4. Pada Kategori BAST, pilih **Bank Garansi/SPTJM**.
+
+5. Cari jaminan akhir tahun yang telah direkam sebelumnya dengan
+   mengklik tombol kaca pembesar di sebelah kanan kolom **Nomor
+   Jaminan**, lalu pilih data bank garansi/SPTJM pada form pop-up.
+
+6. Lengkapi isian keterangan data BAST sesuai dokumen sumber: Nomor
+   BAST, Tanggal BAST, dan Nilai BAST-BG. Nomor BAST dapat diisikan
+   Nomor BAPP/BAKP atau nomor dokumen pendukung lainnya atas BAST bank
+   garansi; terdapat validasi bahwa Nomor BAST-BG tidak boleh sama
+   dengan Nomor BAST Final (pendetilan barang/jasa).
+
+7. Klik **Simpan**. Data BAST-BG dapat digunakan untuk perekaman SPP
+   LS kontraktual.
+
+</Steps>
+
+Pada BAST-BG tidak terdapat pendetilan barang karena progres pekerjaan
+belum final dan belum ada serah terima barang.
+
+### Merekam SPP kontraktual
+
+Langkah perekaman SPP kontraktual berpedoman pada Petunjuk Teknis
+Perekaman SPM Kontraktual yang dapat diunduh melalui aplikasi mobile
+panduSakti pada playstore/app store. Secara singkat, SPP yang digunakan
+adalah SPP dengan jenis dokumen **111 – NON GAJI KONTRAKTUAL**, lalu
+pilih BAST-BG yang telah direkam sebelumnya (**Pembayaran > RUH
+Pembayaran > Catat/Ubah SPP**, pilih jenis SPP **111 – NON GAJI
+KONTRAKTUAL**).
+
+### Merekam BAST Final
+
+BAST Final adalah dokumen serah terima final atas transaksi kontraktual
+yang menggunakan jaminan akhir tahun/bank garansi, dan pada BAST Final
+terdapat pendetilan jasa/barang. BAST Final hanya dapat direkam setelah
+transaksi atas BAST-BG telah dilakukan proses pencatatan SP2D.
+
+<Steps>
+
+1. Masuk ke menu **Komitmen > RUH > BAST/BAKP/BAPP/DYD > BAST/BG
+   Kontraktual**, lalu klik **Rekam**.
+
+2. Cari BAST-BG yang telah digunakan sampai proses catat SP2D, lalu
+   pilih BAST-BG tersebut. Kolom Info Jaminan akan terisi secara
+   otomatis.
+
+3. Pada isian Data BAST, pilih kategori BAST yang akan didetilkan.
+   Jika memilih kategori **Aset/Jasa Dikapitalisasi Aset**, rekam
+   terlebih dahulu kode barang pendetilannya.
+
+4. Lengkapi isian Data BAST: Nomor BAST Final, Tanggal BAST Final, dan
+   Progress Pekerjaan.
+
+5. Apabila nilai BAST-BG sama dengan nilai data kontrak (termin
+   kontrak), nilai SPNP (Surat Penetapan Nilai Pengembalian) adalah 0.
+   Jika nilai BAST Final lebih kecil dari BAST-BG, nilai SPNP akan
+   terisi dan wajib dilakukan pengembalian kepada negara.
+
+6. Klik **Simpan**.
+
+</Steps>
+
+### Penyetoran SPNP
+
+Jika nilai BAST Final lebih kecil dari BAST-BG, akan terdapat nilai
+SPNP (Surat Penetapan Nilai Pengembalian) untuk dikembalikan kepada
+negara (disetorkan). Info besaran SPNP dapat dilihat pada form cari
+BAST. Penyetoran SPNP dapat menggunakan menu:
+
+1. **Bendahara → Setoran Pengembalian Belanja** (jalur menurut juknis)
+   untuk tahun anggaran berjalan;
+2. **Bendahara > Setoran > Setoran UP/TUP/PNBP Bendahara Pengeluaran**
+   apabila disetorkan lewat tahun anggaran.
+
+<Steps>
+
+1. Login dengan user operator bendahara.
+
+2. Pilih menu setoran sesuai tahun penyetoran: **Bendahara > Setoran >
+   Setoran UP/TUP/PNBP Bendahara Pengeluaran** untuk setoran yang
+   dilakukan di tahun anggaran berikutnya, atau **Setoran Pengembalian
+   Belanja** (jalur menurut juknis) jika disetor di tahun yang sama
+   dengan proses perekaman BAST Final.
+
+3. Pilih jenis pengembalian **PNBP Umum → Non SBS**.
+
+4. Lengkapi parameter, lalu klik tombol konfirmasi pada parameter Bank
+   Garansi.
+
+5. Pilih jaminan, lalu lengkapi informasi setoran, kemudian klik
+   **Simpan**.
+
+</Steps>
+
+## Masalah umum
+
+<details>
+<summary>Apakah satu bank garansi dapat digunakan untuk beberapa akun?</summary>
+
+Ya. Satu BG melekat pada satu kontrak, dan dapat berupa kontrak yang
+memiliki satu akun (line) atau lebih.
+
+</details>
+
+<details>
+<summary>Apakah satu bank garansi dapat digunakan untuk beberapa BAST?</summary>
+
+Ya. BG menggunakan konsep saldo — selama masih terdapat saldo jaminan,
+dapat digunakan untuk beberapa BAST dalam satu kontrak yang dijaminkan.
+
+</details>
+
+<details>
+<summary>Data bank garansi elektronik (e-BG) tidak muncul pada pencarian data e-BG</summary>
+
+Pastikan data bank garansi telah selesai dilakukan proses konfirmasi
+pada OMSPAN.
+
+</details>
+
+<details>
+<summary>Data BAST-BG tidak muncul saat akan dilakukan perekaman BAST Final</summary>
+
+Pastikan SPM atas BAST-BG telah dilakukan proses upload SP2D.
+
+</details>
+
+<details>
+<summary>Satu termin terakhir akan dijadikan dua BAST (BAST tanpa BG dan BAST-BG)</summary>
+
+Buat BAST tanpa BG terlebih dahulu sebelum BAST-BG, dengan progress
+pekerjaan proporsional sesuai nilai pembayaran. Apabila progress
+pekerjaan telah direkam 100% pada BAST tanpa BG, perekaman BAST-BG akan
+terkena validasi.
+
+</details>
+
+<Aside type="caution" title="Perlu verifikasi">
+Juknis Desember 2022 dan juknis Maret 2022 menulis jalur
+**Komitmen > RUH > Pencatatan BAST/BG**; menu aplikasi saat ini memakai
+**Komitmen > RUH > BAST/BAKP/BAPP/DYD > BAST/BG Kontraktual**. Juknis
+juga menulis penyetoran SPNP pada **Bendahara > Setoran Pengembalian
+Belanja** (padanan pada menu Bendahara tidak ditemukan; form berlabel
+sama hanya ada di bawah Bendahara Valas) dan **Bendahara > Setoran
+UP/TUP/PNBP Bendahara Pengeluaran** (menu aplikasi saat ini memakai
+**Bendahara > Setoran > Setoran UP/TUP/PNBP Bendahara Pengeluaran**).
+</Aside>
+
+## Terkait
+
+- [Mencatat Jaminan Akhir Tahun (Bank Garansi)](/komitmen/ruh/pencatatan-jaminan-akhir-tahun/)
+- [Merekam BAST Kontraktual](/komitmen/ruh/pencatatan-bast/bast-kontraktual/)
+
+- [Merekam Supplier Tipe 1, 2, dan 7](/komitmen/ruh/pencatatan-suplier/suplier-tipe-1-2-7/)
+
+## Sumber
+
+<SumberAsli />

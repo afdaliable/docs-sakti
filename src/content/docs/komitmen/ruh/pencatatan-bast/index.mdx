@@ -1,0 +1,44 @@
+---
+title: BAST/BAKP/BAPP/DYD
+description: Panduan perekaman BAST pada modul Komitmen.
+modul: komitmen
+jenis: indeks
+status: terbit
+sidebar:
+  label: Ringkasan
+  order: 3
+---
+
+import { CardGrid, LinkCard } from '@astrojs/starlight/components';
+
+Sub-menu ini berisi panduan perekaman BAST kontraktual, BAST non
+kontraktual, BAST dengan bank garansi, unggah rincian barang, dan void
+BAST pada aplikasi SAKTI.
+
+<CardGrid>
+	<LinkCard
+		title="Merekam BAST Kontraktual"
+		description="Merekam berita acara serah terima atas termin kontrak."
+		href="/komitmen/ruh/pencatatan-bast/bast-kontraktual/"
+	/>
+	<LinkCard
+		title="Merekam BAST Non Kontraktual"
+		description="Merekam BAST/kuitansi LS tanpa kontrak sebagai dasar SPP."
+		href="/komitmen/ruh/pencatatan-bast/bast-non-kontraktual/"
+	/>
+	<LinkCard
+		title="Merekam BAST dengan Bank Garansi/SPTJM"
+		description="Merekam BAST-BG, SPP kontraktual, BAST Final, dan SPNP."
+		href="/komitmen/ruh/pencatatan-bast/bast-bg-sptjm/"
+	/>
+	<LinkCard
+		title="Mengunggah CSV Rincian Barang pada BAST"
+		description="Mengisi rincian barang BAST sekaligus lewat file CSV."
+		href="/komitmen/ruh/pencatatan-bast/upload-csv-rincian-barang/"
+	/>
+	<LinkCard
+		title="Melakukan Void BAST"
+		description="Mengajukan pemulihan FA atas BAST yang tidak jadi dipakai."
+		href="/komitmen/ruh/pencatatan-bast/void-bast/"
+	/>
+</CardGrid>

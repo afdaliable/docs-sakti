@@ -1,0 +1,129 @@
+---
+title: Merekam BAST Kontraktual
+description: Langkah merekam BAST kontraktual atas termin kontrak sebagai dasar pembuatan SPP kontraktual.
+modul: komitmen
+menu_sakti: "Komitmen > RUH > BAST/BAKP/BAPP/DYD > BAST/BG Kontraktual"
+peran: [satker]
+jenis: juknis
+kata_kunci: [bast kontraktual, rekam bast, serah terima kontrak, termin kontrak, pendetilan coa bast]
+status: review
+perlu_review: true
+sumber:
+  - judul: "Juknis_SAKTI_Rekam_BAST_Kontraktual_SAKTI_WEB"
+    url: "https://drive.google.com/file/d/1oRGcHW5ondyE8VBE2rKjZW5ZcDFUZvi2/view"
+    jenis: pdf
+    diambil: 2026-11-21
+    id_manifest: B-kom-027
+sidebar:
+  order: 1
+---
+
+import { Steps, Aside } from '@astrojs/starlight/components';
+import MenuSakti from '~/components/MenuSakti.astro';
+import SumberAsli from '~/components/SumberAsli.astro';
+
+Perekaman BAST kontraktual merupakan trigger dalam perekaman SPP
+kontraktual. BAST direkam oleh operator komitmen atas termin kontrak
+yang sudah mendapatkan Nomor CAN.
+
+<MenuSakti />
+
+## Prasyarat
+
+- Role yang dibutuhkan: **Operator Komitmen**.
+- Data Pagu DIPA sudah tersedia.
+- Data kontrak yang digunakan sudah tercatat Nomor CAN-nya (proses
+  perekaman kontrak mengacu pada petunjuk perekaman data kontrak).
+
+## Alur proses
+
+1. Operator Komitmen — merekam data kontrak; PPK — membentuk ADK BCKA;
+   KPPN — memproses ADK BCKA hingga kontrak mendapatkan Nomor CAN.
+2. Operator Komitmen — merekam BAST kontraktual.
+3. Operator Pembayaran — merekam SPP kontraktual (mengacu pada
+   petunjuk teknis pembayaran tentang perekaman SPM kontraktual).
+
+## Langkah
+
+<Steps>
+
+1. Login dengan user operator komitmen, lalu buka menu **Komitmen >
+   RUH > BAST/BAKP/BAPP/DYD > BAST/BG Kontraktual**. Klik tombol
+   **Tambah** untuk merekam BAST kontraktual baru.
+
+2. Klik ikon **Pencarian** untuk mencari data kontrak yang akan
+   digunakan; pada menu pop-up yang muncul, klik kembali ikon
+   **Pencarian**, gunakan filter pencarian berdasarkan No. Kontrak,
+   pilih data kontrak, lalu klik tombol **Pilih**.
+
+3. Pilih termin yang akan digunakan dalam perekaman BAST kontraktual
+   (termin muncul pada menu pop-up apabila data kontrak telah
+   mendapatkan Nomor CAN), lalu klik tombol **Pilih**.
+
+4. Rekam **Nomor BAST**, **Tanggal BAST**, dan **Progress Pekerjaan**
+   atas termin yang akan dibayarkan.
+
+5. Untuk melakukan pendetilan COA 15/16 segmen, klik tombol
+   **Pendetilan COA**, lalu klik tombol **Tambah** untuk merekam data
+   baru. Klik ikon **Pencarian** untuk memilih detil RO, Komponen,
+   Sub Komponen (untuk 15 segmen) dan Item (untuk 16 segmen), lalu
+   klik **Ok**.
+
+6. Input nilai yang akan dibayarkan pada BAST kontraktual, lalu klik
+   tombol **Simpan**. Apabila perekaman detil telah selesai, klik
+   tombol **Keluar**.
+
+7. Pilih **Kategori BAST**. Apabila BAST akan menghasilkan Aset/Jasa
+   Dikapitalisasi Aset, satker wajib melakukan pendetilan atas Rincian
+   Barang: klik tombol **Rekam**, klik ikon **Pencarian** untuk memilih
+   Kode Barang (dapat menggunakan filter pencarian berdasarkan Nama
+   Barang atau Kode Barang), pilih kode barang, lalu klik **Pilih**.
+
+8. Input **Jumlah** dan **Harga Satuan** barang — satker dapat merekam
+   lebih dari satu barang dalam satu BAST — lalu lakukan penyimpanan
+   dan klik tombol **Keluar** untuk keluar dari menu tersebut.
+
+9. Klik tombol **Simpan** untuk menyimpan BAST kontraktual.
+
+</Steps>
+
+## Hasil yang diharapkan
+
+BAST kontraktual terekam dan dapat digunakan sebagai dasar pembuatan
+SPP kontraktual.
+
+## Ketentuan
+
+- Perekaman BAST kontraktual mengakomodir penginputan kode barang;
+  perekaman lebih dari satu barang dapat dilakukan dalam satu BAST.
+- Pendetilan 15 segmen sampai dengan Sub Komponen, sedangkan
+  pendetilan 16 segmen sampai dengan Item, dilakukan pada saat
+  perekaman data.
+- Perekaman RSPP dilakukan dengan melakukan Pendetilan COA yang
+  terbawa dari Pendetilan COA pada data kontrak.
+- Input nilai desimal tidak dapat dilakukan untuk nilai harga yang
+  menggunakan mata uang Rupiah.
+- BAST yang telah dilakukan pendetilan barang tidak dapat diubah atau
+  dihapus.
+- BAST yang pembayarannya telah menjadi SP2D tidak dapat diubah atau
+  dihapus.
+- Diperlukan koordinasi antarmodul untuk menghindari kesalahan
+  pencatatan barang.
+
+<Aside type="caution" title="Perlu verifikasi">
+Juknis 2022 menulis jalur **Komitmen > RUH > Pencatatan BAST/BG**; menu
+aplikasi saat ini memakai **Komitmen > RUH > BAST/BAKP/BAPP/DYD >
+BAST/BG Kontraktual**.
+</Aside>
+
+## Terkait
+
+- [Merekam Kontrak Tahunan (IDR)](/komitmen/ruh/pencatatan-kontrak/kontrak-tahunan/)
+- [Mengunggah CSV Rincian Barang pada BAST](/komitmen/ruh/pencatatan-bast/upload-csv-rincian-barang/)
+- [Melakukan Void BAST](/komitmen/ruh/pencatatan-bast/void-bast/)
+
+- [Merekam Supplier Tipe 1, 2, dan 7](/komitmen/ruh/pencatatan-suplier/suplier-tipe-1-2-7/)
+
+## Sumber
+
+<SumberAsli />

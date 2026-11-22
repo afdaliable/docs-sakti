@@ -1,0 +1,125 @@
+---
+title: Mengunggah CSV Rincian Barang pada BAST
+description: Cara mengisi rincian barang pada form BAST sekaligus dengan mengunggah file ADK berformat CSV.
+modul: komitmen
+menu_sakti: "Komitmen > RUH > BAST/BAKP/BAPP/DYD"
+peran: [satker]
+jenis: juknis
+kata_kunci: [upload csv, rincian barang, adk csv, unggah barang bast, kode barang persediaan]
+status: review
+perlu_review: false
+sumber:
+  - judul: "Juknis SAKTI - Fitur Upload CSV Pada Form Rincian Barang Pada Modul Komitmen"
+    url: "https://drive.google.com/file/d/1ulnizpWUcX2opAK4LVjpeiJG610va1nw/view"
+    jenis: pdf
+    diambil: 2026-11-21
+    id_manifest: B-kom-007
+sidebar:
+  order: 4
+---
+
+import { Steps } from '@astrojs/starlight/components';
+import MenuSakti from '~/components/MenuSakti.astro';
+import SumberAsli from '~/components/SumberAsli.astro';
+
+Fitur Upload CSV tersedia pada setiap form rincian barang. Dengan fitur
+ini, pengguna dapat merekam detil barang untuk setiap maksimal 100 baris
+data barang dengan mengunggah ADK CSV sesuai format yang ditentukan.
+
+<MenuSakti />
+
+Fitur ini dapat digunakan pada form rincian barang di menu:
+
+- **Komitmen > RUH > BAST/BAKP/BAPP/DYD**
+- **Komitmen > RUH > Interkoneksi BAST Non Kontraktual**
+- **Komitmen > RUH > Interkoneksi BAST Kontraktual**
+
+## Prasyarat
+
+- Role yang dibutuhkan: **Operator Komitmen** (role user "Opr" menurut
+  juknis).
+- Data rincian barang persediaan sudah disiapkan dalam file ADK
+  berformat CSV.
+
+## Format ADK
+
+- ADK menggunakan ekstensi `.csv`.
+- Struktur ADK terdiri atas tiga kolom yang masing-masing dipisahkan
+  karakter pemisah (delimiter) berupa tanda pipeline (`|`).
+- Penamaan file ADK tidak memiliki format khusus.
+- Dalam file ADK tidak terdapat header/judul; baris pertama sudah
+  berupa data isian.
+
+| Kolom | Isi |
+|---|---|
+| Pertama | 10 digit Kode Barang Persediaan (Kode Sub Sub Kelompok); referensi kode barang dapat dilihat pada menu **Referensi > Umum > Barang > Kategori Sub Sub Kelompok** |
+| Kedua | Jumlah barang (kuantitas) |
+| Ketiga | Harga satuan |
+
+Contoh penginputan ADK:
+
+```text
+1010101013|5|1000
+```
+
+## Langkah
+
+<Steps>
+
+1. Pada form rincian barang, klik tombol **Upload CSV**, lalu pilih
+   file ADK yang akan diunggah.
+
+2. Pilih file ADK yang sesuai untuk diunggah.
+
+3. Apabila proses unggah ADK berhasil divalidasi, daftar rincian
+   barang akan otomatis bertambah sesuai data pada ADK. Jika jumlah
+   barang melebihi 100 baris, unggah ADK kembali.
+
+</Steps>
+
+## Ketentuan
+
+Validasi umum:
+
+- Fitur ini hanya dapat digunakan untuk Kode Barang Persediaan (Kode
+  Golongan 1).
+- Jumlah baris maksimal dalam satu ADK adalah 100 baris.
+- Kode Barang Pita Cukai, Materai, dan Leges dengan format
+  1.01.05.01.001.xxxxxx hanya dapat digunakan oleh satuan kerja dengan
+  kode unit 015.04 dan 015.05.
+- Untuk barang dengan harga satuan desimal, jumlah barang maksimal yang
+  dapat diinput adalah satu unit.
+
+Validasi kolom pertama (kode barang):
+
+- Kode barang yang diinput harus terdapat dalam referensi kode sub sub
+  kelompok.
+- Harus terdiri dari 10 digit angka.
+- Kolom kode barang tidak boleh kosong.
+- Input tidak boleh mengandung karakter selain angka.
+
+Validasi kolom kedua (jumlah barang):
+
+- Input harus berupa angka.
+- Kolom jumlah barang tidak boleh kosong.
+- Nilai input harus lebih besar dari nol (0).
+
+Validasi kolom ketiga (harga satuan):
+
+- Input harus berupa angka; untuk harga dalam mata uang valas,
+  penggunaan nilai desimal dituliskan dengan tanda titik (`.`).
+- Kolom harga satuan tidak boleh kosong.
+- Nilai input harus lebih besar dari nol (0).
+
+## Terkait
+
+- [Merekam BAST Kontraktual](/komitmen/ruh/pencatatan-bast/bast-kontraktual/)
+- [Merekam BAST Non Kontraktual](/komitmen/ruh/pencatatan-bast/bast-non-kontraktual/)
+
+- [Merekam Transaksi Govmart dengan Pembayaran LS](/komitmen/ruh/govmart-ls/)
+- [Merekam Transaksi Govmart dengan UP/KKP](/komitmen/ruh/govmart-up-kkp/)
+- [Merekam Transaksi Govmart/Inaproc LS Kontraktual](/komitmen/ruh/govmart-ls-kontraktual/)
+
+## Sumber
+
+<SumberAsli />

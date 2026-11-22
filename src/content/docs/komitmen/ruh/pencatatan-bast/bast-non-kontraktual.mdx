@@ -1,0 +1,132 @@
+---
+title: Merekam BAST Non Kontraktual
+description: Langkah merekam BAST non kontraktual (kuitansi LS/dokumen yang dipersamakan) sebagai dasar pembuatan SPP LS non kontraktual.
+modul: komitmen
+menu_sakti: "Komitmen > RUH > BAST/BAKP/BAPP/DYD > BAST LS Non Kontraktual"
+peran: [satker]
+jenis: juknis
+kata_kunci: [bast non kontraktual, kuitansi ls, rekam bast, bast tanpa kontrak, dokumen yang dipersamakan]
+status: review
+perlu_review: true
+sumber:
+  - judul: "Juknis_SAKTI_Rekam_BAST_Non_Kontraktual_SAKTI_WEB"
+    url: "https://drive.google.com/file/d/1S9pRqBdTCK3Y3wRNK20dSIZ6wmRVoKTa/view"
+    jenis: pdf
+    diambil: 2026-11-21
+    id_manifest: B-kom-028
+sidebar:
+  order: 2
+---
+
+import { Steps, Aside } from '@astrojs/starlight/components';
+import MenuSakti from '~/components/MenuSakti.astro';
+import SumberAsli from '~/components/SumberAsli.astro';
+
+Perekaman BAST non kontraktual merupakan trigger dalam perekaman SPP LS
+non kontraktual. BAST non kontraktual direkam oleh operator komitmen
+untuk pembayaran yang tidak menggunakan kontrak.
+
+<MenuSakti />
+
+## Prasyarat
+
+- Role yang dibutuhkan: **Operator Komitmen**.
+- Data Pagu DIPA sudah tersedia.
+- Supplier yang digunakan sudah mendapatkan NRS (perekaman supplier
+  baru secara manual mengacu pada petunjuk teknis perekaman supplier,
+  sedangkan import supplier mengacu pada petunjuk teknis import
+  supplier interkoneksi langsung SPAN).
+
+## Langkah
+
+<Steps>
+
+1. Login dengan user operator komitmen, lalu buka menu **Komitmen >
+   RUH > BAST/BAKP/BAPP/DYD > BAST LS Non Kontraktual**. Klik tombol
+   **Tambah** untuk merekam BAST non kontraktual baru.
+
+2. Input secara manual nomor BAST pada kolom **Nomor Dokumen**, pilih
+   tanggal dokumen pada kolom **Tanggal Dokumen**, input uraian pada
+   kolom **Uraian Dokumen**, dan pada kolom mata uang satker dapat
+   memilih **IDR** untuk mata uang Rupiah.
+
+3. Klik tombol **Cari Supplier** untuk memilih supplier yang akan
+   digunakan (supplier yang dapat digunakan adalah supplier yang sudah
+   mendapatkan NRS). Satker dapat menggunakan filter pencarian
+   (opsional), pilih supplier, lalu klik tombol **Ok**.
+
+4. Lengkapi informasi distribusi 12 segmen COA terkait Program,
+   Aktivitas, KRO, Akun, KPPN, Sumber Dana, Cara Penarikan, dan Nomor
+   Register.
+
+5. Untuk melakukan pendetilan COA 15/16 segmen, klik tombol
+   **Pendetilan COA**, lalu klik tombol **Tambah** untuk merekam data
+   baru. Klik ikon **Pencarian** untuk memilih detil RO, Komponen,
+   Sub Komponen (untuk 15 segmen) dan Item (untuk 16 segmen), lalu
+   klik **Ok**.
+
+6. Input nilai yang akan dibayarkan pada BAST non kontraktual, lalu
+   klik tombol **Simpan**. Apabila perekaman detil telah selesai, klik
+   tombol **Keluar**.
+
+7. Pilih **Kategori BAST**. Apabila BAST akan menghasilkan Aset/Jasa
+   Dikapitalisasi Aset, satker wajib melakukan pendetilan atas Rincian
+   Barang: klik tombol **Rekam**, klik ikon **Pencarian** untuk memilih
+   Kode Barang (dapat menggunakan filter pencarian berdasarkan Nama
+   Barang atau Kode Barang), pilih kode barang, lalu klik **Pilih**.
+
+8. Input **Jumlah** dan **Harga Satuan** barang — satker dapat merekam
+   lebih dari satu barang dalam satu BAST — lalu lakukan penyimpanan
+   dan klik tombol **Keluar** untuk keluar dari menu tersebut.
+
+9. Klik tombol **Simpan** untuk menyimpan BAST non kontraktual.
+
+</Steps>
+
+Lampiran pendetilan COA 15/16 segmen pada BAST non kontraktual dapat
+dicetak pada menu **Komitmen > Cetak > Cetak Resume Bast Non
+Kontrak**.
+
+## Hasil yang diharapkan
+
+BAST non kontraktual terekam dan dapat digunakan sebagai dasar
+pembuatan SPP LS non kontraktual (perekaman SPP mengacu pada petunjuk
+teknis perekaman SPM non gaji dengan BAST).
+
+## Ketentuan
+
+- Perekaman BAST non kontraktual mengakomodir penginputan kode barang;
+  perekaman lebih dari satu barang dapat dilakukan dalam satu BAST.
+- Perekaman satu BAST untuk satu kombinasi 12 segmen COA.
+- Perekaman RSPP dilakukan dengan melakukan Pendetilan COA.
+- Pendetilan 15 segmen sampai dengan Sub Komponen, sedangkan
+  pendetilan 16 segmen sampai dengan Item.
+- Input nilai desimal tidak dapat dilakukan untuk nilai harga yang
+  menggunakan mata uang Rupiah.
+- BAST yang telah dilakukan pendetilan barang tidak dapat diubah atau
+  dihapus.
+- BAST yang pembayarannya telah menjadi SP2D tidak dapat diubah atau
+  dihapus.
+- Diperlukan koordinasi antarmodul untuk menghindari kesalahan
+  pencatatan barang.
+
+<Aside type="caution" title="Perlu verifikasi">
+Juknis 2022 menulis jalur **Komitmen > RUH > Pencatatan BAST Non
+Kontraktual/Kwitansi LS/Dokumen Yang Dipersamakan** dan pencetakan
+resume pada **Komitmen > Cetak > Cetak Resume BAST Non Kontrak**; menu
+aplikasi saat ini memakai **Komitmen > RUH > BAST/BAKP/BAPP/DYD > BAST
+LS Non Kontraktual** dan **Komitmen > Cetak > Cetak Resume Bast Non
+Kontrak**.
+</Aside>
+
+## Terkait
+
+- [Merekam BAST Kontraktual](/komitmen/ruh/pencatatan-bast/bast-kontraktual/)
+- [Mengunggah CSV Rincian Barang pada BAST](/komitmen/ruh/pencatatan-bast/upload-csv-rincian-barang/)
+- [Melakukan Void BAST](/komitmen/ruh/pencatatan-bast/void-bast/)
+
+- [Merekam Supplier Tipe 1, 2, dan 7](/komitmen/ruh/pencatatan-suplier/suplier-tipe-1-2-7/)
+
+## Sumber
+
+<SumberAsli />
