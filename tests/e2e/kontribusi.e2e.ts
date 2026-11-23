@@ -2,6 +2,7 @@ import { chromium } from 'playwright';
 import assert from 'node:assert/strict';
 import type http from 'node:http';
 import { buatServer } from './server.ts';
+import { pantauCsp, pastikanCspAktif } from './csp.ts';
 import { REPO_URL } from '../../src/lib/situs.ts';
 
 declare global {
@@ -21,6 +22,7 @@ const ARTIKEL = '/komitmen/ruh/pencatatan-kontrak/kontrak-tahunan/';
 const browser = await chromium.launch();
 try {
 	const konteks = await browser.newContext();
+	const pelanggaran = await pantauCsp(konteks);
 	await konteks.addInitScript(`window.__muat = 0;
 document.addEventListener('astro:page-load', () => {
 	window.__muat = (window.__muat ?? 0) + 1;
@@ -32,7 +34,8 @@ document.addEventListener('astro:page-load', () => {
 		if (m.type() === 'error') galat.push(`console.error: ${m.text()}`);
 	});
 
-	await page.goto(`${BASE_URL}${ARTIKEL}`, { waitUntil: 'networkidle' });
+	const respons = await page.goto(`${BASE_URL}${ARTIKEL}`, { waitUntil: 'networkidle' });
+	if (!process.env.E2E_BASE_URL) pastikanCspAktif(respons);
 	const lapor = page.locator('a.lapor-kesalahan');
 	await lapor.waitFor({ state: 'visible' });
 	const href = new URL((await lapor.getAttribute('href'))!);
@@ -97,6 +100,7 @@ document.addEventListener('astro:page-load', () => {
 	console.log('OK lapor-kesalahan mengikuti navigasi tanpa muat ulang:', tujuan);
 
 	assert.deepEqual(galat, [], `galat konsol/halaman: ${JSON.stringify(galat)}`);
+	assert.deepEqual(pelanggaran, [], `pelanggaran CSP: ${JSON.stringify(pelanggaran)}`);
 	console.log('e2e kontribusi: semua pemeriksaan lolos');
 } finally {
 	await browser.close();

@@ -129,7 +129,7 @@ Status Gerbang 5 (23 Nov 2026): 5.1, 5.5, 5.6 selesai; 5.3 selesai untuk Level 1
 ## Fase 6 — Rilis & pemeliharaan
 
 - [ ] 6.1 CI lengkap (`07-deploy-ops.md`), preview per PR.
-  - 23 Nov 2026: workflow CI dibuat tanpa deploy dan tanpa secret (K65). Run pertama di GitHub (push 99ca29c) lolos semua langkah dalam ±3 menit. Belum dicentang: preview per PR menunggu hosting (K3).
+  - 23 Nov 2026: workflow CI dibuat tanpa deploy dan tanpa secret (K65). Langkah `pnpm check:dist` ditambahkan setelah `check:links` (K71). Run pertama di GitHub (push 99ca29c) lolos semua langkah dalam ±3 menit. Belum dicentang: preview per PR menunggu hosting (K3).
 - [ ] 6.2 Deploy produksi + domain (K3).
   - 23 Nov 2026: persiapan selesai tanpa men-deploy (K3, K71): `site` = `https://docs.sakti.ai.id`, `robots.txt`, `public/_headers`, `pnpm build:pages`, dan panduan pemilik `docs/deploy-cloudflare.md`. Belum dicentang: proyek Pages, variabel lingkungan, dan DNS `docs.sakti.ai.id` dibuat pemilik di dashboard.
 - [ ] 6.3 Analitik + widget feedback + logging query tanpa hasil.
@@ -140,3 +140,5 @@ Status Gerbang 5 (23 Nov 2026): 5.1, 5.5, 5.6 selesai; 5.3 selesai untuk Level 1
 - [ ] 6.7 Rencana komunikasi: daftar URL lama → URL baru (`sources/peta-url-lama.csv`) agar pengelola Google Sites bisa memasang banner/tautan ke KB baru.
 
 **Gerbang 6:** situs produksi hidup, semua metrik di `00-prd.md` terpantau.
+
+Verifikasi deploy lokal (23 Nov 2026, K71): `pnpm check:dist` ditambahkan (dan masuk CI setelah `check:links`); server e2e (`tests/e2e/server.ts`) kini menerapkan `dist/_headers` dan menyajikan `404.html` berstatus 404, dan keempat tes e2e gagal bila ada pelanggaran CSP (`tests/e2e/csp.ts`). Hasil pada build `dist/` dari `main`: `check:content` 0 galat (149 peringatan); 133 tes unit lolos; build 411 halaman, tautan valid; `check:dist` lolos 8 pemeriksaan (sitemap 411 URL di bawah `https://docs.sakti.ai.id`, `robots.txt`, `_headers` dengan 10 hash skrip inline yang cocok, `404.html`, tanpa alamat localhost/`pages.dev`, canonical, 149 artikel `perlu_review` tampil dan 0 draft, 409 halaman terindeks Pagefind); e2e pencarian, beranda, navigasi, kontribusi lolos dengan header produksi tanpa pelanggaran CSP dan tanpa galat konsol (Chromium); `search:eval` Level 1 tidak berubah (143 kueri, hit@1 0,811, hit@3 0,979, MRR 0,889). Uji banding: satu hash CSP dirusak → e2e beranda dan `check:dist` gagal. Belum diuji: perilaku di Cloudflare sendiri (lihat cek pasca-deploy di `docs/deploy-cloudflare.md`) dan browser selain Chromium.

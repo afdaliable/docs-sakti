@@ -16,6 +16,7 @@
     "build:github": "tsx scripts/build-github.ts",
     "build:pages": "if [ \"$(git rev-parse --is-shallow-repository)\" = \"true\" ]; then git fetch --unshallow; fi && pnpm build",
     "check:content": "tsx scripts/check-content.ts",
+    "check:dist": "tsx scripts/check-dist.ts",
     "check:links": "astro build",
     "search:eval": "tsx scripts/search/eval.ts",
     "migrate:inventory": "tsx scripts/inventory/index.ts",

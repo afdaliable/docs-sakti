@@ -2,6 +2,7 @@ import { chromium } from 'playwright';
 import assert from 'node:assert/strict';
 import type http from 'node:http';
 import { buatServer } from './server.ts';
+import { pantauCsp, pastikanCspAktif } from './csp.ts';
 
 let server: http.Server | undefined;
 let BASE_URL = process.env.E2E_BASE_URL ?? '';
@@ -14,12 +15,14 @@ const galat: string[] = [];
 const browser = await chromium.launch();
 try {
 	const page = await browser.newPage();
+	const pelanggaran = await pantauCsp(page.context());
 	page.on('pageerror', (e) => galat.push(`pageerror: ${e.message}`));
 	page.on('console', (m) => {
 		if (m.type() === 'error') galat.push(`console.error: ${m.text()}`);
 	});
 	const respons = await page.goto(`${BASE_URL}/`, { waitUntil: 'networkidle' });
 	assert.ok(respons?.ok(), `membuka / gagal: ${respons?.status()}`);
+	if (!process.env.E2E_BASE_URL) pastikanCspAktif(respons);
 
 	const input = page.locator('sakti-cari input[type="search"]');
 	await input.waitFor();
@@ -163,6 +166,7 @@ try {
 	console.log('OK Level 1: /cari/?q=zzqqxx menampilkan tanpa-hasil');
 
 	assert.deepEqual(galat, [], `galat konsol/halaman: ${JSON.stringify(galat)}`);
+	assert.deepEqual(pelanggaran, [], `pelanggaran CSP: ${JSON.stringify(pelanggaran)}`);
 	console.log('e2e pencarian: semua pemeriksaan lolos');
 } finally {
 	await browser.close();

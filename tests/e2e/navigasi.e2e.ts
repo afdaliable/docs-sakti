@@ -2,6 +2,7 @@ import { chromium, type Browser, type Page } from 'playwright';
 import assert from 'node:assert/strict';
 import type http from 'node:http';
 import { buatServer } from './server.ts';
+import { pantauCsp, pastikanCspAktif } from './csp.ts';
 
 declare global {
 	interface Window {
@@ -21,6 +22,7 @@ if (!BASE_URL) {
 }
 
 const galat: string[] = [];
+const daftarPelanggaran: string[][] = [];
 function catatGalat(page: Page) {
 	page.on('pageerror', (e) => galat.push(`pageerror: ${e.message}`));
 	page.on('console', (m) => {
@@ -55,6 +57,7 @@ async function buatKonteks(
 	ekstraInit = '',
 ) {
 	const konteks = await browser.newContext(opsi);
+	daftarPelanggaran.push(await pantauCsp(konteks));
 	await konteks.addInitScript(SKRIP_AWAL + ekstraInit);
 	return konteks;
 }
@@ -79,6 +82,7 @@ try {
 
 	const respons = await page.goto(`${BASE_URL}/`, { waitUntil: 'networkidle' });
 	assert.ok(respons?.ok(), `membuka / gagal: ${respons?.status()}`);
+	if (!process.env.E2E_BASE_URL) pastikanCspAktif(respons);
 	assert.equal(
 		await page.evaluate(() => document.documentElement.dataset.theme),
 		'light',
@@ -499,6 +503,11 @@ try {
 	await konteks.close();
 
 	assert.deepEqual(galat, [], `galat konsol/halaman: ${JSON.stringify(galat)}`);
+	assert.deepEqual(
+		daftarPelanggaran.flat(),
+		[],
+		`pelanggaran CSP: ${JSON.stringify(daftarPelanggaran.flat())}`,
+	);
 	console.log('e2e navigasi: semua pemeriksaan lolos');
 } finally {
 	await browser.close();

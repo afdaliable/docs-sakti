@@ -51,6 +51,7 @@ pnpm build:pages         # build di Cloudflare Pages (lengkapi riwayat git, lalu
 pnpm preview
 pnpm check:content       # lint frontmatter + aturan konten (scripts/check-content.ts)
 pnpm check:links         # starlight-links-validator
+pnpm check:dist          # periksa dist/: sitemap, robots, _headers/CSP, 404, perlu_review
 pnpm search:eval         # uji kualitas pencarian (tests/search/queries.yaml)
 pnpm migrate:inventory   # crawl sumber → sources/manifest.json
 pnpm migrate:extract     # unduh & ekstrak file → sources/extracted/

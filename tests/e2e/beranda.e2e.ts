@@ -2,6 +2,7 @@ import { chromium } from 'playwright';
 import assert from 'node:assert/strict';
 import type http from 'node:http';
 import { buatServer } from './server.ts';
+import { pantauCsp, pastikanCspAktif } from './csp.ts';
 
 let server: http.Server | undefined;
 let BASE_URL = process.env.E2E_BASE_URL ?? '';
@@ -12,9 +13,11 @@ if (!BASE_URL) {
 const browser = await chromium.launch();
 try {
 	const konteks = await browser.newContext({ viewport: { width: 1280, height: 900 } });
+	const pelanggaran = await pantauCsp(konteks);
 	const page = await konteks.newPage();
 	const respons = await page.goto(`${BASE_URL}/`, { waitUntil: 'networkidle' });
 	assert.ok(respons?.ok(), `membuka / gagal: ${respons?.status()}`);
+	if (!process.env.E2E_BASE_URL) pastikanCspAktif(respons);
 
 	const sidebar = page.locator('#starlight__sidebar');
 	await sidebar.waitFor({ state: 'visible' });
@@ -58,6 +61,7 @@ try {
 
 	// Viewport HP.
 	const hp = await browser.newContext({ viewport: { width: 360, height: 800 } });
+	const pelanggaranHp = await pantauCsp(hp);
 	const pageHp = await hp.newPage();
 	await pageHp.goto(`${BASE_URL}/`, { waitUntil: 'networkidle' });
 	const lebar = () => pageHp.evaluate(() => document.documentElement.scrollWidth);
@@ -77,6 +81,11 @@ try {
 	console.log('OK BigSearch HP terbuka tanpa scroll horizontal');
 	await hp.close();
 
+	assert.deepEqual(
+		[...pelanggaran, ...pelanggaranHp],
+		[],
+		`pelanggaran CSP: ${JSON.stringify([...pelanggaran, ...pelanggaranHp])}`,
+	);
 	console.log('e2e beranda: semua pemeriksaan lolos');
 } finally {
 	await browser.close();

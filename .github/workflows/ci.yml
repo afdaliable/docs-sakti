@@ -49,6 +49,9 @@ jobs:
       - name: Validasi tautan
         run: pnpm check:links
 
+      - name: Periksa hasil build
+        run: pnpm check:dist
+
       - name: Pasang Chromium untuk Playwright
         run: pnpm exec playwright install --with-deps chromium
 

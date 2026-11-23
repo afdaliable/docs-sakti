@@ -44,6 +44,7 @@ test('ci.yml: langkah run berurutan dan Lighthouse continue-on-error', () => {
 		'pnpm test',
 		'pnpm build',
 		'pnpm check:links',
+		'pnpm check:dist',
 		'pnpm search:eval --level 1',
 		'pnpm test:e2e',
 	];

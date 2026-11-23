@@ -19,8 +19,9 @@ Jalan pada setiap PR dan push ke `main`:
 2. `pnpm check:content`
 3. `pnpm build` (termasuk index Pagefind)
 4. `pnpm check:links`
-5. `pnpm search:eval --level 1` (wajib lolos ambang setelah fase 4)
-6. Lighthouse CI di 3 halaman (landing, halaman modul, satu artikel) — peringatan saja
+5. `pnpm check:dist` (sitemap, `robots.txt`, `_headers` dan hash CSP, 404, tanpa alamat localhost/`pages.dev`, artikel `perlu_review` tetap tampil)
+6. `pnpm search:eval --level 1` (wajib lolos ambang setelah fase 4)
+7. Lighthouse CI di 3 halaman (landing, halaman modul, satu artikel) — peringatan saja
 
 Workflow terpisah `embeddings.yml` (push ke `main`): jalankan `scripts/search/build-embeddings.ts` untuk chunk yang berubah.
 
@@ -48,5 +49,6 @@ Simpan di `.env` lokal (di-.gitignore) + secret di Cloudflare/GitHub. Sediakan `
 
 - Header keamanan via `public/_headers`: CSP, `X-Content-Type-Options`, `X-Frame-Options`, `Referrer-Policy`, `Permissions-Policy`; cache panjang (`immutable`) hanya untuk `/_astro/*`, HTML selalu divalidasi ulang.
 - CSP: `script-src 'self' 'wasm-unsafe-eval'` + hash sha256 setiap skrip inline, tanpa `'unsafe-inline'`/`'unsafe-eval'`. Hash diisi saat build oleh `scripts/csp-headers.ts` (K71). `style-src` memakai `'unsafe-inline'` karena atribut `style` Starlight.
+- Tes e2e dan `search:eval` menyajikan hasil build dengan header dari `_headers` (`tests/e2e/server.ts`) dan gagal bila ada pelanggaran CSP.
 - API: rate limit, validasi input, tanpa log IP.
 - Dependabot aktif.
