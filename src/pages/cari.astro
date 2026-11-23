@@ -452,22 +452,22 @@ const jenisDaftar = Object.entries(JENIS_LABEL).filter(([k]) => k !== 'indeks');
 		margin: 1rem 0 0;
 		padding: 0;
 	}
-	.daftar-hasil li {
+	.daftar-hasil :global(li) {
 		padding-block: 0.75rem;
 		border-top: 1px solid var(--sl-color-gray-6);
 	}
-	.daftar-hasil .judul {
+	.daftar-hasil :global(.judul) {
 		font-weight: 600;
 		color: var(--sl-color-text-accent);
 		font-size: var(--sl-text-lg);
 	}
-	.daftar-hasil .meta-hasil {
+	.daftar-hasil :global(.meta-hasil) {
 		display: block;
 		font-size: var(--sl-text-xs);
 		color: var(--sl-color-gray-3);
 		margin-top: 0.125rem;
 	}
-	.daftar-hasil .cuplikan {
+	.daftar-hasil :global(.cuplikan) {
 		margin: 0.25rem 0 0;
 		font-size: var(--sl-text-sm);
 		color: var(--sl-color-gray-2);
@@ -504,7 +504,7 @@ const jenisDaftar = Object.entries(JENIS_LABEL).filter(([k]) => k !== 'indeks');
 		list-style: none;
 		padding: 0;
 	}
-	.saran-istilah a {
+	.saran-istilah :global(a) {
 		display: inline-block;
 		border: 1px solid var(--sl-color-gray-4);
 		border-radius: 999px;

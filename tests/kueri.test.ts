@@ -56,6 +56,12 @@ test('bentukVarian aman terhadap properti bawaan Object', () => {
 	assert.equal(varian.semua[0], 'constructor tostring');
 });
 
+test('bentukVarian memetakan kueri jam layanan/hotline ke istilah Kontak', () => {
+	for (const q of ['jam layanan', 'jam kerja', 'hotline']) {
+		assert.deepEqual(bentukVarian(q, sinonim, kamus).semua, [q, 'kontak']);
+	}
+});
+
 test('jumlah varian tidak melebihi MAKS_VARIAN', () => {
 	const varian = bentukVarian('gaji akun aset jurnal otp tte input pelaporan', sinonim, kamus);
 	assert.ok(varian.semua.length <= MAKS_VARIAN);

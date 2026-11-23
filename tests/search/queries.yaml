@@ -284,3 +284,11 @@
   harap: ["/persediaan/opname-fisik/rekam-hasil-opname-fisik/", "/persediaan/opname-fisik/"]
 - q: "adendum kontrak tahunan"
   harap: ["/komitmen/ruh/pencatatan-kontrak/addendum-kontrak-tahunan/"]
+- q: "jam layanan"
+  harap: ["/bantuan/"]
+- q: "jam kerja"
+  harap: ["/bantuan/"]
+- q: "hotline"
+  harap: ["/bantuan/"]
+- q: "kontak"
+  harap: ["/bantuan/"]

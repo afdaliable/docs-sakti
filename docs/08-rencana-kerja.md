@@ -52,6 +52,7 @@ Kerjakan berurutan. Centang `[x]` saat selesai. Setiap fase diakhiri **gerbang**
 ## Fase 3 — Tampilan help center
 
 - [x] 3.1 `BigSearch` (Level 1 Pagefind dulu) sesuai `04-tampilan-ux.md`, termasuk aksesibilitas keyboard/ARIA.
+  - 23 Nov 2026: perbaikan dropdown tanpa gaya di produksi. Penyebab: `<style>` scoped Astro tidak menjangkau `li`/`a`/`span` hasil yang dibuat skrip (tanpa atribut `data-astro-cid-…`); cacat yang sama ada pada daftar hasil `/cari/`. Aturan untuk elemen buatan skrip kini lewat `:global()` yang berjangkar pada panel statis; penanda opsi aktif diperbaiki (`data-aktif="undefined"` semula menempel di semua opsi) dan `aria-selected` ditambahkan; "Lihat semua hasil" dipindah keluar dari listbox. Dijaga `tests/e2e/dropdown.e2e.ts` (gaya terpasang, ringkasan ≤ 2 baris, kontras ≥ 4,5 di tema gelap dan terang, 1280px dan 360px, panah/Enter/Esc).
 - [x] 3.2 `ModuleGrid`, `RoleChips`, `RecentlyUpdated`, `HelpBox`, `PopularLinks`.
 - [x] 3.3 Landing page `template: splash`.
   - 22 Nov 2026: atas permintaan pemilik, beranda memakai layout docs agar sidebar tampil (K48); isi beranda tidak berubah.
@@ -113,6 +114,7 @@ Perapian kerangka modul lama (23 Nov 2026, K66–K68): heading dan butir "Role y
 - [ ] 5.2 `scripts/search/build-embeddings.ts` + `/api/search` (Opsi sesuai K7) + fusion RRF di BigSearch + fallback.
 - [ ] 5.3 `pnpm search:eval` untuk Level 1 dan hybrid; hit@3 hybrid ≥ 0,80.
   - 23 Nov 2026: Level 1 selesai (`scripts/search/eval.ts`, K62): 143 kueri, hit@1 0,811, hit@3 0,979, MRR 0,889 pada build `main` 99ca29c (Pagefind polos sebelum 5.1: 0,664 / 0,713 / 0,688). Tiga kueri belum masuk 3 teratas: "transfer keluar bmn ke satker lain", "input kontrak", "penghapusan piutng". Belum dicentang: bagian hybrid menunggu 5.2.
+  - 23 Nov 2026: empat kueri kontak ditambahkan ("jam layanan", "jam kerja", "hotline", "kontak" → `/bantuan/`, K72): 147 kueri, hit@1 0,816, hit@3 0,980, MRR 0,892; 143 kueri lama tidak berubah (116 dan 140 dari 143).
 - [ ] 5.4 Keystatic GitHub mode di `/keystatic` (`06-kontributor-admin.md`).
 - [x] 5.5 CODEOWNERS, template PR/issue, label, branch protection (dokumentasikan langkah manual yang harus dilakukan pemilik repo di `docs/setup-github.md`).
   - 23 Nov 2026: berkas dibuat (K63); pengaturan repo (label, kolaborator, branch protection) belum dijalankan: langkah manual pemilik di `docs/setup-github.md`. Pemilik modul menunggu K5.

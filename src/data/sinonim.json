@@ -1562,5 +1562,17 @@
       "aplikasi persuratan"
     ],
     "perlu_verifikasi": true
+  },
+  {
+    "istilah": "Kontak",
+    "panjang": "Kontak resmi untuk bantuan terkait SAKTI",
+    "sinonim": [
+      "jam layanan",
+      "jam kerja",
+      "jam operasional",
+      "hotline",
+      "helpdesk",
+      "call center"
+    ]
   }
 ]
