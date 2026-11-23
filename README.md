@@ -28,3 +28,39 @@ templates/                      template artikel juknis & FAQ
 .claude/commands/               /migrasi-modul, /artikel-baru, /audit-konten, /uji-pencarian
 prompts/00-KICKOFF.md           prompt pembuka + prompt lanjutan
 ```
+
+## Sumber dan atribusi
+
+Artikel di knowledge base ini adalah **ringkasan dan penulisan ulang** dari materi panduan SAKTI
+yang tersebar di tiga sumber berikut (inventaris lengkap: `docs/01-sumber-konten.md`):
+
+| Sumber | Alamat |
+|---|---|
+| A — SAKTI Admin Knowledge Base | <https://sites.google.com/view/saktiadm/beranda> |
+| B — Juknis SAKTI Pelaksanaan (Linktree) | <https://linktr.ee/juknissaktipelaksanaan> |
+| B — folder Modul Bendahara | <https://drive.google.com/drive/folders/1whfBfo_kT4hI69H6Jjnwy9DQPOqrLei3> |
+| B — folder Modul Komitmen | <https://drive.google.com/drive/folders/1lg7qCe3dif4bbgG7CMg8w3GapRPXtsqE> |
+| B — folder Modul Pembayaran | <https://drive.google.com/drive/folders/1Lo1jqUetojYZyMnsKTpaSDFoXcX6vXw2> |
+| B — folder Modul KPPN BUN | <https://drive.google.com/drive/folders/1cOx-1D1y5bBZyhO67HcW0VyK1K6PK11p> |
+| C — SAKTI Pelaporan | <https://sites.google.com/view/saktipelaporan> |
+
+- Knowledge base ini **bukan dokumen resmi** dan bukan situs resmi Kementerian Keuangan.
+- **Panduan resmi tetap berlaku.** Bila isi artikel berbeda dari petunjuk teknis, peraturan, atau
+  pengumuman resmi, yang diikuti adalah sumber resminya.
+- Setiap artikel mencantumkan dokumen asalnya (tautan dan tanggal diambil) di kolom `sumber` dan
+  di bagian "Sumber" pada halaman artikel.
+- Materi sumber tetap milik pemegang haknya masing-masing dan tidak ikut dilisensikan oleh repo
+  ini (lihat "Lisensi").
+
+## Lisensi
+
+| Bagian | Lisensi | Berkas |
+|---|---|---|
+| Kode (`scripts/`, `src/components/`, `src/lib/`, `src/pages/`, `tests/`, konfigurasi) | MIT | `LICENSE` |
+| Tulisan (`src/content/docs/`, `docs/`, `templates/`, `README.md`) | CC BY 4.0 | `LICENSE-CONTENT.md` |
+
+Lisensi konten **tidak mencakup materi sumber pihak lain** (petunjuk teknis, slide, peraturan,
+gambar dan tangkapan layar, nama dan logo instansi, label menu aplikasi SAKTI).
+
+Pemegang hak cipta di kedua berkas lisensi masih berupa placeholder
+`[NAMA PEMEGANG HAK CIPTA]`; pemilik proyek perlu mengisinya sebelum rilis publik.
