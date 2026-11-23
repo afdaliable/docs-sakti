@@ -101,6 +101,8 @@ Status per modul:
 
 Status Gerbang 4 (22 Nov 2026): semua modul dalam urutan Fase 4 sudah didraf dan di-merge ke `main`. Manifest: 602 `didraft`, 66 `ditolak`, 9 `gagal` (K29: 1 halaman unduhan SAKTI Admin, 5 dokumen Aset Tetap, 1 Piutang, 2 Akuntansi dan Pelaporan; menunggu berkas di `sources/raw/manual/`), 0 `diekstrak`. Belum ada item `dimigrasi` karena status itu diberikan setelah review pemilik modul (semua artikel masih `status: review`). Query uji: 134 (≥ 40). Artikel `draft`: 0. Gerbang belum dinyatakan lolos: menunggu review pemilik modul dan keputusan atas item `gagal`.
 
+Perapian kerangka modul lama (23 Nov 2026, K66–K68): heading dan butir "Role yang dibutuhkan" pada `mulai`, `admin`, `referensi`, `komitmen`, `pembayaran` diselaraskan dengan `templates/artikel-juknis.mdx` (36 berkas, satu commit per modul). Temuan pemeriksa kerangka turun dari 50 berkas / 160 baris menjadi 42 berkas / 92 baris: mulai 19/69 → 16/28, admin 10/47 → 8/28, referensi 3/8 → 3/5, komitmen 11/29 → 9/25, pembayaran 7/7 → 6/6. Sisa: 83 heading tambahan yang sah (K66), 8 butir role yang tidak berlaku (K67), dan 1 `## Langkah` tanpa `<Steps>` (`komitmen/ruh/pencatatan-suplier/suplier-spm-kp-kompensasi`: sumber berupa uraian, bukan langkah bernomor). Role diisi dari sumber pada 8 artikel; `perlu_review` `mulai` menjadi 7 (K68). `check:content` 0 galat (149 peringatan), tes, build, `check:links`, e2e lolos; `search:eval` Level 1 tidak berubah (hit@1 0,811, hit@3 0,979, MRR 0,889).
+
 ---
 
 ## Fase 5 — Pencarian pintar & kontribusi
