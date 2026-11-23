@@ -11,6 +11,8 @@ body:
         **Jangan menyertakan data pribadi atau rahasia**: NIK, NIP, nama pegawai, nomor HP atau email pribadi, password, token, kode OTP/MFA, nomor rekening. Tutup (blur) atau potong bagian itu pada tangkapan layar sebelum diunggah.
 
         Formulir ini untuk kesalahan isi knowledge base. Kendala pada aplikasi SAKTI disampaikan ke HAI DJPb (https://hai.kemenkeu.go.id/).
+
+        Bila yang Anda temukan adalah data pribadi atau rahasia yang tampil di artikel, jangan menyalinnya ke formulir ini; ikuti SECURITY.md (https://github.com/afdaliable/docs-sakti/security/policy). Panduan kontribusi: https://github.com/afdaliable/docs-sakti/blob/main/CONTRIBUTING.md
   - type: input
     id: url
     attributes:

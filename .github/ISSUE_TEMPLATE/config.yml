@@ -3,3 +3,9 @@ contact_links:
   - name: Kendala pada aplikasi SAKTI
     url: https://hai.kemenkeu.go.id/
     about: Masalah transaksi, akun, atau galat aplikasi disampaikan ke HAI DJPb, bukan ke repo ini.
+  - name: Panduan berkontribusi
+    url: https://github.com/afdaliable/docs-sakti/blob/main/CONTRIBUTING.md
+    about: Alur, aturan konten, dan larangan data pribadi.
+  - name: Kerentanan atau kebocoran data pribadi
+    url: https://github.com/afdaliable/docs-sakti/security/policy
+    about: Jangan dilaporkan lewat issue publik. Ikuti SECURITY.md.

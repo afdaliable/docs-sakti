@@ -9,6 +9,8 @@ body:
         Terima kasih sudah membantu melengkapi knowledge base SAKTI.
 
         **Jangan menyertakan data pribadi atau rahasia** (NIK, NIP, nama pegawai, nomor HP atau email pribadi, password, token, kode OTP/MFA, nomor rekening).
+
+        Panduan kontribusi: https://github.com/afdaliable/docs-sakti/blob/main/CONTRIBUTING.md
   - type: input
     id: kueri
     attributes:
