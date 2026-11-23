@@ -18,7 +18,7 @@ sidebar:
   order: 1
 ---
 
-import { Aside } from '@astrojs/starlight/components';
+import { Steps, Aside } from '@astrojs/starlight/components';
 import MenuSakti from '~/components/MenuSakti.astro';
 import SumberAsli from '~/components/SumberAsli.astro';
 
@@ -27,21 +27,32 @@ Tabel Pejabat. Pengelolaan daftarnya dilakukan oleh Admin Satker.
 
 <MenuSakti />
 
-## Penambahan dan perubahan pejabat PKIPA
+## Prasyarat
+
+- Role yang dibutuhkan: **Admin Satker** (juknis menempatkan pengelolaan
+  pejabat PKIPA pada bagian Admin Satker).
+
+## Langkah
+
+### Penambahan dan perubahan pejabat PKIPA
 
 Penambahan dan perubahan pejabat di menu PKIPA dilakukan di Tabel
 Pejabat — lihat [Melengkapi Data Pejabat
 Perbendaharaan](/admin/pengguna/pejabat-perbendaharaan/). Setelah
 ditambahkan, nama pejabat akan muncul otomatis di menu PKIPA.
 
-## Penghapusan pejabat PKIPA
+### Penghapusan pejabat PKIPA
 
 Penghapusan dilakukan dua tahap:
+
+<Steps>
 
 1. Hapus pejabat di Tabel Pejabat.
 2. Klik tombol **Hapus** di menu PKIPA.
 
-## Hal yang perlu diperhatikan
+</Steps>
+
+## Ketentuan
 
 - Apabila belum melakukan penghapusan pejabat di Tabel Pejabat dan
   melakukan Hapus Pejabat di PKIPA, pejabat tersebut akan muncul kembali
