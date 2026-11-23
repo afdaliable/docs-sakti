@@ -2,10 +2,12 @@
 
 ## Hosting (default: Cloudflare Pages)
 
-- Repo GitHub → Cloudflare Pages (build `pnpm build`, output `dist/`).
+- Repo GitHub → Cloudflare Pages (build `pnpm build:pages`, output `dist/`). `build:pages` melengkapi riwayat git yang diambil dangkal oleh Pages, lalu menjalankan `pnpm build`.
+- Langkah pemilik (membuat proyek, variabel lingkungan, custom domain, cek pasca-deploy, rollback): `docs/deploy-cloudflare.md`. Agent tidak men-deploy dan tidak memanggil API Cloudflare.
 - Preview deploy otomatis per PR (reviewer konten bisa melihat hasil sebelum merge).
 - Pages Functions untuk `/api/search`, `/api/tanya`, dan Keystatic.
-- Domain: tunggu K3 (`09-keputusan-terbuka.md`). Sementara pakai `*.pages.dev`.
+- Domain produksi: `https://docs.sakti.ai.id` (K3, dijawab 23 Nov 2026). `site` di `astro.config.mjs` memakai `SITUS_URL` (`src/lib/situs.ts`) sebagai dasar canonical, sitemap, dan `robots.txt` (`src/pages/robots.txt.ts`). Alamat `*.pages.dev` tetap ada tetapi diberi `X-Robots-Tag: noindex`.
+- Halaman tidak ditemukan: `404.html` di akar hasil build; Pages menyajikannya dengan status 404.
 
 Alternatif jika harus di infrastruktur sendiri: build statis → Nginx/Caddy di VPS, API search sebagai service Node terpisah (Docker Compose).
 
@@ -32,6 +34,7 @@ Workflow terjadwal `cek-sumber.yml` (mingguan): cek apakah URL sumber asli masih
 | `CF_ACCOUNT_ID`, `CF_API_TOKEN` | build embeddings (CI) | scope minimal: Vectorize + Workers AI |
 | `LLM_BASE_URL`, `LLM_API_KEY`, `LLM_MODEL` | Tanya AI | endpoint OpenAI-compatible |
 | `GOOGLE_API_KEY` | migrasi (lokal saja) | Drive API read-only, jangan masuk CI |
+| `NODE_VERSION`, `PNPM_VERSION` | build Cloudflare Pages | bukan secret; nilainya sama dengan `.nvmrc` dan `packageManager` (lihat `deploy-cloudflare.md`) |
 
 Simpan di `.env` lokal (di-.gitignore) + secret di Cloudflare/GitHub. Sediakan `.env.example`.
 
@@ -43,6 +46,7 @@ Simpan di `.env` lokal (di-.gitignore) + secret di Cloudflare/GitHub. Sediakan `
 
 ## Keamanan
 
-- Header keamanan via `public/_headers` (CSP ketat, `X-Content-Type-Options`, `Referrer-Policy`).
+- Header keamanan via `public/_headers`: CSP, `X-Content-Type-Options`, `X-Frame-Options`, `Referrer-Policy`, `Permissions-Policy`; cache panjang (`immutable`) hanya untuk `/_astro/*`, HTML selalu divalidasi ulang.
+- CSP: `script-src 'self' 'wasm-unsafe-eval'` + hash sha256 setiap skrip inline, tanpa `'unsafe-inline'`/`'unsafe-eval'`. Hash diisi saat build oleh `scripts/csp-headers.ts` (K71). `style-src` memakai `'unsafe-inline'` karena atribut `style` Starlight.
 - API: rate limit, validasi input, tanpa log IP.
 - Dependabot aktif.

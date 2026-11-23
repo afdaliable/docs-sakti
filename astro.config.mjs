@@ -3,11 +3,12 @@ import { defineConfig } from 'astro/config';
 import starlight from '@astrojs/starlight';
 import starlightLinksValidator from 'starlight-links-validator';
 import { bangunSidebar } from './scripts/build-sidebar.ts';
-import { REPO_URL } from './src/lib/situs.ts';
+import { cspHeaders } from './scripts/csp-headers.ts';
+import { REPO_URL, SITUS_URL } from './src/lib/situs.ts';
 
 // https://astro.build/config
 export default defineConfig({
-	site: 'https://docs-sakti.pages.dev',
+	site: SITUS_URL,
 	integrations: [
 		starlight({
 			title: 'SAKTI Knowledge Base',
@@ -32,5 +33,6 @@ export default defineConfig({
 			plugins: [starlightLinksValidator({ exclude: ['/peran/**'] })],
 			sidebar: bangunSidebar(),
 		}),
+		cspHeaders(),
 	],
 });

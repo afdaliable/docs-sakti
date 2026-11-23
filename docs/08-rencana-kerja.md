@@ -131,9 +131,11 @@ Status Gerbang 5 (23 Nov 2026): 5.1, 5.5, 5.6 selesai; 5.3 selesai untuk Level 1
 - [ ] 6.1 CI lengkap (`07-deploy-ops.md`), preview per PR.
   - 23 Nov 2026: workflow CI dibuat tanpa deploy dan tanpa secret (K65). Run pertama di GitHub (push 99ca29c) lolos semua langkah dalam ±3 menit. Belum dicentang: preview per PR menunggu hosting (K3).
 - [ ] 6.2 Deploy produksi + domain (K3).
+  - 23 Nov 2026: persiapan selesai tanpa men-deploy (K3, K71): `site` = `https://docs.sakti.ai.id`, `robots.txt`, `public/_headers`, `pnpm build:pages`, dan panduan pemilik `docs/deploy-cloudflare.md`. Belum dicentang: proyek Pages, variabel lingkungan, dan DNS `docs.sakti.ai.id` dibuat pemilik di dashboard.
 - [ ] 6.3 Analitik + widget feedback + logging query tanpa hasil.
 - [ ] 6.4 Workflow mingguan `cek-sumber.yml` dan laporan bulanan.
 - [ ] 6.5 `public/_headers`, Dependabot.
+  - 23 Nov 2026: `public/_headers` dibuat (K71). Belum dicentang: Dependabot belum ada.
 - [ ] 6.6 README untuk maintainer: cara menjalankan, menambah modul, menambah artikel, rotasi secret.
 - [ ] 6.7 Rencana komunikasi: daftar URL lama → URL baru (`sources/peta-url-lama.csv`) agar pengelola Google Sites bisa memasang banner/tautan ke KB baru.
 

@@ -1,4 +1,5 @@
 export const REPO_URL = 'https://github.com/afdaliable/docs-sakti';
+export const SITUS_URL = 'https://docs.sakti.ai.id';
 
 export function tautanKoreksi(judul: string, urlHalaman: string): string {
 	const p = new URLSearchParams({

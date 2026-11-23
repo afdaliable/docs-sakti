@@ -36,7 +36,7 @@ Kerjakan tugas **berurutan sesuai `docs/08-rencana-kerja.md`**. Centang `[x]` se
 - Konten: MDX di `src/content/docs/`, skema frontmatter divalidasi Zod (`src/content.config.ts`)
 - CMS: **Keystatic** (mode GitHub) di `/keystatic`
 - Pencarian: Pagefind (bawaan) + layer semantik (lihat `docs/05-pencarian.md`)
-- Hosting: Cloudflare Pages (default; lihat `docs/09-keputusan-terbuka.md`)
+- Hosting: Cloudflare Pages di `https://docs.sakti.ai.id` (K3; langkah pemilik di `docs/deploy-cloudflare.md`)
 - Skrip migrasi: Node/TS di `scripts/`, Playwright untuk Google Sites
 
 ## 4. Perintah
@@ -47,6 +47,7 @@ Butuh Node ≥ 22.23.4 (lihat `.nvmrc`) dan pnpm versi `packageManager` di `pack
 pnpm install
 pnpm dev                 # server lokal
 pnpm build               # build + index Pagefind
+pnpm build:pages         # build di Cloudflare Pages (lengkapi riwayat git, lalu build)
 pnpm preview
 pnpm check:content       # lint frontmatter + aturan konten (scripts/check-content.ts)
 pnpm check:links         # starlight-links-validator
