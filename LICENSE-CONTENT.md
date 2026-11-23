@@ -1,6 +1,6 @@
 # Lisensi konten
 
-Hak cipta © 2026 [NAMA PEMEGANG HAK CIPTA]
+Hak cipta © 2026 afdaliable
 
 Tulisan di repo ini dilisensikan dengan **Creative Commons Atribusi 4.0 Internasional
 (CC BY 4.0)**.

@@ -62,5 +62,4 @@ yang tersebar di tiga sumber berikut (inventaris lengkap: `docs/01-sumber-konten
 Lisensi konten **tidak mencakup materi sumber pihak lain** (petunjuk teknis, slide, peraturan,
 gambar dan tangkapan layar, nama dan logo instansi, label menu aplikasi SAKTI).
 
-Pemegang hak cipta di kedua berkas lisensi masih berupa placeholder
-`[NAMA PEMEGANG HAK CIPTA]`; pemilik proyek perlu mengisinya sebelum rilis publik.
+Pemegang hak cipta di kedua berkas lisensi adalah `afdaliable` (akun GitHub pemilik proyek).

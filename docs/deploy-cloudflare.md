@@ -28,8 +28,8 @@ resminya ada di bagian 9.
 ## 2. Sebelum mulai
 
 - [ ] Gerbang rilis di `docs/09-keputusan-terbuka.md` sudah dijawab: K3 (domain, sudah), K4
-      (izin publikasi), K9 (repo publik atau privat), K69 (nama pemegang hak cipta di `LICENSE`
-      dan `LICENSE-CONTENT.md`).
+      (izin publikasi), K9 (repo publik atau privat), K69 (nama pemegang hak cipta, sudah
+      diisi: `afdaliable`).
 - [ ] CI di GitHub hijau pada commit `main` terakhir (tab **Actions**).
 - [ ] Anda punya akses ke akun Cloudflare yang akan memiliki proyek, dan ke pengelola DNS
       `sakti.ai.id`.
