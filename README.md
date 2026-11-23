@@ -21,7 +21,7 @@ docs/03-migrasi-konten.md       pipeline scraping → ekstraksi → MDX → revi
 docs/04-tampilan-ux.md          landing page search besar, halaman modul/artikel/peran
 docs/05-pencarian.md            keyword + sinonim + semantik hybrid + Tanya AI + evaluasi
 docs/06-kontributor-admin.md    edit link, Keystatic, CODEOWNERS, template PR/issue
-docs/07-deploy-ops.md           Cloudflare Pages, CI, env, analitik, keamanan
+docs/07-deploy-ops.md           Cloudflare (Workers), CI, env, analitik, keamanan
 docs/08-rencana-kerja.md        tugas per fase + gerbang
 docs/09-keputusan-terbuka.md    keputusan yang perlu dijawab pemilik proyek
 templates/                      template artikel juknis & FAQ

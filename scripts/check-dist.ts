@@ -122,6 +122,7 @@ if (!fs.existsSync(ROOT)) {
 		[/127\.0\.0\.1/, '127.0.0.1'],
 		[/0\.0\.0\.0/, '0.0.0.0'],
 		[/(^|[^:a-z0-9-])([a-z0-9-]+\.pages\.dev)/i, 'pages.dev'],
+		[/(^|[^:a-z0-9-])([a-z0-9-]+\.workers\.dev)/i, 'workers.dev'],
 	];
 	for (const f of [
 		...berkas(ROOT, /\.(html|xml|txt|json)$/),

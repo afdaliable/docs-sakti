@@ -132,6 +132,7 @@ Status Gerbang 5 (23 Nov 2026): 5.1, 5.5, 5.6 selesai; 5.3 selesai untuk Level 1
   - 23 Nov 2026: workflow CI dibuat tanpa deploy dan tanpa secret (K65). Langkah `pnpm check:dist` ditambahkan setelah `check:links` (K71). Run pertama di GitHub (push 99ca29c) lolos semua langkah dalam ±3 menit. Belum dicentang: preview per PR menunggu hosting (K3).
 - [ ] 6.2 Deploy produksi + domain (K3).
   - 23 Nov 2026: persiapan selesai tanpa men-deploy (K3, K71): `site` = `https://docs.sakti.ai.id`, `robots.txt`, `public/_headers`, `pnpm build:pages`, dan panduan pemilik `docs/deploy-cloudflare.md`. Belum dicentang: proyek Pages, variabel lingkungan, dan DNS `docs.sakti.ai.id` dibuat pemilik di dashboard.
+  - 23 Nov 2026: proyek dibuat pemilik sebagai Worker `docs-sakti` + static assets (Workers Builds); build lolos, deploy pertama gagal `ERR_PNPM_IGNORED_BUILDS`; diperbaiki dengan `wrangler.jsonc` (K71 (k)). Belum dicentang: deploy ulang dan custom domain `docs.sakti.ai.id` belum diverifikasi.
 - [ ] 6.3 Analitik + widget feedback + logging query tanpa hasil.
 - [ ] 6.4 Workflow mingguan `cek-sumber.yml` dan laporan bulanan.
 - [ ] 6.5 `public/_headers`, Dependabot.

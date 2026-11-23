@@ -59,6 +59,29 @@ test('_headers: pages.dev di-noindex', () => {
 	}
 });
 
+test('_headers: workers.dev di-noindex', () => {
+	const aturan = uraiHeaders(fs.readFileSync('public/_headers', 'utf8'));
+	for (const host of ['docs-sakti.akun.workers.dev', 'a1b2c3d4-docs-sakti.akun.workers.dev']) {
+		assert.equal(
+			headerUntuk(aturan, host, '/apa/pun')['x-robots-tag'],
+			'noindex',
+			`${host} harus noindex`,
+		);
+	}
+});
+
+test('wrangler.jsonc: Worker statis tanpa skrip dan tanpa adapter', () => {
+	const konfig = JSON.parse(fs.readFileSync('wrangler.jsonc', 'utf8'));
+	assert.equal(konfig.name, 'docs-sakti');
+	assert.match(konfig.compatibility_date, /^\d{4}-\d{2}-\d{2}$/);
+	assert.deepEqual(konfig.assets, {
+		directory: './dist',
+		not_found_handling: '404-page',
+	});
+	assert.equal(konfig.main, undefined);
+	assert.equal(konfig.routes, undefined);
+});
+
 test('_headers: batas baris dan jumlah aturan', () => {
 	const teks = fs.readFileSync('public/_headers', 'utf8');
 	for (const [i, baris] of teks.split('\n').entries()) {
@@ -114,7 +137,8 @@ test('dokumen deploy menyebut versi dan perintah yang sama', () => {
 		'dok tanpa `PNPM_VERSION` | `<packageManager>`',
 	);
 	assert.ok(doc.includes('pnpm build:pages'));
-	assert.match(doc, /Build output directory\s*\|\s*`dist`/);
+	assert.ok(doc.includes('npx wrangler deploy'));
+	assert.ok(doc.includes('wrangler.jsonc'));
 });
 
 test('tidak ada dependensi wrangler', () => {
@@ -123,4 +147,8 @@ test('tidak ada dependensi wrangler', () => {
 		...Object.keys(pkg.devDependencies ?? {}),
 	];
 	assert.ok(!semua.includes('wrangler'), 'wrangler tidak boleh jadi dependensi');
+	assert.ok(
+		!semua.includes('@astrojs/cloudflare'),
+		'@astrojs/cloudflare tidak boleh jadi dependensi',
+	);
 });
