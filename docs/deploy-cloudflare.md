@@ -35,15 +35,16 @@ resminya ada di bagian 9.
 ## 2. Sebelum mulai
 
 - [ ] Gerbang rilis di `docs/09-keputusan-terbuka.md` sudah dijawab: K3 (domain, sudah), K4
-      (izin publikasi), K9 (repo publik atau privat), K69 (nama pemegang hak cipta, sudah
+      (izin publikasi), K9 (repo publik, sudah), K69 (nama pemegang hak cipta, sudah
       diisi: `afdaliable`).
 - [ ] CI di GitHub hijau pada commit `main` terakhir (tab **Actions**).
 - [ ] Anda punya akses ke akun Cloudflare pemilik Worker `docs-sakti`, dan ke pengelola DNS
       `sakti.ai.id`.
 
 Catatan: Workers Builds men-deploy **setiap push ke `main`** tanpa menunggu hasil CI GitHub.
-Agar perubahan yang gagal CI tidak ikut terbit, aktifkan branch protection `main` seperti di
-`docs/setup-github.md` bagian 5.
+Ruleset `main-protection` (`docs/setup-github.md` bagian 5) mewajibkan pull request dan CI
+lolos bagi kontributor, tetapi admin yang memakai bypass tetap bisa push langsung; jalankan
+gerbang lokal sebelum push seperti itu.
 
 ## 3. Proyek Worker dan pengaturan build
 

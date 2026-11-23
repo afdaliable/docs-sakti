@@ -118,6 +118,7 @@ Perapian kerangka modul lama (23 Nov 2026, K66–K68): heading dan butir "Role y
 - [ ] 5.4 Keystatic GitHub mode di `/keystatic` (`06-kontributor-admin.md`).
 - [x] 5.5 CODEOWNERS, template PR/issue, label, branch protection (dokumentasikan langkah manual yang harus dilakukan pemilik repo di `docs/setup-github.md`).
   - 23 Nov 2026: berkas dibuat (K63); pengaturan repo (label, kolaborator, branch protection) belum dijalankan: langkah manual pemilik di `docs/setup-github.md`. Pemilik modul menunggu K5.
+  - 23 Nov 2026: ruleset `main-protection` dibuat pemilik dengan admin bypass (K75); `docs/setup-github.md` disesuaikan. Masih menunggu pemilik: label di repo, pemilik modul (K5), private vulnerability reporting (K74).
 - [x] 5.6 Halaman `/kontribusi/*`.
   - 23 Nov 2026: indeks, `panduan-menulis`, `lewat-github`, `editor-keystatic` (K64); halaman Keystatic masih berupa keterangan "belum tersedia" sampai 5.4.
 - [ ] 5.7 (Opsional, jika K8 = ya) Tanya AI `/api/tanya` + UI.
@@ -135,11 +136,13 @@ Status Gerbang 5 (23 Nov 2026): 5.1, 5.5, 5.6 selesai; 5.3 selesai untuk Level 1
 - [ ] 6.2 Deploy produksi + domain (K3).
   - 23 Nov 2026: persiapan selesai tanpa men-deploy (K3, K71): `site` = `https://docs.sakti.ai.id`, `robots.txt`, `public/_headers`, `pnpm build:pages`, dan panduan pemilik `docs/deploy-cloudflare.md`. Belum dicentang: proyek Pages, variabel lingkungan, dan DNS `docs.sakti.ai.id` dibuat pemilik di dashboard.
   - 23 Nov 2026: proyek dibuat pemilik sebagai Worker `docs-sakti` + static assets (Workers Builds); build lolos, deploy pertama gagal `ERR_PNPM_IGNORED_BUILDS`; diperbaiki dengan `wrangler.jsonc` (K71 (k)). Belum dicentang: deploy ulang dan custom domain `docs.sakti.ai.id` belum diverifikasi.
+  - 23 Nov 2026: `https://docs.sakti.ai.id` sudah terbit (diperiksa dari luar: HTTP 200, `cache-control: public, max-age=0, must-revalidate`). Belum dicentang: hasil cek pasca-deploy di `docs/deploy-cloudflare.md` belum dilaporkan pemilik.
 - [ ] 6.3 Analitik + widget feedback + logging query tanpa hasil.
 - [ ] 6.4 Workflow mingguan `cek-sumber.yml` dan laporan bulanan.
 - [ ] 6.5 `public/_headers`, Dependabot.
   - 23 Nov 2026: `public/_headers` dibuat (K71). Belum dicentang: Dependabot belum ada.
 - [ ] 6.6 README untuk maintainer: cara menjalankan, menambah modul, menambah artikel, rotasi secret.
+  - 23 Nov 2026: `README.md` ditulis ulang untuk repo publik (cara menjalankan, struktur, status, lisensi) bersama `CONTRIBUTING.md`, `CODE_OF_CONDUCT.md`, dan `SECURITY.md` (K73–K76). Belum dicentang: cara menambah modul dan rotasi secret belum ditulis.
 - [ ] 6.7 Rencana komunikasi: daftar URL lama → URL baru (`sources/peta-url-lama.csv`) agar pengelola Google Sites bisa memasang banner/tautan ke KB baru.
 
 **Gerbang 6:** situs produksi hidup, semua metrik di `00-prd.md` terpantau.
