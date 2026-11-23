@@ -3,6 +3,7 @@ import { z } from 'astro/zod';
 import { docsLoader } from '@astrojs/starlight/loaders';
 import { docsSchema } from '@astrojs/starlight/schema';
 import { MODUL_SLUGS, PERAN_SLUGS } from './lib/modul.ts';
+import { tersembunyiDiProduksi } from './lib/status.ts';
 
 export const collections = {
 	docs: defineCollection({
@@ -50,7 +51,7 @@ export const collections = {
 					.default([]),
 			}),
 		})(context).transform((data) => {
-			const draft = data.draft || data.status === 'draft';
+			const draft = tersembunyiDiProduksi(data);
 			const banner =
 				data.status === 'review' && data.banner === undefined
 					? { content: 'Artikel ini sedang ditinjau. Isi dapat berubah setelah verifikasi.' }

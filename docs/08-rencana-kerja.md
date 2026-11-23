@@ -27,6 +27,7 @@ Kerjakan berurutan. Centang `[x]` saat selesai. Setiap fase diakhiri **gerbang**
 - [x] 1.5 Route `/peran/[slug]` dan `/glosarium/` dari `src/data/sinonim.json`.
 - [x] 1.6 `scripts/check-content.ts` sesuai `03-migrasi-konten.md`, termasuk deteksi data pribadi.
 - [x] 1.7 Filter `status: draft` dari build produksi; banner untuk `status: review`.
+  - 23 Nov 2026: keputusan pemilik — artikel `perlu_review` tetap tampil di produksi dan pencarian; hanya `status: draft` yang disembunyikan (K70). Aturan filter dipusatkan di `src/lib/status.ts` dan dijaga `tests/perlu-review.test.ts`.
 
 **Gerbang 1:** `pnpm build && pnpm check:content` lolos; sidebar menampilkan semua modul dalam urutan YAML.
 

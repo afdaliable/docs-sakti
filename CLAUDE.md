@@ -88,7 +88,7 @@ Buat script-script ini jika belum ada (bagian dari fase 0–2).
 ## 6. Aturan konten (WAJIB)
 
 1. **Bahasa Indonesia baku**, kalimat aktif, langkah bernomor. Istilah menu SAKTI ditulis persis seperti di aplikasi, dicetak **tebal**: klik **Simpan**, buka menu **Komitmen > RUH > Pencatatan Kontrak**.
-2. **Jangan mengarang prosedur SAKTI.** Setiap langkah harus berasal dari sumber. Jika sumber ambigu atau tidak lengkap: set `status: draft` dan `perlu_review: true`, lalu tulis catatan di bagian `:::caution[Perlu verifikasi]`.
+2. **Jangan mengarang prosedur SAKTI.** Setiap langkah harus berasal dari sumber. Jika sumber ambigu atau tidak lengkap: set `perlu_review: true`, lalu tulis catatan di bagian `:::caution[Perlu verifikasi]`. Artikel `perlu_review` tetap tampil di produksi dan pencarian; hanya `status: draft` yang disembunyikan (K70).
 3. Setiap artikel **wajib** punya `sumber:` di frontmatter (URL asli + tanggal diambil).
 4. **Data pribadi dan rahasia dilarang tampil**: NIK, NIP lengkap, nama pegawai, nomor HP pribadi, email pribadi, password, token, kode MFA, nomor rekening. Screenshot yang memuat data ini harus di-blur atau dipotong. Kontak resmi (HAI DJPb, email/hotline institusi) boleh.
 5. Gambar: konversi ke WebP, lebar maksimum 1600px, simpan di `src/assets/<modul>/<slug>/`, beri `alt` yang deskriptif.

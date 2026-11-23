@@ -21,8 +21,10 @@ persis seperti di aplikasi, dicetak **tebal**: klik **Simpan**, buka menu
 
 ### Setiap langkah berasal dari sumber
 
-Jangan mengarang prosedur SAKTI. Bila sumber ambigu atau tidak lengkap, set `status: draft`
-dan `perlu_review: true`, lalu tulis catatan di kotak `:::caution[Perlu verifikasi]`.
+Jangan mengarang prosedur SAKTI. Bila sumber ambigu atau tidak lengkap, set
+`perlu_review: true`, lalu tulis catatan di kotak `:::caution[Perlu verifikasi]`. Artikel
+bertanda `perlu_review` tetap tampil di situs dan di pencarian bersama kotak itu; hanya artikel
+`status: draft` yang tidak ikut terbit.
 
 ### Wajib mencantumkan sumber
 
@@ -83,7 +85,7 @@ menang. Versi yang digantikan dicatat di `sumber`.
 | `jenis` | `juknis`, `faq`, `troubleshooting`, `referensi`, `konsep`, `peraturan`, `video`, atau `indeks` | Tidak (bawaan `juknis`) |
 | `kata_kunci` | Kata yang diketik pengguna, mis. `[input kontrak, rekam kontrak]` | Disarankan, 3–8 istilah (pemeriksaan otomatis memberi peringatan bila kosong) |
 | `status` | `draft`, `review`, atau `terbit` | Ya (`review` untuk artikel baru; `draft` tidak ikut terbit; `terbit` setelah lolos review) |
-| `perlu_review` | `true` bila ada bagian yang meragukan | Tidak (bawaan `false`) |
+| `perlu_review` | `true` bila ada bagian yang meragukan; artikel tetap tampil | Tidak (bawaan `false`) |
 | `terakhir_diverifikasi` | Tanggal verifikasi terakhir | Diisi saat lolos review |
 | `pemilik` | Penanggung jawab artikel | Tidak |
 | `sumber` | Daftar sumber: `judul`, `url`, `jenis`, `diambil` | Ya untuk artikel di folder modul (pemeriksaan otomatis gagal bila kosong) |

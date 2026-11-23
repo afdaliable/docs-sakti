@@ -103,7 +103,7 @@ export const collections = {
 };
 ```
 
-- Artikel `status: draft` **tidak tampil** di build produksi (filter di route middleware atau `draft: true` Starlight). Artikel `review` tampil dengan banner "Sedang ditinjau".
+- Artikel `status: draft` **tidak tampil** di build produksi (filter di route middleware atau `draft: true` Starlight). Artikel `review` tampil dengan banner "Sedang ditinjau". Artikel `perlu_review: true` **tetap tampil** di build produksi dan di pencarian dengan kotak "Perlu verifikasi"; tanda itu tidak pernah dipakai sebagai filter (K70).
 - `kata_kunci` dirender tersembunyi dengan atribut `data-pagefind-meta`/`data-pagefind-weight` agar ikut diindeks.
 
 ## Taksonomi
