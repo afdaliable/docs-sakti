@@ -60,7 +60,7 @@ Layout docs Starlight standar (sidebar, daftar isi kanan) ditambah:
 - **Breadcrumb** sesuai `menu_sakti` (override komponen `PageTitle`).
 - **Badge**: jenis, peran, status `review` ("Sedang ditinjau").
 - **Kotak "Menu di SAKTI"**: menampilkan `menu_sakti` dalam format jalur menu.
-- Footer artikel: "Terakhir diverifikasi", **Sumber**, "Unduh juknis asli", tombol **Edit halaman ini**, dan widget "Apakah artikel ini membantu? 👍 👎" (kirim event ke analitik; fase 6).
+- Footer artikel: "Terakhir diverifikasi", **Sumber**, "Unduh juknis asli", tombol **Edit di GitHub**, dan widget "Apakah artikel ini membantu? 👍 👎" (kirim event ke analitik; fase 6).
 
 ## Halaman peran `/peran/<slug>/`
 

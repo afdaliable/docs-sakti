@@ -37,7 +37,7 @@ Bagian lintas modul: halaman menurut peran pengguna (`/peran/`), Peraturan, FAQ,
 
 Pencarian memakai Pagefind (indeks statis saat build) dengan ekspansi sinonim dan istilah SAKTI (`src/data/sinonim.json`, `src/data/kata-kueri.json`) serta fallback salah ketik berbasis MiniSearch. Belum ada pencarian semantik maupun Tanya AI.
 
-Setiap artikel mencantumkan sumber dan tanggal diambil, tanggal terakhir diperbarui, tombol **Edit halaman**, dan tautan **Laporkan kesalahan**.
+Setiap artikel mencantumkan sumber dan tanggal diambil, tanggal terakhir diperbarui, tombol **Edit di GitHub** dan **Laporkan kesalahan** di bawah judul dan di akhir artikel.
 
 ## Status proyek
 

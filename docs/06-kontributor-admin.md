@@ -1,6 +1,6 @@
 # 06 — Kontributor & Admin
 
-> **Status 23 Nov 2026.** Dokumen ini rancangan. Yang sudah berjalan: tombol **Edit halaman** dan tautan **Laporkan
+> **Status 23 Nov 2026.** Dokumen ini rancangan. Yang sudah berjalan: tombol **Edit di GitHub** dan tautan **Laporkan
 > kesalahan** (bagian 1), CODEOWNERS/templat/`labels.yml` sebagai berkas dan ruleset `main-protection` (bagian 3), halaman
 > `/kontribusi/` (bagian 4), dan dokumen komunitas di akar repo (`CONTRIBUTING.md`, `CODE_OF_CONDUCT.md`, `SECURITY.md`).
 > Yang belum: Keystatic (bagian 2, tugas 5.4), pemilik modul (K5), dan label di repo. Panduan kontributor:
@@ -13,15 +13,19 @@
 | **Admin** | Pemilik proyek + 1–2 orang | Maintainer repo, bisa merge ke `main` | Review & merge, kelola Keystatic, CODEOWNERS |
 | **Pemilik modul** | 1–2 orang per modul | Write ke repo, wajib review PR modulnya | Ditetapkan di `.github/CODEOWNERS` |
 | **Editor** | Tim internal non-teknis | Write ke repo (via Keystatic) | Tulis/edit di `/keystatic` → branch → PR |
-| **Kontributor publik** | Siapa saja (pengguna SAKTI) | Tidak ada akses tulis | Tombol "Edit halaman" → fork → PR, atau isi issue "Laporkan kesalahan" |
+| **Kontributor publik** | Siapa saja (pengguna SAKTI) | Tidak ada akses tulis | Tombol "Edit di GitHub" → fork → PR, atau isi issue "Laporkan kesalahan" |
 
 Saat ini admin = `@afdaliable`; belum ada pemilik modul maupun editor. Peran Editor baru berlaku setelah Keystatic aktif.
 
-## 1. Tombol "Edit halaman" (Starlight bawaan)
+## 1. Tombol "Edit di GitHub" dan "Laporkan kesalahan"
 
-Sudah terpasang: `editLink.baseUrl` = `` `${REPO_URL}/edit/main/` `` (`astro.config.mjs`) dengan `REPO_URL`
-(`src/lib/situs.ts`) = `https://github.com/afdaliable/docs-sakti`. Tautan **Laporkan kesalahan** dibentuk oleh
-`tautanKoreksi()` di berkas yang sama dan ditampilkan lewat override `Footer` (`src/components/overrides/Footer.astro`).
+Sudah terpasang: `editLink.baseUrl` = `` `${REPO_URL}/edit/main/` `` (`AWALAN_EDIT` di `src/lib/situs.ts`,
+dipakai `astro.config.mjs`) dengan `REPO_URL` = `https://github.com/afdaliable/docs-sakti`. Komponen
+`src/components/AksiHalaman.astro` tampil di bawah judul (override `PageTitle`) dan di akhir konten
+(override `Footer`) pada setiap halaman yang berasal dari satu berkas `src/content/docs/`; artikel juga
+mendapat **Laporkan kesalahan** (`tautanKoreksi()`), halaman indeks hanya tombol edit. Override `EditLink`
+yang kosong mematikan tautan edit bawaan footer Starlight. Beranda, 404, `/cari/`, dan `/peran/*` tidak
+memuat tautan edit. Dijaga `pnpm check:dist` bagian `tombol-edit` dan `tests/e2e/tombol-edit.e2e.ts` (K77).
 
 ## 2. Keystatic (`/keystatic`)
 

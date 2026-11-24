@@ -36,7 +36,7 @@ document.addEventListener('astro:page-load', () => {
 
 	const respons = await page.goto(`${BASE_URL}${ARTIKEL}`, { waitUntil: 'networkidle' });
 	if (!process.env.E2E_BASE_URL) pastikanCspAktif(respons);
-	const lapor = page.locator('a.lapor-kesalahan');
+	const lapor = page.locator('.aksi-halaman[data-posisi="bawah"] a.lapor-kesalahan');
 	await lapor.waitFor({ state: 'visible' });
 	const href = new URL((await lapor.getAttribute('href'))!);
 	assert.ok(href.href.startsWith(`${REPO_URL}/issues/new?`), 'href lapor-kesalahan');
@@ -90,7 +90,7 @@ document.addEventListener('astro:page-load', () => {
 	await tautanLain.scrollIntoViewIfNeeded();
 	await tautanLain.click();
 	await page.waitForFunction((n) => (window.__muat ?? 0) > n, muat0);
-	const lapor2 = page.locator('a.lapor-kesalahan');
+	const lapor2 = page.locator('.aksi-halaman[data-posisi="bawah"] a.lapor-kesalahan');
 	await lapor2.waitFor();
 	const href2 = new URL((await lapor2.getAttribute('href'))!);
 	assert.ok(

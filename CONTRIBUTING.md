@@ -18,7 +18,7 @@ Sebutkan URL halaman, bagian yang salah, dan bila tahu yang benar beserta sumber
 
 1. Cari issue yang sudah ada; bila belum ada, buat issue dengan formulir di atas. Perbaikan kecil seperti salah ketik boleh langsung lewat PR.
 2. Tanpa akses tulis: fork repo ini. Kolaborator: buat branch baru di repo. Jangan bekerja di `main`.
-3. Sunting. Di browser: buka artikel di situs, klik **Edit halaman**, lalu sunting berkas `.mdx` di GitHub. Di komputer: lihat bagian "Menyiapkan lingkungan lokal".
+3. Sunting. Di browser: buka artikel di situs, klik **Edit di GitHub**, lalu sunting berkas `.mdx` di GitHub. Di komputer: lihat bagian "Menyiapkan lingkungan lokal".
 4. Jalankan pemeriksaan (lihat "Sebelum mengirim PR").
 5. Buka pull request ke `main`, isi templat PR (ringkasan, jenis perubahan, checklist penulis), dan tautkan issue-nya.
 6. Review: PR ditinjau pemilik modul menurut `.github/CODEOWNERS`. Pemilik modul belum ditetapkan, jadi saat ini semua PR ditinjau pemelihara repo `@afdaliable`. Reviewer memakai bagian "Checklist reviewer" di templat PR.

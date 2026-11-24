@@ -4,6 +4,7 @@ import { parse } from 'yaml';
 import { hashSkripInline } from './csp-headers.ts';
 import { tersembunyiDiProduksi } from '../src/lib/status.ts';
 import { SITUS_URL } from '../src/lib/situs.ts';
+import { periksaTombolEdit, ruteDariHtml, sumberHalaman } from './tombol-edit.ts';
 
 const ROOT = path.resolve(process.env.E2E_DIST ?? 'dist');
 const BATAS_BARIS = 2000;
@@ -234,6 +235,35 @@ if (!fs.existsSync(ROOT)) {
 		}
 		selesai(nama, `${jumlah} halaman terindeks`);
 	}
+}
+
+// ---------- 9. Tombol edit ----------
+{
+	const nama = 'tombol-edit';
+	let nKonten = 0;
+	let nLain = 0;
+	for (const f of berkas(ROOT, /\.html$/)) {
+		const rel = path.relative(ROOT, f).replace(/\\/g, '/');
+		const rute = ruteDariHtml(rel);
+		const sumber = sumberHalaman(rute);
+		let splash = rute === '';
+		for (const b of sumber) {
+			const fm = frontmatter(fs.readFileSync(b, 'utf8'));
+			if (fm.template === 'splash') splash = true;
+		}
+		const masalah = periksaTombolEdit({
+			html: fs.readFileSync(f, 'utf8'),
+			sumber,
+			splash,
+		});
+		for (const m of masalah) lapor(nama, `${rel}: ${m}`);
+		if (masalah.length === 0 && sumber.length === 1 && !splash) nKonten++;
+		else nLain++;
+	}
+	selesai(
+		nama,
+		`${nKonten} halaman konten bertombol edit, ${nLain} halaman lain tanpa tautan edit`,
+	);
 }
 
 for (const [nama, daftar] of gagal) {

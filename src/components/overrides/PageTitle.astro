@@ -5,6 +5,7 @@ import { labelJenis } from '~/lib/istilah.ts';
 import { jalurHalaman } from '~/lib/jalur.ts';
 import { adalahEntriKonten } from '~/lib/artikel.ts';
 import { modulDanBreadcrumb } from '~/lib/cari/lite.ts';
+import AksiHalaman from '~/components/AksiHalaman.astro';
 
 const { entry } = Astro.locals.starlightRoute;
 const data = entry.data;
@@ -63,6 +64,7 @@ const adalahArtikel =
 		</p>
 	) : null
 }
+<AksiHalaman posisi="atas" />
 {
 	modul && (
 		<>

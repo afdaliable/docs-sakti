@@ -4,7 +4,7 @@ import starlight from '@astrojs/starlight';
 import starlightLinksValidator from 'starlight-links-validator';
 import { bangunSidebar } from './scripts/build-sidebar.ts';
 import { cspHeaders } from './scripts/csp-headers.ts';
-import { REPO_URL, SITUS_URL } from './src/lib/situs.ts';
+import { AWALAN_EDIT, SITUS_URL } from './src/lib/situs.ts';
 
 // https://astro.build/config
 export default defineConfig({
@@ -14,6 +14,7 @@ export default defineConfig({
 			title: 'SAKTI Knowledge Base',
 			customCss: ['./src/styles/kustom.css'],
 			components: {
+				EditLink: './src/components/overrides/EditLink.astro',
 				Footer: './src/components/overrides/Footer.astro',
 				Head: './src/components/overrides/Head.astro',
 				Hero: './src/components/overrides/Hero.astro',
@@ -28,7 +29,7 @@ export default defineConfig({
 			},
 			lastUpdated: true,
 			editLink: {
-				baseUrl: `${REPO_URL}/edit/main/`,
+				baseUrl: AWALAN_EDIT,
 			},
 			plugins: [starlightLinksValidator({ exclude: ['/peran/**'] })],
 			sidebar: bangunSidebar(),

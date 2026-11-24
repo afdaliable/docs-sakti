@@ -39,7 +39,7 @@ Diambil dari tipe pengguna di SAKTI Admin:
 - Halaman per modul (sesuai `config/modul.yaml`) dan halaman "Menurut peran pengguna".
 - Migrasi seluruh konten tiga sumber menjadi artikel MDX, dengan link ke file asli tetap disertakan.
 - Pencarian: keyword (Pagefind) + semantik/hybrid + glosarium sinonim istilah SAKTI.
-- Kontribusi: tombol "Edit halaman ini", Keystatic `/keystatic`, PR wajib review, CODEOWNERS per modul.
+- Kontribusi: tombol "Edit di GitHub", Keystatic `/keystatic`, PR wajib review, CODEOWNERS per modul.
 - CI: build, validasi konten, cek link, uji pencarian.
 
 ## Di luar ruang lingkup MVP

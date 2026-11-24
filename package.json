@@ -23,7 +23,7 @@
     "migrate:extract": "tsx scripts/extract/index.ts",
     "migrate:draft": "node scripts/belum-tersedia.mjs migrate:draft 4",
     "test": "tsx --test tests/*.test.ts",
-    "test:e2e": "tsx tests/e2e/pencarian.e2e.ts && tsx tests/e2e/beranda.e2e.ts && tsx tests/e2e/navigasi.e2e.ts && tsx tests/e2e/kontribusi.e2e.ts && tsx tests/e2e/dropdown.e2e.ts",
+    "test:e2e": "tsx tests/e2e/pencarian.e2e.ts && tsx tests/e2e/beranda.e2e.ts && tsx tests/e2e/navigasi.e2e.ts && tsx tests/e2e/kontribusi.e2e.ts && tsx tests/e2e/dropdown.e2e.ts && tsx tests/e2e/tombol-edit.e2e.ts",
     "scaffold:indeks": "tsx scripts/scaffold-indeks.ts"
   },
   "dependencies": {
